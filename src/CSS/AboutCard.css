@@ -1,5 +1,5 @@
 #AboutCardContainer{
-    margin: 50px auto auto auto;
+    margin: 30px auto auto auto;
     background-color: rgb(114, 47, 55);
     width: 80%;
     height: 100%;
@@ -12,14 +12,16 @@
 }
 
 #AboutCardInfoBox{
-    padding: 100px;
+    margin: auto;
 }
 #AboutCardInfoBox h3{
     color: rgb(34, 37, 41);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 #AboutCardInfoBox a{
     text-decoration: none;
     color: rgb(34, 37, 41);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 
 
@@ -27,13 +29,19 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 10% 0%);
 }
 
 #AboutCardContainer h1{
-    color: rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 #AboutCardContainer p{
-    color: rgb(236, 236, 236)
+    color: rgb(236, 236, 236);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
+}
+#AboutCardContainer a:hover{
+    color: rgb(59, 59, 59);
 }
 @Media only screen and (max-width: 1200px){
     #AboutCardContainer{

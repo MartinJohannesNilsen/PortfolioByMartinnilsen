@@ -1,9 +1,46 @@
 {
-    "title" : "UNDER CONSTRUCTION",
+    "title" : "Portfolio",
     "aboutText": "Computer engineering student and full-stack developer",
     "footerText": "Made by: ",
-    "footerLanguages": ["Norwegian", "English"]
-
+    "footerLanguages": ["Norwegian", "English"],
+    "projectsTitle": "Projects",
+    "projects": [
+        {
+            "title": "Recess Chess",
+            "description": "A multiplayer game a team of 6 students, including myself, created at the second semester of our bachelors degree. This was my first meeting with the combination of JavaFX and communication between JavaDB and a database using MySQL.",
+            "technologies": ["JavaFX", "JavaDB", "MySQL", "HikariCP"],
+            "imgPath": "recessChess.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game"
+        },
+        {
+            "title": "Miniproject in system development 2 at NTNU",
+            "description": "Our task was to create an online newspaper with React, in which we had two applications - one for the client site and one for the server.",
+            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Flow"],
+            "imgPath": "miniproject.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/Øving%2012%20(Miniprosjekt)"
+        },
+        {
+            "title": "Harmoni",
+            "description": "A larger project where we used scrum to organize our team during development. We were a team of 9 people which was supposed to create an application for making the information-flow better for a firm planning events.",
+            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Scrum"],
+            "imgPath": "harmoni.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
+        },
+        {
+            "title": "Website for IN Entreprenør AS - under development",
+            "description": "The firm wanted me to create a new website for them. They wanted a simpel, yet modern website which gave their customers the possibility to read about what the firm has to offer. It is still under development as I have to collect som text and information in which they will hand me when they have time.",
+            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Scrum"],
+            "imgPath": "INEntrep.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
+        },
+        {
+            "title": "Portfolio",
+            "description": "This portfolio is created for showing which projects I have worked on in the past.",
+            "technologies": ["React", "JavaScript", "Bootstrap", "CSS"],
+            "imgPath": "portfolio.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS"
+        }
+    ]
 
 
 

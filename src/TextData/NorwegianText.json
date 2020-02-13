@@ -1,9 +1,46 @@
 {
-    "title" : "UNDER KONSTRUKSJON",
+    "title" : "Portefølje",
     "aboutText": "Dataingeniørstudent ved NTNU og full-stakk utvikler",
     "footerText": "Laget av: ",
-    "footerLanguages": ["Norsk", "Engelsk"]
-
+    "footerLanguages": ["Norsk", "Engelsk"],
+    "projectsTitle": "Prosjekter",
+    "projects": [
+        {
+            "title": "Recess Chess",
+            "description": "Et flerspiller-spill vi lagde i 2.semester på dataingeniørstudiet. Dette var vårt første ordentlige møte med JavaFX og samhandlingen mellom Java og en database der vi lagret all informasjon om spillene.",
+            "technologies": ["JavaFX", "JavaDB", "MySQL", "HikariCP"],
+            "imgPath": "recessChess.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game"
+        },
+        {
+            "title": "Miniprosjekt i Systemutvikling 2",
+            "description": "Vi hadde som oppgave å lage en nettavis med React, der vi kjørte to ulike react-prosjekter - en for klient og en for server.",
+            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Flow"],
+            "imgPath": "miniproject.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/Øving%2012%20(Miniprosjekt)"
+        },
+        {
+            "title": "Harmoni",
+            "description": "Et større prosjekt der vi brukte scrum som arbeidsmetode. Vi var et team på 9 som skulle lage et program for å bedre informasjonsflyten innad i et firma som driver med arrangementplanlegging.",
+            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Scrum"],
+            "imgPath": "harmoni.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
+        },
+        {
+            "title": "Nettside for IN Entreprenør AS - under utvikling",
+            "description": "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. Denne er enda ikke ferdig da jeg venter på litt tekst og bilder.",
+            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Scrum"],
+            "imgPath": "INEntrep.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
+        },
+        {
+            "title": "Portefølje",
+            "description": "Denne porteføljen er laget for å vise tidligere prosjekter jeg har jobbet med.",
+            "technologies": ["React", "JavaScript", "Bootstrap", "CSS"],
+            "imgPath": "portfolio.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS"
+        }
+    ]
 
 
 

@@ -6,7 +6,7 @@ class Footer extends Component{
         return(
             <div>
                 <footer class="page-footer font-small" id="FooterContainer">
-                    <div class="footer-copyright text-center py-3">
+                    <div id="FooterText">
                         <a id="FooterTextMB">{this.props.data.footerText}</a><a id="FooterTextMJN">  Martin Johannes Nilsen</a>
                     </div>
                     <div id="FooterLinks">

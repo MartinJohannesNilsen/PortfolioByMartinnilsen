@@ -1,5 +1,5 @@
 #LinkCardContainer{
-    margin: 40px auto 50px auto;
+    margin: 35px auto 35px auto;
     width: 80%;
     height: 100%;
     display: grid;
@@ -10,7 +10,6 @@
 .LinkCardBox{
     margin: auto;
     background-color: rgb(35, 50, 73);
-    z-index: 1;
     width: 100%;
     height: 100%;
     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -32,17 +31,14 @@
 #LinkCardBox1{
     clip-path: polygon(0% 100%, 90% 100%, 100% 0%, 0% 0%);
     width: 112%;
-    z-index: 3;
 }
 #LinkCardBox2{
     clip-path: polygon(0% 100%, 90% 100%, 100% 0%, 10% 0%);
     width: 111%;
-    z-index: 2;
 }
 #LinkCardBox3{
     clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 10% 0%);
     width: 100%;
-    z-index: 1;
 }
 
 
@@ -65,6 +61,7 @@
     transform: scale(1.07, 1.07);
     cursor: pointer; 
     z-index: 100;
+    background-color: rgb(47, 68, 100);
 }
 
 .LinkCardBox:hover::after {
@@ -81,7 +78,7 @@
 
 @Media only screen and (max-width: 840px){
     #LinkCardContainer{
-        margin: 0px;
+        margin: 20px 0 0 0;
         width: 100%;
         height: 100%;
     }

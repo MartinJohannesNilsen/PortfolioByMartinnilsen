@@ -6,16 +6,25 @@
 #FooterTextLinks{
     color: rgb(206, 89, 89);
     text-decoration: none;
+    font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 #FooterTextMB{
     color: rgb(126, 148, 156);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 #FooterTextMJN{
     color: rgb(55, 166, 218);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 #FooterTextLinks:hover{
     color: rgb(156, 91, 91);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 #FooterTextDelimiter{
     color: white;
+    font-family: 'Georgia', 'Times New Roman', 'Times';
+}
+
+#FooterText{
+    margin: 10px 0 2px 0;
 }

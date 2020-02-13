@@ -1,13 +1,21 @@
 #HomepageContainer{
   background-color: rgb(48, 68, 87);
   min-height: 100vh;
-  padding: 100px 0px 0px 0px;
+  padding: 50px 0px 0px 0px;
   text-align: center;
 }
 
 #HomepageContainer h1{
-  color: white
+  color: white;
+  font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 #HomepageContainer p{
-  color: white
+  color: white;
+  font-family: 'Georgia', 'Times New Roman', 'Times';
 }
+
+#HomePageTitle{
+  font-size: 3rem;
+}
+
+

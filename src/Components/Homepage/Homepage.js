@@ -3,6 +3,7 @@ import "../../CSS/Homepage.css";
 
 import AboutCard from '../AboutCard/AboutCard';
 import LinkCard from '../LinkCard/LinkCard';
+import ProjectList from '../ProjectList/ProjectList';
 import Footer from '../Footer/Footer';
 
 let data = require('../../TextData/EnglishText.json');
@@ -20,9 +21,10 @@ class Homepage extends Component{
 
         return(
             <div id="HomepageContainer">
-                <h1>{data.title}</h1>
+                <h1 id="HomePageTitle">{data.title}</h1>
                 <AboutCard data={data}/>
                 <LinkCard data={data}/>
+                <ProjectList data={data}/>
                 <Footer data={data}/>
             </div>
         )
