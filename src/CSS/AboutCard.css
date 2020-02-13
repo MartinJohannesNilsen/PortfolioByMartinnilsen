@@ -7,20 +7,26 @@
     /*box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);*/
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
 
 }
 
 #AboutCardInfoBox{
-    padding: 20px;
+    padding: 100px;
 }
-#AboutCardInfoBox p{
-    padding: 20px;
+#AboutCardInfoBox h3{
+    color: rgb(34, 37, 41);
 }
+#AboutCardInfoBox a{
+    text-decoration: none;
+    color: rgb(34, 37, 41);
+}
+
 
 #AboutCardImage{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 #AboutCardContainer h1{
@@ -29,18 +35,25 @@
 #AboutCardContainer p{
     color: rgb(236, 236, 236)
 }
-
-@Media only screen and (max-width: 1000px){
+@Media only screen and (max-width: 1200px){
     #AboutCardContainer{
-        width: 90%;
+        width: 95%;
+        height: 100%;
         grid-template-columns: 2fr 1fr;
+        min-height: 1px;
     }
 }
 
-@Media only screen and (max-width: 640px){
+@Media only screen and (max-width: 840px){
     #AboutCardContainer{
         width: 100%;
         height: 100%;
         grid-template-columns: 1fr;
+    }
+    #AboutCardImageDiv{
+        display:none;
+    }
+    #AboutCardInfoBox{
+        padding: 20px 5px 20px 5px;
     }
 }

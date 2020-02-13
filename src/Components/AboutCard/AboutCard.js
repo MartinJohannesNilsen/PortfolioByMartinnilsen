@@ -9,14 +9,13 @@ class AboutCard extends Component{
             <div id="AboutCardContainer">
                 <div id="AboutCardInfoBox">
                     <h1>Martin Johannes Nilsen</h1>
-                    <p>Jeg er en 20 år gammel gutt i fra Rygge, Østfold. Startet på dataingeniørstudiet  ved NTNU i Trondheim rett etter vgs, for å oppsøke en utdanning innen IT.  Jeg er en motivert person som jobber godt både selvstendig og i team. Ser på meg selv som en utdadvent person, og er glad i å møte nye mennesker og bygge nettverk.</p>
-                    <a href={process.env.PUBLIC_URL + '/media/Martin_Johannes_Nilsen_CV.pdf'} target="_blank"><button type="button" class="btn btn-outline-light btn-lg"> CV </button></a>
-                    <a href="https://github.com/Martinnilsen99" target="_blank"><button type="button" class="btn btn-outline-light btn-lg"> GitHub </button></a>
+                    <h3>{this.props.data.aboutText}</h3>
+                    <h4><a href="mailto:martinjnilsen@icloud.com">martinjnilsen@icloud.com</a></h4>
+                    <h4><a href="tel:004745005502">+47 45005502</a></h4>
                 </div>
-                <div>
+                <div id="AboutCardImageDiv">
                     <img id="AboutCardImage" src={portrait} alt="Portrait of Martin Johannes Nilsen" />
                 </div>
-                
             </div>
         )
     }

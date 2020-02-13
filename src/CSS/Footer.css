@@ -1,0 +1,21 @@
+#FooterContainer{
+    background-color: rgba(51, 51, 65, 0.534);
+    padding: 10px 0px 20px 0px;
+}
+
+#FooterTextLinks{
+    color: rgb(206, 89, 89);
+    text-decoration: none;
+}
+#FooterTextMB{
+    color: rgb(126, 148, 156);
+}
+#FooterTextMJN{
+    color: rgb(55, 166, 218);
+}
+#FooterTextLinks:hover{
+    color: rgb(156, 91, 91);
+}
+#FooterTextDelimiter{
+    color: white;
+}
