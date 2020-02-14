@@ -29,7 +29,7 @@
         {
             "title": "Website for IN Entreprenør AS - under development",
             "description": "The firm wanted me to create a new website for them. They wanted a simple, yet modern website which gave their customers the possibility to read about what the firm has to offer. It is still under development as I have to collect some text and information in which they will hand me in the near future.",
-            "technologies": ["React", "NodeJS", "GitHub Pages", "CSS"],
+            "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"],
             "imgPath": "INEntrep.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
         },

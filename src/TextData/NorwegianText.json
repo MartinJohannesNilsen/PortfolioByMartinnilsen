@@ -29,7 +29,7 @@
         {
             "title": "Nettside for IN Entreprenør AS - under utvikling",
             "description": "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. Denne er enda ikke ferdig da jeg venter på litt tekst og bilder.",
-            "technologies": ["React", "NodeJS", "GitHub Pages", "CSS"],
+            "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"],
             "imgPath": "INEntrep.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
         },
