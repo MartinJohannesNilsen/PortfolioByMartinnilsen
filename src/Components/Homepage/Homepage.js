@@ -16,7 +16,10 @@ class Homepage extends Component{
     render(){
 
         if(window.location.href.includes("/no")){
-            data = require('../../TextData/NorwegianText.json')
+            data = require('../../TextData/NorwegianText.json');
+        }
+        else if(window.location.href.includes("/en")){
+            data = require('../../TextData/EnglishText.json');
         }
 
         return(

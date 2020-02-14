@@ -18,4 +18,17 @@
   font-size: 3rem;
 }
 
+@Media only screen and (max-width: 840px){
+  #HomepageContainer{
+    background-color: rgb(48, 68, 87);
+    min-height: 100vh;
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+  }
+  #HomePageTitle{
+    display: none;
+  }
+
+}
+
 

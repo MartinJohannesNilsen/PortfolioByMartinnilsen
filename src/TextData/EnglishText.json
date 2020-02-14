@@ -15,28 +15,28 @@
         {
             "title": "Miniproject in system development 2 at NTNU",
             "description": "Our task was to create an online newspaper with React, in which we had two applications - one for the client site and one for the server.",
-            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Flow"],
+            "technologies": ["React", "NodeJS", "Express", "Flow"],
             "imgPath": "miniproject.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/Øving%2012%20(Miniprosjekt)"
         },
         {
             "title": "Harmoni",
             "description": "A larger project where we used scrum to organize our team during development. We were a team consisting of 9 people which was supposed to create an application, with the purpose of making the information-flow better for the firm planning events.",
-            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Scrum"],
+            "technologies": ["React", "NodeJS", "Express", "Scrum"],
             "imgPath": "harmoni.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
         },
         {
             "title": "Website for IN Entreprenør AS - under development",
             "description": "The firm wanted me to create a new website for them. They wanted a simple, yet modern website which gave their customers the possibility to read about what the firm has to offer. It is still under development as I have to collect some text and information in which they will hand me in the near future.",
-            "technologies": ["React", "NodeJS", "JavaScript", "npm"],
+            "technologies": ["React", "NodeJS", "GitHub Pages", "CSS"],
             "imgPath": "INEntrep.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
         },
         {
             "title": "Portfolio",
             "description": "This portfolio was created for showing which projects I have worked on in the past.",
-            "technologies": ["React", "JavaScript", "npm", "hosting", "Bootstrap", "CSS"],
+            "technologies": ["React", "NodeJS", "hosting", "CSS"],
             "imgPath": "portfolio.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS"
         }

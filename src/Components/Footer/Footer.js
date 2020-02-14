@@ -12,7 +12,7 @@ class Footer extends Component{
                     <div id="FooterLinks">
                         <a id="FooterTextLinks" href="#/no">{this.props.data.footerLanguages[0]}</a>
                         <a id="FooterTextDelimiter"> | </a>
-                        <a id="FooterTextLinks" href="/"> {this.props.data.footerLanguages[1]}</a>
+                        <a id="FooterTextLinks" href="#/en"> {this.props.data.footerLanguages[1]}</a>
                     </div>
                 </footer>
             </div>

@@ -1,5 +1,5 @@
 #AboutCardContainer{
-    margin: 30px auto auto auto;
+    margin: 10px auto auto auto;
     background-color: rgb(114, 47, 55);
     width: 80%;
     height: 100%;
@@ -36,8 +36,16 @@
     color: rgb(255, 255, 255);
     font-family: 'Georgia', 'Times New Roman', 'Times';
 }
+#AboutCardContainer h3{
+    color: rgb(216, 202, 202);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
+}
+#AboutCardContainer h2{
+    color: rgb(225, 225, 225);
+    font-family: 'Georgia', 'Times New Roman', 'Times';
+}
 #AboutCardContainer p{
-    color: rgb(236, 236, 236);
+    color: rgb(203, 202, 202);
     font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 #AboutCardContainer a:hover{
@@ -58,8 +66,19 @@
         height: 100%;
         grid-template-columns: 1fr;
     }
+    /* - for hiding the photo
     #AboutCardImageDiv{
         display:none;
+    }
+    */
+    #AboutCardImage{
+        height: 60%;
+        width: 60%;
+        margin-bottom: 30px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+        object-fit: cover;
+        clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
     }
     #AboutCardInfoBox{
         padding: 20px 5px 20px 5px;
