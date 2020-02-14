@@ -67,8 +67,7 @@
 
 .ProjectCardContainer:hover {
     -webkit-transform: scale(1.04, 1.04);
-    transform: scale(1.04, 1.04);
-    cursor: pointer; 
+    transform: scale(1.04, 1.04); 
     background-color: rgb(85, 48, 48);
 }
 
@@ -99,6 +98,23 @@
     height: 100%;
     /*clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%, 10% 50%);*/
     opacity: 0.8;
+}
+
+#ProjectCardInformationTechnologies{
+    margin: auto auto 0px -3px;
+    position: relative;
+    bottom: 0px;
+}
+
+#ProjectCardInformationTechnologies button{
+    margin: 3px;
+}
+
+#ProjectCardLink{
+    height: 40px;
+    width: 40px;
+    margin: 30% auto;
+    color: white;
 }
 
 @Media only screen and (max-width: 1200px){

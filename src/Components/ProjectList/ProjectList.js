@@ -1,5 +1,9 @@
 import React, {Component} from "react";
 import "../../CSS/ProjectList.css";
+import "../../CSS/customBootstrap.css"
+import Button from '@material-ui/core/Button';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class ProjectList extends Component{
@@ -25,8 +29,15 @@ class ProjectCard extends Component{
                 <div id="ProjectCardInformation">
                     <h4>{this.props.data.title}</h4>
                     <h6>{this.props.data.description}</h6>
+                    <div id="ProjectCardInformationTechnologies">
+                        {this.props.data.technologies.map(t => (
+                            <button type="button" tabindex="-1" class="btnCustom btnCustom-outline-warning">{t}</button>
+                        ))}
+                    </div>
                 </div>
-                <div id="ProjectCardLinks"></div>
+                <div id="ProjectCardLinkBox">
+                    
+                </div>
                 <div id="ProjectCardImage">
                     <img src={require("../../IMG/ProjectImages/" + this.props.data.imgPath)} />
                 </div>
@@ -37,3 +48,7 @@ class ProjectCard extends Component{
     
 }
 export default ProjectList;
+
+/*
+    <FontAwesomeIcon icon={faGithub} id="ProjectCardLink" alt="Martin Johannes Nilsen's GitHub"/>
+*/

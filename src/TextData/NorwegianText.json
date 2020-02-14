@@ -29,14 +29,14 @@
         {
             "title": "Nettside for IN Entreprenør AS - under utvikling",
             "description": "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. Denne er enda ikke ferdig da jeg venter på litt tekst og bilder.",
-            "technologies": ["React", "NodeJS", "Express", "JavaScript", "Scrum"],
+            "technologies": ["React", "NodeJS", "JavaScript", "npm"],
             "imgPath": "INEntrep.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
         },
         {
             "title": "Portefølje",
             "description": "Denne porteføljen er laget for å vise tidligere prosjekter jeg har jobbet med.",
-            "technologies": ["React", "JavaScript", "Bootstrap", "CSS"],
+            "technologies": ["React", "JavaScript", "npm", "hosting", "Bootstrap", "CSS"],
             "imgPath": "portfolio.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS"
         }

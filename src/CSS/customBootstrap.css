@@ -1,0 +1,24 @@
+.btnCustom {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  
+  .btnCustom-outline-warning {
+    color: rgb(175, 152, 0);
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgb(175, 152, 0);
+  }
+  .btnCustom-outline-warning:hover {
+    color: rgb(175, 152, 0);
+    cursor: default;
+  }
