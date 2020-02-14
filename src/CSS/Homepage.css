@@ -14,9 +14,43 @@
   font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 
-#HomePageTitle{
-  font-size: 3rem;
+#HomePageToTopButton{
+  right: 25px;
+  bottom: 25px;
+  position: fixed;
 }
+#HomePageToTopButtonIcon{
+  size: 20px;
+}
+
+#HomePageTitle{
+  margin: auto;
+  width: 290px;
+  text-align: center;
+}
+#HomePageTitle h1{
+  font-size: 50px;
+  overflow: hidden;
+  border-right: .05em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto 35px auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 2.5s steps(14, end),
+    blink-caret 1.25s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(255, 255, 255); }
+}
+
+
 
 @Media only screen and (max-width: 840px){
   #HomepageContainer{

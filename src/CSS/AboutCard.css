@@ -13,6 +13,8 @@
 
 #AboutCardInfoBox{
     margin: auto;
+    padding: 10px;
+
 }
 #AboutCardInfoBox h3{
     color: rgb(34, 37, 41);
@@ -22,6 +24,13 @@
     text-decoration: none;
     color: rgb(34, 37, 41);
     font-family: 'Georgia', 'Times New Roman', 'Times';
+}
+
+#AboutCardContactInfo{
+    padding: 20px;
+}
+#AboutCardContactInfo a{
+    margin: 10px;
 }
 
 

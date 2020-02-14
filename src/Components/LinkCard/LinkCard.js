@@ -2,7 +2,6 @@
 import React, {Component} from "react";
 import "../../CSS/LinkCard.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faPortrait } from '@fortawesome/free-solid-svg-icons'
@@ -29,7 +28,7 @@ class LinkCard extends Component{
                 <div class="LinkCardBox" id="LinkCardBox3">
                     <a href="/media/Martin_Johannes_Nilsen_CV.pdf" target="_blank">
                     <div>
-                        <FontAwesomeIcon icon={faPortrait} class="LinkCardIcon" id="LinkCardIcon3" alt="Martin Johannes Nilsen's CV"/>
+                        <img src={require("../../IMG/Icons/CV_Icon.png")} class="LinkCardIcon" id="LinkCardIcon3" />
                     </div>
                     </a>
                 </div>
@@ -42,5 +41,7 @@ export default LinkCard;
 
 
 /*
-<img src={CV_Icon} class="LinkCardIcon" id="LinkCardIcon3" />
+<div>
+    <FontAwesomeIcon icon={faPortrait} class="LinkCardIcon" id="LinkCardIcon3" alt="Martin Johannes Nilsen's CV"/>
+</div>
 */

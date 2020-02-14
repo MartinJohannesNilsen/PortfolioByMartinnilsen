@@ -1,5 +1,5 @@
 #ProjectListContainer{
-    margin: 30px auto 50px auto;
+    margin: 30px auto 10px auto;
     width: 80%;
     height: 100%;
     min-height: 300px;
@@ -9,7 +9,7 @@
 }
 
 #ProjectListTitle{
-    color: rgb(194, 194, 194);
+    color: rgb(242, 240, 240);
     font-family: 'Georgia', 'Times New Roman', 'Times';
 }
 
@@ -24,6 +24,7 @@
     #ProjectListContainer{
         width: 95%;
         height: 100%;
+        margin: 8px auto 8px auto;
     }
 }
 
@@ -85,7 +86,7 @@
     padding: 20px 10px 20px 10px;
     text-align: left;
     font-family: 'Georgia', 'Times New Roman', 'Times';
-    color: rgb(184, 184, 184);
+    color: rgb(223, 219, 219);
 }
 
 #ProjectCardImage{

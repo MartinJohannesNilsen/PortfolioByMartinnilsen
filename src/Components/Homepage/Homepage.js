@@ -5,6 +5,10 @@ import AboutCard from '../AboutCard/AboutCard';
 import LinkCard from '../LinkCard/LinkCard';
 import ProjectList from '../ProjectList/ProjectList';
 import Footer from '../Footer/Footer';
+import { Fab } from '@material-ui/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import $ from 'jquery';
 
 let data = require('../../TextData/EnglishText.json');
 
@@ -15,6 +19,14 @@ class Homepage extends Component{
     
     render(){
 
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 220) {
+                $('#HomePageToTopButton:hidden').stop(true, true).fadeIn();
+            } else {
+                $('#HomePageToTopButton').stop(true, true).fadeOut();
+            }
+        });
+
         if(window.location.href.includes("/no")){
             data = require('../../TextData/NorwegianText.json');
         }
@@ -24,11 +36,16 @@ class Homepage extends Component{
 
         return(
             <div id="HomepageContainer">
-                <h1 id="HomePageTitle">{data.title}</h1>
+                <div id="HomePageTitle"><h1>{data.title}</h1></div>
+                
                 <AboutCard data={data}/>
                 <LinkCard data={data}/>
                 <ProjectList data={data}/>
                 <Footer data={data}/>
+                <a onClick={() => {$('html, body').animate({scrollTop: '0'}, 1500);}}><Fab id="HomePageToTopButton" aria-label="to top">
+                    <FontAwesomeIcon id="HomePageToTopButtonIcon" icon={faAngleUp} alt="Press this button for scrolling up to the top"/>
+                </Fab>
+                </a>
             </div>
         )
     }
