@@ -54,7 +54,7 @@
 
 @Media only screen and (max-width: 840px){
     #AboutCardContainer{
-        width: 100%;
+        width: 96%;
         height: 100%;
         grid-template-columns: 1fr;
     }

@@ -29,8 +29,8 @@
 
 @Media only screen and (max-width: 840px){
     #ProjectListContainer{
-        margin: 20px 0 20px 0;
-        width: 100%;
+        margin: 8px auto 8px auto;
+        width: 96%;
         height: 100%;
         min-height: 300px;
     }
@@ -122,7 +122,7 @@
 
 @Media only screen and (max-width: 840px){
     .ProjectCardContainer{
-        grid-template-columns: 0.3fr 4fr 1fr 0.001fr;
+        grid-template-columns: 0.3fr 4fr 0.2fr 0.001fr;
     }
     
     #ProjectCardImage img{
