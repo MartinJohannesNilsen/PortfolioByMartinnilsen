@@ -11,7 +11,7 @@ import Homepage from './Components/Homepage/Homepage.js';
 
 ReactDOM.render(
     <HashRouter>
-        <div id="indexContainer">
+        <div>
             <Route component={Homepage} />
         </div>
     </HashRouter>
