@@ -3,6 +3,7 @@
     "aboutText": "Dataingeniørstudent ved NTNU og full-stakk utvikler",
     "footerText": "Laget av: ",
     "footerLanguages": ["Norsk", "Engelsk"],
+    "contactInfoText": ["E-post","Telefon"],
     "projectsTitle": "Prosjekter",
     "projects": [
         {

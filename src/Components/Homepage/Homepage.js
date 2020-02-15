@@ -43,7 +43,7 @@ class Homepage extends Component{
                 <ProjectList data={data}/>
                 <Footer data={data}/>
                 <a onClick={() => {$('html, body').animate({scrollTop: '0'}, 1500);}}><Fab id="HomePageToTopButton" aria-label="to top">
-                    <FontAwesomeIcon id="HomePageToTopButtonIcon" icon={faAngleUp} alt="Press this button for scrolling up to the top"/>
+                    <FontAwesomeIcon id="FaButtonIcon" icon={faAngleUp} alt="Press this button for scrolling up to the top"/>
                 </Fab>
                 </a>
             </div>

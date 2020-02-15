@@ -1,8 +1,9 @@
 {
-    "title" : "Portfolio",
+    "title" : "Portfolio ",
     "aboutText": "Computer engineering student and full-stack developer",
     "footerText": "Made by: ",
     "footerLanguages": ["Norwegian", "English"],
+    "contactInfoText": ["Mail","Telephone"],
     "projectsTitle": "Projects",
     "projects": [
         {

@@ -18,26 +18,26 @@
   right: 25px;
   bottom: 25px;
   position: fixed;
-}
-#HomePageToTopButtonIcon{
-  size: 20px;
+  display: none;
 }
 
 #HomePageTitle{
   margin: auto;
-  width: 290px;
+  width: 300px;
   text-align: center;
 }
 #HomePageTitle h1{
-  font-size: 50px;
+  font-size: 40px;
+  font-family: "Courier New", "Courier";
   overflow: hidden;
-  border-right: .05em solid orange; /* The typwriter cursor */
+  border-right: .05em solid transparent; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto 35px auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
-    typing 2.5s steps(14, end),
-    blink-caret 1.25s step-end infinite;
+    typing 4s steps(10, end),
+    blink-caret 0.75s step-end 10
+  ;
 }
 
 @keyframes typing {
@@ -50,6 +50,9 @@
   50% { border-color: rgb(255, 255, 255); }
 }
 
+#FaButtonIcon{
+  font-size: 22px;
+}
 
 
 @Media only screen and (max-width: 840px){

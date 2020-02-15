@@ -22,17 +22,26 @@
 }
 #AboutCardInfoBox a{
     text-decoration: none;
-    color: rgb(34, 37, 41);
+    color: rgb(26, 26, 26);
     font-family: 'Georgia', 'Times New Roman', 'Times';
+    text-transform: none;
 }
 
 #AboutCardContactInfo{
     padding: 20px;
 }
-#AboutCardContactInfo a{
+#AboutCardContactInfoButtonLeft{
     margin: 10px;
 }
-
+#AboutCardContactInfoTextLeft{
+    margin-left: 10px;
+}
+#AboutCardContactInfoButtonRight{
+    padding: 10px;
+}
+#AboutCardContactInfoTextRight{
+    margin-left: 10px;
+}
 
 #AboutCardImage{
     height: 100%;
@@ -57,9 +66,7 @@
     color: rgb(203, 202, 202);
     font-family: 'Georgia', 'Times New Roman', 'Times';
 }
-#AboutCardContainer a:hover{
-    color: rgb(59, 59, 59);
-}
+
 @Media only screen and (max-width: 1200px){
     #AboutCardContainer{
         width: 95%;
