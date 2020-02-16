@@ -12,21 +12,21 @@ class LinkCard extends Component{
         return(
             <div id="LinkCardContainer">
                 <div class="LinkCardBox" id="LinkCardBox1">
-                    <a href="https://github.com/Martinnilsen99" target="_blank">
+                    <a href="https://github.com/Martinnilsen99" target="_blank" tabindex="0">
                     <div>
                         <FontAwesomeIcon icon={faGithub} class="LinkCardIcon" alt="Martin Johannes Nilsen's GitHub"/>
                     </div>
                     </a>
                 </div>
-                <div class="LinkCardBox" id="LinkCardBox2">
-                    <a href="https://www.linkedin.com/in/martinnilsen99/" target="_blank">
+                <div class="LinkCardBox" id="LinkCardBox2" tabindex="0">
+                    <a href="https://www.linkedin.com/in/martinnilsen99/" target="_blank" tabindex="0">
                     <div>
                         <FontAwesomeIcon icon={faLinkedin} class="LinkCardIcon" alt="Martin Johannes Nilsen's linkedIn"/>
                     </div>
                     </a>
                 </div>
-                <div class="LinkCardBox" id="LinkCardBox3">
-                    <a href="/media/Martin_Johannes_Nilsen_CV.pdf" target="_blank">
+                <div class="LinkCardBox" id="LinkCardBox3" tabindex="0">
+                    <a href="/media/Martin_Johannes_Nilsen_CV.pdf" target="_blank" tabindex="0">
                     <div>
                         <img src={require("../../IMG/Icons/CV_Icon.png")} class="LinkCardIcon" id="LinkCardIcon3" alt="Martin Johannes Nilsen's CV"/>
                     </div>

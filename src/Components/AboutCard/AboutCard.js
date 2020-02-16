@@ -16,21 +16,15 @@ class AboutCard extends Component{
                     <h1>Martin Johannes Nilsen</h1>
                     <h3>{this.props.data.aboutText}</h3>
                     <div id="AboutCardContactInfo">
-
-                        <a href="mailto:martinjnilsen@icloud.com" id="AboutCardContactInfoButtonLeft" tabindex="-1" aria-label="Send mail to Martin Johannes Nilsen">
-                            <Fab aria-label="mail-button" variant="extended" alt="Send mail to martinjnilsen@icloud.com">
-                                <FontAwesomeIcon id="FaButtonIcon" icon={faAt} alt="mail-icon"/>
-                                <a id="AboutCardContactInfoTextLeft">{this.props.data.contactInfoText[0]}</a>
-                            </Fab>
-                        </a> 
-                        
-                        <a href="tel:004745005502" id="AboutCardContactInfoButtonRight" tabindex="-1" aria-label="Call Martin Johannes Nilsen">
-                        <Fab aria-labelledby="call-button" variant="extended" alt="Call +47 45005502">
-                                <FontAwesomeIcon id="FaButtonIcon" icon={faPhoneAlt} alt="call-icon"/>
-                                <a id="AboutCardContactInfoTextRight">{this.props.data.contactInfoText[1]}</a>
-                            </Fab>
-                        </a>
+                        <Fab onClick={() => window.location.href="mailto:martinjnilsen@icloud.com"} aria-labelledby="mail-button" variant="extended" id="AboutCardContactInfoButtonLeft" tabindex="0" alt="Send mail to Martin Johannes Nilsen">
+                            <FontAwesomeIcon id="FaButtonIcon" icon={faAt} alt="mail-icon"/>
+                            <a id="AboutCardContactInfoTextLeft">{this.props.data.contactInfoText[0]}</a>
+                        </Fab>  
                     
+                        <Fab onClick={() => window.location.href="tel:004745005502"} aria-labelledby="call-button" variant="extended" id="AboutCardContactInfoButtonRight" tabindex="0" alt="Call Martin Johannes Nilsen">
+                            <FontAwesomeIcon id="FaButtonIcon" icon={faPhoneAlt} alt="call-icon"/>
+                            <a id="AboutCardContactInfoTextRight">{this.props.data.contactInfoText[1]}</a>
+                        </Fab>
                     </div>
                 </div>
                 <div id="AboutCardImageDiv">
