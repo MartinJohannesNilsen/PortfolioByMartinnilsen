@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import "../../CSS/Homepage.css";
-
 import AboutCard from '../AboutCard/AboutCard';
 import LinkCard from '../LinkCard/LinkCard';
 import ProjectList from '../ProjectList/ProjectList';

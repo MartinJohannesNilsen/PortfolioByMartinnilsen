@@ -28,7 +28,7 @@ class LinkCard extends Component{
                 <div class="LinkCardBox" id="LinkCardBox3">
                     <a href="/media/Martin_Johannes_Nilsen_CV.pdf" target="_blank">
                     <div>
-                        <img src={require("../../IMG/Icons/CV_Icon.png")} class="LinkCardIcon" id="LinkCardIcon3" />
+                        <img src={require("../../IMG/Icons/CV_Icon.png")} class="LinkCardIcon" id="LinkCardIcon3" alt="Martin Johannes Nilsen's CV"/>
                     </div>
                     </a>
                 </div>

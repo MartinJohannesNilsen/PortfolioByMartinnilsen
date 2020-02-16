@@ -17,16 +17,16 @@ class AboutCard extends Component{
                     <h3>{this.props.data.aboutText}</h3>
                     <div id="AboutCardContactInfo">
 
-                        <a href="mailto:martinjnilsen@icloud.com" id="AboutCardContactInfoButtonLeft" tabindex="-1">
-                            <Fab aria-label="mail-button" variant="extended">
-                                <FontAwesomeIcon id="FaButtonIcon" icon={faAt} alt="Send mail to martinjnilsen@icloud.com"/>
+                        <a href="mailto:martinjnilsen@icloud.com" id="AboutCardContactInfoButtonLeft" tabindex="-1" aria-label="Send mail to Martin Johannes Nilsen">
+                            <Fab aria-label="mail-button" variant="extended" alt="Send mail to martinjnilsen@icloud.com">
+                                <FontAwesomeIcon id="FaButtonIcon" icon={faAt} alt="mail-icon"/>
                                 <a id="AboutCardContactInfoTextLeft">{this.props.data.contactInfoText[0]}</a>
                             </Fab>
                         </a> 
                         
-                        <a href="tel:004745005502" id="AboutCardContactInfoButtonRight" tabindex="-1">
-                        <Fab aria-labelledby="call-button" variant="extended">
-                                <FontAwesomeIcon id="FaButtonIcon" icon={faPhoneAlt} alt="Call +47 45005502"/>
+                        <a href="tel:004745005502" id="AboutCardContactInfoButtonRight" tabindex="-1" aria-label="Call Martin Johannes Nilsen">
+                        <Fab aria-labelledby="call-button" variant="extended" alt="Call +47 45005502">
+                                <FontAwesomeIcon id="FaButtonIcon" icon={faPhoneAlt} alt="call-icon"/>
                                 <a id="AboutCardContactInfoTextRight">{this.props.data.contactInfoText[1]}</a>
                             </Fab>
                         </a>
