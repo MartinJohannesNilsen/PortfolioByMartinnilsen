@@ -5,6 +5,7 @@
     "footerLanguages": ["Norsk", "Engelsk"],
     "contactInfoText": ["E-post","Telefon"],
     "projectsTitle": "Prosjekter",
+    "linkButtonText": ["GitHub", "Nettside"],
     "projects": [
         {
             "title": "Recess Chess",
@@ -15,7 +16,7 @@
         },
         {
             "title": "Miniprosjekt i Systemutvikling 2",
-            "description": "Vi hadde som oppgave å lage en nettavis med React, der vi kjørte to ulike react-prosjekter - en for klient og en for server.",
+            "description": "Vi hadde som oppgave å lage en nettavis med React, der vi kjørte to ulike React-applikasjoner - én for klient og én for server.",
             "technologies": ["React", "NodeJS", "Express", "Flow"],
             "imgPath": "miniproject.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/Øving%2012%20(Miniprosjekt)"
@@ -25,21 +26,24 @@
             "description": "Et større prosjekt der vi brukte scrum som arbeidsmetode. Vi var et team på 9 som skulle lage et program for å bedre informasjonsflyten innad i et firma som driver med arrangementplanlegging.",
             "technologies": ["React", "NodeJS", "Express", "Scrum"],
             "imgPath": "harmoni.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni",
+            "linkToWebsite": "http://harmoni.torbjorn.me"
         },
         {
             "title": "Nettside for IN Entreprenør AS - under utvikling",
             "description": "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. Denne er enda ikke ferdig da jeg venter på litt tekst og bilder.",
             "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"],
             "imgPath": "INEntrep.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
+            "linkToGitHub": "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS",
+            "linkToWebsite": "https://martinnilsen99.github.io/Nettside-for-INEntrep-AS"
         },
         {
             "title": "Portefølje",
             "description": "Denne porteføljen er laget for å vise tidligere prosjekter jeg har jobbet med.",
             "technologies": ["React", "NodeJS", "hosting", "CSS"],
             "imgPath": "portfolio.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS"
+            "linkToGitHub": "https://github.com/Martinnilsen99/Portofolio",
+            "linkToWebsite": "https://martinnilsen.no"
         }
     ]
 

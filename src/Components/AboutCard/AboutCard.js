@@ -17,15 +17,15 @@ class AboutCard extends Component{
                     <h3>{this.props.data.aboutText}</h3>
                     <div id="AboutCardContactInfo">
 
-                        <a href="mailto:martinjnilsen@icloud.com" id="AboutCardContactInfoButtonLeft">
+                        <a href="mailto:martinjnilsen@icloud.com" id="AboutCardContactInfoButtonLeft" tabindex="-1">
                             <Fab aria-label="mail-button" variant="extended">
                                 <FontAwesomeIcon id="FaButtonIcon" icon={faAt} alt="Send mail to martinjnilsen@icloud.com"/>
                                 <a id="AboutCardContactInfoTextLeft">{this.props.data.contactInfoText[0]}</a>
                             </Fab>
                         </a> 
                         
-                        <a href="tel:004745005502" id="AboutCardContactInfoButtonRight">
-                            <Fab aria-labelledby="call-button" variant="extended">
+                        <a href="tel:004745005502" id="AboutCardContactInfoButtonRight" tabindex="-1">
+                        <Fab aria-labelledby="call-button" variant="extended">
                                 <FontAwesomeIcon id="FaButtonIcon" icon={faPhoneAlt} alt="Call +47 45005502"/>
                                 <a id="AboutCardContactInfoTextRight">{this.props.data.contactInfoText[1]}</a>
                             </Fab>

@@ -80,11 +80,29 @@
     z-index: 100;
     background-color: rgb(47, 68, 100);
 }
-
-
 .LinkCardBox:hover::after {
     opacity: 1;
     z-index: 3;
+}
+
+/*Universal design, focus instead of hover*/
+.LinkCardBox:focus {
+    -webkit-transform: scale(1.07, 1.07);
+    transform: scale(1.07, 1.07);
+    cursor: pointer; 
+    z-index: 100;
+    background-color: rgb(47, 68, 100);
+}
+.LinkCardBox:focus::after {
+    opacity: 1;
+    z-index: 3;
+}
+.LinkCardBox:focus .LinkCardIcon{
+    color: rgba(245, 242, 242, 0.913);
+}
+.LinkCardBox:focus #LinkCardIcon3{
+    opacity: 0.913;
+    filter: invert(99%) sepia(8%) saturate(78%) hue-rotate(197deg) brightness(117%) contrast(90%);
 }
 
 @Media only screen and (max-width: 1200px){
