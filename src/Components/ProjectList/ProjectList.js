@@ -40,7 +40,7 @@ class ProjectCard extends Component{
                         <a href={data.linkToWebsite} target="_blank" tabindex="-1">
                             <button type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's website">
                                 <FontAwesomeIcon id="FaButtonIconLarge" icon={faDesktop} alt="Desktop icon"/>
-                                <a id="AboutCardContactInfoTextLeft">{linkButtonText[1]}</a>
+                                <a id="AboutCardContactInfoTextLeft" >{linkButtonText[1]}</a>
                             </button>
                         </a>
                     </div> 

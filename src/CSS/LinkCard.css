@@ -86,21 +86,23 @@
 }
 
 /*Universal design, focus instead of hover*/
-.LinkCardBox:focus {
+/* I wanted the hovereffect to happen while focusing but didnt get it to work, so I only change the color of the icons
+#LinkCardBoxATag:focus .LinkCardBox {
     -webkit-transform: scale(1.07, 1.07);
     transform: scale(1.07, 1.07);
     cursor: pointer; 
     z-index: 100;
     background-color: rgb(47, 68, 100);
 }
-.LinkCardBox:focus::after {
+#LinkCardBoxATag:focus .LinkCardBox::after {
     opacity: 1;
     z-index: 3;
 }
-.LinkCardBox:focus .LinkCardIcon{
+*/
+#LinkCardBoxATag:focus .LinkCardIcon{
     color: rgba(245, 242, 242, 0.913);
 }
-.LinkCardBox:focus #LinkCardIcon3{
+#LinkCardBoxATag:focus #LinkCardIcon3{
     opacity: 0.913;
     filter: invert(99%) sepia(8%) saturate(78%) hue-rotate(197deg) brightness(117%) contrast(90%);
 }
