@@ -124,7 +124,7 @@
 .ProjectCardLinks{
     margin: 10px;
     width: 90%;
-    height: 90%;
+    min-width: 130px;
 }
 
 #ProjectCardLinkBox{
