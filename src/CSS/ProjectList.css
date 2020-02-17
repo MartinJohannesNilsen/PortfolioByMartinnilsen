@@ -124,6 +124,7 @@
 .ProjectCardLinks{
     margin: 10px;
     width: 90%;
+    height: 40px !important;
 }
 
 #ProjectCardLinkBox{
@@ -148,14 +149,85 @@
 
 @Media only screen and (max-width: 840px){
     .ProjectCardContainer{
-        grid-template-columns: 0.3fr 4fr 0.2fr 0.001fr;
+        grid-template-columns: 0.1fr 4fr 0.01fr 0.001fr;
+        grid-template-areas: 
+            "strek tekst bilde knapper";
     }
-    
     #ProjectCardImage img{
         display: none;
     }
-
+    #ProjectCardLinkBox button{
+        display: none;
+    }
+    #ProjectCardVerticalLine{
+        margin: auto 10px auto 20px;
+        border-left: 6px solid rgb(209, 209, 209);
+        height: 85%;
+    }
+    .ProjectCardContainer:hover{
+        grid-template-columns: 0.2fr 4fr 0.01fr;
+        grid-template-areas: 
+            "strek tekst bilde"
+            "strek knapper bilde";
+    }
     .ProjectCardContainer:hover #ProjectCardVerticalLine{
+        grid-area: strek;
+    }
+    .ProjectCardContainer:hover #ProjectCardInformation{
+        grid-area: tekst;
+    }
+    .ProjectCardContainer:hover #ProjectCardImage{
+        grid-area: bilde;
+    }
+    .ProjectCardContainer:hover #ProjectCardLinkBox{
+        grid-area: knapper;
+        display: flex;
+        margin: -15px auto 15px auto;
+        text-align: center;
+    }
+    .ProjectCardContainer:hover #ProjectCardLinkBox button{
+        display: inline;
+    }
+    
+    .ProjectCardContainer:focus {
+        -webkit-transform: none;
+        transform: none; 
+        background-color: rgb(40, 48, 59);
+        grid-template-columns: 0.2fr 4fr 0.01fr;
+        grid-template-areas: 
+            "strek tekst bilde"
+            "strek knapper bilde";
+    }
+    .ProjectCardContainer:focus::after {
+        opacity: 0;
+    }
+    .ProjectCardContainer:focus #ProjectCardVerticalLine{
+        grid-area: strek;
+    }
+    .ProjectCardContainer:focus #ProjectCardInformation{
+        grid-area: tekst;
+    }
+    .ProjectCardContainer:focus #ProjectCardImage{
+        grid-area: bilde;
+    }
+    .ProjectCardContainer:focus #ProjectCardLinkBox{
+        grid-area: knapper;
+        display: flex;
+        margin: -15px auto 15px auto;
+        text-align: center;
+    }
+    .ProjectCardContainer:focus #ProjectCardLinkBox button{
+        display: inline;
+    }
+
+    
+
+    
+
+}
+
+/* - mobilvisning
+.ProjectCardContainer:hover #ProjectCardVerticalLine{
         opacity: .1;
     }
     .ProjectCardContainer:hover #ProjectCardInformationTechnologies{
@@ -176,10 +248,6 @@
     #ProjectCardLinkBox{
         display: none;
     }
-
-    
-
-}
-
+*/
 
 

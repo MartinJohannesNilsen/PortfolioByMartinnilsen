@@ -65,7 +65,7 @@ class ProjectCard extends Component{
                     <div>
                         <a href={this.props.data.linkToGitHub} target="_blank" tabindex="-1">
                             <button type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's Github">
-                                <FontAwesomeIcon id="FaButtonIcon" icon={faGithub} alt="GitHub icon"/>
+                                <FontAwesomeIcon id="FaButtonIconLarge" icon={faGithub} alt="GitHub icon"/>
                                 <a id="AboutCardContactInfoTextLeft">{this.props.linkButtonText[0]}</a>
                             </button>
                         </a>
