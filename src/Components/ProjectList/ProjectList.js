@@ -13,7 +13,6 @@ import { faLaptop } from '@fortawesome/free-solid-svg-icons';
 import { faTv } from '@fortawesome/free-solid-svg-icons';
 
 
-
 class ProjectList extends Component{
     render(){
         return(
@@ -37,12 +36,10 @@ class ProjectCard extends Component{
             if(isHosted){
                 return (
                     <div>
-                        <a href={data.linkToWebsite} target="_blank" tabindex="-1">
-                            <button type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's website">
-                                <FontAwesomeIcon id="FaButtonIconLarge" icon={faDesktop} alt="Desktop icon"/>
-                                <a id="AboutCardContactInfoTextLeft" >{linkButtonText[1]}</a>
-                            </button>
-                        </a>
+                        <button onClick={() => window.open(data.linkToWebsite, '_blank')} tabindex="0" type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's website">
+                            <FontAwesomeIcon id="FaButtonIconLarge" icon={faDesktop} alt="Desktop icon"/>
+                            <a id="AboutCardContactInfoTextLeft" >{linkButtonText[1]}</a>
+                        </button>
                     </div> 
                 );
             }
@@ -63,12 +60,10 @@ class ProjectCard extends Component{
                 </div>
                 <div id="ProjectCardLinkBox">
                     <div>
-                        <a href={this.props.data.linkToGitHub} target="_blank" tabindex="-1">
-                            <button type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's Github">
-                                <FontAwesomeIcon id="FaButtonIconLarge" icon={faGithub} alt="GitHub icon"/>
-                                <a id="AboutCardContactInfoTextLeft">{this.props.linkButtonText[0]}</a>
-                            </button>
-                        </a>
+                        <button onClick={() => window.open(this.props.data.linkToGitHub, '_blank')} tabindex="0" type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's Github">
+                            <FontAwesomeIcon id="FaButtonIconLarge" icon={faGithub} alt="GitHub icon"/>
+                            <a id="AboutCardContactInfoTextLeft">{this.props.linkButtonText[0]}</a>
+                        </button>
                     </div> 
                     {checkIfHosted(this.props.data, this.props.linkButtonText)}
                 </div>
