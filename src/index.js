@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Route} from 'react-router-dom';
+import {HashRouter, Route, BrowserRouter} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,11 +10,11 @@ import './CSS/index.css';
 import Homepage from './Components/Homepage/Homepage.js';
 
 ReactDOM.render(
-    <HashRouter>
+    <BrowserRouter>
         <div>
             <Route component={Homepage} />
         </div>
-    </HashRouter>
+    </BrowserRouter>
     , (document.getElementById('root')));
 
 // If you want your app to work offline and load faster, you can change

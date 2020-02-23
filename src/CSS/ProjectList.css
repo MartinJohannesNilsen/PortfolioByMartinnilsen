@@ -67,8 +67,8 @@
 }
 
 .ProjectCardContainer:hover {
-    -webkit-transform: scale(1.04, 1.04);
-    transform: scale(1.04, 1.04); 
+    -webkit-transform: scale(1.02, 1.02);
+    transform: scale(1.02, 1.02); 
     background-color: rgb(85, 48, 48);
 }
 .ProjectCardContainer:hover::after {
@@ -77,8 +77,8 @@
 
 /*Universal design, want the hover effect also while focused using tab*/
 .ProjectCardContainer:focus {
-    -webkit-transform: scale(1.04, 1.04);
-    transform: scale(1.04, 1.04); 
+    -webkit-transform: scale(1.02, 1.02);
+    transform: scale(1.02, 1.02); 
     background-color: rgb(85, 48, 48);
 }
 .ProjectCardContainer:focus::after {
