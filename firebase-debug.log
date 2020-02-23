@@ -1,33 +1,71 @@
-[debug] [2020-02-23T13:56:48.337Z] ----------------------------------------------------------------------
-[debug] [2020-02-23T13:56:48.339Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
-[debug] [2020-02-23T13:56:48.339Z] CLI Version:   7.12.1
-[debug] [2020-02-23T13:56:48.339Z] Platform:      darwin
-[debug] [2020-02-23T13:56:48.339Z] Node Version:  v10.16.3
-[debug] [2020-02-23T13:56:48.340Z] Time:          Sun Feb 23 2020 14:56:48 GMT+0100 (Central European Standard Time)
-[debug] [2020-02-23T13:56:48.340Z] ----------------------------------------------------------------------
-[debug] [2020-02-23T13:56:48.340Z] 
-[debug] [2020-02-23T13:56:48.347Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-02-23T13:56:48.347Z] > authorizing via signed-in user
-[debug] [2020-02-23T13:56:48.347Z] [iam] checking project martinnilsen-58652 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2020-02-23T13:56:48.349Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/martinnilsen-58652:testIamPermissions  
+[debug] [2020-02-23T14:12:20.407Z] ----------------------------------------------------------------------
+[debug] [2020-02-23T14:12:20.409Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-02-23T14:12:20.409Z] CLI Version:   7.12.1
+[debug] [2020-02-23T14:12:20.409Z] Platform:      darwin
+[debug] [2020-02-23T14:12:20.409Z] Node Version:  v10.16.3
+[debug] [2020-02-23T14:12:20.410Z] Time:          Sun Feb 23 2020 15:12:20 GMT+0100 (Central European Standard Time)
+[debug] [2020-02-23T14:12:20.410Z] ----------------------------------------------------------------------
+[debug] [2020-02-23T14:12:20.410Z] 
+[debug] [2020-02-23T14:12:20.417Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-23T14:12:20.417Z] > authorizing via signed-in user
+[debug] [2020-02-23T14:12:20.417Z] [iam] checking project martinnilsen-58652 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-02-23T14:12:20.419Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/martinnilsen-58652:testIamPermissions  
 
-[debug] [2020-02-23T13:56:49.270Z] <<< HTTP RESPONSE 200
-[debug] [2020-02-23T13:56:49.272Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/martinnilsen-58652  
+[debug] [2020-02-23T14:12:21.323Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-23T14:12:21.325Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/martinnilsen-58652  
  
-[debug] [2020-02-23T13:56:49.606Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-23T14:12:21.669Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'martinnilsen-58652'...
 [info] 
 [info] i  deploying hosting
-[debug] [2020-02-23T13:56:49.611Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/martinnilsen-58652/versions  
+[debug] [2020-02-23T14:12:21.672Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/martinnilsen-58652/versions  
 
-[debug] [2020-02-23T13:56:51.212Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-23T14:12:23.368Z] <<< HTTP RESPONSE 200
 [info] i  hosting[martinnilsen-58652]: beginning deploy...
 [info] i  hosting[martinnilsen-58652]: found 27 files in build
-[debug] [2020-02-23T13:56:51.603Z] [hosting] hash cache [YnVpbGQ] stored for 27 files
-[debug] [2020-02-23T13:56:51.603Z] [hosting][hash queue][FINAL]
-[debug] [2020-02-23T13:56:51.603Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/martinnilsen-58652/versions/dfff36da6b6812c8:populateFiles  
+[debug] [2020-02-23T14:12:23.750Z] [hosting] hash cache [YnVpbGQ] stored for 27 files
+[debug] [2020-02-23T14:12:23.751Z] [hosting][hash queue][FINAL]
+[debug] [2020-02-23T14:12:23.751Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/martinnilsen-58652/versions/98be9d3cc5e90379:populateFiles  
  <request body omitted>
-[debug] [2020-02-23T13:56:52.748Z] <<< HTTP RESPONSE 200
-[debug] [2020-02-23T13:56:52.753Z] [hosting][populate queue][FINAL]
-[debug] [2020-02-23T13:56:52.753Z] [hosting] uploads queued: 6
+[debug] [2020-02-23T14:12:25.110Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-23T14:12:25.112Z] [hosting][populate queue][FINAL]
+[debug] [2020-02-23T14:12:25.112Z] [hosting] uploads queued: 1
+[debug] [2020-02-23T14:12:27.670Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[martinnilsen-58652]: file upload complete
+[debug] [2020-02-23T14:12:27.671Z] [hosting] deploy completed after 4301ms
+[debug] [2020-02-23T14:12:27.672Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/service-worker.js",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ]
+        }
+      ],
+      "site": "martinnilsen-58652"
+    },
+    "site": "martinnilsen-58652",
+    "version": "sites/martinnilsen-58652/versions/98be9d3cc5e90379"
+  }
+]
+[info] i  hosting[martinnilsen-58652]: finalizing version...
+[debug] [2020-02-23T14:12:27.672Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/martinnilsen-58652/versions/98be9d3cc5e90379?updateMask=status  
+
