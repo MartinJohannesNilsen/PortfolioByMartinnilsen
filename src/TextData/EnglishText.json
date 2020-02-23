@@ -26,8 +26,7 @@
             "description": "A larger project where we used scrum to organize our team during development. We were a team consisting of 9 people which was supposed to create an application, with the purpose of making the information-flow better for the firm while planning events.",
             "technologies": ["React", "NodeJS", "Express", "Scrum"],
             "imgPath": "harmoni.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni",
-            "linkToWebsite": "http://harmoni.torbjorn.me"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
         },
         {
             "title": "Website for IN Entreprenør AS - under development",

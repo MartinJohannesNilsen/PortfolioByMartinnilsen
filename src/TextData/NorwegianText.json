@@ -26,8 +26,7 @@
             "description": "Et større prosjekt der vi brukte scrum som arbeidsmetode. Vi var et team på 9 som skulle lage et program for å bedre informasjonsflyten innad i et firma som driver med arrangementplanlegging.",
             "technologies": ["React", "NodeJS", "Express", "Scrum"],
             "imgPath": "harmoni.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni",
-            "linkToWebsite": "http://harmoni.torbjorn.me"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
         },
         {
             "title": "Nettside for IN Entreprenør AS - under utvikling",
