@@ -43,6 +43,13 @@
             "imgPath": "portfolio.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/Portofolio",
             "linkToWebsite": "https://martinnilsen.no"
+        },
+        {
+            "title": "Online Compilator",
+            "description": "This online compilator was created in our network programming course. We were supposed to create a website in which compiles source code and returns the result, in addition to the criteria that it had to run the compilation in docker. I have added some functionality, including the ability to use both c++ and python.",
+            "technologies": ["React", "NodeJS", "Express", "Docker"],
+            "imgPath": "onlineCompilator.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/Oeving3"
         }
     ]
 

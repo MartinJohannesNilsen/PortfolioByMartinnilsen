@@ -43,10 +43,13 @@
             "imgPath": "portfolio.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/Portofolio",
             "linkToWebsite": "https://martinnilsen.no"
+        },
+        {
+            "title": "Kildekode-kompilator",
+            "description": "En oppgave vi hadde i nettverksprogrammering. Oppgaven gikk ut på å lage en kompilator som kompilerer kildekode i Docker. Jeg har utvidet den slik at man både kan kompilere c++ og python",
+            "technologies": ["React", "NodeJS", "Express", "Docker"],
+            "imgPath": "onlineCompilator.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/Oeving3"
         }
     ]
-
-
-
-
 }
