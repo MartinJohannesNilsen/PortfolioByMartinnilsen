@@ -37,19 +37,34 @@
             "linkToWebsite": "https://martinnilsen99.github.io/Nettside-for-INEntrep-AS"
         },
         {
+            "title": "Kildekode-kompilator",
+            "description": "En oppgave vi hadde i nettverksprogrammering. Oppgaven gikk ut på å lage en kompilator som kompilerer kildekode i Docker. Jeg har utvidet den slik at man både kan kompilere c++ og python.",
+            "technologies": ["React", "NodeJS", "Express", "Docker"],
+            "imgPath": "onlineCompiler.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/Oeving3"
+        },
+        {
             "title": "Portefølje",
             "description": "Denne porteføljen er laget for å vise tidligere prosjekter jeg har jobbet med.",
             "technologies": ["React", "NodeJS", "hosting", "CSS"],
             "imgPath": "portfolio.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/Portofolio",
+            "linkToGitHub": "https://github.com/Martinnilsen99/PortfolioByMartinnilsen",
             "linkToWebsite": "https://martinnilsen.no"
         },
         {
-            "title": "Kildekode-kompilator",
-            "description": "En oppgave vi hadde i nettverksprogrammering. Oppgaven gikk ut på å lage en kompilator som kompilerer kildekode i Docker. Jeg har utvidet den slik at man både kan kompilere c++ og python",
-            "technologies": ["React", "NodeJS", "Express", "Docker"],
-            "imgPath": "onlineCompiler.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/Oeving3"
+            "title": "Gruppeleker",
+            "description": "Laget en PWA tiltenkt fremtidige sammenkomster, mest for moro skyld. Inneholder populære gruppeleker som \"Jeg har aldri\", \"Nødt eller sannhet\" og \"Pekeleken\".",
+            "technologies": ["React", "SASS", "Firebase Realtime Database"],
+            "imgPath": "gamesByMartinnilsen.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/GamesByMartinnilsen",
+            "linkToWebsite": "https://spill.martinnilsen.no"
+        },
+        {
+            "title": "2PCV",
+            "description": "2PCV - eller \"two-phase commit visualisation\", er et program laget for å visualisere to-fase commit protokollen i praksis. Dette var et avsluttende prosjekt i faget TDAT2004 - Datakommunikasjon med nettverksprogrammering, og ble laget i et team på to.",
+            "technologies": ["Java", "TCP", "Tråder"],
+            "imgPath": "twophasecommit.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/twophasecommit"
         }
     ]
 }

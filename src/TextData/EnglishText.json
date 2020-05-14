@@ -37,19 +37,34 @@
             "linkToWebsite": "https://martinnilsen99.github.io/Nettside-for-INEntrep-AS"
         },
         {
-            "title": "Portfolio",
-            "description": "This portfolio was created for showing which projects I have worked on in the past.",
-            "technologies": ["React", "NodeJS", "hosting", "CSS"],
-            "imgPath": "portfolio.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/Portofolio",
-            "linkToWebsite": "https://martinnilsen.no"
-        },
-        {
             "title": "Online Compiler",
             "description": "This online compiler was created in our network programming course. We were supposed to create a website in which compiles source code using docker, and returns the result/error. I have added some functionality, including a simple IDE text editor and the ability to use both c++ and python.",
             "technologies": ["React", "NodeJS", "Express", "Docker"],
             "imgPath": "onlineCompiler.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/Oeving3"
+        },
+        {
+            "title": "Portfolio",
+            "description": "This portfolio was created for showing which projects I have worked on in the past.",
+            "technologies": ["React", "NodeJS", "hosting", "CSS"],
+            "imgPath": "portfolio.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/PortfolioByMartinnilsen",
+            "linkToWebsite": "https://martinnilsen.no"
+        },
+        {
+            "title": "Groupgames",
+            "description": "Made a PWA for future social gatherings, mostly for fun. Contains popular games as \"Never have I ever\", \"Truth or dare\" and \"Point towards who\".",
+            "technologies": ["React", "SASS", "Firebase Realtime Database"],
+            "imgPath": "gamesByMartinnilsen.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/GamesByMartinnilsen",
+            "linkToWebsite": "https://games.martinnilsen.no"
+        },
+        {
+            "title": "2PCV",
+            "description": "2PCV - or two-phase commit visualisation, is a program made to simulate the two-phase commit protocol in practice. This was a project held in our networking class, and we were a team of two students developing the application.",
+            "technologies": ["Java", "TCP", "Threading"],
+            "imgPath": "twophasecommit.png",
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/twophasecommit"
         }
     ]
 
