@@ -5,14 +5,15 @@
     "footerLanguages": ["Norsk", "Engelsk"],
     "contactInfoText": ["E-post","Telefon"],
     "projectsTitle": "Prosjekter",
-    "linkButtonText": ["GitHub", "Nettside"],
+    "linkButtonText": ["GitHub", "Nettside", "Demo"],
     "projects": [
         {
             "title": "Recess Chess",
             "description": "Et flerspiller-spill vi lagde i 2.semester på dataingeniørstudiet. Dette var vårt første ordentlige møte med JavaFX og samhandlingen mellom Java og en database der vi lagret all informasjon om spillene.",
             "technologies": ["JavaFX", "JavaDB", "MySQL", "HikariCP"],
             "imgPath": "recessChess.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game",
+            "linkToDemovideo": "https://www.youtube.com/watch?v=bIXBot2dlC0"
         },
         {
             "title": "Miniprosjekt i Systemutvikling 2",
@@ -26,7 +27,8 @@
             "description": "Et større prosjekt der vi brukte scrum som arbeidsmetode. Vi var et team på 9 som skulle lage et program for å bedre informasjonsflyten innad i et firma som driver med arrangementplanlegging.",
             "technologies": ["React", "NodeJS", "Express", "Scrum"],
             "imgPath": "harmoni.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni",
+            "linkToDemovideo": "https://www.youtube.com/watch?v=qRyNP3UQkUc"
         },
         {
             "title": "Nettside for IN Entreprenør AS - under utvikling",

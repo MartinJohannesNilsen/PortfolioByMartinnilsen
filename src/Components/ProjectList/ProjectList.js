@@ -1,17 +1,10 @@
 import React, {Component} from "react";
 import "../../CSS/ProjectList.css";
 import "../../CSS/customBootstrap.css"
-import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Fab } from '@material-ui/core';
-import { faAt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
-import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import { faLaptop } from '@fortawesome/free-solid-svg-icons';
-import { faTv } from '@fortawesome/free-solid-svg-icons';
-
+import { faVideo } from '@fortawesome/free-solid-svg-icons';
 
 class ProjectList extends Component{
     render(){
@@ -30,7 +23,6 @@ class ProjectList extends Component{
 
 class ProjectCard extends Component{
     render(){
-
         function checkIfHosted(data, linkButtonText){
             const isHosted = data.hasOwnProperty('linkToWebsite');
             if(isHosted){
@@ -38,7 +30,21 @@ class ProjectCard extends Component{
                     <div>
                         <button onClick={() => window.open(data.linkToWebsite, '_blank')} tabindex="0" type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's website">
                             <FontAwesomeIcon id="FaButtonIconLarge" icon={faDesktop} alt="Desktop icon"/>
-                            <a id="AboutCardContactInfoTextLeft" >{linkButtonText[1]}</a>
+                            <text id="AboutCardContactInfoTextLeft" >{linkButtonText[1]}</text>
+                        </button>
+                    </div> 
+                );
+            }
+            return null
+        }
+        function checkIfDemoVideo(data, linkButtonText){
+            const hasDemoVid = data.hasOwnProperty('linkToDemovideo');
+            if(hasDemoVid){
+                return (
+                    <div>
+                        <button onClick={() => window.open(data.linkToDemovideo, '_blank')} tabindex="0" type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's demovideo">
+                            <FontAwesomeIcon id="FaButtonIconLarge" icon={faVideo} alt="Video icon"/>
+                            <text id="AboutCardContactInfoTextLeft" >{linkButtonText[2]}</text>
                         </button>
                     </div> 
                 );
@@ -62,13 +68,14 @@ class ProjectCard extends Component{
                     <div>
                         <button onClick={() => window.open(this.props.data.linkToGitHub, '_blank')} tabindex="0" type="button" class="btn btn-dark btn-sm ProjectCardLinks" aria-labelledby="Link to this project's Github">
                             <FontAwesomeIcon id="FaButtonIconLarge" icon={faGithub} alt="GitHub icon"/>
-                            <a id="AboutCardContactInfoTextLeft">{this.props.linkButtonText[0]}</a>
+                            <text id="AboutCardContactInfoTextLeft">{this.props.linkButtonText[0]}</text>
                         </button>
                     </div> 
                     {checkIfHosted(this.props.data, this.props.linkButtonText)}
+                    {checkIfDemoVideo(this.props.data, this.props.linkButtonText)}
                 </div>
                 <div id="ProjectCardImage">
-                    <img src={require("../../IMG/ProjectImages/" + this.props.data.imgPath)} />
+                    <img src={require("../../IMG/ProjectImages/" + this.props.data.imgPath)} alt={'Image/icon for "' + this.props.data.title + '"'} />
                 </div>
                 
             </div>

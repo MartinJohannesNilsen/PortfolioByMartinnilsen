@@ -5,14 +5,15 @@
     "footerLanguages": ["Norwegian", "English"],
     "contactInfoText": ["Mail","Telephone"],
     "projectsTitle": "Projects",
-    "linkButtonText": ["GitHub", "Website"],
+    "linkButtonText": ["GitHub", "Website", "Demo"],
     "projects": [
         {
             "title": "Recess Chess",
             "description": "A multiplayer game a team of 6 students, including myself, created at the second semester of our bachelors degree. This was my first meeting with the combination of JavaFX and communication between JavaDB and a database using MySQL.",
             "technologies": ["JavaFX", "JavaDB", "MySQL", "HikariCP"],
             "imgPath": "recessChess.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game",
+            "linkToDemovideo": "https://www.youtube.com/watch?v=bIXBot2dlC0"
         },
         {
             "title": "Miniproject in system development 2 at NTNU",
@@ -26,7 +27,8 @@
             "description": "A larger project where we used scrum to organize our team during development. We were a team consisting of 9 people which was supposed to create an application, with the purpose of making the information-flow better for the firm while planning events.",
             "technologies": ["React", "NodeJS", "Express", "Scrum"],
             "imgPath": "harmoni.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni",
+            "linkToDemovideo": "https://www.youtube.com/watch?v=qRyNP3UQkUc"
         },
         {
             "title": "Website for IN Entreprenør AS - under development",
@@ -61,7 +63,7 @@
         },
         {
             "title": "2PCV",
-            "description": "2PCV - or two-phase commit visualisation, is a program made to simulate the two-phase commit protocol in practice. This was a project held in our networking class, and we were a team of two students developing the application.",
+            "description": "2PCV - or two-phase commit visualisation, is a program made to simulate the two-phase commit protocol in practice. This was a project held in our networking class, developed in a team of two.",
             "technologies": ["Java", "TCP", "Threading"],
             "imgPath": "twophasecommit.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/twophasecommit"

@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import "../../CSS/AboutCard.css";
 import portrait from '../../IMG/Portrett.JPG'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { Fab } from '@material-ui/core';
 import { faAt } from '@fortawesome/free-solid-svg-icons'
 import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
@@ -18,12 +17,12 @@ class AboutCard extends Component{
                     <div id="AboutCardContactInfo">
                         <Fab onClick={() => window.location.href="mailto:martinjnilsen@icloud.com"} aria-labelledby="mail-button" variant="extended" id="AboutCardContactInfoButtonLeft" tabindex="0" alt="Send mail to Martin Johannes Nilsen">
                             <FontAwesomeIcon id="FaButtonIcon" icon={faAt} alt="mail-icon"/>
-                            <a id="AboutCardContactInfoTextLeft">{this.props.data.contactInfoText[0]}</a>
+                            <text id="AboutCardContactInfoTextLeft">{this.props.data.contactInfoText[0]}</text>
                         </Fab>  
                     
                         <Fab onClick={() => window.location.href="tel:004745005502"} aria-labelledby="call-button" variant="extended" id="AboutCardContactInfoButtonRight" tabindex="0" alt="Call Martin Johannes Nilsen">
                             <FontAwesomeIcon id="FaButtonIcon" icon={faPhoneAlt} alt="call-icon"/>
-                            <a id="AboutCardContactInfoTextRight">{this.props.data.contactInfoText[1]}</a>
+                            <text id="AboutCardContactInfoTextRight">{this.props.data.contactInfoText[1]}</text>
                         </Fab>
                     </div>
                 </div>

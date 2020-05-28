@@ -20,7 +20,7 @@
     color: rgb(34, 37, 41);
     font-family: 'Georgia', 'Times New Roman', 'Times';
 }
-#AboutCardInfoBox a{
+#AboutCardInfoBox text{
     text-decoration: none;
     color: rgb(26, 26, 26);
     font-family: 'Georgia', 'Times New Roman', 'Times';

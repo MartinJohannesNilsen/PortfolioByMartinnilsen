@@ -7,12 +7,12 @@ class Footer extends Component{
             <div>
                 <footer class="page-footer font-small" id="FooterContainer">
                     <div id="FooterText">
-                        <a id="FooterTextMB">{this.props.data.footerText}</a><a id="FooterTextMJN">  Martin Johannes Nilsen</a>
+                        <text id="FooterTextMB">{this.props.data.footerText}</text><text id="FooterTextMJN">  Martin Johannes Nilsen</text>
                     </div>
                     <div id="FooterLinks">
-                        <a id="FooterTextLinks" href="/no" tabindex="0">{this.props.data.footerLanguages[0]}</a>
-                        <a id="FooterTextDelimiter"> | </a>
-                        <a id="FooterTextLinks" href="/en" tabindex="0"> {this.props.data.footerLanguages[1]}</a>
+                        <a id="FooterTextLinks" href="/en" tabindex="0">{this.props.data.footerLanguages[1]}</a>
+                        <text id="FooterTextDelimiter"> | </text>
+                        <a id="FooterTextLinks" href="/no" tabindex="0"> {this.props.data.footerLanguages[0]}</a>
                     </div>
                 </footer>
             </div>
