@@ -5,7 +5,7 @@
     "footerLanguages": ["Norsk", "Engelsk"],
     "contactInfoText": ["E-post","Telefon"],
     "projectsTitle": "Prosjekter",
-    "linkButtonText": ["GitHub", "Nettside", "Demo"],
+    "linkButtonText": ["GitHub", "Nettside", "Demo", "ReadMe"],
     "projects": [
         {
             "title": "Recess Chess",
@@ -13,14 +13,15 @@
             "technologies": ["JavaFX", "JavaDB", "MySQL", "HikariCP"],
             "imgPath": "recessChess.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game",
-            "linkToDemovideo": "https://www.youtube.com/watch?v=bIXBot2dlC0"
+            "linkToDemovideo": "https://youtu.be/bIXBot2dlC0"
         },
         {
             "title": "Miniprosjekt i Systemutvikling 2",
             "description": "Vi hadde som oppgave å lage en nettavis med React, der vi kjørte to ulike React-applikasjoner - én for klient og én for server.",
             "technologies": ["React", "NodeJS", "Express", "Flow"],
             "imgPath": "miniproject.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/Øving%2012%20(Miniprosjekt)"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/Øving%2012%20(Miniprosjekt)",
+            "linkToDemovideo": "https://youtu.be/DUS0OjFJsQY"
         },
         {
             "title": "Harmoni",
@@ -28,7 +29,7 @@
             "technologies": ["React", "NodeJS", "Express", "Scrum"],
             "imgPath": "harmoni.png",
             "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni",
-            "linkToDemovideo": "https://www.youtube.com/watch?v=qRyNP3UQkUc"
+            "linkToDemovideo": "https://youtu.be/-PYNNGhCjPc"
         },
         {
             "title": "Nettside for IN Entreprenør AS - under utvikling",
@@ -66,7 +67,8 @@
             "description": "2PCV - eller \"two-phase commit visualisation\", er et program laget for å visualisere to-fase commit protokollen i praksis. Dette var et avsluttende prosjekt i faget TDAT2004 - Datakommunikasjon med nettverksprogrammering, og ble laget i et team på to.",
             "technologies": ["Java", "TCP", "Tråder"],
             "imgPath": "twophasecommit.png",
-            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/twophasecommit"
+            "linkToGitHub": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/twophasecommit",
+            "linkToReadMe": "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/blob/master/twophasecommit/README.md"
         }
     ]
 }
