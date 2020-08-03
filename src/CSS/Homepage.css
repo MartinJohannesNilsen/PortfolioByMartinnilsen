@@ -1,75 +1,78 @@
-#HomepageContainer{
-  background-color: rgb(48, 68, 87);
-  min-height: 100vh;
-  padding: 50px 0px 0px 0px;
-  text-align: center;
+#HomepageContainer {
+	background-color: rgb(48, 68, 87);
+	min-height: 100vh;
+	padding: 50px 0px 0px 0px;
+	text-align: center;
 }
 
-#HomepageContainer h1{
-  color: white;
-  font-family: 'Georgia', 'Times New Roman', 'Times';
-}
-#HomepageContainer p{
-  color: white;
-  font-family: 'Georgia', 'Times New Roman', 'Times';
+#HomepageContainer h1 {
+	color: white;
+	font-family: "Georgia", "Times New Roman", "Times";
 }
 
-#HomePageToTopButton{
-  right: 25px;
-  bottom: 25px;
-  position: fixed;
-  display: none;
+#HomepageContainer p {
+	color: white;
+	font-family: "Georgia", "Times New Roman", "Times";
 }
 
-#HomePageTitle{
-  margin: auto;
-  width: 300px;
-  text-align: center;
+#HomePageToTopButton {
+	right: 25px;
+	bottom: 25px;
+	position: fixed;
+	display: none;
 }
-#HomePageTitle h1{
-  font-size: 40px;
-  font-family: "Courier New", "Courier";
-  overflow: hidden;
-  border-right: .05em solid transparent; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto 35px auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 4s steps(10, end),
-    blink-caret 0.75s step-end 10
-  ;
+
+#HomePageTitle {
+	margin: auto;
+	width: 300px;
+	text-align: center;
+}
+#HomePageTitle h1 {
+	font-size: 40px;
+	font-family: "Courier New", "Courier";
+	overflow: hidden;
+	border-right: 0.05em solid transparent; /* The typwriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto 35px auto; /* Gives that scrolling effect as the typing happens */
+	letter-spacing: 0.15em; /* Adjust as needed */
+	animation: typing 4s steps(10, end), blink-caret 0.75s step-end 10;
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: rgb(255, 255, 255); }
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: rgb(255, 255, 255);
+	}
 }
 
-#FaButtonIcon{
-  font-size: 22px;
+#FaButtonIcon {
+	font-size: 22px;
 }
 
-#FaButtonIconLarge{
-  font-size: 18px;
+#FaButtonIconLarge {
+	font-size: 18px;
 }
 
-
-@Media only screen and (max-width: 840px){
-  #HomepageContainer{
-    background-color: rgb(48, 68, 87);
-    min-height: 100vh;
-    padding: 5px 0px 0px 0px;
-    text-align: center;
-  }
-  #HomePageTitle{
-    display: none;
-  }
-
+@media only screen and (max-width: 840px) {
+	#HomepageContainer {
+		background-color: rgb(48, 68, 87);
+		min-height: 100vh;
+		padding: 5px 0px 0px 0px;
+		text-align: center;
+	}
+	#HomePageTitle {
+		display: none;
+	}
 }
-
-
