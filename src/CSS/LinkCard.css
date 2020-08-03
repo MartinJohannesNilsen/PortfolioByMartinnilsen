@@ -1,113 +1,110 @@
-#LinkCardContainer{
-    margin: 35px auto 35px auto;
-    width: 80%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
+#LinkCardContainer {
+	margin: 35px auto 35px auto;
+	width: 80%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
-.LinkCardBox{
-    margin: auto;
-    background-color: rgb(35, 50, 73);
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+.LinkCardBox {
+	margin: auto;
+	background-color: rgb(35, 50, 73);
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.LinkCardIcon{
-    color: rgba(225, 224, 224, 0.741);
-    width: 30%;
-    height: 30%;
-    margin: 5% 5% 5% 5%;
+.LinkCardIcon {
+	color: rgba(225, 224, 224, 0.741);
+	width: 30%;
+	height: 30%;
+	margin: 5% 5% 5% 5%;
 }
 
-.LinkCardBox:hover .LinkCardIcon{
-    color: rgba(245, 242, 242, 0.913);
+.LinkCardBox:hover .LinkCardIcon {
+	color: rgba(245, 242, 242, 0.913);
 }
 
 /*This is the GitHub*/
-#LinkCardIcon1{
-    margin-top: 6%;
+#LinkCardIcon1 {
+	margin-top: 6%;
 }
 
 /*This is the CV icon*/
-#LinkCardIcon3{
-    width: 25%;
-    height: 25%;
-    margin-top: 8%;
-    opacity: 0.8;
-    filter: invert(100%) sepia(0%) saturate(7436%) hue-rotate(187deg) brightness(88%) contrast(103%);
+#LinkCardIcon3 {
+	width: 25%;
+	height: 25%;
+	margin-top: 8%;
+	opacity: 0.8;
+	filter: invert(100%) sepia(0%) saturate(7436%) hue-rotate(187deg)
+		brightness(88%) contrast(103%);
 }
 
-.LinkCardBox:hover #LinkCardIcon3{
-    opacity: 0.913;
-    filter: invert(99%) sepia(8%) saturate(78%) hue-rotate(197deg) brightness(117%) contrast(90%);
+.LinkCardBox:hover #LinkCardIcon3 {
+	opacity: 0.913;
+	filter: invert(99%) sepia(8%) saturate(78%) hue-rotate(197deg)
+		brightness(117%) contrast(90%);
 }
 
-
-
-#LinkCardBox1{
-    clip-path: polygon(0% 100%, 90% 100%, 100% 0%, 0% 0%);
-    width: 112%;
+#LinkCardBox1 {
+	clip-path: polygon(0% 100%, 90% 100%, 100% 0%, 0% 0%);
+	width: 112%;
 }
-#LinkCardBox2{
-    clip-path: polygon(0% 100%, 90% 100%, 100% 0%, 10% 0%);
-    width: 111%;
+#LinkCardBox2 {
+	clip-path: polygon(0% 100%, 90% 100%, 100% 0%, 10% 0%);
+	width: 111%;
 }
-#LinkCardBox3{
-    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 10% 0%);
-    width: 100%;
+#LinkCardBox3 {
+	clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 10% 0%);
+	width: 100%;
 }
 
-
-
-.LinkCardBox::after{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /*box-shadow: 0 5px 15px rgba(24, 18, 18, 0.89);*/
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    opacity: 0;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+.LinkCardBox::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*box-shadow: 0 5px 15px rgba(24, 18, 18, 0.89);*/
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	opacity: 0;
+	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .LinkCardBox:hover {
-    -webkit-transform: scale(1.07, 1.07);
-    transform: scale(1.07, 1.07);
-    cursor: pointer; 
-    z-index: 100;
-    background-color: rgb(47, 68, 100);
+	-webkit-transform: scale(1.07, 1.07);
+	transform: scale(1.07, 1.07);
+	cursor: pointer;
+	z-index: 100;
+	background-color: rgb(47, 68, 100);
 }
 .LinkCardBox:hover::after {
-    opacity: 1;
-    z-index: 3;
+	opacity: 1;
+	z-index: 3;
 }
 
-#LinkCardBoxATag:focus .LinkCardIcon{
-    color: rgba(245, 242, 242, 0.913);
+#LinkCardBoxATag:focus .LinkCardIcon {
+	color: rgba(245, 242, 242, 0.913);
 }
-#LinkCardBoxATag:focus #LinkCardIcon3{
-    opacity: 0.913;
-    filter: invert(99%) sepia(8%) saturate(78%) hue-rotate(197deg) brightness(117%) contrast(90%);
-}
-
-@Media only screen and (max-width: 1200px){
-    #LinkCardContainer{
-        width: 95%;
-        height: 100%;
-    }
+#LinkCardBoxATag:focus #LinkCardIcon3 {
+	opacity: 0.913;
+	filter: invert(99%) sepia(8%) saturate(78%) hue-rotate(197deg)
+		brightness(117%) contrast(90%);
 }
 
-@Media only screen and (max-width: 840px){
-    #LinkCardContainer{
-        margin: 8px auto 0 auto;
-        width: 96%;
-        height: 100%;
-    }
+@media only screen and (max-width: 1200px) {
+	#LinkCardContainer {
+		width: 95%;
+		height: 100%;
+	}
 }
 
+@media only screen and (max-width: 840px) {
+	#LinkCardContainer {
+		margin: 8px auto 0 auto;
+		width: 96%;
+		height: 100%;
+	}
+}

@@ -1,229 +1,222 @@
-#ProjectListContainer{
-    margin: 30px auto 10px auto;
-    width: 80%;
-    height: 100%;
-    min-height: 300px;
-    background-color: rgb(40, 48, 59);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    padding: 15px 0 0 0;
+#ProjectListContainer {
+	margin: 30px auto 10px auto;
+	width: 80%;
+	height: 100%;
+	min-height: 300px;
+	background-color: rgb(40, 48, 59);
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+		0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	padding: 15px 0 0 0;
 }
 
-#ProjectListTitle{
-    color: rgb(242, 240, 240);
-    font-family: 'Georgia', 'Times New Roman', 'Times';
+#ProjectListTitle {
+	color: rgb(242, 240, 240);
+	font-family: "Georgia", "Times New Roman", "Times";
 }
 
-#ProjectListTitleUnderline{
-    width: 7%;
-    margin: 0 auto 25px auto;
-    height: 2px;
-    background-color:rgb(197, 197, 197);
+#ProjectListTitleUnderline {
+	width: 7%;
+	margin: 0 auto 25px auto;
+	height: 2px;
+	background-color: rgb(197, 197, 197);
 }
 
-@Media only screen and (max-width: 1200px){
-    #ProjectListContainer{
-        width: 95%;
-        height: 100%;
-        margin: 8px auto 8px auto;
-    }
+@media only screen and (max-width: 1200px) {
+	#ProjectListContainer {
+		width: 95%;
+		height: 100%;
+		margin: 8px auto 8px auto;
+	}
 }
 
-@Media only screen and (max-width: 840px){
-    #ProjectListContainer{
-        margin: 8px auto 8px auto;
-        width: 96%;
-        height: 100%;
-        min-height: 300px;
-    }
-    #ProjectListTitleUnderline{
-        width: 12%;
-    }
+@media only screen and (max-width: 840px) {
+	#ProjectListContainer {
+		margin: 8px auto 8px auto;
+		width: 96%;
+		height: 100%;
+		min-height: 300px;
+	}
+	#ProjectListTitleUnderline {
+		width: 12%;
+	}
 }
 
-
-.ProjectCardContainer{
-    margin: 0 auto 0 auto;
-    width: 100%;
-    height: 100%;
-    min-height: 200px;
-    background-color: rgb(40, 48, 59);
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    display: grid;
-    grid-template-columns: 0.3fr 3fr 1fr 1fr;
+.ProjectCardContainer {
+	margin: 0 auto 0 auto;
+	width: 100%;
+	height: 100%;
+	min-height: 200px;
+	background-color: rgb(40, 48, 59);
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	display: grid;
+	grid-template-columns: 0.3fr 3fr 1fr 1fr;
 }
 
-.ProjectCardContainer::after{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+.ProjectCardContainer::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .ProjectCardContainer:hover {
-    -webkit-transform: scale(1.02, 1.02);
-    transform: scale(1.02, 1.02); 
-    background-color: rgb(85, 48, 48);
+	-webkit-transform: scale(1.02, 1.02);
+	transform: scale(1.02, 1.02);
+	background-color: rgb(85, 48, 48);
 }
 .ProjectCardContainer:hover::after {
-    opacity: 1;
+	opacity: 1;
 }
 
 /*Universal design, want the hover effect also while focused using tab*/
 .ProjectCardContainer:focus {
-    -webkit-transform: scale(1.02, 1.02);
-    transform: scale(1.02, 1.02); 
-    background-color: rgb(85, 48, 48);
+	-webkit-transform: scale(1.02, 1.02);
+	transform: scale(1.02, 1.02);
+	background-color: rgb(85, 48, 48);
 }
 .ProjectCardContainer:focus::after {
-    opacity: 1;
+	opacity: 1;
 }
 
-
-#ProjectCardVerticalLine{
-    margin: auto 10px auto 35px;
-    border-left: 6px solid rgb(209, 209, 209);
-    height: 85%;
+#ProjectCardVerticalLine {
+	margin: auto 10px auto 35px;
+	border-left: 6px solid rgb(209, 209, 209);
+	height: 85%;
 }
 
-#ProjectCardInformation{
-    padding: 20px 10px 20px 10px;
-    text-align: left;
-    font-family: 'Georgia', 'Times New Roman', 'Times';
-    color: rgb(223, 219, 219);
+#ProjectCardInformation {
+	padding: 20px 10px 20px 10px;
+	text-align: left;
+	font-family: "Georgia", "Times New Roman", "Times";
+	color: rgb(223, 219, 219);
 }
 
-#ProjectCardImage{
-    margin: auto;
-    width: 85%;
-    height: 85%;
+#ProjectCardImage {
+	margin: auto;
+	width: 85%;
+	height: 85%;
 }
-#ProjectCardImage img{
-    width: 100%;
-    height: 100%;
-    /*clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%, 10% 50%);*/
-    opacity: 0.8;
-}
-
-#ProjectCardInformationTechnologies{
-    margin: auto auto 0px -3px;
-    position: relative;
-    bottom: 0px;
+#ProjectCardImage img {
+	width: 100%;
+	height: 100%;
+	/*clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%, 10% 50%);*/
+	opacity: 0.8;
 }
 
-#ProjectCardInformationTechnologies button{
-    margin: 3px;
+#ProjectCardInformationTechnologies {
+	margin: auto auto 0px -3px;
+	position: relative;
+	bottom: 0px;
 }
 
-.ProjectCardLinks{
-    margin: 10px;
-    width: 90%;
-    height: 40px !important;
+#ProjectCardInformationTechnologies button {
+	margin: 3px;
 }
 
-#ProjectCardLinkBox{
-    margin: auto;
+.ProjectCardLinks {
+	margin: 10px;
+	width: 90%;
+	height: 40px !important;
 }
 
-@Media only screen and (max-width: 1200px){
-    .ProjectCardContainer{
-        margin: 0 auto 0 auto;
-        width: 100%;
-        height: 100%;
-        min-height: 200px;
-        background-color: rgb(40, 48, 59);
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        display: grid;
-        grid-template-columns: 0.3fr 2.5fr 0.8fr 1fr;
-    }
+#ProjectCardLinkBox {
+	margin: auto;
 }
 
-@Media only screen and (max-width: 840px){
-    .ProjectCardContainer{
-        grid-template-columns: 0.1fr 4fr 0.01fr 0.001fr;
-        grid-template-areas: 
-            "strek tekst bilde knapper";
-    }
-    #ProjectCardImage img{
-        display: none;
-    }
-    #ProjectCardLinkBox button{
-        display: none;
-    }
-    #ProjectCardVerticalLine{
-        margin: auto 10px auto 20px;
-        border-left: 6px solid rgb(209, 209, 209);
-        height: 85%;
-    }
-    .ProjectCardContainer:hover{
-        grid-template-columns: 0.2fr 4fr 0.01fr;
-        grid-template-areas: 
-            "strek tekst bilde"
-            "strek knapper bilde";
-    }
-    .ProjectCardContainer:hover #ProjectCardVerticalLine{
-        grid-area: strek;
-    }
-    .ProjectCardContainer:hover #ProjectCardInformation{
-        grid-area: tekst;
-    }
-    .ProjectCardContainer:hover #ProjectCardImage{
-        grid-area: bilde;
-    }
-    .ProjectCardContainer:hover #ProjectCardLinkBox{
-        grid-area: knapper;
-        display: flex;
-        margin: -15px auto 15px auto;
-        text-align: center;
-    }
-    .ProjectCardContainer:hover #ProjectCardLinkBox button{
-        display: inline;
-    }
-    
-    .ProjectCardContainer:focus {
-        -webkit-transform: none;
-        transform: none; 
-        background-color: rgb(40, 48, 59);
-        grid-template-columns: 0.2fr 4fr 0.01fr;
-        grid-template-areas: 
-            "strek tekst bilde"
-            "strek knapper bilde";
-    }
-    .ProjectCardContainer:focus::after {
-        opacity: 0;
-    }
-    .ProjectCardContainer:focus #ProjectCardVerticalLine{
-        grid-area: strek;
-    }
-    .ProjectCardContainer:focus #ProjectCardInformation{
-        grid-area: tekst;
-    }
-    .ProjectCardContainer:focus #ProjectCardImage{
-        grid-area: bilde;
-    }
-    .ProjectCardContainer:focus #ProjectCardLinkBox{
-        grid-area: knapper;
-        display: flex;
-        margin: -15px auto 15px auto;
-        text-align: center;
-    }
-    .ProjectCardContainer:focus #ProjectCardLinkBox button{
-        display: inline;
-    }
+@media only screen and (max-width: 1200px) {
+	.ProjectCardContainer {
+		margin: 0 auto 0 auto;
+		width: 100%;
+		height: 100%;
+		min-height: 200px;
+		background-color: rgb(40, 48, 59);
+		width: 100%;
+		height: 100%;
+		-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+		transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+		display: grid;
+		grid-template-columns: 0.3fr 2.5fr 0.8fr 1fr;
+	}
+}
 
-    
+@media only screen and (max-width: 840px) {
+	.ProjectCardContainer {
+		grid-template-columns: 0.1fr 4fr 0.01fr 0.001fr;
+		grid-template-areas: "strek tekst bilde knapper";
+	}
+	#ProjectCardImage img {
+		display: none;
+	}
+	#ProjectCardLinkBox button {
+		display: none;
+	}
+	#ProjectCardVerticalLine {
+		margin: auto 10px auto 20px;
+		border-left: 6px solid rgb(209, 209, 209);
+		height: 85%;
+	}
+	.ProjectCardContainer:hover {
+		grid-template-columns: 0.2fr 4fr 0.01fr;
+		grid-template-areas:
+			"strek tekst bilde"
+			"strek knapper bilde";
+	}
+	.ProjectCardContainer:hover #ProjectCardVerticalLine {
+		grid-area: strek;
+	}
+	.ProjectCardContainer:hover #ProjectCardInformation {
+		grid-area: tekst;
+	}
+	.ProjectCardContainer:hover #ProjectCardImage {
+		grid-area: bilde;
+	}
+	.ProjectCardContainer:hover #ProjectCardLinkBox {
+		grid-area: knapper;
+		display: flex;
+		margin: -15px auto 15px auto;
+		text-align: center;
+	}
+	.ProjectCardContainer:hover #ProjectCardLinkBox button {
+		display: inline;
+	}
 
-    
-
+	.ProjectCardContainer:focus {
+		-webkit-transform: none;
+		transform: none;
+		background-color: rgb(40, 48, 59);
+		grid-template-columns: 0.2fr 4fr 0.01fr;
+		grid-template-areas:
+			"strek tekst bilde"
+			"strek knapper bilde";
+	}
+	.ProjectCardContainer:focus::after {
+		opacity: 0;
+	}
+	.ProjectCardContainer:focus #ProjectCardVerticalLine {
+		grid-area: strek;
+	}
+	.ProjectCardContainer:focus #ProjectCardInformation {
+		grid-area: tekst;
+	}
+	.ProjectCardContainer:focus #ProjectCardImage {
+		grid-area: bilde;
+	}
+	.ProjectCardContainer:focus #ProjectCardLinkBox {
+		grid-area: knapper;
+		display: flex;
+		margin: -15px auto 15px auto;
+		text-align: center;
+	}
+	.ProjectCardContainer:focus #ProjectCardLinkBox button {
+		display: inline;
+	}
 }
 
 /* - mobilvisning
@@ -249,5 +242,3 @@
         display: none;
     }
 */
-
-

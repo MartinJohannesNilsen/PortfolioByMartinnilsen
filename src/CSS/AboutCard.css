@@ -1,102 +1,100 @@
-#AboutCardContainer{
-    margin: 10px auto auto auto;
-    background-color: rgb(114, 47, 55);
-    width: 80%;
-    height: 100%;
-    min-height: 300px;
-    /*box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);*/
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-
+#AboutCardContainer {
+	margin: 10px auto auto auto;
+	background-color: rgb(114, 47, 55);
+	width: 80%;
+	height: 100%;
+	min-height: 300px;
+	/*box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);*/
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	display: grid;
+	grid-template-columns: 3fr 1fr;
 }
 
-#AboutCardInfoBox{
-    margin: auto;
-    padding: 10px;
-
+#AboutCardInfoBox {
+	margin: auto;
+	padding: 10px;
 }
-#AboutCardInfoBox h3{
-    color: rgb(34, 37, 41);
-    font-family: 'Georgia', 'Times New Roman', 'Times';
+#AboutCardInfoBox h3 {
+	color: rgb(34, 37, 41);
+	font-family: "Georgia", "Times New Roman", "Times";
 }
-#AboutCardInfoBox text{
-    text-decoration: none;
-    color: rgb(26, 26, 26);
-    font-family: 'Georgia', 'Times New Roman', 'Times';
-    text-transform: none;
-}
-
-#AboutCardContactInfo{
-    padding: 20px;
-}
-#AboutCardContactInfoButtonLeft{
-    margin: 10px;
-}
-#AboutCardContactInfoTextLeft{
-    margin-left: 10px;
-}
-#AboutCardContactInfoButtonRight{
-    padding: 10px;
-}
-#AboutCardContactInfoTextRight{
-    margin-left: 10px;
+#AboutCardInfoBox text {
+	text-decoration: none;
+	color: rgb(26, 26, 26);
+	font-family: "Georgia", "Times New Roman", "Times";
+	text-transform: none;
 }
 
-#AboutCardImage{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 10% 0%);
+#AboutCardContactInfo {
+	padding: 20px;
+}
+#AboutCardContactInfoButtonLeft {
+	margin: 10px;
+}
+#AboutCardContactInfoTextLeft {
+	margin-left: 10px;
+}
+#AboutCardContactInfoButtonRight {
+	padding: 10px;
+}
+#AboutCardContactInfoTextRight {
+	margin-left: 10px;
 }
 
-#AboutCardContainer h1{
-    color: rgb(255, 255, 255);
-    font-family: 'Georgia', 'Times New Roman', 'Times';
-}
-#AboutCardContainer h3{
-    color: rgb(216, 202, 202);
-    font-family: 'Georgia', 'Times New Roman', 'Times';
-}
-#AboutCardContainer h2{
-    color: rgb(225, 225, 225);
-    font-family: 'Georgia', 'Times New Roman', 'Times';
-}
-#AboutCardContainer p{
-    color: rgb(203, 202, 202);
-    font-family: 'Georgia', 'Times New Roman', 'Times';
+#AboutCardImage {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 10% 0%);
 }
 
-@Media only screen and (max-width: 1200px){
-    #AboutCardContainer{
-        width: 95%;
-        height: 100%;
-        grid-template-columns: 2fr 1fr;
-        min-height: 1px;
-    }
+#AboutCardContainer h1 {
+	color: rgb(255, 255, 255);
+	font-family: "Georgia", "Times New Roman", "Times";
+}
+#AboutCardContainer h3 {
+	color: rgb(216, 202, 202);
+	font-family: "Georgia", "Times New Roman", "Times";
+}
+#AboutCardContainer h2 {
+	color: rgb(225, 225, 225);
+	font-family: "Georgia", "Times New Roman", "Times";
+}
+#AboutCardContainer p {
+	color: rgb(203, 202, 202);
+	font-family: "Georgia", "Times New Roman", "Times";
 }
 
-@Media only screen and (max-width: 840px){
-    #AboutCardContainer{
-        width: 96%;
-        height: 100%;
-        grid-template-columns: 1fr;
-    }
-    /* - for hiding the photo
+@media only screen and (max-width: 1200px) {
+	#AboutCardContainer {
+		width: 95%;
+		height: 100%;
+		grid-template-columns: 2fr 1fr;
+		min-height: 1px;
+	}
+}
+
+@media only screen and (max-width: 840px) {
+	#AboutCardContainer {
+		width: 96%;
+		height: 100%;
+		grid-template-columns: 1fr;
+	}
+	/* - for hiding the photo
     #AboutCardImageDiv{
         display:none;
     }
     */
-    #AboutCardImage{
-        height: 60%;
-        width: 60%;
-        margin-bottom: 30px;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        border-radius: 6px;
-        object-fit: cover;
-        clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
-    }
-    #AboutCardInfoBox{
-        padding: 20px 5px 20px 5px;
-    }
+	#AboutCardImage {
+		height: 60%;
+		width: 60%;
+		margin-bottom: 30px;
+		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+		border-radius: 6px;
+		object-fit: cover;
+		clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+	}
+	#AboutCardInfoBox {
+		padding: 20px 5px 20px 5px;
+	}
 }
