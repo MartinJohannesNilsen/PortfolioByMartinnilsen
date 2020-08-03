@@ -1,0 +1,22 @@
+{
+    "norwegian" : {
+        "title" : "Portefølje",
+        "aboutText": "Dataingeniørstudent ved NTNU og full-stakk utvikler",
+        "footerText": "Laget av: ",
+        "footerLanguages": ["Norsk", "Engelsk"],
+        "contactInfoText": ["E-post","Telefon"],
+        "projectsTitle": "Prosjekter",
+        "linkButtonText": ["GitHub", "Nettside", "Demo", "ReadMe"],
+        "projects": []
+    },
+    "english" : {
+        "title" : "Portfolio ",
+        "aboutText": "Computer engineering student and full-stack developer",
+        "footerText": "Made by: ",
+        "footerLanguages": ["Norwegian", "English"],
+        "contactInfoText": ["Mail","Telephone"],
+        "projectsTitle": "Projects",
+        "linkButtonText": ["GitHub", "Website", "Demo", "ReadMe"],
+        "projects": []
+    }
+}
