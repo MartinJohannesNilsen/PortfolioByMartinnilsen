@@ -30,7 +30,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"sitemap": "node src/sitemap-generator.js",
-		"deploy": "npm run build && firebase deploy"
+		"deploy": "npm run build && npm run sitemap && firebase deploy"
 	},
 	"eslintConfig": {
 		"extends": "react-app"

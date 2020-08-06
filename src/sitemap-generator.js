@@ -8,7 +8,7 @@ const Sitemap = require("react-router-sitemap").default;
 function generateSitemap() {
 	return new Sitemap(router)
 		.build("https://martinnilsen.no")
-		.save("../sitemap.xml");
+		.save("./public/sitemap.xml");
 }
 
 generateSitemap();
