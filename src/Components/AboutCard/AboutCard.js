@@ -22,6 +22,7 @@ const AboutCard = (props) => {
 						id="AboutCardContactInfoButtonLeft"
 						tabIndex="0"
 						alt="Send mail to Martin Johannes Nilsen"
+						title="Send mail to Martin Johannes Nilsen"
 					>
 						<FontAwesomeIcon id="FaButtonIcon" icon={faAt} alt="mail-icon" />
 						<text id="AboutCardContactInfoTextLeft">
@@ -36,6 +37,7 @@ const AboutCard = (props) => {
 						id="AboutCardContactInfoButtonRight"
 						tabIndex="0"
 						alt="Call Martin Johannes Nilsen"
+						title="Call Martin Johannes Nilsen"
 					>
 						<FontAwesomeIcon
 							id="FaButtonIcon"
@@ -53,6 +55,7 @@ const AboutCard = (props) => {
 					id="AboutCardImage"
 					src={portrait}
 					alt="Portrait of Martin Johannes Nilsen"
+					title="Portrait of Martin Johannes Nilsen"
 				/>
 			</div>
 		</div>
