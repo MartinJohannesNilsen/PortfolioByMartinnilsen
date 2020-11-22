@@ -32,6 +32,7 @@ const ProjectCard = (props) => {
 		const hasGitHub = data.hasOwnProperty("linkToGitHub");
 		const hasDemoVid = data.hasOwnProperty("linkToDemovideo");
 		const hasReadMe = data.hasOwnProperty("linkToReadMe");
+		const hasPaper = data.hasOwnProperty("linkToPaper");
 		return (
 			<React.Fragment>
 				{hasGitHub ? (
@@ -101,7 +102,7 @@ const ProjectCard = (props) => {
 							tabIndex="0"
 							type="button"
 							className="btn btn-dark btn-sm ProjectCardLinks"
-							aria-labelledby="Link to this project's demovideo"
+							aria-labelledby="Link to this project's ReadMe"
 						>
 							<FontAwesomeIcon
 								id="FaButtonIconLarge"
@@ -109,6 +110,26 @@ const ProjectCard = (props) => {
 								alt="Video icon"
 							/>
 							<text id="AboutCardContactInfoTextLeft">{linkButtonText[3]}</text>
+						</button>
+					</div>
+				) : (
+					<></>
+				)}
+				{hasPaper ? (
+					<div>
+						<button
+							onClick={() => window.open(data.linkToPaper, "_blank")}
+							tabIndex="0"
+							type="button"
+							className="btn btn-dark btn-sm ProjectCardLinks"
+							aria-labelledby="Link to this project's paper"
+						>
+							<FontAwesomeIcon
+								id="FaButtonIconLarge"
+								icon={faFile}
+								alt="Video icon"
+							/>
+							<text id="AboutCardContactInfoTextLeft">{linkButtonText[4]}</text>
 						</button>
 					</div>
 				) : (
