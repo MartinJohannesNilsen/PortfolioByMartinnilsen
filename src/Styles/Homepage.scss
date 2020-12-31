@@ -1,17 +1,18 @@
+@import "colorThemes";
+
 #HomepageContainer {
-	background-color: rgb(48, 68, 87);
 	min-height: 100vh;
 	padding: 50px 0px 0px 0px;
 	text-align: center;
 }
 
 #HomepageContainer h1 {
-	color: white;
+	color: $text_color_primary;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 
 #HomepageContainer p {
-	color: white;
+	color: $text_color_primary;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 
@@ -53,7 +54,7 @@
 		border-color: transparent;
 	}
 	50% {
-		border-color: rgb(255, 255, 255);
+		border-color: $text_color_primary;
 	}
 }
 
@@ -67,10 +68,7 @@
 
 @media only screen and (max-width: 840px) {
 	#HomepageContainer {
-		background-color: rgb(48, 68, 87);
-		min-height: 100vh;
 		padding: 5px 0px 0px 0px;
-		text-align: center;
 	}
 	#HomePageTitle {
 		display: none;

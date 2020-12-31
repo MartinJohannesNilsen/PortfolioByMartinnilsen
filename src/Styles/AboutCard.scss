@@ -1,6 +1,8 @@
+@import "colorThemes";
+
 #AboutCardContainer {
 	margin: 10px auto auto auto;
-	background-color: rgb(114, 47, 55);
+	background-color: $aboutcard_background_color;
 	width: 80%;
 	height: 100%;
 	min-height: 300px;
@@ -48,20 +50,11 @@
 	clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 10% 0%);
 }
 
-#AboutCardContainer h1 {
-	color: rgb(255, 255, 255);
-	font-family: "Georgia", "Times New Roman", "Times";
-}
-#AboutCardContainer h3 {
-	color: rgb(216, 202, 202);
-	font-family: "Georgia", "Times New Roman", "Times";
-}
-#AboutCardContainer h2 {
-	color: rgb(225, 225, 225);
-	font-family: "Georgia", "Times New Roman", "Times";
-}
+#AboutCardContainer h1,
+#AboutCardContainer h2,
+#AboutCardContainer h3,
 #AboutCardContainer p {
-	color: rgb(203, 202, 202);
+	color: $text_color_primary;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 

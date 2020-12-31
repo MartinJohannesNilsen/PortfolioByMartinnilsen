@@ -1,6 +1,6 @@
 import React from "react";
-import "../../CSS/ProjectList.css";
-import "../../CSS/customBootstrap.css";
+import "../../Styles/ProjectList.scss";
+import "../../Styles/_customBootstrap.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faDesktop } from "@fortawesome/free-solid-svg-icons";

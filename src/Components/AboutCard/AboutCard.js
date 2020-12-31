@@ -1,5 +1,5 @@
 import React from "react";
-import "../../CSS/AboutCard.css";
+import "../../Styles/AboutCard.scss";
 import portrait from "../../IMG/Portrett.JPG";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fab } from "@material-ui/core";
