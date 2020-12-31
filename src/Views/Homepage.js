@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../CSS/Homepage.css";
+import "../Styles/Homepage.scss";
 import AboutCard from "../Components/AboutCard/AboutCard";
 import LinkCard from "../Components/LinkCard/LinkCard";
 import ProjectList from "../Components/ProjectList/ProjectList";

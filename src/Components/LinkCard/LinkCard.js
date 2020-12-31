@@ -1,5 +1,5 @@
 import React from "react";
-import "../../CSS/LinkCard.css";
+import "../../Styles/LinkCard.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";

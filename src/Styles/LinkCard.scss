@@ -1,3 +1,5 @@
+@import "colorThemes";
+
 #LinkCardContainer {
 	margin: 35px auto 35px auto;
 	width: 80%;
@@ -8,7 +10,7 @@
 
 .LinkCardBox {
 	margin: auto;
-	background-color: rgb(35, 50, 73);
+	background-color: $linkcard_background_color;
 	width: 100%;
 	height: 100%;
 	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -78,7 +80,7 @@
 	transform: scale(1.07, 1.07);
 	cursor: pointer;
 	z-index: 100;
-	background-color: rgb(47, 68, 100);
+	background-color: $linkcard_hover_background_color;
 }
 .LinkCardBox:hover::after {
 	opacity: 1;
