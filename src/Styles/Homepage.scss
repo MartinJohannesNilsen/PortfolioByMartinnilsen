@@ -7,7 +7,7 @@
 }
 
 #HomepageContainer h1 {
-	color: $text_color_primary;
+	color: $text_color_secondary;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 
@@ -54,7 +54,7 @@
 		border-color: transparent;
 	}
 	50% {
-		border-color: $text_color_primary;
+		border-color: $text_color_secondary;
 	}
 }
 

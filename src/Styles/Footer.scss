@@ -6,24 +6,24 @@
 }
 
 #FooterTextLinks {
-	color: rgb(206, 89, 89);
+	color: $text_color_third;
 	text-decoration: none;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 #FooterTextMB {
-	color: $text_color_primary;
+	color: $text_color_secondary;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 #FooterTextMJN {
-	color: $text_color_primary;
+	color: $text_color_secondary;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 #FooterTextLinks:hover {
-	color: $text_color_third;
+	color: $text_color_fourth;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 #FooterTextDelimiter {
-	color: $text_color_primary;
+	color: $text_color_secondary;
 	font-family: "Georgia", "Times New Roman", "Times";
 }
 
