@@ -163,7 +163,7 @@ const ProjectCard = (props) => {
 			</div>
 			<div id="ProjectCardImage">
 				<img
-					src={require("../../IMG/ProjectImages/" + props.data.imgPath)}
+					src={props.data.imgPath}
 					alt={'Image/icon for "' + props.data.title + '"'}
 				/>
 			</div>

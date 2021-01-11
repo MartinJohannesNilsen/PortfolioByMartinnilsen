@@ -1,6 +1,5 @@
 import React from "react";
 import "../../Styles/AboutCard.scss";
-import portrait from "../../IMG/Portrett.JPG";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fab } from "@material-ui/core";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
@@ -53,7 +52,7 @@ const AboutCard = (props) => {
 			<div id="AboutCardImageDiv">
 				<img
 					id="AboutCardImage"
-					src={portrait}
+					src={"https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Portrett.JPG?alt=media&token=ba7bb154-7564-488d-9c69-4592b4d80643"}
 					alt="Portrait of Martin Johannes Nilsen"
 					title="Portrait of Martin Johannes Nilsen"
 				/>
