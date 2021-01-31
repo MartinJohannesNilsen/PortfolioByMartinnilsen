@@ -49,7 +49,7 @@ const ProjectCard = (props) => {
 								icon={faGithub}
 								alt="GitHub icon"
 							/>
-							<text id="AboutCardContactInfoTextLeft">{linkButtonText[0]}</text>
+							<text className="buttonText">{linkButtonText[0]}</text>
 						</button>
 					</div>
 				) : (
@@ -69,7 +69,7 @@ const ProjectCard = (props) => {
 								icon={faDesktop}
 								alt="Desktop icon"
 							/>
-							<text id="AboutCardContactInfoTextLeft">{linkButtonText[1]}</text>
+							<text className="buttonText">{linkButtonText[1]}</text>
 						</button>
 					</div>
 				) : (
@@ -89,7 +89,7 @@ const ProjectCard = (props) => {
 								icon={faVideo}
 								alt="Video icon"
 							/>
-							<text id="AboutCardContactInfoTextLeft">{linkButtonText[2]}</text>
+							<text className="buttonText">{linkButtonText[2]}</text>
 						</button>
 					</div>
 				) : (
@@ -109,7 +109,7 @@ const ProjectCard = (props) => {
 								icon={faFile}
 								alt="Video icon"
 							/>
-							<text id="AboutCardContactInfoTextLeft">{linkButtonText[3]}</text>
+							<text className="buttonText">{linkButtonText[3]}</text>
 						</button>
 					</div>
 				) : (
@@ -129,7 +129,7 @@ const ProjectCard = (props) => {
 								icon={faFile}
 								alt="Video icon"
 							/>
-							<text id="AboutCardContactInfoTextLeft">{linkButtonText[4]}</text>
+							<text className="buttonText">{linkButtonText[4]}</text>
 						</button>
 					</div>
 				) : (
