@@ -59,27 +59,27 @@ const ProjectCard = (props) => {
 		return (
 			<React.Fragment>
 				{hasGitHub ? (
-					<LinkButton data={data} linkButtonText={linkButtonText} number={0} icon={faGithub} />
+					<LinkButton path={data.linkToGitHub} text={linkButtonText} number={0} icon={faGithub} />
 				) : (
 					<></>
 				)}
 				{isHosted ? (
-					<LinkButton data={data} linkButtonText={linkButtonText} number={1} icon={faDesktop} />
+					<LinkButton path={data.linkToWebsite} text={linkButtonText} number={1} icon={faDesktop} />
 				) : (
 					<></>
 				)}
 				{hasDemoVid ? (
-					<LinkButton data={data} linkButtonText={linkButtonText} number={2} icon={faVideo} />
+					<LinkButton path={data.linkToDemovideo} text={linkButtonText} number={2} icon={faVideo} />
 				) : (
 					<></>
 				)}
 				{hasReadMe ? (
-					<LinkButton data={data} linkButtonText={linkButtonText} number={3} icon={faFile} />
+					<LinkButton path={data.linkToReadMe} text={linkButtonText} number={3} icon={faFile} />
 				) : (
 					<></>
 				)}
 				{hasPaper ? (
-					<LinkButton data={data} linkButtonText={linkButtonText} number={4} icon={faFile} />
+					<LinkButton path={data.linkToPaper} text={linkButtonText} number={4} icon={faFile} />
 				) : (
 					<></>
 				)}
