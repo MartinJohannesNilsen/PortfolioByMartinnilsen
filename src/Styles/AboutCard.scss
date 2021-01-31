@@ -10,37 +10,45 @@
 	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 	display: grid;
 	grid-template-columns: 3fr 1fr;
+
+	h1,
+	h2,
+	h3,
+	p {
+		color: $text_color_primary;
+		font-family: "Georgia", "Times New Roman", "Times";
+	}
 }
 
 #AboutCardInfoBox {
 	margin: auto;
 	padding: 10px;
-}
-#AboutCardInfoBox h3 {
-	color: rgb(34, 37, 41);
-	font-family: "Georgia", "Times New Roman", "Times";
-}
-#AboutCardInfoBox text {
-	text-decoration: none;
-	color: rgb(26, 26, 26);
-	font-family: "Georgia", "Times New Roman", "Times";
-	text-transform: none;
-}
 
-#AboutCardContactInfo {
-	padding: 20px;
-}
-#AboutCardContactInfoButtonLeft {
-	margin: 10px;
-}
-#AboutCardContactInfoTextLeft {
-	margin-left: 10px;
-}
-#AboutCardContactInfoButtonRight {
-	padding: 10px;
-}
-#AboutCardContactInfoTextRight {
-	margin-left: 10px;
+	text {
+		text-decoration: none;
+		color: rgb(26, 26, 26);
+		font-family: "Georgia", "Times New Roman", "Times";
+		text-transform: none;
+	}
+
+	#AboutCardContactInfo {
+		padding: 20px;
+	}
+	#AboutCardContactInfoButtonLeft {
+		margin: 10px;
+
+		#AboutCardContactInfoTextLeft {
+			margin-left: 10px;
+		}
+	}
+
+	#AboutCardContactInfoButtonRight {
+		padding: 10px;
+
+		#AboutCardContactInfoTextRight {
+			margin-left: 10px;
+		}
+	}
 }
 
 #AboutCardImage {
@@ -48,14 +56,6 @@
 	width: 100%;
 	object-fit: cover;
 	clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 10% 0%);
-}
-
-#AboutCardContainer h1,
-#AboutCardContainer h2,
-#AboutCardContainer h3,
-#AboutCardContainer p {
-	color: $text_color_primary;
-	font-family: "Georgia", "Times New Roman", "Times";
 }
 
 @media only screen and (max-width: 1200px) {
@@ -72,22 +72,41 @@
 		width: 96%;
 		height: 100%;
 		grid-template-columns: 1fr;
+		grid-template-areas:
+			"image"
+			"text";
+
+		h1 {
+			font-size: 2em;
+		}
+		h3 {
+			font-size: 1.5em;
+		}
+	}
+	#AboutCardImageDiv {
+		grid-area: image;
+		padding: 10px 5px 0px 5px;
+
+		#AboutCardImage {
+			height: 50%;
+			width: 50%;
+			margin: 20px;
+			border-radius: 2px;
+			object-fit: cover;
+			clip-path: none;
+		}
+	}
+	#AboutCardInfoBox {
+		grid-area: text;
+		padding: 0px 5px 20px 5px;
+
+		#AboutCardContactInfo {
+			padding: 5px 0 0 0;
+		}
 	}
 	/* - for hiding the photo
     #AboutCardImageDiv{
         display:none;
     }
     */
-	#AboutCardImage {
-		height: 60%;
-		width: 60%;
-		margin-bottom: 30px;
-		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-		border-radius: 6px;
-		object-fit: cover;
-		clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
-	}
-	#AboutCardInfoBox {
-		padding: 20px 5px 20px 5px;
-	}
 }
