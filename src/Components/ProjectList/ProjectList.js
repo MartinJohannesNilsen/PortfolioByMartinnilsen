@@ -32,18 +32,18 @@ const LinkButton = (props) => {
 	return (
 		<div>
 			<button
-				onClick={() => window.open(props.data.linkToWebsite, "_blank")}
+				onClick={() => window.open(props.path, "_blank")}
 				tabIndex="0"
 				type="button"
 				className="btn btn-dark btn-sm ProjectCardLinks"
-				aria-labelledby={"Link to this project's" + props.linkButtonText[props.number] }
+				aria-labelledby={"Link to this project's" + props.text[props.number] }
 			>
 				<FontAwesomeIcon
 					id="FaButtonIconLarge"
 					icon={props.icon}
 					alt="Desktop icon"
 				/>
-				<text className="buttonText">{props.linkButtonText[props.number]}</text>
+				<text className="buttonText">{props.text[props.number]}</text>
 			</button>
 		</div>
 	)
