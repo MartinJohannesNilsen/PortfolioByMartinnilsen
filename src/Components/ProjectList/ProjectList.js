@@ -12,19 +12,42 @@ const ProjectList = (props) => {
 		<div id="ProjectListContainer">
 			<h2 id="ProjectListTitle">{props.data.projectsTitle}</h2>
 			<hr id="ProjectListTitleUnderline" />
-			{props.data.projects
-				.slice(0)
-				.reverse()
-				.map((project) => (
-					<ProjectCard
-						key={project.title}
-						data={project}
-						linkButtonText={props.data.linkButtonText}
-					/>
-				))}
+			<div id="ProjectListCards">
+				{props.data.projects
+					.slice(0)
+					.reverse()
+					.map((project) => (
+							<ProjectCard
+								key={project.title}
+								data={project}
+								linkButtonText={props.data.linkButtonText}
+							/>
+					))}
+			</div>
 		</div>
 	);
 };
+
+const LinkButton = (props) => {
+	return (
+		<div>
+			<button
+				onClick={() => window.open(props.data.linkToWebsite, "_blank")}
+				tabIndex="0"
+				type="button"
+				className="btn btn-dark btn-sm ProjectCardLinks"
+				aria-labelledby={"Link to this project's" + props.linkButtonText[props.number] }
+			>
+				<FontAwesomeIcon
+					id="FaButtonIconLarge"
+					icon={props.icon}
+					alt="Desktop icon"
+				/>
+				<text className="buttonText">{props.linkButtonText[props.number]}</text>
+			</button>
+		</div>
+	)
+}
 
 const ProjectCard = (props) => {
 	const insertButtons = (data, linkButtonText) => {
@@ -36,102 +59,27 @@ const ProjectCard = (props) => {
 		return (
 			<React.Fragment>
 				{hasGitHub ? (
-					<div>
-						<button
-							onClick={() => window.open(data.linkToGitHub, "_blank")}
-							tabIndex="0"
-							type="button"
-							className="btn btn-dark btn-sm ProjectCardLinks"
-							aria-labelledby="Link to this project's Github"
-						>
-							<FontAwesomeIcon
-								id="FaButtonIconLarge"
-								icon={faGithub}
-								alt="GitHub icon"
-							/>
-							<text className="buttonText">{linkButtonText[0]}</text>
-						</button>
-					</div>
+					<LinkButton data={data} linkButtonText={linkButtonText} number={0} icon={faGithub} />
 				) : (
 					<></>
 				)}
 				{isHosted ? (
-					<div>
-						<button
-							onClick={() => window.open(data.linkToWebsite, "_blank")}
-							tabIndex="0"
-							type="button"
-							className="btn btn-dark btn-sm ProjectCardLinks"
-							aria-labelledby="Link to this project's website"
-						>
-							<FontAwesomeIcon
-								id="FaButtonIconLarge"
-								icon={faDesktop}
-								alt="Desktop icon"
-							/>
-							<text className="buttonText">{linkButtonText[1]}</text>
-						</button>
-					</div>
+					<LinkButton data={data} linkButtonText={linkButtonText} number={1} icon={faDesktop} />
 				) : (
 					<></>
 				)}
 				{hasDemoVid ? (
-					<div>
-						<button
-							onClick={() => window.open(data.linkToDemovideo, "_blank")}
-							tabIndex="0"
-							type="button"
-							className="btn btn-dark btn-sm ProjectCardLinks"
-							aria-labelledby="Link to this project's demovideo"
-						>
-							<FontAwesomeIcon
-								id="FaButtonIconLarge"
-								icon={faVideo}
-								alt="Video icon"
-							/>
-							<text className="buttonText">{linkButtonText[2]}</text>
-						</button>
-					</div>
+					<LinkButton data={data} linkButtonText={linkButtonText} number={2} icon={faVideo} />
 				) : (
 					<></>
 				)}
 				{hasReadMe ? (
-					<div>
-						<button
-							onClick={() => window.open(data.linkToReadMe, "_blank")}
-							tabIndex="0"
-							type="button"
-							className="btn btn-dark btn-sm ProjectCardLinks"
-							aria-labelledby="Link to this project's ReadMe"
-						>
-							<FontAwesomeIcon
-								id="FaButtonIconLarge"
-								icon={faFile}
-								alt="Video icon"
-							/>
-							<text className="buttonText">{linkButtonText[3]}</text>
-						</button>
-					</div>
+					<LinkButton data={data} linkButtonText={linkButtonText} number={3} icon={faFile} />
 				) : (
 					<></>
 				)}
 				{hasPaper ? (
-					<div>
-						<button
-							onClick={() => window.open(data.linkToPaper, "_blank")}
-							tabIndex="0"
-							type="button"
-							className="btn btn-dark btn-sm ProjectCardLinks"
-							aria-labelledby="Link to this project's paper"
-						>
-							<FontAwesomeIcon
-								id="FaButtonIconLarge"
-								icon={faFile}
-								alt="Video icon"
-							/>
-							<text className="buttonText">{linkButtonText[4]}</text>
-						</button>
-					</div>
+					<LinkButton data={data} linkButtonText={linkButtonText} number={4} icon={faFile} />
 				) : (
 					<></>
 				)}
@@ -157,10 +105,11 @@ const ProjectCard = (props) => {
 						</button>
 					))}
 				</div>
+				<div id="ProjectCardLinkBox">
+					{insertButtons(props.data, props.linkButtonText)}
+				</div>
 			</div>
-			<div id="ProjectCardLinkBox">
-				{insertButtons(props.data, props.linkButtonText)}
-			</div>
+			
 			<div id="ProjectCardImage">
 				<img
 					src={props.data.imgPath}
