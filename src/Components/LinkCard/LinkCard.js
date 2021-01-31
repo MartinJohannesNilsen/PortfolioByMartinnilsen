@@ -44,7 +44,7 @@ const LinkCard = (props) => {
 			</div>
 			<div className="LinkCardBox" id="LinkCardBox3">
 				<a
-					href="/media/Martin_Johannes_Nilsen_CV.pdf"
+					href={props.data.cvPath}
 					target="_blank"
 					tabIndex="0"
 					id="LinkCardBoxATag"

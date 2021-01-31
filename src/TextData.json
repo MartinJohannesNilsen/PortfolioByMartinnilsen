@@ -1,22 +1,23 @@
 {
-    "norwegian" : {
-        "title" : "Portefølje",
-        "aboutText": "Dataingeniørstudent ved NTNU og full-stakk utvikler",
-        "footerText": "Laget av: ",
-        "footerLanguages": ["Norsk", "Engelsk"],
-        "contactInfoText": ["E-post","Telefon"],
-        "projectsTitle": "Prosjekter",
-        "linkButtonText": ["GitHub", "Nettside", "Demo", "ReadMe"],
-        "projects": []
-    },
     "english" : {
         "title" : "Portfolio ",
-        "aboutText": "Computer engineering student and full-stack developer",
-        "footerText": "Made by: ",
-        "footerLanguages": ["Norwegian", "English"],
-        "contactInfoText": ["Mail","Telephone"],
-        "projectsTitle": "Projects",
-        "linkButtonText": ["GitHub", "Website", "Demo", "ReadMe"],
-        "projects": []
+        "aboutText" : "Computer engineering student and full-stack developer",
+        "contactInfoText" : [ "Mail", "Telephone" ],
+        "projectsTitle" : "Projects",
+        "projects" : [],
+        "linkButtonText" : [ "GitHub", "Website", "Demo", "ReadMe", "Paper" ],
+        "footerText" : "Made by ",
+        "footerLanguages" : [ "Norwegian", "English" ]
+    },
+    "norwegian" : {
+        "title" : "Portefølje",
+        "aboutText" : "Dataingeniørstudent ved NTNU og full-stakk utvikler",
+        "contactInfoText" : [ "E-post", "Telefon" ],
+        "projectsTitle" : "Prosjekter",
+        "projects" : [],
+        "linkButtonText" : [ "GitHub", "Nettside", "Demo", "ReadMe", "Rapport" ],
+        "footerText" : "Laget av ",
+        "footerLanguages" : [ "Norsk", "Engelsk" ]
     }
-}
+  }
+  
