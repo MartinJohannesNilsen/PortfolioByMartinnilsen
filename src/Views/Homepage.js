@@ -41,15 +41,15 @@ const Homepage = () => {
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 220) {
-			$("#HomePageToTopButton:hidden").stop(true, true).fadeIn();
+			$("#HomepageToTopButton:hidden").stop(true, true).fadeIn();
 		} else {
-			$("#HomePageToTopButton").stop(true, true).fadeOut();
+			$("#HomepageToTopButton").stop(true, true).fadeOut();
 		}
 	});
 
 	return (
 		<div id="HomepageContainer">
-			<div id="HomePageTitle">
+			<div id="HomepageTitle">
 				<h1>{textData.title}</h1>
 			</div>
 
@@ -62,7 +62,7 @@ const Homepage = () => {
 					$("html, body").animate({ scrollTop: "0" }, 1500);
 				}}
 			>
-				<Fab id="HomePageToTopButton" aria-label="to top">
+				<Fab id="HomepageToTopButton" aria-label="to top">
 					<FontAwesomeIcon
 						id="FaButtonIcon"
 						icon={faAngleUp}
