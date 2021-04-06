@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../styles/Homepage.scss";
 import AboutCard from "../components/AboutCard/AboutCard";
 import LinkCard from "../components/LinkCard/LinkCard";
 import ProjectList from "../components/ProjectList/ProjectList";
@@ -9,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import $ from "jquery";
 import firebaseConfig from "../firebaseConfig";
+import NavBar from "../components/NavBar/NavBar";
 
 const findLanguage = () => {
   if (window.location.href.includes("/no")) {
@@ -41,10 +41,10 @@ const Homepage = () => {
 
   return (
     <div id="HomepageContainer">
+      <NavBar />
       <div id="HomepageTitle">
         <h1>{textData.title}</h1>
       </div>
-
       <AboutCard data={textData} />
       <LinkCard data={textData} />
       <ProjectList data={textData} />
