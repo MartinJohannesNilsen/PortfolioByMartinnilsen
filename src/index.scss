@@ -1,0 +1,79 @@
+@import "styles/colorThemes";
+
+@font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-Thin.otf");
+	font-weight: 200;
+	font-style: normal;
+  }
+  @font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-XLight.otf");
+	font-weight: 300;
+	font-style: normal;
+  }
+  @font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-Light.otf");
+	font-weight: normal;
+	font-style: normal;
+  }
+  @font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-Bold.otf");
+	font-weight: 600;
+	font-style: normal;
+  }
+  @font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-Black.otf");
+	font-weight: 800;
+	font-style: normal;
+  }
+  @font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-ThinItalic.otf");
+	font-weight: 200;
+	font-style: italic;
+  }
+  @font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-XLightItalic.otf");
+	font-weight: 300;
+	font-style: italic;
+  }
+  @font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-BookItalic.otf");
+	font-weight: normal;
+	font-style: italic;
+  }
+  @font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/Gotham/Gotham-UltraItalic.otf");
+	font-weight: 800;
+	font-style: italic;
+  }
+  
+  body {
+	margin: 0;
+	font-family: "Gotham";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Hide scrollbar for all browsers */
+  body::-webkit-scrollbar {
+	display: none; /* Chrome, Safari and Opera*/
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+  }
+  
+  ::-webkit-scrollbar {
+	width: 0; /* Remove scrollbar space */
+  }
+  
+
+body {
+	background-color: $background_color;
+}
