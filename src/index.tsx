@@ -2,14 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./index.scss";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode> //Interferes with themeprovider
+  // https://stackoverflow.com/questions/62935784/material-ui-unchanged-colors-when-switching-back-and-forth-between-themes
+  <App />,
+  // </React.StrictMode>
   document.getElementById("root")
 );
 

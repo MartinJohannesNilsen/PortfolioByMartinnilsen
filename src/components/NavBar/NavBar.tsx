@@ -1,69 +1,95 @@
-import React, { useState, useEffect } from "react";
+import { FC } from "react";
 import {
   Grid,
   Box,
   makeStyles,
   Typography,
-  Button,
   AppBar,
   Toolbar,
-  IconButton,
-  Link,
+  Hidden,
+  ButtonBase,
 } from "@material-ui/core";
-import Toggle from "react-toggle";
-import "react-toggle/style.css";
+import { ThemeEnum } from "../../themes/base";
+import { useTheme } from "../../ThemeProvider";
+import { Icon } from "@iconify/react";
+import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
+import flagNorway from "@iconify-icons/openmoji/flag-norway";
+import Switch from "../Switch/Switch";
 
-export const NavBar = () => {
+type NavBarProps = {
+  data: {
+    title: string;
+    navText: string[];
+    navLanguages: string[];
+  };
+  language: string;
+  setLanguage: (language: string) => void;
+};
+
+export const NavBar: FC<NavBarProps> = (props) => {
   const classes = useStyles();
-  const [norwegianChosen, setNorwegianChosen] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  const handleChange = (event: any) => {
+    event.target.checked === true
+      ? setTheme(ThemeEnum.Light)
+      : setTheme(ThemeEnum.Dark);
+  };
 
   return (
     <AppBar position="static" className={classes.root}>
       <Toolbar className={classes.root}>
-        <Grid container alignItems="flex-end" justify="center" spacing={3}>
-          <Box className={classes.mainLink}>
-            <Typography variant="h2" color="textPrimary">
-              PORTFOLIO
-            </Typography>
-          </Box>
-          <Grid container item xs={5}>
-            <Box mx={2}>
-              <Typography variant="h4" color="textSecondary">
-                About
+        <Grid container alignItems="flex-end" justify="center">
+          <Grid item>
+            <Box className={classes.mainLink}>
+              <Typography variant="subtitle1" color="textPrimary">
+                {props.data.title}
               </Typography>
-            </Box>
-            <Box mx={2}>
-              <Typography variant="h4" color="textSecondary">
-                Projects
-              </Typography>
-            </Box>
-            <Box mx={2}>
-              <Typography variant="h4" color="textSecondary">
-                Contact
-              </Typography>
-            </Box>
-            <Box mx={2}>
-              <Toggle
-                defaultChecked={norwegianChosen}
-                icons={{
-                  checked: (
-                    <Typography variant="subtitle2" color="textSecondary">
-                      NO
-                    </Typography>
-                  ),
-                  unchecked: (
-                    <Typography variant="subtitle2" color="textSecondary">
-                      EN
-                    </Typography>
-                  ),
-                }}
-                onChange={() => setNorwegianChosen(false)}
-              />
             </Box>
           </Grid>
-          {/* <IconButton edge="start" aria-label="menu" className={classes.menu}>
-          <MenuIcon />
-        </IconButton> */}
+          <Hidden mdDown>
+            <Grid container item lg={8} xl={6} justify="flex-end">
+              <Box mx={3}>
+                <Typography variant="subtitle2" color="textSecondary">
+                  {props.data.navText[0]}
+                </Typography>
+              </Box>
+              <Box mx={3}>
+                <Typography variant="subtitle2" color="textSecondary">
+                  {props.data.navText[1]}
+                </Typography>
+              </Box>
+              <Box mx={3}>
+                <Typography variant="subtitle2" color="textSecondary">
+                  {props.data.navText[2]}
+                </Typography>
+              </Box>
+              <Box mx={2}>
+                <ButtonBase
+                  onClick={() => {
+                    props.language === "english"
+                      ? props.setLanguage("norwegian")
+                      : props.setLanguage("english");
+                  }}
+                >
+                  <Icon
+                    icon={
+                      props.language === "english"
+                        ? flagUnitedKingdom
+                        : flagNorway
+                    }
+                    className={classes.icon}
+                  />
+                </ButtonBase>
+              </Box>
+              <Box ml={0.5} mt={0.8}>
+                <Switch
+                  checked={theme.palette.type === "light"}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Grid>
+          </Hidden>
         </Grid>
       </Toolbar>
     </AppBar>
@@ -74,16 +100,17 @@ export default NavBar;
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "140px",
-    backgroundColor: theme.palette.background.paper,
-  },
-  menu: {
-    color: "white",
+    backgroundColor: theme.palette.text.primary,
   },
   mainLink: {
-    marginLeft: theme.spacing(8),
-    marginRight: theme.spacing(8),
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(3),
     paddingLeft: theme.spacing(0.8),
     paddingRight: theme.spacing(0.8),
     backgroundColor: theme.palette.text.secondary,
+  },
+  icon: {
+    height: "50px",
+    width: "50px",
   },
 }));

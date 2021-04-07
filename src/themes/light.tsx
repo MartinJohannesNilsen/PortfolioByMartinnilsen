@@ -9,8 +9,8 @@ export const lightTheme = createMuiTheme({
       secondary: "#FFF",
     },
     background: {
-      default: "white",
-      paper: "rgba(0,0,0,1)", //SearchBar
+      default: "#FFF",
+      paper: "rgba(0,0,0,1)",
     },
     primary: {
       main: "#FFF",
@@ -25,25 +25,6 @@ export const lightTheme = createMuiTheme({
         body: {},
       },
     },
-    MuiInput: {
-      input: {
-        fontWeight: 600,
-        fontSize: 25,
-        "&::selection": {
-          backgroundColor: "white",
-          color: "white",
-        },
-      },
-    },
-    MuiInputLabel: {
-      root: {
-        color: "white",
-        "&.Mui-focused": {
-          color: "white",
-        },
-      },
-    },
-    MuiInputBase: {},
   },
   typography: {
     fontFamily: "Gotham",
@@ -63,22 +44,28 @@ export const lightTheme = createMuiTheme({
       fontSize: "1.2rem",
       fontWeight: 600,
     },
+    //Navbar
     subtitle1: {
-      fontSize: "0.8rem",
-      fontWeight: 400,
-      textShadow: "none",
-      color: "rgba(255,255,255,0.5)",
+      fontSize: "3rem",
+      fontWeight: 600,
     },
     subtitle2: {
-      fontSize: "0.5rem",
-      fontWeight: 400,
-      textShadow: "none",
+      fontSize: "2rem",
+      fontWeight: 800,
     },
     button: {
       fontSize: "1rem",
       fontWeight: 700,
-      textShadow: "1px 1px 1px #000",
-      textTransform: "none",
+      // textShadow: "1px 1px 1px #000",
+      // textTransform: "none",
+    },
+    caption: {
+      fontSize: "3rem",
+      fontWeight: 600,
+    },
+    body1: {
+      fontSize: "1.5rem",
+      fontWeight: 400,
     },
     body2: {
       fontSize: "1rem",
