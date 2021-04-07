@@ -5,49 +5,24 @@ export const darkTheme = createMuiTheme({
   palette: {
     type: "dark",
     text: {
-      primary: "#FFF", //Default text
-      secondary: "#FFF", //Clock
+      primary: "#FFF",
+      secondary: "#000",
     },
     background: {
-      paper: "rgba(0,0,0,0.5)", //SearchBar
+      default: "#000",
+      paper: "rgba(0,0,0,1)",
     },
     primary: {
-      main: "#FFF",
+      main: "#000",
     },
     secondary: {
-      main: "rgba(0, 0, 0, 1)",
-    },
-    error: {
-      main: "#E03A3A", //PlayPause
-      light: "rgba(255,255,255,0.5)",
-      dark: "#FFF",
-    },
-    success: {
-      main: "rgba(0, 0, 0, 1)", //Pomodoro background
+      main: "rgba(255, 255, 255, 1)",
     },
   },
   overrides: {
     MuiCssBaseline: {
       "@global": {
         body: {},
-      },
-    },
-    MuiInput: {
-      input: {
-        fontWeight: 600,
-        fontSize: 25,
-        "&::selection": {
-          backgroundColor: "white",
-          color: "white",
-        },
-      },
-    },
-    MuiInputLabel: {
-      root: {
-        color: "white",
-        "&.Mui-focused": {
-          color: "white",
-        },
       },
     },
   },
@@ -58,7 +33,7 @@ export const darkTheme = createMuiTheme({
       fontWeight: 600,
     },
     h2: {
-      fontSize: "3.5rem",
+      fontSize: "3rem",
       fontWeight: 600,
     },
     h3: {
@@ -66,25 +41,29 @@ export const darkTheme = createMuiTheme({
       fontWeight: 600,
     },
     h4: {
-      fontSize: "4rem",
+      fontSize: "1.2rem",
       fontWeight: 600,
     },
+    //Navbar
     subtitle1: {
-      fontSize: "0.8rem",
-      fontWeight: 400,
-      textShadow: "none",
-      color: "rgba(255,255,255,0.5)",
+      fontSize: "3rem",
+      fontWeight: 600,
     },
     subtitle2: {
-      fontSize: "1rem",
-      fontWeight: 600,
-      textShadow: "none",
+      fontSize: "2rem",
+      fontWeight: 800,
     },
     button: {
       fontSize: "1rem",
       fontWeight: 700,
-      textShadow: "1px 1px 1px #000",
-      textTransform: "none",
+    },
+    caption: {
+      fontSize: "3rem",
+      fontWeight: 600,
+    },
+    body1: {
+      fontSize: "1.5rem",
+      fontWeight: 400,
     },
     body2: {
       fontSize: "1rem",
