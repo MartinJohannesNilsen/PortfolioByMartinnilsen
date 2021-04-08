@@ -18,6 +18,11 @@ export const darkTheme = createMuiTheme({
     secondary: {
       main: "rgba(255, 255, 255, 1)",
     },
+    success: { //outlineshadow
+      light: "#ccc",
+      main: "#ddd",
+      dark: "#eee",
+    }
   },
   overrides: {
     MuiCssBaseline: {
@@ -46,11 +51,11 @@ export const darkTheme = createMuiTheme({
     },
     //Navbar
     subtitle1: {
-      fontSize: "3rem",
+      fontSize: "2rem",
       fontWeight: 600,
     },
     subtitle2: {
-      fontSize: "2rem",
+      fontSize: "1.5rem",
       fontWeight: 800,
     },
     button: {

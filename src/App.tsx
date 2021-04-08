@@ -1,12 +1,36 @@
 import { CssBaseline } from "@material-ui/core";
+import { useEffect, useState } from "react";
 import ThemeProvider from "./ThemeProvider";
-import Homepage from "./views/Homeview";
+import useStickyState from "./utils/useStickyState";
+
+//Views
+import LandingView from "./views/LandingView";
+import AboutView from "./views/AboutView";
+import ProjectView from "./views/ProjectView";
+import ContactView from "./views/ContactView";
 
 const App = () => {
+  const [data, setData] = useState(require("./TextData.json").english);
+  const [language, setLanguage] = useStickyState("language", "english");
+
+  // useEffect(() => {
+  //   fetchDataFromDB();
+  //   window.scrollTo(0, 0);
+  // }, []);
+
+  useEffect(() => {
+    language === "english"
+      ? setData(require("./TextData.json").english)
+      : setData(require("./TextData.json").norwegian);
+  }, [language]);
+
   return (
     <ThemeProvider>
       <CssBaseline />
-      <Homepage />
+      <LandingView data={data} language={language} setLanguage={setLanguage} />
+      <AboutView />
+      <ProjectView />
+      <ContactView />
     </ThemeProvider>
   );
 };
