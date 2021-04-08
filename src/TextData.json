@@ -1,6 +1,13 @@
 {
   "english": {
     "title": "Portfolio ",
+    "descriptivePhrases": [
+      "Martin Johannes Nilsen",
+      "Computer engineering student",
+      "Developer",
+      "Sports enthusiast",
+      "Networker"
+    ],
     "aboutText": "Computer engineering student and full-stack developer",
     "contactInfoText": ["Mail", "Telephone"],
     "projectsTitle": "Projects",
@@ -11,6 +18,13 @@
   },
   "norwegian": {
     "title": "Portefølje",
+    "descriptivePhrases": [
+      "Martin Johannes Nilsen",
+      "Dataingeniørstudent",
+      "Utvikler",
+      "Sportsentusiast",
+      "Netverksbygger"
+    ],
     "aboutText": "Dataingeniørstudent ved NTNU og full-stakk utvikler",
     "contactInfoText": ["E-post", "Telefon"],
     "projectsTitle": "Prosjekter",

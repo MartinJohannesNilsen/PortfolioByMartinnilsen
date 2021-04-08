@@ -35,8 +35,11 @@ export const lightTheme = createMuiTheme({
   typography: {
     fontFamily: "Gotham",
     h1: {
-      fontSize: "7rem",
-      fontWeight: 600,
+      fontSize: "4rem",
+      fontWeight: 800,
+      [defaultTheme.breakpoints.down("xs")]: {
+				fontSize: "3rem",
+			},
     },
     h2: {
       fontSize: "3rem",
