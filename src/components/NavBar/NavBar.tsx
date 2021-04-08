@@ -47,19 +47,19 @@ export const NavBar: FC<NavBarProps> = (props) => {
               </Typography>
             </Box>
           </Grid>
-          <Hidden mdDown>
-            <Grid container item lg={8} xl={6} justify="flex-end">
-              <Box mx={3}>
+          <Hidden smDown>
+            <Grid container item md={8} xl={6} justify="flex-end">
+              <Box mx={3} mt={0.8}>
                 <Typography variant="subtitle2" color="textSecondary">
                   {props.data.navText[0]}
                 </Typography>
               </Box>
-              <Box mx={3}>
+              <Box mx={3} mt={0.8}>
                 <Typography variant="subtitle2" color="textSecondary">
                   {props.data.navText[1]}
                 </Typography>
               </Box>
-              <Box mx={3}>
+              <Box mx={3} mt={0.8}>
                 <Typography variant="subtitle2" color="textSecondary">
                   {props.data.navText[2]}
                 </Typography>
@@ -99,14 +99,14 @@ export default NavBar;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "140px",
+    height: "100px",
     backgroundColor: theme.palette.text.primary,
   },
   mainLink: {
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(3),
-    paddingLeft: theme.spacing(0.8),
-    paddingRight: theme.spacing(0.8),
+    paddingLeft: theme.spacing(0.6),
+    paddingRight: theme.spacing(0.6),
     backgroundColor: theme.palette.text.secondary,
   },
   icon: {
