@@ -18,11 +18,12 @@ export const darkTheme = createMuiTheme({
     secondary: {
       main: "rgba(255, 255, 255, 1)",
     },
-    success: { //outlineshadow
+    success: {
+      //outlineshadow
       light: "#ccc",
       main: "#ddd",
       dark: "#eee",
-    }
+    },
   },
   overrides: {
     MuiCssBaseline: {
@@ -34,8 +35,11 @@ export const darkTheme = createMuiTheme({
   typography: {
     fontFamily: "Gotham",
     h1: {
-      fontSize: "7rem",
-      fontWeight: 600,
+      fontSize: "4rem",
+      fontWeight: 800,
+      [defaultTheme.breakpoints.down("xs")]: {
+        fontSize: "2rem",
+      },
     },
     h2: {
       fontSize: "3rem",

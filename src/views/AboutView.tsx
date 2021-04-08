@@ -1,10 +1,15 @@
 import { FC } from "react";
-import { Box, makeStyles, Typography } from "@material-ui/core";
+import { Box, makeStyles } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
-// import portrait from "../assets/img/Portrett.png";
 import portrait from "../assets/img/Portrett2.png";
-import portraitOutline from "../assets/img/Portrett2Outline.svg";
+
+// const _calculateAge = (birthday: Date) => {
+//   // birthday is a date
+//   let ageDifMs = Date.now() - birthday.getTime();
+//   let ageDate = new Date(ageDifMs); // miliseconds from epoch
+//   return Math.abs(ageDate.getUTCFullYear() - 1970);
+// };
 
 const ContactView: FC = (props) => {
   const classes = useStyles();
@@ -78,28 +83,40 @@ const useStyles = makeStyles((theme) => ({
     bottom: "-100%",
     width: "35%",
     zIndex: 4,
+    [theme.breakpoints.down("xs")]: {
+      width: "55%",
+    },
   },
   imgOutline: {
     position: "absolute",
     left: "-20px",
     bottom: "-100%",
+    [theme.breakpoints.down("xs")]: {
+      left: "-8px",
+    },
   },
   outline1: {
     width: "37%",
     fill: theme.palette.success.light,
     zIndex: 3,
-    // opacity: 0.5,
+    [theme.breakpoints.down("xs")]: {
+      width: "57%",
+    },
   },
   outline2: {
     width: "38%",
     fill: theme.palette.success.main,
     zIndex: 2,
-    // opacity: 0.5,
+    [theme.breakpoints.down("xs")]: {
+      width: "58%",
+    },
   },
   outline3: {
     width: "39%",
     fill: theme.palette.success.dark,
     zIndex: 1,
-    // opacity: 0.5,
+    [theme.breakpoints.down("xs")]: {
+      width: "59%",
+    },
   },
 }));
