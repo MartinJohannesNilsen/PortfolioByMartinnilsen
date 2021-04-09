@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Box, makeStyles, Typography } from "@material-ui/core";
-import NavBar from "../components/NavBar/NavBar";
+import Navbar from "../components/Navbar/Navbar";
 import Typist from "react-typist";
 
 type landingProps = {
@@ -26,34 +26,34 @@ const LandingView: FC<landingProps> = (props) => {
     setCount(0);
   }, [props.data.descriptivePhrases]);
 
+  console.log(props.data.descriptivePhrases);
+
   return (
     <Box>
-      <NavBar
+      <Navbar
         data={props.data}
         language={props.language}
         setLanguage={props.setLanguage}
       />
       <Box textAlign="center" alignItems="center" className={classes.root}>
-        <Typography variant="h1" color="textPrimary">
-          {count ? (
-            <Typist
-              avgTypingDelay={90}
-              cursor={{ show: false }}
-              onTypingDone={() => setCount(0)}
-            >
-              {props.data.descriptivePhrases.map((phrase) => (
-                <div className={classes.typist}>
-                  <Typography variant="h1" color="textPrimary">
-                    {phrase}
-                  </Typography>
-                  <Typist.Backspace count={phrase.length} delay={4000} />
-                </div>
-              ))}
-            </Typist>
-          ) : (
-            ""
-          )}
-        </Typography>
+        {count ? (
+          <Typist
+            avgTypingDelay={90}
+            cursor={{ show: false }}
+            onTypingDone={() => setCount(0)}
+          >
+            {props.data.descriptivePhrases.map((phrase) => (
+              <div className={classes.typist}>
+                <Typography variant="h1" color="textPrimary">
+                  {phrase}
+                </Typography>
+                <Typist.Backspace count={phrase.length} delay={4000} />
+              </div>
+            ))}
+          </Typist>
+        ) : (
+          ""
+        )}
       </Box>
     </Box>
   );

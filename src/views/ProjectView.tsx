@@ -3,7 +3,11 @@ import { Box, makeStyles } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
 
-const ProjectView: FC = (props) => {
+type ProjectViewProps = {
+  data: {};
+};
+
+const ProjectView: FC<ProjectViewProps> = (props) => {
   const classes = useStyles();
 
   return (
@@ -17,10 +21,10 @@ export default ProjectView;
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100%",
-    backgroundColor: theme.palette.text.secondary,
+    backgroundColor: theme.palette.text.primary,
   },
   backgroundTriangle: {
-    color: theme.palette.text.primary,
+    color: theme.palette.text.secondary,
     position: "absolute",
     margin: "-45px",
     height: "100px",

@@ -7,6 +7,7 @@ import useStickyState from "./utils/useStickyState";
 import LandingView from "./views/LandingView";
 import AboutView from "./views/AboutView";
 import ProjectView from "./views/ProjectView";
+import SkillView from "./views/SkillView";
 import ContactView from "./views/ContactView";
 
 const App = () => {
@@ -28,9 +29,10 @@ const App = () => {
     <ThemeProvider>
       <CssBaseline />
       <LandingView data={data} language={language} setLanguage={setLanguage} />
-      <AboutView />
-      <ProjectView />
-      <ContactView />
+      <AboutView text={data.aboutText} />
+      <SkillView data={data} />
+      <ProjectView data={data} />
+      <ContactView data={data} />
     </ThemeProvider>
   );
 };

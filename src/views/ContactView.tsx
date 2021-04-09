@@ -3,24 +3,30 @@ import { Box, makeStyles } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
 
-const ContactView: FC = (props) => {
+type ContactViewProps = {
+  data: {};
+};
+
+const ContactView: FC<ContactViewProps> = (props) => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root} textAlign="center">
-      <Icon icon={caretDown} className={classes.backgroundTriangle} />
-    </Box>
+    <>
+      <Box className={classes.root} textAlign="center">
+        <Icon icon={caretDown} className={classes.backgroundTriangle} />
+      </Box>
+    </>
   );
 };
 export default ContactView;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100%",
-    backgroundColor: theme.palette.text.primary,
+    maxHeight: "30%",
+    backgroundColor: theme.palette.text.secondary,
   },
   backgroundTriangle: {
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
     position: "absolute",
     margin: "-45px",
     height: "100px",

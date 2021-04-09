@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, makeStyles } from "@material-ui/core";
+import { Box, makeStyles, Typography, Grid } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
 import portrait from "../assets/img/Portrett2.png";
@@ -11,13 +11,17 @@ import portrait from "../assets/img/Portrett2.png";
 //   return Math.abs(ageDate.getUTCFullYear() - 1970);
 // };
 
-const ContactView: FC = (props) => {
+type AboutViewProps = {
+  text: string[];
+};
+
+const AboutView: FC<AboutViewProps> = (props) => {
   const classes = useStyles();
 
   return (
     <Box className={classes.root} textAlign="center">
       <Icon icon={caretDown} className={classes.backgroundTriangle} />
-      <Box>
+      <Box textAlign="left" className={classes.height}>
         <img
           src={portrait}
           alt="Portrait of Martin Johannes Nilsen"
@@ -59,11 +63,23 @@ const ContactView: FC = (props) => {
             </g>
           </g>
         </svg>
+
+        <Grid container justify="flex-end" className={classes.height}>
+          <Grid item md={12} lg={6} className={classes.textContainer}>
+            {props.text.map((paragraph: string) => (
+              <Box m={2}>
+                <Typography variant="h2" color="textSecondary">
+                  {paragraph}
+                </Typography>
+              </Box>
+            ))}
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );
 };
-export default ContactView;
+export default AboutView;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,6 +92,26 @@ const useStyles = makeStyles((theme) => ({
     margin: "-45px",
     height: "100px",
     width: "100px",
+  },
+  height: {
+    height: "100%",
+  },
+  textContainer: {
+    position: "absolute",
+    top: "110%",
+    left: "40%",
+    [theme.breakpoints.down("md")]: {
+      top: "105%",
+      left: "2%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      top: "115%",
+      left: "0%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      top: "105%",
+      left: "0%",
+    },
   },
   img: {
     position: "absolute",

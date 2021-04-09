@@ -1,14 +1,33 @@
 {
   "english": {
-    "title": "Portfolio ",
+    "title": "PORTFOLIO",
     "descriptivePhrases": [
       "Martin Johannes Nilsen",
       "Computer engineering student",
       "Developer",
       "Sports enthusiast",
-      "Networker"
+      "Networker",
+      "Perfectionist"
     ],
-    "aboutText": "Computer engineering student and full-stack developer",
+    "aboutText": [
+      "Hi there!",
+      "I am Martin Johannes Nilsen, a 22 year old norwegian computer engineering student and full-stack developer.",
+      "Currently on the third year of my bachelors degree, and in the mindset of starting on a masters degree next semester. Furthermore, I work as a learning assistant for the students in the year below me. In addition to this, I'm always motivated to learn more, seeking new social relations and trying to have the courage to seek discomfort when opportunities arise.",
+      "I am working on my bachelors project, trying to classify sitting postures with machine learning algorithms on accelerometer/gyroscope-data from IMU-sensors. Additionally, we will be developing a GUI for watching how your sitting posture varies over time.",
+      "Stay tuned for more!"
+    ],
+    "skills": [
+      ["Firebase", 80],
+      ["Figma", 70],
+      ["Java", 75],
+      ["Git", 70],
+      ["Jupyter", 80],
+      ["Keras", 70],
+      ["PyTorch", 60],
+      ["Python", 90],
+      ["TypeScript", 80],
+      ["React", 90]
+    ],
     "contactInfoText": ["Mail", "Telephone"],
     "projectsTitle": "Projects",
     "projects": [],
@@ -17,15 +36,33 @@
     "navLanguages": ["Norwegian", "English"]
   },
   "norwegian": {
-    "title": "Portefølje",
+    "title": "PORTEFØLJE",
     "descriptivePhrases": [
       "Martin Johannes Nilsen",
       "Dataingeniørstudent",
       "Utvikler",
       "Sportsentusiast",
-      "Netverksbygger"
+      "Netverksbygger",
+      "Perfeksjonist"
     ],
-    "aboutText": "Dataingeniørstudent ved NTNU og full-stakk utvikler",
+    "aboutText": [
+      "Hei!",
+      "Jeg heter Martin Johannes Nilsen, er 22 år gammel og studerer for tiden dataingeniør ved Norges teknisk-naturvitenskaplige universitet.",
+      "I tillegg til studier jobber jeg som studentassistent for tredje semesteret på rad, for kullet året under meg. Jeg er alltid motivert til å lære mer, ute etter å søke nye relasjoner/bygge nettverk, og prøver utfordre komfortsonen min når mulighetene byr seg.",
+      "Jobber for tiden med bachelorprosjektet hvor vi ved hjelp av maskinlæringsalgoritmer skal prøve å klassifisere sittestillinger i sanntid, ved å lese data fra bluetooth-sensorer med instrumenter som akselerometer og gyroskop. Vi skal i tillegg til dette utvikle GUI som gir en bruker muligheten til å koble til sensorer og klassifisere live, samt se historisk data."
+    ],
+    "skills": [
+      ["Firebase", 80],
+      ["Figma", 70],
+      ["Java", 75],
+      ["Git", 70],
+      ["Jupyter", 80],
+      ["Keras", 70],
+      ["PyTorch", 60],
+      ["Python", 90],
+      ["TypeScript", 80],
+      ["React", 90]
+    ],
     "contactInfoText": ["E-post", "Telefon"],
     "projectsTitle": "Prosjekter",
     "projects": [],
