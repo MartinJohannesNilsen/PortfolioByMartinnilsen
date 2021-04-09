@@ -26,7 +26,7 @@ type NavBarProps = {
   setLanguage: (language: string) => void;
 };
 
-export const NavBar: FC<NavBarProps> = (props) => {
+export const Navbar: FC<NavBarProps> = (props) => {
   const classes = useStyles();
   const { theme, setTheme } = useTheme();
 
@@ -95,7 +95,7 @@ export const NavBar: FC<NavBarProps> = (props) => {
     </AppBar>
   );
 };
-export default NavBar;
+export default Navbar;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -105,8 +105,8 @@ const useStyles = makeStyles((theme) => ({
   mainLink: {
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(3),
-    paddingLeft: theme.spacing(0.6),
-    paddingRight: theme.spacing(0.6),
+    paddingLeft: theme.spacing(0.8),
+    paddingRight: theme.spacing(0.8),
     backgroundColor: theme.palette.text.secondary,
   },
   icon: {

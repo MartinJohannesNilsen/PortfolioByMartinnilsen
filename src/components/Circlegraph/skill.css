@@ -1,0 +1,44 @@
+.circlegraph {
+  position: relative;
+  height: 90%;
+  margin: calc(100px / 2 + 0px);
+}
+
+.circlegraph:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2px * 2);
+  height: calc(100% - 2px * 2);
+  border-radius: 50%;
+}
+
+.circlegraph .circlegraphItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6em;
+  height: 6em;
+  margin: calc(-6em / 2);
+  /* border-radius: 50%; */
+}
+
+/* 
+    xs, extra-small: 0px
+    sm, small: 600px
+    md, medium: 960px
+    lg, large: 1280px
+    xl, extra-large: 1920px
+ */
+
+@media only screen and (max-width: 960px) {
+  .circlegraph .circlegraphItem {
+    top: 30%;
+    left: 50%;
+    width: 3em;
+    height: 3em;
+    margin: calc(-3em / 2);
+    /* border-radius: 50%; */
+  }
+}
