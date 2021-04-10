@@ -16,7 +16,7 @@ import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import Switch from "../Switch/Switch";
 
-type NavBarProps = {
+type NavbarProps = {
   data: {
     title: string;
     navText: string[];
@@ -26,7 +26,7 @@ type NavBarProps = {
   setLanguage: (language: string) => void;
 };
 
-export const Navbar: FC<NavBarProps> = (props) => {
+export const Navbar: FC<NavbarProps> = (props) => {
   const classes = useStyles();
   const { theme, setTheme } = useTheme();
 
