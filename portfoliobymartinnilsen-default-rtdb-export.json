@@ -1,0 +1,196 @@
+{
+  "english" : {
+    "aboutPhoto" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Portrett.JPG?alt=media&token=ba7bb154-7564-488d-9c69-4592b4d80643",
+    "aboutText" : "Computer engineering student and full-stack developer",
+    "contactInfoText" : [ "Mail", "Telephone" ],
+    "cvPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV.pdf?alt=media&token=a7db3eb9-3f41-4ddc-a9a7-dfc6d1de25aa",
+    "footerLanguages" : [ "Norwegian", "English" ],
+    "footerText" : "Made by ",
+    "linkButtonText" : [ "GitHub", "Website", "Demo", "ReadMe", "Paper" ],
+    "projects" : [ {
+      "description" : "A multiplayer game a team of 6 students, including myself, created at the second semester of our bachelors degree. This was my first meeting with the combination of JavaFX and communication between JavaDB and a database using MySQL.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FrecessChess.png?alt=media&token=0fb8195c-b821-49c9-979a-f89c2cb0c0f0",
+      "linkToDemovideo" : "https://youtu.be/bIXBot2dlC0",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game",
+      "technologies" : [ "JavaFX", "JavaDB", "MySQL", "HikariCP" ],
+      "title" : "Recess Chess"
+    }, {
+      "description" : "Our task was to create an online newspaper with React, in which we had two applications - one for the client site and one for the server.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fminiproject.png?alt=media&token=707d38b4-2f33-4a59-8da0-54500a2df179",
+      "linkToDemovideo" : "https://youtu.be/DUS0OjFJsQY",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/Øving%2012%20(Miniprosjekt)",
+      "technologies" : [ "React", "NodeJS", "Express", "Flow" ],
+      "title" : "Miniproject in system development 2 at NTNU"
+    }, {
+      "description" : "A larger project where we used scrum to organize our team during development. We were a team consisting of 9 people which was supposed to create an application, with the purpose of making the information-flow better for the firm while planning events.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fharmoni.png?alt=media&token=f6121f16-5df4-4000-9cb1-d518c054ef2e",
+      "linkToDemovideo" : "https://youtu.be/-PYNNGhCjPc",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni",
+      "technologies" : [ "React", "NodeJS", "Express", "Scrum" ],
+      "title" : "Harmoni"
+    }, {
+      "description" : "The firm wanted me to create a new website for them. They wanted a simple, yet modern website which gave their customers the possibility to read about what the firm has to offer. It is still under development as I have to collect some text and information in which they will hand me in the near future.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FINEntrep.png?alt=media&token=7b5999c3-8d37-4c1a-8506-6f985ff4188f",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS",
+      "linkToWebsite" : "https://ivarnilsenentreprenoras.web.app",
+      "technologies" : [ "React", "NodeJS", "CSS", "GitHub Pages" ],
+      "title" : "Website for IN Entreprenør AS - under development"
+    }, {
+      "description" : "This online compiler was created in our network programming course. We were supposed to create a website in which compiles source code using docker, and returns the result/error. I have added some functionality, including a simple IDE text editor and the ability to use both c++ and python.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FonlineCompiler.png?alt=media&token=b2b21640-ff04-4eb9-8218-16cffc987806",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/Oeving3",
+      "technologies" : [ "React", "NodeJS", "Express", "Docker" ],
+      "title" : "Online Compiler"
+    }, {
+      "description" : "This portfolio was created for showing which projects I have worked on in the past.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fmartinnilsen.png?alt=media&token=6e772b21-670c-41ef-bbcb-f774e95fe95e",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/PortfolioByMartinnilsen",
+      "linkToWebsite" : "https://martinnilsen.no",
+      "technologies" : [ "React", "NodeJS", "hosting", "CSS" ],
+      "title" : "Portfolio"
+    }, {
+      "description" : "Made a PWA for future social gatherings, mostly for fun. Contains popular games as \"Never have I ever\", \"Truth or dare\" and \"Point towards who\".",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fmartinnilsen.png?alt=media&token=6e772b21-670c-41ef-bbcb-f774e95fe95e",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/GamesByMartinnilsen",
+      "linkToWebsite" : "https://games.martinnilsen.no",
+      "technologies" : [ "React", "SASS", "Firebase Realtime Database" ],
+      "title" : "Groupgames"
+    }, {
+      "description" : "2PCV - or two-phase commit visualisation, is a program made to simulate the two-phase commit protocol in practice. This was a project held in our networking class, developed in a team of two.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Ftwophasecommit.png?alt=media&token=c0dbda0c-a425-4a63-a887-aa789a71591a",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/twophasecommit",
+      "linkToReadMe" : "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/blob/master/twophasecommit/README.md",
+      "technologies" : [ "Java", "TCP", "Threading" ],
+      "title" : "2PCV"
+    }, {
+      "description" : "I was hired as a summer intern by Experis Ciber, for creating a prototype of a web-application for translating music scores into Dissimilis color notation. The project was done pro bono by the firm I was hired by, and the application was intended to ease the job the instructors have to do to make the music scores in their own color notation, instead of the traditional musical notation.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fdissimilis.jpg?alt=media&token=401ef156-3e8f-4252-86f9-96be2cdaea4b",
+      "linkToWebsite" : "https://karriere360.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
+      "technologies" : [ "Typescript", "Material UI", "C#" ],
+      "title" : "Dissimilis color notation"
+    }, {
+      "description" : "My own take on DQN in Atari Breakout. This was made as a project in a machine learning course at the university, in which gave me the opportunity to dive deeper into concepts of deep reinforcemenet learning.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FatariBreakoutPoster.jpg?alt=media&token=36920045-1938-46eb-93f4-6297ad5d4f32",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/Atari_Breakout_openAIGym",
+      "linkToPaper" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMaskinlæringsrapport_DQN_AtariBreakout.pdf?alt=media&token=114e9a0e-16bd-4710-b295-1c81b5edd809",
+      "technologies" : [ "Python", "PyTorch", "OpenAI Gym", "OpenCV" ],
+      "title" : "DQN on Atari Breakout"
+    }, {
+      "description" : "A command line tool (cli) for keeping track of your weighted average grade based on the norwegian grading system. For each course you get a grade from A-E, representing the numbers from 1-5, and the credits decide how much impact a single grade has on the weighted average. The tool features the possibility to add new grades to your locally stored csv-file, and see all your grades and the weighted average at any time. Furthermore, you can predict what your new average will become with a given list of grades, either predictions for upcoming exams or if you're considering retaking an exam and wants to know what impact this has on your own GPA.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Funigrade.png?alt=media&token=fe7f2a12-8e05-446f-8071-6b9a8f2445f6",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/Karakterkalkulator",
+      "technologies" : [ "Python", "argh", "cli" ],
+      "title" : "Karakterkalkulator (Unigrade)"
+    }, {
+      "description" : "Currently working on my bachelors project, trying to classify sitting postures with machine learning algorithms on accelerometer/gyroscope-data from IMU-sensors. Additionally, we will be developing a GUI for watching how your sitting posture varies over time. The project is divided into two parts; the first is the research done by evaluating how good machine learning algorithms can classify postures on x amount of sensors, and the second part is developing the graphical user interface in which gives users the possibility to perform the classification by themselves.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGotYourBack.png?alt=media&token=cb7cc2a9-f4b3-4e7c-a33d-612d94f7f4f1",
+      "technologies" : [ "Python", "Keras", "React" ],
+      "title" : "Got Your Back"
+    }, {
+      "description" : "A clean and modern dashboard for helping you focus more on your work, and less on finding the right tools. The purpose of the application is to have the productivity tools you need for the most optimal workflow while studying, all combined into one website. Write notes in Markdown, one of the most popular markup languages, which makes writing on the web fast and easy with live formatting on the go. Or utilize the Pomodoro timer for managing your time for the most efficient workflow. Pick a task, work during an interval of your choice, and take frequent, but shorter, breaks. When loading the page you have quick and easy access to the Google Search bar, and you can choose from a selection of themes.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudypal.png?alt=media&token=bc049601-cbb7-4fda-a49e-ba0b52baf56e",
+      "linkToWebsite" : "https://studypal.app",
+      "technologies" : [ "TypeScript", "React", "Material UI" ],
+      "title" : "StudyPal"
+    } ],
+    "projectsTitle" : "Projects",
+    "title" : "Portfolio "
+  },
+  "norwegian" : {
+    "aboutPhoto" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Portrett.JPG?alt=media&token=ba7bb154-7564-488d-9c69-4592b4d80643",
+    "aboutText" : "Dataingeniørstudent ved NTNU og full-stakk utvikler",
+    "contactInfoText" : [ "E-post", "Telefon" ],
+    "cvPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV.pdf?alt=media&token=a7db3eb9-3f41-4ddc-a9a7-dfc6d1de25aa",
+    "footerLanguages" : [ "Norsk", "Engelsk" ],
+    "footerText" : "Laget av ",
+    "linkButtonText" : [ "GitHub", "Nettside", "Demo", "ReadMe", "Rapport" ],
+    "projects" : [ {
+      "description" : "Et flerspiller-spill vi lagde i 2.semester på dataingeniørstudiet. Dette var vårt første ordentlige møte med JavaFX og samhandlingen mellom Java og en database der vi lagret all informasjon om spillene.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FrecessChess.png?alt=media&token=0fb8195c-b821-49c9-979a-f89c2cb0c0f0",
+      "linkToDemovideo" : "https://youtu.be/bIXBot2dlC0",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT1006---Systemutvikling-1-med-databaseprosjekt/tree/master/Innlevering%20Team20Game",
+      "technologies" : [ "JavaFX", "JavaDB", "MySQL", "HikariCP" ],
+      "title" : "Recess Chess"
+    }, {
+      "description" : "Vi hadde som oppgave å lage en nettavis med React, der vi kjørte to ulike React-applikasjoner - én for klient og én for server.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fminiproject.png?alt=media&token=707d38b4-2f33-4a59-8da0-54500a2df179",
+      "linkToDemovideo" : "https://youtu.be/DUS0OjFJsQY",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/Øving%2012%20(Miniprosjekt)",
+      "technologies" : [ "React", "NodeJS", "Express", "Flow" ],
+      "title" : "Miniprosjekt i Systemutvikling 2"
+    }, {
+      "description" : "Et større prosjekt der vi brukte scrum som arbeidsmetode. Vi var et team på 9 som skulle lage et program for å bedre informasjonsflyten innad i et firma som driver med arrangementplanlegging.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fharmoni.png?alt=media&token=f6121f16-5df4-4000-9cb1-d518c054ef2e",
+      "linkToDemovideo" : "https://youtu.be/-PYNNGhCjPc",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT2003---Systemutvikling-2-med-web-applikasjoner/tree/master/SCRUM-prosjekt/Team%205%20Harmoni",
+      "technologies" : [ "React", "NodeJS", "Express", "Scrum" ],
+      "title" : "Harmoni"
+    }, {
+      "description" : "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. Denne er enda ikke ferdig da jeg venter på litt tekst og bilder.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FINEntrep.png?alt=media&token=7b5999c3-8d37-4c1a-8506-6f985ff4188f",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS",
+      "linkToWebsite" : "https://ivarnilsenentreprenoras.web.app",
+      "technologies" : [ "React", "NodeJS", "CSS", "GitHub Pages" ],
+      "title" : "Nettside for IN Entreprenør AS - under utvikling"
+    }, {
+      "description" : "En oppgave vi hadde i nettverksprogrammering. Oppgaven gikk ut på å lage en kompilator som kompilerer kildekode i Docker. Jeg har utvidet den slik at man både kan kompilere c++ og python.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FonlineCompiler.png?alt=media&token=b2b21640-ff04-4eb9-8218-16cffc987806",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/Oeving3",
+      "technologies" : [ "React", "NodeJS", "Express", "Docker" ],
+      "title" : "Kildekode-kompilator"
+    }, {
+      "description" : "Denne porteføljen er laget for å vise tidligere prosjekter jeg har jobbet med.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fmartinnilsen.png?alt=media&token=6e772b21-670c-41ef-bbcb-f774e95fe95e",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/PortfolioByMartinnilsen",
+      "linkToWebsite" : "https://martinnilsen.no",
+      "technologies" : [ "React", "NodeJS", "hosting", "CSS" ],
+      "title" : "Portefølje"
+    }, {
+      "description" : "Laget en PWA tiltenkt fremtidige sammenkomster, mest for moro skyld. Inneholder populære gruppeleker som \"Jeg har aldri\", \"Nødt eller sannhet\" og \"Pekeleken\".",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fmartinnilsen.png?alt=media&token=6e772b21-670c-41ef-bbcb-f774e95fe95e",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/GamesByMartinnilsen",
+      "linkToWebsite" : "https://spill.martinnilsen.no",
+      "technologies" : [ "React", "SASS", "Firebase Realtime Database" ],
+      "title" : "Gruppeleker"
+    }, {
+      "description" : "2PCV - eller \"two-phase commit visualisation\", er et program laget for å visualisere to-fase commit protokollen i praksis. Dette var et avsluttende prosjekt i faget TDAT2004 - Datakommunikasjon med nettverksprogrammering, og ble laget i et team på to.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Ftwophasecommit.png?alt=media&token=c0dbda0c-a425-4a63-a887-aa789a71591a",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/tree/master/twophasecommit",
+      "linkToReadMe" : "https://github.com/Martinnilsen99/TDAT2004---Datakommunikasjon-med-nettverksprogrammering/blob/master/twophasecommit/README.md",
+      "technologies" : [ "Java", "TCP", "Tråder" ],
+      "title" : "2PCV"
+    }, {
+      "description" : "Jobbet som summer intern hos Experis Ciber sommeren 2020, med oppdrag å lage en første prototype av en webapplikasjon for Dissimilis. Programmet skal forenkle jobben instruktørene deres gjør for å oversette noteark fra vanlig musikknotasjon, til deres fargenotasjon. Vår første MVP/prototype ble utviklet i et team bestående av 6 utviklere, i tillegg til kunde, produkteiere, mentorer og prosjektleder, og er et prosjekt Experis Ciber gjorde pro bono.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Fdissimilis.jpg?alt=media&token=401ef156-3e8f-4252-86f9-96be2cdaea4b",
+      "linkToWebsite" : "https://karriere360.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
+      "technologies" : [ "Typescript", "Material UI", "C#" ],
+      "title" : "Dissimilis fargenotasjon"
+    }, {
+      "description" : "Mitt prosjekt i faget \"Anvendt maskinlæring med prosjekt\" på NTNU. Prosjektet ga meg muligheten til å dykke dypere ned i konsepter innen deep reinforcement learning, og har implementert en agent som med hjelp av et konvolusjonelt nevralt nettverk og experience replay interagerer med miljøet gitt av OpenAI Gym.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FatariBreakoutPoster.jpg?alt=media&token=36920045-1938-46eb-93f4-6297ad5d4f32",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/Atari_Breakout_openAIGym",
+      "linkToPaper" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMaskinlæringsrapport_DQN_AtariBreakout.pdf?alt=media&token=114e9a0e-16bd-4710-b295-1c81b5edd809",
+      "technologies" : [ "Python", "PyTorch", "OpenAI Gym", "OpenCV" ],
+      "title" : "DQN på Atari Breakout"
+    }, {
+      "description" : "Et kommandolinjeverktøy for å holde oversikt over ditt vektede gjennomsnitt basert på det norske universitets- og høgskolesystemet. For hvert kurs får du en karakter fra A-E (eller bestått) som representerer tallene 1-5, og studiepoengene bestemmer hvor stor innvirkning en enkelt karakter har på snittet ditt. Verkøyet gir deg muligheten til å legge til nye karakterer i den lokalt lagrede csv-filen, og se alle karakterer samt vektet snitt når du måtte ønske. Videre kan du sjekke hva ditt nye snitt vil være gitt en liste med nye karakterer, enten antatte karakterer ved kommende eksamener eller om du vil sjekke hvilken effekt en ny karakter i et fag vil utgjøre på gjennomsnittet ditt. ",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2Funigrade.png?alt=media&token=fe7f2a12-8e05-446f-8071-6b9a8f2445f6",
+      "linkToGitHub" : "https://github.com/Martinnilsen99/Karakterkalkulator",
+      "technologies" : [ "Python", "argh", "cli" ],
+      "title" : "Karakterkalkulator"
+    }, {
+      "description" : "Jobber for tiden med bacheloroppgaven min, der vi prøver klassifisere sittestillinger med maskinlæringsalgoritmer på akselerometer/gyroskop-data fra IMU-sensorer. I tillegg skal vi utvikle et brukergrensesnitt slik at en bruker enkelt kan koble til sensorer og klassifisere egen sittestilling over tid. Oppgaven er todelt, både med et forskningsperspektiv rundt hvor mange sensorer en bør bruke og hvor godt en kan klassifisere sittestillingene ved bruk av maskinlæring, samt utviklingen av et brukergrensesnitt som gir en bruker muligheten til å ta i bruk systemet.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGotYourBack.png?alt=media&token=cb7cc2a9-f4b3-4e7c-a33d-612d94f7f4f1",
+      "technologies" : [ "Python", "Keras", "React.js" ],
+      "title" : "Got Your Back"
+    }, {
+      "description" : "Et moderne dashboard som samler de verktøyene du trenger for effektiv studering. Skriv notater i Markdown, som gir deg muligheten til å formatere notatene du skriver live mens du skriver. Eller ta i bruk den integrerte Pomodoro timeren for en mer effektiv arbeidsflyt; velg en oppgave, jobb intensivt med dette i et gitt intervall, og ta hyppige men korte pauser. Ved innlasting av siden har du rask tilgang til et Google søkefelt, og du kan velge mellom en samling av ulike bakgrunnstemaer.",
+      "imgPath" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudypal.png?alt=media&token=bc049601-cbb7-4fda-a49e-ba0b52baf56e",
+      "linkToWebsite" : "https://studypal.app",
+      "technologies" : [ "TypeScript", "React", "Material UI" ],
+      "title" : "StudyPal"
+    } ],
+    "projectsTitle" : "Prosjekter",
+    "title" : "Portefølje"
+  }
+}
