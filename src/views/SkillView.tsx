@@ -7,6 +7,7 @@ import {
   IconButton,
   LinearProgress,
   withStyles,
+  ClickAwayListener,
 } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
@@ -64,7 +65,10 @@ const SkillView: FC<SkillViewProps> = (props) => {
         </Typography>
         <Box style={{ width: "130px", margin: "10px auto" }}>
           {skillSelected !== -1 ? (
-            <BorderLinearProgress variant="determinate" value={+props.data.skills[skillSelected][1]} />
+            <BorderLinearProgress
+              variant="determinate"
+              value={+props.data.skills[skillSelected][1]}
+            />
           ) : (
             <></>
           )}
@@ -72,168 +76,170 @@ const SkillView: FC<SkillViewProps> = (props) => {
       </Box>
       <Grid container justify="center" className={classes.grid}>
         <Grid item xs={10} sm={8} lg={6} xl={4}>
-          <Circlegraph data={props.data.skills}>
-            <IconButton
-              onClick={() => setSkillSelected(0)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={firebaseIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 0
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(1)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={figmaIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 1
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(2)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={javaIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 2
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(3)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={gitIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 3
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(4)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={jupyterIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 4
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(5)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={kerasIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 5
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(6)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={pytorchIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 6
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(7)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={pythonIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 7
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(8)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={typescriptIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 8
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-            <IconButton
-              onClick={() => setSkillSelected(9)}
-              disableRipple
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Icon
-                icon={reactIcon}
-                className={classes.icon}
-                style={{
-                  color:
-                    skillSelected === 9
-                      ? theme.palette.error.main
-                      : theme.palette.text.primary,
-                }}
-              />
-            </IconButton>
-          </Circlegraph>
+          <ClickAwayListener onClickAway={() => setSkillSelected(-1)}>
+            <Circlegraph data={props.data.skills}>
+              <IconButton
+                onClick={() => setSkillSelected(0)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={firebaseIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 0
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(1)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={figmaIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 1
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(2)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={javaIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 2
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(3)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={gitIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 3
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(4)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={jupyterIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 4
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(5)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={kerasIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 5
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(6)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={pytorchIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 6
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(7)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={pythonIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 7
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(8)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={typescriptIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 8
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+              <IconButton
+                onClick={() => setSkillSelected(9)}
+                disableRipple
+                style={{ backgroundColor: "transparent" }}
+              >
+                <Icon
+                  icon={reactIcon}
+                  className={classes.icon}
+                  style={{
+                    color:
+                      skillSelected === 9
+                        ? theme.palette.error.main
+                        : theme.palette.text.primary,
+                  }}
+                />
+              </IconButton>
+            </Circlegraph>
+          </ClickAwayListener>
         </Grid>
       </Grid>
     </Box>

@@ -2,27 +2,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 
 export const customSwitch = withStyles((theme) => ({
-  // switchBase: {
-  //   color: "white",
-  //   "&$checked": {
-  //     color: "white",
-  //     "& + $track": {
-  //       opacity: 1,
-  //       backgroundColor: "white", //checked track color
-  //       borderColor: "grey", //checked border color
-  //     },
-  //   },
-  // },
-  // thumb: {
-  //   boxShadow: "0px 0px 5px 1px rgba(0,0,0,0.75)",
-  // },
-  // track: {
-  //   border: `1px solid grey`,
-  //   borderRadius: 16 / 2,
-  //   opacity: 1,
-  //   backgroundColor: "#000",
-  // },
-  // checked: {},
   root: {
     width: 45,
     height: 20,
