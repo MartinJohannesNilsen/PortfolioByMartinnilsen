@@ -12,20 +12,24 @@ import SkillView from "./views/SkillView";
 import ContactView from "./views/ContactView";
 
 const App = () => {
-  const [data, setData] = useState(require("./TextData.json").english);
   const [language, setLanguage] = useStickyState("language", "english");
+  const [data, setData] = useState(
+    language === "english"
+      ? require("./TextData.json").english
+      : require("./TextData.json").norwegian
+  );
 
   useEffect(() => {
     fetchDataFromDB(language, setData);
     window.scrollTo(0, 0);
     //eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
-    language === "english"
-      ? setData(require("./TextData.json").english)
-      : setData(require("./TextData.json").norwegian);
   }, [language]);
+
+  // useEffect(() => {
+  //   language === "english"
+  //     ? setData(require("./TextData.json").english)
+  //     : setData(require("./TextData.json").norwegian);
+  // }, [language]);
 
   return (
     <ThemeProvider>
