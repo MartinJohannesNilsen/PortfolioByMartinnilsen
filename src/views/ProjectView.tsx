@@ -1,10 +1,11 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Box, Button, makeStyles, Typography } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
 import ProjectList from "../components/ProjectList/ProjectList";
 
 type ProjectViewProps = {
+  id: string;
   data: {
     projects: [];
     projectsTitle: string;
@@ -14,9 +15,14 @@ type ProjectViewProps = {
 const ProjectView: FC<ProjectViewProps> = (props) => {
   const classes = useStyles();
   const [numShowing, setNumShowing] = useState<number>(3);
+  const [numIncrease] = useState<number>(2);
+
+  useEffect(() => {
+    console.log(numShowing);
+  }, [numShowing]);
 
   return (
-    <Box className={classes.root} textAlign="center">
+    <Box className={classes.root} textAlign="center" id={props.id}>
       <Icon icon={caretDown} className={classes.backgroundTriangle} />
       <Box pt={3}>
         <Typography variant="subtitle1" color="textSecondary">
@@ -24,13 +30,26 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
         </Typography>
       </Box>
       <ProjectList projects={props.data.projects} numShowing={numShowing} />
-      <Box my={8}>
-        <Button className={classes.button}>
-          <Typography variant="button" color="textSecondary">
-            {" "}
-            Show More{" "}
-          </Typography>
-        </Button>
+      <Box py={8}>
+        {numShowing < props.data.projects.length ? (
+          <Button
+            className={classes.button}
+            onClick={() =>
+              setNumShowing(
+                numShowing + numIncrease < props.data.projects.length
+                  ? numShowing + numIncrease
+                  : numShowing + props.data.projects.length - numShowing
+              )
+            }
+          >
+            <Typography variant="button" color="textSecondary">
+              {" "}
+              Show More{" "}
+            </Typography>
+          </Button>
+        ) : (
+          <></>
+        )}
       </Box>
     </Box>
   );
@@ -41,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "table",
     width: "100%",
-    minHeight: "100%",
     backgroundColor: theme.palette.text.primary,
   },
   backgroundTriangle: {

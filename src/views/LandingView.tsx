@@ -26,8 +26,6 @@ const LandingView: FC<landingProps> = (props) => {
     setCount(0);
   }, [props.data.descriptivePhrases]);
 
-  console.log(props.data.descriptivePhrases);
-
   return (
     <Box>
       <Navbar

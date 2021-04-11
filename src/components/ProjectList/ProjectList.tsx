@@ -1,7 +1,5 @@
 import { FC } from "react";
-import { Box, makeStyles, Grid, Typography } from "@material-ui/core";
-import { Icon } from "@iconify/react";
-import caretDown from "@iconify-icons/carbon/caret-down";
+import { Box, makeStyles, Grid } from "@material-ui/core";
 import ProjectElement from "./ProjectElement";
 
 type ProjectListProps = {
@@ -14,14 +12,14 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
 
   return (
     <>
-      <Box pt={15} className={classes.root}>
+      <Box pt={10} className={classes.root}>
         <Grid container justify="center">
           {props.projects
             .slice(props.projects.length - props.numShowing)
             .reverse()
             .map((project, index) => (
-              <Grid item xs={10}>
-                <Box mb={index !== props.projects.length - 1 ? 15 : 5}>
+              <Grid item xs={10} lg={8} xl={7}>
+                <Box mb={index !== props.projects.length - 1 ? 10 : 5}>
                   <ProjectElement
                     projectData={project}
                     imgPosition={index % 2 === 0 ? "right" : "left"}

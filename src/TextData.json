@@ -1,7 +1,7 @@
 {
   "english": {
     "title": "PORTFOLIO",
-    "navText": ["About", "Projects", "Contact"],
+    "navText": ["About", "Skills", "Projects", "Contact"],
     "navLanguages": ["Norwegian", "English"],
     "descriptivePhrases": [
       "Martin Johannes Nilsen",
@@ -18,6 +18,7 @@
       "I am working on my bachelors project, trying to classify sitting postures with machine learning algorithms on accelerometer/gyroscope-data from IMU-sensors. Additionally, we will be developing a GUI for watching how your sitting posture varies over time.",
       "Stay tuned for more!"
     ],
+    "skillsTitle": "Skills",
     "skills": [
       ["Firebase", 80],
       ["Figma", 70],
@@ -33,34 +34,53 @@
     "projectsTitle": "Projects",
     "projects": [
       {
+        "title": "Website for IN Entreprenør AS",
+        "description": "The firm wanted me to create a new website for them. They wanted a simple, yet modern website which gave their customers the possibility to read about what the firm has to offer, and take a look at reference photos from previous jobs.",
+        "img": {
+          "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FINentrep.png?alt=media&token=6ceefd82-e60f-4af1-92ca-3b9304cb7af6",
+          "type": "landscape"
+        },
+        "linkToGitHub": "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS",
+        "linkToWebsite": "https://ivarnilsenentreprenoras.web.app",
+        "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"]
+      },
+      {
         "title": "DQN on Atari Breakout",
         "description": "My own take on DQN in Atari Breakout. This was made as a project in a machine learning course at the university, in which gave me the opportunity to dive deeper into concepts of deep reinforcemenet learning.",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FBreakout.gif?alt=media&token=dee01d4a-7b06-4817-8de0-8ff2684e4805",
+        "img": {
+          "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FBreakout.gif?alt=media&token=dee01d4a-7b06-4817-8de0-8ff2684e4805",
+          "type": "portrait"
+        },
         "linkToGitHub": "https://github.com/Martinnilsen99/Atari_Breakout_openAIGym",
         "linkToPaper": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMaskinlæringsrapport_DQN_AtariBreakout.pdf?alt=media&token=114e9a0e-16bd-4710-b295-1c81b5edd809",
         "technologies": ["Python", "PyTorch", "OpenAI Gym", "OpenCV"]
       },
       {
         "title": "Got Your Back",
-        "description": "Currently working on my bachelors project, trying to classify sitting postures with machine learning algorithms on accelerometer/gyroscope-data from IMU-sensors. Additionally, we will be developing a GUI for watching how your sitting posture varies over time. The project is divided into two parts; the first is the research done by evaluating how good machine learning algorithms can classify postures on x amount of sensors, and the second part is developing the graphical user interface in which gives users the possibility to perform the classification by themselves.",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGot%20Your%20Back.png?alt=media&token=cb4c6e96-ef0e-4141-bbd5-8916fd63cac5",
+        "description": "Currently working on my bachelors project, trying to classify sitting postures with machine learning algorithms on accelerometer- and gyroscope-data from IMU-sensors. Additionally, we will be developing a GUI for watching how your sitting posture varies over time. The project is divided into two parts; the first is the research done by evaluating how good machine learning algorithms can classify postures on x amount of sensors, and the second part is developing the graphical user interface for performing live classification.",
+        "img": {
+          "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGot%20Your%20Back.png?alt=media&token=cb4c6e96-ef0e-4141-bbd5-8916fd63cac5",
+          "type": "landscape"
+        },
         "technologies": ["Python", "Keras", "React"]
       },
       {
         "title": "StudyPal",
-        "description": "A clean and modern dashboard for helping you focus more on your work, and less on finding the right tools. The purpose of the application is to have the productivity tools you need for the most optimal workflow while studying, all combined into one website. Write notes in Markdown, one of the most popular markup languages, which makes writing on the web fast and easy with live formatting on the go. Or utilize the Pomodoro timer for managing your time for the most efficient workflow. Pick a task, work during an interval of your choice, and take frequent, but shorter, breaks. When loading the page you have quick and easy access to the Google Search bar, and you can choose from a selection of themes.",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
+        "description": "A clean and modern dashboard for helping you focus more on your work, and less on finding the right tools. Write notes in Markdown, which makes writing on the web fast and easy with live formatting on the go. Or utilize the Pomodoro timer for managing your time for the most efficient workflow. When loading the page you have quick and easy access to the Google Search bar, and you can choose from a selection of themes.",
+        "img": {
+          "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
+          "type": "landscape"
+        },
         "linkToWebsite": "https://studypal.app",
         "technologies": ["TypeScript", "React", "Material UI"]
       }
     ],
     "contactInfoText": ["Mail", "Telephone"],
-    "projectsTitle": "Projects",
     "linkButtonText": ["GitHub", "Website", "Demo", "ReadMe", "Paper"]
   },
   "norwegian": {
     "title": "PORTEFØLJE",
-    "navText": ["Om", "Prosjekter", "Kontakt"],
+    "navText": ["Om", "Ferdigheter", "Prosjekter", "Kontakt"],
     "navLanguages": ["Norsk", "Engelsk"],
     "descriptivePhrases": [
       "Martin Johannes Nilsen",
@@ -76,6 +96,7 @@
       "I tillegg til studier jobber jeg som studentassistent for tredje semesteret på rad, for kullet året under meg. Jeg er alltid motivert til å lære mer, ute etter å søke nye relasjoner/bygge nettverk, og prøver utfordre komfortsonen min når mulighetene byr seg.",
       "Jobber for tiden med bachelorprosjektet hvor vi ved hjelp av maskinlæringsalgoritmer skal prøve å klassifisere sittestillinger i sanntid, ved å lese data fra bluetooth-sensorer med instrumenter som akselerometer og gyroskop. Vi skal i tillegg til dette utvikle GUI som gir en bruker muligheten til å koble til sensorer og klassifisere live, samt se historisk data."
     ],
+    "skillsTitle": "Ferdigheter",
     "skills": [
       ["Firebase", 80],
       ["Figma", 70],
@@ -91,9 +112,23 @@
     "projectsTitle": "Prosjekter",
     "projects": [
       {
+        "title": "Nettside for IN Entreprenør AS",
+        "description": "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. De ønsket i tillegg til å ha en oversikt/liste med de ulike sortene arbeid de utfører, og referansebilder fra tidligere prosjekter.",
+        "img": {
+          "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FINentrep.png?alt=media&token=6ceefd82-e60f-4af1-92ca-3b9304cb7af6",
+          "type": "landscape"
+        },
+        "linkToGitHub": "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS",
+        "linkToWebsite": "https://ivarnilsenentreprenoras.web.app",
+        "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"]
+      },
+      {
         "title": "DQN på Atari Breakout",
         "description": "Mitt prosjekt i faget \"Anvendt maskinlæring med prosjekt\" på NTNU. Prosjektet ga meg muligheten til å dykke dypere ned i konsepter innen deep reinforcement learning, og har implementert en agent som med hjelp av et konvolusjonelt nevralt nettverk og experience replay interagerer med miljøet gitt av OpenAI Gym.",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FBreakout.gif?alt=media&token=dee01d4a-7b06-4817-8de0-8ff2684e4805",
+        "img": {
+          "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FBreakout.gif?alt=media&token=dee01d4a-7b06-4817-8de0-8ff2684e4805",
+          "type": "portrait"
+        },
         "linkToGitHub": "https://github.com/Martinnilsen99/Atari_Breakout_openAIGym",
         "linkToPaper": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMaskinlæringsrapport_DQN_AtariBreakout.pdf?alt=media&token=114e9a0e-16bd-4710-b295-1c81b5edd809",
         "technologies": ["Python", "PyTorch", "OpenAI Gym", "OpenCV"]
@@ -101,19 +136,24 @@
       {
         "title": "Got Your Back",
         "description": "Jobber for tiden med bacheloroppgaven min, der vi prøver klassifisere sittestillinger med maskinlæringsalgoritmer på akselerometer/gyroskop-data fra IMU-sensorer. I tillegg skal vi utvikle et brukergrensesnitt slik at en bruker enkelt kan koble til sensorer og klassifisere egen sittestilling over tid. Oppgaven er todelt, både med et forskningsperspektiv rundt hvor mange sensorer en bør bruke og hvor godt en kan klassifisere sittestillingene ved bruk av maskinlæring, samt utviklingen av et brukergrensesnitt som gir en bruker muligheten til å ta i bruk systemet.",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGot%20Your%20Back.png?alt=media&token=cb4c6e96-ef0e-4141-bbd5-8916fd63cac5",
+        "img": {
+          "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGot%20Your%20Back.png?alt=media&token=cb4c6e96-ef0e-4141-bbd5-8916fd63cac5",
+          "type": "landscape"
+        },
         "technologies": ["Python", "Keras", "React.js"]
       },
       {
         "title": "StudyPal",
         "description": "Et moderne dashboard som samler de verktøyene du trenger for effektiv studering. Skriv notater i Markdown, som gir deg muligheten til å formatere notatene du skriver live mens du skriver. Eller ta i bruk den integrerte Pomodoro timeren for en mer effektiv arbeidsflyt; velg en oppgave, jobb intensivt med dette i et gitt intervall, og ta hyppige men korte pauser. Ved innlasting av siden har du rask tilgang til et Google søkefelt, og du kan velge mellom en samling av ulike bakgrunnstemaer.",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
+        "img": {
+          "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
+          "type": "landscape"
+        },
         "linkToWebsite": "https://studypal.app",
         "technologies": ["TypeScript", "React", "Material UI"]
       }
     ],
     "contactInfoText": ["E-post", "Telefon"],
-    "projectsTitle": "Prosjekter",
     "linkButtonText": ["GitHub", "Nettside", "Demo", "ReadMe", "Rapport"]
   }
 }

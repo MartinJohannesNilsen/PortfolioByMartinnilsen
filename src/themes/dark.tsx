@@ -24,6 +24,9 @@ export const darkTheme = createMuiTheme({
       main: "#ddd",
       dark: "#eee",
     },
+    error: {
+      main: "#918457",
+    },
   },
   overrides: {
     MuiCssBaseline: {
