@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Box, Button, makeStyles, Typography } from "@material-ui/core";
+import { Box, makeStyles, Typography } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
 import ProjectList from "../components/ProjectList/ProjectList";
@@ -29,28 +29,10 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
       <ProjectList
         projects={props.data.projects}
         numShowing={numShowing}
+        setNumShowing={setNumShowing}
+        numIncrease={numIncrease}
         linkButtonText={props.data.linkButtonText}
       />
-      <Box pb={8} pt={4}>
-        {numShowing < props.data.projects.length ? (
-          <Button
-            className={classes.button}
-            onClick={() =>
-              setNumShowing(
-                numShowing + numIncrease < props.data.projects.length
-                  ? numShowing + numIncrease
-                  : numShowing + props.data.projects.length - numShowing
-              )
-            }
-          >
-            <Typography variant="button" color="textSecondary">
-              {props.data.linkButtonText[5]}
-            </Typography>
-          </Button>
-        ) : (
-          <></>
-        )}
-      </Box>
     </Box>
   );
 };
