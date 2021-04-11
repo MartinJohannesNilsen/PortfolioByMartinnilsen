@@ -16,7 +16,7 @@ const App = () => {
   const [language, setLanguage] = useStickyState("language", "english");
 
   useEffect(() => {
-    // fetchDataFromDB(language, setData);
+    fetchDataFromDB(language, setData);
     window.scrollTo(0, 0);
     //eslint-disable-next-line
   }, []);
