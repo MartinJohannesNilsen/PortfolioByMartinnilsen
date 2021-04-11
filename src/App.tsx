@@ -18,6 +18,7 @@ const App = () => {
   useEffect(() => {
     fetchDataFromDB(language, setData);
     window.scrollTo(0, 0);
+    //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
