@@ -1,6 +1,8 @@
 # PORTFOLIO
 
-Portfolio for showcasing my previous projects and developer-skills. This project is built with:
+Portfolio for introducing myself as an developer, showcasing my previous projects and getting to know more about me. 
+
+This project is built with:
 
 - React
 - TypeScript
