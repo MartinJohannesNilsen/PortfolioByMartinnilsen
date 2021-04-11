@@ -16,7 +16,7 @@ type ProjectViewProps = {
 const ProjectView: FC<ProjectViewProps> = (props) => {
   const classes = useStyles();
   const [numShowing, setNumShowing] = useState<number>(3);
-  const [numIncrease] = useState<number>(2);
+  const [numIncrease] = useState<number>(3);
 
   return (
     <Box className={classes.root} textAlign="center" id={props.id}>
@@ -44,7 +44,7 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
             }
           >
             <Typography variant="button" color="textSecondary">
-              Show More
+              {props.data.linkButtonText[5]}
             </Typography>
           </Button>
         ) : (
