@@ -94,10 +94,6 @@ export const lightTheme = createMuiTheme({
         fontSize: "1.1rem",
       },
     },
-    caption: {
-      fontSize: "3rem",
-      fontWeight: 600,
-    },
     body1: {
       fontSize: "1.5rem",
       fontWeight: 400,
@@ -111,6 +107,10 @@ export const lightTheme = createMuiTheme({
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.3rem",
       },
+    },
+    caption: {
+      fontSize: "1.2rem",
+      fontWeight: 600,
     },
   },
 });
