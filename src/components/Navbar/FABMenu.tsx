@@ -37,6 +37,7 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
           }
           onClick={() => {
             handleScroll(item);
+            setOpen(false);
           }}
           size={52}
           background={"white"}
