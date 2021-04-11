@@ -6,7 +6,7 @@ import caretDown from "@iconify-icons/carbon/caret-down";
 type ContactViewProps = {
   id: string;
   data: {
-    contactText: string;
+    contactText: string[];
   };
 };
 

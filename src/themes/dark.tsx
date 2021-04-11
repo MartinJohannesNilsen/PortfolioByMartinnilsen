@@ -95,7 +95,7 @@ export const darkTheme = createMuiTheme({
       },
     },
     caption: {
-      fontSize: "3rem",
+      fontSize: "1.2rem",
       fontWeight: 600,
     },
     body1: {
