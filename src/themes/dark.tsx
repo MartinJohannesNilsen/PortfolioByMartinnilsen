@@ -82,10 +82,17 @@ export const darkTheme = createMuiTheme({
     subtitle2: {
       fontSize: "1.5rem",
       fontWeight: 800,
+      [defaultTheme.breakpoints.down("md")]: {
+        fontSize: ".5rem",
+        fontWeight: 800,
+      },
     },
     button: {
-      fontSize: "1rem",
-      fontWeight: 700,
+      fontSize: ".8rem",
+      fontWeight: 800,
+      [defaultTheme.breakpoints.up("md")]: {
+        fontSize: "1.1rem",
+      },
     },
     caption: {
       fontSize: "3rem",
@@ -94,10 +101,16 @@ export const darkTheme = createMuiTheme({
     body1: {
       fontSize: "1.5rem",
       fontWeight: 400,
+      [defaultTheme.breakpoints.up("lg")]: {
+        fontSize: "1.8rem",
+      },
     },
     body2: {
       fontSize: "1rem",
       fontWeight: 400,
+      [defaultTheme.breakpoints.up("lg")]: {
+        fontSize: "1.3rem",
+      },
     },
   },
 });

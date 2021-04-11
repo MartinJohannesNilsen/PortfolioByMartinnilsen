@@ -82,12 +82,17 @@ export const lightTheme = createMuiTheme({
     subtitle2: {
       fontSize: "1.5rem",
       fontWeight: 800,
+      [defaultTheme.breakpoints.down("md")]: {
+        fontSize: "0.45rem",
+        fontWeight: 800,
+      },
     },
     button: {
-      fontSize: "1rem",
-      fontWeight: 700,
-      // textShadow: "1px 1px 1px #000",
-      // textTransform: "none",
+      fontSize: ".8rem",
+      fontWeight: 800,
+      [defaultTheme.breakpoints.up("md")]: {
+        fontSize: "1.1rem",
+      },
     },
     caption: {
       fontSize: "3rem",
