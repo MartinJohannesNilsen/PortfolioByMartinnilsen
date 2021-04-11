@@ -29,10 +29,10 @@ const App = () => {
     <ThemeProvider>
       <CssBaseline />
       <LandingView data={data} language={language} setLanguage={setLanguage} />
-      <AboutView text={data.aboutText} />
-      <SkillView data={data} />
-      <ProjectView data={data} />
-      <ContactView data={data} />
+      <AboutView text={data.aboutText} id={data.navText[0]} />
+      <SkillView data={data} id={data.navText[1]} />
+      <ProjectView data={data} id={data.navText[2]} />
+      <ContactView data={data} id={data.navText[3]} />
     </ThemeProvider>
   );
 };

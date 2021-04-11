@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import {
   Box,
   makeStyles,
@@ -26,8 +26,10 @@ import firebaseIcon from "@iconify-icons/cib/firebase";
 import { useTheme } from "../ThemeProvider";
 
 type SkillViewProps = {
+  id: string;
   data: {
     skills: string[];
+    skillsTitle: string;
   };
 };
 
@@ -50,17 +52,13 @@ const SkillView: FC<SkillViewProps> = (props) => {
   const [skillSelected, setSkillSelected] = useState<number>(-1);
   const { theme } = useTheme();
 
-  useEffect(() => {
-    console.log(typeof props.data.skills[0][1]);
-  }, [skillSelected]);
-
   return (
-    <Box className={classes.root} textAlign="center">
+    <Box className={classes.root} textAlign="center" id={props.id}>
       <Icon icon={caretDown} className={classes.backgroundTriangle} />
       <Box className={classes.caption}>
         <Typography variant="h3" color="textPrimary">
           {skillSelected === -1
-            ? "SKILLS"
+            ? props.data.skillsTitle
             : props.data.skills[skillSelected][0]}
         </Typography>
         <Box style={{ width: "130px", margin: "10px auto" }}>

@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
 
 type ContactViewProps = {
+  id: string;
   data: {};
 };
 
@@ -12,7 +13,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
 
   return (
     <>
-      <Box className={classes.root} textAlign="center">
+      <Box className={classes.root} textAlign="center" id={props.id}>
         <Icon icon={caretDown} className={classes.backgroundTriangle} />
       </Box>
     </>

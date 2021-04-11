@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   Grid,
   Box,
@@ -8,6 +8,7 @@ import {
   Toolbar,
   Hidden,
   ButtonBase,
+  Button,
 } from "@material-ui/core";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
@@ -26,11 +27,15 @@ type NavbarProps = {
   setLanguage: (language: string) => void;
 };
 
+const handleScroll = (name: string) => {
+  document!.getElementById(name)!.scrollIntoView({ behavior: "smooth" });
+};
+
 export const Navbar: FC<NavbarProps> = (props) => {
   const classes = useStyles();
   const { theme, setTheme } = useTheme();
 
-  const handleChange = (event: any) => {
+  const handleThemeChange = (event: any) => {
     event.target.checked === true
       ? setTheme(ThemeEnum.Light)
       : setTheme(ThemeEnum.Dark);
@@ -47,22 +52,63 @@ export const Navbar: FC<NavbarProps> = (props) => {
               </Typography>
             </Box>
           </Grid>
-          <Hidden smDown>
+          <Hidden mdDown>
             <Grid container item md={8} xl={6} justify="flex-end">
-              <Box mx={3} mt={0.8}>
-                <Typography variant="subtitle2" color="textSecondary">
-                  {props.data.navText[0]}
-                </Typography>
+              <Box mx={2}>
+                <Button
+                  classes={{ text: classes.buttonText }}
+                  onClick={() => handleScroll(props.data.navText[0])}
+                >
+                  <Typography
+                    variant="subtitle2"
+                    color="textSecondary"
+                    className={classes.buttonLabel}
+                  >
+                    {props.data.navText[0]}
+                  </Typography>
+                </Button>
               </Box>
-              <Box mx={3} mt={0.8}>
-                <Typography variant="subtitle2" color="textSecondary">
-                  {props.data.navText[1]}
-                </Typography>
+              <Box mx={2}>
+                <Button
+                  classes={{ text: classes.buttonText }}
+                  onClick={() => handleScroll(props.data.navText[1])}
+                >
+                  <Typography
+                    variant="subtitle2"
+                    color="textSecondary"
+                    className={classes.buttonLabel}
+                  >
+                    {props.data.navText[1]}
+                  </Typography>
+                </Button>
               </Box>
-              <Box mx={3} mt={0.8}>
-                <Typography variant="subtitle2" color="textSecondary">
-                  {props.data.navText[2]}
-                </Typography>
+              <Box mx={2}>
+                <Button
+                  classes={{ text: classes.buttonText }}
+                  onClick={() => handleScroll(props.data.navText[2])}
+                >
+                  <Typography
+                    variant="subtitle2"
+                    color="textSecondary"
+                    className={classes.buttonLabel}
+                  >
+                    {props.data.navText[2]}
+                  </Typography>
+                </Button>
+              </Box>
+              <Box mx={2}>
+                <Button
+                  classes={{ text: classes.buttonText }}
+                  onClick={() => handleScroll(props.data.navText[3])}
+                >
+                  <Typography
+                    variant="subtitle2"
+                    color="textSecondary"
+                    className={classes.buttonLabel}
+                  >
+                    {props.data.navText[3]}
+                  </Typography>
+                </Button>
               </Box>
               <Box mx={2}>
                 <ButtonBase
@@ -85,7 +131,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
               <Box ml={0.5} mt={0.8}>
                 <Switch
                   checked={theme.palette.type === "light"}
-                  onChange={handleChange}
+                  onChange={handleThemeChange}
                 />
               </Box>
             </Grid>
@@ -112,5 +158,13 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     height: "50px",
     width: "50px",
+  },
+  buttonText: {
+    textTransform: "none",
+  },
+  buttonLabel: {
+    "&:hover": {
+      color: theme.palette.error.main,
+    },
   },
 }));

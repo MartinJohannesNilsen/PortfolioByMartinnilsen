@@ -12,6 +12,7 @@ import portrait from "../assets/img/Portrett2.png";
 // };
 
 type AboutViewProps = {
+  id: string;
   text: string[];
 };
 
@@ -19,7 +20,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root} textAlign="center">
+    <Box className={classes.root} textAlign="center" id={props.id}>
       <Icon icon={caretDown} className={classes.backgroundTriangle} />
       <Box textAlign="left" className={classes.height}>
         <img

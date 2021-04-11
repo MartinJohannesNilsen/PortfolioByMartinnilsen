@@ -24,6 +24,9 @@ export const lightTheme = createMuiTheme({
       main: "#3e4347",
       dark: "#27323b",
     },
+    error: {
+      main: "#918457",
+    },
   },
   overrides: {
     MuiCssBaseline: {
@@ -93,10 +96,16 @@ export const lightTheme = createMuiTheme({
     body1: {
       fontSize: "1.5rem",
       fontWeight: 400,
+      [defaultTheme.breakpoints.up("lg")]: {
+        fontSize: "1.8rem",
+      },
     },
     body2: {
       fontSize: "1rem",
       fontWeight: 400,
+      [defaultTheme.breakpoints.up("lg")]: {
+        fontSize: "1.3rem",
+      },
     },
   },
 });
