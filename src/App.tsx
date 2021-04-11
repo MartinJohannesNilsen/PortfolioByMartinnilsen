@@ -2,6 +2,7 @@ import { CssBaseline } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import ThemeProvider from "./ThemeProvider";
 import useStickyState from "./utils/useStickyState";
+import fetchDataFromDB from "./utils/fetchDataFromDB";
 
 //Views
 import LandingView from "./views/LandingView";
@@ -14,10 +15,10 @@ const App = () => {
   const [data, setData] = useState(require("./TextData.json").english);
   const [language, setLanguage] = useStickyState("language", "english");
 
-  // useEffect(() => {
-  //   fetchDataFromDB();
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    fetchDataFromDB(language, setData);
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     language === "english"
