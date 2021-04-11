@@ -57,7 +57,7 @@
       },
       {
         "title": "Got Your Back",
-        "description": "Currently working on my bachelors project, trying to classify sitting postures with machine learning algorithms on accelerometer- and gyroscope-data from IMU-sensors. Additionally, we will be developing a GUI for watching how your sitting posture varies over time. The project is divided into two parts; the first is the research done by evaluating how good machine learning algorithms can classify postures on x amount of sensors, and the second part is developing the graphical user interface for performing live classification.",
+        "description": "Currently working on my bachelors project, trying to classify sitting postures with machine learning algorithms on accelerometer- and gyroscope-data from IMU-sensors. Additionally, we will be developing a GUI for watching how your sitting posture varies over time.",
         "img": {
           "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGot%20Your%20Back.png?alt=media&token=cb4c6e96-ef0e-4141-bbd5-8916fd63cac5",
           "type": "landscape"
@@ -66,7 +66,7 @@
       },
       {
         "title": "StudyPal",
-        "description": "A clean and modern dashboard for helping you focus more on your work, and less on finding the right tools. Write notes in Markdown, which makes writing on the web fast and easy with live formatting on the go. Or utilize the Pomodoro timer for managing your time for the most efficient workflow. When loading the page you have quick and easy access to the Google Search bar, and you can choose from a selection of themes.",
+        "description": "A clean and modern dashboard for helping you focus more on your work, and less on finding the right tools. Write notes in Markdown, or utilize the Pomodoro timer for managing your time for the most efficient workflow. When loading the page you have quick and easy access to the Google Search bar, and you can choose from a selection of themes.",
         "img": {
           "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
           "type": "landscape"
@@ -75,7 +75,6 @@
         "technologies": ["TypeScript", "React", "Material UI"]
       }
     ],
-    "contactInfoText": ["Mail", "Telephone"],
     "linkButtonText": ["GitHub", "Website", "Demo", "ReadMe", "Paper"]
   },
   "norwegian": {
@@ -135,7 +134,7 @@
       },
       {
         "title": "Got Your Back",
-        "description": "Jobber for tiden med bacheloroppgaven min, der vi prøver klassifisere sittestillinger med maskinlæringsalgoritmer på akselerometer/gyroskop-data fra IMU-sensorer. I tillegg skal vi utvikle et brukergrensesnitt slik at en bruker enkelt kan koble til sensorer og klassifisere egen sittestilling over tid. Oppgaven er todelt, både med et forskningsperspektiv rundt hvor mange sensorer en bør bruke og hvor godt en kan klassifisere sittestillingene ved bruk av maskinlæring, samt utviklingen av et brukergrensesnitt som gir en bruker muligheten til å ta i bruk systemet.",
+        "description": "Jobber for tiden med bacheloroppgaven, der vi prøver klassifisere sittestillinger med maskinlæringsalgoritmer på akselerometer- og gyroskop-data fra IMU-sensorer. I tillegg skal vi utvikle et brukergrensesnitt slik at en bruker enkelt kan koble til sensorer og klassifisere egen sittestilling over tid.",
         "img": {
           "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGot%20Your%20Back.png?alt=media&token=cb4c6e96-ef0e-4141-bbd5-8916fd63cac5",
           "type": "landscape"
@@ -144,7 +143,7 @@
       },
       {
         "title": "StudyPal",
-        "description": "Et moderne dashboard som samler de verktøyene du trenger for effektiv studering. Skriv notater i Markdown, som gir deg muligheten til å formatere notatene du skriver live mens du skriver. Eller ta i bruk den integrerte Pomodoro timeren for en mer effektiv arbeidsflyt; velg en oppgave, jobb intensivt med dette i et gitt intervall, og ta hyppige men korte pauser. Ved innlasting av siden har du rask tilgang til et Google søkefelt, og du kan velge mellom en samling av ulike bakgrunnstemaer.",
+        "description": "Et moderne dashboard som samler de verktøyene du trenger for effektiv studering. Skriv notater i Markdown, eller ta i bruk den integrerte Pomodoro timeren for en mer effektiv arbeidsflyt. Ved innlasting av siden har du rask tilgang til et Google søkefelt, og du kan velge mellom en samling av ulike bakgrunnstemaer.",
         "img": {
           "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
           "type": "landscape"
@@ -153,7 +152,6 @@
         "technologies": ["TypeScript", "React", "Material UI"]
       }
     ],
-    "contactInfoText": ["E-post", "Telefon"],
     "linkButtonText": ["GitHub", "Nettside", "Demo", "ReadMe", "Rapport"]
   }
 }

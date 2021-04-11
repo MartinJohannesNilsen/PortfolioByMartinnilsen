@@ -5,6 +5,7 @@ import ProjectElement from "./ProjectElement";
 type ProjectListProps = {
   projects: [];
   numShowing: number;
+  linkButtonText: string[];
 };
 
 export const ProjectList: FC<ProjectListProps> = (props) => {
@@ -23,6 +24,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
                   <ProjectElement
                     projectData={project}
                     imgPosition={index % 2 === 0 ? "right" : "left"}
+                    linkButtonText={props.linkButtonText}
                   />
                 </Box>
               </Grid>

@@ -9,6 +9,7 @@ type ProjectViewProps = {
   data: {
     projects: [];
     projectsTitle: string;
+    linkButtonText: string[];
   };
 };
 
@@ -29,8 +30,12 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
           {props.data.projectsTitle}
         </Typography>
       </Box>
-      <ProjectList projects={props.data.projects} numShowing={numShowing} />
-      <Box py={8}>
+      <ProjectList
+        projects={props.data.projects}
+        numShowing={numShowing}
+        linkButtonText={props.data.linkButtonText}
+      />
+      <Box pb={8} pt={4}>
         {numShowing < props.data.projects.length ? (
           <Button
             className={classes.button}
@@ -43,8 +48,7 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
             }
           >
             <Typography variant="button" color="textSecondary">
-              {" "}
-              Show More{" "}
+              Show More
             </Typography>
           </Button>
         ) : (

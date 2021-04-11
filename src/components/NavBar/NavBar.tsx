@@ -16,8 +16,10 @@ import { Icon } from "@iconify/react";
 import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import Switch from "../Switch/Switch";
+import $ from "jquery";
+import FABMenu from "./FABMenu";
 
-type NavbarProps = {
+export type NavbarProps = {
   data: {
     title: string;
     navText: string[];
@@ -27,8 +29,13 @@ type NavbarProps = {
   setLanguage: (language: string) => void;
 };
 
-const handleScroll = (name: string) => {
-  document!.getElementById(name)!.scrollIntoView({ behavior: "smooth" });
+export const handleScroll = (name: string) => {
+  $("html, body").animate(
+    {
+      scrollTop: $("#" + name)!.offset()!.top,
+    },
+    1500
+  );
 };
 
 export const Navbar: FC<NavbarProps> = (props) => {
@@ -138,6 +145,9 @@ export const Navbar: FC<NavbarProps> = (props) => {
           </Hidden>
         </Grid>
       </Toolbar>
+      <Hidden lgUp>
+        <FABMenu {...props} />
+      </Hidden>
     </AppBar>
   );
 };
