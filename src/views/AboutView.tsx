@@ -86,6 +86,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: "100%",
     backgroundColor: theme.palette.text.primary,
+    position: "relative",
   },
   backgroundTriangle: {
     color: theme.palette.text.secondary,
@@ -99,25 +100,25 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer: {
     position: "absolute",
-    top: "110%",
+    top: "10%",
     left: "40%",
     [theme.breakpoints.down("md")]: {
-      top: "105%",
+      top: "5%",
       left: "2%",
     },
     [theme.breakpoints.down("sm")]: {
-      top: "115%",
+      top: "15%",
       left: "0%",
     },
     [theme.breakpoints.down("xs")]: {
-      top: "105%",
+      top: "5%",
       left: "0%",
     },
   },
   img: {
     position: "absolute",
     left: 0,
-    bottom: "-100%",
+    bottom: 0,
     width: "35%",
     zIndex: 4,
     [theme.breakpoints.down("xs")]: {
@@ -127,7 +128,7 @@ const useStyles = makeStyles((theme) => ({
   imgOutline: {
     position: "absolute",
     left: "-20px",
-    bottom: "-100%",
+    bottom: 0,
     [theme.breakpoints.down("xs")]: {
       left: "-8px",
     },

@@ -29,7 +29,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
               {props.data.contactText[0]}
             </Typography>
           </Box>
-          <Box py={1} px={0}>
+          <Box py={1} px={1}>
             <Typography variant="caption" color="textPrimary">
               {props.data.contactText[1]}
             </Typography>
@@ -103,6 +103,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxHeight: "15%",
     backgroundColor: theme.palette.text.secondary,
+    position: "relative"
   },
   backgroundTriangle: {
     color: theme.palette.text.primary,
