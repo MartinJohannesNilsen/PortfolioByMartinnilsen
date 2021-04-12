@@ -34,6 +34,11 @@ export const darkTheme = createMuiTheme({
         body: {},
       },
     },
+    MuiButton: {
+      root: {
+        minWidth: "0px",
+      },
+    },
   },
   typography: {
     fontFamily: "Gotham",

@@ -29,7 +29,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
               {props.data.contactText[0]}
             </Typography>
           </Box>
-          <Box py={1} px={1}>
+          <Box py={1} px={0}>
             <Typography variant="caption" color="textPrimary">
               {props.data.contactText[1]}
             </Typography>
