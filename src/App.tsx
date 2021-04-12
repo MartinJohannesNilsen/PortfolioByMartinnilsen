@@ -1,5 +1,5 @@
 import { CssBaseline } from "@material-ui/core";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import ThemeProvider from "./ThemeProvider";
 import useStickyState from "./utils/useStickyState";
 import fetchDataFromDB from "./utils/fetchDataFromDB";
@@ -19,7 +19,7 @@ const App = () => {
       : require("./TextData.json").norwegian
   );
 
-  useEffect(() => {
+  useMemo(() => {
     fetchDataFromDB(language, setData);
     window.scrollTo(0, 0);
     //eslint-disable-next-line
