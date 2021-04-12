@@ -36,9 +36,9 @@ export const lightTheme = createMuiTheme({
     },
     MuiButton: {
       root: {
-        minWidth: "0px"
-      }
-    }
+        minWidth: "0px",
+      },
+    },
   },
   typography: {
     fontFamily: "Gotham",
@@ -49,7 +49,7 @@ export const lightTheme = createMuiTheme({
         fontSize: "4rem",
       },
       [defaultTheme.breakpoints.down("xs")]: {
-        fontSize: "3rem",
+        fontSize: "2.7rem",
       },
     },
     h2: {
