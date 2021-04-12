@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     display: "table",
     width: "100%",
     backgroundColor: theme.palette.text.primary,
+    position: "relative"
   },
   backgroundTriangle: {
     color: theme.palette.text.secondary,

@@ -249,6 +249,7 @@ const useStyles = makeStyles((theme: any) => ({
   root: {
     height: "100%",
     backgroundColor: theme.palette.text.secondary,
+    position: "relative"
   },
   backgroundTriangle: {
     color: theme.palette.text.primary,
@@ -264,12 +265,12 @@ const useStyles = makeStyles((theme: any) => ({
     position: "absolute",
     width: "100%",
     textAlign: "center",
-    top: "calc(265%)",
+    top: "calc(65%)",
     [theme.breakpoints.up("md")]: {
-      top: "calc(250% - 3rem)",
+      top: "calc(50% - 3rem)",
     },
     [theme.breakpoints.up("lg")]: {
-      top: "calc(250% - 6rem)",
+      top: "calc(50% - 6rem)",
     },
   },
   icon: {
