@@ -62,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: "calc(100% - 120px)",
     backgroundColor: theme.palette.text.secondary,
+    position: "relative"
   },
   typist: {
     position: "absolute",
