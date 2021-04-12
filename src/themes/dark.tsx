@@ -49,7 +49,7 @@ export const darkTheme = createMuiTheme({
         fontSize: "4rem",
       },
       [defaultTheme.breakpoints.down("xs")]: {
-        fontSize: "3rem",
+        fontSize: "2.7rem",
       },
     },
     h2: {
