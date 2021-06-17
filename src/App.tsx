@@ -12,7 +12,7 @@ import SkillView from "./views/SkillView";
 import ContactView from "./views/ContactView";
 
 const App = () => {
-  const [language, setLanguage] = useStickyState("language", "english");
+  const [language, setLanguage] = useStickyState("language", "norwegian");
   const [data, setData] = useState(
     language === "english"
       ? require("./TextData.json").english
@@ -24,12 +24,6 @@ const App = () => {
     window.scrollTo(0, 0);
     //eslint-disable-next-line
   }, [language]);
-
-  // useEffect(() => {
-  //   language === "english"
-  //     ? setData(require("./TextData.json").english)
-  //     : setData(require("./TextData.json").norwegian);
-  // }, [language]);
 
   return (
     <ThemeProvider>

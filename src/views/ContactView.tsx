@@ -7,6 +7,7 @@ type ContactViewProps = {
   id: string;
   data: {
     contactText: string[];
+    cvLink: string;
   };
 };
 
@@ -51,14 +52,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
             >
               •
             </Typography>
-            <Button
-              onClick={() =>
-                window.open(
-                  "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV.pdf?alt=media&token=a7db3eb9-3f41-4ddc-a9a7-dfc6d1de25aa",
-                  "_blank"
-                )
-              }
-            >
+            <Button onClick={() => window.open(props.data.cvLink, "_blank")}>
               <Typography variant="button" color="textPrimary">
                 {props.data.contactText[3]}
               </Typography>
@@ -103,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxHeight: "15%",
     backgroundColor: theme.palette.text.secondary,
-    position: "relative"
+    position: "relative",
   },
   backgroundTriangle: {
     color: theme.palette.text.primary,
