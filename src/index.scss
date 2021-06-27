@@ -64,8 +64,7 @@ html {
 }
 
 /* define height for wrapper's parent div */
-div#root,
-div#root > div {
+div#root {
   height: 100%;
 }
 

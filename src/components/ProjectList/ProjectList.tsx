@@ -21,7 +21,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
             .slice(props.projects.length - props.numShowing)
             .reverse()
             .map((project, index) => (
-              <Grid item xs={10} lg={8} xl={7}>
+              <Grid item xs={10} lg={8} xl={7} key={index}>
                 <Box mb={index !== props.projects.length - 1 ? 10 : 5}>
                   <ProjectElement
                     projectData={project}

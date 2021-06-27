@@ -25,6 +25,7 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
     list.map((item: any, i: number) => {
       return (
         <ChildButton
+          key={i}
           icon={
             <Typography
               variant="subtitle2"

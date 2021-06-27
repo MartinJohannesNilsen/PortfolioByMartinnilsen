@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 import {
   Grid,
   Box,
@@ -13,6 +13,7 @@ import {
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
 import { Icon } from "@iconify/react";
+import { TweenLite, Power3 } from "gsap";
 import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import Switch from "../Switch/Switch";
@@ -42,18 +43,34 @@ export const Navbar: FC<NavbarProps> = (props) => {
   const classes = useStyles();
   const { theme, setTheme } = useTheme();
 
+  let ref: any = useRef(null);
+  useEffect(() => {
+    TweenLite.from(ref, 0.8, { opacity: 0, y: -100, ease: Power3.easeIn });
+  }, []);
+
   const handleThemeChange = (event: any) => {
     event.target.checked === true
       ? setTheme(ThemeEnum.Light)
       : setTheme(ThemeEnum.Dark);
   };
 
+  const mdUp = window.innerWidth > 1280;
+
   return (
     <AppBar position="static" className={classes.root}>
       <Toolbar className={classes.root}>
-        <Grid container alignItems="flex-end" justify="center">
+        <Grid
+          container
+          alignItems="flex-end"
+          justify={mdUp ? "center" : "flex-start"}
+          ref={(el) => (ref = el)}
+        >
           <Grid item>
-            <Typography variant="subtitle1" className={classes.mainLink}>
+            <Typography
+              variant="subtitle1"
+              className={classes.mainLink}
+              style={!mdUp ? { marginLeft: 40 } : {}}
+            >
               {props.data.title}
             </Typography>
           </Grid>
@@ -153,6 +170,7 @@ export default Navbar;
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    zIndex: 2,
     height: "100px",
     backgroundColor: theme.palette.primary.main,
   },
@@ -166,7 +184,11 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonText: {
     textTransform: "none",
-    color: theme.palette.text.primary,
+    "&:hover": {
+      "> buttonLabel": {
+        color: theme.palette.error.main,
+      },
+    },
   },
   buttonLabel: {
     "&:hover": {
