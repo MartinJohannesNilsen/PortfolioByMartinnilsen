@@ -248,11 +248,11 @@ export default SkillView;
 const useStyles = makeStyles((theme: any) => ({
   root: {
     height: "100%",
-    backgroundColor: theme.palette.text.secondary,
-    position: "relative"
+    backgroundColor: theme.palette.primary.main,
+    position: "relative",
   },
   backgroundTriangle: {
-    color: theme.palette.text.primary,
+    color: theme.palette.secondary.main,
     position: "absolute",
     margin: "-45px",
     height: "100px",

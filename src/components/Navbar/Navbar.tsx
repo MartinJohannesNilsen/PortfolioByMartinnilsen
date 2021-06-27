@@ -18,7 +18,6 @@ import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import Switch from "../Switch/Switch";
 import $ from "jquery";
 import FABMenu from "./FABMenu";
-import FadeIn from "../Animations/FadeIn";
 
 export type NavbarProps = {
   data: {
@@ -54,13 +53,9 @@ export const Navbar: FC<NavbarProps> = (props) => {
       <Toolbar className={classes.root}>
         <Grid container alignItems="flex-end" justify="center">
           <Grid item>
-            <FadeIn direction="left">
-              <Box className={classes.mainLink}>
-                <Typography variant="subtitle1" color="textPrimary">
-                  {props.data.title}
-                </Typography>
-              </Box>
-            </FadeIn>
+            <Typography variant="subtitle1" className={classes.mainLink}>
+              {props.data.title}
+            </Typography>
           </Grid>
           <Hidden mdDown>
             <Grid container item md={8} xl={6} justify="flex-end">
@@ -71,7 +66,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 >
                   <Typography
                     variant="subtitle2"
-                    color="textSecondary"
+                    color="textPrimary"
                     className={classes.buttonLabel}
                   >
                     {props.data.navText[0]}
@@ -85,7 +80,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 >
                   <Typography
                     variant="subtitle2"
-                    color="textSecondary"
+                    color="textPrimary"
                     className={classes.buttonLabel}
                   >
                     {props.data.navText[1]}
@@ -99,7 +94,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 >
                   <Typography
                     variant="subtitle2"
-                    color="textSecondary"
+                    color="textPrimary"
                     className={classes.buttonLabel}
                   >
                     {props.data.navText[2]}
@@ -113,7 +108,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 >
                   <Typography
                     variant="subtitle2"
-                    color="textSecondary"
+                    color="textPrimary"
                     className={classes.buttonLabel}
                   >
                     {props.data.navText[3]}
@@ -159,14 +154,11 @@ export default Navbar;
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100px",
-    backgroundColor: theme.palette.text.primary,
+    backgroundColor: theme.palette.primary.main,
   },
   mainLink: {
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(3),
-    paddingLeft: theme.spacing(0.8),
-    paddingRight: theme.spacing(0.8),
-    backgroundColor: theme.palette.text.secondary,
+    color: theme.palette.error.main,
+    fontWeight: 800,
   },
   icon: {
     height: "50px",
@@ -174,6 +166,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonText: {
     textTransform: "none",
+    color: theme.palette.text.primary,
   },
   buttonLabel: {
     "&:hover": {

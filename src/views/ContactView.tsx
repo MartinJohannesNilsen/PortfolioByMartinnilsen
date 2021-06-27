@@ -95,12 +95,12 @@ export default ContactView;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxHeight: "15%",
-    backgroundColor: theme.palette.text.secondary,
+    maxHeight: "35%",
+    backgroundColor: theme.palette.secondary.main,
     position: "relative",
   },
   backgroundTriangle: {
-    color: theme.palette.text.primary,
+    color: theme.palette.primary.main,
     position: "absolute",
     margin: "-45px",
     height: "100px",
