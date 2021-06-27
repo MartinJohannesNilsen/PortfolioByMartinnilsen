@@ -1,9 +1,8 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect } from "react";
 import { Box, makeStyles } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
-import { ReactSVG } from "react-svg";
-import desk from "../assets/illustrations/desk.svg";
+import { useTheme } from "../ThemeProvider";
 
 type landingProps = {
   data: {
@@ -30,60 +29,69 @@ type svgProps = {
 
 const LandingView: FC<landingProps> = (props) => {
   const classes = useStyles();
+  const { theme } = useTheme();
 
   function animateIn(svgElements: svgProps) {
-    console.log(svgElements);
     gsap
       .timeline()
       .from(svgElements.drawers, {
         duration: 0.5,
-        y: -100,
+        y: -300,
         opacity: 0,
+        ease: Power3.easeIn,
       })
       .from(svgElements.countertop, {
         duration: 0.5,
-        y: -100,
+        y: -300,
         opacity: 0,
-      })
-      .from(svgElements.monitor_arm, {
-        duration: 0.3,
-        y: -100,
-        opacity: 0,
+        ease: Power3.easeIn,
       })
       .from(svgElements.monitor_arm, {
         duration: 0.5,
-        y: -100,
+        y: -300,
         opacity: 0,
+        ease: Power3.easeIn,
       })
       .from(svgElements.monitor, {
-        duration: 0.3,
-        y: -100,
+        duration: 0.5,
+        y: -300,
         opacity: 0,
+        ease: Power3.easeIn,
       })
       .from(svgElements.keyboard, {
-        duration: 0.3,
-        y: -100,
+        duration: 0.5,
+        y: -300,
         opacity: 0,
+        ease: Power3.easeIn,
       })
       .from(svgElements.mouse, {
-        duration: 0.3,
-        y: -100,
+        duration: 0.5,
+        y: -300,
         opacity: 0,
+        ease: Power3.easeIn,
       })
       .from(svgElements.lamp, {
-        duration: 0.3,
-        y: -100,
+        duration: 0.5,
+        y: -300,
+        opacity: 0,
+        ease: Power3.easeIn,
+      })
+      .from(svgElements.desktop_bg, {
+        duration: 0.8,
         opacity: 0,
       })
       .from(svgElements.lamp_light, {
-        duration: 0.3,
-        y: -100,
+        duration: 0.15,
+        opacity: 0,
+        delay: 0.5,
+      })
+      .to(svgElements.lamp_light, {
+        duration: 0.15,
         opacity: 0,
       })
-      .from(svgElements.desktop_bg, {
+      .to(svgElements.lamp_light, {
         duration: 0.3,
-        y: -100,
-        opacity: 0,
+        opacity: 1,
       });
     console.log("done");
   }
