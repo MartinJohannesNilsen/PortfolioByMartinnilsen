@@ -56,11 +56,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Icon
                 icon={githubIcon}
                 style={{ marginRight: "5px", marginBottom: "1px" }}
-                color={theme.palette.text.secondary}
+                color={theme.palette.text.primary}
               />
             }
           >
-            <Typography variant="button" color="textSecondary">
+            <Typography variant="button" color="textPrimary">
               {props.linkButtonText[0]}
             </Typography>
           </Button>
@@ -77,11 +77,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Icon
                 icon={desktopOutlined}
                 style={{ marginRight: "5px" }}
-                color={theme.palette.text.secondary}
+                color={theme.palette.text.primary}
               />
             }
           >
-            <Typography variant="button" color="textSecondary">
+            <Typography variant="button" color="textPrimary">
               {props.linkButtonText[1]}
             </Typography>
           </Button>
@@ -98,11 +98,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Icon
                 icon={cameraVideo}
                 style={{ marginRight: "5px" }}
-                color={theme.palette.text.secondary}
+                color={theme.palette.text.primary}
               />
             }
           >
-            <Typography variant="button" color="textSecondary">
+            <Typography variant="button" color="textPrimary">
               {props.linkButtonText[2]}
             </Typography>
           </Button>
@@ -119,11 +119,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Icon
                 icon={documentBlank}
                 style={{ marginRight: "5px", marginBottom: "1px" }}
-                color={theme.palette.text.secondary}
+                color={theme.palette.text.primary}
               />
             }
           >
-            <Typography variant="button" color="textSecondary">
+            <Typography variant="button" color="textPrimary">
               {props.linkButtonText[3]}
             </Typography>
           </Button>
@@ -138,11 +138,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Icon
                 icon={documentPdf}
                 style={{ marginRight: "5px", marginBottom: "1px" }}
-                color={theme.palette.text.secondary}
+                color={theme.palette.text.primary}
               />
             }
           >
-            <Typography variant="button" color="textSecondary">
+            <Typography variant="button" color="textPrimary">
               {props.linkButtonText[4]}
             </Typography>
           </Button>
@@ -169,12 +169,12 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             </Grid>
             <Grid item xs={11} md={6}>
               <Box pb={1}>
-                <Typography variant="body1" color="textSecondary">
+                <Typography variant="body1" color="textPrimary">
                   {props.projectData.title}
                 </Typography>
               </Box>
               <Box textAlign="justify">
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textPrimary">
                   {props.projectData.description}
                 </Typography>
               </Box>
@@ -196,12 +196,12 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             </Hidden>
             <Grid item xs={11} md={6}>
               <Box pb={1}>
-                <Typography variant="body1" color="textSecondary">
+                <Typography variant="body1" color="textPrimary">
                   {props.projectData.title}
                 </Typography>
               </Box>
               <Box textAlign="justify">
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textPrimary">
                   {props.projectData.description}
                 </Typography>
               </Box>
@@ -231,7 +231,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   button: {
-    border: "2px solid " + theme.palette.text.secondary,
+    border: "2px solid " + theme.palette.text.primary,
     borderRadius: "2px",
     padding: "5px",
     width: "40%",

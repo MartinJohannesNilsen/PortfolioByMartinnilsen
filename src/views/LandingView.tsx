@@ -61,8 +61,8 @@ export default LandingView;
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "calc(100% - 120px)",
-    backgroundColor: theme.palette.text.secondary,
-    position: "relative"
+    backgroundColor: theme.palette.primary.main,
+    position: "relative",
   },
   typist: {
     position: "absolute",

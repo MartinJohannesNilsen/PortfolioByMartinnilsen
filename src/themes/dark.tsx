@@ -9,23 +9,24 @@ export const darkTheme = createMuiTheme({
       secondary: "#000",
     },
     background: {
-      default: "#000",
+      default: "#021b2e",
       paper: "rgba(0,0,0,1)",
     },
     primary: {
-      main: "#000",
+      // main: "#03243d",
+      main: "#021b2e",
     },
     secondary: {
-      main: "rgba(255, 255, 255, 1)",
+      main: "#01121f",
     },
     success: {
       //outlineshadow
-      light: "#ccc",
-      main: "#ddd",
-      dark: "#eee",
+      light: "#585d63",
+      main: "#3e4347",
+      dark: "#27323b",
     },
     error: {
-      main: "#918457",
+      main: "#c73626",
     },
   },
   overrides: {

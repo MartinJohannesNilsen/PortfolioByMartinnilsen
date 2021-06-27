@@ -16,16 +16,17 @@ export const lightTheme = createMuiTheme({
       main: "#FFF",
     },
     secondary: {
-      main: "rgba(0, 0, 0, 1)",
+      // main: "#ededed",
+      main: "#f7f7f7",
     },
     success: {
       //outlineshadow
-      light: "#585d63",
-      main: "#3e4347",
-      dark: "#27323b",
+      light: "#ccc",
+      main: "#ddd",
+      dark: "#eee",
     },
     error: {
-      main: "#918457",
+      main: "#c73626",
     },
   },
   overrides: {

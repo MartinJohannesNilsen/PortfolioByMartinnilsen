@@ -69,7 +69,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
           <Grid item md={12} lg={6} className={classes.textContainer}>
             {props.text.map((paragraph: string) => (
               <Box m={2}>
-                <Typography variant="h2" color="textSecondary">
+                <Typography variant="h2" color="textPrimary">
                   {paragraph}
                 </Typography>
               </Box>
@@ -85,11 +85,11 @@ export default AboutView;
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100%",
-    backgroundColor: theme.palette.text.primary,
+    backgroundColor: theme.palette.secondary.main,
     position: "relative",
   },
   backgroundTriangle: {
-    color: theme.palette.text.secondary,
+    color: theme.palette.primary.main,
     position: "absolute",
     margin: "-45px",
     height: "100px",

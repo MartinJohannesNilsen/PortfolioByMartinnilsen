@@ -46,7 +46,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
                 )
               }
             >
-              <Typography variant="button" color="textSecondary">
+              <Typography variant="button" color="textPrimary">
                 {props.linkButtonText[5]}
               </Typography>
             </Button>
