@@ -8,7 +8,7 @@ import fetchDataFromDB from "./utils/fetchDataFromDB";
 import LandingView from "./views/LandingView";
 import AboutView from "./views/AboutView";
 import ProjectView from "./views/ProjectView";
-import SkillView from "./views/SkillView";
+// import SkillView from "./views/SkillView";
 import ContactView from "./views/ContactView";
 
 const App = () => {

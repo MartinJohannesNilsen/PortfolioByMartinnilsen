@@ -65,6 +65,6 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100%",
   },
   button: {
-    border: "2px solid " + theme.palette.text.secondary,
+    border: "2px solid " + theme.palette.text.primary,
   },
 }));
