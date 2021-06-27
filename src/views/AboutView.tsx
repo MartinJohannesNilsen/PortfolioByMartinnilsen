@@ -21,7 +21,6 @@ const AboutView: FC<AboutViewProps> = (props) => {
 
   return (
     <Box className={classes.root} textAlign="center" id={props.id}>
-      <Icon icon={caretDown} className={classes.backgroundTriangle} />
       <Box textAlign="left" className={classes.height}>
         <img
           src={portrait}
@@ -87,13 +86,6 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     backgroundColor: theme.palette.secondary.main,
     position: "relative",
-  },
-  backgroundTriangle: {
-    color: theme.palette.primary.main,
-    position: "absolute",
-    margin: "-45px",
-    height: "100px",
-    width: "100px",
   },
   height: {
     height: "100%",

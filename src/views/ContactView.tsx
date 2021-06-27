@@ -95,7 +95,6 @@ export default ContactView;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxHeight: "",
     backgroundColor: theme.palette.secondary.main,
     position: "relative",
   },
