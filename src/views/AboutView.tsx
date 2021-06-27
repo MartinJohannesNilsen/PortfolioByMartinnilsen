@@ -68,7 +68,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
         <Grid container justify="flex-end" className={classes.height}>
           <Grid item md={12} lg={6} className={classes.textContainer}>
             {props.text.map((paragraph: string) => (
-              <Box m={2}>
+              <Box m={2} key={paragraph}>
                 <Typography variant="h2" color="textPrimary">
                   {paragraph}
                 </Typography>

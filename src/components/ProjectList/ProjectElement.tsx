@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import {
   Box,
   makeStyles,
@@ -153,6 +153,15 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
     );
   };
 
+  // const [imageLeft, imageLeftInView] = useInView({
+  //   threshold: 0,
+  // });
+
+  // useEffect(() => {
+  //   TweenMax.to(imageLeft, 1.2, { opacity: 0, x: 400, ease: Power3.easeIn });
+  //   // eslint-disable-next-line
+  // }, [imageLeftInView]);
+
   return (
     <>
       <Grid container alignItems="center" justify="center">
@@ -161,6 +170,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             <Grid item xs={12} md={6}>
               <Box py={5}>
                 <img
+                  // ref={imageLeft}
                   src={props.projectData.img.path}
                   className={classes.img}
                   alt={props.projectData.title}
