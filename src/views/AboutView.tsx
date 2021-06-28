@@ -1,7 +1,5 @@
 import { FC } from "react";
 import { Box, makeStyles, Typography, Grid } from "@material-ui/core";
-import { Icon } from "@iconify/react";
-import caretDown from "@iconify-icons/carbon/caret-down";
 import portrait from "../assets/img/Portrett2.png";
 
 // const _calculateAge = (birthday: Date) => {
