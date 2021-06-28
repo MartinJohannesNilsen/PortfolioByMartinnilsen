@@ -44,7 +44,7 @@ export const darkTheme = createMuiTheme({
   typography: {
     fontFamily: "Gotham",
     h1: {
-      fontSize: "6rem",
+      fontSize: "5.5rem",
       fontWeight: 800,
       [defaultTheme.breakpoints.down("md")]: {
         fontSize: "4rem",
