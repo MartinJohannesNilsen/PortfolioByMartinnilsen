@@ -54,20 +54,11 @@ export const lightTheme = createMuiTheme({
       },
     },
     h2: {
-      fontSize: "1.6rem",
-      fontWeight: 600,
-      [defaultTheme.breakpoints.down("lg")]: {
-        fontSize: "1.4rem",
-      },
-      [defaultTheme.breakpoints.down("md")]: {
-        fontSize: "1.2rem",
-      },
-      [defaultTheme.breakpoints.down("sm")]: {
-        fontSize: "1rem",
-      },
-      [defaultTheme.breakpoints.down("xs")]: {
-        fontSize: "0.8rem",
-      },
+      fontSize: "1.2rem",
+      fontWeight: 700,
+      [defaultTheme.breakpoints.up("lg")]: {
+        fontSize: "1.6rem",
+      }
     },
     h3: {
       fontSize: "2rem",
@@ -77,7 +68,7 @@ export const lightTheme = createMuiTheme({
       },
     },
     h4: {
-      fontSize: "1.2rem",
+      fontSize: "1.4rem",
       fontWeight: 600,
     },
     //Navbar

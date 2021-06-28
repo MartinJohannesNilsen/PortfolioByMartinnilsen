@@ -9,11 +9,12 @@ import {
   Hidden,
   ButtonBase,
   Button,
+  useMediaQuery
 } from "@material-ui/core";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
 import { Icon } from "@iconify/react";
-import { TweenLite, Power3 } from "gsap";
+import { gsap, Power3 } from "gsap";
 import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import Switch from "../Switch/Switch";
@@ -45,7 +46,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
 
   let ref: any = useRef(null);
   useEffect(() => {
-    TweenLite.from(ref, 0.8, { opacity: 0, y: -100, ease: Power3.easeIn });
+    gsap.from(ref, { duration: 0.8, opacity: 0, y: -100, ease: Power3.easeIn });
   }, []);
 
   const handleThemeChange = (event: any) => {
@@ -54,7 +55,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
       : setTheme(ThemeEnum.Dark);
   };
 
-  const mdUp = window.innerWidth > 1280;
+  const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
     <AppBar position="static" className={classes.root}>
@@ -62,14 +63,14 @@ export const Navbar: FC<NavbarProps> = (props) => {
         <Grid
           container
           alignItems="flex-end"
-          justify={mdUp ? "center" : "flex-start"}
+          justify={lgUp ? "center" : "flex-start"}
           ref={(el) => (ref = el)}
         >
           <Grid item>
             <Typography
               variant="subtitle1"
               className={classes.mainLink}
-              style={!mdUp ? { marginLeft: 40 } : {}}
+              style={!lgUp ? { marginLeft: 40 } : {}}
             >
               {props.data.title}
             </Typography>
@@ -185,9 +186,7 @@ const useStyles = makeStyles((theme) => ({
   buttonText: {
     textTransform: "none",
     "&:hover": {
-      "> buttonLabel": {
-        color: theme.palette.error.main,
-      },
+      backgroundColor: "transparent"
     },
   },
   buttonLabel: {
