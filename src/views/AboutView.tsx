@@ -1,7 +1,5 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Box, makeStyles, Typography, Grid, Card, CardContent } from "@material-ui/core";
-import { useInView } from "react-intersection-observer";
-import { gsap, Power3 } from "gsap";
 
 type AboutViewProps = {
   id: string;
@@ -17,20 +15,20 @@ const _calculateAge = (birthday: Date) => {
 const AboutView: FC<AboutViewProps> = (props) => {
   const classes = useStyles();
 
-  const [cardRef, inView, entry] = useInView({
-    /* Optional options */
-    threshold: 0.8,
-  });
+  // const [cardRef, inView, entry] = useInView({
+  //   /* Optional options */
+  //   threshold: 0.8,
+  // });
 
-  useEffect(() => {
-    gsap.from(cardRef, {duration: 1, ease: Power3.easeIn})
-  }, [inView])
+  // useEffect(() => {
+  //   gsap.from(cardRef, {duration: 1, ease: Power3.easeIn})
+  // }, [inView])
 
   return (
     <Box className={classes.root} textAlign="justify" id={props.id}>
       <Grid container justify="center" className={classes.height}>
         <Grid item xs={11} sm={9} lg={7}>
-          <Card className={classes.card} ref={cardRef}>
+          <Card className={classes.card}>
             <CardContent>
               <Box>
                 <Typography variant="h1" color="textPrimary" className={classes.title}>
