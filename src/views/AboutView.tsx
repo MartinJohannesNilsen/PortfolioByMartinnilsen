@@ -1,28 +1,59 @@
 import { FC } from "react";
-import { Box, makeStyles, Typography, Grid, Card, CardContent } from "@material-ui/core";
+import {
+  Box,
+  makeStyles,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+} from "@material-ui/core";
+// import { useIntersection } from "react-use";
+// import { gsap, Power4 } from "gsap";
 
 type AboutViewProps = {
   id: string;
   text: string[];
+  subtitle: string[];
 };
 
-const _calculateAge = (birthday: Date) => {
-  let ageDifMs = Date.now() - birthday.getTime();
-  let ageDate = new Date(ageDifMs); // miliseconds from epoch
-  return Math.abs(ageDate.getUTCFullYear() - 1970);
-};
+// const _calculateAge = (birthday: Date) => {
+//   let ageDifMs = Date.now() - birthday.getTime();
+//   let ageDate = new Date(ageDifMs); // miliseconds from epoch
+//   return Math.abs(ageDate.getUTCFullYear() - 1970);
+// };
+// _calculateAge(new Date(1999, 3, 26))
 
 const AboutView: FC<AboutViewProps> = (props) => {
   const classes = useStyles();
 
-  // const [cardRef, inView, entry] = useInView({
-  //   /* Optional options */
-  //   threshold: 0.8,
+  // const intersectionRef = useRef(null);
+  // const intersection = useIntersection(intersectionRef, {
+  //   root: null,
+  //   rootMargin: "0px",
+  //   threshold: 0.5,
   // });
 
-  // useEffect(() => {
-  //   gsap.from(cardRef, {duration: 1, ease: Power3.easeIn})
-  // }, [inView])
+  // const fadeIn = (element: any) => {
+  //   gsap.from(element, {
+  //     duration: 1,
+  //     opacity: 1,
+  //     y: -150,
+  //     ease: Power4.easeIn,
+  //     stagger: 0.2,
+  //   });
+  // };
+  // const fadeOut = (element: any) => {
+  //   gsap.from(element, {
+  //     duration: 1,
+  //     opacity: 0,
+  //     y: 100,
+  //     ease: Power4.easeOut,
+  //   });
+  // };
+
+  // intersection && intersection.intersectionRatio < 0.5
+  //   ? fadeOut(".ref")
+  //   : fadeIn(".ref");
 
   return (
     <Box className={classes.root} textAlign="justify" id={props.id}>
@@ -31,19 +62,35 @@ const AboutView: FC<AboutViewProps> = (props) => {
           <Card className={classes.card}>
             <CardContent>
               <Box>
-                <Typography variant="h1" color="textPrimary" className={classes.title}>
+                <Typography
+                  variant="h1"
+                  color="textPrimary"
+                  className={`${classes.title} ref`}
+                >
                   Martin Johannes Nilsen
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="body1" color="textPrimary">
-                  {_calculateAge(new Date(1999, 3, 26))}
+                <Typography
+                  variant="body1"
+                  color="textPrimary"
+                  className={"ref"}
+                >
+                  <p>
+                    {props.subtitle?.map((text: string, index) =>
+                      index !== 0 ? " • " + text : text
+                    )}
+                  </p>
                 </Typography>
               </Box>
               <Box className={classes.textContainer}>
                 {props.text.map((paragraph: string) => (
                   <Box my={2} key={paragraph}>
-                    <Typography variant="body2" color="textPrimary">
+                    <Typography
+                      variant="body2"
+                      color="textPrimary"
+                      className={"ref"}
+                    >
                       {paragraph}
                     </Typography>
                   </Box>
@@ -52,7 +99,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
             </CardContent>
           </Card>
         </Grid>
-      </Grid>  
+      </Grid>
     </Box>
   );
 };
@@ -71,12 +118,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.error.main,
     borderRadius: 50,
     margin: "120px 0",
-    padding: "10%"
+    padding: "10%",
   },
   title: {
     fontSize: "3.5rem",
   },
-  textContainer: {
-    
+  textContainer: {},
+  ref: {
+    // opacity: 0
   },
 }));
