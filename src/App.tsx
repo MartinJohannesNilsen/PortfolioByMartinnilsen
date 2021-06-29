@@ -35,8 +35,8 @@ const App = () => {
         id={data.navText[0]}
       />
       {/* <SkillView data={data} id={data.navText[1]} /> */}
-      <ProjectView data={data} id={data.navText[2]} />
-      <ContactView data={data} id={data.navText[3]} />
+      <ProjectView data={data} id={data.navText[1]} />
+      <ContactView data={data} id={data.navText[2]} />
     </ThemeProvider>
   );
 };
