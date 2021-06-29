@@ -9,7 +9,7 @@ import {
   Hidden,
   ButtonBase,
   Button,
-  useMediaQuery
+  useMediaQuery,
 } from "@material-ui/core";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
@@ -55,7 +55,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
       : setTheme(ThemeEnum.Dark);
   };
 
-  const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
+  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <AppBar position="static" className={classes.root}>
@@ -77,62 +77,22 @@ export const Navbar: FC<NavbarProps> = (props) => {
           </Grid>
           <Hidden mdDown>
             <Grid container item md={8} xl={6} justify="flex-end">
-              <Box mx={2}>
-                <Button
-                  classes={{ text: classes.buttonText }}
-                  onClick={() => handleScroll(props.data.navText[0])}
-                >
-                  <Typography
-                    variant="subtitle2"
-                    color="textPrimary"
-                    className={classes.buttonLabel}
+              {props.data.navText.map((title: string) => (
+                <Box mx={2}>
+                  <Button
+                    classes={{ text: classes.buttonText }}
+                    onClick={() => handleScroll(title)}
                   >
-                    {props.data.navText[0]}
-                  </Typography>
-                </Button>
-              </Box>
-              <Box mx={2}>
-                <Button
-                  classes={{ text: classes.buttonText }}
-                  onClick={() => handleScroll(props.data.navText[1])}
-                >
-                  <Typography
-                    variant="subtitle2"
-                    color="textPrimary"
-                    className={classes.buttonLabel}
-                  >
-                    {props.data.navText[1]}
-                  </Typography>
-                </Button>
-              </Box>
-              <Box mx={2}>
-                <Button
-                  classes={{ text: classes.buttonText }}
-                  onClick={() => handleScroll(props.data.navText[2])}
-                >
-                  <Typography
-                    variant="subtitle2"
-                    color="textPrimary"
-                    className={classes.buttonLabel}
-                  >
-                    {props.data.navText[2]}
-                  </Typography>
-                </Button>
-              </Box>
-              <Box mx={2}>
-                <Button
-                  classes={{ text: classes.buttonText }}
-                  onClick={() => handleScroll(props.data.navText[3])}
-                >
-                  <Typography
-                    variant="subtitle2"
-                    color="textPrimary"
-                    className={classes.buttonLabel}
-                  >
-                    {props.data.navText[3]}
-                  </Typography>
-                </Button>
-              </Box>
+                    <Typography
+                      variant="subtitle2"
+                      color="textPrimary"
+                      className={classes.buttonLabel}
+                    >
+                      {title}
+                    </Typography>
+                  </Button>
+                </Box>
+              ))}
               <Box mx={2}>
                 <ButtonBase
                   onClick={() => {
@@ -186,7 +146,7 @@ const useStyles = makeStyles((theme) => ({
   buttonText: {
     textTransform: "none",
     "&:hover": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
   },
   buttonLabel: {

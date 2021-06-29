@@ -1,7 +1,7 @@
 {
   "english": {
     "title": "PORTFOLIO",
-    "navText": ["About", "Skills", "Projects", "Contact"],
+    "navText": ["About", "Projects", "Contact"],
     "navLanguages": ["Norwegian", "English"],
     "descriptivePhrases": [
       "Martin Johannes Nilsen",
@@ -46,7 +46,7 @@
   },
   "norwegian": {
     "title": "PORTEFØLJE",
-    "navText": ["Om", "Ferdigheter", "Prosjekter", "Kontakt"],
+    "navText": ["Om", "Prosjekter", "Kontakt"],
     "navLanguages": ["Norsk", "Engelsk"],
     "descriptivePhrases": [
       "Martin Johannes Nilsen",
