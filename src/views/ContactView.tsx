@@ -38,7 +38,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
           <Box py={3}>
             <Button
               onClick={() =>
-                window.open("https://github.com/Martinnilsen99", "_blank")
+                window.open("https://github.com/MartinJohannesNilsen", "_blank")
               }
             >
               <Typography variant="button" color="textPrimary">
