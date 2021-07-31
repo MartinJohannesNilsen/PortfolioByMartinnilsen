@@ -37,7 +37,7 @@ const App = () => {
       />
       {/* <SkillView data={data} id={data.navText[1]} /> */}
       <ProjectView data={data} id={data.navText[1]} />
-      <EducationView data={data} />
+      {/* <EducationView data={data} /> */}
       <ContactView data={data} id={data.navText[2]} />
     </ThemeProvider>
   );
