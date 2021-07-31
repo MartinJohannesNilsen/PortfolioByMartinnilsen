@@ -58,7 +58,7 @@ export const darkTheme = createMuiTheme({
       fontWeight: 700,
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.6rem",
-      }
+      },
     },
     h3: {
       fontSize: "2rem",
@@ -108,6 +108,10 @@ export const darkTheme = createMuiTheme({
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.3rem",
       },
+    },
+    overline: {
+      fontSize: "0.7rem",
+      fontWeight: 800,
     },
   },
 });
