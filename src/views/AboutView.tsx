@@ -56,12 +56,12 @@ const AboutView: FC<AboutViewProps> = (props) => {
   //   : fadeIn(".ref");
 
   return (
-    <Box className={classes.root} textAlign="justify" id={props.id}>
+    <Box className={classes.root} id={props.id}>
       <Grid container justify="center" className={classes.height}>
         <Grid item xs={11} sm={9} lg={7}>
           <Card className={classes.card}>
             <CardContent>
-              <Box>
+              <Box textAlign="left">
                 <Typography
                   variant="h1"
                   color="textPrimary"
@@ -70,7 +70,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
                   Martin Johannes Nilsen
                 </Typography>
               </Box>
-              <Box>
+              <Box textAlign="left">
                 <Typography
                   variant="body1"
                   color="textPrimary"
@@ -83,7 +83,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
                   </p>
                 </Typography>
               </Box>
-              <Box className={classes.textContainer}>
+              <Box textAlign="justify">
                 {props.text.map((paragraph: string) => (
                   <Box my={2} key={paragraph}>
                     <Typography
@@ -123,7 +123,6 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: "3.5rem",
   },
-  textContainer: {},
   ref: {
     // opacity: 0
   },
