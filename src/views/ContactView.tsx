@@ -1,5 +1,12 @@
 import React, { FC } from "react";
-import { Box, Button, makeStyles, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  ClickAwayListener,
+  makeStyles,
+  Tooltip,
+  Typography,
+} from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
 
@@ -13,12 +20,21 @@ type ContactViewProps = {
 
 const ContactView: FC<ContactViewProps> = (props) => {
   const classes = useStyles();
+  const [openEmailTooltip, setOpenEmailTooltip] = React.useState(false);
+  const [openTelephoneTooltip, setOpenTelephoneTooltip] = React.useState(false);
 
-  // En ide med tooltip?
-  // const handleCopyToClipboard = (element: string) => {
-  //   document.execCommand(element);
-  //   alert("Copied the text: " + element);
-  // };
+  const handleTelephoneTooltipOpen = () => {
+    setOpenTelephoneTooltip(true);
+  };
+  const handleTelephoneTooltipClose = () => {
+    setOpenTelephoneTooltip(false);
+  };
+  const handleEmailTooltipOpen = () => {
+    setOpenEmailTooltip(true);
+  };
+  const handleEmailTooltipClose = () => {
+    setOpenEmailTooltip(false);
+  };
 
   return (
     <>
@@ -64,11 +80,32 @@ const ContactView: FC<ContactViewProps> = (props) => {
             >
               •
             </Typography>
-            <Button onClick={() => (window.location.href = "tel:004745005502")}>
-              <Typography variant="button" color="textPrimary">
-                {props.data.contactText[4]}
-              </Typography>
-            </Button>
+            <ClickAwayListener onClickAway={handleTelephoneTooltipClose}>
+              <Tooltip
+                arrow
+                placement="top"
+                PopperProps={{
+                  disablePortal: true,
+                }}
+                onClose={handleTelephoneTooltipClose}
+                open={openTelephoneTooltip}
+                disableFocusListener
+                disableHoverListener
+                disableTouchListener
+                title={props.data.contactText[6]}
+              >
+                <Button
+                  onClick={() => {
+                    handleTelephoneTooltipOpen();
+                    navigator.clipboard.writeText(props.data.contactText[5]);
+                  }}
+                >
+                  <Typography variant="button" color="textPrimary">
+                    {props.data.contactText[4]}
+                  </Typography>
+                </Button>
+              </Tooltip>
+            </ClickAwayListener>
             <Typography
               variant="button"
               color="textPrimary"
@@ -76,15 +113,32 @@ const ContactView: FC<ContactViewProps> = (props) => {
             >
               •
             </Typography>
-            <Button
-              onClick={() =>
-                (window.location.href = "mailto:martinjnilsen@icloud.com")
-              }
-            >
-              <Typography variant="button" color="textPrimary">
-                {props.data.contactText[5]}
-              </Typography>
-            </Button>
+            <ClickAwayListener onClickAway={handleEmailTooltipClose}>
+              <Tooltip
+                arrow
+                placement="top"
+                PopperProps={{
+                  disablePortal: true,
+                }}
+                onClose={handleEmailTooltipClose}
+                open={openEmailTooltip}
+                disableFocusListener
+                disableHoverListener
+                disableTouchListener
+                title={props.data.contactText[9]}
+              >
+                <Button
+                  onClick={() => {
+                    handleEmailTooltipOpen();
+                    navigator.clipboard.writeText(props.data.contactText[8]);
+                  }}
+                >
+                  <Typography variant="button" color="textPrimary">
+                    {props.data.contactText[7]}
+                  </Typography>
+                </Button>
+              </Tooltip>
+            </ClickAwayListener>
           </Box>
         </Box>
       </Box>
