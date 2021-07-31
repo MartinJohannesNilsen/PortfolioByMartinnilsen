@@ -10,7 +10,7 @@ import AboutView from "./views/AboutView";
 import ProjectView from "./views/ProjectView";
 // import SkillView from "./views/SkillView";
 import ContactView from "./views/ContactView";
-import EducationView from "./views/EducationView";
+// import EducationView from "./views/EducationView";
 
 const App = () => {
   const [language, setLanguage] = useStickyState("language", "norwegian");
@@ -37,7 +37,7 @@ const App = () => {
       />
       {/* <SkillView data={data} id={data.navText[1]} /> */}
       <ProjectView data={data} id={data.navText[1]} />
-      {/* <EducationView data={data} /> */}
+      <EducationView data={data} />
       <ContactView data={data} id={data.navText[2]} />
     </ThemeProvider>
   );
