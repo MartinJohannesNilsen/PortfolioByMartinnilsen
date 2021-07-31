@@ -92,7 +92,11 @@ const ContactView: FC<ContactViewProps> = (props) => {
                 disableFocusListener
                 disableHoverListener
                 disableTouchListener
-                title={props.data.contactText[6]}
+                title={
+                  <Typography variant="overline" color="textSecondary">
+                    {props.data.contactText[6]}
+                  </Typography>
+                }
               >
                 <Button
                   onClick={() => {
@@ -125,7 +129,11 @@ const ContactView: FC<ContactViewProps> = (props) => {
                 disableFocusListener
                 disableHoverListener
                 disableTouchListener
-                title={props.data.contactText[9]}
+                title={
+                  <Typography variant="overline" color="textSecondary">
+                    {props.data.contactText[9]}
+                  </Typography>
+                }
               >
                 <Button
                   onClick={() => {
