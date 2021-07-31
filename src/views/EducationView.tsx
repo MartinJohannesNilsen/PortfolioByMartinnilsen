@@ -28,7 +28,7 @@ const EducationCard: FC<EducationCardProps> = (props) => {
             <p>Norges teknisk-naturvitenskapelige universitet (NTNU)</p>
           </Typography>
         </Box>
-        <Box className={classes.textContainer}>
+        <Box>
           <Box my={2} textAlign="justify">
             <Typography variant="body2" color="textPrimary">
               Jobber ved siden av studiet som hjelpelærer for de i årene under
@@ -95,7 +95,6 @@ const useStyles = makeStyles((theme) => ({
     padding: "40px",
     margin: "0 15vw",
   },
-  textContainer: {},
   ref: {
     // opacity: 0
   },
