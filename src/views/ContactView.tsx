@@ -93,11 +93,10 @@ const ContactView: FC<ContactViewProps> = (props) => {
                 disableFocusListener
                 disableHoverListener
                 disableTouchListener
-                interactive
                 classes={{tooltip: classes.tooltipWidth}}
                 TransitionComponent={Zoom}
                 title={
-                  <Typography variant="overline" color="textSecondary">
+                  <Typography variant="overline" color="inherit">
                     {props.data.contactText[6]}
                   </Typography>
                 }
@@ -133,11 +132,10 @@ const ContactView: FC<ContactViewProps> = (props) => {
                 disableFocusListener
                 disableHoverListener
                 disableTouchListener
-                interactive
                 classes={{tooltip: classes.tooltipWidth}}
                 TransitionComponent={Zoom}
                 title={
-                  <Typography variant="overline" color="textSecondary">
+                  <Typography variant="overline" color="inherit">
                     {props.data.contactText[9]}
                   </Typography>
                 }
