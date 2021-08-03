@@ -6,6 +6,7 @@ import {
   makeStyles,
   Tooltip,
   Typography,
+  Zoom,
 } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
@@ -92,6 +93,8 @@ const ContactView: FC<ContactViewProps> = (props) => {
                 disableFocusListener
                 disableHoverListener
                 disableTouchListener
+                interactive
+                classes={{tooltip: classes.tooltipWidth}}
                 title={
                   <Typography variant="overline" color="textSecondary">
                     {props.data.contactText[6]}
@@ -129,6 +132,8 @@ const ContactView: FC<ContactViewProps> = (props) => {
                 disableFocusListener
                 disableHoverListener
                 disableTouchListener
+                interactive
+                classes={{tooltip: classes.tooltipWidth}}
                 title={
                   <Typography variant="overline" color="textSecondary">
                     {props.data.contactText[9]}
@@ -169,5 +174,8 @@ const useStyles = makeStyles((theme) => ({
   },
   bullet: {
     margin: "0 5px",
+  },
+  tooltipWidth: {
+      maxWidth: 400,
   },
 }));
