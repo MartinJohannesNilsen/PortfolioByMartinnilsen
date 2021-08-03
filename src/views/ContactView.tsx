@@ -95,6 +95,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
                 disableTouchListener
                 interactive
                 classes={{tooltip: classes.tooltipWidth}}
+                TransitionComponent={Zoom}
                 title={
                   <Typography variant="overline" color="textSecondary">
                     {props.data.contactText[6]}
@@ -134,6 +135,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
                 disableTouchListener
                 interactive
                 classes={{tooltip: classes.tooltipWidth}}
+                TransitionComponent={Zoom}
                 title={
                   <Typography variant="overline" color="textSecondary">
                     {props.data.contactText[9]}
