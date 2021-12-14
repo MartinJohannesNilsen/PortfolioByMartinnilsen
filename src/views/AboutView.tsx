@@ -7,8 +7,6 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
-// import { useIntersection } from "react-use";
-// import { gsap, Power4 } from "gsap";
 
 type AboutViewProps = {
   id: string;
@@ -16,44 +14,8 @@ type AboutViewProps = {
   subtitle: string[];
 };
 
-// const _calculateAge = (birthday: Date) => {
-//   let ageDifMs = Date.now() - birthday.getTime();
-//   let ageDate = new Date(ageDifMs); // miliseconds from epoch
-//   return Math.abs(ageDate.getUTCFullYear() - 1970);
-// };
-// _calculateAge(new Date(1999, 3, 26))
-
 const AboutView: FC<AboutViewProps> = (props) => {
   const classes = useStyles();
-
-  // const intersectionRef = useRef(null);
-  // const intersection = useIntersection(intersectionRef, {
-  //   root: null,
-  //   rootMargin: "0px",
-  //   threshold: 0.5,
-  // });
-
-  // const fadeIn = (element: any) => {
-  //   gsap.from(element, {
-  //     duration: 1,
-  //     opacity: 1,
-  //     y: -150,
-  //     ease: Power4.easeIn,
-  //     stagger: 0.2,
-  //   });
-  // };
-  // const fadeOut = (element: any) => {
-  //   gsap.from(element, {
-  //     duration: 1,
-  //     opacity: 0,
-  //     y: 100,
-  //     ease: Power4.easeOut,
-  //   });
-  // };
-
-  // intersection && intersection.intersectionRatio < 0.5
-  //   ? fadeOut(".ref")
-  //   : fadeIn(".ref");
 
   return (
     <Box className={classes.root} id={props.id}>
@@ -124,6 +86,5 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "3.5rem",
   },
   ref: {
-    // opacity: 0
   },
 }));
