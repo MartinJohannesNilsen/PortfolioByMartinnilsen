@@ -252,9 +252,9 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     height: (props: ProjectElementProps) =>
-      props.projectData.img.type === "portrait" ? "200px" : (props.projectData.img.type === "square" ? "220px" : "default"),
+      props.projectData.img.type === "portrait" ? "200px" : (props.projectData.img.type === "square" ? "200px" : "default"),
     width: (props: ProjectElementProps) =>
-      props.projectData.img.type === "landscape" ? "220px" : (props.projectData.img.type === "square" ? "220px" : "default"),
+      props.projectData.img.type === "landscape" ? "220px" : (props.projectData.img.type === "square" ? "200px" : "default"),
     boxShadow: (props: ProjectElementProps) =>
       props.imgPosition === "right"
         ? `10px -10px 1px 0px ${theme.palette.success.light},
@@ -265,15 +265,15 @@ const useStyles = makeStyles((theme) => ({
             -30px -30px 1px 0px ${theme.palette.success.dark}`,
     [theme.breakpoints.up("md")]: {
       height: (props: ProjectElementProps) =>
-        props.projectData.img.type === "portrait" ? "250px" : "default",
+        props.projectData.img.type === "portrait" ? "250px" : (props.projectData.img.type === "square" ? "250px" : "default"),
       width: (props: ProjectElementProps) =>
-        props.projectData.img.type === "landscape" ? "270px" : "default",
+        props.projectData.img.type === "landscape" ? "270px" : (props.projectData.img.type === "square" ? "250px" : "default"),
     },
     [theme.breakpoints.up("lg")]: {
       height: (props: ProjectElementProps) =>
-        props.projectData.img.type === "portrait" ? "340px" : "default",
+        props.projectData.img.type === "portrait" ? "340px" : (props.projectData.img.type === "square" ? "320px" : "default"),
       width: (props: ProjectElementProps) =>
-        props.projectData.img.type === "landscape" ? "370px" : "default",
+        props.projectData.img.type === "landscape" ? "370px" : (props.projectData.img.type === "square" ? "320px" : "default"),
     },
   },
 }));
