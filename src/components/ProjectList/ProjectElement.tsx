@@ -252,9 +252,9 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     height: (props: ProjectElementProps) =>
-      props.projectData.img.type === "portrait" ? "200px" : "default",
+      props.projectData.img.type === "portrait" ? "200px" : (props.projectData.img.type === "square" ? "220px" : "default"),
     width: (props: ProjectElementProps) =>
-      props.projectData.img.type === "landscape" ? "220px" : "default",
+      props.projectData.img.type === "landscape" ? "220px" : (props.projectData.img.type === "square" ? "220px" : "default"),
     boxShadow: (props: ProjectElementProps) =>
       props.imgPosition === "right"
         ? `10px -10px 1px 0px ${theme.palette.success.light},
