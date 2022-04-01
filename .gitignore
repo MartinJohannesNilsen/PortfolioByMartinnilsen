@@ -11,6 +11,10 @@
 # production
 /build
 
+# Cache and settings
+.firebase/
+.vscode/
+
 # misc
 .DS_Store
 .env.local
