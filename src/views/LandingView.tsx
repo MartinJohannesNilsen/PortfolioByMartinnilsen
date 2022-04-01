@@ -33,25 +33,30 @@ const LandingView: FC<landingProps> = (props) => {
   const classes = useStyles();
   const { theme } = useTheme();
 
-  let typref: any = useRef(null);
-  useEffect(() => {
-    gsap.from(typref, {
-      delay: 1.2,
-      duration: 0.5,
-      scale: 0.9,
-      opacity: 0,
-      ease: Power3.easeIn,
-    });
-  }, []);
-
+  let titleRef: any = useRef(null);
   function animateIn(svgElements: svgProps) {
     let tl = gsap.timeline();
-    tl.from(svgElements.drawers, {
-      duration: 0.8,
-      y: -100,
-      opacity: 0,
-      ease: Power3.easeIn,
-    })
+    tl
+      .from(
+        titleRef, 
+        {
+          delay: 0.2,
+          duration: 0.7,
+          scale: 0.9,
+          opacity: 0,
+          ease: Power3.easeIn,
+        },
+      )
+      .from(
+        svgElements.drawers, 
+        {
+          duration: 0.8,
+          y: -100,
+          opacity: 0,
+          ease: Power3.easeIn,
+        },
+        "-=0.2"
+      )
       .from(
         svgElements.countertop,
         {
@@ -114,8 +119,8 @@ const LandingView: FC<landingProps> = (props) => {
           duration: 1.5,
           opacity: 0,
         },
-        "+=0.5"
-      );
+      )
+      
     if (theme.palette.type === "dark") {
       tl.from(svgElements.lamp_light, {
         duration: 0.15,
@@ -182,22 +187,6 @@ const LandingView: FC<landingProps> = (props) => {
         setLanguage={props.setLanguage}
       />
       <Box className={classes.root}>
-        <div ref={(el) => (typref = el)}>
-          <Typography
-            variant="h1"
-            color="textPrimary"
-            className={classes.title}
-            style={
-              lgUp
-                ? { padding: "50px 30px" }
-                : smDown
-                ? { padding: "150px 30px" }
-                : { padding: "100px 30px" }
-            }
-          >
-            {props.data.landingTitle}
-          </Typography>
-        </div>
         <svg
           className={classes.desk}
           version="1.1"
@@ -766,6 +755,22 @@ const LandingView: FC<landingProps> = (props) => {
             />
           </g>
         </svg>
+        <div ref={(el) => (titleRef = el)}>
+          <Typography
+            variant="h1"
+            color="textPrimary"
+            className={classes.title}
+            style={
+              lgUp
+                ? { padding: "50px 30px" }
+                : smDown
+                ? { padding: "150px 30px" }
+                : { padding: "100px 30px" }
+            }
+          >
+            {props.data.landingTitle}
+          </Typography>
+        </div>
       </Box>
     </Box>
   );
@@ -784,13 +789,13 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     bottom: 0,
     top: "auto",
-    zIndex: 1,
+    zIndex: 0,
     left: 0,
     right: 0,
     textAlign: "center",
   },
   title: {
-    zIndex: 2,
+    zIndex: 1000,
     position: "absolute",
     left: 0,
     right: 0,
