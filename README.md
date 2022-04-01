@@ -9,4 +9,4 @@ This project is built with:
 - Material UI
 - Firebase (Hosting og Storage)
 
-The website is available [here](https://martinnilsen.no) :zap:
+The website is available [here](https://MartinJohannesNilsen.no) :zap:
