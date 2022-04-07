@@ -63,50 +63,57 @@ const ContactView: FC<ContactViewProps> = (props) => {
             </Typography>
           </Box>
           <Box py={3}>
-            {props.data.links.map((link, key) => (
-              link.hasOwnProperty("copyText") ? (
-                <ClickAwayListener onClickAway={() => handleTooltipState(false, key)}>
-                  <Tooltip
-                    arrow
-                    placement="top"
-                    PopperProps={{
-                      disablePortal: true,
-                    }}
-                    onClose={() => handleTooltipState(false, key)}
-                    open={tooltipStates[key]}
-                    disableFocusListener
-                    disableHoverListener
-                    disableTouchListener
-                    classes={{tooltip: classes.tooltipWidth}}
-                    TransitionComponent={Zoom}
-                    title={
-                      <Typography variant="overline" color="inherit">
-                        {link.copyText}
-                      </Typography>
-                    }
-                  >
-                    <Button
-                      onClick={() => {
-                        handleTooltipState(true, key);
-                        navigator.clipboard.writeText(link.value);
+            {props.data.links.map((link, key) => {
+              let elements = [];
+              if(link.hasOwnProperty("copyText")){
+                elements.push(
+                  <ClickAwayListener onClickAway={() => handleTooltipState(false, key)}>
+                    <Tooltip
+                      arrow
+                      placement="top"
+                      PopperProps={{
+                        disablePortal: true,
                       }}
+                      onClose={() => handleTooltipState(false, key)}
+                      open={tooltipStates[key]}
+                      disableFocusListener
+                      disableHoverListener
+                      disableTouchListener
+                      classes={{tooltip: classes.tooltipWidth}}
+                      TransitionComponent={Zoom}
+                      title={
+                        <Typography variant="overline" color="inherit">
+                          {link.copyText}
+                        </Typography>
+                      }
                     >
-                      <Typography variant="button" color="textPrimary">
-                        {link.text}
-                      </Typography>
-                    </Button>
-                  </Tooltip>
-                </ClickAwayListener>
-              )
-              :
-              (
-                <Button onClick={() => window.open(link.value, "_blank")}>
-                  <Typography variant="button" color="textPrimary">
-                    {link.text}
-                  </Typography>
-                </Button>
-              )
-            ))}
+                      <Button
+                        onClick={() => {
+                          handleTooltipState(true, key);
+                          navigator.clipboard.writeText(link.value);
+                        }}
+                      >
+                        <Typography variant="button" color="textPrimary">
+                          {link.text}
+                        </Typography>
+                      </Button>
+                    </Tooltip>
+                  </ClickAwayListener>
+                )
+              } else {
+                elements.push(
+                  <Button onClick={() => window.open(link.value, "_blank")}>
+                    <Typography variant="button" color="textPrimary">
+                      {link.text}
+                    </Typography>
+                  </Button>
+                )
+              }
+              if(key < props.data.links.length-1){
+                elements.push(<TypographyBullet />)
+              }
+              return elements
+              })}
           </Box>
         </Box>
       </Box>
