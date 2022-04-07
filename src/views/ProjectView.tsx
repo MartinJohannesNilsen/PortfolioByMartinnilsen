@@ -7,9 +7,9 @@ import ProjectList from "../components/ProjectList/ProjectList";
 type ProjectViewProps = {
   id: string;
   data: {
-    projects: [];
-    projectsTitle: string;
-    linkButtonText: string[];
+    title: string;
+    buttonTexts: string[];
+    listOfProjects: [];
   };
 };
 
@@ -23,15 +23,15 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
       <Icon icon={caretDown} className={classes.backgroundTriangle} />
       <Box pt={3}>
         <Typography variant="subtitle1" color="textPrimary">
-          {props.data.projectsTitle}
+          {props.data.title}
         </Typography>
       </Box>
       <ProjectList
-        projects={props.data.projects}
+        projects={props.data.listOfProjects}
         numShowing={numShowing}
         setNumShowing={setNumShowing}
         numIncrease={numIncrease}
-        linkButtonText={props.data.linkButtonText}
+        buttonTexts={props.data.buttonTexts}
       />
     </Box>
   );

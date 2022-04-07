@@ -14,28 +14,38 @@ import caretDown from "@iconify-icons/carbon/caret-down";
 type ContactViewProps = {
   id: string;
   data: {
-    contactText: string[];
-    cvLink: string;
+    text: string[];
+    links: [
+      {
+        text: string,
+        value: string,
+        copyText?: string
+      }
+    ];
   };
 };
 
 const ContactView: FC<ContactViewProps> = (props) => {
   const classes = useStyles();
-  const [openEmailTooltip, setOpenEmailTooltip] = React.useState(false);
-  const [openTelephoneTooltip, setOpenTelephoneTooltip] = React.useState(false);
+  const [tooltipStates, setTooltipStates] = React.useState(Array(props.data.links.length).fill(false));
 
-  const handleTelephoneTooltipOpen = () => {
-    setOpenTelephoneTooltip(true);
-  };
-  const handleTelephoneTooltipClose = () => {
-    setOpenTelephoneTooltip(false);
-  };
-  const handleEmailTooltipOpen = () => {
-    setOpenEmailTooltip(true);
-  };
-  const handleEmailTooltipClose = () => {
-    setOpenEmailTooltip(false);
-  };
+  const handleTooltipState = (newState: boolean, index: number) => {
+    let tooltips = [...tooltipStates];
+    tooltips[index] = newState;
+    setTooltipStates(tooltips);
+  }
+
+  const TypographyBullet: FC = () => {
+    return (
+      <Typography
+        variant="button"
+        color="textPrimary"
+        className={classes.bullet}
+      >
+        •
+      </Typography>
+    )
+  }
 
   return (
     <>
@@ -44,114 +54,59 @@ const ContactView: FC<ContactViewProps> = (props) => {
         <Box py={5} px={3} textAlign="left">
           <Box py={2} px={1}>
             <Typography variant="caption" color="textPrimary">
-              {props.data.contactText[0]}
+              {props.data.text[0]}
             </Typography>
           </Box>
           <Box py={1} px={1}>
             <Typography variant="caption" color="textPrimary">
-              {props.data.contactText[1]}
+              {props.data.text[1]}
             </Typography>
           </Box>
           <Box py={3}>
-            <Button
-              onClick={() =>
-                window.open("https://github.com/MartinJohannesNilsen", "_blank")
-              }
-            >
-              <Typography variant="button" color="textPrimary">
-                {props.data.contactText[2]}
-              </Typography>
-            </Button>
-            <Typography
-              variant="button"
-              color="textPrimary"
-              className={classes.bullet}
-            >
-              •
-            </Typography>
-            <Button onClick={() => window.open(props.data.cvLink, "_blank")}>
-              <Typography variant="button" color="textPrimary">
-                {props.data.contactText[3]}
-              </Typography>
-            </Button>
-            <Typography
-              variant="button"
-              color="textPrimary"
-              className={classes.bullet}
-            >
-              •
-            </Typography>
-            <ClickAwayListener onClickAway={handleTelephoneTooltipClose}>
-              <Tooltip
-                arrow
-                placement="top"
-                PopperProps={{
-                  disablePortal: true,
-                }}
-                onClose={handleTelephoneTooltipClose}
-                open={openTelephoneTooltip}
-                disableFocusListener
-                disableHoverListener
-                disableTouchListener
-                classes={{tooltip: classes.tooltipWidth}}
-                TransitionComponent={Zoom}
-                title={
-                  <Typography variant="overline" color="inherit">
-                    {props.data.contactText[6]}
-                  </Typography>
-                }
-              >
-                <Button
-                  onClick={() => {
-                    handleTelephoneTooltipOpen();
-                    navigator.clipboard.writeText(props.data.contactText[5]);
-                  }}
-                >
+            {props.data.links.map((link, key) => (
+              link.hasOwnProperty("copyText") ? (
+                <ClickAwayListener onClickAway={() => handleTooltipState(false, key)}>
+                  <Tooltip
+                    arrow
+                    placement="top"
+                    PopperProps={{
+                      disablePortal: true,
+                    }}
+                    onClose={() => handleTooltipState(false, key)}
+                    open={tooltipStates[key]}
+                    disableFocusListener
+                    disableHoverListener
+                    disableTouchListener
+                    classes={{tooltip: classes.tooltipWidth}}
+                    TransitionComponent={Zoom}
+                    title={
+                      <Typography variant="overline" color="inherit">
+                        {link.copyText}
+                      </Typography>
+                    }
+                  >
+                    <Button
+                      onClick={() => {
+                        handleTooltipState(true, key);
+                        navigator.clipboard.writeText(link.value);
+                      }}
+                    >
+                      <Typography variant="button" color="textPrimary">
+                        {link.text}
+                      </Typography>
+                    </Button>
+                  </Tooltip>
+                </ClickAwayListener>
+              )
+              :
+              (
+                <Button onClick={() => window.open(link.value, "_blank")}>
                   <Typography variant="button" color="textPrimary">
-                    {props.data.contactText[4]}
+                    {link.text}
                   </Typography>
                 </Button>
-              </Tooltip>
-            </ClickAwayListener>
-            <Typography
-              variant="button"
-              color="textPrimary"
-              className={classes.bullet}
-            >
-              •
-            </Typography>
-            <ClickAwayListener onClickAway={handleEmailTooltipClose}>
-              <Tooltip
-                arrow
-                placement="top"
-                PopperProps={{
-                  disablePortal: true,
-                }}
-                onClose={handleEmailTooltipClose}
-                open={openEmailTooltip}
-                disableFocusListener
-                disableHoverListener
-                disableTouchListener
-                classes={{tooltip: classes.tooltipWidth}}
-                TransitionComponent={Zoom}
-                title={
-                  <Typography variant="overline" color="inherit">
-                    {props.data.contactText[9]}
-                  </Typography>
-                }
-              >
-                <Button
-                  onClick={() => {
-                    handleEmailTooltipOpen();
-                    navigator.clipboard.writeText(props.data.contactText[8]);
-                  }}
-                >
-                  <Typography variant="button" color="textPrimary">
-                    {props.data.contactText[7]}
-                  </Typography>
-                </Button>
-              </Tooltip>
-            </ClickAwayListener>
+              )
+            ))}
           </Box>
         </Box>
       </Box>

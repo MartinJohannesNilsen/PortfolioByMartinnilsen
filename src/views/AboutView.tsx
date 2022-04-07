@@ -10,9 +10,22 @@ import {
 
 type AboutViewProps = {
   id: string;
-  text: string[];
-  subtitle: string[];
+  data: {
+    text: string[];
+    subtitle: string[];
+  }
 };
+
+const getAge = (dateString: string) => {
+  var today = new Date();
+  var birthDate = new Date(dateString);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+  }
+  return age;
+}
 
 const AboutView: FC<AboutViewProps> = (props) => {
   const classes = useStyles();
@@ -39,14 +52,25 @@ const AboutView: FC<AboutViewProps> = (props) => {
                   className={"ref"}
                 >
                   <p>
-                    {props.subtitle?.map((text: string, index) =>
-                      index !== 0 ? " • " + text : text
+                    {props.data.subtitle?.map((text: string, index) => {
+                      if(text.includes("AGE(")){
+                        let dateString = text.match(/\((.*)\)/)?.pop()?.toString();
+                        if(dateString){
+                          text = getAge(dateString).toString()
+                        }
+                      }
+                      if(index !== 0){
+                        return " • " + text
+                      } else {
+                        return text
+                      }
+                    }
                     )}
                   </p>
                 </Typography>
               </Box>
               <Box textAlign="justify">
-                {props.text.map((paragraph: string) => (
+                {props.data.text.map((paragraph: string) => (
                   <Box my={2} key={paragraph}>
                     <Typography
                       variant="body2"

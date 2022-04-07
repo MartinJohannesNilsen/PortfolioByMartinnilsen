@@ -24,8 +24,8 @@ import FABMenu from "./FABMenu";
 export type NavbarProps = {
   data: {
     title: string;
-    navText: string[];
-    navLanguages: string[];
+    languages: string[];
+    sections: string[];
   };
   language: string;
   setLanguage: (language: string) => void;
@@ -77,7 +77,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
           </Grid>
           <Hidden mdDown>
             <Grid container item md={8} xl={6} justify="flex-end">
-              {props.data.navText.map((title: string) => (
+              {props.data.sections.map((title: string) => (
                 <Box mx={2}>
                   <Button
                     classes={{ text: classes.buttonText }}

@@ -7,7 +7,7 @@ type ProjectListProps = {
   numShowing: number;
   setNumShowing: (num: number) => void;
   numIncrease: number;
-  linkButtonText: string[];
+  buttonTexts: string[];
 };
 
 export const ProjectList: FC<ProjectListProps> = (props) => {
@@ -26,7 +26,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
                   <ProjectElement
                     projectData={project}
                     imgPosition={index % 2 === 0 ? "right" : "left"}
-                    linkButtonText={props.linkButtonText}
+                    linkButtonText={props.buttonTexts}
                   />
                 </Box>
               </Grid>
@@ -47,7 +47,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
               }
             >
               <Typography variant="button" color="textPrimary">
-                {props.linkButtonText[5]}
+                {props.buttonTexts[0]}
               </Typography>
             </Button>
           ) : (

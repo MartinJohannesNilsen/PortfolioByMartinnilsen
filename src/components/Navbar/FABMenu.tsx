@@ -56,7 +56,7 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
           background={"white"}
           size={64}
         />
-        {getItemList(props.data.navText)}
+        {getItemList(props.data.sections)}
         <ChildButton
           icon={
             <Icon

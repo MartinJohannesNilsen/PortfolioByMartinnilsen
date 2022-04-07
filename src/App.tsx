@@ -29,16 +29,23 @@ const App = () => {
   return (
     <ThemeProvider>
       <CssBaseline />
-      <LandingView data={data} language={language} setLanguage={setLanguage} />
-      <AboutView
-        text={data.aboutText}
-        subtitle={data.aboutSubtitle}
-        id={data.navText[0]}
+      <LandingView 
+        data={data.landingView}
+        language={language} 
+        setLanguage={setLanguage} 
       />
-      {/* <SkillView data={data} id={data.navText[1]} /> */}
-      <ProjectView data={data} id={data.navText[1]} />
-      {/* <EducationView data={data} /> */}
-      <ContactView data={data} id={data.navText[2]} />
+      <AboutView
+        id={data.landingView.navbar.sections[0]}
+        data={data.aboutView}
+      />
+      <ProjectView 
+        id={data.landingView.navbar.sections[1]} 
+        data={data.projectView} 
+      />
+      <ContactView 
+        id={data.landingView.navbar.sections[2]} 
+        data={data.contactView} 
+      />
     </ThemeProvider>
   );
 };

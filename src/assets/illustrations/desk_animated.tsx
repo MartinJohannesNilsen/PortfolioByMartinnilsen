@@ -1,4 +1,3 @@
-
 const DeskSVGInline = (props: { classes: { desk: string | undefined; }; }) => {
     return (
         <svg
