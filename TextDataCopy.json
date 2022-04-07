@@ -1,0 +1,310 @@
+{
+  "english" : {
+    "aboutView": {
+      "subtitle" : [ 
+        "AGE(1999-03-26)",
+        "Trondheim"
+      ],
+      "text" : [
+        "Norwegian developer with a great interest in technology, who wants to be able to work more interdisciplinary in the distinction between physical and digital solutions. Have a bachelor's degree in computer engineering, and currently taking a M.Sc in Computer Science at NTNU in Trondheim. I am particularly interested in how machines see and understand the world, whether it is through text, images, sensors or other data. Can envision me working in disciplines such as drones, automation, vehicles, artificial intelligence or other data science related fields.",
+        "Aside from my studies, I have had four positions as a teaching assistant over two years, in subjects such as operating systems and applied machine learning, in addition to two relevant summer jobs, respectively Experis Ciber and NAV IT. Next summer I will work for Kongsberg Maritime on the autonomous project USV Sounder. This marks a difference for my work experience, as I will here have the opportunity to work more interdisciplinary in the distinction between Computer Science and Cybernetics, with computer vision in practice on an autonomous boat."
+      ]
+    },
+    "contactView": {
+      "text": [
+        "And more of my previous projects is to be found on my GitHub account!",
+        "Do not hesitate in reaching out to me if you want any further information, or just want to come into contact."
+      ],
+      "links": [
+        {
+          "text": "GitHub",
+          "value": "https://github.com/MartinJohannesNilsen"
+        },
+        {
+          "text": "LinkedIn",
+          "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
+        },
+        {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_en.pdf?alt=media&token=228adbfa-d110-4edb-8339-a1bfbaac5196"
+        },
+        {
+          "text": "Telephone",
+          "value": "+47 45005502",
+          "copyText": "Telephone number copied to clipboard!"
+        },
+        {
+          "text": "Email",
+          "value": "martinjnilsen@icloud.com",
+          "copyText": "Email address copied to clipboard!"
+        }
+      ]
+    },
+    "landingView": {
+      "navbar": {
+        "title" : "PORTFOLIO",
+        "languages": [ 
+          "Norwegian", 
+          "English" 
+        ],
+        "sections" : [
+          "About", 
+          "Projects", 
+          "Contact"
+        ]
+      },
+      "title" : "Computer engineer & Computer Science student"
+    },
+    "projectView": {
+      "title" : "Projects",
+      "buttonTexts" : [ 
+        "Show More",
+        "GitHub", 
+        "Website", 
+        "Demo", 
+        "ReadMe", 
+        "Paper"
+      ],
+      "listOfProjects" : [
+        {
+          "description" : "The firm wanted me to create a new website for them. They wanted a simple, yet modern website which gave their customers the possibility to read about what the firm has to offer, and take a look at reference photos from previous jobs.",
+          "img" : {
+            "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FINentrep.png?alt=media&token=6ceefd82-e60f-4af1-92ca-3b9304cb7af6",
+            "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS",
+          "linkToWebsite" : "https://ivar-nilsen.no",
+          "technologies" : [ "React", "NodeJS", "CSS", "GitHub Pages" ],
+          "title" : "Website for IN Entreprenør AS"
+        }, 
+        {
+          "description" : "2PCV - or two-phase commit visualisation, is a program made in Java to visualize the flow of the two-phase commit protocol.",
+          "img" : {
+            "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2F2PCV.png?alt=media&token=523e6257-b705-4f7d-b72d-fce718b03104",
+            "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/MartinJohannesNilsen/NTNU-Dataingenior/blob/main/TDAT2004%20-%20Datakommunikasjon%20med%20nettverksprogrammering/twophasecommit",
+          "linkToReadMe" : "https://github.com/MartinJohannesNilsen/NTNU-Dataingenior/blob/main/TDAT2004%20-%20Datakommunikasjon%20med%20nettverksprogrammering/twophasecommit/README.md",
+          "technologies" : [ "Java", "TCP", "Tråder" ],
+          "title" : "2PCV"
+        }, 
+        {
+          "description" : "A command line tool (cli) for keeping track of your weighted average grade based on the norwegian grading system (ECTS).",
+          "img" : {
+            "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FUnigrade.png?alt=media&token=4c2dbd0e-b37e-46c3-b95e-8e0fcec8a8a5",
+            "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/Martinnilsen99/Karakterkalkulator",
+          "technologies" : [ "Python", "argh", "cli" ],
+          "title" : "Karakterkalkulator (Unigrade)"
+        }, 
+        {
+          "description" : "My own take on DQN in Atari Breakout. This was made as a project in a machine learning course at the university, which gave me the opportunity to dive deeper into concepts of deep reinforcemenet learning.",
+          "img" : {
+            "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FBreakout.gif?alt=media&token=dee01d4a-7b06-4817-8de0-8ff2684e4805",
+            "type" : "portrait"
+          },
+          "linkToGitHub" : "https://github.com/Martinnilsen99/Atari_Breakout_openAIGym",
+          "linkToPaper" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMaskinlæringsrapport_DQN_AtariBreakout.pdf?alt=media&token=114e9a0e-16bd-4710-b295-1c81b5edd809",
+          "technologies" : [ "Python", "PyTorch", "OpenAI Gym", "OpenCV" ],
+          "title" : "DQN on Atari Breakout"
+        }, 
+        {
+          "description" : "Our bachelors project at NTNU, trying to classify sitting postures with machine learning algorithms on accelerometer- and gyroscope-data from IMU-sensors. Additionally, we developed an API for sensor communication using methods from the Openzen-library, in addition to a GUI for watching how your sitting posture varies over time.",
+          "img" : {
+            "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGot%20Your%20Backv1.png?alt=media&token=c6a7aa55-e406-4ba7-9879-014d46deb57e",
+            "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/Martinnilsen99/Got-Your-Back",
+          "linkToPaper" : "https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2778065",
+          "technologies" : [ "Python", "Keras", "React" ],
+          "title" : "Got Your Back"
+        }, 
+        {
+          "description" : "A clean and modern dashboard for helping you focus more on your work, and less on finding the right tools. Write notes in Markdown, or utilize the Pomodoro timer for managing your time for the most efficient workflow. When loading the page you have quick and easy access to the Google Search bar, and you can choose from a selection of themes.",
+          "img" : {
+            "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
+            "type" : "landscape"
+          },
+          "linkToWebsite" : "https://studypal.app",
+          "technologies" : [ "TypeScript", "React", "Material UI" ],
+          "title" : "StudyPal"
+        }, 
+        {
+          "description" : "Command Line Interface for setting up a LaTeX report based on a template with the most used packages already included, BibTeX referencing correctly configured and a title page automatically created. Use less time configuring LaTeX, and more time writing the actual report.",
+          "img" : {
+            "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FsetupLatex.png?alt=media&token=92fb4997-c35b-4f1b-95d5-e5ef1d9ecd9a",
+            "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/MartinJohannesNilsen/SetupLaTeX",
+          "technologies" : [ "LaTeX", "Python", "cli" ],
+          "title" : "SetupLaTeX"
+        }, 
+        {
+          "description" : "Object detection, localization and a simple segmentation of coral reefs, developed as part of a 48h AI hackaton. The dataset concists of 1600+ Sentinel-2 L2A satelite images of the Great Barrier Reef, and 11600+ coral reefs labeled using the Azure AI assisted data labeling resource. A YOLOv5 model was trained on the dataset, before testing it on images from a different reef outside of Fiji. ",
+          "img" : {
+            "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FCoralReef.gif?alt=media&token=29918466-cb1f-4bc0-8507-250aef94e0fc",
+            "type" : "square"
+          },
+          "linkToGitHub" : "https://github.com/MartinJohannesNilsen/AI_Hackaton_2022",
+          "technologies" : [ "Python", "Azure ML", "YOLOv5" ],
+          "title" : "Coral reef detection"
+        }
+      ]
+    }
+  },
+  "norwegian" : {
+    "aboutView": {
+      "subtitle" : [ 
+        "AGE(1999-03-26)",
+        "Trondheim"
+      ],
+      "text" : [
+        "Utvikler med en stor interesse for teknologi, som ønsker å kunne jobbe mer tverrfaglig i skillet mellom fysiske og digitale løsninger. Har en bachelor som dataingeniør, og tar for tiden en toårig sivilingeniør master i datateknologi på NTNU i Trondheim. Jeg interesserer meg spesielt for hvordan maskiner ser og forstår verden, enten det er gjennom tekst, bilder, sensorer eller annen data. Kan se for meg å jobbe innen fagområder som droner, automasjon, kjøretøy, kunstig intelligens eller liknende.",
+        "Ved siden av studier har jeg hatt fire stillinger som studentassistent over to år, i blant annet fagene operativsystemer og anvendt maskinlæring, i tillegg til to relevante sommerjobber, henholdsvis Experis Ciber og NAV IT. Neste sommer skal jeg jobbe for Kongsberg Maritime på det autonome prosjektet USV Sounder. Dette markerer et skille for arbeidserfaringen min, da jeg her skal få muligheten til å jobbe mer tverrfaglig i skillet mellom datateknologi og kybernetikk, med datasyn i praksis på en autonom båt."
+      ]
+    },
+    "contactView": {
+      "text": [
+        "Og flere kule prosjekter er å finne på min GitHub-konto!", 
+        "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker komme i kontakt med meg."
+      ],
+      "links": [
+        {
+          "text": "GitHub",
+          "value": "https://github.com/MartinJohannesNilsen"
+        },
+        {
+          "text": "LinkedIn",
+          "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
+        },
+        {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_no.pdf?alt=media&token=49b6d618-7469-4f0b-b65d-24a131ef64dc"
+        },
+        {
+          "text": "Telefon",
+          "value": "+47 45005502",
+          "copyText": "Telefonnummer kopiert til utklippstavlen!"
+        },
+        {
+          "text": "Epost",
+          "value": "martinjnilsen@icloud.com",
+          "copyText": "Epostadresse kopiert til utklippstavlen!"
+        }
+      ]
+    },
+    "landingView": {
+      "navbar": {
+        "title" : "PORTEFØLJE",
+        "languages": [ 
+          "Norsk", 
+          "Engelsk" 
+        ],
+        "sections" : [ 
+          "Om", 
+          "Prosjekter", 
+          "Kontakt" 
+        ]
+      },
+      "title" : "Dataingeniør & Datateknologi-student"
+    },
+    "projectView": {
+      "title" : "Prosjekter",
+      "buttonTexts" : [ 
+        "Vis Flere",
+        "GitHub", 
+        "Nettside", 
+        "Demo", 
+        "ReadMe", 
+        "Rapport"
+      ],
+      "listOfProjects" : [ 
+        {
+          "description" : "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. De ønsket i tillegg å ha en oversikt/liste med de ulike sortene arbeid de utfører, og referansebilder fra tidligere prosjekter.",
+          "img" : {
+              "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FINentrep.png?alt=media&token=6ceefd82-e60f-4af1-92ca-3b9304cb7af6",
+              "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/Martinnilsen99/Nettside-for-INEntrep-AS",
+          "linkToWebsite" : "https://ivar-nilsen.no",
+          "technologies" : [ "React", "NodeJS", "CSS", "GitHub Pages" ],
+          "title" : "Nettside for IN Entreprenør AS"
+        }, 
+        {
+          "description" : "2PCV - eller \"two-phase commit visualisation\", er et program laget i Java for å visualisere to-fase commit protokollen i praksis.",
+          "img" : {
+              "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2F2PCV.png?alt=media&token=523e6257-b705-4f7d-b72d-fce718b03104",
+              "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/MartinJohannesNilsen/NTNU-Dataingenior/blob/main/TDAT2004%20-%20Datakommunikasjon%20med%20nettverksprogrammering/twophasecommit",
+          "linkToReadMe" : "https://github.com/MartinJohannesNilsen/NTNU-Dataingenior/blob/main/TDAT2004%20-%20Datakommunikasjon%20med%20nettverksprogrammering/twophasecommit/README.md",
+          "technologies" : [ "Java", "TCP", "Tråder" ],
+          "title" : "2PCV"
+        }, 
+        {
+          "description" : "Et kommandolinjeverktøy for å holde oversikt over ditt vektede gjennomsnitt (GPA), basert på ECTS-systemet som brukes på bla. norske universiteter.",
+          "img" : {
+              "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FUnigrade.png?alt=media&token=4c2dbd0e-b37e-46c3-b95e-8e0fcec8a8a5",
+              "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/Martinnilsen99/Karakterkalkulator",
+          "technologies" : [ "Python", "argh", "cli" ],
+          "title" : "Karakterkalkulator (Unigrade)"
+        }, 
+        {
+          "description" : "Mitt prosjekt i faget \"Anvendt maskinlæring med prosjekt\" på NTNU. Prosjektet ga meg muligheten til å dykke dypere ned i konsepter innen deep reinforcement learning, og har implementert en agent som med hjelp av et konvolusjonelt nevralt nettverk og experience replay interagerer med miljøet gitt av OpenAI Gym.",
+          "img" : {
+              "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FBreakout.gif?alt=media&token=dee01d4a-7b06-4817-8de0-8ff2684e4805",
+              "type" : "portrait"
+          },
+          "linkToGitHub" : "https://github.com/Martinnilsen99/Atari_Breakout_openAIGym",
+          "linkToPaper" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMaskinlæringsrapport_DQN_AtariBreakout.pdf?alt=media&token=114e9a0e-16bd-4710-b295-1c81b5edd809",
+          "technologies" : [ "Python", "PyTorch", "OpenAI Gym", "OpenCV" ],
+          "title" : "DQN på Atari Breakout"
+        }, 
+        {
+          "description" : "Vårt bachelorprosjekt ved NTNU, der vi har forsket på maskinlæringsmodeller for å klassifisere sittestillinger på akselerometer- og gyroskop-data fra IMU-sensorer. Det ble også utviklet et API for sensorkommunikasjon ved bruk av metoder fra Openzen-biblioteket, samt et brukergrensesnitt slik at en bruker enkelt kan koble til sensorer og klassifisere egen sittestilling over tid.",
+          "img" : {
+              "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FGot%20Your%20Backv1.png?alt=media&token=c6a7aa55-e406-4ba7-9879-014d46deb57e",
+              "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/Martinnilsen99/Got-Your-Back",
+          "linkToPaper" : "https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2778065",
+          "technologies" : [ "Python", "Keras", "React.js" ],
+          "title" : "Got Your Back"
+        }, 
+        {
+          "description" : "Et moderne dashboard som samler de verktøyene du trenger for effektiv studering. Skriv notater i Markdown, eller ta i bruk den integrerte Pomodoro timeren for en mer effektiv arbeidsflyt. Ved innlasting av siden har du rask tilgang til et Google søkefelt, og du kan velge mellom en samling av ulike bakgrunnstemaer.",
+          "img" : {
+              "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
+              "type" : "landscape"
+          },
+          "linkToWebsite" : "https://studypal.app",
+          "technologies" : [ "TypeScript", "React", "Material UI" ],
+          "title" : "StudyPal"
+        }, 
+        {
+          "description" : "Et kommandolinjeverktøy for å sette opp en LaTeX rapport basert på en mal, med automatisk oppsett av nødvendige pakker, BibTeX referanseoppsett og tittelside. Bruk mer tid på å skrive rapporten, og mindre tid på sette den opp.",
+          "img" : {
+              "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FsetupLatex.png?alt=media&token=92fb4997-c35b-4f1b-95d5-e5ef1d9ecd9a",
+              "type" : "landscape"
+          },
+          "linkToGitHub" : "https://github.com/MartinJohannesNilsen/SetupLaTeX",
+          "technologies" : [ "LaTeX", "Python", "cli" ],
+          "title" : "SetupLaTeX"
+        }, 
+        {
+          "description" : "Objektdeteksjon, lokalisering og enkel segmentering av korallrev, utviklet som løsning av en 48t AI Hackaton. Datasettet består av 1600+ Sentinel-2 L2A satelittbilder av Great Barrier Reef, og 11600+ korallrev annotert ved hjelp av Azures AI-assisterte verktøy for annotering. En YOLOv5 modell ble trent på datasettet, før vi testet den på bilder fra et annet korallrev utenfor Fiji. ",
+          "img" : {
+              "path" : "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FCoralReef.gif?alt=media&token=29918466-cb1f-4bc0-8507-250aef94e0fc",
+              "type" : "square"
+          },
+          "linkToGitHub" : "https://github.com/MartinJohannesNilsen/AI_Hackaton_2022",
+          "technologies" : [ "Python", "Azure ML", "YOLOv5" ],
+          "title" : "Objektdeteksjon av korallrev"
+        } 
+      ]
+    }
+  }
+}

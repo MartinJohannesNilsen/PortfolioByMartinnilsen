@@ -61,7 +61,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             }
           >
             <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[0]}
+              {props.linkButtonText[1]}
             </Typography>
           </Button>
         ) : (
@@ -82,7 +82,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             }
           >
             <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[1]}
+              {props.linkButtonText[2]}
             </Typography>
           </Button>
         ) : (
@@ -103,7 +103,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             }
           >
             <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[2]}
+              {props.linkButtonText[3]}
             </Typography>
           </Button>
         ) : (
@@ -124,7 +124,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             }
           >
             <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[3]}
+              {props.linkButtonText[4]}
             </Typography>
           </Button>
         ) : (
@@ -143,7 +143,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             }
           >
             <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[4]}
+              {props.linkButtonText[5]}
             </Typography>
           </Button>
         ) : (

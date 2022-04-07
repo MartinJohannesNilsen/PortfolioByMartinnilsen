@@ -8,11 +8,12 @@ import DeskSVGInline from "../assets/illustrations/desk_animated";
 
 type landingProps = {
   data: {
-    landingTitle: string;
+    navbar: {
+      title: string;
+      languages: string[];
+      sections: string[];
+    }
     title: string;
-    descriptivePhrases: string[];
-    navText: string[];
-    navLanguages: string[];
   };
   language: string;
   setLanguage: () => void;
@@ -183,7 +184,7 @@ const LandingView: FC<landingProps> = (props) => {
   return (
     <Box>
       <Navbar
-        data={props.data}
+        data={props.data.navbar}
         language={props.language}
         setLanguage={props.setLanguage}
       />
@@ -202,7 +203,7 @@ const LandingView: FC<landingProps> = (props) => {
                 : { padding: "100px 30px" }
             }
           >
-            {props.data.landingTitle}
+            {props.data.title}
           </Typography>
         </div>
       </Box>

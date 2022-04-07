@@ -8,6 +8,17 @@
         "arrowParens": "avoid",
         "tabWidth": 2
       }
+    },
+    {
+      "files": ["src/**/*.json"],
+      "options": {
+        "printWidth": 160,
+        "useTabs": true,
+        "tabWidth": 2,
+        "trailingComma": "es5",
+        "semi": false,
+        "singleQuote": true
+      }
     }
   ]
 }
