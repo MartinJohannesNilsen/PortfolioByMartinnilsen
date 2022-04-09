@@ -10,6 +10,7 @@ import AboutView from "./views/AboutView";
 import ProjectView from "./views/ProjectView";
 // import SkillView from "./views/SkillView";
 import ContactView from "./views/ContactView";
+import ReaderView from "./views/_ReaderView";
 // import EducationView from "./views/EducationView";
 
 const App = () => {
@@ -29,6 +30,13 @@ const App = () => {
   return (
     <ThemeProvider>
       <CssBaseline />
+      {/* <ReaderView /> */}
+      <ReaderView 
+        ids={[data.landingView.navbar.sections[0], data.landingView.navbar.sections[1], data.landingView.navbar.sections[2]]}
+        about={data.aboutView}
+        projects={data.projectView}
+        contact={data.contactView}
+      />
       <LandingView 
         data={data.landingView}
         language={language} 
