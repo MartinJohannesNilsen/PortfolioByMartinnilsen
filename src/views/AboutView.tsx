@@ -16,7 +16,7 @@ type AboutViewProps = {
   }
 };
 
-const getAge = (dateString: string) => {
+export const getAge = (dateString: string) => {
   var today = new Date();
   var birthDate = new Date(dateString);
   var age = today.getFullYear() - birthDate.getFullYear();
@@ -41,6 +41,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
                   variant="h1"
                   color="textPrimary"
                   className={`${classes.title} ref`}
+                  itemProp="description"
                 >
                   Martin Johannes Nilsen
                 </Typography>
@@ -51,7 +52,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
                   color="textPrimary"
                   className={"ref"}
                 >
-                  <p>
+                  <h2>
                     {props.data.subtitle?.map((text: string, index) => {
                       if(text.includes("AGE(")){
                         let dateString = text.match(/\((.*)\)/)?.pop()?.toString();
@@ -66,10 +67,11 @@ const AboutView: FC<AboutViewProps> = (props) => {
                       }
                     }
                     )}
-                  </p>
+                  </h2>
                 </Typography>
               </Box>
               <Box textAlign="justify">
+                <p>
                 {props.data.text.map((paragraph: string) => (
                   <Box my={2} key={paragraph}>
                     <Typography
@@ -81,6 +83,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
                     </Typography>
                   </Box>
                 ))}
+                </p>                
               </Box>
             </CardContent>
           </Card>
