@@ -30,7 +30,6 @@ const App = () => {
   return (
     <ThemeProvider>
       <CssBaseline />
-      {/* <ReaderView /> */}
       <ReaderView 
         ids={[data.landingView.navbar.sections[0], data.landingView.navbar.sections[1], data.landingView.navbar.sections[2]]}
         about={data.aboutView}
