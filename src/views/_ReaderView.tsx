@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { getAge } from "./AboutView";
 
 type ReaderViewProps = {
   ids: string[];
@@ -80,24 +79,6 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
       
       {/* About */}
       <h2><span className="header">{props.ids[0]}</span></h2>
-      {/* <h4>
-        <span className="header">
-          {props.about.subtitle?.map((text: string, index: number) => {
-            if(text.includes("AGE(")){
-              let dateString = text.match(/\((.*)\)/)?.pop()?.toString();
-              if(dateString){
-                text = getAge(dateString).toString()
-              }
-            }
-            if(index !== 0){
-              return " • " + text
-            } else {
-              return text
-            }
-            }
-          )}
-        </span>
-      </h4> */}
       {props.about.text.map(t => (
         <p>{t}</p>
       ))}
