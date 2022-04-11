@@ -1,6 +1,6 @@
 # PORTFOLIO
 
-Portfolio for introducing myself as an developer, showcasing my previous projects and getting to know more about me. 
+Portfolio for introducing myself as a developer, showcasing my previous projects and getting to know more about me. 
 
 This project is built with:
 
