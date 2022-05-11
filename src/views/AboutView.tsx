@@ -104,10 +104,13 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   card: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: theme.palette.error.main,
     borderRadius: 50,
-    margin: "120px 0",
-    padding: "10%",
+    margin: "25% 0",
+    padding: "6%",
   },
   title: {
     fontSize: "3.5rem",
