@@ -162,6 +162,8 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
   //   // eslint-disable-next-line
   // }, [imageLeftInView]);
 
+  const paddingTitleDescription = 1.5;
+
   return (
     <>
       <Grid container alignItems="center" justify="center">
@@ -178,7 +180,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               </Box>
             </Grid>
             <Grid item xs={11} md={6}>
-              <Box pb={1}>
+              <Box pb={paddingTitleDescription}>
                 <Typography variant="body1" color="textPrimary">
                   {props.projectData.title}
                 </Typography>
@@ -205,7 +207,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               </Grid>
             </Hidden>
             <Grid item xs={11} md={6}>
-              <Box pb={1}>
+              <Box pb={paddingTitleDescription}>
                 <Typography variant="body1" color="textPrimary">
                   {props.projectData.title}
                 </Typography>
