@@ -110,7 +110,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.error.main,
     borderRadius: 50,
     margin: "25% 0",
-    padding: "6%",
+    padding: "2.5%",
+    [theme.breakpoints.up("sm")]: {
+      padding: "4%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      padding: "6%",
+    },
   },
   title: {
     fontSize: "3.5rem",
