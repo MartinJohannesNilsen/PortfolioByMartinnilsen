@@ -162,7 +162,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
   //   // eslint-disable-next-line
   // }, [imageLeftInView]);
 
-  const paddingTitleDescription = 1.5;
+  const paddingTitleDescription = 1.7;
 
   return (
     <>

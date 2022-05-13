@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.error.main,
     borderRadius: 50,
     margin: "25% 0",
-    padding: "2.5%",
+    padding: "3%",
     [theme.breakpoints.up("sm")]: {
       padding: "4%",
     },
