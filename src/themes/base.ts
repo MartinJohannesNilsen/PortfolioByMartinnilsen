@@ -1,10 +1,10 @@
 import { Theme } from "@material-ui/core";
-import { darkTheme } from "./dark";
-import { lightTheme } from "./light";
+import { dark } from "./dark";
+import { light } from "./light";
 
 export enum ThemeEnum {
-  Dark = "darkTheme",
-  Light = "lightTheme",
+  Dark = "dark",
+  Light = "light",
 }
 
 export function themeCreator(theme: string): Theme {
@@ -12,6 +12,6 @@ export function themeCreator(theme: string): Theme {
 }
 
 const themeMap: { [key: string]: Theme } = {
-  darkTheme,
-  lightTheme,
+  dark,
+  light,
 };

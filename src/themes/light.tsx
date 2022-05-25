@@ -1,7 +1,7 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 
-const defaultTheme = createMuiTheme();
-export const lightTheme = createMuiTheme({
+const defaultTheme = createTheme();
+export const light = createTheme({
   palette: {
     type: "light",
     text: {
@@ -115,4 +115,4 @@ export const lightTheme = createMuiTheme({
     },
   },
 });
-export default lightTheme;
+export default light;
