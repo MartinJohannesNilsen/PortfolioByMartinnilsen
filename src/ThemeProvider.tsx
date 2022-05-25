@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext, useMemo, useEffect } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import { MuiThemeProvider, Theme, useMediaQuery } from "@material-ui/core";
 import { themeCreator } from "./themes/base";
 import { ThemeEnum } from "./themes/base";
