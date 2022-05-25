@@ -1,5 +1,5 @@
-import React, { useState, createContext, useContext } from "react";
-import { MuiThemeProvider, Theme } from "@material-ui/core";
+import React, { useState, createContext, useContext, useMemo, useEffect } from "react";
+import { MuiThemeProvider, Theme, useMediaQuery } from "@material-ui/core";
 import { themeCreator } from "./themes/base";
 import { ThemeEnum } from "./themes/base";
 
@@ -14,11 +14,17 @@ export const ThemeContext = createContext<ThemeContextType>({
 export const useTheme = () => useContext(ThemeContext);
 
 const ThemeProvider: React.FC = (props) => {
-  const curThemeName: string = localStorage.getItem("appTheme") || "lightTheme";
+  const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)' //Default query for OS setting
+  const OS_STANDARD = useMediaQuery(COLOR_SCHEME_QUERY) ? "dark" : "light"
+  const curThemeName: string = localStorage.getItem("theme") || OS_STANDARD;
   const [theme, _setTheme] = useState(themeCreator(curThemeName));
 
+  useEffect(() => {
+    _setTheme(themeCreator(localStorage.getItem("theme") || OS_STANDARD))
+  }, [OS_STANDARD])
+
   const setTheme = (themeName: ThemeEnum): void => {
-    localStorage.setItem("appTheme", themeName);
+    localStorage.setItem("theme", themeName);
     _setTheme(themeCreator(themeName));
   };
 
