@@ -18,8 +18,8 @@ import { gsap, Power3 } from "gsap";
 import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import Switch from "../Switch/Switch";
-import $ from "jquery";
 import FABMenu from "./FABMenu";
+import $ from "jquery";
 
 export type NavbarProps = {
   data: {
@@ -36,7 +36,7 @@ export const handleScroll = (name: string) => {
     {
       scrollTop: $("#" + name)!.offset()!.top,
     },
-    1500
+    100
   );
 };
 
