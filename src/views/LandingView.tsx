@@ -1,8 +1,8 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { Box, makeStyles, Typography, useMediaQuery } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
-import { useTheme } from "../ThemeProvider";
+import { getSelectedTheme, useTheme } from "../ThemeProvider";
 import useDidUpdate from "../utils/useDidUpdate";
 import DeskSVGInline from "../assets/illustrations/desk_animated";
 
@@ -125,9 +125,9 @@ const LandingView: FC<landingProps> = (props) => {
       
     if (theme.palette.type === "dark") {
       tl.from(svgElements.lamp_light, {
-        duration: 0.15,
-        opacity: 0,
-      })
+          duration: 0.15,
+          opacity: 0,
+        })
         .to(svgElements.lamp_light, {
           duration: 0.15,
           opacity: 0,
