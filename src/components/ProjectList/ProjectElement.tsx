@@ -1,12 +1,5 @@
 import React, { FC } from "react";
-import {
-  Box,
-  makeStyles,
-  Grid,
-  Typography,
-  Button,
-  Hidden,
-} from "@material-ui/core";
+import {Box, makeStyles, Grid, Typography, Button, Hidden} from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import githubIcon from "@iconify-icons/cib/github";
 import documentBlank from "@iconify-icons/carbon/document-blank";

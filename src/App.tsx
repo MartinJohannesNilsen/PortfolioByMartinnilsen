@@ -14,11 +14,12 @@ import ReaderView from "./views/_ReaderView";
 // import EducationView from "./views/EducationView";
 
 const App = () => {
-  const [language, setLanguage] = useStickyState("language", "norwegian");
+  console.log(navigator.language)
+  const [language, setLanguage] = useStickyState("language", navigator.language == "nb-NO" || "nn-NO" ? "norwegian" : "english");
   const [data, setData] = useState(
-    language === "english"
-      ? require("./TextData.json").english
-      : require("./TextData.json").norwegian
+    language === "nb-NO"
+      ? require("./TextData.json").norwegian
+      : require("./TextData.json").english
   );
 
   useMemo(() => {
