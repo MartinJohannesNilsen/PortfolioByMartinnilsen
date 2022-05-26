@@ -1,89 +1,78 @@
 {
-  "english" : {
+  "english": {
     "aboutView": {
-      "subtitle" : [ 
+      "subtitle": [
         "AGE(1999-03-26)",
-        "Trondheim"
+        "Trondheim, Norway"
       ],
-      "text" : [
-        "Norwegian developer with a great interest in technology, who wants to be able to work more interdisciplinary in the distinction between physical and digital solutions. Have a bachelor's degree in computer engineering, and currently taking a M.Sc in Computer Science at NTNU in Trondheim. I am particularly interested in how machines see and understand the world, whether it is through text, images, sensors or other data. Can envision me working in disciplines such as drones, automation, vehicles, artificial intelligence or other data science related fields.",
-        "Aside from my studies, I have had four positions as a teaching assistant over two years, in subjects such as operating systems and applied machine learning, in addition to two relevant summer jobs, respectively Experis Ciber and NAV IT. Next summer I will work for Kongsberg Maritime on the autonomous project USV Sounder. This marks a difference for my work experience, as I will here have the opportunity to work more interdisciplinary in the distinction between Computer Science and Cybernetics, with computer vision in practice on an autonomous boat."
+      "text": [
+        "Norwegian developer with a great interest in technology, and a strong foundation in both theoretical and practical aspects of Software Engineering and Computer Science. Have a bachelor's degree in Computer Engineering, and currently taking a M.Sc. in Computer Science at NTNU in Trondheim. I am particularly interested in how computers see and understand the world, whether it is through text, images, sensors etc. Can envision me working in disciplines such as Natural Language Processing, Computer Vision, Autonomy, Machine Learning, Information Retrieval or similar data science related fields.",
+        "Aside from my studies, I have had four positions as a teaching assistant over two years, in subjects such as Full-Stack Development and Applied Machine Learning, in addition to mentoring 10+ teams alongside the professors on projects in the latter. Further on, I have had two relevant internships, more specifically in Experis Ciber and the Norwegian Labour and Welfare Administration. This summer I will work for Kongsberg Maritime on the autonomous project USV Sounder. This marks a difference for my work experience, as I will here have the opportunity to work more interdisciplinary in the distinction between Computer Science and Cybernetics, with computer vision in practice on an autonomous boat."
       ]
     },
     "contactView": {
+      "links": [
+        {
+          "text": "GitHub",
+          "value": "https://github.com/MartinJohannesNilsen"
+        },
+        {
+          "text": "LinkedIn",
+          "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
+        },
+        {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_en.pdf?alt=media&token=00f4b77a-f7fb-4ccc-8d78-497327c3fc6d"
+        },
+        {
+          "copyText": "Telephone number copied to clipboard!",
+          "text": "Telephone",
+          "value": "+47 45005502"
+        },
+        {
+          "copyText": "Email address copied to clipboard!",
+          "text": "Email",
+          "value": "martinjnilsen@icloud.com"
+        }
+      ],
       "text": [
         "And more of my previous projects is to be found on my GitHub account!",
         "Do not hesitate in reaching out to me if you want any further information, or just want to come into contact."
-      ],
-      "links": [
-        {
-          "text": "GitHub",
-          "value": "https://github.com/MartinJohannesNilsen"
-        },
-        {
-          "text": "LinkedIn",
-          "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
-        },
-        {
-          "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_en.pdf?alt=media&token=228adbfa-d110-4edb-8339-a1bfbaac5196"
-        },
-        {
-          "text": "Telephone",
-          "value": "+47 45005502",
-          "copyText": "Telephone number copied to clipboard!"
-        },
-        {
-          "text": "Email",
-          "value": "martinjnilsen@icloud.com",
-          "copyText": "Email address copied to clipboard!"
-        }
       ]
     },
     "landingView": {
       "navbar": {
-        "title" : "PORTFOLIO",
-        "languages": [ 
-          "Norwegian", 
-          "English" 
+        "languages": [
+          "Norwegian",
+          "English"
         ],
-        "sections" : [
-          "About", 
-          "Projects", 
+        "sections": [
+          "About",
+          "Projects",
           "Contact"
-        ]
+        ],
+        "title": "PORTFOLIO"
       },
-      "title" : "Computer engineer & Computer Science student"
+      "title": "Computer engineer & Computer Science student"
     },
     "projectView": {
-      "title" : "Projects",
-      "buttonTexts" : [ 
-        "Show More",
-        "GitHub", 
-        "Website", 
-        "Demo", 
-        "ReadMe", 
-        "Paper"
-      ],
-      "listOfProjects" : []
+      "buttonTexts": [],
+      "listOfProjects": [],
+      "title": "Projects"
     }
   },
-  "norwegian" : {
+  "norwegian": {
     "aboutView": {
-      "subtitle" : [ 
+      "subtitle": [
         "AGE(1999-03-26)",
         "Trondheim"
       ],
-      "text" : [
-        "Utvikler med en stor interesse for teknologi, som ønsker å kunne jobbe mer tverrfaglig i skillet mellom fysiske og digitale løsninger. Har en bachelor som dataingeniør, og tar for tiden en toårig sivilingeniør master i datateknologi på NTNU i Trondheim. Jeg interesserer meg spesielt for hvordan maskiner ser og forstår verden, enten det er gjennom tekst, bilder, sensorer eller annen data. Kan se for meg å jobbe innen fagområder som droner, automasjon, kjøretøy, kunstig intelligens eller liknende.",
-        "Ved siden av studier har jeg hatt fire stillinger som studentassistent over to år, i blant annet fagene operativsystemer og anvendt maskinlæring, i tillegg til to relevante sommerjobber, henholdsvis Experis Ciber og NAV IT. Neste sommer skal jeg jobbe for Kongsberg Maritime på det autonome prosjektet USV Sounder. Dette markerer et skille for arbeidserfaringen min, da jeg her skal få muligheten til å jobbe mer tverrfaglig i skillet mellom datateknologi og kybernetikk, med datasyn i praksis på en autonom båt."
+      "text": [
+        "Utvikler med en stor interesse for teknologi, med erfaring innen både teoretiske og praktiske aspekter av programvaretuvikling og  datateknologi. Har en bachelor som dataingeniør, og tar for tiden en toårig sivilingeniør master i datateknologi på NTNU i Trondheim. Jeg interesserer meg spesielt for hvordan maskiner ser og forstår verden, enten det er gjennom tekst, bilder, sensorer eller annen data. Kan se for meg å jobbe innen fagområder som språkbehandling, datasyn, automasjon av kjøretøy, maskinlæring, informasjonsgjenfinning eller liknende.",
+        "Ved siden av studier har jeg hatt fire stillinger som læringsassistent over to år, samt veiledet 10+ team i et prosjekt i faget anvendt maskinlæring. I tillegg har jeg hatt to relevante sommerjobber ved siden av studiet, henholdsvis Experis Ciber og NAV IT. Denne sommeren skal jeg jobbe for Kongsberg Maritime på det autonome prosjektet USV Sounder. Dette markerer et skille for arbeidserfaringen min, da jeg her skal få muligheten til å jobbe mer tverrfaglig i skillet mellom datateknologi og kybernetikk, med datasyn i praksis på en autonom båt."
       ]
     },
     "contactView": {
-      "text": [
-        "Og flere kule prosjekter er å finne på min GitHub-konto!", 
-        "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker komme i kontakt med meg."
-      ],
       "links": [
         {
           "text": "GitHub",
@@ -95,46 +84,43 @@
         },
         {
           "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_no.pdf?alt=media&token=49b6d618-7469-4f0b-b65d-24a131ef64dc"
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_no.pdf?alt=media&token=dde90760-42e8-4418-9291-0a34d6d506f6"
         },
         {
+          "copyText": "Telefonnummer kopiert til utklippstavlen!",
           "text": "Telefon",
-          "value": "+47 45005502",
-          "copyText": "Telefonnummer kopiert til utklippstavlen!"
+          "value": "+47 45005502"
         },
         {
+          "copyText": "Epostadresse kopiert til utklippstavlen!",
           "text": "Epost",
-          "value": "martinjnilsen@icloud.com",
-          "copyText": "Epostadresse kopiert til utklippstavlen!"
+          "value": "martinjnilsen@icloud.com"
         }
+      ],
+      "text": [
+        "Og flere kule prosjekter er å finne på min GitHub-konto!",
+        "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker komme i kontakt med meg."
       ]
     },
     "landingView": {
       "navbar": {
-        "title" : "PORTEFØLJE",
-        "languages": [ 
-          "Norsk", 
-          "Engelsk" 
+        "languages": [
+          "Norsk",
+          "Engelsk"
         ],
-        "sections" : [ 
-          "Om", 
-          "Prosjekter", 
-          "Kontakt" 
-        ]
+        "sections": [
+          "Om",
+          "Prosjekter",
+          "Kontakt"
+        ],
+        "title": "PORTEFØLJE"
       },
-      "title" : "Dataingeniør & Datateknologi-student"
+      "title": "Dataingeniør & Datateknologi-student"
     },
     "projectView": {
-      "title" : "Prosjekter",
-      "buttonTexts" : [ 
-        "Vis Flere",
-        "GitHub", 
-        "Nettside", 
-        "Demo", 
-        "ReadMe", 
-        "Rapport"
-      ],
-      "listOfProjects" : []
+      "buttonTexts": [],
+      "listOfProjects": [],
+      "title": "Prosjekter"
     }
   }
 }
