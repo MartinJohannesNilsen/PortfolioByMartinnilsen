@@ -1,20 +1,22 @@
-import React, { useState, createContext, useContext, useEffect, useLayoutEffect } from "react";
+import React, { useState, createContext, useContext} from "react";
 import { MuiThemeProvider, Theme, useMediaQuery } from "@material-ui/core";
 import { themeCreator } from "./themes/base";
 import { ThemeEnum } from "./themes/base";
 import useDidUpdate from "./utils/useDidUpdate";
 
-export type ThemeContextType = {
-  theme: Theme;
-  setTheme: (Theme: ThemeEnum) => void;
-};
-
-const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)' //Default query for OS setting
+// Find the correct scheme based on user preferences. 
+// If changed on site before, persist based on localStorage, else default
+const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)'
 export function getSelectedTheme() {
   const localStorageTheme = localStorage.getItem("theme");
   const OS_STANDARD = window.matchMedia(COLOR_SCHEME_QUERY).matches ? "dark" : "light";
   return localStorageTheme || OS_STANDARD;
 }
+
+export type ThemeContextType = {
+  theme: Theme;
+  setTheme: (Theme: ThemeEnum) => void;
+};
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: getSelectedTheme() == "dark" ? themeCreator(ThemeEnum.Dark) : themeCreator(ThemeEnum.Light), 

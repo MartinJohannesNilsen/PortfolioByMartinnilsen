@@ -1,8 +1,8 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Box, makeStyles, Typography, useMediaQuery } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
-import { getSelectedTheme, useTheme } from "../ThemeProvider";
+import { useTheme } from "../ThemeProvider";
 import useDidUpdate from "../utils/useDidUpdate";
 import DeskSVGInline from "../assets/illustrations/desk_animated";
 
