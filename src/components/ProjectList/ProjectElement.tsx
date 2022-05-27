@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Box, makeStyles, Grid, Typography, Hidden } from "@material-ui/core";
 import insertButtons from "../ProjectButtons/insertButtons";
-import { RevealLeft, RevealRight } from "../Animations/Reveal";
+import { RevealLeft, RevealRight } from "../Animations/ScrollTrigger";
 
 export type ProjectElementProps = {
   projectData: {
@@ -25,7 +25,7 @@ export type ProjectElementProps = {
 const ProjectElement: FC<ProjectElementProps> = (props) => {
   const classes = useStyles(props);
   const paddingTitleDescription = 1.7;
-  const repeatTween = false;
+  const repeatTween = true;
 
   return (
     <>
