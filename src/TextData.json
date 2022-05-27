@@ -190,6 +190,7 @@
         "title": "Featured in",
         "readButtonText": "Read",
         "copyButtonText": "Copy link",
+        "copyText": "Link copied to clipboard!",
         "articles": [
           {
             "title": "Nor-Shipping Hackathon 2022",
@@ -199,10 +200,7 @@
               "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600",
               "alt": ""
             },
-            "link": {
-              "copyText": "Link copied to clipboard!",
               "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
-            }
           },
           {
             "title": "Mulighetsrommet",
@@ -212,10 +210,7 @@
               "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80",
               "alt": ""
             },
-            "link": {
-              "copyText": "Link copied to clipboard!",
               "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
-            }
           },
           {
             "title": "Dissimilis, Digi.no",
@@ -225,10 +220,7 @@
               "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg",
              "alt": ""
             },
-            "link": {
-              "copyText": "Link copied to clipboard!",
               "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
-            }
           }
         ]
     }
@@ -422,8 +414,9 @@
     },
     "featuredInView": {
       "title": "Artikler",
-      "readButtonText": "Read",
-      "copyButtonText": "Copy link",
+      "readButtonText": "Les",
+      "copyButtonText": "Kopier lenke",
+      "copyText": "Lenke kopiert til utklippstavlen!",
       "articles": [
         {
           "title": "Nor-Shipping Hackathon 2022",
@@ -433,10 +426,7 @@
             "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600",
             "alt": "Annonsering av vinnerne av Nor-Shipping Hackathon 2022"
           },
-          "link": {
-            "copyText": "Link copied to clipboard!",
             "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
-          }
         },
         {
           "title": "Mulighetsrommet",
@@ -446,10 +436,7 @@
             "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80",
             "alt": "Gruppebilde av 5 sommerstudenter for NAV IT sommeren 2021"
           },
-          "link": {
-            "copyText": "Link copied to clipboard!",
             "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
-          }
         },
         {
           "title": "Dissimilis, Digi.no",
@@ -459,10 +446,7 @@
             "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg",
            "alt": "Gruppebildet av teamet som lager første MVP av Dissimilis fargenotasjon"
           },
-          "link": {
-            "copyText": "Link copied to clipboard!",
             "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
-          }
         }
       ]
   }

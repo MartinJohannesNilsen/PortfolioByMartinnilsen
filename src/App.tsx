@@ -24,7 +24,7 @@ const App = () => {
   );
 
   useMemo(() => {
-    // fetchDataFromDB(language, setData);
+    fetchDataFromDB(language, setData);
     window.scrollTo(0, 0);
     //eslint-disable-next-line
   }, [language]);
@@ -41,6 +41,7 @@ const App = () => {
         about={data.aboutView}
         projects={data.projectView}
         contact={data.contactView}
+        featuredIn={data.featuredInView}
       />
       <LandingView
         data={data.landingView}

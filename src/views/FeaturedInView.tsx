@@ -14,26 +14,24 @@ import {
   Zoom,
 } from "@material-ui/core";
 
+export type ArticleProps = {
+  title: string;
+  description: string;
+  img: {
+    path: string;
+    alt: string;
+  };
+  url: string;
+};
+
 type FeaturedInViewProps = {
   id: string;
   data: {
     title: string;
     readButtonText: string;
     copyButtonText: string;
-    articles: [
-      {
-        title: string;
-        description: string;
-        img: {
-          path: string;
-          alt: string;
-        };
-        link: {
-          copyText: string;
-          url: string;
-        };
-      }
-    ];
+    copyText: string;
+    articles: [ArticleProps];
   };
 };
 
@@ -112,7 +110,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                   <Button
                     size="small"
                     color="inherit"
-                    onClick={() => window.open(card.link.url, "_blank")}
+                    onClick={() => window.open(card.url, "_blank")}
                   >
                     {props.data.readButtonText}
                   </Button>
@@ -134,7 +132,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                       TransitionComponent={Zoom}
                       title={
                         <Typography variant="overline" color="inherit">
-                          {card.link.copyText}
+                          {props.data.copyText}
                         </Typography>
                       }
                     >
@@ -143,7 +141,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                         color="inherit"
                         onClick={() => {
                           handleTooltipState(true, index);
-                          navigator.clipboard.writeText(card.link.url);
+                          navigator.clipboard.writeText(card.url);
                         }}
                       >
                         {props.data.copyButtonText}
@@ -196,9 +194,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       padding: "6%",
     },
-    // backgroundColor: "white",
-    // backgroundColor: theme.palette.error.light,
-    backgroundColor: theme.palette.text.secondary,
+    // backgroundColor: theme.palette.error.light, //Pastel red
+    backgroundColor: theme.palette.text.secondary, //White and black
+    // backgroundColor: theme.palette.primary.main, //White and dark blue
   },
   tooltipWidth: {
     maxWidth: 400,

@@ -6,21 +6,23 @@ import {
   ScrollTriggerRight,
 } from "../Animations/ScrollTrigger";
 
-export type ProjectElementProps = {
-  projectData: {
-    title: string;
-    description: string;
-    img: {
-      path: string;
-      type: "landscape" | "portrait" | "square";
-    };
-    linkToWebsite?: string;
-    linkToGitHub?: string;
-    linkToDemovideo?: string;
-    linkToReadMe?: string;
-    linkToPaper?: string;
-    technologies?: string[];
+export type ProjectProps = {
+  title: string;
+  description: string;
+  img: {
+    path: string;
+    type: "landscape" | "portrait" | "square";
   };
+  linkToWebsite?: string;
+  linkToGitHub?: string;
+  linkToDemovideo?: string;
+  linkToReadMe?: string;
+  linkToPaper?: string;
+  technologies?: string[];
+};
+
+export type ProjectElementProps = {
+  projectData: ProjectProps;
   imgPosition: "left" | "right";
   linkButtonText: string[];
 };
