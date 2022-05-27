@@ -47,7 +47,6 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                       {props.projectData.title}
                     </Typography>
                   </Box>
-
                   <Box textAlign="justify">
                     <Typography variant="body2" color="textPrimary">
                       {props.projectData.description}
@@ -83,22 +82,18 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     </Typography>
                   </Box>
                   <Box>{insertButtons(props)}</Box>
+                  <Hidden smDown>
+                    <Box py={10}>
+                      <img
+                        src={props.projectData.img.path}
+                        className={classes.img}
+                        alt={props.projectData.title}
+                      />
+                    </Box>
+                  </Hidden>
                 </div>
               </RevealLeft>
             </Grid>
-            <Hidden smDown>
-              <Grid item xs={12} md={6}>
-                <RevealLeft>
-                  <Box py={10}>
-                    <img
-                      src={props.projectData.img.path}
-                      className={classes.img}
-                      alt={props.projectData.title}
-                    />
-                  </Box>
-                </RevealLeft>
-              </Grid>
-            </Hidden>
           </>
         )}
       </Grid>
