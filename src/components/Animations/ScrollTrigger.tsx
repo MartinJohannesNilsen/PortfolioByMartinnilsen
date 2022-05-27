@@ -1,56 +1,75 @@
 import { FC, ReactNode } from "react";
-import { Reveal, Tween, ScrollTrigger } from "react-gsap";
+import { ScrollTrigger } from "react-gsap";
+import { FadeInLeft, FadeInRight, FadeInUp } from "./Tweens";
 
 type ScrollTriggerProps = {
-  repeat?: boolean;
+  markers?: boolean;
+  start?: string;
+  end?: string;
+  scrub?: number;
+  x?: string;
+  y?: string;
   children?: ReactNode;
 };
 
-const FadeInLeft: React.FC = ({ children }) => (
-  <Tween
-    from={{ opacity: 0, transform: "translate3d(-5vw, 0, 0)" }}
-    ease="back.out(0.2)"
-  >
-    {children}
-  </Tween>
-);
-
-const FadeInRight: React.FC = ({ children }) => (
-  <Tween from={{ opacity: 0, transform: "translate3d(5vw, 0, 0)" }}>
-    {children}
-  </Tween>
-);
-
-const FadeInUp: React.FC = ({ children }) => (
-  <Tween from={{ opacity: 0, transform: "translate3d(0, -10vh, 0)" }}>
-    {children}
-  </Tween>
-);
-
-export const RevealLeft: FC<ScrollTriggerProps> = (
+export const ScrollTriggerLeft: FC<ScrollTriggerProps> = (
   props: ScrollTriggerProps
 ) => {
   return (
-    <ScrollTrigger start="-100px center" end="100px center" scrub={0.5} markers>
-      <FadeInLeft>{props.children}</FadeInLeft>
+    <ScrollTrigger
+      start={props.start || "-100px center"}
+      end={props.end || "100px center"}
+      scrub={props.scrub || 0.5}
+      markers={props.markers || false}
+    >
+      <FadeInLeft x={props.x}>{props.children}</FadeInLeft>
     </ScrollTrigger>
   );
 };
 
-export const RevealRight: FC<ScrollTriggerProps> = (
+export const ScrollTriggerRight: FC<ScrollTriggerProps> = (
   props: ScrollTriggerProps
 ) => {
   return (
-    <ScrollTrigger start="-100px center" end="100px center" scrub={0.5} markers>
-      <FadeInRight>{props.children}</FadeInRight>
+    <ScrollTrigger
+      start={props.start || "-100px center"}
+      end={props.end || "100px center"}
+      scrub={props.scrub || 0.5}
+      markers={props.markers || false}
+    >
+      <FadeInRight x={props.x}>{props.children}</FadeInRight>
     </ScrollTrigger>
   );
 };
 
-export const RevealUp: FC<ScrollTriggerProps> = (props: ScrollTriggerProps) => {
+export const ScrollTriggerUp: FC<ScrollTriggerProps> = (
+  props: ScrollTriggerProps
+) => {
   return (
-    <Reveal repeat={props.repeat || false} trigger={<div />}>
-      <FadeInUp>{props.children}</FadeInUp>
-    </Reveal>
+    <ScrollTrigger
+      start={props.start || "-100px center"}
+      end={props.end || "100px center"}
+      scrub={props.scrub || 0.5}
+      markers={props.markers || false}
+    >
+      <FadeInUp y={props.y}>{props.children}</FadeInUp>
+    </ScrollTrigger>
+  );
+};
+
+export const ScrollTriggerXY: FC<ScrollTriggerProps> = (
+  props: ScrollTriggerProps
+) => {
+  return (
+    <ScrollTrigger
+      start={props.start || "-100px center"}
+      end={props.end || "100px center"}
+      scrub={props.scrub || 0.5}
+      markers={props.markers || false}
+    >
+      <FadeInUp x={props.x} y={props.y}>
+        {props.children}
+      </FadeInUp>
+    </ScrollTrigger>
   );
 };
