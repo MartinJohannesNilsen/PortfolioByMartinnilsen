@@ -1,19 +1,7 @@
 import React, { FC } from "react";
-import {
-  Box,
-  makeStyles,
-  Grid,
-  Typography,
-  Button,
-  Hidden,
-} from "@material-ui/core";
-import { Icon } from "@iconify/react";
-import githubIcon from "@iconify-icons/cib/github";
-import documentBlank from "@iconify-icons/carbon/document-blank";
-import documentPdf from "@iconify-icons/carbon/document-pdf";
-import desktopOutlined from "@iconify-icons/ant-design/desktop-outlined";
-import cameraVideo from "@iconify-icons/bi/camera-video";
-import { useTheme } from "../../ThemeProvider";
+import { Box, makeStyles, Grid, Typography, Hidden } from "@material-ui/core";
+import insertButtons from "../ProjectButtons/insertButtons";
+import { RevealLeft, RevealRight } from "../Animations/Reveal";
 
 export type ProjectElementProps = {
   projectData: {
@@ -36,198 +24,79 @@ export type ProjectElementProps = {
 
 const ProjectElement: FC<ProjectElementProps> = (props) => {
   const classes = useStyles(props);
-  const { theme } = useTheme();
-
-  const insertButtons = (props: ProjectElementProps) => {
-    const isHosted = props.projectData.hasOwnProperty("linkToWebsite");
-    const hasGitHub = props.projectData.hasOwnProperty("linkToGitHub");
-    const hasDemoVid = props.projectData.hasOwnProperty("linkToDemovideo");
-    const hasReadMe = props.projectData.hasOwnProperty("linkToReadMe");
-    const hasPaper = props.projectData.hasOwnProperty("linkToPaper");
-    return (
-      <React.Fragment>
-        {hasGitHub ? (
-          <Button
-            className={classes.button}
-            onClick={() =>
-              window.open(props.projectData.linkToGitHub, "_blank")
-            }
-            startIcon={
-              <Icon
-                icon={githubIcon}
-                style={{ marginRight: "5px", marginBottom: "1px" }}
-                color={theme.palette.text.primary}
-              />
-            }
-          >
-            <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[1]}
-            </Typography>
-          </Button>
-        ) : (
-          <></>
-        )}
-        {isHosted ? (
-          <Button
-            className={classes.button}
-            onClick={() =>
-              window.open(props.projectData.linkToWebsite, "_blank")
-            }
-            startIcon={
-              <Icon
-                icon={desktopOutlined}
-                style={{ marginRight: "5px" }}
-                color={theme.palette.text.primary}
-              />
-            }
-          >
-            <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[2]}
-            </Typography>
-          </Button>
-        ) : (
-          <></>
-        )}
-        {hasDemoVid ? (
-          <Button
-            className={classes.button}
-            onClick={() =>
-              window.open(props.projectData.linkToDemovideo, "_blank")
-            }
-            startIcon={
-              <Icon
-                icon={cameraVideo}
-                style={{ marginRight: "5px" }}
-                color={theme.palette.text.primary}
-              />
-            }
-          >
-            <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[3]}
-            </Typography>
-          </Button>
-        ) : (
-          <></>
-        )}
-        {hasReadMe ? (
-          <Button
-            className={classes.button}
-            onClick={() =>
-              window.open(props.projectData.linkToReadMe, "_blank")
-            }
-            startIcon={
-              <Icon
-                icon={documentBlank}
-                style={{ marginRight: "5px", marginBottom: "1px" }}
-                color={theme.palette.text.primary}
-              />
-            }
-          >
-            <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[4]}
-            </Typography>
-          </Button>
-        ) : (
-          <></>
-        )}
-        {hasPaper ? (
-          <Button
-            className={classes.button}
-            onClick={() => window.open(props.projectData.linkToPaper, "_blank")}
-            startIcon={
-              <Icon
-                icon={documentPdf}
-                style={{ marginRight: "5px", marginBottom: "1px" }}
-                color={theme.palette.text.primary}
-              />
-            }
-          >
-            <Typography variant="button" color="textPrimary">
-              {props.linkButtonText[5]}
-            </Typography>
-          </Button>
-        ) : (
-          <></>
-        )}
-      </React.Fragment>
-    );
-  };
-
-  // const [imageLeft, imageLeftInView] = useInView({
-  //   threshold: 0,
-  // });
-
-  // useEffect(() => {
-  //   TweenMax.to(imageLeft, 1.2, { opacity: 0, x: 400, ease: Power3.easeIn });
-  //   // eslint-disable-next-line
-  // }, [imageLeftInView]);
-
   const paddingTitleDescription = 1.7;
+  const repeatTween = false;
 
   return (
     <>
       <Grid container alignItems="center" justify="center">
         {props.imgPosition === "left" ? (
           <>
-            <Grid item xs={12} md={6}>
-              <Box py={5}>
-                <img
-                  // ref={imageLeft}
-                  src={props.projectData.img.path}
-                  className={classes.img}
-                  alt={props.projectData.title}
-                />
-              </Box>
-            </Grid>
             <Grid item xs={11} md={6}>
-              <Box pb={paddingTitleDescription}>
-                <Typography variant="body1" color="textPrimary">
-                  {props.projectData.title}
-                </Typography>
-              </Box>
-              <Box textAlign="justify">
-                <Typography variant="body2" color="textPrimary">
-                  {props.projectData.description}
-                </Typography>
-              </Box>
-              <Box>{insertButtons(props)}</Box>
+              <RevealRight>
+                <div>
+                  <Box py={5}>
+                    <img
+                      src={props.projectData.img.path}
+                      className={classes.img}
+                      alt={props.projectData.title}
+                    />
+                  </Box>
+                  <Box pb={paddingTitleDescription}>
+                    <Typography variant="body1" color="textPrimary">
+                      {props.projectData.title}
+                    </Typography>
+                  </Box>
+
+                  <Box textAlign="justify">
+                    <Typography variant="body2" color="textPrimary">
+                      {props.projectData.description}
+                    </Typography>
+                  </Box>
+                  <Box>{insertButtons(props)}</Box>
+                </div>
+              </RevealRight>
             </Grid>
           </>
         ) : (
           <>
-            <Hidden mdUp>
-              <Grid item xs={12} md={6}>
-                <Box py={5}>
-                  <img
-                    src={props.projectData.img.path}
-                    className={classes.img}
-                    alt={props.projectData.title}
-                  />
-                </Box>
-              </Grid>
-            </Hidden>
             <Grid item xs={11} md={6}>
-              <Box pb={paddingTitleDescription}>
-                <Typography variant="body1" color="textPrimary">
-                  {props.projectData.title}
-                </Typography>
-              </Box>
-              <Box textAlign="justify">
-                <Typography variant="body2" color="textPrimary">
-                  {props.projectData.description}
-                </Typography>
-              </Box>
-              <Box>{insertButtons(props)}</Box>
+              <RevealLeft>
+                <div>
+                  <Hidden mdUp>
+                    <Box py={5}>
+                      <img
+                        src={props.projectData.img.path}
+                        className={classes.img}
+                        alt={props.projectData.title}
+                      />
+                    </Box>
+                  </Hidden>
+                  <Box pb={paddingTitleDescription}>
+                    <Typography variant="body1" color="textPrimary">
+                      {props.projectData.title}
+                    </Typography>
+                  </Box>
+                  <Box textAlign="justify">
+                    <Typography variant="body2" color="textPrimary">
+                      {props.projectData.description}
+                    </Typography>
+                  </Box>
+                  <Box>{insertButtons(props)}</Box>
+                </div>
+              </RevealLeft>
             </Grid>
             <Hidden smDown>
               <Grid item xs={12} md={6}>
-                <Box py={10}>
-                  <img
-                    src={props.projectData.img.path}
-                    className={classes.img}
-                    alt={props.projectData.title}
-                  />
-                </Box>
+                <RevealLeft>
+                  <Box py={10}>
+                    <img
+                      src={props.projectData.img.path}
+                      className={classes.img}
+                      alt={props.projectData.title}
+                    />
+                  </Box>
+                </RevealLeft>
               </Grid>
             </Hidden>
           </>

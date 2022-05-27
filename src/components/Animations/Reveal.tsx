@@ -1,19 +1,58 @@
+import { FC, ReactNode } from "react";
 import { Reveal, Tween } from "react-gsap";
 
-export const FadeInLeft: React.FC = ({ children }) => (
+type RevealProps = {
+  repeat?: boolean;
+  children?: ReactNode;
+};
+
+const FadeInLeft: React.FC = ({ children }) => (
   <Tween
-    from={{ opacity: 0, transform: "translate3d(-100vw, 0, 0)" }}
-    ease="back.out(1.2)"
+    from={{ opacity: 0, transform: "translate3d(-10vw, 0, 0)" }}
+    ease="back.out(0.2)"
   >
     {children}
   </Tween>
 );
 
-export const FadeInRight: React.FC = ({ children }) => (
+const FadeInRight: React.FC = ({ children }) => (
   <Tween
-    from={{ opacity: 0, transform: "translate3d(100vw, 0, 0)" }}
-    ease="back.out(1.2)"
+    from={{ opacity: 0, transform: "translate3d(10vw, 0, 0)" }}
+    ease="back.out(0.2)"
   >
     {children}
   </Tween>
 );
+
+const FadeInUp: React.FC = ({ children }) => (
+  <Tween
+    from={{ opacity: 0, transform: "translate3d(0, -10vh, 0)" }}
+    ease="back.out(0.2)"
+  >
+    {children}
+  </Tween>
+);
+
+export const RevealLeft: FC = (props: RevealProps) => {
+  return (
+    <Reveal repeat={true} trigger={<div />}>
+      <FadeInLeft>{props.children}</FadeInLeft>
+    </Reveal>
+  );
+};
+
+export const RevealRight: FC = (props: RevealProps) => {
+  return (
+    <Reveal repeat={true} trigger={<div />}>
+      <FadeInRight>{props.children}</FadeInRight>
+    </Reveal>
+  );
+};
+
+export const RevealUp: FC = (props: RevealProps) => {
+  return (
+    <Reveal repeat={false} trigger={<div />}>
+      <FadeInUp>{props.children}</FadeInUp>
+    </Reveal>
+  );
+};
