@@ -6,7 +6,6 @@ import {
   Grid,
   Card,
   CardContent,
-  CardActionArea,
   CardMedia,
   CardActions,
   Button,
@@ -17,56 +16,35 @@ import {
 
 type FeaturedInViewProps = {
   id: string;
-  data: {};
-  backgroundColor: string;
+  data: {
+    title: string;
+    readButtonText: string;
+    copyButtonText: string;
+    articles: [
+      {
+        title: string;
+        description: string;
+        img: {
+          path: string;
+          alt: string;
+        };
+        link: {
+          copyText: string;
+          url: string;
+        };
+      }
+    ];
+  };
 };
 
-const data = [
-  {
-    title: "Project 1",
-    description:
-      "Nulla hac id ligula et conubia nullam massa parturient fusce, mattis risus adipiscing at habitant tincidunt tortor.",
-    img: {
-      path: "https://c4.wallpaperflare.com/wallpaper/500/442/354/outrun-vaporwave-hd-wallpaper-preview.jpg",
-      alt: "",
-    },
-    link: {
-      copyText: "Link copied to clipboard!",
-      url: "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
-    },
-  },
-  {
-    title: "Project 2",
-    description:
-      "Felis sociosqu finibus iaculis ac senectus orci ornare, ex lectus dolor mauris tristique purus vestibulum est, dictum mi ultrices tempor sapien et.",
-    img: {
-      path: "https://c4.wallpaperflare.com/wallpaper/500/442/354/outrun-vaporwave-hd-wallpaper-preview.jpg",
-      alt: "",
-    },
-    link: {
-      copyText: "Link copied to clipboard!",
-      url: "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
-    },
-  },
-  {
-    title: "Project 3",
-    description:
-      "Eros pellentesque purus sem class id consectetur risus aenean conubia aliquet velit fusce nostra blandit, magnis elementum nisl ex vivamus praesent feugiat ad eget lacus ridiculus metus integer.",
-    img: {
-      path: "https://c4.wallpaperflare.com/wallpaper/500/442/354/outrun-vaporwave-hd-wallpaper-preview.jpg",
-      alt: "",
-    },
-    link: {
-      copyText: "Link copied to clipboard!",
-      url: "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
-    },
-  },
-];
-
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
-  const classes = useStyles(props);
+  const classes = useStyles();
   const [cardsState, setCardsState] = useState(
-    Array(data.length).fill({ hovered: false, shadow: 1, openTooltip: false })
+    Array(props.data.articles.length).fill({
+      hovered: false,
+      shadow: 1,
+      openTooltip: false,
+    })
   );
 
   const handleHover = (index: number, newState: {}) => {
@@ -82,25 +60,25 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   };
 
   return (
-    <Box className={classes.root} textAlign="center" id={props.id}>
+    <Box className={classes.root} textAlign="center" id={props.id} pb={2}>
       <Box pt={3} pb={2}>
         <Typography variant="subtitle1" color="textPrimary">
-          Featured in
+          {props.data.title}
         </Typography>
       </Box>
       <Grid container justify="center" className={classes.height}>
-        {data.map((card, index) => (
-          <Grid item xs={10} sm={8} md={3}>
+        {props.data.articles.map((card, index) => (
+          <Grid item xs={10} sm={8} md={3} style={{ display: "flex" }}>
             <Box px={2} my={3}>
               <Card
                 className={classes.card}
                 classes={{
                   root: cardsState[index].hovered ? classes.cardHovered : "",
                 }}
-                onMouseOver={() =>
+                onMouseEnter={() =>
                   handleHover(index, { hovered: true, shadow: 3 })
                 }
-                onMouseOut={() =>
+                onMouseLeave={() =>
                   handleHover(index, { hovered: false, shadow: 1 })
                 }
                 raised={cardsState[index].hovered}
@@ -113,59 +91,65 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                 <CardContent>
                   <Typography
                     gutterBottom
-                    variant="h5"
+                    variant="h2"
                     component="h2"
+                    color="textPrimary"
                     className={classes.cardTitle}
                   >
                     {card.title}
                   </Typography>
                   <Typography
                     variant="body2"
-                    color="textSecondary"
+                    color="textPrimary"
                     component="p"
+                    className={classes.cardText}
                   >
                     {card.description}
                   </Typography>
                 </CardContent>
-
+                <div style={{ flexGrow: 1 }} />
                 <CardActions>
                   <Button
                     size="small"
-                    color="primary"
+                    color="inherit"
                     onClick={() => window.open(card.link.url, "_blank")}
                   >
-                    Read
+                    {props.data.readButtonText}
                   </Button>
-                  <Tooltip
-                    arrow
-                    placement="top"
-                    PopperProps={{
-                      disablePortal: true,
-                    }}
-                    onClose={() => handleTooltipState(false, index)}
-                    open={cardsState[index].openTooltip}
-                    disableFocusListener
-                    disableHoverListener
-                    disableTouchListener
-                    classes={{ tooltip: classes.tooltipWidth }}
-                    TransitionComponent={Zoom}
-                    title={
-                      <Typography variant="overline" color="inherit">
-                        {card.link.copyText}
-                      </Typography>
-                    }
+                  <ClickAwayListener
+                    onClickAway={() => handleTooltipState(false, index)}
                   >
-                    <Button
-                      size="small"
-                      color="primary"
-                      onClick={() => {
-                        handleTooltipState(true, index);
-                        navigator.clipboard.writeText(card.link.url);
+                    <Tooltip
+                      arrow
+                      placement="top"
+                      PopperProps={{
+                        disablePortal: true,
                       }}
+                      onClose={() => handleTooltipState(false, index)}
+                      open={cardsState[index].openTooltip}
+                      disableFocusListener
+                      disableHoverListener
+                      disableTouchListener
+                      classes={{ tooltip: classes.tooltipWidth }}
+                      TransitionComponent={Zoom}
+                      title={
+                        <Typography variant="overline" color="inherit">
+                          {card.link.copyText}
+                        </Typography>
+                      }
                     >
-                      Copy link
-                    </Button>
-                  </Tooltip>
+                      <Button
+                        size="small"
+                        color="inherit"
+                        onClick={() => {
+                          handleTooltipState(true, index);
+                          navigator.clipboard.writeText(card.link.url);
+                        }}
+                      >
+                        {props.data.copyButtonText}
+                      </Button>
+                    </Tooltip>
+                  </ClickAwayListener>
                 </CardActions>
               </Card>
             </Box>
@@ -179,28 +163,31 @@ export default FeaturedInView;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: (props: FeaturedInViewProps) => props.backgroundColor,
+    backgroundColor: theme.palette.secondary.main,
     position: "relative",
   },
   height: {
     height: "100%",
   },
   media: {
-    height: 140,
+    height: "160px",
+    width: "100%",
     borderRadius: 10,
   },
   cardTitle: {
-    color: "white",
+    textAlign: "justify",
+  },
+  cardText: {
+    textAlign: "justify",
   },
   cardHovered: {
     transform: "scale3d(1.05, 1.05, 1)",
     transition: "transform 150ms ease-in-out",
   },
   card: {
-    //display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "black",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
     borderRadius: 25,
     padding: "3%",
     [theme.breakpoints.up("sm")]: {
@@ -209,6 +196,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       padding: "6%",
     },
+    // backgroundColor: "white",
+    // backgroundColor: theme.palette.error.light,
+    backgroundColor: theme.palette.text.secondary,
   },
   tooltipWidth: {
     maxWidth: 400,
