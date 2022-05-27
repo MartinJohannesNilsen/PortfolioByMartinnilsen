@@ -17,23 +17,26 @@ type ContactViewProps = {
     text: string[];
     links: [
       {
-        text: string,
-        value: string,
-        copyText?: string
+        text: string;
+        value: string;
+        copyText?: string;
       }
     ];
   };
+  backgroundColor: string;
 };
 
 const ContactView: FC<ContactViewProps> = (props) => {
-  const classes = useStyles();
-  const [tooltipStates, setTooltipStates] = React.useState(Array(props.data.links.length).fill(false));
+  const classes = useStyles(props);
+  const [tooltipStates, setTooltipStates] = React.useState(
+    Array(props.data.links.length).fill(false)
+  );
 
   const handleTooltipState = (newState: boolean, index: number) => {
     let tooltips = [...tooltipStates];
     tooltips[index] = newState;
     setTooltipStates(tooltips);
-  }
+  };
 
   const TypographyBullet: FC = () => {
     return (
@@ -44,8 +47,8 @@ const ContactView: FC<ContactViewProps> = (props) => {
       >
         •
       </Typography>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -65,9 +68,11 @@ const ContactView: FC<ContactViewProps> = (props) => {
           <Box py={3}>
             {props.data.links.map((link, key) => {
               let elements = [];
-              if(link.hasOwnProperty("copyText")){
+              if (link.hasOwnProperty("copyText")) {
                 elements.push(
-                  <ClickAwayListener onClickAway={() => handleTooltipState(false, key)}>
+                  <ClickAwayListener
+                    onClickAway={() => handleTooltipState(false, key)}
+                  >
                     <Tooltip
                       arrow
                       placement="top"
@@ -79,7 +84,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
                       disableFocusListener
                       disableHoverListener
                       disableTouchListener
-                      classes={{tooltip: classes.tooltipWidth}}
+                      classes={{ tooltip: classes.tooltipWidth }}
                       TransitionComponent={Zoom}
                       title={
                         <Typography variant="overline" color="inherit">
@@ -99,7 +104,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
                       </Button>
                     </Tooltip>
                   </ClickAwayListener>
-                )
+                );
               } else {
                 elements.push(
                   <Button onClick={() => window.open(link.value, "_blank")}>
@@ -107,13 +112,13 @@ const ContactView: FC<ContactViewProps> = (props) => {
                       {link.text}
                     </Typography>
                   </Button>
-                )
+                );
               }
-              if(key < props.data.links.length-1){
-                elements.push(<TypographyBullet />)
+              if (key < props.data.links.length - 1) {
+                elements.push(<TypographyBullet />);
               }
-              return elements
-              })}
+              return elements;
+            })}
           </Box>
         </Box>
       </Box>
@@ -124,11 +129,14 @@ export default ContactView;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: (props: ContactViewProps) => props.backgroundColor,
     position: "relative",
   },
   backgroundTriangle: {
-    color: theme.palette.primary.main,
+    color: (props: ContactViewProps) =>
+      props.backgroundColor == theme.palette.primary.main
+        ? theme.palette.secondary.main
+        : theme.palette.primary.main,
     position: "absolute",
     margin: "-45px",
     height: "100px",
@@ -138,6 +146,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 5px",
   },
   tooltipWidth: {
-      maxWidth: 400,
+    maxWidth: 400,
   },
 }));
