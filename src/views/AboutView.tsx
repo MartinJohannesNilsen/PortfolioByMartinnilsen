@@ -14,7 +14,6 @@ type AboutViewProps = {
     text: string[];
     subtitle: string[];
   };
-  backgroundColor: string;
 };
 
 export const getAge = (dateString: string) => {
@@ -29,7 +28,7 @@ export const getAge = (dateString: string) => {
 };
 
 const AboutView: FC<AboutViewProps> = (props) => {
-  const classes = useStyles(props);
+  const classes = useStyles();
 
   return (
     <Box className={classes.root} id={props.id}>
@@ -100,7 +99,7 @@ export default AboutView;
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100%",
-    backgroundColor: (props: AboutViewProps) => props.backgroundColor,
+    backgroundColor: theme.palette.secondary.main,
     position: "relative",
   },
   height: {

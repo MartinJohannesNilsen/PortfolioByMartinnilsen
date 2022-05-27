@@ -23,11 +23,10 @@ type ContactViewProps = {
       }
     ];
   };
-  backgroundColor: string;
 };
 
 const ContactView: FC<ContactViewProps> = (props) => {
-  const classes = useStyles(props);
+  const classes = useStyles();
   const [tooltipStates, setTooltipStates] = React.useState(
     Array(props.data.links.length).fill(false)
   );
@@ -129,14 +128,11 @@ export default ContactView;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: (props: ContactViewProps) => props.backgroundColor,
+    backgroundColor: theme.palette.primary.main,
     position: "relative",
   },
   backgroundTriangle: {
-    color: (props: ContactViewProps) =>
-      props.backgroundColor == theme.palette.primary.main
-        ? theme.palette.secondary.main
-        : theme.palette.primary.main,
+    color: theme.palette.secondary.main,
     position: "absolute",
     margin: "-45px",
     height: "100px",

@@ -17,7 +17,6 @@ type LandingViewProps = {
   };
   language: string;
   setLanguage: () => void;
-  backgroundColor: string;
 };
 
 type svgProps = {
@@ -33,7 +32,7 @@ type svgProps = {
 };
 
 const LandingView: FC<LandingViewProps> = (props) => {
-  const classes = useStyles(props);
+  const classes = useStyles();
   const { theme } = useTheme();
 
   let titleRef: any = useRef(null);
@@ -210,7 +209,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: "calc(100vh - 120px)",
     minHeight: "600px",
-    backgroundColor: (props: LandingViewProps) => props.backgroundColor,
+    backgroundColor: theme.palette.primary.main,
     position: "relative",
     textAlign: "center",
   },
