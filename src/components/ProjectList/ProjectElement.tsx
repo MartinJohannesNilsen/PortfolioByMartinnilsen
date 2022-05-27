@@ -1,7 +1,10 @@
 import React, { FC } from "react";
 import { Box, makeStyles, Grid, Typography, Hidden } from "@material-ui/core";
 import insertButtons from "../ProjectButtons/insertButtons";
-import { RevealLeft, RevealRight } from "../Animations/ScrollTrigger";
+import {
+  ScrollTriggerLeft,
+  ScrollTriggerRight,
+} from "../Animations/ScrollTrigger";
 
 export type ProjectElementProps = {
   projectData: {
@@ -25,15 +28,22 @@ export type ProjectElementProps = {
 const ProjectElement: FC<ProjectElementProps> = (props) => {
   const classes = useStyles(props);
   const paddingTitleDescription = 1.7;
-  const repeatTween = true;
+  const showMarkers = false; //Debug purposes
+  const animationStart = "0vh center";
+  const animationEnd = "150vh center";
 
   return (
     <>
       <Grid container alignItems="center" justify="center">
         {props.imgPosition === "left" ? (
           <>
-            <Grid item xs={12}>
-              <RevealLeft repeat={repeatTween}>
+            <Grid item xs={11}>
+              <ScrollTriggerLeft
+                x="5vw"
+                markers={showMarkers}
+                start={animationStart}
+                end={animationEnd}
+              >
                 <Grid container alignItems="center" justify="center">
                   <Grid item xs={12} md={6}>
                     <Box py={5}>
@@ -44,7 +54,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={11} md={6}>
+                  <Grid item xs={12} md={6}>
                     <Box pb={paddingTitleDescription}>
                       <Typography variant="body1" color="textPrimary">
                         {props.projectData.title}
@@ -58,13 +68,18 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     <Box>{insertButtons(props)}</Box>
                   </Grid>
                 </Grid>
-              </RevealLeft>
+              </ScrollTriggerLeft>
             </Grid>
           </>
         ) : (
           <>
-            <Grid item xs={12}>
-              <RevealRight repeat={repeatTween}>
+            <Grid item xs={11}>
+              <ScrollTriggerRight
+                x="5vw"
+                markers={showMarkers}
+                start={animationStart}
+                end={animationEnd}
+              >
                 <Grid container alignItems="center" justify="center">
                   <Hidden mdUp>
                     <Grid item xs={12} md={6}>
@@ -102,7 +117,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     </Grid>
                   </Hidden>
                 </Grid>
-              </RevealRight>
+              </ScrollTriggerRight>
             </Grid>
           </>
         )}
