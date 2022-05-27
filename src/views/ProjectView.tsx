@@ -15,7 +15,8 @@ type ProjectViewProps = {
 
 const ProjectView: FC<ProjectViewProps> = (props) => {
   const classes = useStyles();
-  const [numShowing, setNumShowing] = useState<number>(3);
+  // const [numShowing, setNumShowing] = useState<number>(3);
+  const [numShowing, setNumShowing] = useState<number>(100);
   const [numIncrease] = useState<number>(3);
 
   return (
