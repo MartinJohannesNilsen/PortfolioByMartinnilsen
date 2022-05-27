@@ -11,10 +11,11 @@ type ProjectViewProps = {
     buttonTexts: string[];
     listOfProjects: [];
   };
+  backgroundColor: string;
 };
 
 const ProjectView: FC<ProjectViewProps> = (props) => {
-  const classes = useStyles();
+  const classes = useStyles(props);
   // const [numShowing, setNumShowing] = useState<number>(100); //Remove filtering
   const [numShowing, setNumShowing] = useState<number>(3);
   const [numIncrease] = useState<number>(3);
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "table",
     width: "100%",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: (props: ProjectViewProps) => props.backgroundColor,
     position: "relative",
   },
   backgroundTriangle: {

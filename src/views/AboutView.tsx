@@ -13,7 +13,8 @@ type AboutViewProps = {
   data: {
     text: string[];
     subtitle: string[];
-  }
+  };
+  backgroundColor: string;
 };
 
 export const getAge = (dateString: string) => {
@@ -22,13 +23,13 @@ export const getAge = (dateString: string) => {
   var age = today.getFullYear() - birthDate.getFullYear();
   var m = today.getMonth() - birthDate.getMonth();
   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
+    age--;
   }
   return age;
-}
+};
 
 const AboutView: FC<AboutViewProps> = (props) => {
-  const classes = useStyles();
+  const classes = useStyles(props);
 
   return (
     <Box className={classes.root} id={props.id}>
@@ -54,36 +55,38 @@ const AboutView: FC<AboutViewProps> = (props) => {
                 >
                   <h2>
                     {props.data.subtitle?.map((text: string, index) => {
-                      if(text.includes("AGE(")){
-                        let dateString = text.match(/\((.*)\)/)?.pop()?.toString();
-                        if(dateString){
-                          text = getAge(dateString).toString()
+                      if (text.includes("AGE(")) {
+                        let dateString = text
+                          .match(/\((.*)\)/)
+                          ?.pop()
+                          ?.toString();
+                        if (dateString) {
+                          text = getAge(dateString).toString();
                         }
                       }
-                      if(index !== 0){
-                        return " • " + text
+                      if (index !== 0) {
+                        return " • " + text;
                       } else {
-                        return text
+                        return text;
                       }
-                    }
-                    )}
+                    })}
                   </h2>
                 </Typography>
               </Box>
               <Box textAlign="justify">
                 <p>
-                {props.data.text.map((paragraph: string) => (
-                  <Box my={2} key={paragraph}>
-                    <Typography
-                      variant="body2"
-                      color="textPrimary"
-                      className={"ref"}
-                    >
-                      {paragraph}
-                    </Typography>
-                  </Box>
-                ))}
-                </p>                
+                  {props.data.text.map((paragraph: string) => (
+                    <Box my={2} key={paragraph}>
+                      <Typography
+                        variant="body2"
+                        color="textPrimary"
+                        className={"ref"}
+                      >
+                        {paragraph}
+                      </Typography>
+                    </Box>
+                  ))}
+                </p>
               </Box>
             </CardContent>
           </Card>
@@ -97,7 +100,7 @@ export default AboutView;
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100%",
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: (props: AboutViewProps) => props.backgroundColor,
     position: "relative",
   },
   height: {
@@ -121,6 +124,5 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: "3.5rem",
   },
-  ref: {
-  },
+  ref: {},
 }));

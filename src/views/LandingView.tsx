@@ -6,17 +6,18 @@ import { useTheme } from "../ThemeProvider";
 import useDidUpdate from "../utils/useDidUpdate";
 import DeskSVGInline from "../assets/illustrations/desk_animated";
 
-type landingProps = {
+type LandingViewProps = {
   data: {
     navbar: {
       title: string;
       languages: string[];
       sections: string[];
-    }
+    };
     title: string;
   };
   language: string;
   setLanguage: () => void;
+  backgroundColor: string;
 };
 
 type svgProps = {
@@ -31,26 +32,22 @@ type svgProps = {
   desktop_bg: any;
 };
 
-const LandingView: FC<landingProps> = (props) => {
-  const classes = useStyles();
+const LandingView: FC<LandingViewProps> = (props) => {
+  const classes = useStyles(props);
   const { theme } = useTheme();
 
   let titleRef: any = useRef(null);
   function animateIn(svgElements: svgProps) {
     let tl = gsap.timeline();
-    tl
+    tl.from(titleRef, {
+      delay: 0.2,
+      duration: 0.7,
+      scale: 0.9,
+      opacity: 0,
+      ease: Power3.easeIn,
+    })
       .from(
-        titleRef, 
-        {
-          delay: 0.2,
-          duration: 0.7,
-          scale: 0.9,
-          opacity: 0,
-          ease: Power3.easeIn,
-        },
-      )
-      .from(
-        svgElements.drawers, 
+        svgElements.drawers,
         {
           duration: 0.8,
           y: -100,
@@ -115,19 +112,16 @@ const LandingView: FC<landingProps> = (props) => {
         },
         "-=0.1"
       )
-      .from(
-        svgElements.desktop_bg,
-        {
-          duration: 1.5,
-          opacity: 0,
-        },
-      )
-      
+      .from(svgElements.desktop_bg, {
+        duration: 1.5,
+        opacity: 0,
+      });
+
     if (theme.palette.type === "dark") {
       tl.from(svgElements.lamp_light, {
-          duration: 0.15,
-          opacity: 0,
-        })
+        duration: 0.15,
+        opacity: 0,
+      })
         .to(svgElements.lamp_light, {
           duration: 0.15,
           opacity: 0,
@@ -216,7 +210,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: "calc(100vh - 120px)",
     minHeight: "600px",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: (props: LandingViewProps) => props.backgroundColor,
     position: "relative",
     textAlign: "center",
   },
