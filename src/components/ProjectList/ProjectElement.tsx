@@ -1,5 +1,12 @@
 import React, { FC } from "react";
-import {Box, makeStyles, Grid, Typography, Button, Hidden} from "@material-ui/core";
+import {
+  Box,
+  makeStyles,
+  Grid,
+  Typography,
+  Button,
+  Hidden,
+} from "@material-ui/core";
 import { Icon } from "@iconify/react";
 import githubIcon from "@iconify-icons/cib/github";
 import documentBlank from "@iconify-icons/carbon/document-blank";
@@ -8,7 +15,7 @@ import desktopOutlined from "@iconify-icons/ant-design/desktop-outlined";
 import cameraVideo from "@iconify-icons/bi/camera-video";
 import { useTheme } from "../../ThemeProvider";
 
-type ProjectElementProps = {
+export type ProjectElementProps = {
   projectData: {
     title: string;
     description: string;
@@ -231,7 +238,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
 };
 export default ProjectElement;
 
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   root: {
     height: "100%",
   },
@@ -247,9 +254,17 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     height: (props: ProjectElementProps) =>
-      props.projectData.img.type === "portrait" ? "200px" : (props.projectData.img.type === "square" ? "200px" : "default"),
+      props.projectData.img.type === "portrait"
+        ? "200px"
+        : props.projectData.img.type === "square"
+        ? "200px"
+        : "default",
     width: (props: ProjectElementProps) =>
-      props.projectData.img.type === "landscape" ? "220px" : (props.projectData.img.type === "square" ? "200px" : "default"),
+      props.projectData.img.type === "landscape"
+        ? "220px"
+        : props.projectData.img.type === "square"
+        ? "200px"
+        : "default",
     boxShadow: (props: ProjectElementProps) =>
       props.imgPosition === "right"
         ? `10px -10px 1px 0px ${theme.palette.success.light},
@@ -260,15 +275,31 @@ const useStyles = makeStyles((theme) => ({
             -30px -30px 1px 0px ${theme.palette.success.dark}`,
     [theme.breakpoints.up("md")]: {
       height: (props: ProjectElementProps) =>
-        props.projectData.img.type === "portrait" ? "250px" : (props.projectData.img.type === "square" ? "250px" : "default"),
+        props.projectData.img.type === "portrait"
+          ? "250px"
+          : props.projectData.img.type === "square"
+          ? "250px"
+          : "default",
       width: (props: ProjectElementProps) =>
-        props.projectData.img.type === "landscape" ? "270px" : (props.projectData.img.type === "square" ? "250px" : "default"),
+        props.projectData.img.type === "landscape"
+          ? "270px"
+          : props.projectData.img.type === "square"
+          ? "250px"
+          : "default",
     },
     [theme.breakpoints.up("lg")]: {
       height: (props: ProjectElementProps) =>
-        props.projectData.img.type === "portrait" ? "340px" : (props.projectData.img.type === "square" ? "320px" : "default"),
+        props.projectData.img.type === "portrait"
+          ? "340px"
+          : props.projectData.img.type === "square"
+          ? "320px"
+          : "default",
       width: (props: ProjectElementProps) =>
-        props.projectData.img.type === "landscape" ? "370px" : (props.projectData.img.type === "square" ? "320px" : "default"),
+        props.projectData.img.type === "landscape"
+          ? "370px"
+          : props.projectData.img.type === "square"
+          ? "320px"
+          : "default",
     },
   },
 }));
