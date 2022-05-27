@@ -14,8 +14,10 @@ import ReaderView from "./views/_ReaderView";
 // import EducationView from "./views/EducationView";
 
 const App = () => {
-  console.log(navigator.language)
-  const [language, setLanguage] = useStickyState("language", navigator.language == "nb-NO" || "nn-NO" ? "norwegian" : "english");
+  const [language, setLanguage] = useStickyState(
+    "language",
+    navigator.language == "nb-NO" || "nn-NO" ? "norwegian" : "english"
+  );
   const [data, setData] = useState(
     language === "nb-NO"
       ? require("./TextData.json").norwegian
@@ -31,28 +33,32 @@ const App = () => {
   return (
     <ThemeProvider>
       <CssBaseline />
-      <ReaderView 
-        ids={[data.landingView.navbar.sections[0], data.landingView.navbar.sections[1], data.landingView.navbar.sections[2]]}
+      <ReaderView
+        ids={[
+          data.landingView.navbar.sections[0],
+          data.landingView.navbar.sections[1],
+          data.landingView.navbar.sections[2],
+        ]}
         about={data.aboutView}
         projects={data.projectView}
         contact={data.contactView}
       />
-      <LandingView 
+      <LandingView
         data={data.landingView}
-        language={language} 
-        setLanguage={setLanguage} 
+        language={language}
+        setLanguage={setLanguage}
       />
       <AboutView
         id={data.landingView.navbar.sections[0]}
         data={data.aboutView}
       />
-      <ProjectView 
-        id={data.landingView.navbar.sections[1]} 
-        data={data.projectView} 
+      <ProjectView
+        id={data.landingView.navbar.sections[1]}
+        data={data.projectView}
       />
-      <ContactView 
-        id={data.landingView.navbar.sections[2]} 
-        data={data.contactView} 
+      <ContactView
+        id={data.landingView.navbar.sections[2]}
+        data={data.contactView}
       />
     </ThemeProvider>
   );
