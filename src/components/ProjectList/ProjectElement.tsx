@@ -29,8 +29,8 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
   const classes = useStyles(props);
   const paddingTitleDescription = 1.7;
   const showMarkers = false; //Debug purposes
-  const animationStart = "0vh center";
-  const animationEnd = "150vh center";
+  const animationStart = "-100px center";
+  const animationEnd = "50px center";
 
   return (
     <>
