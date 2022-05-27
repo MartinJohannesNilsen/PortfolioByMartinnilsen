@@ -15,6 +15,7 @@ type ProjectViewProps = {
 
 const ProjectView: FC<ProjectViewProps> = (props) => {
   const classes = useStyles();
+  // const [numShowing, setNumShowing] = useState<number>(100); //Remove filtering
   const [numShowing, setNumShowing] = useState<number>(3);
   const [numIncrease] = useState<number>(3);
 
