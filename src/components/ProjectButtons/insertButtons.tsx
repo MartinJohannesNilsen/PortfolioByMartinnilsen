@@ -123,3 +123,4 @@ const insertButtons = (props: ProjectElementProps) => {
     </React.Fragment>
   );
 };
+export default insertButtons;
