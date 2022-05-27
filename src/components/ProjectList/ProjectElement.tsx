@@ -33,7 +33,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
         {props.imgPosition === "left" ? (
           <>
             <Grid item xs={12}>
-              <RevealRight>
+              <RevealLeft repeat={repeatTween}>
                 <Grid container alignItems="center" justify="center">
                   <Grid item xs={12} md={6}>
                     <Box py={5}>
@@ -58,13 +58,13 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     <Box>{insertButtons(props)}</Box>
                   </Grid>
                 </Grid>
-              </RevealRight>
+              </RevealLeft>
             </Grid>
           </>
         ) : (
           <>
             <Grid item xs={12}>
-              <RevealLeft>
+              <RevealRight repeat={repeatTween}>
                 <Grid container alignItems="center" justify="center">
                   <Hidden mdUp>
                     <Grid item xs={12} md={6}>
@@ -102,7 +102,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     </Grid>
                   </Hidden>
                 </Grid>
-              </RevealLeft>
+              </RevealRight>
             </Grid>
           </>
         )}

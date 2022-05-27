@@ -33,25 +33,25 @@ const FadeInUp: React.FC = ({ children }) => (
   </Tween>
 );
 
-export const RevealLeft: FC = (props: RevealProps) => {
+export const RevealLeft: FC<RevealProps> = (props: RevealProps) => {
   return (
-    <Reveal repeat={true} trigger={<div />}>
+    <Reveal repeat={props.repeat || false} trigger={<div />}>
       <FadeInLeft>{props.children}</FadeInLeft>
     </Reveal>
   );
 };
 
-export const RevealRight: FC = (props: RevealProps) => {
+export const RevealRight: FC<RevealProps> = (props: RevealProps) => {
   return (
-    <Reveal repeat={true} trigger={<div />}>
+    <Reveal repeat={props.repeat || false} trigger={<div />}>
       <FadeInRight>{props.children}</FadeInRight>
     </Reveal>
   );
 };
 
-export const RevealUp: FC = (props: RevealProps) => {
+export const RevealUp: FC<RevealProps> = (props: RevealProps) => {
   return (
-    <Reveal repeat={false} trigger={<div />}>
+    <Reveal repeat={props.repeat || false} trigger={<div />}>
       <FadeInUp>{props.children}</FadeInUp>
     </Reveal>
   );
