@@ -32,37 +32,10 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
       <Grid container alignItems="center" justify="center">
         {props.imgPosition === "left" ? (
           <>
-            <Grid item xs={11} md={6}>
+            <Grid item xs={12}>
               <RevealRight>
-                <div>
-                  <Box py={5}>
-                    <img
-                      src={props.projectData.img.path}
-                      className={classes.img}
-                      alt={props.projectData.title}
-                    />
-                  </Box>
-                  <Box pb={paddingTitleDescription}>
-                    <Typography variant="body1" color="textPrimary">
-                      {props.projectData.title}
-                    </Typography>
-                  </Box>
-                  <Box textAlign="justify">
-                    <Typography variant="body2" color="textPrimary">
-                      {props.projectData.description}
-                    </Typography>
-                  </Box>
-                  <Box>{insertButtons(props)}</Box>
-                </div>
-              </RevealRight>
-            </Grid>
-          </>
-        ) : (
-          <>
-            <Grid item xs={11} md={6}>
-              <RevealLeft>
-                <div>
-                  <Hidden mdUp>
+                <Grid container alignItems="center" justify="center">
+                  <Grid item xs={12} md={6}>
                     <Box py={5}>
                       <img
                         src={props.projectData.img.path}
@@ -70,28 +43,65 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                         alt={props.projectData.title}
                       />
                     </Box>
-                  </Hidden>
-                  <Box pb={paddingTitleDescription}>
-                    <Typography variant="body1" color="textPrimary">
-                      {props.projectData.title}
-                    </Typography>
-                  </Box>
-                  <Box textAlign="justify">
-                    <Typography variant="body2" color="textPrimary">
-                      {props.projectData.description}
-                    </Typography>
-                  </Box>
-                  <Box>{insertButtons(props)}</Box>
-                  <Hidden smDown>
-                    <Box py={10}>
-                      <img
-                        src={props.projectData.img.path}
-                        className={classes.img}
-                        alt={props.projectData.title}
-                      />
+                  </Grid>
+                  <Grid item xs={11} md={6}>
+                    <Box pb={paddingTitleDescription}>
+                      <Typography variant="body1" color="textPrimary">
+                        {props.projectData.title}
+                      </Typography>
                     </Box>
+                    <Box textAlign="justify">
+                      <Typography variant="body2" color="textPrimary">
+                        {props.projectData.description}
+                      </Typography>
+                    </Box>
+                    <Box>{insertButtons(props)}</Box>
+                  </Grid>
+                </Grid>
+              </RevealRight>
+            </Grid>
+          </>
+        ) : (
+          <>
+            <Grid item xs={12}>
+              <RevealLeft>
+                <Grid container alignItems="center" justify="center">
+                  <Hidden mdUp>
+                    <Grid item xs={12} md={6}>
+                      <Box py={5}>
+                        <img
+                          src={props.projectData.img.path}
+                          className={classes.img}
+                          alt={props.projectData.title}
+                        />
+                      </Box>
+                    </Grid>
                   </Hidden>
-                </div>
+                  <Grid item xs={12} md={6}>
+                    <Box pb={paddingTitleDescription}>
+                      <Typography variant="body1" color="textPrimary">
+                        {props.projectData.title}
+                      </Typography>
+                    </Box>
+                    <Box textAlign="justify">
+                      <Typography variant="body2" color="textPrimary">
+                        {props.projectData.description}
+                      </Typography>
+                    </Box>
+                    <Box>{insertButtons(props)}</Box>
+                  </Grid>
+                  <Hidden smDown>
+                    <Grid item xs={12} md={6}>
+                      <Box py={10}>
+                        <img
+                          src={props.projectData.img.path}
+                          className={classes.img}
+                          alt={props.projectData.title}
+                        />
+                      </Box>
+                    </Grid>
+                  </Hidden>
+                </Grid>
               </RevealLeft>
             </Grid>
           </>
