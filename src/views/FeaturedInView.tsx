@@ -179,7 +179,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 10,
   },
   cardTitle: {
-    textAlign: "justify",
+    textAlign: "left",
   },
   cardText: {
     textAlign: "justify",
