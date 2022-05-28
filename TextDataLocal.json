@@ -40,6 +40,41 @@
         "Do not hesitate in reaching out to me if you want any further information, or just want to come into contact."
       ]
     },
+    "featuredInView": {
+      "articles": [
+        {
+          "description": "Won the hackathon held at Nor-Shipping 22 by DNV, Astrup Fearnley Group and Microsoft. This is the winning announcement.",
+          "img": {
+            "alt": "",
+            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
+          },
+          "title": "Nor-Shipping Hackathon 2022",
+          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
+        },
+        {
+          "description": "During my internship at the Norwegian Labour and Welfare Administration, a post was written and published on their official developement blog.",
+          "img": {
+            "alt": "",
+            "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
+          },
+          "title": "Mulighetsrommet",
+          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
+        },
+        {
+          "description": "An article describing our project at my first internship, and the impact of it, during the development of a new digital platform for Dissimilis' note scores.",
+          "img": {
+            "alt": "",
+            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
+          },
+          "title": "Dissimilis color notation",
+          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
+        }
+      ],
+      "copyButtonText": "Copy link",
+      "copyText": "Link copied to clipboard!",
+      "readButtonText": "Read",
+      "title": "Featured in"
+    },
     "landingView": {
       "navbar": {
         "languages": [
@@ -185,51 +220,6 @@
         }
       ],
       "title": "Projects"
-    },
-    "featuredInView": {
-        "readButtonText": "Read",
-        "copyButtonText": "Copy link",
-        "articles": [
-          {
-            "title": "Nor-Shipping Hackathon 2022",
-            "description":
-              "Won the hackathon held at Nor-Shipping 22 by DNV, Astrup Fearnley Group and Microsoft. This is the winning announcement.",
-            "img": {
-              "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600",
-              "alt": ""
-            },
-            "link": {
-              "copyText": "Link copied to clipboard!",
-              "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
-            }
-          },
-          {
-            "title": "Mulighetsrommet",
-            "description":
-              "During my internship at the Norwegian Labour and Welfare Administration, a post was written and published on their official developement blog.",
-            "img": {
-              "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80",
-              "alt": ""
-            },
-            "link": {
-              "copyText": "Link copied to clipboard!",
-              "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
-            }
-          },
-          {
-            "title": "Dissimilis, Digi.no",
-            "description":
-              "An article describing our project at my first internship, and the impact of it, during the development of a new digital platform for Dissimilis' note scores.",
-            "img": {
-              "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg",
-             "alt": ""
-            },
-            "link": {
-              "copyText": "Link copied to clipboard!",
-              "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
-            }
-          }
-        ]
     }
   },
   "norwegian": {
@@ -272,6 +262,41 @@
         "Og mer av mitt tidligere arbeid er å finne på min GitHub-konto!",
         "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker komme i kontakt med meg."
       ]
+    },
+    "featuredInView": {
+      "articles": [
+        {
+          "description": "Vant hackathonet under Nor-Shipping 22, holdt av DNV, Astrup Fearnley Group og Microsoft. Dette er den offisielle vinnererklæringen.",
+          "img": {
+            "alt": "Annonsering av vinnerne av Nor-Shipping Hackathon 2022",
+            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
+          },
+          "title": "Nor-Shipping Hackathon 2022",
+          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
+        },
+        {
+          "description": "Under sommerjobben hos NAV IT, ble det skrevet en post på deres offisielle utviklingsblogg, som tok for seg sommerens prosjekt.",
+          "img": {
+            "alt": "Gruppebilde av 5 sommerstudenter for NAV IT sommeren 2021",
+            "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
+          },
+          "title": "Mulighetsrommet",
+          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
+        },
+        {
+          "description": "En artikkel skrevet i Digi.no, en redaksjon i Teknisk Ukeblad Media, som tok for seg prosjektet jeg arbeidet på under første sommerjobb som utvikler.",
+          "img": {
+            "alt": "Gruppebildet av teamet som lager første MVP av Dissimilis fargenotasjon",
+            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
+          },
+          "title": "Dissimilis fargenotasjon",
+          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
+        }
+      ],
+      "copyButtonText": "Kopier lenke",
+      "copyText": "Lenke kopiert til utklippstavlen!",
+      "readButtonText": "Les",
+      "title": "Artikler"
     },
     "landingView": {
       "navbar": {
@@ -418,51 +443,6 @@
         }
       ],
       "title": "Prosjekter"
-    },
-    "featuredInView": {
-      "readButtonText": "Read",
-      "copyButtonText": "Copy link",
-      "articles": [
-        {
-          "title": "Nor-Shipping Hackathon 2022",
-          "description":
-            "Vant hackathonet under Nor-Shipping 22, holdt av DNV, Astrup Fearnley Group og Microsoft. Dette er den offisielle vinnererklæringen.",
-          "img": {
-            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600",
-            "alt": "Annonsering av vinnerne av Nor-Shipping Hackathon 2022"
-          },
-          "link": {
-            "copyText": "Link copied to clipboard!",
-            "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
-          }
-        },
-        {
-          "title": "Mulighetsrommet",
-          "description":
-            "Under sommerjobben hos NAV IT, ble det skrevet en post på deres offisielle utviklingsblogg, som tok for seg sommerens prosjekt.",
-          "img": {
-            "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80",
-            "alt": "Gruppebilde av 5 sommerstudenter for NAV IT sommeren 2021"
-          },
-          "link": {
-            "copyText": "Link copied to clipboard!",
-            "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
-          }
-        },
-        {
-          "title": "Dissimilis, Digi.no",
-          "description":
-            "An article describing our project at my first internship, and the impact of it, during the development of a new digital platform for Dissimilis' note scores.",
-          "img": {
-            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg",
-           "alt": "Gruppebildet av teamet som lager første MVP av Dissimilis fargenotasjon"
-          },
-          "link": {
-            "copyText": "Link copied to clipboard!",
-            "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
-          }
-        }
-      ]
+    }
   }
-}
 }
