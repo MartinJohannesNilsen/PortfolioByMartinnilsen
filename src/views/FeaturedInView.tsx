@@ -72,7 +72,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       </Box>
       <Grid container justify="center" className={classes.height}>
         {props.data.articles.map((card, index) => (
-          <Grid item xs={10} sm={8} md={4} xl={3} style={{ display: "flex" }}>
+          <Grid item xs={12} sm={8} md={4} xl={3} style={{ display: "flex" }}>
             <Box px={2} my={3}>
               <Card
                 className={classes.card}
@@ -193,7 +193,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     borderRadius: 25,
-    padding: "3%",
+    padding: "5%",
     [theme.breakpoints.up("sm")]: {
       padding: "4%",
     },
