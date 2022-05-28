@@ -58,7 +58,13 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   };
 
   return (
-    <Box className={classes.root} textAlign="center" id={props.id} pb={2}>
+    <Box
+      className={classes.root}
+      textAlign="center"
+      id={props.id}
+      px={4}
+      pb={2}
+    >
       <Box pt={3} pb={2}>
         <Typography variant="subtitle1" color="textPrimary">
           {props.data.title}
@@ -66,7 +72,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       </Box>
       <Grid container justify="center" className={classes.height}>
         {props.data.articles.map((card, index) => (
-          <Grid item xs={10} sm={8} md={3} style={{ display: "flex" }}>
+          <Grid item xs={10} sm={8} md={4} xl={3} style={{ display: "flex" }}>
             <Box px={2} my={3}>
               <Card
                 className={classes.card}
