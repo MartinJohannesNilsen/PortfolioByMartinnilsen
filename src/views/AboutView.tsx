@@ -13,7 +13,7 @@ type AboutViewProps = {
   data: {
     text: string[];
     subtitle: string[];
-  }
+  };
 };
 
 export const getAge = (dateString: string) => {
@@ -22,10 +22,10 @@ export const getAge = (dateString: string) => {
   var age = today.getFullYear() - birthDate.getFullYear();
   var m = today.getMonth() - birthDate.getMonth();
   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
+    age--;
   }
   return age;
-}
+};
 
 const AboutView: FC<AboutViewProps> = (props) => {
   const classes = useStyles();
@@ -54,36 +54,38 @@ const AboutView: FC<AboutViewProps> = (props) => {
                 >
                   <h2>
                     {props.data.subtitle?.map((text: string, index) => {
-                      if(text.includes("AGE(")){
-                        let dateString = text.match(/\((.*)\)/)?.pop()?.toString();
-                        if(dateString){
-                          text = getAge(dateString).toString()
+                      if (text.includes("AGE(")) {
+                        let dateString = text
+                          .match(/\((.*)\)/)
+                          ?.pop()
+                          ?.toString();
+                        if (dateString) {
+                          text = getAge(dateString).toString();
                         }
                       }
-                      if(index !== 0){
-                        return " • " + text
+                      if (index !== 0) {
+                        return " • " + text;
                       } else {
-                        return text
+                        return text;
                       }
-                    }
-                    )}
+                    })}
                   </h2>
                 </Typography>
               </Box>
               <Box textAlign="justify">
                 <p>
-                {props.data.text.map((paragraph: string) => (
-                  <Box my={2} key={paragraph}>
-                    <Typography
-                      variant="body2"
-                      color="textPrimary"
-                      className={"ref"}
-                    >
-                      {paragraph}
-                    </Typography>
-                  </Box>
-                ))}
-                </p>                
+                  {props.data.text.map((paragraph: string) => (
+                    <Box my={2} key={paragraph}>
+                      <Typography
+                        variant="body2"
+                        color="textPrimary"
+                        className={"ref"}
+                      >
+                        {paragraph}
+                      </Typography>
+                    </Box>
+                  ))}
+                </p>
               </Box>
             </CardContent>
           </Card>
@@ -121,6 +123,5 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: "3.5rem",
   },
-  ref: {
-  },
+  ref: {},
 }));
