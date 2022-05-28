@@ -1,13 +1,12 @@
 {
 	"name": "portfoliobymartinnilsen",
-	"version": "2.4.0",
+	"version": "2.5.0",
 	"private": true,
 	"homepage": "https://martinjohannesnilsen.no",
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject",
+		"serve": "npm run build && serve -s build",
 		"deploy": "npm run build && firebase deploy"
 	},
 	"dependencies": {

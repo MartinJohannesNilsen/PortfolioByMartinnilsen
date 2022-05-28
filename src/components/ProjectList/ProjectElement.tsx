@@ -30,7 +30,7 @@ export type ProjectElementProps = {
 const ProjectElement: FC<ProjectElementProps> = (props) => {
   const classes = useStyles(props);
   const paddingTitleDescription = 1.7;
-  const showMarkers = false; //Debug purposes
+  const showMarkers = process.env.REACT_APP_SHOW_MARKERS == "true"; //Debug purposes
   const animationStart = "-100px center";
   const animationEnd = "50px center";
 

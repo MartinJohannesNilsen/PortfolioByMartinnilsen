@@ -54,7 +54,7 @@ export const dark = createTheme({
       },
     },
     h2: {
-      fontSize: "1.4rem",
+      fontSize: "1.2rem",
       fontWeight: 700,
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.6rem",

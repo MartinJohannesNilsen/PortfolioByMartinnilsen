@@ -54,11 +54,9 @@ export const light = createTheme({
       },
     },
     h2: {
-      fontSize: "1.2rem",
-      fontWeight: 700,
-      [defaultTheme.breakpoints.up("lg")]: {
-        fontSize: "1.6rem",
-      },
+      //not in use
+      fontSize: "0.8rem",
+      fontWeight: 400,
     },
     h3: {
       fontSize: "2rem",
@@ -91,6 +89,10 @@ export const light = createTheme({
         fontSize: "1.1rem",
       },
     },
+    caption: {
+      fontSize: "1.2rem",
+      fontWeight: 600,
+    },
     body1: {
       fontSize: "1.5rem",
       fontWeight: 400,
@@ -104,10 +106,6 @@ export const light = createTheme({
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.3rem",
       },
-    },
-    caption: {
-      fontSize: "1.2rem",
-      fontWeight: 600,
     },
     overline: {
       fontSize: "0.7rem",

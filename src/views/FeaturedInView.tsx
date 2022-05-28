@@ -13,6 +13,7 @@ import {
   Tooltip,
   Zoom,
 } from "@material-ui/core";
+import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
 
 export type ArticleProps = {
   title: string;
@@ -72,92 +73,99 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       </Box>
       <Grid container justify="center" className={classes.height}>
         {props.data.articles.map((card, index) => (
-          <Grid item xs={12} sm={8} md={4} xl={3} style={{ display: "flex" }}>
-            <Box px={2} my={3}>
-              <Card
-                className={classes.card}
-                classes={{
-                  root: cardsState[index].hovered ? classes.cardHovered : "",
-                }}
-                onMouseEnter={() =>
-                  handleHover(index, { hovered: true, shadow: 3 })
-                }
-                onMouseLeave={() =>
-                  handleHover(index, { hovered: false, shadow: 1 })
-                }
-                raised={cardsState[index].hovered}
-              >
-                <CardMedia
-                  className={classes.media}
-                  image={card.img.path}
-                  title={card.img.alt}
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h2"
-                    component="h2"
-                    color="textPrimary"
-                    className={classes.cardTitle}
-                  >
-                    {card.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textPrimary"
-                    component="p"
-                    className={classes.cardText}
-                  >
-                    {card.description}
-                  </Typography>
-                </CardContent>
-                <div style={{ flexGrow: 1 }} />
-                <CardActions>
-                  <Button
-                    size="small"
-                    color="inherit"
-                    onClick={() => window.open(card.url, "_blank")}
-                  >
-                    {props.data.readButtonText}
-                  </Button>
-                  <ClickAwayListener
-                    onClickAway={() => handleTooltipState(false, index)}
-                  >
-                    <Tooltip
-                      arrow
-                      placement="top"
-                      PopperProps={{
-                        disablePortal: true,
-                      }}
-                      onClose={() => handleTooltipState(false, index)}
-                      open={cardsState[index].openTooltip}
-                      disableFocusListener
-                      disableHoverListener
-                      disableTouchListener
-                      classes={{ tooltip: classes.tooltipWidth }}
-                      TransitionComponent={Zoom}
-                      title={
-                        <Typography variant="overline" color="inherit">
-                          {props.data.copyText}
-                        </Typography>
-                      }
+          <ScrollTriggerUp
+            x="10vh"
+            markers={process.env.REACT_APP_SHOW_MARKERS === "true"}
+            start={-200 + 30 * index + "px center"}
+            // start={"-200px center"}
+            end={"100px center"}
+          >
+            <Grid item xs={12} sm={8} md={4} xl={3} style={{ display: "flex" }}>
+              <Box px={2} my={3}>
+                <Card
+                  className={classes.card}
+                  classes={{
+                    root: cardsState[index].hovered ? classes.cardHovered : "",
+                  }}
+                  onMouseEnter={() =>
+                    handleHover(index, { hovered: true, shadow: 3 })
+                  }
+                  onMouseLeave={() =>
+                    handleHover(index, { hovered: false, shadow: 1 })
+                  }
+                  raised={cardsState[index].hovered}
+                >
+                  <CardMedia
+                    className={classes.media}
+                    image={card.img.path}
+                    title={card.img.alt}
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      color="textPrimary"
+                      className={classes.cardTitle}
                     >
-                      <Button
-                        size="small"
-                        color="inherit"
-                        onClick={() => {
-                          handleTooltipState(true, index);
-                          navigator.clipboard.writeText(card.url);
+                      {card.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textPrimary"
+                      component="p"
+                      className={classes.cardText}
+                    >
+                      {card.description}
+                    </Typography>
+                  </CardContent>
+                  <div style={{ flexGrow: 1 }} />
+                  <CardActions>
+                    <Button
+                      size="small"
+                      color="inherit"
+                      onClick={() => window.open(card.url, "_blank")}
+                    >
+                      {props.data.readButtonText}
+                    </Button>
+                    <ClickAwayListener
+                      onClickAway={() => handleTooltipState(false, index)}
+                    >
+                      <Tooltip
+                        arrow
+                        placement="top"
+                        PopperProps={{
+                          disablePortal: true,
                         }}
+                        onClose={() => handleTooltipState(false, index)}
+                        open={cardsState[index].openTooltip}
+                        disableFocusListener
+                        disableHoverListener
+                        disableTouchListener
+                        classes={{ tooltip: classes.tooltipWidth }}
+                        TransitionComponent={Zoom}
+                        title={
+                          <Typography variant="overline" color="inherit">
+                            {props.data.copyText}
+                          </Typography>
+                        }
                       >
-                        {props.data.copyButtonText}
-                      </Button>
-                    </Tooltip>
-                  </ClickAwayListener>
-                </CardActions>
-              </Card>
-            </Box>
-          </Grid>
+                        <Button
+                          size="small"
+                          color="inherit"
+                          onClick={() => {
+                            handleTooltipState(true, index);
+                            navigator.clipboard.writeText(card.url);
+                          }}
+                        >
+                          {props.data.copyButtonText}
+                        </Button>
+                      </Tooltip>
+                    </ClickAwayListener>
+                  </CardActions>
+                </Card>
+              </Box>
+            </Grid>
+          </ScrollTriggerUp>
         ))}
       </Grid>
     </Box>
@@ -201,8 +209,8 @@ const useStyles = makeStyles((theme) => ({
       padding: "6%",
     },
     // backgroundColor: theme.palette.error.light, //Pastel red
-    backgroundColor: theme.palette.text.secondary, //White and black
-    // backgroundColor: theme.palette.primary.main, //White and dark blue
+    // backgroundColor: theme.palette.text.secondary, //White and black
+    backgroundColor: theme.palette.primary.main, //White and dark blue
   },
   tooltipWidth: {
     maxWidth: 400,
