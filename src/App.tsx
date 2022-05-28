@@ -22,6 +22,10 @@ const App = () => {
       ? require("./TextData.json").norwegian
       : require("./TextData.json").english
   );
+  const [refreshScrollTriggers, _setRefreshScrollTriggers] = useState(0);
+  const triggerRefreshScrollTriggers = () => {
+    _setRefreshScrollTriggers(refreshScrollTriggers + 1);
+  };
 
   useMemo(() => {
     fetchDataFromDB(language, setData);
@@ -55,8 +59,13 @@ const App = () => {
       <ProjectView
         id={data.landingView.navbar.sections[1]}
         data={data.projectView}
+        triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
       />
-      <FeaturedInView id={"None"} data={data.featuredInView} />
+      <FeaturedInView
+        id={"None"}
+        data={data.featuredInView}
+        refreshScrollTriggers={refreshScrollTriggers}
+      />
       <ContactView
         id={data.landingView.navbar.sections[2]}
         data={data.contactView}

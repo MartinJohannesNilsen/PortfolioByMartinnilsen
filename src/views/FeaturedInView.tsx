@@ -14,6 +14,9 @@ import {
   Zoom,
 } from "@material-ui/core";
 import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
+import useDidUpdate from "../utils/useDidUpdate";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export type ArticleProps = {
   title: string;
@@ -34,6 +37,7 @@ type FeaturedInViewProps = {
     copyText: string;
     articles: [ArticleProps];
   };
+  refreshScrollTriggers: number;
 };
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
@@ -45,6 +49,13 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       openTooltip: false,
     })
   );
+  gsap.registerPlugin(ScrollTrigger);
+
+  useDidUpdate(() => {
+    setTimeout(function () {
+      ScrollTrigger.refresh();
+    }, 300);
+  }, [props.refreshScrollTriggers]);
 
   const handleHover = (index: number, newState: {}) => {
     let cardStateCopy = [...cardsState];
