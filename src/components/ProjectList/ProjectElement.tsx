@@ -39,15 +39,15 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
       <Grid container alignItems="center" justify="center">
         {props.imgPosition === "left" ? (
           <>
-            <Grid item xs={11}>
+            <Grid item xs={11} md={12}>
               <ScrollTriggerLeft
                 x="5vw"
                 markers={showMarkers}
                 start={animationStart}
                 end={animationEnd}
               >
-                <Grid container alignItems="center" justify="center">
-                  <Grid item xs={12} md={6}>
+                <Grid container alignItems="center" justify="space-evenly">
+                  <Grid item xs={12} md={5} lg={6}>
                     <Box py={5}>
                       <img
                         src={props.projectData.img.path}
@@ -75,14 +75,14 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
           </>
         ) : (
           <>
-            <Grid item xs={11}>
+            <Grid item xs={11} md={12}>
               <ScrollTriggerRight
                 x="5vw"
                 markers={showMarkers}
                 start={animationStart}
                 end={animationEnd}
               >
-                <Grid container alignItems="center" justify="center">
+                <Grid container alignItems="center" justify="space-evenly">
                   <Hidden mdUp>
                     <Grid item xs={12} md={6}>
                       <Box py={5}>
@@ -108,7 +108,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     <Box>{insertButtons(props)}</Box>
                   </Grid>
                   <Hidden smDown>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={5} lg={6}>
                       <Box py={10}>
                         <img
                           src={props.projectData.img.path}
