@@ -38,38 +38,31 @@ const AboutView: FC<AboutViewProps> = (props) => {
             <CardContent>
               <Box textAlign="left">
                 <Typography
-                  variant="h1"
+                  variant="h2"
                   color="textPrimary"
-                  className={`${classes.title} ref`}
                   itemProp="description"
                 >
                   Martin Johannes Nilsen
                 </Typography>
               </Box>
               <Box textAlign="left">
-                <Typography
-                  variant="body1"
-                  color="textPrimary"
-                  className={"ref"}
-                >
-                  <h2>
-                    {props.data.subtitle?.map((text: string, index) => {
-                      if (text.includes("AGE(")) {
-                        let dateString = text
-                          .match(/\((.*)\)/)
-                          ?.pop()
-                          ?.toString();
-                        if (dateString) {
-                          text = getAge(dateString).toString();
-                        }
+                <Typography variant="subtitle1" color="textPrimary">
+                  {props.data.subtitle?.map((text: string, index) => {
+                    if (text.includes("AGE(")) {
+                      let dateString = text
+                        .match(/\((.*)\)/)
+                        ?.pop()
+                        ?.toString();
+                      if (dateString) {
+                        text = getAge(dateString).toString();
                       }
-                      if (index !== 0) {
-                        return " • " + text;
-                      } else {
-                        return text;
-                      }
-                    })}
-                  </h2>
+                    }
+                    if (index !== 0) {
+                      return " • " + text;
+                    } else {
+                      return text;
+                    }
+                  })}
                 </Typography>
               </Box>
               <Box textAlign="justify">
@@ -77,7 +70,7 @@ const AboutView: FC<AboutViewProps> = (props) => {
                   {props.data.text.map((paragraph: string) => (
                     <Box my={2} key={paragraph}>
                       <Typography
-                        variant="body2"
+                        variant="body1"
                         color="textPrimary"
                         className={"ref"}
                       >
@@ -120,8 +113,4 @@ const useStyles = makeStyles((theme) => ({
       padding: "6%",
     },
   },
-  title: {
-    fontSize: "3.5rem",
-  },
-  ref: {},
 }));

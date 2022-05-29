@@ -55,12 +55,20 @@ const ContactView: FC<ContactViewProps> = (props) => {
         <Icon icon={caretDown} className={classes.backgroundTriangle} />
         <Box py={5} px={3} textAlign="left">
           <Box py={2} px={1}>
-            <Typography variant="caption" color="textPrimary">
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              style={{ fontWeight: 600 }}
+            >
               {props.data.text[0]}
             </Typography>
           </Box>
           <Box py={1} px={1}>
-            <Typography variant="caption" color="textPrimary">
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              style={{ fontWeight: 600 }}
+            >
               {props.data.text[1]}
             </Typography>
           </Box>

@@ -11,7 +11,7 @@ type ReaderViewProps = {
   projects: {
     title: string;
     buttonTexts: string[];
-    listOfProjects: [ProjectProps];
+    projects: [ProjectProps];
   };
   featuredIn: {
     title: string;
@@ -79,7 +79,6 @@ const create_link_row = (project: ProjectProps, buttonTexts: string[]) => {
 };
 
 const ReaderView: FC<ReaderViewProps> = (props) => {
-  // const ReaderView: FC = (props) => {
   return (
     <article
       style={{
@@ -102,7 +101,7 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
       <h2>
         <span className="header">{props.ids[1]}</span>
       </h2>
-      {props.projects.listOfProjects
+      {props.projects.projects
         .slice()
         .reverse()
         .map((t) => (

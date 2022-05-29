@@ -28,7 +28,7 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
           key={i}
           icon={
             <Typography
-              variant="subtitle2"
+              variant="h4"
               color={
                 theme.palette.type === "light" ? "textPrimary" : "textSecondary"
               }

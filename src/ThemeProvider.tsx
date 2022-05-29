@@ -5,7 +5,7 @@ import { ThemeEnum } from "./themes/base";
 import useDidUpdate from "./utils/useDidUpdate";
 
 // Find the correct scheme based on user preferences. 
-// If changed on site before, persist based on localStorage, else default
+// If changed on site before, persist based on localStorage, else default OS setting
 const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)'
 export function getSelectedTheme() {
   const localStorageTheme = localStorage.getItem("theme");
@@ -19,7 +19,7 @@ export type ThemeContextType = {
 };
 
 export const ThemeContext = createContext<ThemeContextType>({
-  theme: getSelectedTheme() == "dark" ? themeCreator(ThemeEnum.Dark) : themeCreator(ThemeEnum.Light), 
+  theme: getSelectedTheme() === "dark" ? themeCreator(ThemeEnum.Dark) : themeCreator(ThemeEnum.Light), 
   setTheme: (theme) => {},
 });
 export const useTheme = () => useContext(ThemeContext);

@@ -12,11 +12,13 @@ import {
   ClickAwayListener,
   Tooltip,
   Zoom,
+  useMediaQuery,
 } from "@material-ui/core";
 import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
 import useDidUpdate from "../utils/useDidUpdate";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTheme } from "../ThemeProvider";
 
 export type ArticleProps = {
   title: string;
@@ -35,7 +37,7 @@ type FeaturedInViewProps = {
     readButtonText: string;
     copyButtonText: string;
     copyText: string;
-    articles: [ArticleProps];
+    articles: ArticleProps[];
   };
   refreshScrollTriggers: number;
 };
@@ -49,12 +51,14 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       openTooltip: false,
     })
   );
+  const { theme } = useTheme();
+  const xs = useMediaQuery(theme.breakpoints.only("xs"));
+  const sm = useMediaQuery(theme.breakpoints.only("sm"));
+  const md = useMediaQuery(theme.breakpoints.only("md"));
   gsap.registerPlugin(ScrollTrigger);
 
   useDidUpdate(() => {
-    setTimeout(function () {
-      ScrollTrigger.refresh();
-    }, 300);
+    ScrollTrigger.refresh();
   }, [props.refreshScrollTriggers]);
 
   const handleHover = (index: number, newState: {}) => {
@@ -74,11 +78,11 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       className={classes.root}
       textAlign="center"
       id={props.id}
-      px={4}
+      px={xs ? 4 : sm ? 4 : md ? 8 : 0}
       pb={2}
     >
       <Box pt={3} pb={2}>
-        <Typography variant="subtitle1" color="textPrimary">
+        <Typography variant="h3" color="textPrimary">
           {props.data.title}
         </Typography>
       </Box>
@@ -86,17 +90,16 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
         {props.data.articles.map((card, index) => (
           <ScrollTriggerUp
             x="10vh"
-            markers={process.env.REACT_APP_SHOW_MARKERS === "true"}
+            markers={process.env.REACT_APP_SHOW_GSAP_MARKERS === "true"}
             start={-200 + 30 * index + "px center"}
-            // start={"-200px center"}
             end={"100px center"}
           >
-            <Grid item xs={12} sm={8} md={4} xl={3} style={{ display: "flex" }}>
+            <Grid item xs={11} sm={7} md={4} lg={3} style={{ display: "flex" }}>
               <Box px={2} my={3}>
                 <Card
                   className={classes.card}
                   classes={{
-                    root: cardsState[index].hovered ? classes.cardHovered : "",
+                    root: cardsState[index]?.hovered ? classes.cardHovered : "",
                   }}
                   onMouseEnter={() =>
                     handleHover(index, { hovered: true, shadow: 3 })
@@ -104,7 +107,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                   onMouseLeave={() =>
                     handleHover(index, { hovered: false, shadow: 1 })
                   }
-                  raised={cardsState[index].hovered}
+                  raised={cardsState[index]?.hovered}
                 >
                   <CardMedia
                     className={classes.media}
@@ -114,7 +117,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                   <CardContent>
                     <Typography
                       gutterBottom
-                      variant="body1"
+                      variant="subtitle2"
                       color="textPrimary"
                       className={classes.cardTitle}
                     >
@@ -148,7 +151,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                           disablePortal: true,
                         }}
                         onClose={() => handleTooltipState(false, index)}
-                        open={cardsState[index].openTooltip}
+                        open={cardsState[index]?.openTooltip}
                         disableFocusListener
                         disableHoverListener
                         disableTouchListener
