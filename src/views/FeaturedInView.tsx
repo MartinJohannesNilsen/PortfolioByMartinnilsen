@@ -115,66 +115,70 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                     title={card.img.alt}
                   />
                   <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="subtitle2"
-                      color="textPrimary"
-                      className={classes.cardTitle}
-                    >
-                      {card.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textPrimary"
-                      component="p"
-                      className={classes.cardText}
-                    >
-                      {card.description}
-                    </Typography>
+                    <Box ml={-0.8}>
+                      <Typography
+                        gutterBottom
+                        variant="subtitle2"
+                        color="textPrimary"
+                        className={classes.cardTitle}
+                      >
+                        {card.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textPrimary"
+                        component="p"
+                        className={classes.cardText}
+                      >
+                        {card.description}
+                      </Typography>
+                    </Box>
                   </CardContent>
                   <div style={{ flexGrow: 1 }} />
                   <CardActions>
-                    <Button
-                      size="small"
-                      color="inherit"
-                      onClick={() => window.open(card.url, "_blank")}
-                    >
-                      {props.data.readButtonText}
-                    </Button>
-                    <ClickAwayListener
-                      onClickAway={() => handleTooltipState(false, index)}
-                    >
-                      <Tooltip
-                        arrow
-                        placement="top"
-                        PopperProps={{
-                          disablePortal: true,
-                        }}
-                        onClose={() => handleTooltipState(false, index)}
-                        open={cardsState[index]?.openTooltip}
-                        disableFocusListener
-                        disableHoverListener
-                        disableTouchListener
-                        classes={{ tooltip: classes.tooltipWidth }}
-                        TransitionComponent={Zoom}
-                        title={
-                          <Typography variant="overline" color="inherit">
-                            {props.data.copyText}
-                          </Typography>
-                        }
+                    <Box ml={-0.4}>
+                      <Button
+                        size="small"
+                        color="inherit"
+                        onClick={() => window.open(card.url, "_blank")}
                       >
-                        <Button
-                          size="small"
-                          color="inherit"
-                          onClick={() => {
-                            handleTooltipState(true, index);
-                            navigator.clipboard.writeText(card.url);
+                        {props.data.readButtonText}
+                      </Button>
+                      <ClickAwayListener
+                        onClickAway={() => handleTooltipState(false, index)}
+                      >
+                        <Tooltip
+                          arrow
+                          placement="top"
+                          PopperProps={{
+                            disablePortal: true,
                           }}
+                          onClose={() => handleTooltipState(false, index)}
+                          open={cardsState[index]?.openTooltip}
+                          disableFocusListener
+                          disableHoverListener
+                          disableTouchListener
+                          classes={{ tooltip: classes.tooltipWidth }}
+                          TransitionComponent={Zoom}
+                          title={
+                            <Typography variant="overline" color="inherit">
+                              {props.data.copyText}
+                            </Typography>
+                          }
                         >
-                          {props.data.copyButtonText}
-                        </Button>
-                      </Tooltip>
-                    </ClickAwayListener>
+                          <Button
+                            size="small"
+                            color="inherit"
+                            onClick={() => {
+                              handleTooltipState(true, index);
+                              navigator.clipboard.writeText(card.url);
+                            }}
+                          >
+                            {props.data.copyButtonText}
+                          </Button>
+                        </Tooltip>
+                      </ClickAwayListener>
+                    </Box>
                   </CardActions>
                 </Card>
               </Box>
