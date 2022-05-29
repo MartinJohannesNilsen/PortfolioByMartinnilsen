@@ -4,22 +4,26 @@ import { Icon } from "@iconify/react";
 import caretDown from "@iconify-icons/carbon/caret-down";
 import ProjectList from "../components/ProjectList/ProjectList";
 import useDidUpdate from "../utils/useDidUpdate";
+import { ProjectProps } from "../components/ProjectList/ProjectElement";
 
 type ProjectViewProps = {
   id: string;
   data: {
     title: string;
     buttonTexts: string[];
-    listOfProjects: [];
+    projects: ProjectProps[];
   };
   triggerRefreshScrollTriggers?: () => void;
 };
 
 const ProjectView: FC<ProjectViewProps> = (props) => {
   const classes = useStyles();
-  // const [numShowing, setNumShowing] = useState<number>(100); //Remove filtering
-  const [numShowing, setNumShowing] = useState<number>(3);
-  const [numIncrease] = useState<number>(3);
+  const [numShowing, setNumShowing] = useState<number>(
+    parseInt(process.env.REACT_APP_NUM_PROJECTS_SHOWING!)
+  );
+  const [numIncrease] = useState<number>(
+    parseInt(process.env.REACT_APP_NUM_PROJECTS_INCREASE!)
+  );
 
   useDidUpdate(() => {
     if (props.triggerRefreshScrollTriggers) {
@@ -31,12 +35,12 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
     <Box className={classes.root} textAlign="center" id={props.id}>
       <Icon icon={caretDown} className={classes.backgroundTriangle} />
       <Box pt={3}>
-        <Typography variant="subtitle1" color="textPrimary">
+        <Typography variant="h3" color="textPrimary">
           {props.data.title}
         </Typography>
       </Box>
       <ProjectList
-        projects={props.data.listOfProjects}
+        projects={props.data.projects}
         numShowing={numShowing}
         setNumShowing={setNumShowing}
         numIncrease={numIncrease}

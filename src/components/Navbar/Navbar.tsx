@@ -68,7 +68,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
         >
           <Grid item>
             <Typography
-              variant="subtitle1"
+              variant="h2"
               className={classes.mainLink}
               style={!lgUp ? { marginLeft: 40 } : {}}
             >
@@ -84,7 +84,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                     onClick={() => handleScroll(title)}
                   >
                     <Typography
-                      variant="subtitle2"
+                      variant="h4"
                       color="textPrimary"
                       className={classes.buttonLabel}
                     >
@@ -137,7 +137,6 @@ const useStyles = makeStyles((theme) => ({
   },
   mainLink: {
     color: theme.palette.error.main,
-    fontWeight: 800,
   },
   icon: {
     height: "50px",

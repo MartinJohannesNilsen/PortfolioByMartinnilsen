@@ -99,7 +99,7 @@
         "ReadMe",
         "Paper"
       ],
-      "listOfProjects": [
+      "projects": [
         {
           "description": "The firm wanted me to create a new website for them. They wanted a simple, yet modern website which gave their customers the possibility to read about what the firm has to offer, and take a look at reference photos from previous jobs.",
           "img": {
@@ -229,7 +229,7 @@
         "Trondheim"
       ],
       "text": [
-        "Utvikler med en stor interesse for teknologi, med erfaring innen både teoretiske og praktiske aspekter av programvaretuvikling og  datateknologi. Har en bachelor som dataingeniør, og tar for tiden en toårig sivilingeniør master i datateknologi på NTNU i Trondheim. Jeg interesserer meg spesielt for hvordan maskiner ser og forstår verden, enten det er gjennom tekst, bilder, sensorer eller annen data. Kan se for meg å jobbe innen fagområder som språkbehandling, datasyn, automasjon av kjøretøy, maskinlæring, informasjonsgjenfinning eller liknende.",
+        "Utvikler med en stor interesse for teknologi, og erfaring innen både teoretiske og praktiske aspekter av programvaretuvikling og  datateknologi. Har en bachelor som dataingeniør, og tar for tiden en toårig sivilingeniør master i datateknologi på NTNU i Trondheim. Jeg interesserer meg spesielt for hvordan maskiner ser og forstår verden, enten det er gjennom tekst, bilder, sensorer eller annen data. Kan se for meg å jobbe innen fagområder som språkbehandling, datasyn, automasjon av kjøretøy, maskinlæring, informasjonsgjenfinning eller liknende.",
         "Ved siden av studier har jeg hatt fire stillinger som læringsassistent over to år, samt veiledet 10+ team i et prosjekt i faget anvendt maskinlæring. I tillegg har jeg hatt to relevante sommerjobber ved siden av studiet, henholdsvis Experis Ciber og NAV IT. Denne sommeren skal jeg jobbe for Kongsberg Maritime på det autonome prosjektet USV Sounder. Dette markerer et skille for arbeidserfaringen min, da jeg her skal få muligheten til å jobbe mer tverrfaglig i skillet mellom datateknologi og kybernetikk, med datasyn i praksis på en autonom båt."
       ]
     },
@@ -286,7 +286,7 @@
         {
           "description": "En artikkel skrevet i Digi.no, en redaksjon i Teknisk Ukeblad Media, som tok for seg prosjektet jeg arbeidet på under første sommerjobb som utvikler.",
           "img": {
-            "alt": "Gruppebildet av teamet som lager første MVP av Dissimilis fargenotasjon",
+            "alt": "Gruppebilde av teamet som lager første MVP av Dissimilis fargenotasjon",
             "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
           },
           "title": "Dissimilis fargenotasjon",
@@ -322,7 +322,7 @@
         "ReadMe",
         "Rapport"
       ],
-      "listOfProjects": [
+      "projects": [
         {
           "description": "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. De ønsket i tillegg å ha en oversikt/liste med de ulike sortene arbeid de utfører, og referansebilder fra tidligere prosjekter.",
           "img": {

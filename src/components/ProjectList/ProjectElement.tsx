@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Box, makeStyles, Grid, Typography, Hidden } from "@material-ui/core";
 import insertButtons from "../ProjectButtons/insertButtons";
 import {
@@ -30,7 +30,7 @@ export type ProjectElementProps = {
 const ProjectElement: FC<ProjectElementProps> = (props) => {
   const classes = useStyles(props);
   const paddingTitleDescription = 1.7;
-  const showMarkers = process.env.REACT_APP_SHOW_MARKERS == "true"; //Debug purposes
+  const showMarkers = process.env.REACT_APP_SHOW_GSAP_MARKERS === "true";
   const animationStart = "-100px center";
   const animationEnd = "50px center";
 
@@ -58,12 +58,12 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <Box pb={paddingTitleDescription}>
-                      <Typography variant="body1" color="textPrimary">
+                      <Typography variant="subtitle1" color="textPrimary">
                         {props.projectData.title}
                       </Typography>
                     </Box>
                     <Box textAlign="justify">
-                      <Typography variant="body2" color="textPrimary">
+                      <Typography variant="body1" color="textPrimary">
                         {props.projectData.description}
                       </Typography>
                     </Box>
@@ -96,12 +96,12 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                   </Hidden>
                   <Grid item xs={12} md={6}>
                     <Box pb={paddingTitleDescription}>
-                      <Typography variant="body1" color="textPrimary">
+                      <Typography variant="subtitle1" color="textPrimary">
                         {props.projectData.title}
                       </Typography>
                     </Box>
                     <Box textAlign="justify">
-                      <Typography variant="body2" color="textPrimary">
+                      <Typography variant="body1" color="textPrimary">
                         {props.projectData.description}
                       </Typography>
                     </Box>

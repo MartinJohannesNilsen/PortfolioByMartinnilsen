@@ -1,8 +1,11 @@
 import { CssBaseline } from "@material-ui/core";
-import { useMemo, useState } from "react";
-import ThemeProvider, { useTheme } from "./ThemeProvider";
+import { useEffect, useMemo, useState } from "react";
+import ThemeProvider from "./ThemeProvider";
 import useStickyState from "./utils/useStickyState";
 import fetchDataFromDB from "./utils/fetchDataFromDB";
+import { ProjectProps } from "./components/ProjectList/ProjectElement";
+import preloadImgs from "./utils/preloadImgs";
+import showMuiSize from "./utils/showMuiSize";
 
 //Views
 import LandingView from "./views/LandingView";
@@ -15,7 +18,7 @@ import FeaturedInView from "./views/FeaturedInView";
 const App = () => {
   const [language, setLanguage] = useStickyState(
     "language",
-    navigator.language == "nb-NO" || "nn-NO" ? "norwegian" : "english"
+    navigator.language === "nb-NO" || "nn-NO" ? "norwegian" : "english"
   );
   const [data, setData] = useState(
     language === "norwegian"
@@ -28,14 +31,21 @@ const App = () => {
   };
 
   useMemo(() => {
-    fetchDataFromDB(language, setData);
+    if (process.env.REACT_APP_FETCH_FROM_DB === "true") {
+      fetchDataFromDB(language, setData);
+    }
     window.scrollTo(0, 0);
     //eslint-disable-next-line
   }, [language]);
 
+  useEffect(() => {
+    triggerRefreshScrollTriggers();
+  }, [data]);
+
   return (
     <ThemeProvider>
       <CssBaseline />
+      {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
       <ReaderView
         ids={[
           data.landingView.navbar.sections[0],
@@ -56,6 +66,16 @@ const App = () => {
         id={data.landingView.navbar.sections[0]}
         data={data.aboutView}
       />
+      {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
+        ? preloadImgs(
+            data.projectView.projects
+              .slice()
+              .reverse()
+              .map((project: ProjectProps) => {
+                return project.img.path;
+              })
+          )
+        : ""}
       <ProjectView
         id={data.landingView.navbar.sections[1]}
         data={data.projectView}

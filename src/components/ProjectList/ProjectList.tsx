@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Box, makeStyles, Grid, Button, Typography } from "@material-ui/core";
-import ProjectElement from "./ProjectElement";
+import ProjectElement, { ProjectProps } from "./ProjectElement";
 
 type ProjectListProps = {
-  projects: [];
+  projects: ProjectProps[];
   numShowing: number;
   setNumShowing: (num: number) => void;
   numIncrease: number;

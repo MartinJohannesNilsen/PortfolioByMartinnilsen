@@ -43,6 +43,9 @@ export const light = createTheme({
   },
   typography: {
     fontFamily: "Gotham",
+
+    // Headings
+    // Usage: landingViewSlogan
     h1: {
       fontSize: "5.5rem",
       fontWeight: 800,
@@ -53,28 +56,12 @@ export const light = createTheme({
         fontSize: "2.7rem",
       },
     },
-    h2: {
-      //not in use
-      fontSize: "0.8rem",
-      fontWeight: 400,
-    },
-    h3: {
-      fontSize: "2rem",
-      fontWeight: 600,
-      [defaultTheme.breakpoints.up("md")]: {
-        fontSize: "3rem",
-      },
-    },
+    // Usage: NavbarLogo, aboutTitle
+    h2: { fontSize: "2rem", fontWeight: 800 },
+    // Usage: projectViewHeader, featuredInViewHeader
+    h3: { fontSize: "2rem", fontWeight: 600 },
+    // Usage: navBarSections (below md in FABMenu)
     h4: {
-      fontSize: "1.4rem",
-      fontWeight: 600,
-    },
-    //Navbar
-    subtitle1: {
-      fontSize: "2rem",
-      fontWeight: 600,
-    },
-    subtitle2: {
       fontSize: "1.5rem",
       fontWeight: 800,
       [defaultTheme.breakpoints.down("md")]: {
@@ -82,35 +69,60 @@ export const light = createTheme({
         fontWeight: 800,
       },
     },
-    button: {
-      fontSize: ".8rem",
-      fontWeight: 800,
-      [defaultTheme.breakpoints.up("md")]: {
-        fontSize: "1.1rem",
-      },
-    },
-    caption: {
-      fontSize: "1.2rem",
-      fontWeight: 600,
-    },
-    body1: {
+    h5: {},
+    h6: {},
+
+    // Subtitles
+    // Usage: projectTitle, aboutSubtitle
+    subtitle1: {
       fontSize: "1.5rem",
       fontWeight: 400,
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.8rem",
       },
     },
-    body2: {
+    // Usage: featuredInTitle
+    subtitle2: {
+      fontSize: "0.85rem",
+      fontWeight: 600,
+      [defaultTheme.breakpoints.up("lg")]: {
+        fontSize: "1.1rem",
+      },
+    },
+
+    // Bodies
+    // Usage: aboutDescription, projectDescription, contactText
+    body1: {
       fontSize: "1rem",
       fontWeight: 400,
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.3rem",
       },
     },
+    // Usage: featuredInDescription
+    body2: {
+      fontSize: "0.8rem",
+      fontWeight: 400,
+      [defaultTheme.breakpoints.up("lg")]: {
+        fontSize: "1rem",
+      },
+    },
+
+    // Buttons
+    button: {
+      fontSize: ".8rem",
+      fontWeight: 800,
+      [defaultTheme.breakpoints.up("lg")]: {
+        fontSize: "1.1rem",
+      },
+    },
+
+    // Tooltips
     overline: {
       fontSize: "0.7rem",
       fontWeight: 800,
     },
+    caption: {},
   },
 });
 export default light;
