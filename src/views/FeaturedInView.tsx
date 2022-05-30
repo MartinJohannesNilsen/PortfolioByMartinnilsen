@@ -55,6 +55,8 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   const sm = useMediaQuery(theme.breakpoints.only("sm"));
   const md = useMediaQuery(theme.breakpoints.only("md"));
+  const mdUp = useMediaQuery(theme.breakpoints.up("md"));
+  const animationOffset = mdUp ? -300 : -50;
   gsap.registerPlugin(ScrollTrigger);
 
   useDidUpdate(() => {
@@ -91,8 +93,8 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
           <ScrollTriggerUp
             x="10vh"
             markers={process.env.REACT_APP_SHOW_GSAP_MARKERS === "true"}
-            start={-200 + 30 * index + "px center"}
-            end={"100px center"}
+            start={animationOffset + -200 + 30 * index + "px center"}
+            end={animationOffset + 100 + "px center"}
           >
             <Grid item xs={11} sm={7} md={4} lg={3} style={{ display: "flex" }}>
               <Box px={2} my={3}>
