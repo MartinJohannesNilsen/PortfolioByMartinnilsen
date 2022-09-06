@@ -1,7 +1,5 @@
 import { FC, useState } from "react";
 import { Box, makeStyles, Typography } from "@material-ui/core";
-import { Icon } from "@iconify/react";
-import caretDown from "@iconify-icons/carbon/caret-down";
 import ProjectList from "../components/ProjectList/ProjectList";
 import useDidUpdate from "../utils/useDidUpdate";
 import { ProjectProps } from "../components/ProjectList/ProjectElement";
@@ -33,9 +31,8 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
 
   return (
     <Box className={classes.root} textAlign="center" id={props.id}>
-      <Icon icon={caretDown} className={classes.backgroundTriangle} />
-      <Box pt={3}>
-        <Typography variant="h3" color="textPrimary">
+      <Box pt={4}>
+        <Typography variant="h3" className={classes.title}>
           {props.data.title}
         </Typography>
       </Box>
@@ -57,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     backgroundColor: theme.palette.primary.main,
     position: "relative",
+  },
+  title: {
+    color: theme.palette.error.main,
   },
   backgroundTriangle: {
     color: theme.palette.secondary.main,

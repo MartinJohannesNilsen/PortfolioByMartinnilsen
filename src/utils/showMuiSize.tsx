@@ -1,5 +1,4 @@
 import { Box, makeStyles, Typography, useMediaQuery } from "@material-ui/core";
-import { FC } from "react";
 import { useTheme } from "../ThemeProvider";
 
 export const showMuiSize = () => {
@@ -13,7 +12,6 @@ export const showMuiSize = () => {
     const lg = useMediaQuery(theme.breakpoints.only("lg"));
     return xs ? "XS" : sm ? "SM" : md ? "MD" : lg ? "LG" : "XL";
   };
-  console.log(getValue());
 
   return (
     <Box>

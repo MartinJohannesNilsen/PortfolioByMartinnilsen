@@ -16,7 +16,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
   return (
     <>
       <Box pt={10} className={classes.root}>
-        <Grid container justify="center">
+        <Grid container justifyContent="center">
           {props.projects
             .slice(props.projects.length - props.numShowing)
             .reverse()

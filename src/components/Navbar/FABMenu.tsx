@@ -95,8 +95,8 @@ export default FABMenu;
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
-    right: "10px",
-    top: "18px",
+    right: "8px",
+    top: "8px",
     zIndex: 5,
   },
   icon: {

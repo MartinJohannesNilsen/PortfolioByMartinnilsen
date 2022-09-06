@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
 import { useTheme } from "../ThemeProvider";
 import useDidUpdate from "../utils/useDidUpdate";
-import DeskSVGInline from "../assets/illustrations/desk_animated";
+import DeskSVGInline from "../assets/svg/desk_animated";
 
 type LandingViewProps = {
   data: {
@@ -14,6 +14,7 @@ type LandingViewProps = {
       sections: string[];
     };
     title: string;
+    titleMobile?: string;
   };
   language: string;
   setLanguage: () => void;
@@ -38,23 +39,16 @@ const LandingView: FC<LandingViewProps> = (props) => {
   let titleRef: any = useRef(null);
   function animateIn(svgElements: svgProps) {
     let tl = gsap.timeline();
-    tl.from(titleRef, {
-      delay: 0.2,
-      duration: 0.7,
-      scale: 0.9,
-      opacity: 0,
-      ease: Power3.easeIn,
-    })
-      .from(
-        svgElements.drawers,
-        {
-          duration: 0.8,
-          y: -100,
-          opacity: 0,
-          ease: Power3.easeIn,
-        },
-        "-=0.2"
-      )
+    tl.from(
+      svgElements.drawers,
+      {
+        duration: 0.8,
+        y: -100,
+        opacity: 0,
+        ease: Power3.easeIn,
+      },
+      "-=0.2"
+    )
       .from(
         svgElements.countertop,
         {
@@ -111,10 +105,35 @@ const LandingView: FC<LandingViewProps> = (props) => {
         },
         "-=0.1"
       )
-      .from(svgElements.desktop_bg, {
-        duration: 1.5,
+      .from(
+        svgElements.desktop_bg,
+        {
+          duration: 2,
+          opacity: 0,
+        },
+        "+=0.3"
+      );
+
+    // var split = new SplitText(titleRef, {
+    //   type: "chars,words,lines",
+    //   position: "absolute",
+    // });
+    // gsap.from(split.words, {
+    //   duration: 1,
+    //   x: 200,
+    //   autoAlpha: 0,
+    //   ease: "elastic",
+    //   stagger: 0.05,
+    // });
+    // TODO Fix splitText animation coming in at same time as monitor powering on
+    tl.from(
+      titleRef,
+      {
+        duration: 2,
         opacity: 0,
-      });
+      },
+      "-=2.0"
+    );
 
     if (theme.palette.type === "dark") {
       tl.from(svgElements.lamp_light, {
@@ -171,7 +190,8 @@ const LandingView: FC<LandingViewProps> = (props) => {
     //eslint-disable-next-line
   }, []);
 
-  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
+  const xl = useMediaQuery(theme.breakpoints.only("xl"));
+  const lg = useMediaQuery(theme.breakpoints.only("lg"));
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
@@ -182,21 +202,27 @@ const LandingView: FC<LandingViewProps> = (props) => {
         setLanguage={props.setLanguage}
       />
       <Box className={classes.root}>
-        <DeskSVGInline classes={classes} />
+        <DeskSVGInline
+          classes={classes}
+          style={{
+            width: xl ? "70%" : lg ? "85%" : "100%",
+            marginLeft: xl ? "15%" : lg ? "7.5%" : "0%",
+          }}
+        />
         <div ref={(el) => (titleRef = el)}>
           <Typography
             variant="h1"
             color="textPrimary"
             className={classes.title}
-            style={
-              lgUp
-                ? { padding: "50px 30px" }
-                : smDown
-                ? { padding: "150px 30px" }
-                : { padding: "100px 30px" }
-            }
+            style={{ padding: "20vh 30px 30vh 0", whiteSpace: "pre-line" }}
           >
-            {props.data.title}
+            {smDown
+              ? props.data.hasOwnProperty("titleMobile")
+                ? props.data
+                    .titleMobile!.replaceAll("-", "-\n")
+                    .replaceAll(". ", ". \n")
+                : props.data.title.replaceAll(". ", ". \n")
+              : props.data.title.replaceAll(". ", ". \n")}
           </Typography>
         </div>
       </Box>
@@ -207,7 +233,7 @@ export default LandingView;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "calc(100vh - 120px)",
+    height: "calc(100vh - 80px)",
     minHeight: "600px",
     backgroundColor: theme.palette.primary.main,
     position: "relative",
@@ -225,6 +251,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     zIndex: 1000,
     position: "absolute",
+    top: 0,
+    bottom: 0,
     left: 0,
     right: 0,
   },
