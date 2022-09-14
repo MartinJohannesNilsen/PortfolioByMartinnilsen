@@ -214,7 +214,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
             variant="h1"
             color="textPrimary"
             className={classes.title}
-            style={{ padding: "20vh 30px 30vh 0", whiteSpace: "pre-line" }}
+            style={{ padding: "20vh 30px 30vh 30px", whiteSpace: "pre-line" }}
           >
             {smDown
               ? props.data.hasOwnProperty("titleMobile")
