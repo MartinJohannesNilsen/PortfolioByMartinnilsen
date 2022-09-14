@@ -9,15 +9,14 @@ export const dark = createTheme({
       secondary: "#000",
     },
     background: {
-      default: "#021b2e",
-      paper: "rgba(0,0,0,1)",
+      default: "#1a272e",
+      paper: "#212121",
     },
     primary: {
-      // main: "#03243d",
-      main: "#021b2e",
+      main: "#161518",
     },
     secondary: {
-      main: "#01121f",
+      main: "#141315",
     },
     success: {
       //outlineshadow
@@ -26,7 +25,7 @@ export const dark = createTheme({
       dark: "#27323b",
     },
     error: {
-      main: "#c73626",
+      main: "#29939b", 
     },
   },
   overrides: {
@@ -48,6 +47,10 @@ export const dark = createTheme({
     // Usage: landingViewSlogan
     h1: {
       fontSize: "5.5rem",
+      // textShadow: "2px 2px 3px rgba(0,0,0,1)",
+      // textShadow: "4px 3px 0px rgba(0,0,0,0.15), 9px 8px 0px #fff",
+      textShadow:
+        "0px 15px 5px rgba(0,0,0,0.1), 10px 20px 5px rgba(0,0,0,0.05),-10px 20px 5px rgba(0,0,0,0.05)",
       fontWeight: 800,
       [defaultTheme.breakpoints.down("md")]: {
         fontSize: "4rem",
@@ -62,9 +65,9 @@ export const dark = createTheme({
     h3: { fontSize: "2rem", fontWeight: 600 },
     // Usage: navBarSections (below md in FABMenu)
     h4: {
-      fontSize: "1.5rem",
+      fontSize: "1.25rem",
       fontWeight: 800,
-      [defaultTheme.breakpoints.down("md")]: {
+      [defaultTheme.breakpoints.down("sm")]: {
         fontSize: "0.45rem",
         fontWeight: 800,
       },

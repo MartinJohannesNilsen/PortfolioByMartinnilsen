@@ -10,14 +10,13 @@ export const light = createTheme({
     },
     background: {
       default: "#FFF",
-      paper: "rgba(0,0,0,1)",
+      paper: "#FFF",
     },
     primary: {
       main: "#FFF",
     },
     secondary: {
-      // main: "#ededed",
-      main: "#f7f7f7",
+      main: "#fcfcfc",
     },
     success: {
       //outlineshadow
@@ -26,7 +25,7 @@ export const light = createTheme({
       dark: "#eee",
     },
     error: {
-      main: "#c73626",
+      main: "#29939b",
     },
   },
   overrides: {
@@ -49,6 +48,7 @@ export const light = createTheme({
     h1: {
       fontSize: "5.5rem",
       fontWeight: 800,
+      textShadow: "0 2px 1px #747474, -1px 3px 1px #767676",
       [defaultTheme.breakpoints.down("md")]: {
         fontSize: "4rem",
       },
@@ -62,9 +62,9 @@ export const light = createTheme({
     h3: { fontSize: "2rem", fontWeight: 600 },
     // Usage: navBarSections (below md in FABMenu)
     h4: {
-      fontSize: "1.5rem",
+      fontSize: "1.25rem",
       fontWeight: 800,
-      [defaultTheme.breakpoints.down("md")]: {
+      [defaultTheme.breakpoints.down("sm")]: {
         fontSize: "0.45rem",
         fontWeight: 800,
       },

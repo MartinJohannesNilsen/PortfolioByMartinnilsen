@@ -4,14 +4,6 @@ import {
   makeStyles,
   Typography,
   Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  CardActions,
-  Button,
-  ClickAwayListener,
-  Tooltip,
-  Zoom,
   useMediaQuery,
 } from "@material-ui/core";
 import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
@@ -19,16 +11,7 @@ import useDidUpdate from "../utils/useDidUpdate";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTheme } from "../ThemeProvider";
-
-export type ArticleProps = {
-  title: string;
-  description: string;
-  img: {
-    path: string;
-    alt: string;
-  };
-  url: string;
-};
+import { ArticleCard, ArticleProps } from "../components/Cards/ArticleCard";
 
 type FeaturedInViewProps = {
   id: string;
@@ -55,6 +38,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   const sm = useMediaQuery(theme.breakpoints.only("sm"));
   const md = useMediaQuery(theme.breakpoints.only("md"));
+  const xl = useMediaQuery(theme.breakpoints.only("xl"));
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
   const animationOffset = mdUp ? -300 : -50;
   gsap.registerPlugin(ScrollTrigger);
@@ -81,108 +65,42 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       textAlign="center"
       id={props.id}
       px={xs ? 4 : sm ? 4 : md ? 8 : 0}
-      pb={2}
+      pb={8}
     >
-      <Box pt={3} pb={2}>
-        <Typography variant="h3" color="textPrimary">
+      <Box pt={4} pb={3}>
+        <Typography variant="h3" className={classes.title}>
           {props.data.title}
         </Typography>
       </Box>
-      <Grid container justify="center" className={classes.height}>
-        {props.data.articles.map((card, index) => (
+      <Grid container justifyContent="center" className={classes.height}>
+        {props.data.articles.map((article, index) => (
           <ScrollTriggerUp
             x="10vh"
             markers={process.env.REACT_APP_SHOW_GSAP_MARKERS === "true"}
-            start={animationOffset + -200 + 30 * index + "px center"}
-            end={animationOffset + 100 + "px center"}
+            start={animationOffset + -250 + 30 * index + "px center"}
+            end={animationOffset + -100 + "px center"}
+            key={index}
           >
-            <Grid item xs={11} sm={7} md={4} lg={3} style={{ display: "flex" }}>
-              <Box px={2} my={3}>
-                <Card
-                  className={classes.card}
-                  classes={{
-                    root: cardsState[index]?.hovered ? classes.cardHovered : "",
-                  }}
-                  onMouseEnter={() =>
-                    handleHover(index, { hovered: true, shadow: 3 })
-                  }
-                  onMouseLeave={() =>
-                    handleHover(index, { hovered: false, shadow: 1 })
-                  }
-                  raised={cardsState[index]?.hovered}
-                >
-                  <CardMedia
-                    className={classes.media}
-                    image={card.img.path}
-                    title={card.img.alt}
-                  />
-                  <CardContent>
-                    <Box ml={-0.8}>
-                      <Typography
-                        gutterBottom
-                        variant="subtitle2"
-                        color="textPrimary"
-                        className={classes.cardTitle}
-                      >
-                        {card.title}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textPrimary"
-                        component="p"
-                        className={classes.cardText}
-                      >
-                        {card.description}
-                      </Typography>
-                    </Box>
-                  </CardContent>
-                  <div style={{ flexGrow: 1 }} />
-                  <CardActions>
-                    <Box ml={-0.4}>
-                      <Button
-                        size="small"
-                        color="inherit"
-                        onClick={() => window.open(card.url, "_blank")}
-                      >
-                        {props.data.readButtonText}
-                      </Button>
-                      <ClickAwayListener
-                        onClickAway={() => handleTooltipState(false, index)}
-                      >
-                        <Tooltip
-                          arrow
-                          placement="top"
-                          PopperProps={{
-                            disablePortal: true,
-                          }}
-                          onClose={() => handleTooltipState(false, index)}
-                          open={cardsState[index]?.openTooltip}
-                          disableFocusListener
-                          disableHoverListener
-                          disableTouchListener
-                          classes={{ tooltip: classes.tooltipWidth }}
-                          TransitionComponent={Zoom}
-                          title={
-                            <Typography variant="overline" color="inherit">
-                              {props.data.copyText}
-                            </Typography>
-                          }
-                        >
-                          <Button
-                            size="small"
-                            color="inherit"
-                            onClick={() => {
-                              handleTooltipState(true, index);
-                              navigator.clipboard.writeText(card.url);
-                            }}
-                          >
-                            {props.data.copyButtonText}
-                          </Button>
-                        </Tooltip>
-                      </ClickAwayListener>
-                    </Box>
-                  </CardActions>
-                </Card>
+            <Grid
+              item
+              xs={11}
+              sm={7}
+              md={4}
+              lg={3}
+              xl={3}
+              style={{ display: "flex" }}
+            >
+              <Box px={xl ? 5 : 2} mx={1} my={3}>
+                <ArticleCard
+                  index={index}
+                  article={article}
+                  cardsState={cardsState}
+                  handleHover={handleHover}
+                  handleTooltipState={handleTooltipState}
+                  readButtonText={props.data.readButtonText}
+                  copyButtonText={props.data.copyButtonText}
+                  copyText={props.data.copyText}
+                />
               </Box>
             </Grid>
           </ScrollTriggerUp>
@@ -198,45 +116,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
     position: "relative",
   },
+  title: {
+    color: theme.palette.error.main,
+  },
   height: {
     height: "100%",
   },
-  media: {
-    height: "160px",
-    width: "100%",
-    borderRadius: 10,
-  },
-  cardTitle: {
-    textAlign: "left",
-  },
-  cardText: {
-    textAlign: "justify",
-  },
-  cardHovered: {
-    transform: "scale3d(1.05, 1.05, 1)",
-    transition: "transform 150ms ease-in-out",
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    borderRadius: 25,
-    padding: "5%",
-    [theme.breakpoints.up("sm")]: {
-      padding: "4%",
-    },
-    [theme.breakpoints.up("lg")]: {
-      padding: "6%",
-    },
-    // backgroundColor: theme.palette.error.light, //Pastel red
-    // backgroundColor: theme.palette.text.secondary, //White and black
-    backgroundColor: theme.palette.primary.main, //White and dark blue
-  },
-  tooltipWidth: {
-    maxWidth: 400,
-  },
-  title: {
-    fontSize: "3.5rem",
-  },
-  ref: {},
 }));

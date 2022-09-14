@@ -56,6 +56,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
   };
 
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <AppBar position="static" className={classes.root}>
@@ -63,22 +64,22 @@ export const Navbar: FC<NavbarProps> = (props) => {
         <Grid
           container
           alignItems="flex-end"
-          justify={lgUp ? "center" : "flex-start"}
+          justifyContent={lgUp ? "center" : "flex-start"}
           ref={(el) => (ref = el)}
         >
-          <Grid item>
+          <Grid item md={3}>
             <Typography
               variant="h2"
               className={classes.mainLink}
-              style={!lgUp ? { marginLeft: 40 } : {}}
+              style={smDown ? { marginLeft: 40 } : { marginTop: -41.5 }}
             >
               {props.data.title}
             </Typography>
           </Grid>
-          <Hidden mdDown>
-            <Grid container item md={8} xl={6} justify="flex-end">
-              {props.data.sections.map((title: string) => (
-                <Box mx={2}>
+          <Hidden smDown>
+            <Grid container item md={9} lg={6} justifyContent="flex-end">
+              {props.data.sections.map((title: string, index: number) => (
+                <Box mx={2} key={index}>
                   <Button
                     classes={{ text: classes.buttonText }}
                     onClick={() => handleScroll(title)}
@@ -93,7 +94,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                   </Button>
                 </Box>
               ))}
-              <Box mx={2}>
+              <Box mx={2} mt={-0.45}>
                 <ButtonBase
                   onClick={() => {
                     props.language === "english"
@@ -111,7 +112,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                   />
                 </ButtonBase>
               </Box>
-              <Box ml={0.5} mt={0.8}>
+              <Box ml={0.5} mt={0}>
                 <Switch
                   checked={theme.palette.type === "light"}
                   onChange={handleThemeChange}
@@ -121,7 +122,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
           </Hidden>
         </Grid>
       </Toolbar>
-      <Hidden lgUp>
+      <Hidden mdUp>
         <FABMenu {...props} />
       </Hidden>
     </AppBar>
@@ -132,15 +133,15 @@ export default Navbar;
 const useStyles = makeStyles((theme) => ({
   root: {
     zIndex: 2,
-    height: "100px",
+    height: "80px",
     backgroundColor: theme.palette.primary.main,
   },
   mainLink: {
     color: theme.palette.error.main,
   },
   icon: {
-    height: "50px",
-    width: "50px",
+    height: "45px",
+    width: "45px",
   },
   buttonText: {
     textTransform: "none",

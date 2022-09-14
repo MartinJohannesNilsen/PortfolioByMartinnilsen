@@ -1,0 +1,129 @@
+{
+  "english": {
+    "aboutView": {
+      "subtitle": [],
+      "text": []
+    },
+    "contactView": {
+      "links": [
+        {
+          "text": "GitHub",
+          "value": "https://github.com/MartinJohannesNilsen"
+        },
+        {
+          "text": "LinkedIn",
+          "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
+        },
+        {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_en.pdf?alt=media&token=00f4b77a-f7fb-4ccc-8d78-497327c3fc6d"
+        },
+        {
+          "copyText": "Telephone number copied to clipboard!",
+          "text": "Telephone",
+          "value": "+47 45005502"
+        },
+        {
+          "copyText": "Email address copied to clipboard!",
+          "text": "Email",
+          "value": "martinjnilsen@icloud.com"
+        }
+      ],
+      "text": [
+        "And more of my work can be found on my GitHub account!",
+        "Do not hesitate in reaching out to me if you want any further information, or just want to come into contact."
+      ]
+    },
+    "featuredInView": {
+      "articles": [],
+      "copyButtonText": "Copy link",
+      "copyText": "Link copied to clipboard!",
+      "readButtonText": "Read",
+      "title": "Featured in"
+    },
+    "landingView": {
+      "navbar": {
+        "languages": [
+          "Norwegian",
+          "English"
+        ],
+        "sections": [
+          "About",
+          "Projects",
+          "Contact"
+        ],
+        "title": "PORTFOLIO"
+      },
+      "title": "Computer Engineer. Network builder. Tech enthusiast."
+    },
+    "projectView": {
+      "buttonTexts": [],
+      "projects": [],
+      "title": "Projects"
+    }
+  },
+  "norwegian": {
+    "aboutView": {
+      "subtitle": [],
+      "text": []
+    },
+    "contactView": {
+      "links": [
+        {
+          "text": "GitHub",
+          "value": "https://github.com/MartinJohannesNilsen"
+        },
+        {
+          "text": "LinkedIn",
+          "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
+        },
+        {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_no.pdf?alt=media&token=dde90760-42e8-4418-9291-0a34d6d506f6"
+        },
+        {
+          "copyText": "Telefonnummer kopiert til utklippstavlen!",
+          "text": "Telefon",
+          "value": "+47 45005502"
+        },
+        {
+          "copyText": "Epostadresse kopiert til utklippstavlen!",
+          "text": "Epost",
+          "value": "martinjnilsen@icloud.com"
+        }
+      ],
+      "text": [
+        "Og mer av mitt tidligere arbeid er å finne på min GitHub-konto!",
+        "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker komme i kontakt med meg."
+      ]
+    },
+    "featuredInView": {
+      "articles": [],
+      "copyButtonText": "Kopier lenke",
+      "copyText": "Lenke kopiert til utklippstavlen!",
+      "readButtonText": "Les",
+      "title": "Artikler"
+    },
+    "landingView": {
+      "navbar": {
+        "languages": [
+          "Norsk",
+          "Engelsk"
+        ],
+        "sections": [
+          "Om",
+          "Prosjekter",
+          "Kontakt"
+        ],
+        "title": "PORTEFØLJE"
+      },
+      "title": "Dataingeniør. Nettverksbygger. Teknologientusiast.",
+      "titleMobile": "Data-ingeniør. Nettverks-bygger. Teknologi-entusiast."
+    },
+    "projectView": {
+      "buttonTexts": [],
+      "projects": [],
+      "title": "Prosjekter"
+    }
+  }
+}

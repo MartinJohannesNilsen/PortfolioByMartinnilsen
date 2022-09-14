@@ -22,7 +22,7 @@
         },
         {
           "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_en.pdf?alt=media&token=00f4b77a-f7fb-4ccc-8d78-497327c3fc6d"
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=651962dc-f236-4fd5-b98e-9da65abe7bfe"
         },
         {
           "copyText": "Telephone number copied to clipboard!",
@@ -43,12 +43,12 @@
     "featuredInView": {
       "articles": [
         {
-          "description": "Won the hackathon held at Nor-Shipping 22 by DNV, Astrup Fearnley Group and Microsoft. This is the winning announcement.",
+          "description": "Won the hackathon held at Nor-Shipping 2022 by DNV, Astrup Fearnley Group and Microsoft. This is the official announcement.",
           "img": {
             "alt": "",
             "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
           },
-          "title": "Nor-Shipping Hackathon 2022",
+          "title": "Nor-Shipping Hackathon",
           "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
         },
         {
@@ -61,7 +61,7 @@
           "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
         },
         {
-          "description": "An article describing our project at my first internship, and the impact of it, during the development of a new digital platform for Dissimilis' note scores.",
+          "description": "An article describing our project and the impact of it, as we developed a new digital platform for Dissimilis' note scores. This was my first internship as a Software Engineer.",
           "img": {
             "alt": "",
             "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
@@ -88,7 +88,7 @@
         ],
         "title": "PORTFOLIO"
       },
-      "title": "Computer engineer & Computer Science student"
+      "title": "Computer Engineer. Network builder. Tech enthusiast."
     },
     "projectView": {
       "buttonTexts": [
@@ -245,7 +245,7 @@
         },
         {
           "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen_CV_no.pdf?alt=media&token=dde90760-42e8-4418-9291-0a34d6d506f6"
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=651962dc-f236-4fd5-b98e-9da65abe7bfe"
         },
         {
           "copyText": "Telefonnummer kopiert til utklippstavlen!",
@@ -266,12 +266,12 @@
     "featuredInView": {
       "articles": [
         {
-          "description": "Vant hackathonet under Nor-Shipping 22, holdt av DNV, Astrup Fearnley Group og Microsoft. Dette er den offisielle vinnererklæringen.",
+          "description": "Vant hackathonet under Nor-Shipping 2022, holdt av DNV, Astrup Fearnley Group og Microsoft. Dette er den offisielle vinnererklæringen.",
           "img": {
             "alt": "Annonsering av vinnerne av Nor-Shipping Hackathon 2022",
             "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
           },
-          "title": "Nor-Shipping Hackathon 2022",
+          "title": "Nor-Shipping Hackathon",
           "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
         },
         {
@@ -311,7 +311,8 @@
         ],
         "title": "PORTEFØLJE"
       },
-      "title": "Dataingeniør & Datateknologi-student"
+      "title": "Dataingeniør. Nettverksbygger. Teknologientusiast.",
+      "titleMobile": "Data-ingeniør. Nettverks-bygger. Teknologi-entusiast."
     },
     "projectView": {
       "buttonTexts": [

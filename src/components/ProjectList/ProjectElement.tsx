@@ -1,10 +1,18 @@
 import { FC } from "react";
-import { Box, makeStyles, Grid, Typography, Hidden } from "@material-ui/core";
-import insertButtons from "../ProjectButtons/insertButtons";
+import {
+  Box,
+  makeStyles,
+  Grid,
+  Typography,
+  Hidden,
+  useMediaQuery,
+} from "@material-ui/core";
+import insertButtons from "../ProjectButtons/InsertButtons";
 import {
   ScrollTriggerLeft,
   ScrollTriggerRight,
 } from "../Animations/ScrollTrigger";
+import { useTheme } from "../../ThemeProvider";
 
 export type ProjectProps = {
   title: string;
@@ -31,12 +39,15 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
   const classes = useStyles(props);
   const paddingTitleDescription = 1.7;
   const showMarkers = process.env.REACT_APP_SHOW_GSAP_MARKERS === "true";
-  const animationStart = "-100px center";
-  const animationEnd = "50px center";
+  const { theme } = useTheme();
+  const mdUp = useMediaQuery(theme.breakpoints.up("md"));
+  const animationOffset = mdUp ? -300 : -50;
+  const animationStart = animationOffset + -250 + "px center";
+  const animationEnd = animationOffset + -100 + "px center";
 
   return (
     <>
-      <Grid container alignItems="center" justify="center">
+      <Grid container alignItems="center" justifyContent="center">
         {props.imgPosition === "left" ? (
           <>
             <Grid item xs={11} md={12}>
@@ -46,7 +57,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 start={animationStart}
                 end={animationEnd}
               >
-                <Grid container alignItems="center" justify="space-evenly">
+                <Grid
+                  container
+                  alignItems="center"
+                  justifyContent="space-evenly"
+                >
                   <Grid item xs={12} md={5} lg={6}>
                     <Box py={5}>
                       <img
@@ -82,7 +97,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 start={animationStart}
                 end={animationEnd}
               >
-                <Grid container alignItems="center" justify="space-evenly">
+                <Grid
+                  container
+                  alignItems="center"
+                  justifyContent="space-evenly"
+                >
                   <Hidden mdUp>
                     <Grid item xs={12} md={6}>
                       <Box py={5}>

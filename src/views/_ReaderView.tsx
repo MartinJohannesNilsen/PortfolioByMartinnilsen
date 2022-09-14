@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { ProjectProps } from "../components/ProjectList/ProjectElement";
-import { ArticleProps } from "./FeaturedInView";
+import { ArticleProps } from "../components/Cards/ArticleCard";
 
 type ReaderViewProps = {
   ids: string[];
@@ -83,8 +83,9 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
     <article
       style={{
         position: "absolute",
-        top: "-9999px !important",
-        left: "-9999px !important",
+        zIndex: -1,
+        // top: "-99999px !important",
+        // left: "-99999px !important",
       }}
     >
       <h2>Martin Johannes Nilsen | Portfolio</h2>
@@ -93,8 +94,8 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
       <h2>
         <span className="header">{props.ids[0]}</span>
       </h2>
-      {props.about.text.map((t) => (
-        <p>{t}</p>
+      {props.about.text.map((t, key) => (
+        <p key={key}>{t}</p>
       ))}
 
       {/* Projects */}
@@ -118,8 +119,8 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
       <h2>
         <span className="header">{props.featuredIn.title}</span>
       </h2>
-      {props.featuredIn.articles.map((t) => (
-        <>
+      {props.featuredIn.articles.map((t, key) => (
+        <div key={key}>
           <h4>
             <span className="header">{t.title}</span>
           </h4>
@@ -127,16 +128,16 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
           <a href={t.url} target="_blank">
             {props.featuredIn.readButtonText}
           </a>
-        </>
+        </div>
       ))}
 
       {/* Contact */}
       <h2>
         <span className="header">{props.ids[2]}</span>
       </h2>
-      {props.contact.text.map((t) => (
+      {props.contact.text.map((t, key) => (
         <>
-          <p>{t}</p>
+          <p key={key}>{t}</p>
         </>
       ))}
       {props.contact.links
@@ -145,10 +146,10 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
         .map((link, key) => {
           let elements = [];
           if (link.hasOwnProperty("copyText")) {
-            elements.push(<a>{link.value}</a>);
+            elements.push(<a key={key}>{link.value}</a>);
           } else {
             elements.push(
-              <a href={link.value} target="_blank">
+              <a href={link.value} key={key} target="_blank">
                 {link.text}
               </a>
             );

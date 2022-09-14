@@ -6,10 +6,10 @@ import {
   makeStyles,
   Tooltip,
   Typography,
+  useMediaQuery,
   Zoom,
 } from "@material-ui/core";
-import { Icon } from "@iconify/react";
-import caretDown from "@iconify-icons/carbon/caret-down";
+import { useTheme } from "../ThemeProvider";
 
 type ContactViewProps = {
   id: string;
@@ -30,6 +30,8 @@ const ContactView: FC<ContactViewProps> = (props) => {
   const [tooltipStates, setTooltipStates] = React.useState(
     Array(props.data.links.length).fill(false)
   );
+  const { theme } = useTheme();
+  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   const handleTooltipState = (newState: boolean, index: number) => {
     let tooltips = [...tooltipStates];
@@ -52,13 +54,12 @@ const ContactView: FC<ContactViewProps> = (props) => {
   return (
     <>
       <Box className={classes.root} textAlign="center" id={props.id}>
-        <Icon icon={caretDown} className={classes.backgroundTriangle} />
         <Box py={5} px={3} textAlign="left">
           <Box py={2} px={1}>
             <Typography
               variant="body1"
               color="textPrimary"
-              style={{ fontWeight: 600 }}
+              style={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
             >
               {props.data.text[0]}
             </Typography>
@@ -67,7 +68,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
             <Typography
               variant="body1"
               color="textPrimary"
-              style={{ fontWeight: 600 }}
+              style={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
             >
               {props.data.text[1]}
             </Typography>
