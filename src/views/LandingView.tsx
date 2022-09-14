@@ -249,7 +249,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   title: {
-    zIndex: 1000,
+    zIndex: 0,
     position: "absolute",
     top: 0,
     bottom: 0,
