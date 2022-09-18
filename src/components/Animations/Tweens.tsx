@@ -65,3 +65,17 @@ export const FadeInXY: React.FC<TweenProps> = (props) => {
     </Tween>
   );
 };
+
+export const FadeInSlowmo: React.FC<TweenProps> = (props) => {
+  const val = props.x || defaultFadeAmount;
+  return (
+    <Tween
+      from={{
+        opacity: 0,
+        transform: "translate3d(" + val + ", 0, 0)",
+      }}
+    >
+      {props.children}
+    </Tween>
+  );
+};

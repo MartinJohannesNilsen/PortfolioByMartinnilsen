@@ -74,12 +74,8 @@ export default AboutCard;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: theme.palette.error.main,
-    borderRadius: 50,
-    margin: "25% 0",
+    borderRadius: 35,
     padding: "3%",
     [theme.breakpoints.up("sm")]: {
       padding: "4%",
