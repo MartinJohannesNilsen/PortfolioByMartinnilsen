@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Typography } from "@material-ui/core";
 import { Icon } from "@iconify/react";
-import { ProjectElementProps, useStyles } from "../ProjectList/ProjectElement";
+import { ProjectElementProps, useStyles } from "./ProjectElement";
 import { useTheme } from "../../ThemeProvider";
 
 // Icons

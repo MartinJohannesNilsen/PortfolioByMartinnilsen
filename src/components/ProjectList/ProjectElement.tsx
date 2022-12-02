@@ -7,7 +7,7 @@ import {
   Hidden,
   useMediaQuery,
 } from "@material-ui/core";
-import insertButtons from "../ProjectButtons/InsertButtons";
+import insertButtons from "./InsertButtons";
 import {
   ScrollTriggerLeft,
   ScrollTriggerRight,
