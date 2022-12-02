@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/database";
+import "firebase/analytics";
 const config = {
   apiKey: process.env.REACT_APP_FIREBASE_apiKey,
   authDomain: process.env.REACT_APP_FIREBASE_authDomain,
@@ -8,6 +9,10 @@ const config = {
   storageBucket: process.env.REACT_APP_FIREBASE_storageBucket,
   messagingSenderId: process.env.REACT_APP_FIREBASE_messagingSenderId,
   appId: process.env.REACT_APP_FIREBASE_appId,
+  measurementId: process.env.REACT_APP_FIREBASE_measurementId,
 };
-let firebaseConfig = firebase.initializeApp(config);
-export default firebaseConfig;
+
+const firebaseApp = firebase.initializeApp(config);
+const db = firebase.database();
+const analytics = firebase.analytics();
+export { firebaseApp, db, analytics };
