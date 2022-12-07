@@ -33,6 +33,7 @@
 		"webpack": "^5.71.0"
 	},
 	"devDependencies": {
+		"@iconify-icons/ant-design": "^1.2.5",
 		"@iconify-icons/bi": "^1.1.5",
 		"@iconify-icons/carbon": "^1.1.4",
 		"@iconify-icons/cib": "^1.1.0",
