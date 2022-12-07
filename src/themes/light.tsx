@@ -1,9 +1,9 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme, adaptV4Theme } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
-export const light = createTheme({
+export const light = createTheme(adaptV4Theme({
   palette: {
-    type: "light",
+    mode: "light",
     text: {
       primary: "#000",
       secondary: "#FFF",
@@ -49,10 +49,10 @@ export const light = createTheme({
       fontSize: "5.5rem",
       fontWeight: 800,
       textShadow: "0 2px 1px #747474, -1px 3px 1px #767676",
-      [defaultTheme.breakpoints.down("md")]: {
+      [defaultTheme.breakpoints.down('lg')]: {
         fontSize: "4rem",
       },
-      [defaultTheme.breakpoints.down("xs")]: {
+      [defaultTheme.breakpoints.down('sm')]: {
         fontSize: "2.7rem",
       },
     },
@@ -64,7 +64,7 @@ export const light = createTheme({
     h4: {
       fontSize: "1.25rem",
       fontWeight: 800,
-      [defaultTheme.breakpoints.down("sm")]: {
+      [defaultTheme.breakpoints.down('md')]: {
         fontSize: "0.45rem",
         fontWeight: 800,
       },
@@ -124,5 +124,5 @@ export const light = createTheme({
     },
     caption: {},
   },
-});
+}));
 export default light;

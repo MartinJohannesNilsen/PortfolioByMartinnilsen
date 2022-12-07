@@ -1,12 +1,6 @@
 import { FC } from "react";
-import {
-  Box,
-  makeStyles,
-  Grid,
-  Typography,
-  Hidden,
-  useMediaQuery,
-} from "@material-ui/core";
+import { Box, Grid, Typography, Hidden, useMediaQuery } from "@mui/material";
+import { Image } from "mui-image";
 import insertButtons from "./InsertButtons";
 import {
   ScrollTriggerLeft,
@@ -36,7 +30,6 @@ export type ProjectElementProps = {
 };
 
 const ProjectElement: FC<ProjectElementProps> = (props) => {
-  const classes = useStyles(props);
   const paddingTitleDescription = 1.7;
   const showMarkers = process.env.REACT_APP_SHOW_GSAP_MARKERS === "true";
   const { theme } = useTheme();
@@ -64,9 +57,53 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 >
                   <Grid item xs={12} md={5} lg={6}>
                     <Box py={5}>
-                      <img
+                      <Image
                         src={props.projectData.img.path}
-                        className={classes.img}
+                        sx={{
+                          height: {
+                            sm:
+                              props.projectData.img.type === "portrait"
+                                ? "200px"
+                                : props.projectData.img.type === "square"
+                                ? "200px"
+                                : "default",
+                            md:
+                              props.projectData.img.type === "portrait"
+                                ? "250px"
+                                : props.projectData.img.type === "square"
+                                ? "250px"
+                                : "default",
+                            lg:
+                              props.projectData.img.type === "portrait"
+                                ? "340px"
+                                : props.projectData.img.type === "square"
+                                ? "320px"
+                                : "default",
+                          },
+                          width: {
+                            sm:
+                              props.projectData.img.type === "landscape"
+                                ? "220px"
+                                : props.projectData.img.type === "square"
+                                ? "200px"
+                                : "default",
+                            md:
+                              props.projectData.img.type === "landscape"
+                                ? "270px"
+                                : props.projectData.img.type === "square"
+                                ? "250px"
+                                : "default",
+                            lg:
+                              props.projectData.img.type === "landscape"
+                                ? "370px"
+                                : props.projectData.img.type === "square"
+                                ? "320px"
+                                : "default",
+                          },
+                          boxShadow: `-10px -10px 1px 0px ${"success.light"},
+                            -20px -20px 1px 0px ${"success.main"},
+                            -30px -30px 1px 0px ${"success.dark"}`,
+                        }}
                         alt={props.projectData.title}
                       />
                     </Box>
@@ -105,9 +142,53 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                   <Hidden mdUp>
                     <Grid item xs={12} md={6}>
                       <Box py={5}>
-                        <img
+                        <Image
                           src={props.projectData.img.path}
-                          className={classes.img}
+                          sx={{
+                            height: {
+                              sm:
+                                props.projectData.img.type === "portrait"
+                                  ? "200px"
+                                  : props.projectData.img.type === "square"
+                                  ? "200px"
+                                  : "default",
+                              md:
+                                props.projectData.img.type === "portrait"
+                                  ? "250px"
+                                  : props.projectData.img.type === "square"
+                                  ? "250px"
+                                  : "default",
+                              lg:
+                                props.projectData.img.type === "portrait"
+                                  ? "340px"
+                                  : props.projectData.img.type === "square"
+                                  ? "320px"
+                                  : "default",
+                            },
+                            width: {
+                              sm:
+                                props.projectData.img.type === "landscape"
+                                  ? "220px"
+                                  : props.projectData.img.type === "square"
+                                  ? "200px"
+                                  : "default",
+                              md:
+                                props.projectData.img.type === "landscape"
+                                  ? "270px"
+                                  : props.projectData.img.type === "square"
+                                  ? "250px"
+                                  : "default",
+                              lg:
+                                props.projectData.img.type === "landscape"
+                                  ? "370px"
+                                  : props.projectData.img.type === "square"
+                                  ? "320px"
+                                  : "default",
+                            },
+                            boxShadow: `10px -10px 1px 0px ${"success.light"},
+                              20px -20px 1px 0px ${"success.main"},
+                              30px -30px 1px 0px ${"success.dark"}`,
+                          }}
                           alt={props.projectData.title}
                         />
                       </Box>
@@ -126,12 +207,56 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     </Box>
                     <Box>{insertButtons(props)}</Box>
                   </Grid>
-                  <Hidden smDown>
+                  <Hidden mdDown>
                     <Grid item xs={12} md={5} lg={6}>
                       <Box py={10}>
-                        <img
+                        <Image
                           src={props.projectData.img.path}
-                          className={classes.img}
+                          sx={{
+                            height: {
+                              sm:
+                                props.projectData.img.type === "portrait"
+                                  ? "200px"
+                                  : props.projectData.img.type === "square"
+                                  ? "200px"
+                                  : "default",
+                              md:
+                                props.projectData.img.type === "portrait"
+                                  ? "250px"
+                                  : props.projectData.img.type === "square"
+                                  ? "250px"
+                                  : "default",
+                              lg:
+                                props.projectData.img.type === "portrait"
+                                  ? "340px"
+                                  : props.projectData.img.type === "square"
+                                  ? "320px"
+                                  : "default",
+                            },
+                            width: {
+                              sm:
+                                props.projectData.img.type === "landscape"
+                                  ? "220px"
+                                  : props.projectData.img.type === "square"
+                                  ? "200px"
+                                  : "default",
+                              md:
+                                props.projectData.img.type === "landscape"
+                                  ? "270px"
+                                  : props.projectData.img.type === "square"
+                                  ? "250px"
+                                  : "default",
+                              lg:
+                                props.projectData.img.type === "landscape"
+                                  ? "370px"
+                                  : props.projectData.img.type === "square"
+                                  ? "320px"
+                                  : "default",
+                            },
+                            boxShadow: `10px -10px 1px 0px ${"success.light"},
+                              20px -20px 1px 0px ${"success.main"},
+                              30px -30px 1px 0px ${"success.dark"}`,
+                          }}
                           alt={props.projectData.title}
                         />
                       </Box>
@@ -147,69 +272,3 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
   );
 };
 export default ProjectElement;
-
-export const useStyles = makeStyles((theme) => ({
-  root: {
-    height: "100%",
-  },
-  button: {
-    border: "2px solid " + theme.palette.text.primary,
-    borderRadius: "2px",
-    padding: "5px",
-    width: "40%",
-    margin: "30px 10px",
-    [theme.breakpoints.up("md")]: {
-      margin: "30px 15px",
-    },
-  },
-  img: {
-    height: (props: ProjectElementProps) =>
-      props.projectData.img.type === "portrait"
-        ? "200px"
-        : props.projectData.img.type === "square"
-        ? "200px"
-        : "default",
-    width: (props: ProjectElementProps) =>
-      props.projectData.img.type === "landscape"
-        ? "220px"
-        : props.projectData.img.type === "square"
-        ? "200px"
-        : "default",
-    boxShadow: (props: ProjectElementProps) =>
-      props.imgPosition === "right"
-        ? `10px -10px 1px 0px ${theme.palette.success.light},
-            20px -20px 1px 0px ${theme.palette.success.main},
-            30px -30px 1px 0px ${theme.palette.success.dark}`
-        : `-10px -10px 1px 0px ${theme.palette.success.light},
-            -20px -20px 1px 0px ${theme.palette.success.main},
-            -30px -30px 1px 0px ${theme.palette.success.dark}`,
-    [theme.breakpoints.up("md")]: {
-      height: (props: ProjectElementProps) =>
-        props.projectData.img.type === "portrait"
-          ? "250px"
-          : props.projectData.img.type === "square"
-          ? "250px"
-          : "default",
-      width: (props: ProjectElementProps) =>
-        props.projectData.img.type === "landscape"
-          ? "270px"
-          : props.projectData.img.type === "square"
-          ? "250px"
-          : "default",
-    },
-    [theme.breakpoints.up("lg")]: {
-      height: (props: ProjectElementProps) =>
-        props.projectData.img.type === "portrait"
-          ? "340px"
-          : props.projectData.img.type === "square"
-          ? "320px"
-          : "default",
-      width: (props: ProjectElementProps) =>
-        props.projectData.img.type === "landscape"
-          ? "370px"
-          : props.projectData.img.type === "square"
-          ? "320px"
-          : "default",
-    },
-  },
-}));

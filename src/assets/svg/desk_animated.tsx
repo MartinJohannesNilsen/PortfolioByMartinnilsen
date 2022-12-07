@@ -1,10 +1,7 @@
-const DeskSVGInline = (props: {
-  classes: { desk: string | undefined };
-  style: {};
-}) => {
+const DeskSVGInline = (props: { className: string | undefined; style: {} }) => {
   return (
     <svg
-      className={props.classes.desk}
+      className={props.className}
       style={props.style}
       version="1.1"
       viewBox="0 0 841.995 595.35"

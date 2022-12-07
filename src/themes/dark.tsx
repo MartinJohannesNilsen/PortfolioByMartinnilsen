@@ -1,9 +1,9 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme, adaptV4Theme } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
-export const dark = createTheme({
+export const dark = createTheme(adaptV4Theme({
   palette: {
-    type: "dark",
+    mode: "dark",
     text: {
       primary: "#FFF",
       secondary: "#000",
@@ -52,10 +52,10 @@ export const dark = createTheme({
       textShadow:
         "0px 15px 5px rgba(0,0,0,0.1), 10px 20px 5px rgba(0,0,0,0.05),-10px 20px 5px rgba(0,0,0,0.05)",
       fontWeight: 800,
-      [defaultTheme.breakpoints.down("md")]: {
+      [defaultTheme.breakpoints.down('lg')]: {
         fontSize: "4rem",
       },
-      [defaultTheme.breakpoints.down("xs")]: {
+      [defaultTheme.breakpoints.down('sm')]: {
         fontSize: "2.7rem",
       },
     },
@@ -67,7 +67,7 @@ export const dark = createTheme({
     h4: {
       fontSize: "1.25rem",
       fontWeight: 800,
-      [defaultTheme.breakpoints.down("sm")]: {
+      [defaultTheme.breakpoints.down('md')]: {
         fontSize: "0.45rem",
         fontWeight: 800,
       },
@@ -127,5 +127,5 @@ export const dark = createTheme({
     },
     caption: {},
   },
-});
+}));
 export default dark;

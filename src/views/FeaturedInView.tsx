@@ -1,11 +1,5 @@
 import { FC, useState } from "react";
-import {
-  Box,
-  makeStyles,
-  Typography,
-  Grid,
-  useMediaQuery,
-} from "@material-ui/core";
+import { Box, Typography, Grid, useMediaQuery } from "@mui/material";
 import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
 import useDidUpdate from "../utils/useDidUpdate";
 import { gsap } from "gsap";
@@ -26,7 +20,6 @@ type FeaturedInViewProps = {
 };
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
-  const classes = useStyles();
   const [cardsState, setCardsState] = useState(
     Array(props.data.articles.length).fill({
       hovered: false,
@@ -61,18 +54,32 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
 
   return (
     <Box
-      className={classes.root}
+      sx={{
+        backgroundColor: "secondary.main",
+        position: "relative",
+      }}
       textAlign="center"
       id={props.id}
       px={xs ? 4 : sm ? 4 : md ? 8 : 0}
       pb={8}
     >
       <Box pt={4} pb={3}>
-        <Typography variant="h3" className={classes.title}>
+        <Typography
+          variant="h3"
+          sx={{
+            color: "error.main",
+          }}
+        >
           {props.data.title}
         </Typography>
       </Box>
-      <Grid container justifyContent="center" className={classes.height}>
+      <Grid
+        container
+        justifyContent="center"
+        sx={{
+          height: "100%",
+        }}
+      >
         {props.data.articles.map((article, index) => (
           <ScrollTriggerUp
             x="10vh"
@@ -110,16 +117,3 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   );
 };
 export default FeaturedInView;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.secondary.main,
-    position: "relative",
-  },
-  title: {
-    color: theme.palette.error.main,
-  },
-  height: {
-    height: "100%",
-  },
-}));

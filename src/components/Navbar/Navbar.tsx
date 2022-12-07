@@ -2,7 +2,6 @@ import { FC, useEffect, useRef } from "react";
 import {
   Grid,
   Box,
-  makeStyles,
   Typography,
   AppBar,
   Toolbar,
@@ -10,7 +9,7 @@ import {
   ButtonBase,
   Button,
   useMediaQuery,
-} from "@material-ui/core";
+} from "@mui/material";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
 import { Icon } from "@iconify/react";
@@ -41,7 +40,6 @@ export const handleScroll = (name: string) => {
 };
 
 export const Navbar: FC<NavbarProps> = (props) => {
-  const classes = useStyles();
   const { theme, setTheme } = useTheme();
 
   let ref: any = useRef(null);
@@ -56,11 +54,24 @@ export const Navbar: FC<NavbarProps> = (props) => {
   };
 
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
-  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const smDown = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static" className={classes.root}>
-      <Toolbar className={classes.root}>
+    <AppBar
+      position="static"
+      sx={{
+        zIndex: 2,
+        height: "80px",
+        backgroundColor: "primary.main",
+      }}
+    >
+      <Toolbar
+        sx={{
+          zIndex: 2,
+          height: "80px",
+          backgroundColor: "primary.main",
+        }}
+      >
         <Grid
           container
           alignItems="flex-end"
@@ -70,24 +81,37 @@ export const Navbar: FC<NavbarProps> = (props) => {
           <Grid item md={3}>
             <Typography
               variant="h2"
-              className={classes.mainLink}
+              sx={{
+                color: "error.main",
+              }}
               style={smDown ? { marginLeft: 40 } : { marginTop: -41.5 }}
             >
               {props.data.title}
             </Typography>
           </Grid>
-          <Hidden smDown>
+          <Hidden mdDown>
             <Grid container item md={9} lg={6} justifyContent="flex-end">
               {props.data.sections.map((title: string, index: number) => (
                 <Box mx={2} key={index}>
                   <Button
-                    classes={{ text: classes.buttonText }}
+                    sx={{
+                      "& MuiButton-text": {
+                        textTransform: "none",
+                        "&:hover": {
+                          backgroundColor: "transparent",
+                        },
+                      },
+                    }}
                     onClick={() => handleScroll(title)}
                   >
                     <Typography
                       variant="h4"
                       color="textPrimary"
-                      className={classes.buttonLabel}
+                      sx={{
+                        "&:hover": {
+                          color: "error.main",
+                        },
+                      }}
                     >
                       {title}
                     </Typography>
@@ -108,13 +132,16 @@ export const Navbar: FC<NavbarProps> = (props) => {
                         ? flagUnitedKingdom
                         : flagNorway
                     }
-                    className={classes.icon}
+                    style={{
+                      height: "45px",
+                      width: "45px",
+                    }}
                   />
                 </ButtonBase>
               </Box>
               <Box ml={0.5} mt={0}>
                 <Switch
-                  checked={theme.palette.type === "light"}
+                  checked={theme.palette.mode === "light"}
                   onChange={handleThemeChange}
                 />
               </Box>
@@ -129,29 +156,3 @@ export const Navbar: FC<NavbarProps> = (props) => {
   );
 };
 export default Navbar;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    zIndex: 2,
-    height: "80px",
-    backgroundColor: theme.palette.primary.main,
-  },
-  mainLink: {
-    color: theme.palette.error.main,
-  },
-  icon: {
-    height: "45px",
-    width: "45px",
-  },
-  buttonText: {
-    textTransform: "none",
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-  },
-  buttonLabel: {
-    "&:hover": {
-      color: theme.palette.error.main,
-    },
-  },
-}));

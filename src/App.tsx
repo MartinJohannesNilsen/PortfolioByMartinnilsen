@@ -1,6 +1,6 @@
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline, StyledEngineProvider } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
-import ThemeProvider from "./ThemeProvider";
+import CustomThemeProvider from "./ThemeProvider";
 import useStickyState from "./utils/useStickyState";
 import fetchDataFromDB from "./utils/fetchDataFromDB";
 import { ProjectProps } from "./components/ProjectList/ProjectElement";
@@ -53,54 +53,56 @@ const App = () => {
   }, [data]);
 
   return (
-    <ThemeProvider>
-      <CssBaseline />
-      {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
-      <ReaderView
-        ids={[
-          data.landingView.navbar.sections[0],
-          data.landingView.navbar.sections[1],
-          data.landingView.navbar.sections[2],
-        ]}
-        about={data.aboutView}
-        projects={data.projectView}
-        contact={data.contactView}
-        featuredIn={data.featuredInView}
-      />
-      <LandingView
-        data={data.landingView}
-        language={language}
-        setLanguage={setLanguage}
-      />
-      <AboutView
-        id={data.landingView.navbar.sections[0]}
-        data={data.aboutView}
-      />
-      {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
-        ? preloadImgs(
-            data.projectView.projects
-              .slice()
-              .reverse()
-              .map((project: ProjectProps) => {
-                return project.img.path;
-              })
-          )
-        : ""}
-      <ProjectView
-        id={data.landingView.navbar.sections[1]}
-        data={data.projectView}
-        triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
-      />
-      <FeaturedInView
-        id={"None"}
-        data={data.featuredInView}
-        refreshScrollTriggers={refreshScrollTriggers}
-      />
-      <ContactView
-        id={data.landingView.navbar.sections[2]}
-        data={data.contactView}
-      />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <CustomThemeProvider>
+        <CssBaseline />
+        {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
+        <ReaderView
+          ids={[
+            data.landingView.navbar.sections[0],
+            data.landingView.navbar.sections[1],
+            data.landingView.navbar.sections[2],
+          ]}
+          about={data.aboutView}
+          projects={data.projectView}
+          contact={data.contactView}
+          featuredIn={data.featuredInView}
+        />
+        <LandingView
+          data={data.landingView}
+          language={language}
+          setLanguage={setLanguage}
+        />
+        <AboutView
+          id={data.landingView.navbar.sections[0]}
+          data={data.aboutView}
+        />
+        {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
+          ? preloadImgs(
+              data.projectView.projects
+                .slice()
+                .reverse()
+                .map((project: ProjectProps) => {
+                  return project.img.path;
+                })
+            )
+          : ""}
+        <ProjectView
+          id={data.landingView.navbar.sections[1]}
+          data={data.projectView}
+          triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
+        />
+        <FeaturedInView
+          id={"None"}
+          data={data.featuredInView}
+          refreshScrollTriggers={refreshScrollTriggers}
+        />
+        <ContactView
+          id={data.landingView.navbar.sections[2]}
+          data={data.contactView}
+        />
+      </CustomThemeProvider>
+    </StyledEngineProvider>
   );
 };
 

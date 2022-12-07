@@ -5,10 +5,11 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 
 ReactDOM.render(
-  // <React.StrictMode> //Interferes with themeprovider
-  // https://stackoverflow.com/questions/62935784/material-ui-unchanged-colors-when-switching-back-and-forth-between-themes
-  <App />,
-  // </React.StrictMode>
+  //Interferes with themeprovider
+  //https://stackoverflow.com/questions/62935784/material-ui-unchanged-colors-when-switching-back-and-forth-between-themes
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

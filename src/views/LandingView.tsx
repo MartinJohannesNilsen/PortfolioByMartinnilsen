@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef } from "react";
-import { Box, makeStyles, Typography, useMediaQuery } from "@material-ui/core";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import Navbar from "../components/Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
 import { useTheme } from "../ThemeProvider";
@@ -33,7 +33,6 @@ type svgProps = {
 };
 
 const LandingView: FC<LandingViewProps> = (props) => {
-  const classes = useStyles();
   const { theme } = useTheme();
 
   let titleRef: any = useRef(null);
@@ -135,7 +134,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
       "-=2.0"
     );
 
-    if (theme.palette.type === "dark") {
+    if (theme.palette.mode === "dark") {
       tl.from(svgElements.lamp_light, {
         duration: 0.15,
         opacity: 0,
@@ -154,7 +153,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
   }
 
   useDidUpdate(() => {
-    if (theme.palette.type === "dark") {
+    if (theme.palette.mode === "dark") {
       document.getElementById("lamp_light")!.style.display = "block";
       let tl = gsap.timeline();
       tl.from("#lamp_light", {
@@ -173,7 +172,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
     } else {
       document.getElementById("lamp_light")!.style.display = "none";
     }
-  }, [theme.palette.type]);
+  }, [theme.palette.mode]);
 
   useEffect(() => {
     animateIn({
@@ -192,7 +191,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
 
   const xl = useMediaQuery(theme.breakpoints.only("xl"));
   const lg = useMediaQuery(theme.breakpoints.only("lg"));
-  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const smDown = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box>
@@ -201,19 +200,41 @@ const LandingView: FC<LandingViewProps> = (props) => {
         language={props.language}
         setLanguage={props.setLanguage}
       />
-      <Box className={classes.root}>
+      <Box
+        sx={{
+          height: "calc(100vh - 80px)",
+          minHeight: "600px",
+          backgroundColor: "primary.main",
+          position: "relative",
+          textAlign: "center",
+        }}
+      >
         <DeskSVGInline
-          classes={classes}
+          className={"desksvginline"}
           style={{
             width: xl ? "70%" : lg ? "85%" : "100%",
             marginLeft: xl ? "15%" : lg ? "7.5%" : "0%",
+            position: "absolute",
+            bottom: 0,
+            top: "auto",
+            zIndex: 0,
+            left: 0,
+            right: 0,
+            textAlign: "center",
           }}
         />
         <div ref={(el) => (titleRef = el)}>
           <Typography
             variant="h1"
             color="textPrimary"
-            className={classes.title}
+            sx={{
+              zIndex: 0,
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+            }}
             style={{ padding: "20vh 30px 30vh 30px", whiteSpace: "pre-line" }}
           >
             {smDown
@@ -230,30 +251,3 @@ const LandingView: FC<LandingViewProps> = (props) => {
   );
 };
 export default LandingView;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: "calc(100vh - 80px)",
-    minHeight: "600px",
-    backgroundColor: theme.palette.primary.main,
-    position: "relative",
-    textAlign: "center",
-  },
-  desk: {
-    position: "absolute",
-    bottom: 0,
-    top: "auto",
-    zIndex: 0,
-    left: 0,
-    right: 0,
-    textAlign: "center",
-  },
-  title: {
-    zIndex: 0,
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-}));

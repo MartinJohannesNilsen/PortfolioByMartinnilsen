@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { Box, makeStyles, Grid, Button, Typography } from "@material-ui/core";
+import { Box, Grid, Button, Typography } from "@mui/material";
 import ProjectElement, { ProjectProps } from "./ProjectElement";
+import { useTheme } from "../../ThemeProvider";
 
 type ProjectListProps = {
   projects: ProjectProps[];
@@ -11,11 +12,11 @@ type ProjectListProps = {
 };
 
 export const ProjectList: FC<ProjectListProps> = (props) => {
-  const classes = useStyles();
+  const { theme } = useTheme();
 
   return (
     <>
-      <Box pt={10} className={classes.root}>
+      <Box pt={10} sx={{ minHeight: "100%" }}>
         <Grid container justifyContent="center">
           {props.projects
             .slice(props.projects.length - props.numShowing)
@@ -35,7 +36,9 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
         <Box pb={8} pt={4}>
           {props.numShowing < props.projects.length ? (
             <Button
-              className={classes.button}
+              sx={{
+                border: "2px solid " + theme.palette.text.primary,
+              }}
               onClick={() =>
                 props.setNumShowing(
                   props.numShowing + props.numIncrease < props.projects.length
@@ -59,12 +62,3 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
   );
 };
 export default ProjectList;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: "100%",
-  },
-  button: {
-    border: "2px solid " + theme.palette.text.primary,
-  },
-}));

@@ -3,12 +3,11 @@ import {
   Box,
   Button,
   ClickAwayListener,
-  makeStyles,
   Tooltip,
   Typography,
   useMediaQuery,
   Zoom,
-} from "@material-ui/core";
+} from "@mui/material";
 import { useTheme } from "../ThemeProvider";
 
 type ContactViewProps = {
@@ -26,7 +25,6 @@ type ContactViewProps = {
 };
 
 const ContactView: FC<ContactViewProps> = (props) => {
-  const classes = useStyles();
   const [tooltipStates, setTooltipStates] = React.useState(
     Array(props.data.links.length).fill(false)
   );
@@ -44,7 +42,9 @@ const ContactView: FC<ContactViewProps> = (props) => {
       <Typography
         variant="button"
         color="textPrimary"
-        className={classes.bullet}
+        sx={{
+          margin: "0 5px",
+        }}
       >
         •
       </Typography>
@@ -53,7 +53,14 @@ const ContactView: FC<ContactViewProps> = (props) => {
 
   return (
     <>
-      <Box className={classes.root} textAlign="center" id={props.id}>
+      <Box
+        sx={{
+          backgroundColor: "primary.main",
+          position: "relative",
+        }}
+        textAlign="center"
+        id={props.id}
+      >
         <Box py={5} px={3} textAlign="left">
           <Box py={2} px={1}>
             <Typography
@@ -86,13 +93,15 @@ const ContactView: FC<ContactViewProps> = (props) => {
                       placement="top"
                       PopperProps={{
                         disablePortal: true,
+                        sx: {
+                          maxWidth: 400,
+                        },
                       }}
                       onClose={() => handleTooltipState(false, key)}
                       open={tooltipStates[key]}
                       disableFocusListener
                       disableHoverListener
                       disableTouchListener
-                      classes={{ tooltip: classes.tooltipWidth }}
                       TransitionComponent={Zoom}
                       title={
                         <Typography variant="overline" color="inherit">
@@ -134,23 +143,3 @@ const ContactView: FC<ContactViewProps> = (props) => {
   );
 };
 export default ContactView;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.primary.main,
-    position: "relative",
-  },
-  backgroundTriangle: {
-    color: theme.palette.secondary.main,
-    position: "absolute",
-    margin: "-45px",
-    height: "100px",
-    width: "100px",
-  },
-  bullet: {
-    margin: "0 5px",
-  },
-  tooltipWidth: {
-    maxWidth: 400,
-  },
-}));

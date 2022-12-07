@@ -1,7 +1,6 @@
 import { FC } from "react";
 import {
   Box,
-  makeStyles,
   Typography,
   Card,
   CardContent,
@@ -11,7 +10,7 @@ import {
   ClickAwayListener,
   Tooltip,
   Zoom,
-} from "@material-ui/core";
+} from "@mui/material";
 
 export type ArticleProps = {
   title: string;
@@ -39,13 +38,27 @@ type ArticleCardProps = {
 };
 
 export const ArticleCard: FC<ArticleCardProps> = (props) => {
-  const classes = useStyles();
-
   return (
     <Card
-      className={classes.card}
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        borderRadius: 5,
+        padding: { xs: "5%", sm: "4%", lg: "6%" },
+        "& .MuiCard-root": {
+          transform: "scale3d(1.05, 1.05, 1)",
+          transition: "transform 150ms ease-in-out",
+        },
+      }}
       classes={{
-        root: props.cardsState[props.index]?.hovered ? classes.cardHovered : "",
+        root: "",
+        ...(props.cardsState[props.index]?.hovered
+          ? {
+              transform: "scale3d(1.05, 1.05, 1)",
+              transition: "transform 150ms ease-in-out",
+            }
+          : ""),
       }}
       onMouseEnter={() =>
         props.handleHover(props.index, { hovered: true, shadow: 3 })
@@ -56,7 +69,12 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
       raised={props.cardsState[props.index]?.hovered}
     >
       <CardMedia
-        className={classes.media}
+        sx={{
+          height: "160px",
+          width: "100%",
+          borderRadius: 5,
+          margin: "-0%",
+        }}
         image={props.article.img.path}
         title={props.article.img.alt}
       />
@@ -66,7 +84,9 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
             gutterBottom
             variant="subtitle2"
             color="textPrimary"
-            className={classes.cardTitle}
+            sx={{
+              textAlign: "left",
+            }}
           >
             {props.article.title}
           </Typography>
@@ -74,7 +94,9 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
             variant="body2"
             color="textPrimary"
             component="p"
-            className={classes.cardText}
+            sx={{
+              textAlign: "justify",
+            }}
           >
             {props.article.description}
           </Typography>
@@ -98,13 +120,15 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
               placement="top"
               PopperProps={{
                 disablePortal: true,
+                sx: {
+                  maxWidth: 400,
+                },
               }}
               onClose={() => props.handleTooltipState(false, props.index)}
               open={props.cardsState[props.index]?.openTooltip}
               disableFocusListener
               disableHoverListener
               disableTouchListener
-              classes={{ tooltip: classes.tooltipWidth }}
               TransitionComponent={Zoom}
               title={
                 <Typography variant="overline" color="inherit">
@@ -130,38 +154,3 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
   );
 };
 export default ArticleCard;
-
-const useStyles = makeStyles((theme) => ({
-  media: {
-    height: "160px",
-    width: "100%",
-    borderRadius: 5,
-    margin: "-0%",
-  },
-  cardTitle: {
-    textAlign: "left",
-  },
-  cardText: {
-    textAlign: "justify",
-  },
-  cardHovered: {
-    transform: "scale3d(1.05, 1.05, 1)",
-    transition: "transform 150ms ease-in-out",
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    borderRadius: 20,
-    padding: "5%",
-    [theme.breakpoints.up("sm")]: {
-      padding: "4%",
-    },
-    [theme.breakpoints.up("lg")]: {
-      padding: "6%",
-    },
-  },
-  tooltipWidth: {
-    maxWidth: 400,
-  },
-}));

@@ -1,11 +1,5 @@
 import { FC } from "react";
-import {
-  Box,
-  makeStyles,
-  Typography,
-  Card,
-  CardContent,
-} from "@material-ui/core";
+import { Box, Typography, Card, CardContent } from "@mui/material";
 
 type AboutCardProps = {
   id: string;
@@ -27,10 +21,14 @@ export const getAge = (dateString: string) => {
 };
 
 const AboutCard: FC<AboutCardProps> = (props) => {
-  const classes = useStyles();
-
   return (
-    <Card className={classes.card}>
+    <Card
+      sx={{
+        backgroundColor: "error.main",
+        borderRadius: 15,
+        padding: { xs: "3%", sm: "4%", lg: "6%" },
+      }}
+    >
       <CardContent>
         <Box textAlign="left">
           <Typography variant="h2" color="textPrimary" itemProp="description">
@@ -71,17 +69,3 @@ const AboutCard: FC<AboutCardProps> = (props) => {
   );
 };
 export default AboutCard;
-
-const useStyles = makeStyles((theme) => ({
-  card: {
-    backgroundColor: theme.palette.error.main,
-    borderRadius: 35,
-    padding: "3%",
-    [theme.breakpoints.up("sm")]: {
-      padding: "4%",
-    },
-    [theme.breakpoints.up("lg")]: {
-      padding: "6%",
-    },
-  },
-}));

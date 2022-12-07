@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
-import { Box, makeStyles, Typography } from "@material-ui/core";
+import { Box, Typography } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
 import { NavbarProps } from "./Navbar";
@@ -30,7 +31,7 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
             <Typography
               variant="h4"
               color={
-                theme.palette.type === "light" ? "textPrimary" : "textSecondary"
+                theme.palette.mode === "light" ? "textPrimary" : "textSecondary"
               }
             >
               {item}
@@ -79,7 +80,7 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
             <InlineIcon icon={darkTheme24Filled} className={classes.icon} />
           }
           onClick={() => {
-            theme.palette.type === "light"
+            theme.palette.mode === "light"
               ? setTheme(ThemeEnum.Dark)
               : setTheme(ThemeEnum.Light);
           }}
