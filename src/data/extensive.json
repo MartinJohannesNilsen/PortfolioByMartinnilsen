@@ -21,7 +21,7 @@
         },
         {
           "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=651962dc-f236-4fd5-b98e-9da65abe7bfe"
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
         },
         {
           "copyText": "Telephone number copied to clipboard!",
@@ -192,7 +192,7 @@
         {
           "description": "Command Line Interface for setting up a LaTeX report based on a template with the most used packages already included, BibTeX referencing correctly configured and a title page automatically created. Use less time configuring LaTeX, and more time writing the actual report.",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FsetupLatex.png?alt=media&token=92fb4997-c35b-4f1b-95d5-e5ef1d9ecd9a",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FSetupLaTeX.png?alt=media&token=03a6db1e-3ccf-4ebf-a99c-c5f6b22dc1fc",
             "type": "landscape"
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/SetupLaTeX",
@@ -243,7 +243,7 @@
         },
         {
           "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=651962dc-f236-4fd5-b98e-9da65abe7bfe"
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
         },
         {
           "copyText": "Telefonnummer kopiert til utklippstavlen!",
@@ -415,7 +415,7 @@
         {
           "description": "Et kommandolinjeverktøy for å sette opp en LaTeX rapport basert på en mal, med automatisk oppsett av nødvendige pakker, BibTeX referanseoppsett og tittelside. Bruk mer tid på å skrive rapporten, og mindre tid på sette den opp.",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FsetupLatex.png?alt=media&token=92fb4997-c35b-4f1b-95d5-e5ef1d9ecd9a",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FSetupLaTeX.png?alt=media&token=03a6db1e-3ccf-4ebf-a99c-c5f6b22dc1fc",
             "type": "landscape"
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/SetupLaTeX",
