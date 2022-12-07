@@ -11,6 +11,7 @@ import {
   Tooltip,
   Zoom,
 } from "@mui/material";
+import { useTheme } from "../../ThemeProvider";
 
 export type ArticleProps = {
   title: string;
@@ -38,18 +39,23 @@ type ArticleCardProps = {
 };
 
 export const ArticleCard: FC<ArticleCardProps> = (props) => {
+  const { theme, setTheme } = useTheme();
   return (
     <Card
       sx={{
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        borderRadius: 5,
+        borderRadius: 4,
         padding: { xs: "5%", sm: "4%", lg: "6%" },
-        "& .MuiCard-root": {
+        "&:hover": {
           transform: "scale3d(1.05, 1.05, 1)",
           transition: "transform 150ms ease-in-out",
         },
+        background:
+          theme.palette.mode === "dark"
+            ? "linear-gradient(115deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)"
+            : "default",
       }}
       classes={{
         root: "",
@@ -71,9 +77,9 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
       <CardMedia
         sx={{
           height: "160px",
-          width: "100%",
-          borderRadius: 5,
-          margin: "-0%",
+          width: { sm: "95%", md: "100%" },
+          borderRadius: 4,
+          margin: "10px auto",
         }}
         image={props.article.img.path}
         title={props.article.img.alt}

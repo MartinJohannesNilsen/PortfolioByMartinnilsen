@@ -58,9 +58,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                   <Grid item xs={12} md={5} lg={6}>
                     <Box py={5}>
                       <Image
+                        duration={0}
                         src={props.projectData.img.path}
                         sx={{
-                          height: {
+                          margin: { lg: "0 30px 0 0" },
+                          maxHeight: {
                             sm:
                               props.projectData.img.type === "portrait"
                                 ? "200px"
@@ -80,7 +82,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                 ? "320px"
                                 : "default",
                           },
-                          width: {
+                          maxWidth: {
                             sm:
                               props.projectData.img.type === "landscape"
                                 ? "220px"
@@ -100,9 +102,9 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                 ? "320px"
                                 : "default",
                           },
-                          boxShadow: `-10px -10px 1px 0px ${"success.light"},
-                            -20px -20px 1px 0px ${"success.main"},
-                            -30px -30px 1px 0px ${"success.dark"}`,
+                          boxShadow: `-10px -10px 1px 0px ${theme.palette.success.light},
+                            -20px -20px 1px 0px ${theme.palette.success.main},
+                            -30px -30px 1px 0px ${theme.palette.success.dark}`,
                         }}
                         alt={props.projectData.title}
                       />
@@ -143,51 +145,25 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     <Grid item xs={12} md={6}>
                       <Box py={5}>
                         <Image
+                          duration={0}
                           src={props.projectData.img.path}
                           sx={{
-                            height: {
-                              sm:
-                                props.projectData.img.type === "portrait"
-                                  ? "200px"
-                                  : props.projectData.img.type === "square"
-                                  ? "200px"
-                                  : "default",
-                              md:
-                                props.projectData.img.type === "portrait"
-                                  ? "250px"
-                                  : props.projectData.img.type === "square"
-                                  ? "250px"
-                                  : "default",
-                              lg:
-                                props.projectData.img.type === "portrait"
-                                  ? "340px"
-                                  : props.projectData.img.type === "square"
-                                  ? "320px"
-                                  : "default",
-                            },
-                            width: {
-                              sm:
-                                props.projectData.img.type === "landscape"
-                                  ? "220px"
-                                  : props.projectData.img.type === "square"
-                                  ? "200px"
-                                  : "default",
-                              md:
-                                props.projectData.img.type === "landscape"
-                                  ? "270px"
-                                  : props.projectData.img.type === "square"
-                                  ? "250px"
-                                  : "default",
-                              lg:
-                                props.projectData.img.type === "landscape"
-                                  ? "370px"
-                                  : props.projectData.img.type === "square"
-                                  ? "320px"
-                                  : "default",
-                            },
-                            boxShadow: `10px -10px 1px 0px ${"success.light"},
-                              20px -20px 1px 0px ${"success.main"},
-                              30px -30px 1px 0px ${"success.dark"}`,
+                            maxHeight:
+                              props.projectData.img.type === "portrait"
+                                ? "200px"
+                                : props.projectData.img.type === "square"
+                                ? "200px"
+                                : "default",
+
+                            maxWidth:
+                              props.projectData.img.type === "landscape"
+                                ? "220px"
+                                : props.projectData.img.type === "square"
+                                ? "200px"
+                                : "default",
+                            boxShadow: `10px -10px 1px 0px ${theme.palette.success.light},
+                              20px -20px 1px 0px ${theme.palette.success.main},
+                              30px -30px 1px 0px ${theme.palette.success.dark}`,
                           }}
                           alt={props.projectData.title}
                         />
@@ -211,9 +187,12 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     <Grid item xs={12} md={5} lg={6}>
                       <Box py={10}>
                         <Image
+                          duration={0}
+                          width="85%"
                           src={props.projectData.img.path}
                           sx={{
-                            height: {
+                            margin: { lg: "0 30px 0 60px" },
+                            maxHeight: {
                               sm:
                                 props.projectData.img.type === "portrait"
                                   ? "200px"
@@ -233,7 +212,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                   ? "320px"
                                   : "default",
                             },
-                            width: {
+                            maxWidth: {
                               sm:
                                 props.projectData.img.type === "landscape"
                                   ? "220px"
@@ -253,9 +232,9 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                   ? "320px"
                                   : "default",
                             },
-                            boxShadow: `10px -10px 1px 0px ${"success.light"},
-                              20px -20px 1px 0px ${"success.main"},
-                              30px -30px 1px 0px ${"success.dark"}`,
+                            boxShadow: `10px -10px 1px 0px ${theme.palette.success.light},
+                              20px -20px 1px 0px ${theme.palette.success.main},
+                              30px -30px 1px 0px ${theme.palette.success.dark}`,
                           }}
                           alt={props.projectData.title}
                         />

@@ -1,108 +1,141 @@
 import { FC, useState } from "react";
-import { Box, Typography } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import { SpeedDial, SpeedDialAction, SxProps } from "@mui/material";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
 import { NavbarProps } from "./Navbar";
 import { Icon, InlineIcon } from "@iconify/react";
-import menuIcon from "@iconify-icons/gridicons/menu";
-import closeOutlined from "@iconify-icons/ant-design/close-outlined";
 import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import darkTheme24Filled from "@iconify-icons/fluent/dark-theme-24-filled";
-import {
-  FloatingMenu,
-  MainButton,
-  ChildButton,
-} from "react-floating-button-menu";
+
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+import ArtTrackOutlinedIcon from "@mui/icons-material/ArtTrackOutlined";
+import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaicOutlined";
+import ModeNightOutlinedIcon from "@mui/icons-material/ModeNightOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+
 import { handleScroll } from "./Navbar";
 
 export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
-  const classes = useStyles();
   const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState<boolean>(false);
+
+  const menuIconStyle: SxProps = {
+    height: "35px",
+    width: "35px",
+    color: theme.palette.text.primary,
+  };
+
+  const actionIconStyle: SxProps = {
+    height: "35px",
+    width: "35px",
+    color: theme.palette.text.primary,
+  };
+
+  const actionDialStyle: SxProps = {
+    height: "45px",
+    width: "45px",
+    color: "black",
+  };
 
   const getItemList: Function = (list: any[]): JSX.Element[] =>
     list.map((item: any, i: number) => {
       return (
-        <ChildButton
+        <SpeedDialAction
           key={i}
           icon={
-            <Typography
-              variant="h4"
-              color={
-                theme.palette.mode === "light" ? "textPrimary" : "textSecondary"
-              }
-            >
-              {item}
-            </Typography>
+            i === 0 ? (
+              <PersonOutlineOutlinedIcon sx={actionIconStyle} />
+            ) : i === 1 ? (
+              <AutoAwesomeMosaicOutlinedIcon sx={actionIconStyle} />
+            ) : (
+              <ContactPageOutlinedIcon sx={actionIconStyle} />
+            )
           }
           onClick={() => {
             handleScroll(item);
             setOpen(false);
           }}
-          size={52}
-          background={"white"}
+          sx={actionDialStyle}
+          tooltipTitle={
+            props.language === "english"
+              ? 'Go to the section "' + item.toLowerCase() + '"'
+              : 'Gå til seksjonen "' + item.toLowerCase() + '"'
+          }
         />
       );
     });
 
   return (
-    <Box className={classes.root}>
-      <FloatingMenu slideSpeed={500} spacing={8} isOpen={open}>
-        <MainButton
-          iconResting={<Icon icon={menuIcon} className={classes.icon} />}
-          iconActive={<Icon icon={closeOutlined} className={classes.icon} />}
-          onClick={() => setOpen(!open)}
-          background={"white"}
-          size={64}
-        />
-        {getItemList(props.data.sections)}
-        <ChildButton
-          icon={
-            <Icon
-              icon={
-                props.language === "english" ? flagUnitedKingdom : flagNorway
-              }
-              className={classes.icon}
-            />
-          }
-          onClick={() => {
-            props.language === "english"
-              ? props.setLanguage("norwegian")
-              : props.setLanguage("english");
-          }}
-          size={48}
-          background={"white"}
-        />
-        <ChildButton
-          icon={
-            <InlineIcon icon={darkTheme24Filled} className={classes.icon} />
-          }
-          onClick={() => {
-            theme.palette.mode === "light"
-              ? setTheme(ThemeEnum.Dark)
-              : setTheme(ThemeEnum.Light);
-          }}
-          size={48}
-          background={"white"}
-        />
-      </FloatingMenu>
-    </Box>
+    <SpeedDial
+      ariaLabel="Menu for smaller screens"
+      sx={{
+        position: "fixed",
+        right: "8px",
+        top: "8px",
+        zIndex: 5,
+        "& .MuiSpeedDial-fab": {
+          // backgroundColor: "white",
+          "&:hover": {
+            // backgroundColor: "white",
+          },
+        },
+      }}
+      icon={
+        !open ? (
+          <MenuOutlinedIcon sx={menuIconStyle} />
+        ) : (
+          <CloseOutlinedIcon sx={menuIconStyle} />
+        )
+      }
+      onClick={() => setOpen(!open)}
+      open={open}
+      direction="down"
+    >
+      {getItemList(props.data.sections)}
+      <SpeedDialAction
+        icon={
+          <Icon
+            icon={props.language === "english" ? flagUnitedKingdom : flagNorway}
+            style={actionIconStyle}
+          />
+        }
+        onClick={() => {
+          props.language === "english"
+            ? props.setLanguage("norwegian")
+            : props.setLanguage("english");
+        }}
+        sx={actionDialStyle}
+        tooltipTitle={
+          props.language === "english"
+            ? "Change language to Norwegian"
+            : "Endre språket til engelsk"
+        }
+      />
+      <SpeedDialAction
+        icon={<InlineIcon icon={darkTheme24Filled} style={actionIconStyle} />}
+        onClick={() => {
+          theme.palette.mode === "light"
+            ? setTheme(ThemeEnum.Dark)
+            : setTheme(ThemeEnum.Light);
+        }}
+        sx={actionDialStyle}
+        tooltipTitle={
+          theme.palette.mode === "light"
+            ? props.language === "english"
+              ? "Change to dark mode"
+              : "Bytt til mørk modus"
+            : props.language === "english"
+            ? "Change to light mode"
+            : "Bytt til lys modus"
+        }
+      />
+    </SpeedDial>
   );
 };
 export default FABMenu;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "fixed",
-    right: "8px",
-    top: "8px",
-    zIndex: 5,
-  },
-  icon: {
-    height: "35px",
-    width: "35px",
-    color: "black",
-  },
-}));
