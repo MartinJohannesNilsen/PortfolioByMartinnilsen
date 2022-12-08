@@ -77,7 +77,7 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
       <CardMedia
         sx={{
           height: "160px",
-          width: { sm: "95%", md: "100%" },
+          width: { xs: "95%", md: "100%" },
           borderRadius: 4,
           margin: "10px auto",
         }}

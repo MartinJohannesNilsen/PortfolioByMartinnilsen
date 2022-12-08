@@ -63,7 +63,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                         sx={{
                           margin: { lg: "0 30px 0 0" },
                           maxHeight: {
-                            sm:
+                            xs:
                               props.projectData.img.type === "portrait"
                                 ? "200px"
                                 : props.projectData.img.type === "square"
@@ -83,7 +83,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                 : "default",
                           },
                           maxWidth: {
-                            sm:
+                            xs:
                               props.projectData.img.type === "landscape"
                                 ? "220px"
                                 : props.projectData.img.type === "square"
@@ -193,7 +193,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                           sx={{
                             margin: { lg: "0 30px 0 60px" },
                             maxHeight: {
-                              sm:
+                              xs:
                                 props.projectData.img.type === "portrait"
                                   ? "200px"
                                   : props.projectData.img.type === "square"
@@ -213,7 +213,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                   : "default",
                             },
                             maxWidth: {
-                              sm:
+                              xs:
                                 props.projectData.img.type === "landscape"
                                   ? "220px"
                                   : props.projectData.img.type === "square"

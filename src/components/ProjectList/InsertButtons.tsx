@@ -26,7 +26,7 @@ const insertButtons = (props: ProjectElementProps) => {
     borderRadius: "2px",
     padding: "5px",
     width: "40%",
-    margin: { sm: "30px 10px", md: "30px 15px" },
+    margin: { xs: "30px 10px", md: "30px 15px" },
   };
 
   return (
