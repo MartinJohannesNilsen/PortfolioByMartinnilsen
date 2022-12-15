@@ -3,7 +3,11 @@ import {
   Box,
   Button,
   ClickAwayListener,
+  Fade,
+  styled,
   Tooltip,
+  tooltipClasses,
+  TooltipProps,
   Typography,
   useMediaQuery,
   Zoom,
@@ -22,7 +26,16 @@ type ContactViewProps = {
       }
     ];
   };
+  language: string;
 };
+
+const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .${tooltipClasses.tooltip}`]: {
+    maxWidth: 400,
+  },
+});
 
 const ContactView: FC<ContactViewProps> = (props) => {
   const [tooltipStates, setTooltipStates] = React.useState(
@@ -54,14 +67,16 @@ const ContactView: FC<ContactViewProps> = (props) => {
   return (
     <>
       <Box
+        display="flex"
+        justifyContent="center"
+        alignContent="center"
         sx={{
           backgroundColor: "primary.main",
           position: "relative",
         }}
-        textAlign="center"
         id={props.id}
       >
-        <Box py={5} px={3} textAlign="left">
+        <Box py={5} px={3} textAlign="center">
           <Box py={2} px={1}>
             <Typography
               variant="body1"
@@ -69,15 +84,6 @@ const ContactView: FC<ContactViewProps> = (props) => {
               style={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
             >
               {props.data.text[0]}
-            </Typography>
-          </Box>
-          <Box py={1} px={1}>
-            <Typography
-              variant="body1"
-              color="textPrimary"
-              style={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
-            >
-              {props.data.text[1]}
             </Typography>
           </Box>
           <Box py={3}>
@@ -88,21 +94,20 @@ const ContactView: FC<ContactViewProps> = (props) => {
                   <ClickAwayListener
                     onClickAway={() => handleTooltipState(false, key)}
                   >
-                    <Tooltip
+                    <CustomWidthTooltip
                       arrow
                       placement="top"
+                      // TransitionComponent={Fade}
+                      TransitionComponent={Zoom}
                       PopperProps={{
                         disablePortal: true,
-                        sx: {
-                          maxWidth: "400px",
-                        },
                       }}
+                      TransitionProps={{ timeout: 200 }}
                       onClose={() => handleTooltipState(false, key)}
                       open={tooltipStates[key]}
                       disableFocusListener
-                      disableHoverListener
+                      // disableHoverListener
                       disableTouchListener
-                      TransitionComponent={Zoom}
                       title={
                         <Typography variant="overline" color="inherit">
                           {link.copyText}
@@ -119,7 +124,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
                           {link.text}
                         </Typography>
                       </Button>
-                    </Tooltip>
+                    </CustomWidthTooltip>
                   </ClickAwayListener>
                 );
               } else {

@@ -17,6 +17,7 @@ type FeaturedInViewProps = {
     articles: ArticleProps[];
   };
   refreshScrollTriggers: number;
+  language: string;
 };
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
@@ -55,7 +56,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   return (
     <Box
       sx={{
-        minHeight: "100%",
+        // minHeight: "100%",
         backgroundColor: "secondary.main",
         position: "relative",
       }}
@@ -65,14 +66,37 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       pb={8}
     >
       <Box pt={4} pb={3}>
-        <Typography
-          variant="h3"
-          sx={{
-            color: "error.main",
-          }}
-        >
-          {props.data.title}
-        </Typography>
+        {props.language === "norwegian" ? (
+          <>
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "error.main",
+              }}
+            >
+              Artikler
+            </Typography>
+            <Typography variant="h3" color="textPrimary" display="inline">
+              &nbsp;jeg er med i
+            </Typography>
+          </>
+        ) : (
+          <>
+            <Typography variant="h3" color="textPrimary" display="inline">
+              Articles I
+            </Typography>
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "error.main",
+              }}
+            >
+              &nbsp;feature in
+            </Typography>
+          </>
+        )}
       </Box>
       <Grid
         container

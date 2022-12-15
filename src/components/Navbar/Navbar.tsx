@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import {
   Grid,
   Box,
@@ -9,6 +9,7 @@ import {
   ButtonBase,
   Button,
   useMediaQuery,
+  Fade,
 } from "@mui/material";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
@@ -19,6 +20,7 @@ import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import Switch from "../Switch/Switch";
 import FABMenu from "./FABMenu";
 import $ from "jquery";
+import { useWindowScroll } from "react-use";
 
 export type NavbarProps = {
   data: {
@@ -41,6 +43,7 @@ export const handleScroll = (name: string) => {
 
 export const Navbar: FC<NavbarProps> = (props) => {
   const { theme, setTheme } = useTheme();
+  const windowScroll = useWindowScroll();
 
   let ref: any = useRef(null);
   useEffect(() => {
@@ -150,6 +153,15 @@ export const Navbar: FC<NavbarProps> = (props) => {
           </Hidden>
         </Grid>
       </Toolbar>
+      <Hidden mdDown>
+        {windowScroll.y > window.innerHeight ? (
+          <Fade>
+            <FABMenu {...props} />
+          </Fade>
+        ) : (
+          <></>
+        )}
+      </Hidden>
       <Hidden mdUp>
         <FABMenu {...props} />
       </Hidden>

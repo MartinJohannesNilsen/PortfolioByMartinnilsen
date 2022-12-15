@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useLayoutEffect, useRef } from "react";
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import Navbar from "../components/Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
@@ -6,25 +6,37 @@ import { useTheme } from "../ThemeProvider";
 import useDidUpdate from "../utils/useDidUpdate";
 import DeskSVGInline from "../assets/svg/desk_animated";
 
-type DeskViewProps = {};
+type DeskViewProps = { language: string };
 
 type svgProps = {
-  drawers: any;
-  countertop: any;
-  monitor_arm: any;
-  monitor: any;
-  keyboard: any;
-  mouse: any;
-  lamp: any;
-  lamp_light: any;
-  desktop_bg: any;
+  drawers: string;
+  countertop: string;
+  monitor_arm: string;
+  monitor: string;
+  keyboard: string;
+  mouse: string;
+  lamp: string;
+  lamp_light: string;
+  desktop_bg: string;
 };
 
 const DeskView: FC<DeskViewProps> = (props) => {
   const { theme } = useTheme();
+  const elementRef = useRef(null);
+  const q = gsap.utils.selector(elementRef);
 
   function animateIn(svgElements: svgProps) {
-    let tl = gsap.timeline();
+    console.log(q);
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: q(".desksvginline"),
+        start: "top center",
+        end: "+=0px",
+        // scrub: 1, // scrub: 1
+        pin: false,
+        markers: process.env.REACT_APP_SHOW_GSAP_MARKERS === "true",
+      },
+    });
     tl.from(
       svgElements.drawers,
       {
@@ -140,7 +152,7 @@ const DeskView: FC<DeskViewProps> = (props) => {
     }
   }, [theme.palette.mode]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     animateIn({
       drawers: "#alex_drawers",
       countertop: "#countertop",
@@ -157,22 +169,67 @@ const DeskView: FC<DeskViewProps> = (props) => {
 
   const xl = useMediaQuery(theme.breakpoints.only("xl"));
   const lg = useMediaQuery(theme.breakpoints.only("lg"));
+  const md = useMediaQuery(theme.breakpoints.only("md"));
+  const sm = useMediaQuery(theme.breakpoints.only("sm"));
+  const xs = useMediaQuery(theme.breakpoints.only("xs"));
   const smDown = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box
+      ref={elementRef}
       sx={{
         backgroundColor: "primary.main",
         position: "relative",
         textAlign: "center",
       }}
     >
+      <Box pt={4}>
+        {props.language === "norwegian" ? (
+          <>
+            <Typography variant="h3" color="textPrimary" display="inline">
+              Det holder. Tid for å
+            </Typography>
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "error.main",
+              }}
+            >
+              &nbsp;kode.
+            </Typography>
+          </>
+        ) : (
+          <>
+            <Typography variant="h3" color="textPrimary" display="inline">
+              That's it. Time to
+            </Typography>
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "error.main",
+              }}
+            >
+              &nbsp;code.
+            </Typography>
+          </>
+        )}
+      </Box>
       <DeskSVGInline
         className={"desksvginline"}
         style={{
           width: xl ? "70%" : lg ? "85%" : "100%",
-          marginTop: "-10%",
           textAlign: "center",
+          marginTop: xs
+            ? "-100px"
+            : sm
+            ? "-200px"
+            : md
+            ? "-300px"
+            : lg
+            ? "-350px"
+            : "-400px",
         }}
       />
     </Box>

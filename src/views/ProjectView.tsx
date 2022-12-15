@@ -12,6 +12,7 @@ type ProjectViewProps = {
     projects: ProjectProps[];
   };
   triggerRefreshScrollTriggers?: () => void;
+  language: string;
 };
 
 const ProjectView: FC<ProjectViewProps> = (props) => {
@@ -40,14 +41,37 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
       id={props.id}
     >
       <Box pt={4}>
-        <Typography
-          variant="h3"
-          sx={{
-            color: "error.main",
-          }}
-        >
-          {props.data.title}
-        </Typography>
+        {props.language === "norwegian" ? (
+          <>
+            <Typography variant="h3" color="textPrimary" display="inline">
+              Et utvalg
+            </Typography>
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "error.main",
+              }}
+            >
+              &nbsp;prosjekter
+            </Typography>
+          </>
+        ) : (
+          <>
+            <Typography variant="h3" color="textPrimary" display="inline">
+              Some of my
+            </Typography>
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "error.main",
+              }}
+            >
+              &nbsp;projects
+            </Typography>
+          </>
+        )}
       </Box>
       <ProjectList
         projects={props.data.projects}

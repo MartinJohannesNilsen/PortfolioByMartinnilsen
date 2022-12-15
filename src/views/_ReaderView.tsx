@@ -29,6 +29,7 @@ type ReaderViewProps = {
       }
     ];
   };
+  language: string;
 };
 
 const create_link_row = (project: ProjectProps, buttonTexts: string[]) => {

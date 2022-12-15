@@ -3,7 +3,6 @@ import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import Navbar from "../components/Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
 import { useTheme } from "../ThemeProvider";
-import useDidUpdate from "../utils/useDidUpdate";
 
 type LandingViewProps = {
   data: {
@@ -17,18 +16,6 @@ type LandingViewProps = {
   };
   language: string;
   setLanguage: () => void;
-};
-
-type svgProps = {
-  drawers: any;
-  countertop: any;
-  monitor_arm: any;
-  monitor: any;
-  keyboard: any;
-  mouse: any;
-  lamp: any;
-  lamp_light: any;
-  desktop_bg: any;
 };
 
 const LandingView: FC<LandingViewProps> = (props) => {

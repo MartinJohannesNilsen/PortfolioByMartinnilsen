@@ -68,6 +68,7 @@ const App = () => {
           projects={data.projectView}
           contact={data.contactView}
           featuredIn={data.featuredInView}
+          language={language}
         />
         <LandingView
           data={data.landingView}
@@ -92,16 +93,19 @@ const App = () => {
           id={data.landingView.navbar.sections[1]}
           data={data.projectView}
           triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
+          language={language}
         />
         <FeaturedInView
           id={"None"}
           data={data.featuredInView}
           refreshScrollTriggers={refreshScrollTriggers}
+          language={language}
         />
-        <DeskView />
+        <DeskView language={language} />
         <ContactView
           id={data.landingView.navbar.sections[2]}
           data={data.contactView}
+          language={language}
         />
       </CustomThemeProvider>
     </StyledEngineProvider>
