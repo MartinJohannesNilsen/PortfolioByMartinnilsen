@@ -94,7 +94,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
                       PopperProps={{
                         disablePortal: true,
                         sx: {
-                          maxWidth: 400,
+                          maxWidth: "400px",
                         },
                       }}
                       onClose={() => handleTooltipState(false, key)}

@@ -58,6 +58,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
 
   return (
     <AppBar
+      elevation={0}
       position="static"
       sx={{
         zIndex: 2,

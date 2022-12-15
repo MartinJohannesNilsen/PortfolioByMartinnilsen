@@ -68,19 +68,19 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                 ? "200px"
                                 : props.projectData.img.type === "square"
                                 ? "200px"
-                                : "default",
+                                : "140px",
                             md:
                               props.projectData.img.type === "portrait"
                                 ? "250px"
                                 : props.projectData.img.type === "square"
                                 ? "250px"
-                                : "default",
+                                : "190px",
                             lg:
                               props.projectData.img.type === "portrait"
                                 ? "340px"
                                 : props.projectData.img.type === "square"
                                 ? "320px"
-                                : "default",
+                                : "240px",
                           },
                           maxWidth: {
                             xs:
@@ -88,19 +88,19 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                 ? "220px"
                                 : props.projectData.img.type === "square"
                                 ? "200px"
-                                : "default",
+                                : "140px",
                             md:
                               props.projectData.img.type === "landscape"
                                 ? "270px"
                                 : props.projectData.img.type === "square"
                                 ? "250px"
-                                : "default",
+                                : "190px",
                             lg:
                               props.projectData.img.type === "landscape"
                                 ? "370px"
                                 : props.projectData.img.type === "square"
                                 ? "320px"
-                                : "default",
+                                : "250px",
                           },
                           boxShadow: `-10px -10px 1px 0px ${theme.palette.success.light},
                             -20px -20px 1px 0px ${theme.palette.success.main},
@@ -150,17 +150,16 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                           sx={{
                             maxHeight:
                               props.projectData.img.type === "portrait"
-                                ? "200px"
+                                ? "240px"
                                 : props.projectData.img.type === "square"
                                 ? "200px"
-                                : "default",
-
+                                : "112px",
                             maxWidth:
                               props.projectData.img.type === "landscape"
                                 ? "220px"
                                 : props.projectData.img.type === "square"
                                 ? "200px"
-                                : "default",
+                                : "134px",
                             boxShadow: `10px -10px 1px 0px ${theme.palette.success.light},
                               20px -20px 1px 0px ${theme.palette.success.main},
                               30px -30px 1px 0px ${theme.palette.success.dark}`,
@@ -195,22 +194,22 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                             maxHeight: {
                               xs:
                                 props.projectData.img.type === "portrait"
-                                  ? "200px"
+                                  ? "220px"
                                   : props.projectData.img.type === "square"
                                   ? "200px"
-                                  : "default",
+                                  : "122px",
                               md:
                                 props.projectData.img.type === "portrait"
-                                  ? "250px"
+                                  ? "270px"
                                   : props.projectData.img.type === "square"
                                   ? "250px"
-                                  : "default",
+                                  : "150px",
                               lg:
                                 props.projectData.img.type === "portrait"
-                                  ? "340px"
+                                  ? "370px"
                                   : props.projectData.img.type === "square"
                                   ? "320px"
-                                  : "default",
+                                  : "206px",
                             },
                             maxWidth: {
                               xs:
@@ -218,20 +217,21 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                                   ? "220px"
                                   : props.projectData.img.type === "square"
                                   ? "200px"
-                                  : "default",
+                                  : "118px",
                               md:
                                 props.projectData.img.type === "landscape"
                                   ? "270px"
                                   : props.projectData.img.type === "square"
                                   ? "250px"
-                                  : "default",
+                                  : "150px",
                               lg:
                                 props.projectData.img.type === "landscape"
                                   ? "370px"
                                   : props.projectData.img.type === "square"
                                   ? "320px"
-                                  : "default",
+                                  : "206px",
                             },
+
                             boxShadow: `10px -10px 1px 0px ${theme.palette.success.light},
                               20px -20px 1px 0px ${theme.palette.success.main},
                               30px -30px 1px 0px ${theme.palette.success.dark}`,

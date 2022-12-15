@@ -14,6 +14,7 @@ import ProjectView from "./views/ProjectView";
 import ContactView from "./views/ContactView";
 import ReaderView from "./views/_ReaderView";
 import FeaturedInView from "./views/FeaturedInView";
+import DeskView from "./views/DeskView";
 
 //Function for getting local data from correct json-file
 // based on environment variable and defined language
@@ -73,10 +74,10 @@ const App = () => {
           language={language}
           setLanguage={setLanguage}
         />
-        <AboutView
+        {/* <AboutView
           id={data.landingView.navbar.sections[0]}
           data={data.aboutView}
-        />
+        /> */}
         {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
           ? preloadImgs(
               data.projectView.projects
@@ -97,6 +98,7 @@ const App = () => {
           data={data.featuredInView}
           refreshScrollTriggers={refreshScrollTriggers}
         />
+        <DeskView />
         <ContactView
           id={data.landingView.navbar.sections[2]}
           data={data.contactView}
