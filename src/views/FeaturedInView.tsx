@@ -1,11 +1,24 @@
-import { FC, useState } from "react";
-import { Box, Typography, Grid, useMediaQuery } from "@mui/material";
+import React, { FC, useState, useMemo, useRef } from "react";
+import {
+  Box,
+  Typography,
+  Grid,
+  useMediaQuery,
+  Stack,
+  IconButton,
+  Hidden,
+} from "@mui/material";
 import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
 import useDidUpdate from "../utils/useDidUpdate";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTheme } from "../ThemeProvider";
 import { ArticleCard, ArticleProps } from "../components/Cards/ArticleCard";
+import TinderCard from "react-tinder-card";
+import ClearIcon from "@mui/icons-material/Clear";
+import UndoIcon from "@mui/icons-material/Undo";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 type FeaturedInViewProps = {
   id: string;
@@ -20,37 +33,64 @@ type FeaturedInViewProps = {
   language: string;
 };
 
+type directionType = "left" | "right" | "up" | "down";
+
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
-  const [cardsState, setCardsState] = useState(
-    Array(props.data.articles.length).fill({
-      hovered: false,
-      shadow: 1,
-      openTooltip: false,
-    })
-  );
   const { theme } = useTheme();
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   const sm = useMediaQuery(theme.breakpoints.only("sm"));
   const md = useMediaQuery(theme.breakpoints.only("md"));
+  const lg = useMediaQuery(theme.breakpoints.only("lg"));
   const xl = useMediaQuery(theme.breakpoints.only("xl"));
-  const mdUp = useMediaQuery(theme.breakpoints.up("md"));
-  const animationOffset = mdUp ? -300 : -50;
-  gsap.registerPlugin(ScrollTrigger);
 
-  useDidUpdate(() => {
-    ScrollTrigger.refresh();
-  }, [props.refreshScrollTriggers]);
+  // Tindercard
+  const [currentIndex, setCurrentIndex] = useState(
+    props.data.articles.length - 1
+  );
+  const [lastDirection, setLastDirection] = useState<directionType>();
+  // used for outOfFrame closure
+  const currentIndexRef = useRef(currentIndex);
+  const childRefs: any = useMemo(
+    () =>
+      Array(props.data.articles.length)
+        .fill(0)
+        .map((i) => React.createRef()),
+    []
+  );
 
-  const handleHover = (index: number, newState: {}) => {
-    let cardStateCopy = [...cardsState];
-    cardStateCopy[index] = newState;
-    setCardsState(cardStateCopy);
+  const updateCurrentIndex = (val: number) => {
+    setCurrentIndex(val);
+    currentIndexRef.current = val;
   };
 
-  const handleTooltipState = (newState: boolean, index: number) => {
-    let cardStateCopy = [...cardsState];
-    cardStateCopy[index].openTooltip = newState;
-    setCardsState(cardStateCopy);
+  const canGoBack = currentIndex < props.data.articles.length - 1;
+  const canSwipe = currentIndex >= 0;
+
+  // set last direction and decrease current index
+  const swiped = (direction: directionType, title: string, index: number) => {
+    // console.log(`${title} (${index}) swiped to the ${direction}`, currentIndexRef.current);
+    setLastDirection(direction);
+    updateCurrentIndex(index - 1);
+  };
+
+  const outOfFrame = (name: string, idx: number) => {
+    // console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current);
+    // handle the case in which go back is pressed before card goes outOfFrame
+    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()!;
+  };
+
+  const swipe = async (dir: "left" | "right") => {
+    if (canSwipe && currentIndex < props.data.articles.length) {
+      await childRefs[currentIndex].current.swipe(dir); // Swipe the card!
+    }
+  };
+
+  // increase current index and show card
+  const goBack = async () => {
+    if (!canGoBack) return;
+    const newIndex = currentIndex + 1;
+    updateCurrentIndex(newIndex);
+    await childRefs[newIndex].current.restoreCard()!;
   };
 
   return (
@@ -59,6 +99,8 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
         minHeight: "100%",
         backgroundColor: "secondary.main",
         position: "relative",
+        maxWidth: "100vw",
+        overflow: "hidden",
       }}
       textAlign="center"
       id={props.id}
@@ -98,46 +140,91 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
           </>
         )}
       </Box>
-      <Grid
-        container
+      <Box
         justifyContent="center"
         sx={{
           height: "100%",
+          display: "flex",
+          // flexDirection: "column",
+          position: "relative",
         }}
       >
         {props.data.articles.map((article, index) => (
-          <ScrollTriggerUp
-            x="10vh"
-            markers={process.env.REACT_APP_SHOW_GSAP_MARKERS === "true"}
-            start={animationOffset + -250 + 30 * index + "px center"}
-            end={animationOffset + -100 + "px center"}
+          <TinderCard
+            ref={childRefs[index]}
+            className="tinderCard"
             key={index}
+            onSwipe={(dir: directionType) => swiped(dir, article.title, index)}
+            onCardLeftScreen={() => outOfFrame(article.title, index)}
           >
-            <Grid
-              item
-              xs={11}
-              sm={7}
-              md={4}
-              lg={3}
-              xl={3}
-              style={{ display: "flex" }}
-            >
-              <Box px={xl ? 5 : 2} mx={1} my={3}>
-                <ArticleCard
-                  index={index}
-                  article={article}
-                  cardsState={cardsState}
-                  handleHover={handleHover}
-                  handleTooltipState={handleTooltipState}
-                  readButtonText={props.data.readButtonText}
-                  copyButtonText={props.data.copyButtonText}
-                  copyText={props.data.copyText}
-                />
-              </Box>
-            </Grid>
-          </ScrollTriggerUp>
+            <ArticleCard
+              index={index}
+              article={article}
+              readButtonText={props.data.readButtonText}
+              copyButtonText={props.data.copyButtonText}
+              copyText={props.data.copyText}
+            />
+          </TinderCard>
         ))}
-      </Grid>
+        <Box>
+          <Stack direction="row" spacing={1}>
+            <IconButton
+              aria-label="clear"
+              disabled={!canSwipe}
+              sx={{
+                color: "#ff1744",
+                borderColor: "#ff1744",
+                border: "2px solid",
+              }}
+              onClick={() => swipe("left")}
+            >
+              <ClearIcon />
+            </IconButton>
+            <IconButton
+              aria-label="undo"
+              disabled={!canGoBack}
+              sx={{
+                color: "#ffea00",
+                borderColor: "#ffea00",
+                border: "2px solid",
+              }}
+              onClick={() => goBack()}
+            >
+              <UndoIcon />
+            </IconButton>
+            <IconButton
+              aria-label="copy"
+              disabled={!canSwipe}
+              sx={{
+                color: "#2979ff",
+                borderColor: "#2979ff",
+                border: "2px solid",
+              }}
+              onClick={() => {
+                //Copy and launch tooltip
+                swipe("right");
+              }}
+            >
+              <ContentCopyIcon />
+            </IconButton>
+            <IconButton
+              aria-label="launch"
+              disabled={!canSwipe}
+              sx={{
+                color: "#00e676",
+                borderColor: "#00e676",
+                border: "2px solid",
+              }}
+              onClick={() => {
+                //Open new page in new tab
+                swipe("right");
+              }}
+            >
+              <LaunchIcon />
+            </IconButton>
+          </Stack>
+        </Box>
+      </Box>
     </Box>
   );
 };

@@ -7,7 +7,6 @@ import {
   CardMedia,
   CardActions,
   Button,
-  ClickAwayListener,
   Tooltip,
   Zoom,
 } from "@mui/material";
@@ -29,13 +28,6 @@ type ArticleCardProps = {
   copyButtonText: string;
   copyText: string;
   article: ArticleProps;
-  cardsState: {
-    hovered: false;
-    shadow: 1;
-    openTooltip: false;
-  }[];
-  handleHover: (index: number, {}) => void;
-  handleTooltipState: (newState: boolean, index: number) => void;
 };
 
 export const ArticleCard: FC<ArticleCardProps> = (props) => {
@@ -48,10 +40,6 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
         flexDirection: "column",
         borderRadius: 4,
         padding: { xs: "5%", sm: "4%", lg: "6%" },
-        "&:hover": {
-          transform: "scale3d(1.05, 1.05, 1)",
-          transition: "transform 150ms ease-in-out",
-        },
         background:
           theme.palette.mode === "dark"
             ? "linear-gradient(115deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)"
@@ -59,20 +47,7 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
       }}
       classes={{
         root: "",
-        ...(props.cardsState[props.index]?.hovered
-          ? {
-              transform: "scale3d(1.05, 1.05, 1)",
-              transition: "transform 150ms ease-in-out",
-            }
-          : ""),
       }}
-      onMouseEnter={() =>
-        props.handleHover(props.index, { hovered: true, shadow: 3 })
-      }
-      onMouseLeave={() =>
-        props.handleHover(props.index, { hovered: false, shadow: 1 })
-      }
-      raised={props.cardsState[props.index]?.hovered}
     >
       <CardMedia
         sx={{
@@ -118,39 +93,33 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
           >
             {props.readButtonText}
           </Button>
-          <ClickAwayListener
-            onClickAway={() => props.handleTooltipState(false, props.index)}
+
+          <Tooltip
+            arrow
+            placement="top"
+            PopperProps={{
+              disablePortal: true,
+            }}
+            disableFocusListener
+            // disableHoverListener
+            disableTouchListener
+            TransitionComponent={Zoom}
+            title={
+              <Typography variant="overline" color="inherit">
+                {props.copyText}
+              </Typography>
+            }
           >
-            <Tooltip
-              arrow
-              placement="top"
-              PopperProps={{
-                disablePortal: true,
+            <Button
+              size="small"
+              color="inherit"
+              onClick={() => {
+                navigator.clipboard.writeText(props.article.url);
               }}
-              onClose={() => props.handleTooltipState(false, props.index)}
-              open={props.cardsState[props.index]?.openTooltip}
-              disableFocusListener
-              // disableHoverListener
-              disableTouchListener
-              TransitionComponent={Zoom}
-              title={
-                <Typography variant="overline" color="inherit">
-                  {props.copyText}
-                </Typography>
-              }
             >
-              <Button
-                size="small"
-                color="inherit"
-                onClick={() => {
-                  props.handleTooltipState(true, props.index);
-                  navigator.clipboard.writeText(props.article.url);
-                }}
-              >
-                {props.copyButtonText}
-              </Button>
-            </Tooltip>
-          </ClickAwayListener>
+              {props.copyButtonText}
+            </Button>
+          </Tooltip>
         </Box>
       </CardActions>
     </Card>
