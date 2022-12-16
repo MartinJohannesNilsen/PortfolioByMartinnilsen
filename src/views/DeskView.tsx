@@ -26,7 +26,6 @@ const DeskView: FC<DeskViewProps> = (props) => {
   const q = gsap.utils.selector(elementRef);
 
   function animateIn(svgElements: svgProps) {
-    console.log(q);
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: q(".desksvginline"),
@@ -221,15 +220,7 @@ const DeskView: FC<DeskViewProps> = (props) => {
         style={{
           width: xl ? "70%" : lg ? "85%" : "100%",
           textAlign: "center",
-          marginTop: xs
-            ? "-100px"
-            : sm
-            ? "-200px"
-            : md
-            ? "-300px"
-            : lg
-            ? "-350px"
-            : "-400px",
+          marginTop: "40px",
         }}
       />
     </Box>

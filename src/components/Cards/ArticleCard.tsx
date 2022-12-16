@@ -126,14 +126,11 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
               placement="top"
               PopperProps={{
                 disablePortal: true,
-                sx: {
-                  maxWidth: 400,
-                },
               }}
               onClose={() => props.handleTooltipState(false, props.index)}
               open={props.cardsState[props.index]?.openTooltip}
               disableFocusListener
-              disableHoverListener
+              // disableHoverListener
               disableTouchListener
               TransitionComponent={Zoom}
               title={

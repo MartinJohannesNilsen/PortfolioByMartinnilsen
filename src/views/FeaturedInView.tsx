@@ -56,7 +56,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   return (
     <Box
       sx={{
-        // minHeight: "100%",
+        minHeight: "100%",
         backgroundColor: "secondary.main",
         position: "relative",
       }}
