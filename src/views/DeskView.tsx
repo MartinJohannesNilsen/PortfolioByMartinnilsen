@@ -1,4 +1,4 @@
-import { FC, useEffect, useLayoutEffect, useRef } from "react";
+import { FC, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import Navbar from "../components/Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
@@ -24,6 +24,7 @@ const DeskView: FC<DeskViewProps> = (props) => {
   const { theme } = useTheme();
   const elementRef = useRef(null);
   const q = gsap.utils.selector(elementRef);
+  const [inView, setInView] = useState(false);
 
   function animateIn(svgElements: svgProps) {
     let tl = gsap.timeline({
@@ -34,6 +35,7 @@ const DeskView: FC<DeskViewProps> = (props) => {
         // scrub: 1, // scrub: 1
         pin: false,
         markers: process.env.REACT_APP_SHOW_GSAP_MARKERS === "true",
+        onEnter: () => setInView(true),
       },
     });
     tl.from(
@@ -111,26 +113,33 @@ const DeskView: FC<DeskViewProps> = (props) => {
         "+=0.3"
       );
 
-    if (theme.palette.mode === "dark") {
-      tl.from(svgElements.lamp_light, {
+    document.getElementById("lamp_light")!.style.display = "none";
+  }
+
+  useDidUpdate(() => {
+    if (theme.palette.mode === "dark" && inView) {
+      document.getElementById("lamp_light")!.style.display = "block";
+      let tl = gsap.timeline();
+      tl.from("#lamp_light", {
         duration: 0.15,
         opacity: 0,
+        delay: 5,
       })
-        .to(svgElements.lamp_light, {
+        .to("#lamp_light", {
           duration: 0.15,
           opacity: 0,
         })
-        .to(svgElements.lamp_light, {
+        .to("#lamp_light", {
           duration: 0.3,
           opacity: 1,
         });
     } else {
       document.getElementById("lamp_light")!.style.display = "none";
     }
-  }
+  }, [inView]);
 
   useDidUpdate(() => {
-    if (theme.palette.mode === "dark") {
+    if (theme.palette.mode === "dark" && inView) {
       document.getElementById("lamp_light")!.style.display = "block";
       let tl = gsap.timeline();
       tl.from("#lamp_light", {

@@ -9,7 +9,6 @@ import showMuiSize from "./utils/showMuiSize";
 
 //Views
 import LandingView from "./views/LandingView";
-import AboutView from "./views/AboutView";
 import ProjectView from "./views/ProjectView";
 import ContactView from "./views/ContactView";
 import ReaderView from "./views/_ReaderView";
@@ -45,9 +44,12 @@ const App = () => {
     } else {
       setData(getLocalData(language));
     }
-    window.scrollTo(0, 0);
     //eslint-disable-next-line
   }, [language]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     triggerRefreshScrollTriggers();
