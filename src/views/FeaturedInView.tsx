@@ -7,6 +7,9 @@ import {
   Stack,
   IconButton,
   Hidden,
+  Zoom,
+  Tooltip,
+  ClickAwayListener,
 } from "@mui/material";
 import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
 import useDidUpdate from "../utils/useDidUpdate";
@@ -19,13 +22,12 @@ import ClearIcon from "@mui/icons-material/Clear";
 import UndoIcon from "@mui/icons-material/Undo";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LaunchIcon from "@mui/icons-material/Launch";
+import ReplayIcon from "@mui/icons-material/Replay";
 
 type FeaturedInViewProps = {
   id: string;
   data: {
     title: string;
-    readButtonText: string;
-    copyButtonText: string;
     copyText: string;
     articles: ArticleProps[];
   };
@@ -42,6 +44,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const md = useMediaQuery(theme.breakpoints.only("md"));
   const lg = useMediaQuery(theme.breakpoints.only("lg"));
   const xl = useMediaQuery(theme.breakpoints.only("xl"));
+  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   // Tindercard
   const [currentIndex, setCurrentIndex] = useState(
@@ -91,6 +94,15 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     const newIndex = currentIndex + 1;
     updateCurrentIndex(newIndex);
     await childRefs[newIndex].current.restoreCard()!;
+  };
+
+  // Tooltip
+  const [open, setOpen] = React.useState(false);
+  const handleTooltipClose = () => {
+    setOpen(false);
+  };
+  const handleTooltipOpen = () => {
+    setOpen(true);
   };
 
   return (
@@ -143,38 +155,52 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       <Box
         justifyContent="center"
         sx={{
-          height: "100%",
-          display: "flex",
-          // flexDirection: "column",
-          position: "relative",
+          height: "calc(100vh-93px)",
+          display: "grid",
+          justifyItems: "center",
+          alignItems: "center",
+          gridTemplateColumns: "repeat(1)",
+          gridTemplateRows: lgUp ? "600px 100px" : "520px 0px",
+          gridTemplateAreas: `
+          'card'
+          'buttonStack'
+          `,
         }}
       >
         {props.data.articles.map((article, index) => (
           <TinderCard
             ref={childRefs[index]}
-            className="tinderCard"
+            className="tinderCardCssGrid"
+            // className="tinderCard"
             key={index}
             onSwipe={(dir: directionType) => swiped(dir, article.title, index)}
             onCardLeftScreen={() => outOfFrame(article.title, index)}
           >
             <ArticleCard
               index={index}
+              language={props.language}
               article={article}
-              readButtonText={props.data.readButtonText}
-              copyButtonText={props.data.copyButtonText}
-              copyText={props.data.copyText}
             />
           </TinderCard>
         ))}
-        <Box>
-          <Stack direction="row" spacing={1}>
+        <Box
+          sx={{
+            gridArea: "buttonStack",
+            // width: "320px",
+          }}
+        >
+          <Stack direction="row" spacing={1.2} justifyContent="center">
             <IconButton
               aria-label="clear"
               disabled={!canSwipe}
               sx={{
-                color: "#ff1744",
-                borderColor: "#ff1744",
+                color: "#F44336",
+                borderColor: "#F44336",
                 border: "2px solid",
+                boxShadow:
+                  theme.palette.mode === "light"
+                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                    : "none",
               }}
               onClick={() => swipe("left")}
             >
@@ -184,29 +210,62 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
               aria-label="undo"
               disabled={!canGoBack}
               sx={{
-                color: "#ffea00",
-                borderColor: "#ffea00",
+                // backgroundColor: theme.palette.mode === "light" ? "black" : "transparent",
+                color: "#ffdf00",
+                borderColor: "#ffdf00",
                 border: "2px solid",
+                boxShadow:
+                  theme.palette.mode === "light"
+                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                    : "none",
               }}
               onClick={() => goBack()}
             >
-              <UndoIcon />
+              <ReplayIcon />
             </IconButton>
-            <IconButton
-              aria-label="copy"
-              disabled={!canSwipe}
-              sx={{
-                color: "#2979ff",
-                borderColor: "#2979ff",
-                border: "2px solid",
-              }}
-              onClick={() => {
-                //Copy and launch tooltip
-                swipe("right");
-              }}
-            >
-              <ContentCopyIcon />
-            </IconButton>
+            <ClickAwayListener onClickAway={handleTooltipClose}>
+              <Tooltip
+                arrow
+                placement="top"
+                PopperProps={{
+                  disablePortal: true,
+                }}
+                onClose={handleTooltipClose}
+                open={open}
+                disableFocusListener
+                // disableHoverListener
+                disableTouchListener
+                TransitionComponent={Zoom}
+                title={
+                  <Typography variant="overline" color="inherit">
+                    {props.data.copyText}
+                  </Typography>
+                }
+              >
+                <IconButton
+                  aria-label="copy"
+                  disabled={!canSwipe}
+                  sx={{
+                    color: "#2196F3",
+                    borderColor: "#2196F3",
+                    border: "2px solid",
+                    boxShadow:
+                      theme.palette.mode === "light"
+                        ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                        : "none",
+                  }}
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      props.data.articles[currentIndex].url
+                    );
+                    handleTooltipOpen();
+                    swipe("right");
+                  }}
+                >
+                  <ContentCopyIcon />
+                </IconButton>
+              </Tooltip>
+            </ClickAwayListener>
             <IconButton
               aria-label="launch"
               disabled={!canSwipe}
@@ -214,10 +273,15 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                 color: "#00e676",
                 borderColor: "#00e676",
                 border: "2px solid",
+                boxShadow:
+                  theme.palette.mode === "light"
+                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                    : "none",
               }}
               onClick={() => {
                 //Open new page in new tab
                 swipe("right");
+                window.open(props.data.articles[currentIndex].url, "_blank");
               }}
             >
               <LaunchIcon />

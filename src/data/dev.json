@@ -43,29 +43,47 @@
         {
           "description": "Won the hackathon held at Nor-Shipping 2022 by DNV, Astrup Fearnley Group and Microsoft. This is the official announcement.",
           "img": {
-            "alt": "",
+            "alt": "Announcement of the winners in the Nor-Shipping Hackathon 2022",
             "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
           },
           "title": "Nor-Shipping Hackathon",
-          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
+          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
+          "publisher": {
+            "icon": "https://i.imgur.com/IjkYiMk.png",
+            "name": "Veracity by DNV"
+          },
+          "readTimeMinutes": 4,
+          "date": "2022-04-10"
         },
         {
           "description": "During my internship at the Norwegian Labour and Welfare Administration, a post was written and published on their official developement blog.",
           "img": {
-            "alt": "",
+            "alt": "Group photo of summer interns at the Norwegian Labour and Welfare Administration in the summer of 2021",
             "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
           },
           "title": "Mulighetsrommet",
-          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
+          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet",
+          "publisher": {
+            "icon": "https://i.imgur.com/C6qZTzf.png",
+            "name": "NAV IT"
+          },
+          "readTimeMinutes": 3,
+          "date": "2021-10-18"
         },
         {
           "description": "An article describing our project and the impact of it, as we developed a new digital platform for Dissimilis' note scores. This was my first internship as a Software Engineer.",
           "img": {
-            "alt": "",
+            "alt": "Group photo of the team making the initial color notation application for Dissimilis",
             "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
           },
           "title": "Dissimilis color notation",
-          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
+          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
+          "publisher": {
+            "icon": "https://i.imgur.com/wKVEuW9.png",
+            "name": "Digi.no"
+          },
+          "readTimeMinutes": 3,
+          "date": "2020-06-30"
         }
       ],
       "copyButtonText": "Copy link",
@@ -81,6 +99,7 @@
         "sections": [
           "About",
           "Projects",
+          "Articles",
           "Contact"
         ],
         "title": "PORTFOLIO"
@@ -265,7 +284,13 @@
             "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
           },
           "title": "Nor-Shipping Hackathon",
-          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
+          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
+          "publisher": {
+            "icon": "https://i.imgur.com/IjkYiMk.png",
+            "name": "Veracity by DNV"
+          },
+          "readTimeMinutes": 4,
+          "date": "2022-04-10"
         },
         {
           "description": "Under sommerjobben hos NAV IT, ble det skrevet en post på deres offisielle utviklingsblogg, som tok for seg sommerens prosjekt.",
@@ -274,7 +299,13 @@
             "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
           },
           "title": "Mulighetsrommet",
-          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
+          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet",
+          "publisher": {
+            "icon": "https://i.imgur.com/C6qZTzf.png",
+            "name": "NAV IT"
+          },
+          "readTimeMinutes": 3,
+          "date": "2021-10-18"
         },
         {
           "description": "En artikkel skrevet i Digi.no, en redaksjon i Teknisk Ukeblad Media, som tok for seg prosjektet jeg arbeidet på under første sommerjobb som utvikler.",
@@ -283,7 +314,13 @@
             "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
           },
           "title": "Dissimilis fargenotasjon",
-          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
+          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
+          "publisher": {
+            "icon": "https://i.imgur.com/wKVEuW9.png",
+            "name": "Digi.no"
+          },
+          "readTimeMinutes": 3,
+          "date": "2020-06-30"
         }
       ],
       "copyButtonText": "Kopier lenke",
@@ -299,6 +336,7 @@
         "sections": [
           "Om",
           "Prosjekter",
+          "Artikler",
           "Kontakt"
         ],
         "title": "PORTEFØLJE"

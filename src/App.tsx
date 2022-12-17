@@ -71,6 +71,7 @@ const App = () => {
           language={language}
         />
         <LandingView
+          id={data.landingView.navbar.sections[0]}
           data={data.landingView}
           language={language}
           setLanguage={setLanguage}
@@ -96,14 +97,18 @@ const App = () => {
           language={language}
         />
         <FeaturedInView
-          id={"None"}
-          data={data.featuredInView}
+          id={data.landingView.navbar.sections[2]}
+          data={{
+            title: data.featuredInView.title,
+            copyText: data.featuredInView.copyText,
+            articles: data.featuredInView.articles.slice().reverse(),
+          }}
           refreshScrollTriggers={refreshScrollTriggers}
           language={language}
         />
         <DeskView language={language} />
         <ContactView
-          id={data.landingView.navbar.sections[2]}
+          id={data.landingView.navbar.sections[3]}
           data={data.contactView}
           language={language}
         />

@@ -95,33 +95,35 @@ export const Navbar: FC<NavbarProps> = (props) => {
           </Grid>
           <Hidden mdDown>
             <Grid container item md={9} lg={6} justifyContent="flex-end">
-              {props.data.sections.map((title: string, index: number) => (
-                <Box mx={2} key={index}>
-                  <Button
-                    sx={{
-                      "& MuiButton-text": {
-                        textTransform: "none",
-                        "&:hover": {
-                          backgroundColor: "transparent",
-                        },
-                      },
-                    }}
-                    onClick={() => handleScroll(title)}
-                  >
-                    <Typography
-                      variant="h4"
-                      color="textPrimary"
+              {props.data.sections
+                .slice(1)
+                .map((title: string, index: number) => (
+                  <Box mx={2} key={index}>
+                    <Button
                       sx={{
-                        "&:hover": {
-                          color: "error.main",
+                        "& MuiButton-text": {
+                          textTransform: "none",
+                          "&:hover": {
+                            backgroundColor: "transparent",
+                          },
                         },
                       }}
+                      onClick={() => handleScroll(title)}
                     >
-                      {title}
-                    </Typography>
-                  </Button>
-                </Box>
-              ))}
+                      <Typography
+                        variant="h4"
+                        color="textPrimary"
+                        sx={{
+                          "&:hover": {
+                            color: "error.main",
+                          },
+                        }}
+                      >
+                        {title}
+                      </Typography>
+                    </Button>
+                  </Box>
+                ))}
               <Box mx={2} mt={-0.45}>
                 <ButtonBase
                   onClick={() => {
@@ -154,7 +156,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
         </Grid>
       </Toolbar>
       <Hidden mdDown>
-        {windowScroll.y > window.innerHeight ? (
+        {windowScroll.y > window.innerHeight - 50 ? (
           <Fade>
             <FABMenu {...props} />
           </Fade>

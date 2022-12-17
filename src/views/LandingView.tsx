@@ -1,10 +1,10 @@
 import { FC, useEffect } from "react";
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import Navbar from "../components/Navbar/Navbar";
-import { gsap, Power3 } from "gsap";
 import { useTheme } from "../ThemeProvider";
 
 type LandingViewProps = {
+  id: string;
   data: {
     navbar: {
       title: string;
@@ -26,7 +26,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
   const smDown = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Box>
+    <Box id={props.id}>
       <Navbar
         data={props.data.navbar}
         language={props.language}

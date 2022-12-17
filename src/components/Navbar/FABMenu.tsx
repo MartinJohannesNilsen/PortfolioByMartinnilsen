@@ -11,13 +11,11 @@ import darkTheme24Filled from "@iconify-icons/fluent/dark-theme-24-filled";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 import ArtTrackOutlinedIcon from "@mui/icons-material/ArtTrackOutlined";
 import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaicOutlined";
-import ModeNightOutlinedIcon from "@mui/icons-material/ModeNightOutlined";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 
 import { handleScroll } from "./Navbar";
 
@@ -32,8 +30,8 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
   };
 
   const actionIconStyle: SxProps = {
-    height: "35px",
-    width: "35px",
+    height: "30px",
+    width: "30px",
     color: theme.palette.text.primary,
   };
 
@@ -53,8 +51,10 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
               <PersonOutlineOutlinedIcon sx={actionIconStyle} />
             ) : i === 1 ? (
               <AutoAwesomeMosaicOutlinedIcon sx={actionIconStyle} />
+            ) : i === 2 ? (
+              <ArticleOutlinedIcon sx={actionIconStyle} />
             ) : (
-              <ContactPageOutlinedIcon sx={actionIconStyle} />
+              <InfoOutlinedIcon sx={actionIconStyle} />
             )
           }
           onClick={() => {

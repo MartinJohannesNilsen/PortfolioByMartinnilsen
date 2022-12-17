@@ -86,5 +86,13 @@ body::-webkit-scrollbar {
   margin-top: 100px;
   margin-left: auto; 
   margin-right: auto; 
-  width: 300px; /* Need a specific value to work */
+  width: 320px; /* Need a specific value to work */
+}
+
+.tinderCardCssGrid {
+  grid-area: card;
+  width: 320px; /* Need a specific value to work */
+  height: 460px;
+  user-select: none;
+  cursor: grab;
 }
