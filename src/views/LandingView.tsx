@@ -20,7 +20,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
   const { theme } = useTheme();
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   const smDown = useMediaQuery(theme.breakpoints.down("md"));
-  const cardFadeLength = "75px";
+  const cardFadeLength = "60px";
 
   return (
     <Box id={props.id}>
