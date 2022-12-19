@@ -1,19 +1,20 @@
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline, StyledEngineProvider } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
-import ThemeProvider from "./ThemeProvider";
+import CustomThemeProvider from "./ThemeProvider";
 import useStickyState from "./utils/useStickyState";
 import fetchDataFromDB from "./utils/fetchDataFromDB";
-import { ProjectProps } from "./components/ProjectList/ProjectElement";
 import preloadImgs from "./utils/preloadImgs";
 import showMuiSize from "./utils/showMuiSize";
+import { ProjectProps } from "./types";
 
 //Views
 import LandingView from "./views/LandingView";
-import AboutView from "./views/AboutView";
 import ProjectView from "./views/ProjectView";
-import ContactView from "./views/ContactView";
+import Footer from "./components/Footer/Footer";
 import ReaderView from "./views/_ReaderView";
 import FeaturedInView from "./views/FeaturedInView";
+import DeskView from "./views/DeskView";
+import ScrollToTop from "./utils/scrollToTop";
 
 //Function for getting local data from correct json-file
 // based on environment variable and defined language
@@ -44,7 +45,6 @@ const App = () => {
     } else {
       setData(getLocalData(language));
     }
-    window.scrollTo(0, 0);
     //eslint-disable-next-line
   }, [language]);
 
@@ -53,54 +53,64 @@ const App = () => {
   }, [data]);
 
   return (
-    <ThemeProvider>
-      <CssBaseline />
-      {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
-      <ReaderView
-        ids={[
-          data.landingView.navbar.sections[0],
-          data.landingView.navbar.sections[1],
-          data.landingView.navbar.sections[2],
-        ]}
-        about={data.aboutView}
-        projects={data.projectView}
-        contact={data.contactView}
-        featuredIn={data.featuredInView}
-      />
-      <LandingView
-        data={data.landingView}
-        language={language}
-        setLanguage={setLanguage}
-      />
-      <AboutView
-        id={data.landingView.navbar.sections[0]}
-        data={data.aboutView}
-      />
-      {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
-        ? preloadImgs(
-            data.projectView.projects
-              .slice()
-              .reverse()
-              .map((project: ProjectProps) => {
-                return project.img.path;
-              })
-          )
-        : ""}
-      <ProjectView
-        id={data.landingView.navbar.sections[1]}
-        data={data.projectView}
-        triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
-      />
-      <FeaturedInView
-        id={"None"}
-        data={data.featuredInView}
-        refreshScrollTriggers={refreshScrollTriggers}
-      />
-      <ContactView
-        id={data.landingView.navbar.sections[2]}
-        data={data.contactView}
-      />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <CustomThemeProvider>
+        <CssBaseline />
+        <ScrollToTop />
+        {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
+        <ReaderView
+          ids={[
+            data.landingView.navbar.sections[0],
+            data.landingView.navbar.sections[1],
+            data.landingView.navbar.sections[2],
+            data.landingView.navbar.sections[3],
+          ]}
+          landing={data.landingView}
+          projects={data.projectView}
+          footer={data.footer}
+          featuredIn={data.featuredInView}
+          language={language}
+        />
+        <LandingView
+          id={data.landingView.navbar.sections[0]}
+          data={data.landingView}
+          language={language}
+          setLanguage={setLanguage}
+        />
+        {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
+          ? preloadImgs(
+              data.projectView.projects
+                .slice()
+                .reverse()
+                .map((project: ProjectProps) => {
+                  return project.img.path;
+                })
+            )
+          : ""}
+        <ProjectView
+          id={data.landingView.navbar.sections[1]}
+          data={data.projectView}
+          triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
+          language={language}
+        />
+        <FeaturedInView
+          id={data.landingView.navbar.sections[2]}
+          data={{
+            title: data.featuredInView.title,
+            copyText: data.featuredInView.copyText,
+            articles: data.featuredInView.articles.slice().reverse(),
+          }}
+          refreshScrollTriggers={refreshScrollTriggers}
+          language={language}
+        />
+        <DeskView language={language} />
+        <Footer
+          id={data.landingView.navbar.sections[3]}
+          data={data.footer}
+          language={language}
+        />
+      </CustomThemeProvider>
+    </StyledEngineProvider>
   );
 };
 

@@ -1,10 +1,8 @@
 import React from "react";
-import { Button, Typography } from "@material-ui/core";
+import { Button, SxProps, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
-import { ProjectElementProps, useStyles } from "./ProjectElement";
 import { useTheme } from "../../ThemeProvider";
-
-// Icons
+import { ProjectElementProps } from "../../types";
 import githubIcon from "@iconify-icons/cib/github";
 import documentBlank from "@iconify-icons/carbon/document-blank";
 import documentPdf from "@iconify-icons/carbon/document-pdf";
@@ -12,20 +10,27 @@ import desktopOutlined from "@iconify-icons/ant-design/desktop-outlined";
 import cameraVideo from "@iconify-icons/bi/camera-video";
 
 const insertButtons = (props: ProjectElementProps) => {
-  const classes = useStyles(props);
   const { theme } = useTheme();
-
   const isHosted = props.projectData.hasOwnProperty("linkToWebsite");
   const hasGitHub = props.projectData.hasOwnProperty("linkToGitHub");
   const hasDemoVid = props.projectData.hasOwnProperty("linkToDemovideo");
   const hasReadMe = props.projectData.hasOwnProperty("linkToReadMe");
   const hasPaper = props.projectData.hasOwnProperty("linkToPaper");
 
+  const buttonStyle: SxProps = {
+    border: "2px solid",
+    borderColor: theme.palette.text.primary,
+    borderRadius: "2px",
+    padding: "5px",
+    width: "40%",
+    margin: { xs: "30px 10px", md: "30px 15px" },
+  };
+
   return (
     <React.Fragment>
       {hasGitHub ? (
         <Button
-          className={classes.button}
+          sx={buttonStyle}
           onClick={() => window.open(props.projectData.linkToGitHub, "_blank")}
           startIcon={
             <Icon
@@ -44,7 +49,7 @@ const insertButtons = (props: ProjectElementProps) => {
       )}
       {isHosted ? (
         <Button
-          className={classes.button}
+          sx={buttonStyle}
           onClick={() => window.open(props.projectData.linkToWebsite, "_blank")}
           startIcon={
             <Icon
@@ -63,7 +68,7 @@ const insertButtons = (props: ProjectElementProps) => {
       )}
       {hasDemoVid ? (
         <Button
-          className={classes.button}
+          sx={buttonStyle}
           onClick={() =>
             window.open(props.projectData.linkToDemovideo, "_blank")
           }
@@ -84,7 +89,7 @@ const insertButtons = (props: ProjectElementProps) => {
       )}
       {hasReadMe ? (
         <Button
-          className={classes.button}
+          sx={buttonStyle}
           onClick={() => window.open(props.projectData.linkToReadMe, "_blank")}
           startIcon={
             <Icon
@@ -103,7 +108,7 @@ const insertButtons = (props: ProjectElementProps) => {
       )}
       {hasPaper ? (
         <Button
-          className={classes.button}
+          sx={buttonStyle}
           onClick={() => window.open(props.projectData.linkToPaper, "_blank")}
           startIcon={
             <Icon

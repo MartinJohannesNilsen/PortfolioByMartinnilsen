@@ -3,30 +3,26 @@ import {
   Box,
   Button,
   ClickAwayListener,
-  makeStyles,
+  styled,
   Tooltip,
+  tooltipClasses,
+  TooltipProps,
   Typography,
   useMediaQuery,
   Zoom,
-} from "@material-ui/core";
-import { useTheme } from "../ThemeProvider";
+} from "@mui/material";
+import { useTheme } from "../../ThemeProvider";
+import { FooterProps } from "../../types";
 
-type ContactViewProps = {
-  id: string;
-  data: {
-    text: string[];
-    links: [
-      {
-        text: string;
-        value: string;
-        copyText?: string;
-      }
-    ];
-  };
-};
+const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .${tooltipClasses.tooltip}`]: {
+    maxWidth: 400,
+  },
+});
 
-const ContactView: FC<ContactViewProps> = (props) => {
-  const classes = useStyles();
+const Footer: FC<FooterProps> = (props) => {
   const [tooltipStates, setTooltipStates] = React.useState(
     Array(props.data.links.length).fill(false)
   );
@@ -44,7 +40,11 @@ const ContactView: FC<ContactViewProps> = (props) => {
       <Typography
         variant="button"
         color="textPrimary"
-        className={classes.bullet}
+        sx={{
+          margin: "0 5px",
+          cursor: "default",
+          userSelect: "none",
+        }}
       >
         •
       </Typography>
@@ -53,24 +53,24 @@ const ContactView: FC<ContactViewProps> = (props) => {
 
   return (
     <>
-      <Box className={classes.root} textAlign="center" id={props.id}>
-        <Box py={5} px={3} textAlign="left">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignContent="center"
+        sx={{
+          backgroundColor: "secondary.main",
+          position: "relative",
+        }}
+        id={props.id}
+      >
+        <Box py={5} px={3} textAlign="center">
           <Box py={2} px={1}>
             <Typography
               variant="body1"
               color="textPrimary"
               style={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
             >
-              {props.data.text[0]}
-            </Typography>
-          </Box>
-          <Box py={1} px={1}>
-            <Typography
-              variant="body1"
-              color="textPrimary"
-              style={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
-            >
-              {props.data.text[1]}
+              {props.data.text}
             </Typography>
           </Box>
           <Box py={3}>
@@ -81,19 +81,20 @@ const ContactView: FC<ContactViewProps> = (props) => {
                   <ClickAwayListener
                     onClickAway={() => handleTooltipState(false, key)}
                   >
-                    <Tooltip
+                    <CustomWidthTooltip
                       arrow
                       placement="top"
+                      // TransitionComponent={Fade}
+                      TransitionComponent={Zoom}
                       PopperProps={{
                         disablePortal: true,
                       }}
+                      TransitionProps={{ timeout: 200 }}
                       onClose={() => handleTooltipState(false, key)}
                       open={tooltipStates[key]}
                       disableFocusListener
-                      disableHoverListener
+                      // disableHoverListener
                       disableTouchListener
-                      classes={{ tooltip: classes.tooltipWidth }}
-                      TransitionComponent={Zoom}
                       title={
                         <Typography variant="overline" color="inherit">
                           {link.copyText}
@@ -106,17 +107,33 @@ const ContactView: FC<ContactViewProps> = (props) => {
                           navigator.clipboard.writeText(link.value);
                         }}
                       >
-                        <Typography variant="button" color="textPrimary">
+                        <Typography
+                          variant="button"
+                          color="textPrimary"
+                          sx={{
+                            "&:hover": {
+                              color: "error.main",
+                            },
+                          }}
+                        >
                           {link.text}
                         </Typography>
                       </Button>
-                    </Tooltip>
+                    </CustomWidthTooltip>
                   </ClickAwayListener>
                 );
               } else {
                 elements.push(
                   <Button onClick={() => window.open(link.value, "_blank")}>
-                    <Typography variant="button" color="textPrimary">
+                    <Typography
+                      variant="button"
+                      color="textPrimary"
+                      sx={{
+                        "&:hover": {
+                          color: "error.main",
+                        },
+                      }}
+                    >
                       {link.text}
                     </Typography>
                   </Button>
@@ -133,24 +150,4 @@ const ContactView: FC<ContactViewProps> = (props) => {
     </>
   );
 };
-export default ContactView;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.primary.main,
-    position: "relative",
-  },
-  backgroundTriangle: {
-    color: theme.palette.secondary.main,
-    position: "absolute",
-    margin: "-45px",
-    height: "100px",
-    width: "100px",
-  },
-  bullet: {
-    margin: "0 5px",
-  },
-  tooltipWidth: {
-    maxWidth: 400,
-  },
-}));
+export default Footer;

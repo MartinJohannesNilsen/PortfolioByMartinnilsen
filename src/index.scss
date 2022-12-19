@@ -78,3 +78,21 @@ body::-webkit-scrollbar {
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
 }
+
+.featuredInCardCssGrid {
+  grid-area: card;
+  width: 320px; /* Need a specific value to work */
+  height: 460px;
+}
+
+.tinderCards {
+  user-select: none;
+  cursor: grab;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .featuredInCardCssGrid {
+    height: 370px;
+  }
+}

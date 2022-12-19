@@ -1,8 +1,7 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import {
   Grid,
   Box,
-  makeStyles,
   Typography,
   AppBar,
   Toolbar,
@@ -10,7 +9,8 @@ import {
   ButtonBase,
   Button,
   useMediaQuery,
-} from "@material-ui/core";
+  Fade,
+} from "@mui/material";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
 import { Icon } from "@iconify/react";
@@ -20,16 +20,8 @@ import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import Switch from "../Switch/Switch";
 import FABMenu from "./FABMenu";
 import $ from "jquery";
-
-export type NavbarProps = {
-  data: {
-    title: string;
-    languages: string[];
-    sections: string[];
-  };
-  language: string;
-  setLanguage: (language: string) => void;
-};
+import { useWindowScroll } from "react-use";
+import { NavbarProps } from "../../types";
 
 export const handleScroll = (name: string) => {
   $("html, body").animate(
@@ -41,12 +33,17 @@ export const handleScroll = (name: string) => {
 };
 
 export const Navbar: FC<NavbarProps> = (props) => {
-  const classes = useStyles();
   const { theme, setTheme } = useTheme();
+  const windowScroll = useWindowScroll();
 
   let ref: any = useRef(null);
   useEffect(() => {
-    gsap.from(ref, { duration: 0.8, opacity: 0, y: -100, ease: Power3.easeIn });
+    gsap.from(ref, {
+      duration: 0.85,
+      opacity: 0,
+      y: -100,
+      ease: Power3.easeIn,
+    });
   }, []);
 
   const handleThemeChange = (event: any) => {
@@ -56,11 +53,25 @@ export const Navbar: FC<NavbarProps> = (props) => {
   };
 
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
-  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const smDown = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static" className={classes.root}>
-      <Toolbar className={classes.root}>
+    <AppBar
+      elevation={0}
+      position="static"
+      sx={{
+        zIndex: 2,
+        height: "80px",
+        backgroundColor: "primary.main",
+      }}
+    >
+      <Toolbar
+        sx={{
+          zIndex: 2,
+          height: "80px",
+          backgroundColor: "primary.main",
+        }}
+      >
         <Grid
           container
           alignItems="flex-end"
@@ -70,30 +81,45 @@ export const Navbar: FC<NavbarProps> = (props) => {
           <Grid item md={3}>
             <Typography
               variant="h2"
-              className={classes.mainLink}
+              sx={{
+                color: "error.main",
+              }}
               style={smDown ? { marginLeft: 40 } : { marginTop: -41.5 }}
             >
               {props.data.title}
             </Typography>
           </Grid>
-          <Hidden smDown>
+          <Hidden mdDown>
             <Grid container item md={9} lg={6} justifyContent="flex-end">
-              {props.data.sections.map((title: string, index: number) => (
-                <Box mx={2} key={index}>
-                  <Button
-                    classes={{ text: classes.buttonText }}
-                    onClick={() => handleScroll(title)}
-                  >
-                    <Typography
-                      variant="h4"
-                      color="textPrimary"
-                      className={classes.buttonLabel}
+              {props.data.sections
+                .slice(1)
+                .map((title: string, index: number) => (
+                  <Box mx={2} key={index}>
+                    <Button
+                      sx={{
+                        "& MuiButton-text": {
+                          textTransform: "none",
+                          "&:hover": {
+                            backgroundColor: "transparent",
+                          },
+                        },
+                      }}
+                      onClick={() => handleScroll(title)}
                     >
-                      {title}
-                    </Typography>
-                  </Button>
-                </Box>
-              ))}
+                      <Typography
+                        variant="h4"
+                        color="textPrimary"
+                        sx={{
+                          "&:hover": {
+                            color: "error.main",
+                          },
+                        }}
+                      >
+                        {title}
+                      </Typography>
+                    </Button>
+                  </Box>
+                ))}
               <Box mx={2} mt={-0.45}>
                 <ButtonBase
                   onClick={() => {
@@ -108,13 +134,16 @@ export const Navbar: FC<NavbarProps> = (props) => {
                         ? flagUnitedKingdom
                         : flagNorway
                     }
-                    className={classes.icon}
+                    style={{
+                      height: "45px",
+                      width: "45px",
+                    }}
                   />
                 </ButtonBase>
               </Box>
               <Box ml={0.5} mt={0}>
                 <Switch
-                  checked={theme.palette.type === "light"}
+                  checked={theme.palette.mode === "light"}
                   onChange={handleThemeChange}
                 />
               </Box>
@@ -122,6 +151,15 @@ export const Navbar: FC<NavbarProps> = (props) => {
           </Hidden>
         </Grid>
       </Toolbar>
+      <Hidden mdDown>
+        {windowScroll.y > window.innerHeight - 50 ? (
+          <Fade>
+            <FABMenu {...props} />
+          </Fade>
+        ) : (
+          <></>
+        )}
+      </Hidden>
       <Hidden mdUp>
         <FABMenu {...props} />
       </Hidden>
@@ -129,29 +167,3 @@ export const Navbar: FC<NavbarProps> = (props) => {
   );
 };
 export default Navbar;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    zIndex: 2,
-    height: "80px",
-    backgroundColor: theme.palette.primary.main,
-  },
-  mainLink: {
-    color: theme.palette.error.main,
-  },
-  icon: {
-    height: "45px",
-    width: "45px",
-  },
-  buttonText: {
-    textTransform: "none",
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-  },
-  buttonLabel: {
-    "&:hover": {
-      color: theme.palette.error.main,
-    },
-  },
-}));

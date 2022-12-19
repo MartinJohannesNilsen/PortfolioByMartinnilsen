@@ -1,125 +1,348 @@
-import { FC, useState } from "react";
+import React, { FC, useState, useMemo, useRef } from "react";
 import {
   Box,
-  makeStyles,
   Typography,
-  Grid,
   useMediaQuery,
-} from "@material-ui/core";
-import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
-import useDidUpdate from "../utils/useDidUpdate";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+  Stack,
+  IconButton,
+  Zoom,
+  Tooltip,
+  ClickAwayListener,
+  Card,
+  CardContent,
+} from "@mui/material";
 import { useTheme } from "../ThemeProvider";
-import { ArticleCard, ArticleProps } from "../components/Cards/ArticleCard";
-
-type FeaturedInViewProps = {
-  id: string;
-  data: {
-    title: string;
-    readButtonText: string;
-    copyButtonText: string;
-    copyText: string;
-    articles: ArticleProps[];
-  };
-  refreshScrollTriggers: number;
-};
+import { ArticleCard } from "../components/Cards/ArticleCard";
+import TinderCard from "react-tinder-card";
+import ClearIcon from "@mui/icons-material/Clear";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import LaunchIcon from "@mui/icons-material/Launch";
+import ReplayIcon from "@mui/icons-material/Replay";
+import { FeaturedInViewProps, directionType } from "../types";
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
-  const classes = useStyles();
-  const [cardsState, setCardsState] = useState(
-    Array(props.data.articles.length).fill({
-      hovered: false,
-      shadow: 1,
-      openTooltip: false,
-    })
-  );
   const { theme } = useTheme();
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   const sm = useMediaQuery(theme.breakpoints.only("sm"));
   const md = useMediaQuery(theme.breakpoints.only("md"));
-  const xl = useMediaQuery(theme.breakpoints.only("xl"));
-  const mdUp = useMediaQuery(theme.breakpoints.up("md"));
-  const animationOffset = mdUp ? -300 : -50;
-  gsap.registerPlugin(ScrollTrigger);
+  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
-  useDidUpdate(() => {
-    ScrollTrigger.refresh();
-  }, [props.refreshScrollTriggers]);
+  // Tindercard
+  const [currentIndex, setCurrentIndex] = useState(
+    props.data.articles.length - 1
+  );
+  const [lastDirection, setLastDirection] = useState<directionType>();
+  // used for outOfFrame closure
+  const currentIndexRef = useRef(currentIndex);
+  const childRefs: any = useMemo(
+    () =>
+      Array(props.data.articles.length)
+        .fill(0)
+        .map((i) => React.createRef()),
+    []
+  );
 
-  const handleHover = (index: number, newState: {}) => {
-    let cardStateCopy = [...cardsState];
-    cardStateCopy[index] = newState;
-    setCardsState(cardStateCopy);
+  const updateCurrentIndex = (val: number) => {
+    setCurrentIndex(val);
+    currentIndexRef.current = val;
   };
 
-  const handleTooltipState = (newState: boolean, index: number) => {
-    let cardStateCopy = [...cardsState];
-    cardStateCopy[index].openTooltip = newState;
-    setCardsState(cardStateCopy);
+  const canGoBack = currentIndex < props.data.articles.length - 1;
+  const canSwipe = currentIndex >= 0;
+
+  // set last direction and decrease current index
+  const swiped = (direction: directionType, title: string, index: number) => {
+    // console.log(`${title} (${index}) swiped to the ${direction}`, currentIndexRef.current);
+    setLastDirection(direction);
+    updateCurrentIndex(index - 1);
   };
+
+  const outOfFrame = (name: string, idx: number) => {
+    // console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current);
+    // handle the case in which go back is pressed before card goes outOfFrame
+    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()!;
+  };
+
+  const swipe = async (dir: "left" | "right") => {
+    if (canSwipe && currentIndex < props.data.articles.length) {
+      await childRefs[currentIndex].current.swipe(dir); // Swipe the card!
+    }
+  };
+
+  // increase current index and show card
+  const goBack = async () => {
+    if (!canGoBack) return;
+    const newIndex = currentIndex + 1;
+    updateCurrentIndex(newIndex);
+    await childRefs[newIndex].current.restoreCard()!;
+  };
+
+  // Tooltip
+  const [open, setOpen] = React.useState(false);
+  const handleTooltipClose = () => {
+    setOpen(false);
+  };
+  const handleTooltipOpen = () => {
+    setOpen(true);
+  };
+
+  // Copy to clipboard
+  const deprecated_copyToClipboard = (text: string) => {
+    // Does not work on safari, iPhone
+    navigator.clipboard.writeText(text);
+  };
+
+  function copyToClipboard(str: string) {
+    var el = document.createElement("textarea");
+    el.value = str;
+    el.setAttribute("readonly", "");
+    document.body.appendChild(el);
+
+    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+      // save current contentEditable/readOnly status
+      var editable = el.contentEditable;
+      var readOnly = el.readOnly;
+
+      // convert to editable with readonly to stop iOS keyboard opening
+      // el.contentEditable = true;
+      el.readOnly = true;
+
+      // create a selectable range
+      var range = document.createRange();
+      range.selectNodeContents(el);
+
+      // select the range
+      var selection = window.getSelection();
+      selection!.removeAllRanges();
+      selection!.addRange(range);
+      el.setSelectionRange(0, 999999);
+
+      // restore contentEditable/readOnly to original state
+      el.contentEditable = editable;
+      el.readOnly = readOnly;
+    } else {
+      el.select();
+    }
+    document.execCommand("copy");
+    document.body.removeChild(el);
+  }
 
   return (
     <Box
-      className={classes.root}
+      sx={{
+        minHeight: "100%",
+        backgroundColor: "secondary.main",
+        position: "relative",
+        maxWidth: "100vw",
+        overflow: "hidden",
+      }}
       textAlign="center"
       id={props.id}
       px={xs ? 4 : sm ? 4 : md ? 8 : 0}
       pb={8}
     >
       <Box pt={4} pb={3}>
-        <Typography variant="h3" className={classes.title}>
-          {props.data.title}
-        </Typography>
-      </Box>
-      <Grid container justifyContent="center" className={classes.height}>
-        {props.data.articles.map((article, index) => (
-          <ScrollTriggerUp
-            x="10vh"
-            markers={process.env.REACT_APP_SHOW_GSAP_MARKERS === "true"}
-            start={animationOffset + -250 + 30 * index + "px center"}
-            end={animationOffset + -100 + "px center"}
-            key={index}
-          >
-            <Grid
-              item
-              xs={11}
-              sm={7}
-              md={4}
-              lg={3}
-              xl={3}
-              style={{ display: "flex" }}
+        {props.language === "norwegian" ? (
+          <>
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "error.main",
+              }}
             >
-              <Box px={xl ? 5 : 2} mx={1} my={3}>
-                <ArticleCard
-                  index={index}
-                  article={article}
-                  cardsState={cardsState}
-                  handleHover={handleHover}
-                  handleTooltipState={handleTooltipState}
-                  readButtonText={props.data.readButtonText}
-                  copyButtonText={props.data.copyButtonText}
-                  copyText={props.data.copyText}
-                />
-              </Box>
-            </Grid>
-          </ScrollTriggerUp>
+              Artikler
+            </Typography>
+            <Typography variant="h3" color="textPrimary" display="inline">
+              &nbsp;hvor jeg nevnes
+            </Typography>
+          </>
+        ) : (
+          <>
+            <Typography variant="h3" color="textPrimary" display="inline">
+              Articles I
+            </Typography>
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "error.main",
+              }}
+            >
+              &nbsp;feature in
+            </Typography>
+          </>
+        )}
+      </Box>
+      <Box
+        justifyContent="center"
+        sx={{
+          height: "calc(100vh-93px)",
+          display: "grid",
+          justifyItems: "center",
+          alignItems: "center",
+          gridTemplateColumns: "repeat(1)",
+          gridTemplateRows: lgUp ? "600px 100px" : "520px 0px",
+          gridTemplateAreas: `
+          'card'
+          'buttonStack'
+          `,
+        }}
+      >
+        {props.data.articles.map((article, index) => (
+          <TinderCard
+            ref={childRefs[index]}
+            className={"featuredInCardCssGrid tinderCards"}
+            key={index}
+            onSwipe={(dir: directionType) => swiped(dir, article.title, index)}
+            onCardLeftScreen={() => outOfFrame(article.title, index)}
+          >
+            <ArticleCard
+              index={index}
+              language={props.language}
+              article={article}
+            />
+          </TinderCard>
         ))}
-      </Grid>
+        <Card
+          className="featuredInCardCssGrid"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "transparent",
+            boxShadow: "none",
+            zIndex: 0,
+          }}
+        >
+          <CardContent>
+            <Typography
+              variant="subtitle2"
+              color="textPrimary"
+              sx={{
+                opacity: "0.4",
+              }}
+            >
+              {props.language === "norwegian"
+                ? "Det var det. Eller kanskje du vil se over en gang til?"
+                : "No more cards, but maybe you want to look through them one more time?"}
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              color="textPrimary"
+              sx={{
+                opacity: "0.4",
+              }}
+            >
+              {props.language === "norwegian"
+                ? "(Trykk på den gule knappen)"
+                : "(Press the yellow button)"}
+            </Typography>
+          </CardContent>
+        </Card>
+        <Box
+          sx={{
+            gridArea: "buttonStack",
+          }}
+        >
+          <Stack direction="row" spacing={1.2} justifyContent="center">
+            <IconButton
+              aria-label="clear"
+              disabled={!canSwipe}
+              sx={{
+                color: "#F44336",
+                borderColor: "#F44336",
+                border: "2px solid",
+                boxShadow:
+                  theme.palette.mode === "light"
+                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                    : "none",
+              }}
+              onClick={() => swipe("left")}
+            >
+              <ClearIcon />
+            </IconButton>
+            <IconButton
+              aria-label="undo"
+              disabled={!canGoBack}
+              sx={{
+                color: "#ffdf00",
+                borderColor: "#ffdf00",
+                border: "2px solid",
+                boxShadow:
+                  theme.palette.mode === "light"
+                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                    : "none",
+              }}
+              onClick={() => goBack()}
+            >
+              <ReplayIcon />
+            </IconButton>
+            <ClickAwayListener onClickAway={handleTooltipClose}>
+              <Tooltip
+                arrow
+                placement="top"
+                PopperProps={{
+                  disablePortal: true,
+                }}
+                onClose={handleTooltipClose}
+                open={open}
+                disableFocusListener
+                // disableHoverListener
+                disableTouchListener
+                TransitionComponent={Zoom}
+                title={
+                  <Typography variant="overline" color="inherit">
+                    {props.data.copyText}
+                  </Typography>
+                }
+              >
+                <IconButton
+                  aria-label="copy"
+                  disabled={!canSwipe}
+                  sx={{
+                    color: "#2196F3",
+                    borderColor: "#2196F3",
+                    border: "2px solid",
+                    boxShadow:
+                      theme.palette.mode === "light"
+                        ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                        : "none",
+                  }}
+                  onClick={() => {
+                    copyToClipboard(props.data.articles[currentIndex].url);
+                    handleTooltipOpen();
+                    swipe("right");
+                  }}
+                >
+                  <ContentCopyIcon />
+                </IconButton>
+              </Tooltip>
+            </ClickAwayListener>
+            <IconButton
+              aria-label="launch"
+              disabled={!canSwipe}
+              sx={{
+                color: "#00e676",
+                borderColor: "#00e676",
+                border: "2px solid",
+                boxShadow:
+                  theme.palette.mode === "light"
+                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                    : "none",
+              }}
+              onClick={() => {
+                //Open new page in new tab
+                swipe("right");
+                window.open(props.data.articles[currentIndex].url, "_blank");
+              }}
+            >
+              <LaunchIcon />
+            </IconButton>
+          </Stack>
+        </Box>
+      </Box>
     </Box>
   );
 };
 export default FeaturedInView;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.secondary.main,
-    position: "relative",
-  },
-  title: {
-    color: theme.palette.error.main,
-  },
-  height: {
-    height: "100%",
-  },
-}));
