@@ -30,19 +30,19 @@
     "featuredInView": {
       "articles": [
         {
-          "description": "Won the hackathon held at Nor-Shipping 2022 by DNV, Astrup Fearnley Group and Microsoft. This is the official announcement.",
+          "description": "An article describing our project and the impact of it, as we developed a new digital platform for Dissimilis' note scores. This was my first internship as a Software Engineer.",
           "img": {
-            "alt": "Announcement of the winners in the Nor-Shipping Hackathon 2022",
-            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
+            "alt": "Group photo of the team making the initial color notation application for Dissimilis",
+            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
           },
-          "title": "Nor-Shipping Hackathon",
-          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
+          "title": "Dissimilis color notation",
+          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
           "publisher": {
-            "icon": "https://i.imgur.com/IjkYiMk.png",
-            "name": "Veracity by DNV"
+            "icon": "https://i.imgur.com/wKVEuW9.png",
+            "name": "Digi.no"
           },
-          "readTimeMinutes": 4,
-          "date": "2022-04-10"
+          "readTimeMinutes": 3,
+          "date": "2020-06-30"
         },
         {
           "description": "During my internship at the Norwegian Labour and Welfare Administration, a post was written and published on their official developement blog.",
@@ -60,19 +60,34 @@
           "date": "2021-10-18"
         },
         {
-          "description": "An article describing our project and the impact of it, as we developed a new digital platform for Dissimilis' note scores. This was my first internship as a Software Engineer.",
+          "description": "Won the hackathon held at Nor-Shipping 2022 by DNV, Astrup Fearnley Group and Microsoft. This is the official announcement.",
           "img": {
-            "alt": "Group photo of the team making the initial color notation application for Dissimilis",
-            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
+            "alt": "Announcement of the winners in the Nor-Shipping Hackathon 2022",
+            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
           },
-          "title": "Dissimilis color notation",
-          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
+          "title": "Nor-Shipping Hackathon",
+          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
           "publisher": {
-            "icon": "https://i.imgur.com/wKVEuW9.png",
-            "name": "Digi.no"
+            "icon": "https://i.imgur.com/IjkYiMk.png",
+            "name": "Veracity by DNV"
           },
-          "readTimeMinutes": 3,
-          "date": "2020-06-30"
+          "readTimeMinutes": 4,
+          "date": "2022-04-10"
+        },
+        {
+          "description": "A blog post about the demo of our classification pipelines on the USV Sounder. This was the final part of my internship of 2022, where I was responsible for operating the vessel when not autonomous.",
+          "img": {
+            "alt": "Image taken during a demonstration of an autonomous classification survey by Kongsberg Maritime USV Sounder",
+            "path": "https://res.cloudinary.com/ssp/image/fetch/w_945,q_100,c_fill,ar_1.952479338842975/https://www.oslohavn.no/link/b4fa1720c786492397f03bd7b8f867dd.aspx"
+          },
+          "title": "Autonomy demonstration",
+          "url": "https://www.oslohavn.no/no/aktuelt/unik-drone-skal-undersoke-oslofjorden/",
+          "publisher": {
+            "icon": "https://i.imgur.com/SzZRJ6R.png",
+            "name": "Port of Oslo"
+          },
+          "readTimeMinutes": 2,
+          "date": "2022-08-04"
         }
       ],
       "copyButtonText": "Copy link",
@@ -119,7 +134,7 @@
             "alt": "Picture of Martin Johannes Nilsen at Your Extreme 2022"
           },
           "title": "Apart from my paid jobs, I have had multiple (minor) projects on the side, as well as attended hackathons and case-solving competitions.", 
-          "text": "Many of the projects I have worked on, have not become more than a lesson for my own learning. However, some of them have either been part of making my life a bit easier or more fun or helped me understand and explore different parts of topics within computer science and/or software engineering that I find fascinating. Through the rest of this page, some of my projects and articles I have been featured in will be presented."
+          "text": "A lot of the projects I have worked on have not become more than part of my own learning. However, some of them have both helped me understand and explore different parts of topics within computer science and/or software engineering, but could also be interesting for others to take a look at. Through the rest of this page, some of my projects and articles I have been featured in will be presented."
         }
       ]
     },
@@ -285,19 +300,19 @@
     "featuredInView": {
       "articles": [
         {
-          "description": "Vant hackathonet under Nor-Shipping 2022, holdt av DNV, Astrup Fearnley Group og Microsoft. Dette er den offisielle vinnererklæringen.",
+          "description": "En artikkel skrevet i Digi.no, en redaksjon i Teknisk Ukeblad Media, som tok for seg prosjektet jeg arbeidet på under første sommerjobb som utvikler.",
           "img": {
-            "alt": "Annonsering av vinnerne av Nor-Shipping Hackathon 2022",
-            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
+            "alt": "Gruppebilde av teamet som lager første MVP av Dissimilis fargenotasjon",
+            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
           },
-          "title": "Nor-Shipping Hackathon",
-          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
+          "title": "Dissimilis fargenotasjon",
+          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
           "publisher": {
-            "icon": "https://i.imgur.com/IjkYiMk.png",
-            "name": "Veracity by DNV"
+            "icon": "https://i.imgur.com/wKVEuW9.png",
+            "name": "Digi.no"
           },
-          "readTimeMinutes": 4,
-          "date": "2022-04-10"
+          "readTimeMinutes": 3,
+          "date": "2020-06-30"
         },
         {
           "description": "Under sommerjobben hos NAV IT, ble det skrevet en post på deres offisielle utviklingsblogg, som tok for seg sommerens prosjekt.",
@@ -315,19 +330,34 @@
           "date": "2021-10-18"
         },
         {
-          "description": "En artikkel skrevet i Digi.no, en redaksjon i Teknisk Ukeblad Media, som tok for seg prosjektet jeg arbeidet på under første sommerjobb som utvikler.",
+          "description": "Vant hackathonet under Nor-Shipping 2022, holdt av DNV, Astrup Fearnley Group og Microsoft. Dette er den offisielle vinnererklæringen.",
           "img": {
-            "alt": "Gruppebilde av teamet som lager første MVP av Dissimilis fargenotasjon",
-            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
+            "alt": "Annonsering av vinnerne av Nor-Shipping Hackathon 2022",
+            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
           },
-          "title": "Dissimilis fargenotasjon",
-          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
+          "title": "Nor-Shipping Hackathon",
+          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
           "publisher": {
-            "icon": "https://i.imgur.com/wKVEuW9.png",
-            "name": "Digi.no"
+            "icon": "https://i.imgur.com/IjkYiMk.png",
+            "name": "Veracity by DNV"
           },
-          "readTimeMinutes": 3,
-          "date": "2020-06-30"
+          "readTimeMinutes": 4,
+          "date": "2022-04-10"
+        },
+        {
+          "description": "En bloggpost om demonstrasjonen av klassifiseringsløypene vi utviklet på USV Sounder. Jeg var ansvarlig for å operere båten når den ikke gikk autonomt, mens klassifiseringen kjørte i sanntid.",
+          "img": {
+            "alt": "Et bilde av USV Sounder, tatt under en demonstrasjon i Oslo Havn, august 2022",
+            "path": "https://res.cloudinary.com/ssp/image/fetch/w_945,q_100,c_fill,ar_1.952479338842975/https://www.oslohavn.no/link/b4fa1720c786492397f03bd7b8f867dd.aspx"
+          },
+          "title": "Autonom klassifiserngsdemo",
+          "url": "https://www.oslohavn.no/no/aktuelt/unik-drone-skal-undersoke-oslofjorden/",
+          "publisher": {
+            "icon": "https://i.imgur.com/SzZRJ6R.png",
+            "name": "Oslo Havn"
+          },
+          "readTimeMinutes": 2,
+          "date": "2022-08-04"
         }
       ],
       "copyButtonText": "Kopier lenke",

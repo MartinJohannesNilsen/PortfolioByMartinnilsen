@@ -93,16 +93,16 @@ const App = () => {
           triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
           language={language}
         />
-        <FeaturedInView
-          id={data.landingView.navbar.sections[2]}
-          data={{
-            title: data.featuredInView.title,
-            copyText: data.featuredInView.copyText,
-            articles: data.featuredInView.articles.slice().reverse(),
-          }}
-          refreshScrollTriggers={refreshScrollTriggers}
-          language={language}
-        />
+        {data.featuredInView.articles.length > 0 ? (
+          <FeaturedInView
+            id={data.landingView.navbar.sections[2]}
+            data={data.featuredInView}
+            refreshScrollTriggers={refreshScrollTriggers}
+            language={language}
+          />
+        ) : (
+          <></>
+        )}
         <DeskView language={language} />
         <Footer
           id={data.landingView.navbar.sections[3]}
