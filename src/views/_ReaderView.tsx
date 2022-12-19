@@ -1,36 +1,5 @@
 import { FC } from "react";
-import { ProjectProps } from "../components/ProjectList/ProjectElement";
-import { ArticleProps } from "../components/Cards/ArticleCard";
-
-type ReaderViewProps = {
-  ids: string[];
-  about: {
-    subtitle: string[];
-    text: string[];
-  };
-  projects: {
-    title: string;
-    buttonTexts: string[];
-    projects: [ProjectProps];
-  };
-  featuredIn: {
-    title: string;
-    readButtonText: string;
-    copyButtonText: string;
-    articles: [ArticleProps];
-  };
-  contact: {
-    text: string[];
-    links: [
-      {
-        text: string;
-        value: string;
-        copyText?: string;
-      }
-    ];
-  };
-  language: string;
-};
+import { ProjectProps, ReaderViewProps } from "../types";
 
 const create_link_row = (project: ProjectProps, buttonTexts: string[]) => {
   let elements = [];
@@ -85,18 +54,23 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
       style={{
         position: "absolute",
         zIndex: -1,
-        // top: "-99999px !important",
-        // left: "-99999px !important",
       }}
     >
-      <h2>Martin Johannes Nilsen | Portfolio</h2>
+      <h2>
+        {props.language === "norwegian"
+          ? "Portefølje | Martin Johannes Nilsen"
+          : "Portfolio | Martin Johannes Nilsen"}
+      </h2>
 
       {/* About */}
       <h2>
         <span className="header">{props.ids[0]}</span>
       </h2>
-      {props.about.text.map((t, key) => (
-        <p key={key}>{t}</p>
+      {props.landing.cards.map((t, key) => (
+        <div key={key}>
+          <h4>{t.topic}</h4>
+          <p>{`${t.title} ${t.text}`}</p>
+        </div>
       ))}
 
       {/* Projects */}
@@ -118,7 +92,7 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
 
       {/* Featured in */}
       <h2>
-        <span className="header">{props.featuredIn.title}</span>
+        <span className="header">{props.ids[2]}</span>
       </h2>
       {props.featuredIn.articles.map((t, key) => (
         <div key={key}>
@@ -126,6 +100,12 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
             <span className="header">{t.title}</span>
           </h4>
           <p>{t.description}</p>
+          <p>{`(${t.publisher.name}, ${new Date(t.date).toLocaleDateString(
+            props.language === "norwegian" ? "nb-NO" : "en-GB",
+            { year: "numeric", month: "short", day: "numeric" }
+          )}, ${t.readTimeMinutes} ${
+            props.language === "norwegian" ? "min å lese" : "min read"
+          })`}</p>
           <a href={t.url} target="_blank">
             {props.featuredIn.readButtonText}
           </a>
@@ -134,14 +114,10 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
 
       {/* Contact */}
       <h2>
-        <span className="header">{props.ids[2]}</span>
+        <span className="header">{props.ids[3]}</span>
       </h2>
-      {props.contact.text.map((t, key) => (
-        <>
-          <p key={key}>{t}</p>
-        </>
-      ))}
-      {props.contact.links
+      <p>{props.footer.text}</p>
+      {props.footer.links
         .slice()
         .reverse()
         .map((link, key) => {
@@ -155,7 +131,7 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
               </a>
             );
           }
-          if (key < props.contact.links.length - 1) {
+          if (key < props.footer.links.length - 1) {
             elements.push(<a> • </a>);
           }
           return elements;

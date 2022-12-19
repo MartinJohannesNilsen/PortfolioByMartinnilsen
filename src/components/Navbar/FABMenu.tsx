@@ -2,22 +2,18 @@ import { FC, useState } from "react";
 import { SpeedDial, SpeedDialAction, SxProps } from "@mui/material";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
-import { NavbarProps } from "./Navbar";
 import { Icon, InlineIcon } from "@iconify/react";
 import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import darkTheme24Filled from "@iconify-icons/fluent/dark-theme-24-filled";
-
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import ArtTrackOutlinedIcon from "@mui/icons-material/ArtTrackOutlined";
 import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaicOutlined";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
-
 import { handleScroll } from "./Navbar";
+import { NavbarProps } from "../../types";
 
 export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
   const { theme, setTheme } = useTheme();

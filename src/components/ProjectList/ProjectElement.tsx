@@ -3,31 +3,11 @@ import { Box, Grid, Typography, Hidden, useMediaQuery } from "@mui/material";
 import { Image } from "mui-image";
 import insertButtons from "./InsertButtons";
 import {
-  ScrollTriggerLeft,
-  ScrollTriggerRight,
+  ScrollTriggerFromLeft,
+  ScrollTriggerFromRight,
 } from "../Animations/ScrollTrigger";
 import { useTheme } from "../../ThemeProvider";
-
-export type ProjectProps = {
-  title: string;
-  description: string;
-  img: {
-    path: string;
-    type: "landscape" | "portrait" | "square";
-  };
-  linkToWebsite?: string;
-  linkToGitHub?: string;
-  linkToDemovideo?: string;
-  linkToReadMe?: string;
-  linkToPaper?: string;
-  technologies?: string[];
-};
-
-export type ProjectElementProps = {
-  projectData: ProjectProps;
-  imgPosition: "left" | "right";
-  linkButtonText: string[];
-};
+import { ProjectElementProps } from "../../types";
 
 const ProjectElement: FC<ProjectElementProps> = (props) => {
   const paddingTitleDescription = 1.7;
@@ -44,7 +24,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
         {props.imgPosition === "left" ? (
           <>
             <Grid item xs={11} md={12}>
-              <ScrollTriggerLeft
+              <ScrollTriggerFromLeft
                 x="5vw"
                 markers={showMarkers}
                 start={animationStart}
@@ -124,13 +104,13 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     <Box>{insertButtons(props)}</Box>
                   </Grid>
                 </Grid>
-              </ScrollTriggerLeft>
+              </ScrollTriggerFromLeft>
             </Grid>
           </>
         ) : (
           <>
             <Grid item xs={11} md={12}>
-              <ScrollTriggerRight
+              <ScrollTriggerFromRight
                 x="5vw"
                 markers={showMarkers}
                 start={animationStart}
@@ -242,7 +222,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     </Grid>
                   </Hidden>
                 </Grid>
-              </ScrollTriggerRight>
+              </ScrollTriggerFromRight>
             </Grid>
           </>
         )}

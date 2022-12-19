@@ -1,15 +1,8 @@
 import { FC } from "react";
 import { Box, Grid, Button, Typography } from "@mui/material";
-import ProjectElement, { ProjectProps } from "./ProjectElement";
+import ProjectElement from "./ProjectElement";
 import { useTheme } from "../../ThemeProvider";
-
-type ProjectListProps = {
-  projects: ProjectProps[];
-  numShowing: number;
-  setNumShowing: (num: number) => void;
-  numIncrease: number;
-  buttonTexts: string[];
-};
+import { ProjectListProps } from "../../types";
 
 export const ProjectList: FC<ProjectListProps> = (props) => {
   const { theme } = useTheme();

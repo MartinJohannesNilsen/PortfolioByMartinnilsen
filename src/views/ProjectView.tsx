@@ -2,18 +2,7 @@ import { FC, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import ProjectList from "../components/ProjectList/ProjectList";
 import useDidUpdate from "../utils/useDidUpdate";
-import { ProjectProps } from "../components/ProjectList/ProjectElement";
-
-type ProjectViewProps = {
-  id: string;
-  data: {
-    title: string;
-    buttonTexts: string[];
-    projects: ProjectProps[];
-  };
-  triggerRefreshScrollTriggers?: () => void;
-  language: string;
-};
+import { ProjectViewProps } from "../types";
 
 const ProjectView: FC<ProjectViewProps> = (props) => {
   const [numShowing, setNumShowing] = useState<number>(

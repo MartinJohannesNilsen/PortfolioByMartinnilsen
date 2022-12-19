@@ -1,27 +1,15 @@
-import { FC, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
-import Navbar from "../components/Navbar/Navbar";
+import { FC, useLayoutEffect, useRef, useState } from "react";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { gsap, Power3 } from "gsap";
 import { useTheme } from "../ThemeProvider";
 import useDidUpdate from "../utils/useDidUpdate";
 import DeskSVGInline from "../assets/svg/desk_animated";
-
-type DeskViewProps = { language: string };
-
-type svgProps = {
-  drawers: string;
-  countertop: string;
-  monitor_arm: string;
-  monitor: string;
-  keyboard: string;
-  mouse: string;
-  lamp: string;
-  lamp_light: string;
-  desktop_bg: string;
-};
+import { DeskViewProps, svgProps } from "../types";
 
 const DeskView: FC<DeskViewProps> = (props) => {
   const { theme } = useTheme();
+  const xl = useMediaQuery(theme.breakpoints.only("xl"));
+  const lg = useMediaQuery(theme.breakpoints.only("lg"));
   const elementRef = useRef(null);
   const q = gsap.utils.selector(elementRef);
   const [inView, setInView] = useState(false);
@@ -32,7 +20,7 @@ const DeskView: FC<DeskViewProps> = (props) => {
         trigger: q(".desksvginline"),
         start: "top center",
         end: "+=0px",
-        // scrub: 1, // scrub: 1
+        scrub: false,
         pin: false,
         markers: process.env.REACT_APP_SHOW_GSAP_MARKERS === "true",
         onEnter: () => setInView(true),
@@ -174,13 +162,6 @@ const DeskView: FC<DeskViewProps> = (props) => {
     });
     //eslint-disable-next-line
   }, []);
-
-  const xl = useMediaQuery(theme.breakpoints.only("xl"));
-  const lg = useMediaQuery(theme.breakpoints.only("lg"));
-  const md = useMediaQuery(theme.breakpoints.only("md"));
-  const sm = useMediaQuery(theme.breakpoints.only("sm"));
-  const xs = useMediaQuery(theme.breakpoints.only("xs"));
-  const smDown = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box

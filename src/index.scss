@@ -79,20 +79,20 @@ body::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
 }
 
-.tinderCard {
-  position: absolute;
-  left: 0; 
-  right: 0; 
-  margin-top: 100px;
-  margin-left: auto; 
-  margin-right: auto; 
-  width: 320px; /* Need a specific value to work */
-}
-
-.tinderCardCssGrid {
+.featuredInCardCssGrid {
   grid-area: card;
   width: 320px; /* Need a specific value to work */
   height: 460px;
+}
+
+.tinderCards {
   user-select: none;
   cursor: grab;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .featuredInCardCssGrid {
+    height: 370px;
+  }
 }

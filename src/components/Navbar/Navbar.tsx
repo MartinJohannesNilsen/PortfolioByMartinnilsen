@@ -21,16 +21,7 @@ import Switch from "../Switch/Switch";
 import FABMenu from "./FABMenu";
 import $ from "jquery";
 import { useWindowScroll } from "react-use";
-
-export type NavbarProps = {
-  data: {
-    title: string;
-    languages: string[];
-    sections: string[];
-  };
-  language: string;
-  setLanguage: (language: string) => void;
-};
+import { NavbarProps } from "../../types";
 
 export const handleScroll = (name: string) => {
   $("html, body").animate(
@@ -47,7 +38,12 @@ export const Navbar: FC<NavbarProps> = (props) => {
 
   let ref: any = useRef(null);
   useEffect(() => {
-    gsap.from(ref, { duration: 0.8, opacity: 0, y: -100, ease: Power3.easeIn });
+    gsap.from(ref, {
+      duration: 0.85,
+      opacity: 0,
+      y: -100,
+      ease: Power3.easeIn,
+    });
   }, []);
 
   const handleThemeChange = (event: any) => {

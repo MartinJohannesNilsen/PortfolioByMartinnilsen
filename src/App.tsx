@@ -3,17 +3,18 @@ import { useEffect, useMemo, useState } from "react";
 import CustomThemeProvider from "./ThemeProvider";
 import useStickyState from "./utils/useStickyState";
 import fetchDataFromDB from "./utils/fetchDataFromDB";
-import { ProjectProps } from "./components/ProjectList/ProjectElement";
 import preloadImgs from "./utils/preloadImgs";
 import showMuiSize from "./utils/showMuiSize";
+import { ProjectProps } from "./types";
 
 //Views
 import LandingView from "./views/LandingView";
 import ProjectView from "./views/ProjectView";
-import ContactView from "./views/ContactView";
+import Footer from "./components/Footer/Footer";
 import ReaderView from "./views/_ReaderView";
 import FeaturedInView from "./views/FeaturedInView";
 import DeskView from "./views/DeskView";
+import ScrollToTop from "./utils/scrollToTop";
 
 //Function for getting local data from correct json-file
 // based on environment variable and defined language
@@ -48,10 +49,6 @@ const App = () => {
   }, [language]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     triggerRefreshScrollTriggers();
   }, [data]);
 
@@ -59,16 +56,18 @@ const App = () => {
     <StyledEngineProvider injectFirst>
       <CustomThemeProvider>
         <CssBaseline />
+        <ScrollToTop />
         {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
         <ReaderView
           ids={[
             data.landingView.navbar.sections[0],
             data.landingView.navbar.sections[1],
             data.landingView.navbar.sections[2],
+            data.landingView.navbar.sections[3],
           ]}
-          about={data.aboutView}
+          landing={data.landingView}
           projects={data.projectView}
-          contact={data.contactView}
+          footer={data.footer}
           featuredIn={data.featuredInView}
           language={language}
         />
@@ -78,10 +77,6 @@ const App = () => {
           language={language}
           setLanguage={setLanguage}
         />
-        {/* <AboutView
-          id={data.landingView.navbar.sections[0]}
-          data={data.aboutView}
-        /> */}
         {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
           ? preloadImgs(
               data.projectView.projects
@@ -109,9 +104,9 @@ const App = () => {
           language={language}
         />
         <DeskView language={language} />
-        <ContactView
+        <Footer
           id={data.landingView.navbar.sections[3]}
-          data={data.contactView}
+          data={data.footer}
           language={language}
         />
       </CustomThemeProvider>

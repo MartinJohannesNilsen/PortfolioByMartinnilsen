@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   ClickAwayListener,
-  Fade,
   styled,
   Tooltip,
   tooltipClasses,
@@ -12,22 +11,8 @@ import {
   useMediaQuery,
   Zoom,
 } from "@mui/material";
-import { useTheme } from "../ThemeProvider";
-
-type ContactViewProps = {
-  id: string;
-  data: {
-    text: string[];
-    links: [
-      {
-        text: string;
-        value: string;
-        copyText?: string;
-      }
-    ];
-  };
-  language: string;
-};
+import { useTheme } from "../../ThemeProvider";
+import { FooterProps } from "../../types";
 
 const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -37,7 +22,7 @@ const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 });
 
-const ContactView: FC<ContactViewProps> = (props) => {
+const Footer: FC<FooterProps> = (props) => {
   const [tooltipStates, setTooltipStates] = React.useState(
     Array(props.data.links.length).fill(false)
   );
@@ -57,6 +42,8 @@ const ContactView: FC<ContactViewProps> = (props) => {
         color="textPrimary"
         sx={{
           margin: "0 5px",
+          cursor: "default",
+          userSelect: "none",
         }}
       >
         •
@@ -71,7 +58,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
         justifyContent="center"
         alignContent="center"
         sx={{
-          backgroundColor: "primary.main",
+          backgroundColor: "secondary.main",
           position: "relative",
         }}
         id={props.id}
@@ -83,7 +70,7 @@ const ContactView: FC<ContactViewProps> = (props) => {
               color="textPrimary"
               style={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
             >
-              {props.data.text[0]}
+              {props.data.text}
             </Typography>
           </Box>
           <Box py={3}>
@@ -120,7 +107,15 @@ const ContactView: FC<ContactViewProps> = (props) => {
                           navigator.clipboard.writeText(link.value);
                         }}
                       >
-                        <Typography variant="button" color="textPrimary">
+                        <Typography
+                          variant="button"
+                          color="textPrimary"
+                          sx={{
+                            "&:hover": {
+                              color: "error.main",
+                            },
+                          }}
+                        >
                           {link.text}
                         </Typography>
                       </Button>
@@ -130,7 +125,15 @@ const ContactView: FC<ContactViewProps> = (props) => {
               } else {
                 elements.push(
                   <Button onClick={() => window.open(link.value, "_blank")}>
-                    <Typography variant="button" color="textPrimary">
+                    <Typography
+                      variant="button"
+                      color="textPrimary"
+                      sx={{
+                        "&:hover": {
+                          color: "error.main",
+                        },
+                      }}
+                    >
                       {link.text}
                     </Typography>
                   </Button>
@@ -147,4 +150,4 @@ const ContactView: FC<ContactViewProps> = (props) => {
     </>
   );
 };
-export default ContactView;
+export default Footer;

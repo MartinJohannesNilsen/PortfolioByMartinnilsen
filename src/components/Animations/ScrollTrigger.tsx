@@ -1,18 +1,14 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { ScrollTrigger } from "react-gsap";
-import { FadeInLeft, FadeInRight, FadeInUp } from "./Tweens";
+import {
+  FadeInFromLeft,
+  FadeInFromRight,
+  FadeInFromDown,
+  FadeInFromXY,
+} from "./Tweens";
+import { ScrollTriggerProps } from "../../types";
 
-type ScrollTriggerProps = {
-  markers?: boolean;
-  start?: string;
-  end?: string;
-  scrub?: number;
-  x?: string;
-  y?: string;
-  children?: ReactNode;
-};
-
-export const ScrollTriggerLeft: FC<ScrollTriggerProps> = (
+export const ScrollTriggerFromLeft: FC<ScrollTriggerProps> = (
   props: ScrollTriggerProps
 ) => {
   return (
@@ -22,12 +18,12 @@ export const ScrollTriggerLeft: FC<ScrollTriggerProps> = (
       scrub={props.scrub || 0.5}
       markers={props.markers || false}
     >
-      <FadeInLeft x={props.x}>{props.children}</FadeInLeft>
+      <FadeInFromLeft x={props.x}>{props.children}</FadeInFromLeft>
     </ScrollTrigger>
   );
 };
 
-export const ScrollTriggerRight: FC<ScrollTriggerProps> = (
+export const ScrollTriggerFromRight: FC<ScrollTriggerProps> = (
   props: ScrollTriggerProps
 ) => {
   return (
@@ -37,12 +33,12 @@ export const ScrollTriggerRight: FC<ScrollTriggerProps> = (
       scrub={props.scrub || 0.5}
       markers={props.markers || false}
     >
-      <FadeInRight x={props.x}>{props.children}</FadeInRight>
+      <FadeInFromRight x={props.x}>{props.children}</FadeInFromRight>
     </ScrollTrigger>
   );
 };
 
-export const ScrollTriggerUp: FC<ScrollTriggerProps> = (
+export const ScrollTriggerFromUp: FC<ScrollTriggerProps> = (
   props: ScrollTriggerProps
 ) => {
   return (
@@ -52,12 +48,12 @@ export const ScrollTriggerUp: FC<ScrollTriggerProps> = (
       scrub={props.scrub || 0.5}
       markers={props.markers || false}
     >
-      <FadeInUp y={props.y}>{props.children}</FadeInUp>
+      <FadeInFromDown y={props.y}>{props.children}</FadeInFromDown>
     </ScrollTrigger>
   );
 };
 
-export const ScrollTriggerXY: FC<ScrollTriggerProps> = (
+export const ScrollTriggerFromXY: FC<ScrollTriggerProps> = (
   props: ScrollTriggerProps
 ) => {
   return (
@@ -67,9 +63,9 @@ export const ScrollTriggerXY: FC<ScrollTriggerProps> = (
       scrub={props.scrub || 0.5}
       markers={props.markers || false}
     >
-      <FadeInUp x={props.x} y={props.y}>
+      <FadeInFromXY x={props.x} y={props.y}>
         {props.children}
-      </FadeInUp>
+      </FadeInFromXY>
     </ScrollTrigger>
   );
 };

@@ -45,21 +45,8 @@ export const dark = createTheme(
       fontFamily: "Gotham",
 
       // Headings
-      // Usage: landingViewSlogan
-      h1: {
-        fontSize: "5.5rem",
-        // textShadow: "2px 2px 3px rgba(0,0,0,1)",
-        // textShadow: "4px 3px 0px rgba(0,0,0,0.15), 9px 8px 0px #fff",
-        textShadow:
-          "0px 15px 5px rgba(0,0,0,0.1), 10px 20px 5px rgba(0,0,0,0.05),-10px 20px 5px rgba(0,0,0,0.05)",
-        fontWeight: 800,
-        [defaultTheme.breakpoints.down("lg")]: {
-          fontSize: "4rem",
-        },
-        [defaultTheme.breakpoints.down("sm")]: {
-          fontSize: "2.7rem",
-        },
-      },
+      // Usage:
+      h1: {},
       // Usage: NavbarLogo, aboutTitle
       h2: { fontSize: "2rem", fontWeight: 800 },
       // Usage: projectViewHeader, featuredInViewHeader
@@ -73,8 +60,23 @@ export const dark = createTheme(
           fontWeight: 800,
         },
       },
-      h5: {},
-      h6: {},
+      // Usage: landingView title
+      h5: {
+        fontSize: "20px",
+        fontWeight: 400,
+        lineHeight: "22pt",
+        [defaultTheme.breakpoints.up("lg")]: {
+          fontSize: "22px",
+        },
+      },
+      // Usage: landingView text
+      h6: {
+        fontSize: "16px",
+        fontWeight: 600,
+        [defaultTheme.breakpoints.up("lg")]: {
+          fontSize: "18px",
+        },
+      },
 
       // Subtitles
       // Usage: projectTitle, aboutSubtitle

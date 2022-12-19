@@ -1,10 +1,8 @@
 import React from "react";
 import { Button, SxProps, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
-import { ProjectElementProps } from "./ProjectElement";
 import { useTheme } from "../../ThemeProvider";
-
-// Icons
+import { ProjectElementProps } from "../../types";
 import githubIcon from "@iconify-icons/cib/github";
 import documentBlank from "@iconify-icons/carbon/document-blank";
 import documentPdf from "@iconify-icons/carbon/document-pdf";
@@ -13,7 +11,6 @@ import cameraVideo from "@iconify-icons/bi/camera-video";
 
 const insertButtons = (props: ProjectElementProps) => {
   const { theme } = useTheme();
-
   const isHosted = props.projectData.hasOwnProperty("linkToWebsite");
   const hasGitHub = props.projectData.hasOwnProperty("linkToGitHub");
   const hasDemoVid = props.projectData.hasOwnProperty("linkToDemovideo");

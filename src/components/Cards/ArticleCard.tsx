@@ -11,31 +11,10 @@ import {
   CardActions,
 } from "@mui/material";
 import { useTheme } from "../../ThemeProvider";
-
-export type ArticleProps = {
-  title: string;
-  description: string;
-  img: {
-    path: string;
-    alt: string;
-  };
-  url: string;
-  publisher: {
-    icon: string;
-    name: string;
-  };
-  readTimeMinutes: string;
-  date: string;
-};
-
-type ArticleCardProps = {
-  index: number;
-  article: ArticleProps;
-  language: string;
-};
+import { ArticleCardProps } from "../../types";
 
 export const ArticleCard: FC<ArticleCardProps> = (props) => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
   return (
     <Card
@@ -44,7 +23,6 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
         display: "flex",
         flexDirection: "column",
         borderRadius: 4,
-        // justifyContent: "space-between",
         background:
           theme.palette.mode === "dark"
             ? "radial-gradient(circle at 10% 20%, rgb(90, 92, 106) 0%, rgb(32, 45, 58) 81.3%)"
@@ -81,8 +59,6 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
         sx={{
           height: "160px",
           width: { xs: "100%", md: "100%" },
-          // borderRadius: 4,
-          // margin: "0 ",
         }}
         image={props.article.img.path}
         title={props.article.img.alt}
@@ -108,8 +84,6 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
             color="textPrimary"
             component="p"
             sx={{
-              // fontWeight: "400",
-              // textAlign: "justify",
               textAlign: "left",
               userSelect: "none",
               cursor: "grab",

@@ -2,48 +2,29 @@ import React, { FC, useState, useMemo, useRef } from "react";
 import {
   Box,
   Typography,
-  Grid,
   useMediaQuery,
   Stack,
   IconButton,
-  Hidden,
   Zoom,
   Tooltip,
   ClickAwayListener,
+  Card,
+  CardContent,
 } from "@mui/material";
-import { ScrollTriggerUp } from "../components/Animations/ScrollTrigger";
-import useDidUpdate from "../utils/useDidUpdate";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTheme } from "../ThemeProvider";
-import { ArticleCard, ArticleProps } from "../components/Cards/ArticleCard";
+import { ArticleCard } from "../components/Cards/ArticleCard";
 import TinderCard from "react-tinder-card";
 import ClearIcon from "@mui/icons-material/Clear";
-import UndoIcon from "@mui/icons-material/Undo";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LaunchIcon from "@mui/icons-material/Launch";
 import ReplayIcon from "@mui/icons-material/Replay";
-
-type FeaturedInViewProps = {
-  id: string;
-  data: {
-    title: string;
-    copyText: string;
-    articles: ArticleProps[];
-  };
-  refreshScrollTriggers: number;
-  language: string;
-};
-
-type directionType = "left" | "right" | "up" | "down";
+import { FeaturedInViewProps, directionType } from "../types";
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const { theme } = useTheme();
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   const sm = useMediaQuery(theme.breakpoints.only("sm"));
   const md = useMediaQuery(theme.breakpoints.only("md"));
-  const lg = useMediaQuery(theme.breakpoints.only("lg"));
-  const xl = useMediaQuery(theme.breakpoints.only("xl"));
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   // Tindercard
@@ -105,6 +86,47 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     setOpen(true);
   };
 
+  // Copy to clipboard
+  const deprecated_copyToClipboard = (text: string) => {
+    // Does not work on safari, iPhone
+    navigator.clipboard.writeText(text);
+  };
+
+  function copyToClipboard(str: string) {
+    var el = document.createElement("textarea");
+    el.value = str;
+    el.setAttribute("readonly", "");
+    document.body.appendChild(el);
+
+    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+      // save current contentEditable/readOnly status
+      var editable = el.contentEditable;
+      var readOnly = el.readOnly;
+
+      // convert to editable with readonly to stop iOS keyboard opening
+      // el.contentEditable = true;
+      el.readOnly = true;
+
+      // create a selectable range
+      var range = document.createRange();
+      range.selectNodeContents(el);
+
+      // select the range
+      var selection = window.getSelection();
+      selection!.removeAllRanges();
+      selection!.addRange(range);
+      el.setSelectionRange(0, 999999);
+
+      // restore contentEditable/readOnly to original state
+      el.contentEditable = editable;
+      el.readOnly = readOnly;
+    } else {
+      el.select();
+    }
+    document.execCommand("copy");
+    document.body.removeChild(el);
+  }
+
   return (
     <Box
       sx={{
@@ -132,7 +154,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
               Artikler
             </Typography>
             <Typography variant="h3" color="textPrimary" display="inline">
-              &nbsp;jeg er med i
+              &nbsp;hvor jeg nevnes
             </Typography>
           </>
         ) : (
@@ -170,8 +192,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
         {props.data.articles.map((article, index) => (
           <TinderCard
             ref={childRefs[index]}
-            className="tinderCardCssGrid"
-            // className="tinderCard"
+            className={"featuredInCardCssGrid tinderCards"}
             key={index}
             onSwipe={(dir: directionType) => swiped(dir, article.title, index)}
             onCardLeftScreen={() => outOfFrame(article.title, index)}
@@ -183,10 +204,45 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
             />
           </TinderCard>
         ))}
+        <Card
+          className="featuredInCardCssGrid"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "transparent",
+            boxShadow: "none",
+            zIndex: 0,
+          }}
+        >
+          <CardContent>
+            <Typography
+              variant="subtitle2"
+              color="textPrimary"
+              sx={{
+                opacity: "0.4",
+              }}
+            >
+              {props.language === "norwegian"
+                ? "Det var det. Eller kanskje du vil se over en gang til?"
+                : "No more cards, but maybe you want to look through them one more time?"}
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              color="textPrimary"
+              sx={{
+                opacity: "0.4",
+              }}
+            >
+              {props.language === "norwegian"
+                ? "(Trykk på den gule knappen)"
+                : "(Press the yellow button)"}
+            </Typography>
+          </CardContent>
+        </Card>
         <Box
           sx={{
             gridArea: "buttonStack",
-            // width: "320px",
           }}
         >
           <Stack direction="row" spacing={1.2} justifyContent="center">
@@ -210,7 +266,6 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
               aria-label="undo"
               disabled={!canGoBack}
               sx={{
-                // backgroundColor: theme.palette.mode === "light" ? "black" : "transparent",
                 color: "#ffdf00",
                 borderColor: "#ffdf00",
                 border: "2px solid",
@@ -255,9 +310,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                         : "none",
                   }}
                   onClick={() => {
-                    navigator.clipboard.writeText(
-                      props.data.articles[currentIndex].url
-                    );
+                    copyToClipboard(props.data.articles[currentIndex].url);
                     handleTooltipOpen();
                     swipe("right");
                   }}
