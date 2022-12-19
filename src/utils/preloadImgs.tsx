@@ -1,7 +1,7 @@
 const preloadImgs = (imgPaths: string[]) => {
   let links: JSX.Element[] = [];
-  imgPaths.map((path) => {
-    links.push(<link rel="preload" as="image" href={path} />);
+  imgPaths.map((path, index) => {
+    links.push(<link rel="preload" as="image" href={path} key={index} />);
   });
   return links;
 };

@@ -18,6 +18,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
               <Grid item xs={10} lg={8} xl={7} key={index}>
                 <Box mb={index !== props.projects.length - 1 ? 10 : 5}>
                   <ProjectElement
+                    index={index}
                     projectData={project}
                     imgPosition={index % 2 === 0 ? "right" : "left"}
                     linkButtonText={props.buttonTexts}

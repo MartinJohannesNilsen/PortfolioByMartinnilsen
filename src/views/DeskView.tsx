@@ -10,6 +10,7 @@ const DeskView: FC<DeskViewProps> = (props) => {
   const { theme } = useTheme();
   const xl = useMediaQuery(theme.breakpoints.only("xl"));
   const lg = useMediaQuery(theme.breakpoints.only("lg"));
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const elementRef = useRef(null);
   const q = gsap.utils.selector(elementRef);
   const [inView, setInView] = useState(false);
@@ -18,9 +19,9 @@ const DeskView: FC<DeskViewProps> = (props) => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: q(".desksvginline"),
-        start: "top center",
+        start: smDown ? "bottom top" : "top center",
         end: "+=0px",
-        scrub: false,
+        // scrub: false,
         pin: false,
         markers: process.env.REACT_APP_SHOW_GSAP_MARKERS === "true",
         onEnter: () => setInView(true),

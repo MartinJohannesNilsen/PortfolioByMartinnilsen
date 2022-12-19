@@ -1,4 +1,7 @@
 {
+  "info": {
+    "fetched": false
+  },
   "english": {
     "footer": {
       "links": [
@@ -45,12 +48,12 @@
           "date": "2020-06-30"
         },
         {
-          "description": "During my internship at the Norwegian Labour and Welfare Administration, a post was written and published on their official developement blog.",
+          "description": "During my internship at the Norwegian Labour and Welfare Administration, a post was written and published on their official developement blog about our project.",
           "img": {
             "alt": "Group photo of summer interns at the Norwegian Labour and Welfare Administration in the summer of 2021",
             "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
           },
-          "title": "Mulighetsrommet",
+          "title": "The platform of possibility",
           "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet",
           "publisher": {
             "icon": "https://i.imgur.com/C6qZTzf.png",
@@ -75,7 +78,7 @@
           "date": "2022-04-10"
         },
         {
-          "description": "A blog post about the demo of our classification pipelines on the USV Sounder. This was the final part of my internship of 2022, where I was responsible for operating the vessel when not autonomous.",
+          "description": "A blog post about the demo of our classification pipelines on the USV Sounder. This was the final part of my internship of 2022, where I also was responsible for operating the vessel when not autonomous.",
           "img": {
             "alt": "Image taken during a demonstration of an autonomous classification survey by Kongsberg Maritime USV Sounder",
             "path": "https://res.cloudinary.com/ssp/image/fetch/w_945,q_100,c_fill,ar_1.952479338842975/https://www.oslohavn.no/link/b4fa1720c786492397f03bd7b8f867dd.aspx"
@@ -115,7 +118,7 @@
             "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FProfileCutoutSquare.png?alt=media&token=8c07a465-4bd7-4057-b4a5-bf55d57daafe",
             "alt": "Portrait of Martin Johannes Nilsen"
           },
-          "title": "Hello, I'm Martin. A Software Engineer, M.Sc. Student in Computer Science and passionate problem solver.", 
+          "title": "Hello, I'm Martin. A Software Engineer, M.Sc. Student and passionate problem solver.", 
           "text": "Of course, there's so much more to me than just a few fancy titles. Scroll down to learn more about me."
         },
         {
@@ -124,8 +127,8 @@
             "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FExperienceLogos.png?alt=media&token=9b49b459-3fcf-4a01-a6fc-0da8156dfc40",
             "alt": "Collage of different organization logos"
           },
-          "title": "In the past, I've had multiple internships and part-time jobs during my years at the university.", 
-          "text": "Through these, I have gained a strong foundation in both practical and theoretical concepts across multiple topics regarding Software & ML Engineering. Through my positions as a teaching assistant, I have also had the opportunity to take part in the assessment of ~100 students on a weekly basis, helping them understand the subject material, in addition to mentoring 10+ teams in their final project in applied machine learning alongside the professors."
+          "title": "I've had multiple internships and part-time jobs during my years at the university.", 
+          "text": "Through these, I have gained a strong foundation in both practical and theoretical concepts across multiple topics regarding Software & ML Engineering. Through my positions as a teaching assistant, I have also had the opportunity to participate in the assessment of ~100 students on a weekly basis, helping them understand the subject material, in addition to mentoring 10+ teams in their final project in applied machine learning alongside the professors."
         },
         {
           "topic": "Additional",
@@ -133,7 +136,7 @@
             "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FYourExtremeBærekraft.jpg?alt=media&token=70bda29b-c1b3-4f3d-9df5-01bf2e96b7b7",
             "alt": "Picture of Martin Johannes Nilsen at Your Extreme 2022"
           },
-          "title": "Apart from my paid jobs, I have had multiple (minor) projects on the side, as well as attended hackathons and case-solving competitions.", 
+          "title": "Apart from my paid jobs, I've had multiple projects on the side, as well as attended hackathons and case-solving competitions.", 
           "text": "A lot of the projects I have worked on have not become more than part of my own learning. However, some of them have both helped me understand and explore different parts of topics within computer science and/or software engineering, but could also be interesting for others to take a look at. Through the rest of this page, some of my projects and articles I have been featured in will be presented."
         }
       ]
@@ -386,7 +389,7 @@
             "alt": "Portrett av Martin Johannes Nilsen"
           },
           "title": "Hei, mitt navn er Martin. Jeg er en programvareutvikler, masterstudent og ivrig problemløser.", 
-          "text": "Selvfølgelig er det mer til meg enn bare et par kule titler. Fortsett nedover siden for å lære litt mer om meg."
+          "text": "Selvfølgelig er jeg mer enn bare et par kule titler. Fortsett nedover siden for å lære litt mer om meg."
         },
         {
           "topic": "Jobberfaring",
@@ -404,7 +407,7 @@
             "alt": "Bilde av Martin Johannes Nilsen fra Your Extreme 2022"
           },
           "title": "I tillegg til betalte jobber, har jeg også hatt en rekke prosjekter på siden og tatt del i flere konkurranser innen programmering og case-løsning.", 
-          "text": "Noen av prosjektene jeg har jobbet med har ikke blitt mer enn ny lærdom, men noen anser jeg som verdt å dele. Det å ha egne prosjekter og delta på konkurranser har bidratt til at jeg har kunnet utforske flere av de mange konseptene innen programvareutvikling og/eller maskinlæring. Artikler der jeg nevnes, som har med enten jobber eller konkurranser jeg har vært med i, finnes lengre ned på siden sammen med prosjekter jeg ønsker å dele."
+          "text": "Noen av prosjektene jeg har jobbet med har ikke blitt mer enn ny lærdom, men noen anser jeg som verdt å dele. Det å ha egne prosjekter og delta på konkurranser har bidratt til at jeg har kunnet utforske flere av de mange konseptene innen programvareutvikling og/eller maskinlæring. Både prosjekter jeg ønsker å dele, samt artikler som har blitt skrevet om noe av det jeg har holdt på med, vil bli presentert i de neste seksjonene."
         }
       ]
     },

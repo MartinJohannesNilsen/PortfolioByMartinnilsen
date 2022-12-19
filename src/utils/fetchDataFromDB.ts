@@ -1,6 +1,6 @@
 import { db } from "../firebaseConfig";
-const fetchDataFromDB = (language: string, setData: (newData: {}) => void) => {
-  let dbText = db.ref(language).orderByKey().limitToLast(1000);
+const fetchDataFromDB = (key: string, setData: (newData: {}) => void) => {
+  let dbText = db.ref(key).orderByKey().limitToLast(1000);
   dbText.on("value", function (snapshot, prevChildKey) {
     setData(snapshot.val());
   });
