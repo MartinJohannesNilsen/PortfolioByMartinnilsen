@@ -47,7 +47,7 @@
         ],
         "title": "PORTFOLIO"
       },
-      "cards": []
+      "cards": [{"img": {"path": ""}},{"img": {"path": ""}},{"img": {"path": ""}}]
     },
     "projectView": {
       "buttonTexts": [],
@@ -102,7 +102,7 @@
         ],
         "title": "PORTEFØLJE"
       },
-      "cards": []
+      "cards": [{"img": {"path": ""}},{"img": {"path": ""}},{"img": {"path": ""}}]
     },
     "projectView": {
       "buttonTexts": [],
