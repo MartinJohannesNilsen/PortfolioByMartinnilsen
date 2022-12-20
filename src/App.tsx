@@ -15,6 +15,7 @@ import ReaderView from "./views/_ReaderView";
 import FeaturedInView from "./views/FeaturedInView";
 import DeskView from "./views/DeskView";
 import ScrollToTop from "./utils/scrollToTop";
+import Navbar from "./components/Navbar/Navbar";
 
 //Functions for getting local data from correct json-file
 // based on environment variable and defined language
@@ -71,10 +72,10 @@ const App = () => {
           <>
             <ReaderView
               ids={[
-                data.landingView.navbar.sections[0],
-                data.landingView.navbar.sections[1],
-                data.landingView.navbar.sections[2],
-                data.landingView.navbar.sections[3],
+                data.navbar.sections[0],
+                data.navbar.sections[1],
+                data.navbar.sections[2],
+                data.navbar.sections[3],
               ]}
               landing={data.landingView}
               projects={data.projectView}
@@ -82,12 +83,12 @@ const App = () => {
               featuredIn={data.featuredInView}
               language={language}
             />
-            <LandingView
-              id={data.landingView.navbar.sections[0]}
-              data={data.landingView}
+            <Navbar
+              data={data.navbar}
               language={language}
               setLanguage={setLanguage}
             />
+            <LandingView id={data.navbar.sections[0]} data={data.landingView} />
             {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
               ? preloadImgs(
                   data.projectView.projects
@@ -99,20 +100,22 @@ const App = () => {
                 )
               : ""}
             <ProjectView
-              id={data.landingView.navbar.sections[1]}
+              id={data.navbar.sections[1]}
               data={data.projectView}
               triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
               language={language}
             />
             <FeaturedInView
-              id={data.landingView.navbar.sections[2]}
+              id={data.navbar.sections[2]}
               data={data.featuredInView}
-              refreshScrollTriggers={refreshScrollTriggers}
               language={language}
             />
-            <DeskView language={language} />
+            <DeskView
+              language={language}
+              refreshScrollTriggers={refreshScrollTriggers}
+            />
             <Footer
-              id={data.landingView.navbar.sections[3]}
+              id={data.navbar.sections[3]}
               data={data.footer}
               language={language}
             />

@@ -6,7 +6,6 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import Navbar from "../components/Navbar/Navbar";
 import { useTheme } from "../ThemeProvider";
 import SouthIcon from "@mui/icons-material/South";
 import { LandingViewProps } from "../types";
@@ -24,11 +23,6 @@ const LandingView: FC<LandingViewProps> = (props) => {
 
   return (
     <Box id={props.id}>
-      <Navbar
-        data={props.data.navbar}
-        language={props.language}
-        setLanguage={props.setLanguage}
-      />
       <Box
         sx={{
           minHeight: "calc(100vh - 80px)",

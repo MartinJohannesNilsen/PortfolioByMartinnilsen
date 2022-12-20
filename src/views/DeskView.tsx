@@ -1,6 +1,7 @@
-import { FC, useLayoutEffect, useRef, useState } from "react";
+import { FC, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTheme } from "../ThemeProvider";
 import useDidUpdate from "../utils/useDidUpdate";
 import DeskSVGInline from "../assets/svg/desk_animated";
@@ -14,12 +15,17 @@ const DeskView: FC<DeskViewProps> = (props) => {
   const elementRef = useRef(null);
   const q = gsap.utils.selector(elementRef);
   const [inView, setInView] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, [props.refreshScrollTriggers]);
 
   function animateIn(svgElements: svgProps) {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: q(".desksvginline"),
-        start: smDown ? "bottom top" : "top center",
+        start: smDown ? "bottom top" : "top+=250px center",
         end: "+=0px",
         // scrub: false,
         pin: false,

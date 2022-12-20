@@ -163,8 +163,6 @@ export type ReaderViewProps = {
 export type LandingViewProps = {
   id: string;
   data: LandingViewDataProps;
-  language: string;
-  setLanguage: () => void;
 };
 
 export type ProjectViewProps = {
@@ -177,11 +175,10 @@ export type ProjectViewProps = {
 export type FeaturedInViewProps = {
   id: string;
   data: FeaturedInViewDataProps;
-  refreshScrollTriggers: number;
   language: string;
 };
 
-export type DeskViewProps = { language: string };
+export type DeskViewProps = { language: string; refreshScrollTriggers: number };
 
 // Data props
 
