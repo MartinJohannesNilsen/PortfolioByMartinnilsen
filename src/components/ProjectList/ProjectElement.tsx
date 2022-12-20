@@ -21,32 +21,14 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
   const elementRef = useRef(null);
   const q = gsap.utils.selector(elementRef);
-  const animationOffset = mdUp
-    ? -300
-    : props.projectData.img.type === "landscape"
-    ? -300
-    : -100;
-  const animationStart = animationOffset + -250 + "px center";
-  const animationEnd = animationOffset + -100 + "px center";
-  // const firstAfterShowMore =
-  //   props.index > 0 &&
-  //   props.index % parseInt(process.env.REACT_APP_NUM_PROJECTS_SHOWING!) === 0;
-  // const animationStart =
-  //   !mdUp && props.projectData.img.type === "landscape"
-  //     ? firstAfterShowMore
-  //       ? "center 100%"
-  //       : "bottom 50%"
-  //     : props.projectData.img.type === "landscape"
-  //     ? "center 100%"
-  //     : "bottom 90%";
-  // const animationEnd = "+=100px";
+  const animationStart = "top 80%";
+  const animationEnd = "+=200px";
 
   return (
     <Grid container alignItems="center" justifyContent="center">
       {props.imgPosition === "left" ? (
         <Grid item xs={11} md={12}>
-          {/* <ScrollTriggerFromLeft
-            trigger={q(`.projectTrigger${props.index}`)}
+          <ScrollTriggerFromLeft
             x="5vw"
             markers={showMarkers}
             start={animationStart}
@@ -56,7 +38,6 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Grid item xs={12} md={5} lg={6}>
                 <Box py={5}>
                   <Image
-                    className={`projectTrigger${props.index}`}
                     duration={0}
                     src={props.projectData.img.path}
                     sx={{
@@ -123,8 +104,8 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 <Box>{insertButtons(props)}</Box>
               </Grid>
             </Grid>
-          </ScrollTriggerFromLeft> */}
-          <RevealFromLeftOnEnter x="5vw">
+          </ScrollTriggerFromLeft>
+          {/* <RevealFromLeftOnEnter x="5vw">
             <Grid container alignItems="center" justifyContent="space-evenly">
               <Grid item xs={12} md={5} lg={6}>
                 <Box py={5}>
@@ -196,12 +177,11 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 <Box>{insertButtons(props)}</Box>
               </Grid>
             </Grid>
-          </RevealFromLeftOnEnter>
+          </RevealFromLeftOnEnter> */}
         </Grid>
       ) : (
         <Grid item xs={11} md={12}>
-          {/* <ScrollTriggerFromRight
-            trigger={q(`#projectTrigger${props.index}`)}
+          <ScrollTriggerFromRight
             x="5vw"
             markers={showMarkers}
             start={animationStart}
@@ -211,7 +191,6 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
                 <Box py={5}>
                   <Image
-                    className={`projectTrigger${props.index}`}
                     duration={0}
                     src={props.projectData.img.path}
                     sx={{
@@ -249,8 +228,8 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 <Box>{insertButtons(props)}</Box>
               </Grid>
             </Grid>
-          </ScrollTriggerFromRight> */}
-          <RevealFromRightOnEnter x="5vw">
+          </ScrollTriggerFromRight>
+          {/* <RevealFromRightOnEnter x="5vw">
             <Grid container alignItems="center" justifyContent="space-evenly">
               <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
                 <Box py={5}>
@@ -293,7 +272,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 <Box>{insertButtons(props)}</Box>
               </Grid>
             </Grid>
-          </RevealFromRightOnEnter>
+          </RevealFromRightOnEnter> */}
         </Grid>
       )}
     </Grid>

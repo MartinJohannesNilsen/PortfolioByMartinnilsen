@@ -25,7 +25,8 @@ const DeskView: FC<DeskViewProps> = (props) => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: q(".desksvginline"),
-        start: smDown ? "bottom top" : "top+=250px center",
+        // start: smDown ? "" : "top+=250px center",
+        start: "top 80%",
         end: "+=0px",
         // scrub: false,
         pin: false,
