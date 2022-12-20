@@ -41,7 +41,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
             justifyContent: "center",
             alignItems: "center",
             columnGap: "70px",
-            rowGap: smDown ? "20px" : "70px",
+            rowGap: smDown ? "20px" : "6vh",
             padding: xs ? "0px 0px" : "0px 50px",
           }}
         >
@@ -176,7 +176,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
               justifyContent: "center",
               alignItems: "center",
               columnGap: "70px",
-              rowGap: smDown ? "20px" : "70px",
+              rowGap: "20px",
               padding: xs ? "0px 0px" : "0px 50px",
             }}
           >
@@ -223,7 +223,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
               justifyContent: "center",
               alignItems: "center",
               columnGap: "70px",
-              rowGap: smDown ? "20px" : "70px",
+              rowGap: "20px",
               padding: xs ? "0px 0px" : "0px 50px",
             }}
           >
@@ -282,7 +282,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
             justifyContent: "center",
             alignItems: "center",
             columnGap: "70px",
-            rowGap: smDown ? "20px" : "70px",
+            rowGap: "20px",
             padding: xs ? "0px 0px" : "0px 50px",
           }}
         >
