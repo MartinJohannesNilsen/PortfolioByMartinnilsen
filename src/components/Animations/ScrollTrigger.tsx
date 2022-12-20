@@ -13,6 +13,7 @@ export const ScrollTriggerFromLeft: FC<ScrollTriggerProps> = (
 ) => {
   return (
     <ScrollTrigger
+      trigger={props.trigger}
       start={props.start || "-100px center"}
       end={props.end || "100px center"}
       scrub={props.scrub || 0.5}
@@ -28,6 +29,7 @@ export const ScrollTriggerFromRight: FC<ScrollTriggerProps> = (
 ) => {
   return (
     <ScrollTrigger
+      trigger={props.trigger}
       start={props.start || "-100px center"}
       end={props.end || "100px center"}
       scrub={props.scrub || 0.5}
@@ -43,6 +45,7 @@ export const ScrollTriggerFromUp: FC<ScrollTriggerProps> = (
 ) => {
   return (
     <ScrollTrigger
+      trigger={props.trigger}
       start={props.start || "-100px center"}
       end={props.end || "100px center"}
       scrub={props.scrub || 0.5}
@@ -58,6 +61,7 @@ export const ScrollTriggerFromXY: FC<ScrollTriggerProps> = (
 ) => {
   return (
     <ScrollTrigger
+      trigger={props.trigger}
       start={props.start || "-100px center"}
       end={props.end || "100px center"}
       scrub={props.scrub || 0.5}

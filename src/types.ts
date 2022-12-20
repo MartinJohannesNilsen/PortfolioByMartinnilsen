@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 // Object types
 
-export type landingViewCard = {
+export type landingViewCardProps = {
   topic: string;
   img: {
     path: string;
@@ -45,68 +45,8 @@ export type ArticleProps = {
 
 // Component types
 
-export type TweenProps = {
-  x?: string;
-  y?: string;
-  z?: string;
-  children?: ReactNode;
-};
-
-export type ProjectListProps = {
-  projects: ProjectProps[];
-  numShowing: number;
-  setNumShowing: (num: number) => void;
-  numIncrease: number;
-  buttonTexts: string[];
-};
-
-export type ScrollTriggerProps = {
-  markers?: boolean;
-  start?: string;
-  end?: string;
-  scrub?: boolean | number;
-  x?: string;
-  y?: string;
-  trigger?: ReactJSXElement;
-  children?: ReactNode;
-};
-
-export type RevealProps = {
-  markers?: boolean;
-  repeat?: boolean;
-  start?: string;
-  x?: string;
-  y?: string;
-  children?: ReactNode;
-};
-
-export type ProjectProps = {
-  title: string;
-  description: string;
-  img: {
-    path: string;
-    type: "landscape" | "portrait" | "square";
-  };
-  linkToWebsite?: string;
-  linkToGitHub?: string;
-  linkToDemovideo?: string;
-  linkToReadMe?: string;
-  linkToPaper?: string;
-  technologies?: string[];
-};
-
-export type ProjectElementProps = {
-  projectData: ProjectProps;
-  imgPosition: "left" | "right";
-  linkButtonText: string[];
-};
-
 export type NavbarProps = {
-  data: {
-    title: string;
-    languages: string[];
-    sections: string[];
-  };
+  data: NavbarDataProps;
   language: string;
   setLanguage: (language: string) => void;
 };
@@ -126,6 +66,63 @@ export type FooterProps = {
   language: string;
 };
 
+export type ProjectProps = {
+  title: string;
+  description: string;
+  img: {
+    path: string;
+    type: "landscape" | "portrait" | "square";
+  };
+  linkToWebsite?: string;
+  linkToGitHub?: string;
+  linkToDemovideo?: string;
+  linkToReadMe?: string;
+  linkToPaper?: string;
+  technologies?: string[];
+};
+
+export type ProjectElementProps = {
+  index: number;
+  projectData: ProjectProps;
+  imgPosition: "left" | "right";
+  linkButtonText: string[];
+};
+
+export type ProjectListProps = {
+  projects: ProjectProps[];
+  numShowing: number;
+  setNumShowing: (num: number) => void;
+  numIncrease: number;
+  buttonTexts: string[];
+};
+
+export type ScrollTriggerProps = {
+  markers?: boolean;
+  start?: string;
+  end?: string;
+  scrub?: boolean | number;
+  x?: string;
+  y?: string;
+  trigger?: gsap.DOMTarget;
+  children?: ReactNode;
+};
+
+export type RevealProps = {
+  markers?: boolean;
+  repeat?: boolean;
+  start?: string;
+  x?: string;
+  y?: string;
+  children?: ReactNode;
+};
+
+export type TweenProps = {
+  x?: string;
+  y?: string;
+  z?: string;
+  children?: ReactNode;
+};
+
 export type ArticleCardProps = {
   index: number;
   article: ArticleProps;
@@ -137,7 +134,7 @@ export type ArticleCardProps = {
 export type ReaderViewProps = {
   ids: string[];
   landing: {
-    cards: [landingViewCard, landingViewCard, landingViewCard];
+    cards: [landingViewCardProps, landingViewCardProps, landingViewCardProps];
   };
   projects: {
     title: string;
@@ -163,40 +160,58 @@ export type ReaderViewProps = {
   language: string;
 };
 
-export type DeskViewProps = { language: string };
-
-export type FeaturedInViewProps = {
-  id: string;
-  data: {
-    title: string;
-    copyText: string;
-    articles: ArticleProps[];
-  };
-  refreshScrollTriggers: number;
-  language: string;
-};
-
 export type LandingViewProps = {
   id: string;
-  data: {
-    navbar: {
-      title: string;
-      languages: string[];
-      sections: string[];
-    };
-    cards: [landingViewCard, landingViewCard, landingViewCard];
-  };
-  language: string;
-  setLanguage: () => void;
+  data: LandingViewDataProps;
 };
 
 export type ProjectViewProps = {
   id: string;
-  data: {
-    title: string;
-    buttonTexts: string[];
-    projects: ProjectProps[];
-  };
+  data: ProjectViewDataProps;
   triggerRefreshScrollTriggers?: () => void;
   language: string;
+};
+
+export type FeaturedInViewProps = {
+  id: string;
+  data: FeaturedInViewDataProps;
+  language: string;
+};
+
+export type DeskViewProps = { language: string; refreshScrollTriggers: number };
+
+// Data props
+
+export type NavbarDataProps = {
+  title: string;
+  languages: string[];
+  sections: string[];
+};
+
+export type LandingViewDataProps = {
+  navbar: NavbarDataProps;
+  cards: [landingViewCardProps, landingViewCardProps, landingViewCardProps];
+};
+
+export type ProjectViewDataProps = {
+  title: string;
+  buttonTexts: string[];
+  projects: ProjectProps[];
+};
+
+export type FeaturedInViewDataProps = {
+  title: string;
+  copyText: string;
+  articles: ArticleProps[];
+};
+
+export type language = {
+  landingView: LandingViewProps;
+  projectView: ProjectViewProps;
+  featuredInView: FeaturedInViewProps;
+  footer: FooterProps;
+};
+
+export type info = {
+  fetched: boolean;
 };

@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import {
   Grid,
   Box,
@@ -103,20 +103,14 @@ export const Navbar: FC<NavbarProps> = (props) => {
                             backgroundColor: "transparent",
                           },
                         },
+                        "&:hover": {
+                          color: "error.main",
+                        },
+                        color: theme.palette.text.primary,
                       }}
                       onClick={() => handleScroll(title)}
                     >
-                      <Typography
-                        variant="h4"
-                        color="textPrimary"
-                        sx={{
-                          "&:hover": {
-                            color: "error.main",
-                          },
-                        }}
-                      >
-                        {title}
-                      </Typography>
+                      <Typography variant="h4">{title}</Typography>
                     </Button>
                   </Box>
                 ))}

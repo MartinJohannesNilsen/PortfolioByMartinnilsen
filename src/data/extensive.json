@@ -1,7 +1,78 @@
 {
   "english": {
+    "featuredInView": {
+      "articles": [
+        {
+          "date": "2020-06-30",
+          "description": "An article describing our project and the impact of it, as we developed a new digital platform for Dissimilis' note scores. This was my first internship as a Software Engineer.",
+          "img": {
+            "alt": "Group photo of the team making the initial color notation application for Dissimilis",
+            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
+          },
+          "publisher": {
+            "icon": "https://i.imgur.com/wKVEuW9.png",
+            "name": "Digi.no"
+          },
+          "readTimeMinutes": 3,
+          "title": "Dissimilis color notation",
+          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
+        },
+        {
+          "date": "2021-10-18",
+          "description": "During my internship at the Norwegian Labour and Welfare Administration, a post was written and published on their official developement blog about our project.",
+          "img": {
+            "alt": "Group photo of summer interns at the Norwegian Labour and Welfare Administration in the summer of 2021",
+            "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
+          },
+          "publisher": {
+            "icon": "https://i.imgur.com/C6qZTzf.png",
+            "name": "NAV IT"
+          },
+          "readTimeMinutes": 3,
+          "title": "The platform of possibility",
+          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
+        },
+        {
+          "date": "2022-04-10",
+          "description": "Won the hackathon held at Nor-Shipping 2022 by DNV, Astrup Fearnley Group and Microsoft. This is the official announcement.",
+          "img": {
+            "alt": "Announcement of the winners in the Nor-Shipping Hackathon 2022",
+            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
+          },
+          "publisher": {
+            "icon": "https://i.imgur.com/IjkYiMk.png",
+            "name": "Veracity by DNV"
+          },
+          "readTimeMinutes": 4,
+          "title": "Nor-Shipping Hackathon",
+          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
+        },
+        {
+          "date": "2022-08-04",
+          "description": "A blog post about the demo of our classification pipelines on the USV Sounder. This was the final part of my internship of 2022, where I also was responsible for operating the vessel when nonautonomous.",
+          "img": {
+            "alt": "Image taken during a demonstration of an autonomous classification survey by Kongsberg Maritime USV Sounder",
+            "path": "https://res.cloudinary.com/ssp/image/fetch/w_945,q_100,c_fill,ar_1.952479338842975/https://www.oslohavn.no/link/b4fa1720c786492397f03bd7b8f867dd.aspx"
+          },
+          "publisher": {
+            "icon": "https://i.imgur.com/SzZRJ6R.png",
+            "name": "Port of Oslo"
+          },
+          "readTimeMinutes": 2,
+          "title": "Autonomy demonstration",
+          "url": "https://www.oslohavn.no/no/aktuelt/unik-drone-skal-undersoke-oslofjorden/"
+        }
+      ],
+      "copyButtonText": "Copy link",
+      "copyText": "Link copied to clipboard!",
+      "readButtonText": "Read"
+    },
     "footer": {
       "links": [
+        {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
+        },
         {
           "text": "GitHub",
           "value": "https://github.com/MartinJohannesNilsen"
@@ -9,10 +80,6 @@
         {
           "text": "LinkedIn",
           "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
-        },
-        {
-          "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
         },
         {
           "copyText": "Telephone number copied to clipboard!",
@@ -27,116 +94,49 @@
       ],
       "text": "Do not hesitate in reaching out to me if you need any further information, or just want to get in touch."
     },
-    "featuredInView": {
-      "articles": [
-        {
-          "description": "An article describing our project and the impact of it, as we developed a new digital platform for Dissimilis' note scores. This was my first internship as a Software Engineer.",
-          "img": {
-            "alt": "Group photo of the team making the initial color notation application for Dissimilis",
-            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
-          },
-          "title": "Dissimilis color notation",
-          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
-          "publisher": {
-            "icon": "https://i.imgur.com/wKVEuW9.png",
-            "name": "Digi.no"
-          },
-          "readTimeMinutes": 3,
-          "date": "2020-06-30"
-        },
-        {
-          "description": "During my internship at the Norwegian Labour and Welfare Administration, a post was written and published on their official developement blog.",
-          "img": {
-            "alt": "Group photo of summer interns at the Norwegian Labour and Welfare Administration in the summer of 2021",
-            "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
-          },
-          "title": "Mulighetsrommet",
-          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet",
-          "publisher": {
-            "icon": "https://i.imgur.com/C6qZTzf.png",
-            "name": "NAV IT"
-          },
-          "readTimeMinutes": 3,
-          "date": "2021-10-18"
-        },
-        {
-          "description": "Won the hackathon held at Nor-Shipping 2022 by DNV, Astrup Fearnley Group and Microsoft. This is the official announcement.",
-          "img": {
-            "alt": "Announcement of the winners in the Nor-Shipping Hackathon 2022",
-            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
-          },
-          "title": "Nor-Shipping Hackathon",
-          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
-          "publisher": {
-            "icon": "https://i.imgur.com/IjkYiMk.png",
-            "name": "Veracity by DNV"
-          },
-          "readTimeMinutes": 4,
-          "date": "2022-04-10"
-        },
-        {
-          "description": "A blog post about the demo of our classification pipelines on the USV Sounder. This was the final part of my internship of 2022, where I was responsible for operating the vessel when not autonomous.",
-          "img": {
-            "alt": "Image taken during a demonstration of an autonomous classification survey by Kongsberg Maritime USV Sounder",
-            "path": "https://res.cloudinary.com/ssp/image/fetch/w_945,q_100,c_fill,ar_1.952479338842975/https://www.oslohavn.no/link/b4fa1720c786492397f03bd7b8f867dd.aspx"
-          },
-          "title": "Autonomy demonstration",
-          "url": "https://www.oslohavn.no/no/aktuelt/unik-drone-skal-undersoke-oslofjorden/",
-          "publisher": {
-            "icon": "https://i.imgur.com/SzZRJ6R.png",
-            "name": "Port of Oslo"
-          },
-          "readTimeMinutes": 2,
-          "date": "2022-08-04"
-        }
-      ],
-      "copyButtonText": "Copy link",
-      "copyText": "Link copied to clipboard!",
-      "readButtonText": "Read"
-    },
     "landingView": {
-      "navbar": {
-        "languages": [
-          "Norwegian",
-          "English"
-        ],
-        "sections": [
-          "About",
-          "Projects",
-          "Articles",
-          "Contact"
-        ],
-        "title": "PORTFOLIO"
-      },
       "cards": [
         {
-          "topic": "General",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FProfileCutoutSquare.png?alt=media&token=8c07a465-4bd7-4057-b4a5-bf55d57daafe",
-            "alt": "Portrait of Martin Johannes Nilsen"
+            "alt": "Portrait of Martin Johannes Nilsen",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FProfileCutoutSquare.png?alt=media&token=8c07a465-4bd7-4057-b4a5-bf55d57daafe"
           },
-          "title": "Hello, I'm Martin. A Software Engineer, M.Sc. Student in Computer Science and passionate problem solver.", 
-          "text": "Of course, there's so much more to me than just a few fancy titles. Scroll down to learn more about me."
+          "text": "Of course, there's so much more to me than just a few fancy titles. Scroll down to learn more about me.",
+          "title": "Hello, I'm Martin. A Software Engineer, M.Sc. Student and passionate problem solver.",
+          "topic": "General"
         },
         {
-          "topic": "Experience",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FExperienceLogos.png?alt=media&token=9b49b459-3fcf-4a01-a6fc-0da8156dfc40",
-            "alt": "Collage of different organization logos"
+            "alt": "Collage of different organization logos",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FExperienceLogos.png?alt=media&token=9b49b459-3fcf-4a01-a6fc-0da8156dfc40"
           },
-          "title": "In the past, I've had multiple internships and part-time jobs during my years at the university.", 
-          "text": "Through these, I have gained a strong foundation in both practical and theoretical concepts across multiple topics regarding Software & ML Engineering. Through my positions as a teaching assistant, I have also had the opportunity to take part in the assessment of ~100 students on a weekly basis, helping them understand the subject material, in addition to mentoring 10+ teams in their final project in applied machine learning alongside the professors."
+          "text": "Through these, I have gained a strong foundation in both practical and theoretical concepts across multiple topics in Software & ML Engineering. Through my positions as a teaching assistant, I have also had the opportunity to participate in the assessment of ~100 students on a weekly basis, helping them understand the subject material, in addition to mentoring 10+ teams in their final project in applied machine learning alongside the professors.",
+          "title": "I've had multiple internships and part-time jobs during my years at the university.",
+          "topic": "Experience"
         },
         {
-          "topic": "Additional",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FYourExtremeBærekraft.jpg?alt=media&token=70bda29b-c1b3-4f3d-9df5-01bf2e96b7b7",
-            "alt": "Picture of Martin Johannes Nilsen at Your Extreme 2022"
+            "alt": "Picture of Martin Johannes Nilsen at Your Extreme 2022",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FYourExtremeBærekraft.jpg?alt=media&token=70bda29b-c1b3-4f3d-9df5-01bf2e96b7b7"
           },
-          "title": "Apart from my paid jobs, I have had multiple (minor) projects on the side, as well as attended hackathons and case-solving competitions.", 
-          "text": "A lot of the projects I have worked on have not become more than part of my own learning. However, some of them have both helped me understand and explore different parts of topics within computer science and/or software engineering, but could also be interesting for others to take a look at. Through the rest of this page, some of my projects and articles I have been featured in will be presented."
+          "text": "A lot of the projects I have worked on have not become more than part of my own learning. However, some of them have both helped me understand and explore different parts of topics within computer science and/or software engineering, but could also be interesting for others to take a look at. Through the rest of this page, some of my projects and articles I have been featured in will be presented.",
+          "title": "Apart from my paid jobs, I've had multiple projects on the side, as well as attended hackathons and case-solving competitions.",
+          "topic": "Additional"
         }
       ]
+    },
+    "navbar": {
+      "languages": [
+        "Norwegian",
+        "English"
+      ],
+      "sections": [
+        "About",
+        "Projects",
+        "Articles",
+        "Contact"
+      ],
+      "title": "PORTFOLIO"
     },
     "projectView": {
       "buttonTexts": [
@@ -180,7 +180,7 @@
           "title": "2PCV"
         },
         {
-          "description": "A command line tool (cli) for keeping track of your weighted average grade based on the norwegian grading system (ECTS).",
+          "description": "A command line interface (cli) for keeping track of your weighted average grade based on the Norwegian grading system (ECTS).",
           "img": {
             "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FUnigrade.png?alt=media&token=4c2dbd0e-b37e-46c3-b95e-8e0fcec8a8a5",
             "type": "landscape"
@@ -269,9 +269,83 @@
       ]
     }
   },
+  "info": {
+    "fetched": true
+  },
   "norwegian": {
+    "featuredInView": {
+      "articles": [
+        {
+          "date": "2020-06-30",
+          "description": "En artikkel skrevet i Digi.no, en redaksjon i Teknisk Ukeblad Media, som tok for seg prosjektet jeg arbeidet på under første sommerjobb som utvikler.",
+          "img": {
+            "alt": "Gruppebilde av teamet som lager første MVP av Dissimilis fargenotasjon",
+            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
+          },
+          "publisher": {
+            "icon": "https://i.imgur.com/wKVEuW9.png",
+            "name": "Digi.no"
+          },
+          "readTimeMinutes": 3,
+          "title": "Dissimilis fargenotasjon",
+          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750"
+        },
+        {
+          "date": "2021-10-18",
+          "description": "Under sommerjobben hos NAV IT, ble det skrevet en post på deres offisielle utviklingsblogg, som tok for seg sommerens prosjekt.",
+          "img": {
+            "alt": "Gruppebilde av 5 sommerstudenter for NAV IT sommeren 2021",
+            "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
+          },
+          "publisher": {
+            "icon": "https://i.imgur.com/C6qZTzf.png",
+            "name": "NAV IT"
+          },
+          "readTimeMinutes": 3,
+          "title": "Mulighetsrommet",
+          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet"
+        },
+        {
+          "date": "2022-04-10",
+          "description": "Vant hackathonet under Nor-Shipping 2022, holdt av DNV, Astrup Fearnley Group og Microsoft. Dette er den offisielle vinnererklæringen.",
+          "img": {
+            "alt": "Annonsering av vinnerne av Nor-Shipping Hackathon 2022",
+            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
+          },
+          "publisher": {
+            "icon": "https://i.imgur.com/IjkYiMk.png",
+            "name": "Veracity by DNV"
+          },
+          "readTimeMinutes": 4,
+          "title": "Nor-Shipping Hackathon",
+          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping"
+        },
+        {
+          "date": "2022-08-04",
+          "description": "En bloggpost om demonstrasjonen av klassifiseringsløypene vi utviklet på USV Sounder. Jeg var ansvarlig for å operere båten når den ikke gikk autonomt, mens klassifiseringen kjørte i sanntid.",
+          "img": {
+            "alt": "Et bilde av USV Sounder, tatt under en demonstrasjon i Oslo Havn, august 2022",
+            "path": "https://res.cloudinary.com/ssp/image/fetch/w_945,q_100,c_fill,ar_1.952479338842975/https://www.oslohavn.no/link/b4fa1720c786492397f03bd7b8f867dd.aspx"
+          },
+          "publisher": {
+            "icon": "https://i.imgur.com/SzZRJ6R.png",
+            "name": "Oslo Havn"
+          },
+          "readTimeMinutes": 2,
+          "title": "Autonom klassifiserngsdemo",
+          "url": "https://www.oslohavn.no/no/aktuelt/unik-drone-skal-undersoke-oslofjorden/"
+        }
+      ],
+      "copyButtonText": "Kopier lenke",
+      "copyText": "Lenke kopiert til utklippstavlen!",
+      "readButtonText": "Les"
+    },
     "footer": {
       "links": [
+        {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
+        },
         {
           "text": "GitHub",
           "value": "https://github.com/MartinJohannesNilsen"
@@ -279,10 +353,6 @@
         {
           "text": "LinkedIn",
           "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
-        },
-        {
-          "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
         },
         {
           "copyText": "Telefonnummer kopiert til utklippstavlen!",
@@ -297,116 +367,49 @@
       ],
       "text": "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker å komme i kontakt med meg."
     },
-    "featuredInView": {
-      "articles": [
-        {
-          "description": "En artikkel skrevet i Digi.no, en redaksjon i Teknisk Ukeblad Media, som tok for seg prosjektet jeg arbeidet på under første sommerjobb som utvikler.",
-          "img": {
-            "alt": "Gruppebilde av teamet som lager første MVP av Dissimilis fargenotasjon",
-            "path": "https://img.gfx.no/2584/2584745/Dissimiliskodere.2000x1125.jpg"
-          },
-          "title": "Dissimilis fargenotasjon",
-          "url": "https://www.digi.no/artikler/it-studenter-digitaliserer-notesystem-for-dissimilis/494750",
-          "publisher": {
-            "icon": "https://i.imgur.com/wKVEuW9.png",
-            "name": "Digi.no"
-          },
-          "readTimeMinutes": 3,
-          "date": "2020-06-30"
-        },
-        {
-          "description": "Under sommerjobben hos NAV IT, ble det skrevet en post på deres offisielle utviklingsblogg, som tok for seg sommerens prosjekt.",
-          "img": {
-            "alt": "Gruppebilde av 5 sommerstudenter for NAV IT sommeren 2021",
-            "path": "https://cdn.sanity.io/images/c9hptfq7/production/58cc7a5d816db523187666b7c3c1646795787d1a-1620x1080.jpg?rect=90,0,1440,1080&w=1080&h=810&fm=jpg&q=80"
-          },
-          "title": "Mulighetsrommet",
-          "url": "https://www.detsombetyrnoe.no/sommerens-utfordring-mulighetsrommet",
-          "publisher": {
-            "icon": "https://i.imgur.com/C6qZTzf.png",
-            "name": "NAV IT"
-          },
-          "readTimeMinutes": 3,
-          "date": "2021-10-18"
-        },
-        {
-          "description": "Vant hackathonet under Nor-Shipping 2022, holdt av DNV, Astrup Fearnley Group og Microsoft. Dette er den offisielle vinnererklæringen.",
-          "img": {
-            "alt": "Annonsering av vinnerne av Nor-Shipping Hackathon 2022",
-            "path": "https://cdn.sanity.io/images/yk5gp8um/prod/1aa3c51f863c74b1444cc0e0fd1f302458534f8d-1243x621.png?w=1710&h=600"
-          },
-          "title": "Nor-Shipping Hackathon",
-          "url": "https://www.veracity.com/article/hackathon-winners-announced-on-final-day-of-nor-shipping",
-          "publisher": {
-            "icon": "https://i.imgur.com/IjkYiMk.png",
-            "name": "Veracity by DNV"
-          },
-          "readTimeMinutes": 4,
-          "date": "2022-04-10"
-        },
-        {
-          "description": "En bloggpost om demonstrasjonen av klassifiseringsløypene vi utviklet på USV Sounder. Jeg var ansvarlig for å operere båten når den ikke gikk autonomt, mens klassifiseringen kjørte i sanntid.",
-          "img": {
-            "alt": "Et bilde av USV Sounder, tatt under en demonstrasjon i Oslo Havn, august 2022",
-            "path": "https://res.cloudinary.com/ssp/image/fetch/w_945,q_100,c_fill,ar_1.952479338842975/https://www.oslohavn.no/link/b4fa1720c786492397f03bd7b8f867dd.aspx"
-          },
-          "title": "Autonom klassifiserngsdemo",
-          "url": "https://www.oslohavn.no/no/aktuelt/unik-drone-skal-undersoke-oslofjorden/",
-          "publisher": {
-            "icon": "https://i.imgur.com/SzZRJ6R.png",
-            "name": "Oslo Havn"
-          },
-          "readTimeMinutes": 2,
-          "date": "2022-08-04"
-        }
-      ],
-      "copyButtonText": "Kopier lenke",
-      "copyText": "Lenke kopiert til utklippstavlen!",
-      "readButtonText": "Les"
-    },
     "landingView": {
-      "navbar": {
-        "languages": [
-          "Norsk",
-          "Engelsk"
-        ],
-        "sections": [
-          "Om",
-          "Prosjekter",
-          "Artikler",
-          "Kontakt"
-        ],
-        "title": "PORTEFØLJE"
-      },
       "cards": [
         {
-          "topic": "Generelt",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FProfileCutoutSquare.png?alt=media&token=8c07a465-4bd7-4057-b4a5-bf55d57daafe",
-            "alt": "Portrett av Martin Johannes Nilsen"
+            "alt": "Portrett av Martin Johannes Nilsen",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FProfileCutoutSquare.png?alt=media&token=8c07a465-4bd7-4057-b4a5-bf55d57daafe"
           },
-          "title": "Hei, mitt navn er Martin. Jeg er en programvareutvikler, masterstudent og ivrig problemløser.", 
-          "text": "Selvfølgelig er det mer til meg enn bare et par kule titler. Fortsett nedover siden for å lære litt mer om meg."
+          "text": "Selvfølgelig er jeg mer enn bare et par kule titler. Fortsett nedover siden for å lære litt mer om meg.",
+          "title": "Hei, mitt navn er Martin. Jeg er en programvareutvikler, masterstudent og ivrig problemløser.",
+          "topic": "Generelt"
         },
         {
-          "topic": "Jobberfaring",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FExperienceLogos.png?alt=media&token=9b49b459-3fcf-4a01-a6fc-0da8156dfc40",
-            "alt": "En samling av bedriftslogoer"
+            "alt": "En samling av bedriftslogoer",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FExperienceLogos.png?alt=media&token=9b49b459-3fcf-4a01-a6fc-0da8156dfc40"
           },
-          "title": "I løpet av tiden min på NTNU, har jeg hatt en rekke internships og deltidsjobber ved siden av studiene.", 
-          "text": "Gjennom disse har jeg opparbeidet meg erfaring som programvareutvikler og maskinlæringsingeniør. Som læringsassistent fikk jeg muligheten til å hjelpe studenter med å forstå emnenes konsepter, samkode og være med på vurderingen av ukentlige øvinger for nærmere 100 studenter. I tillegg, fikk jeg i faget anvendt maskinlæring muligheten til å veilede og ta del i den muntlige og skriftlige vurderingen av 10+ grupper i deres avsluttende maskinlæringsprosjekt."
+          "text": "Gjennom disse har jeg opparbeidet meg erfaring som programvareutvikler og maskinlæringsingeniør. Som læringsassistent fikk jeg muligheten til å hjelpe studenter med å forstå emnenes konsepter, samkode og være med på vurderingen av ukentlige øvinger for nærmere 100 studenter. I tillegg, fikk jeg i faget anvendt maskinlæring muligheten til å veilede og ta del i den muntlige og skriftlige vurderingen av 10+ grupper i deres avsluttende maskinlæringsprosjekt.",
+          "title": "I løpet av tiden min på NTNU, har jeg hatt en rekke internships og deltidsjobber ved siden av studiene.",
+          "topic": "Jobberfaring"
         },
         {
-          "topic": "Koding på fritiden?",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FYourExtremeBærekraft.jpg?alt=media&token=70bda29b-c1b3-4f3d-9df5-01bf2e96b7b7",
-            "alt": "Bilde av Martin Johannes Nilsen fra Your Extreme 2022"
+            "alt": "Bilde av Martin Johannes Nilsen fra Your Extreme 2022",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FYourExtremeBærekraft.jpg?alt=media&token=70bda29b-c1b3-4f3d-9df5-01bf2e96b7b7"
           },
-          "title": "I tillegg til betalte jobber, har jeg også hatt en rekke prosjekter på siden og tatt del i flere konkurranser innen programmering og case-løsning.", 
-          "text": "Noen av prosjektene jeg har jobbet med har ikke blitt mer enn ny lærdom, men noen anser jeg som verdt å dele. Det å ha egne prosjekter og delta på konkurranser har bidratt til at jeg har kunnet utforske flere av de mange konseptene innen programvareutvikling og/eller maskinlæring. Artikler der jeg nevnes, som har med enten jobber eller konkurranser jeg har vært med i, finnes lengre ned på siden sammen med prosjekter jeg ønsker å dele."
+          "text": "Noen av prosjektene jeg har jobbet med har ikke blitt mer enn ny lærdom, men noen anser jeg som verdt å dele. Det å ha egne prosjekter og delta på konkurranser har bidratt til at jeg har kunnet utforske flere av de mange konseptene innen programvareutvikling og/eller maskinlæring. Både prosjekter jeg ønsker å dele, samt artikler som har blitt skrevet om noe av det jeg har holdt på med, vil bli presentert i de neste seksjonene.",
+          "title": "I tillegg til betalte jobber, har jeg også hatt en rekke prosjekter på siden og tatt del i flere konkurranser innen programmering og case-løsning.",
+          "topic": "Koding på fritiden?"
         }
       ]
+    },
+    "navbar": {
+      "languages": [
+        "Norsk",
+        "Engelsk"
+      ],
+      "sections": [
+        "Om",
+        "Prosjekter",
+        "Artikler",
+        "Kontakt"
+      ],
+      "title": "PORTEFØLJE"
     },
     "projectView": {
       "buttonTexts": [

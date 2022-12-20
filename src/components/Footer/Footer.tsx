@@ -3,7 +3,10 @@ import {
   Box,
   Button,
   ClickAwayListener,
+  Icon,
+  IconButton,
   styled,
+  SvgIcon,
   Tooltip,
   tooltipClasses,
   TooltipProps,
@@ -13,6 +16,13 @@ import {
 } from "@mui/material";
 import { useTheme } from "../../ThemeProvider";
 import { FooterProps } from "../../types";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import ContactPageIcon from "@mui/icons-material/ContactPage";
+import { ReactComponent as CVIcon } from "../../assets/svg/cvIconMedium.svg";
 
 const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -28,6 +38,9 @@ const Footer: FC<FooterProps> = (props) => {
   );
   const { theme } = useTheme();
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
+  const mdUp = useMediaQuery(theme.breakpoints.up("md"));
+  const iconButtons: boolean = true;
+  const iconButtonSize: number = mdUp ? 40 : 35;
 
   const handleTooltipState = (newState: boolean, index: number) => {
     let tooltips = [...tooltipStates];
@@ -101,43 +114,136 @@ const Footer: FC<FooterProps> = (props) => {
                         </Typography>
                       }
                     >
-                      <Button
-                        onClick={() => {
-                          handleTooltipState(true, key);
-                          navigator.clipboard.writeText(link.value);
-                        }}
-                      >
-                        <Typography
-                          variant="button"
-                          color="textPrimary"
+                      {!iconButtons ? (
+                        <Button
                           sx={{
+                            "& MuiButton-text": {
+                              textTransform: "none",
+                              "&:hover": {
+                                backgroundColor: "transparent",
+                              },
+                            },
                             "&:hover": {
                               color: "error.main",
                             },
+                            color: theme.palette.text.primary,
+                          }}
+                          onClick={() => {
+                            handleTooltipState(true, key);
+                            navigator.clipboard.writeText(link.value);
                           }}
                         >
-                          {link.text}
-                        </Typography>
-                      </Button>
+                          <Typography variant="button">{link.text}</Typography>
+                        </Button>
+                      ) : (
+                        <IconButton
+                          sx={{
+                            "&:hover": {
+                              color: "error.main",
+                              backgroundColor: "transparent",
+                            },
+                            color: theme.palette.text.primary,
+                          }}
+                          onClick={() => {
+                            handleTooltipState(true, key);
+                            navigator.clipboard.writeText(link.value);
+                          }}
+                        >
+                          {link.text.toLowerCase().includes("tele") ? (
+                            <PhoneIcon
+                              sx={{
+                                fontSize: iconButtonSize + 3.5,
+                              }}
+                            />
+                          ) : (
+                            <AlternateEmailIcon
+                              sx={{ fontSize: iconButtonSize }}
+                            />
+                          )}
+                        </IconButton>
+                      )}
                     </CustomWidthTooltip>
                   </ClickAwayListener>
                 );
               } else {
-                elements.push(
-                  <Button onClick={() => window.open(link.value, "_blank")}>
-                    <Typography
-                      variant="button"
-                      color="textPrimary"
-                      sx={{
-                        "&:hover": {
-                          color: "error.main",
-                        },
-                      }}
-                    >
-                      {link.text}
-                    </Typography>
-                  </Button>
-                );
+                iconButtons && link.text.toLowerCase() === "github"
+                  ? elements.push(
+                      <IconButton
+                        onClick={() => window.open(link.value, "_blank")}
+                        sx={{
+                          "&:hover": {
+                            color: "error.main",
+                            backgroundColor: "transparent",
+                          },
+                          color: theme.palette.text.primary,
+                        }}
+                      >
+                        <GitHubIcon
+                          sx={{
+                            fontSize: mdUp
+                              ? iconButtonSize - 2
+                              : iconButtonSize - 3,
+                            marginBottom: mdUp ? 0 : 0.2,
+                          }}
+                        />
+                      </IconButton>
+                    )
+                  : iconButtons && link.text.toLowerCase() === "linkedin"
+                  ? elements.push(
+                      <IconButton
+                        onClick={() => window.open(link.value, "_blank")}
+                        sx={{
+                          "&:hover": {
+                            color: "error.main",
+                            backgroundColor: "transparent",
+                          },
+                          color: theme.palette.text.primary,
+                        }}
+                      >
+                        <LinkedInIcon sx={{ fontSize: iconButtonSize + 3.5 }} />
+                      </IconButton>
+                    )
+                  : iconButtons && link.text.toLowerCase() === "cv"
+                  ? elements.push(
+                      <IconButton
+                        onClick={() => window.open(link.value, "_blank")}
+                        sx={{
+                          "&:hover": {
+                            // filter: "invert(50%) sepia(73%) saturate(393%) hue-rotate(136deg) brightness(85%) contrast(93%)",
+                            color: "error.main",
+                            backgroundColor: "transparent",
+                          },
+                          color: theme.palette.text.primary,
+                        }}
+                      >
+                        <Icon
+                          sx={{
+                            fontSize: iconButtonSize,
+                          }}
+                        >
+                          <CVIcon />
+                        </Icon>
+                      </IconButton>
+                    )
+                  : elements.push(
+                      <Button
+                        onClick={() => window.open(link.value, "_blank")}
+                        sx={{
+                          "& MuiButton-text": {
+                            textTransform: "none",
+                            "&:hover": {
+                              backgroundColor: "transparent",
+                            },
+                          },
+                          "&:hover": {
+                            color: "error.main",
+                          },
+                          color: theme.palette.text.primary,
+                        }}
+                      >
+                        <Typography variant="button">{link.text}</Typography>
+                      </Button>
+                    );
               }
               if (key < props.data.links.length - 1) {
                 elements.push(<TypographyBullet />);
