@@ -70,16 +70,16 @@
     "footer": {
       "links": [
         {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
+        },
+        {
           "text": "GitHub",
           "value": "https://github.com/MartinJohannesNilsen"
         },
         {
           "text": "LinkedIn",
           "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
-        },
-        {
-          "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
         },
         {
           "copyText": "Telephone number copied to clipboard!",
@@ -343,16 +343,16 @@
     "footer": {
       "links": [
         {
+          "text": "CV",
+          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
+        },
+        {
           "text": "GitHub",
           "value": "https://github.com/MartinJohannesNilsen"
         },
         {
           "text": "LinkedIn",
           "value": "https://www.linkedin.com/in/martinjohannesnilsen/"
-        },
-        {
-          "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=02e6cdeb-0df1-49ca-803b-e62a9d009bff"
         },
         {
           "copyText": "Telefonnummer kopiert til utklippstavlen!",
