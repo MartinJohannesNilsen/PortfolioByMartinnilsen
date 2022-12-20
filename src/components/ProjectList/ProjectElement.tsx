@@ -194,18 +194,47 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                     duration={0}
                     src={props.projectData.img.path}
                     sx={{
-                      maxHeight:
-                        props.projectData.img.type === "portrait"
-                          ? "240px"
-                          : props.projectData.img.type === "square"
-                          ? "200px"
-                          : "112px",
-                      maxWidth:
-                        props.projectData.img.type === "landscape"
-                          ? "220px"
-                          : props.projectData.img.type === "square"
-                          ? "200px"
-                          : "134px",
+                      // margin: { lg: "0 30px 0 0" },
+                      maxHeight: {
+                        xs:
+                          props.projectData.img.type === "portrait"
+                            ? "200px"
+                            : props.projectData.img.type === "square"
+                            ? "200px"
+                            : "140px",
+                        md:
+                          props.projectData.img.type === "portrait"
+                            ? "250px"
+                            : props.projectData.img.type === "square"
+                            ? "250px"
+                            : "190px",
+                        lg:
+                          props.projectData.img.type === "portrait"
+                            ? "340px"
+                            : props.projectData.img.type === "square"
+                            ? "320px"
+                            : "240px",
+                      },
+                      maxWidth: {
+                        xs:
+                          props.projectData.img.type === "landscape"
+                            ? "220px"
+                            : props.projectData.img.type === "square"
+                            ? "200px"
+                            : "140px",
+                        md:
+                          props.projectData.img.type === "landscape"
+                            ? "270px"
+                            : props.projectData.img.type === "square"
+                            ? "250px"
+                            : "190px",
+                        lg:
+                          props.projectData.img.type === "landscape"
+                            ? "370px"
+                            : props.projectData.img.type === "square"
+                            ? "320px"
+                            : "250px",
+                      },
                       boxShadow: `10px -10px 1px 0px ${theme.palette.success.light},
                               20px -20px 1px 0px ${theme.palette.success.main},
                               30px -30px 1px 0px ${theme.palette.success.dark}`,
