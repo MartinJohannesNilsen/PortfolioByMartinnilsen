@@ -84,13 +84,19 @@ export const Navbar: FC<NavbarProps> = (props) => {
               sx={{
                 color: "error.main",
               }}
-              style={smDown ? { marginLeft: 40 } : { marginTop: -41.5 }}
+              style={
+                smDown
+                  ? { marginLeft: 40 }
+                  : {
+                      marginTop: -41.5,
+                    }
+              }
             >
               {props.data.title}
             </Typography>
           </Grid>
           <Hidden mdDown>
-            <Grid container item md={9} lg={6} justifyContent="flex-end">
+            <Grid container item md={9} lg={7} justifyContent="flex-end">
               {props.data.sections
                 .slice(1)
                 .map((title: string, index: number) => (
