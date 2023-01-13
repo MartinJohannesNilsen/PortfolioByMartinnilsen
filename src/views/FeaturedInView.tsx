@@ -130,7 +130,8 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   return (
     <Box
       sx={{
-        minHeight: "100%",
+        height: "100%",
+        maxHeight: "900px",
         backgroundColor: "secondary.main",
         position: "relative",
         maxWidth: "100vw",
@@ -177,7 +178,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       <Box
         justifyContent="center"
         sx={{
-          height: "calc(100vh-93px)",
+          height: "calc(100%-93px)",
           display: "grid",
           justifyItems: "center",
           alignItems: "center",

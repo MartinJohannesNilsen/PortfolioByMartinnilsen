@@ -264,7 +264,19 @@
             "Azure ML",
             "YOLOv5"
           ],
-          "title": "Coral reef detection"
+          "title": "Coral Reef Detection"
+        },
+        {
+          "description": "This paper is the result of a structured literature review and serves as a preliminary study for our upcoming Master's Thesis. The work addresses the application of NLP techniques on social media data to screen for lone wolf perpetrators. Due to the preliminary nature of the paper, the contributions are all related to the main goal of getting an exhaustive overview of the intersection between trait theory, natural language processing and machine learning.",
+          "img": {
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FPreliminaryLiteratureReview.png?alt=media&token=ee892b7d-0f45-40d0-b1b4-4aaf45a6979c",
+            "type": "portrait"
+          },
+          "linkToPaper": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FSpecialization_project.pdf?alt=media&token=9f0cfffc-a78b-496b-949d-56af7d356005",
+          "technologies": [
+            "NLP", "Screening", "Trait theory"
+          ],
+          "title": "Preliminary Literature Review"
         }
       ]
     }
@@ -538,6 +550,18 @@
             "YOLOv5"
           ],
           "title": "Objektdeteksjon av korallrev"
+        },
+        {
+          "description": "I forbindelse vår masteroppgave på Datateknologistudiet på NTNU, har jeg sammen med en medstudent utført et strukturert litteratursøk. Vi ønsker å se nærmere på bruken av maskinlæring og språkmodeller på data fra sosiale medier, med den hensikt å detektere atferdstrekk som kan knyttes opp i mot voldelig atferd som kan kjennetegne en potensiell skoleskytter eller terrorist som handler alene. For å kunne begi oss ut på en slik omfattende oppgave er det essensielt å skaffe seg en oversikt over det som er gjort i dette krysningspunktet allerede.",
+          "img": {
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FPreliminaryLiteratureReview.png?alt=media&token=ee892b7d-0f45-40d0-b1b4-4aaf45a6979c",
+            "type": "portrait"
+          },
+          "linkToPaper": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FSpecialization_project.pdf?alt=media&token=9f0cfffc-a78b-496b-949d-56af7d356005",
+          "technologies": [
+            "NLP", "Profilering", "Psykologi"
+          ],
+          "title": "Litteraturstudie for master"
         }
       ]
     }
