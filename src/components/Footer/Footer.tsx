@@ -5,6 +5,7 @@ import {
   ClickAwayListener,
   Icon,
   IconButton,
+  Link,
   styled,
   SvgIcon,
   Tooltip,
@@ -77,13 +78,40 @@ const Footer: FC<FooterProps> = (props) => {
         id={props.id}
       >
         <Box py={5} px={3} textAlign="center">
-          <Box py={2} px={1}>
+          <Box py={2} px={1} display="flex">
             <Typography
               variant="body1"
               color="textPrimary"
-              style={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
+              sx={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
             >
-              {props.data.text}
+              {props.language === "norwegian"
+                ? "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker å ‎"
+                : "Do not hesitate in reaching out to me if you need any further information, or just want to ‎"}
+            </Typography>
+            <Link
+              variant="body1"
+              color="textPrimary"
+              href="https://martinjohannesnilsen.no/links"
+              sx={{
+                fontWeight: 600,
+                fontSize: lgUp ? "1.1rem" : "0.9rem",
+                textDecoration: "none",
+                borderBottom: "2px solid #9ce0e5",
+                "&:hover": {
+                  borderBottom: "2px solid #29939b",
+                },
+              }}
+            >
+              {props.language === "norwegian"
+                ? "komme i kontakt"
+                : "get in touch"}
+            </Link>
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              sx={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
+            >
+              {props.language === "norwegian" ? "‎ med meg." : "."}
             </Typography>
           </Box>
           <Box py={3}>

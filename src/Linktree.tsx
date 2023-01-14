@@ -154,7 +154,7 @@ const Linktree = () => {
   const smUp = useMediaQuery(theme.breakpoints.up("sm"));
 
   useEffect(() => {
-    document.title = "MJN Links";
+    document.title = "Links | MJN";
   }, []);
 
   return (

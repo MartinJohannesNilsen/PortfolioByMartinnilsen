@@ -88,7 +88,11 @@ const App = () => {
               language={language}
               setLanguage={setLanguage}
             />
-            <LandingView id={data.navbar.sections[0]} data={data.landingView} />
+            <LandingView
+              id={data.navbar.sections[0]}
+              data={data.landingView}
+              language={language}
+            />
             {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
               ? preloadImgs(
                   data.projectView.projects

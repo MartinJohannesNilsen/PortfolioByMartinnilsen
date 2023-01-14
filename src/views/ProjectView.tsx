@@ -68,6 +68,7 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
         setNumShowing={setNumShowing}
         numIncrease={numIncrease}
         buttonTexts={props.data.buttonTexts}
+        language={props.language}
       />
     </Box>
   );

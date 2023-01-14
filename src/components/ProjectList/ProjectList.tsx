@@ -22,6 +22,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
                     projectData={project}
                     imgPosition={index % 2 === 0 ? "right" : "left"}
                     linkButtonText={props.buttonTexts}
+                    language={props.language}
                   />
                 </Box>
               </Grid>
@@ -31,7 +32,12 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
           {props.numShowing < props.projects.length ? (
             <Button
               sx={{
+                color: theme.palette.text.primary,
                 border: "2px solid " + theme.palette.text.primary,
+                "&:hover": {
+                  border: "2px solid " + theme.palette.error.main,
+                  color: theme.palette.error.main,
+                },
               }}
               onClick={() =>
                 props.setNumShowing(
@@ -43,7 +49,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
                 )
               }
             >
-              <Typography variant="button" color="textPrimary">
+              <Typography variant="button" color="inherit">
                 {props.buttonTexts[0]}
               </Typography>
             </Button>

@@ -18,12 +18,17 @@ const insertButtons = (props: ProjectElementProps) => {
   const hasPaper = props.projectData.hasOwnProperty("linkToPaper");
 
   const buttonStyle: SxProps = {
+    color: theme.palette.text.primary,
     border: "2px solid",
     borderColor: theme.palette.text.primary,
     borderRadius: "2px",
     padding: "5px",
     width: "40%",
     margin: { xs: "30px 10px", md: "30px 15px" },
+    "&:hover": {
+      border: "2px solid " + theme.palette.error.main,
+      // color: theme.palette.error.main,
+    },
   };
 
   return (
@@ -40,7 +45,7 @@ const insertButtons = (props: ProjectElementProps) => {
             />
           }
         >
-          <Typography variant="button" color="textPrimary">
+          <Typography variant="button" color="inherit">
             {props.linkButtonText[1]}
           </Typography>
         </Button>
@@ -59,7 +64,7 @@ const insertButtons = (props: ProjectElementProps) => {
             />
           }
         >
-          <Typography variant="button" color="textPrimary">
+          <Typography variant="button" color="inherit">
             {props.linkButtonText[2]}
           </Typography>
         </Button>
@@ -80,7 +85,7 @@ const insertButtons = (props: ProjectElementProps) => {
             />
           }
         >
-          <Typography variant="button" color="textPrimary">
+          <Typography variant="button" color="inherit">
             {props.linkButtonText[3]}
           </Typography>
         </Button>
@@ -99,7 +104,7 @@ const insertButtons = (props: ProjectElementProps) => {
             />
           }
         >
-          <Typography variant="button" color="textPrimary">
+          <Typography variant="button" color="inherit">
             {props.linkButtonText[4]}
           </Typography>
         </Button>
@@ -118,7 +123,7 @@ const insertButtons = (props: ProjectElementProps) => {
             />
           }
         >
-          <Typography variant="button" color="textPrimary">
+          <Typography variant="button" color="inherit">
             {props.linkButtonText[5]}
           </Typography>
         </Button>

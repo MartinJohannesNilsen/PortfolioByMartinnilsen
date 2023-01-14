@@ -108,9 +108,13 @@ export const FABMenu: FC<NavbarProps> = (props: NavbarProps) => {
         }}
         sx={actionDialStyle}
         tooltipTitle={
+          // Burde stå på engelsk at du kan bytte til engelsk
+          // props.language === "english"
+          //   ? "Change language to Norwegian"
+          //   : "Endre språket til engelsk"
           props.language === "english"
-            ? "Change language to Norwegian"
-            : "Endre språket til engelsk"
+            ? "Endre språket til norsk"
+            : "Change language to English"
         }
       />
       <SpeedDialAction

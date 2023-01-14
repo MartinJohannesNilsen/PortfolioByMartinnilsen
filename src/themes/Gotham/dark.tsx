@@ -45,21 +45,18 @@ export const dark = createTheme({
     },
   },
   typography: {
-    fontFamily:
-      "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+    fontFamily: "Gotham",
 
     // Headings
     // Usage:
     h1: {},
     // Usage: NavbarLogo
-    h2: { fontSize: "2rem", fontWeight: 800, textTransform: "uppercase" },
+    h2: { fontSize: "2rem", fontWeight: 800 },
     // Usage: projectViewHeader, featuredInViewHeader
     h3: { fontSize: "2rem", fontWeight: 600 },
     // Usage: navBarSections (below md in FABMenu)
     h4: {
       fontSize: "1.25rem",
-      textTransform: "capitalize",
-      lineHeight: "26px",
       fontWeight: 800,
       [defaultTheme.breakpoints.down("md")]: {
         fontSize: "0.45rem",
@@ -69,7 +66,7 @@ export const dark = createTheme({
     // Usage: landingView title
     h5: {
       fontSize: "20px",
-      fontWeight: 700,
+      fontWeight: 400,
       lineHeight: "22pt",
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "22px",
@@ -78,7 +75,7 @@ export const dark = createTheme({
     // Usage: landingView text
     h6: {
       fontSize: "16px",
-      fontWeight: 500,
+      fontWeight: 600,
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "18px",
       },
@@ -88,7 +85,7 @@ export const dark = createTheme({
     // Usage: projectTitle
     subtitle1: {
       fontSize: "1.5rem",
-      fontWeight: 600,
+      fontWeight: 400,
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.8rem",
       },
@@ -105,10 +102,10 @@ export const dark = createTheme({
     // Bodies
     // Usage: projectDescription, footerText
     body1: {
-      fontSize: "16px",
+      fontSize: "1rem",
       fontWeight: 400,
       [defaultTheme.breakpoints.up("lg")]: {
-        fontSize: "18px",
+        fontSize: "1.3rem",
       },
     },
     // Usage: featuredInDescription
