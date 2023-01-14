@@ -1,6 +1,6 @@
 {
 	"name": "portfoliobymartinnilsen",
-	"version": "2.9.1",
+	"version": "2.10.1",
 	"private": true,
 	"homepage": "https://martinjohannesnilsen.no",
 	"scripts": {
@@ -50,6 +50,7 @@
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^13.1.9",
+		"@types/dompurify": "^2.4.0",
 		"@types/gsap": "^3.0.0",
 		"@types/jest": "^26.0.23",
 		"@types/jquery": "^3.5.5",
@@ -63,6 +64,7 @@
 		"babel-preset-react": "^6.24.1",
 		"babel-register": "^6.26.0",
 		"css-loader": "^5.2.6",
+		"dompurify": "^2.4.3",
 		"eslint": "^7.29.0",
 		"sass": "^1.45.0",
 		"style-loader": "^2.0.0",

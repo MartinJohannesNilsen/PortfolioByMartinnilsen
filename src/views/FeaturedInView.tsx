@@ -130,8 +130,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   return (
     <Box
       sx={{
-        height: "100%",
-        maxHeight: "900px",
+        height: xs || sm ? "700px" : "850px",
         backgroundColor: "secondary.main",
         position: "relative",
         maxWidth: "100vw",
@@ -251,13 +250,24 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
               aria-label="clear"
               disabled={!canSwipe}
               sx={{
-                color: "#F44336",
-                borderColor: "#F44336",
                 border: "2px solid",
+                borderColor: "#fd5c63",
+                color: "#FFF",
+                backgroundColor: "#fd5c63",
                 boxShadow:
                   theme.palette.mode === "light"
                     ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
                     : "none",
+                "&:disabled": {
+                  opacity: 0.5,
+                  border: "2px solid",
+                  borderColor: "grey",
+                  backgroundColor: "grey",
+                },
+                "&:hover": {
+                  backgroundColor: "#fd858a",
+                  borderColor: "#fd858a",
+                },
               }}
               onClick={() => swipe("left")}
             >
@@ -267,13 +277,24 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
               aria-label="undo"
               disabled={!canGoBack}
               sx={{
-                color: "#ffdf00",
-                borderColor: "#ffdf00",
                 border: "2px solid",
+                borderColor: "#ffdf00",
+                color: "#FFF",
+                backgroundColor: "#ffdf00",
                 boxShadow:
                   theme.palette.mode === "light"
                     ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
                     : "none",
+                "&:disabled": {
+                  opacity: 0.5,
+                  border: "2px solid",
+                  borderColor: "grey",
+                  backgroundColor: "grey",
+                },
+                "&:hover": {
+                  backgroundColor: "#ffe740",
+                  borderColor: "#ffe740",
+                },
               }}
               onClick={() => goBack()}
             >
@@ -302,13 +323,24 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                   aria-label="copy"
                   disabled={!canSwipe}
                   sx={{
-                    color: "#2196F3",
-                    borderColor: "#2196F3",
                     border: "2px solid",
+                    borderColor: "#2196F3",
+                    color: "#FFF",
+                    backgroundColor: "#2196F3",
                     boxShadow:
                       theme.palette.mode === "light"
                         ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
                         : "none",
+                    "&:disabled": {
+                      opacity: 0.5,
+                      border: "2px solid",
+                      borderColor: "grey",
+                      backgroundColor: "grey",
+                    },
+                    "&:hover": {
+                      backgroundColor: "#58b0f6",
+                      borderColor: "#58b0f6",
+                    },
                   }}
                   onClick={() => {
                     copyToClipboard(props.data.articles[currentIndex].url);
@@ -324,13 +356,24 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
               aria-label="launch"
               disabled={!canSwipe}
               sx={{
-                color: "#00e676",
-                borderColor: "#00e676",
                 border: "2px solid",
+                borderColor: "#00e676",
+                color: "#FFF",
+                backgroundColor: "#00e676",
                 boxShadow:
                   theme.palette.mode === "light"
                     ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
                     : "none",
+                "&:disabled": {
+                  opacity: 0.5,
+                  border: "2px solid",
+                  borderColor: "grey",
+                  backgroundColor: "grey",
+                },
+                "&:hover": {
+                  backgroundColor: "#2dff99",
+                  borderColor: "#2dff99",
+                },
               }}
               onClick={() => {
                 //Open new page in new tab

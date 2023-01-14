@@ -1,8 +1,10 @@
 import { FC, useRef } from "react";
+import DOMPurify from "dompurify";
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import { Image } from "mui-image";
 import { gsap } from "gsap";
 import insertButtons from "./InsertButtons";
+import insertLinks from "./InsertLinks";
 import {
   ScrollTriggerFromLeft,
   ScrollTriggerFromRight,
@@ -36,7 +38,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
           >
             <Grid container alignItems="center" justifyContent="space-evenly">
               <Grid item xs={12} md={5} lg={6}>
-                <Box py={5}>
+                <Box py={5} px={5}>
                   <Image
                     duration={0}
                     src={props.projectData.img.path}
@@ -92,16 +94,25 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <Box pb={paddingTitleDescription}>
-                  <Typography variant="subtitle1" color="textPrimary">
-                    {props.projectData.title}
-                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="textPrimary"
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(props.projectData.title),
+                    }}
+                  ></Typography>
                 </Box>
                 <Box textAlign="justify">
-                  <Typography variant="body1" color="textPrimary">
-                    {props.projectData.description}
-                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="textPrimary"
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(props.projectData.description),
+                    }}
+                  ></Typography>
                 </Box>
-                <Box>{insertButtons(props)}</Box>
+                {/* <Box>{insertButtons(props)}</Box> */}
+                <Box>{insertLinks(props)}</Box>
               </Grid>
             </Grid>
           </ScrollTriggerFromLeft>
@@ -189,7 +200,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
           >
             <Grid container alignItems="center" justifyContent="space-evenly">
               <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
-                <Box py={5}>
+                <Box py={5} px={5}>
                   <Image
                     duration={0}
                     src={props.projectData.img.path}
@@ -245,16 +256,25 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               </Grid>
               <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
                 <Box pb={paddingTitleDescription}>
-                  <Typography variant="subtitle1" color="textPrimary">
-                    {props.projectData.title}
-                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="textPrimary"
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(props.projectData.title),
+                    }}
+                  ></Typography>
                 </Box>
                 <Box textAlign="justify">
-                  <Typography variant="body1" color="textPrimary">
-                    {props.projectData.description}
-                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="textPrimary"
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(props.projectData.description),
+                    }}
+                  ></Typography>
                 </Box>
-                <Box>{insertButtons(props)}</Box>
+                {/* <Box>{insertButtons(props)}</Box> */}
+                <Box>{insertLinks(props)}</Box>
               </Grid>
             </Grid>
           </ScrollTriggerFromRight>

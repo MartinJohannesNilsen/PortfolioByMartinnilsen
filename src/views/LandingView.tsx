@@ -143,7 +143,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
                   color: theme.palette.text.primary,
                 }}
               >
-                Scroll
+                {props.language === "norwegian" ? "Bla ned" : "Scroll"}
               </Typography>
               <SouthIcon
                 sx={{

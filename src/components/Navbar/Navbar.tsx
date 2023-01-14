@@ -10,6 +10,7 @@ import {
   Button,
   useMediaQuery,
   Fade,
+  Tooltip,
 } from "@mui/material";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
@@ -121,31 +122,53 @@ export const Navbar: FC<NavbarProps> = (props) => {
                   </Box>
                 ))}
               <Box mx={2} mt={-0.45}>
-                <ButtonBase
-                  onClick={() => {
-                    props.language === "english"
-                      ? props.setLanguage("norwegian")
-                      : props.setLanguage("english");
-                  }}
+                <Tooltip
+                  enterNextDelay={2000}
+                  title={
+                    props.language === "norwegian"
+                      ? "Change language to English"
+                      : "Endre språket til norsk"
+                  }
                 >
-                  <Icon
-                    icon={
-                      props.language === "english"
-                        ? flagUnitedKingdom
-                        : flagNorway
-                    }
-                    style={{
-                      height: "45px",
-                      width: "45px",
+                  <ButtonBase
+                    onClick={() => {
+                      props.language === "norwegian"
+                        ? props.setLanguage("english")
+                        : props.setLanguage("norwegian");
                     }}
-                  />
-                </ButtonBase>
+                  >
+                    <Icon
+                      icon={
+                        props.language === "norwegian"
+                          ? flagNorway
+                          : flagUnitedKingdom
+                      }
+                      style={{
+                        height: "45px",
+                        width: "45px",
+                      }}
+                    />
+                  </ButtonBase>
+                </Tooltip>
               </Box>
               <Box ml={0.5} mt={0}>
-                <Switch
-                  checked={theme.palette.mode === "light"}
-                  onChange={handleThemeChange}
-                />
+                <Tooltip
+                  enterNextDelay={2000}
+                  title={
+                    props.language === "norwegian"
+                      ? theme.palette.mode === "light"
+                        ? "Skru av lyset"
+                        : "Skru på lyset"
+                      : theme.palette.mode === "light"
+                      ? "Turn off the lights"
+                      : "Turn on the lights"
+                  }
+                >
+                  <Switch
+                    checked={theme.palette.mode === "light"}
+                    onChange={handleThemeChange}
+                  />
+                </Tooltip>
               </Box>
             </Grid>
           </Hidden>

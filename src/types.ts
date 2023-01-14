@@ -86,6 +86,7 @@ export type ProjectElementProps = {
   projectData: ProjectProps;
   imgPosition: "left" | "right";
   linkButtonText: string[];
+  language: string;
 };
 
 export type ProjectListProps = {
@@ -94,6 +95,7 @@ export type ProjectListProps = {
   setNumShowing: (num: number) => void;
   numIncrease: number;
   buttonTexts: string[];
+  language: string;
 };
 
 export type ScrollTriggerProps = {
@@ -163,6 +165,7 @@ export type ReaderViewProps = {
 export type LandingViewProps = {
   id: string;
   data: LandingViewDataProps;
+  language: string;
 };
 
 export type ProjectViewProps = {

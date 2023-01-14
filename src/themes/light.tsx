@@ -45,18 +45,21 @@ export const light = createTheme({
     },
   },
   typography: {
-    fontFamily: "Gotham",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
 
     // Headings
     // Usage:
     h1: {},
-    // Usage: NavbarLogo, aboutTitle
-    h2: { fontSize: "2rem", fontWeight: 800 },
+    // Usage: NavbarLogo
+    h2: { fontSize: "2rem", fontWeight: 800, textTransform: "uppercase" },
     // Usage: projectViewHeader, featuredInViewHeader
     h3: { fontSize: "2rem", fontWeight: 600 },
     // Usage: navBarSections (below md in FABMenu)
     h4: {
       fontSize: "1.25rem",
+      textTransform: "capitalize",
+      lineHeight: "26px",
       fontWeight: 800,
       [defaultTheme.breakpoints.down("md")]: {
         fontSize: "0.45rem",
@@ -66,7 +69,7 @@ export const light = createTheme({
     // Usage: landingView title
     h5: {
       fontSize: "20px",
-      fontWeight: 400,
+      fontWeight: 700,
       lineHeight: "22pt",
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "22px",
@@ -75,17 +78,17 @@ export const light = createTheme({
     // Usage: landingView text
     h6: {
       fontSize: "16px",
-      fontWeight: 600,
+      fontWeight: 500,
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "18px",
       },
     },
 
     // Subtitles
-    // Usage: projectTitle, aboutSubtitle
+    // Usage: projectTitle
     subtitle1: {
       fontSize: "1.5rem",
-      fontWeight: 400,
+      fontWeight: 600,
       [defaultTheme.breakpoints.up("lg")]: {
         fontSize: "1.8rem",
       },
@@ -100,12 +103,12 @@ export const light = createTheme({
     },
 
     // Bodies
-    // Usage: aboutDescription, projectDescription, footerText
+    // Usage: projectDescription, footerText
     body1: {
-      fontSize: "1rem",
+      fontSize: "16px",
       fontWeight: 400,
       [defaultTheme.breakpoints.up("lg")]: {
-        fontSize: "1.3rem",
+        fontSize: "18px",
       },
     },
     // Usage: featuredInDescription
