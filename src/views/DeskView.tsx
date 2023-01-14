@@ -183,14 +183,20 @@ const DeskView: FC<DeskViewProps> = (props) => {
       <Box pt={4}>
         {props.language === "norwegian" ? (
           <>
-            <Typography variant="h3" color="textPrimary" display="inline">
+            <Typography
+              fontFamily={theme.typography.fontFamily}
+              variant="h3"
+              color="textPrimary"
+              display="inline"
+            >
               Det holder. Tid for å
             </Typography>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="h3"
               display="inline"
               sx={{
-                color: "error.main",
+                color: "secondary.main",
               }}
             >
               &nbsp;kode.
@@ -198,14 +204,20 @@ const DeskView: FC<DeskViewProps> = (props) => {
           </>
         ) : (
           <>
-            <Typography variant="h3" color="textPrimary" display="inline">
+            <Typography
+              fontFamily={theme.typography.fontFamily}
+              variant="h3"
+              color="textPrimary"
+              display="inline"
+            >
               That's it. Time to
             </Typography>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="h3"
               display="inline"
               sx={{
-                color: "error.main",
+                color: "secondary.main",
               }}
             >
               &nbsp;code.

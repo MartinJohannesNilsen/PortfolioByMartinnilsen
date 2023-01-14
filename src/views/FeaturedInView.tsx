@@ -63,7 +63,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()!;
   };
 
-  const swipe = async (dir: "left" | "right") => {
+  const swipe = async (dir: "left" | "right" | "up" | "down") => {
     if (canSwipe && currentIndex < props.data.articles.length) {
       await childRefs[currentIndex].current.swipe(dir); // Swipe the card!
     }
@@ -131,7 +131,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     <Box
       sx={{
         height: xs || sm ? "700px" : "850px",
-        backgroundColor: "secondary.main",
+        backgroundColor: "primary.dark",
         position: "relative",
         maxWidth: "100vw",
         overflow: "hidden",
@@ -145,28 +145,40 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
         {props.language === "norwegian" ? (
           <>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="h3"
               display="inline"
+            >
+              Relevante
+            </Typography>
+            <Typography
+              fontFamily={theme.typography.fontFamily}
+              variant="h3"
+              color="textPrimary"
+              display="inline"
               sx={{
-                color: "error.main",
+                color: "secondary.main",
               }}
             >
-              Artikler
-            </Typography>
-            <Typography variant="h3" color="textPrimary" display="inline">
-              &nbsp;hvor jeg nevnes
+              &nbsp;artikler
             </Typography>
           </>
         ) : (
           <>
-            <Typography variant="h3" color="textPrimary" display="inline">
+            <Typography
+              fontFamily={theme.typography.fontFamily}
+              variant="h3"
+              color="textPrimary"
+              display="inline"
+            >
               Articles I
             </Typography>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="h3"
               display="inline"
               sx={{
-                color: "error.main",
+                color: "secondary.main",
               }}
             >
               &nbsp;feature in
@@ -217,6 +229,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
         >
           <CardContent>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="subtitle2"
               color="textPrimary"
               sx={{
@@ -228,6 +241,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                 : "No more cards, but maybe you want to look through them one more time?"}
             </Typography>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="subtitle2"
               color="textPrimary"
               sx={{
@@ -314,7 +328,11 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                 disableTouchListener
                 TransitionComponent={Zoom}
                 title={
-                  <Typography variant="overline" color="inherit">
+                  <Typography
+                    fontFamily={theme.typography.fontFamily}
+                    variant="overline"
+                    color="inherit"
+                  >
                     {props.data.copyText}
                   </Typography>
                 }
@@ -345,7 +363,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                   onClick={() => {
                     copyToClipboard(props.data.articles[currentIndex].url);
                     handleTooltipOpen();
-                    swipe("right");
+                    swipe("down");
                   }}
                 >
                   <ContentCopyIcon />
@@ -378,7 +396,14 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
               onClick={() => {
                 //Open new page in new tab
                 swipe("right");
-                window.open(props.data.articles[currentIndex].url, "_blank");
+                setTimeout(
+                  () =>
+                    window.open(
+                      props.data.articles[currentIndex].url,
+                      "_blank"
+                    ),
+                  250
+                );
               }}
             >
               <LaunchIcon />

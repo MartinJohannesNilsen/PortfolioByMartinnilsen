@@ -43,6 +43,7 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
             src={props.article.publisher.icon}
           />
           <Typography
+            fontFamily={theme.typography.fontFamily}
             variant="subtitle2"
             color="textPrimary"
             sx={{
@@ -66,8 +67,9 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
       <CardContent>
         <Box mt={-1.5}>
           <Typography
-            gutterBottom
+            fontFamily={theme.typography.fontFamily}
             variant="h6"
+            gutterBottom
             color="textPrimary"
             sx={{
               fontWeight: "600",
@@ -80,6 +82,7 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
             {props.article.title}
           </Typography>
           <Typography
+            fontFamily={theme.typography.fontFamily}
             variant="body2"
             color="textPrimary"
             component="p"
@@ -96,6 +99,7 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
       <CardActions sx={{ marginTop: "auto" }}>
         <Stack direction="row" spacing={2} mb={1.2} ml={1}>
           <Typography
+            fontFamily={theme.typography.fontFamily}
             variant="body2"
             color="textPrimary"
             component="p"
@@ -112,6 +116,7 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
             )}
           </Typography>
           <Typography
+            fontFamily={theme.typography.fontFamily}
             variant="body2"
             color="textPrimary"
             component="p"

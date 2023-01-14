@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import {
   Grid,
   Box,
@@ -14,15 +14,13 @@ import {
 } from "@mui/material";
 import { ThemeEnum } from "../../themes/base";
 import { useTheme } from "../../ThemeProvider";
-import { Icon } from "@iconify/react";
 import { gsap, Power3 } from "gsap";
-import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
-import flagNorway from "@iconify-icons/openmoji/flag-norway";
-import Switch from "../Switch/Switch";
+import TuneIcon from "@mui/icons-material/Tune";
 import FABMenu from "./FABMenu";
 import $ from "jquery";
 import { useWindowScroll } from "react-use";
 import { NavbarProps } from "../../types";
+import SettingsModal from "../SettingsModal/SettingsModal";
 
 export const handleScroll = (name: string) => {
   $("html, body").animate(
@@ -36,6 +34,9 @@ export const handleScroll = (name: string) => {
 export const Navbar: FC<NavbarProps> = (props) => {
   const { theme, setTheme } = useTheme();
   const windowScroll = useWindowScroll();
+  const [openSettingsModal, setOpenSettingsModal] = useState(false);
+  const handleSettingsModalOpen = () => setOpenSettingsModal(true);
+  const handleSettingsModalClose = () => setOpenSettingsModal(false);
 
   let ref: any = useRef(null);
   useEffect(() => {
@@ -81,9 +82,10 @@ export const Navbar: FC<NavbarProps> = (props) => {
         >
           <Grid item md={3}>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="h2"
               sx={{
-                color: "error.main",
+                color: "secondary.main",
               }}
               style={
                 smDown
@@ -111,63 +113,46 @@ export const Navbar: FC<NavbarProps> = (props) => {
                           },
                         },
                         "&:hover": {
-                          color: "error.main",
+                          color: "secondary.main",
                         },
-                        color: theme.palette.text.primary,
+                        color: "text.primary",
                       }}
                       onClick={() => handleScroll(title)}
                     >
-                      <Typography variant="h4">{title}</Typography>
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h4"
+                      >
+                        {title}
+                      </Typography>
                     </Button>
                   </Box>
                 ))}
-              <Box mx={2} mt={-0.45}>
+              <Box mx={2} mt={0.4}>
                 <Tooltip
-                  enterNextDelay={2000}
+                  enterDelay={2000}
                   title={
                     props.language === "norwegian"
-                      ? "Change language to English"
-                      : "Endre språket til norsk"
+                      ? "Åpne innstillinger"
+                      : "Open settings"
                   }
                 >
                   <ButtonBase
                     onClick={() => {
-                      props.language === "norwegian"
-                        ? props.setLanguage("english")
-                        : props.setLanguage("norwegian");
+                      handleSettingsModalOpen();
                     }}
                   >
-                    <Icon
-                      icon={
-                        props.language === "norwegian"
-                          ? flagNorway
-                          : flagUnitedKingdom
-                      }
-                      style={{
-                        height: "45px",
-                        width: "45px",
+                    <TuneIcon
+                      sx={{
+                        color: theme.palette.text.primary,
+                        height: "30px",
+                        width: "30px",
+                        "&:hover": {
+                          color: theme.palette.secondary.main,
+                        },
                       }}
                     />
                   </ButtonBase>
-                </Tooltip>
-              </Box>
-              <Box ml={0.5} mt={0}>
-                <Tooltip
-                  enterNextDelay={2000}
-                  title={
-                    props.language === "norwegian"
-                      ? theme.palette.mode === "light"
-                        ? "Skru av lyset"
-                        : "Skru på lyset"
-                      : theme.palette.mode === "light"
-                      ? "Turn off the lights"
-                      : "Turn on the lights"
-                  }
-                >
-                  <Switch
-                    checked={theme.palette.mode === "light"}
-                    onChange={handleThemeChange}
-                  />
                 </Tooltip>
               </Box>
             </Grid>
@@ -177,15 +162,26 @@ export const Navbar: FC<NavbarProps> = (props) => {
       <Hidden mdDown>
         {windowScroll.y > window.innerHeight - 50 ? (
           <Fade>
-            <FABMenu {...props} />
+            <FABMenu
+              handleSettingsModalOpen={handleSettingsModalOpen}
+              {...props}
+            />
           </Fade>
         ) : (
           <></>
         )}
       </Hidden>
       <Hidden mdUp>
-        <FABMenu {...props} />
+        <FABMenu handleSettingsModalOpen={handleSettingsModalOpen} {...props} />
       </Hidden>
+      <SettingsModal
+        language={props.language}
+        setLanguage={props.setLanguage}
+        open={openSettingsModal}
+        handleModalOpen={handleSettingsModalOpen}
+        handleModalClose={handleSettingsModalClose}
+        handleThemeChange={handleThemeChange}
+      />
     </AppBar>
   );
 };

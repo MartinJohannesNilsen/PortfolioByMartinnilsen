@@ -18,16 +18,16 @@ const insertButtons = (props: ProjectElementProps) => {
   const hasPaper = props.projectData.hasOwnProperty("linkToPaper");
 
   const buttonStyle: SxProps = {
-    color: theme.palette.text.primary,
+    color: "text.primary",
     border: "2px solid",
-    borderColor: theme.palette.text.primary,
+    borderColor: "text.primary",
     borderRadius: "2px",
     padding: "5px",
     width: "40%",
     margin: { xs: "30px 10px", md: "30px 15px" },
     "&:hover": {
-      border: "2px solid " + theme.palette.error.main,
-      // color: theme.palette.error.main,
+      border: "2px solid " + theme.palette.secondary.main,
+      // color: theme.palette.secondary.main,
     },
   };
 
@@ -41,11 +41,15 @@ const insertButtons = (props: ProjectElementProps) => {
             <Icon
               icon={githubIcon}
               style={{ marginRight: "5px", marginBottom: "1px" }}
-              color={theme.palette.text.primary}
+              color={"text.primary"}
             />
           }
         >
-          <Typography variant="button" color="inherit">
+          <Typography
+            fontFamily={theme.typography.fontFamily}
+            variant="button"
+            color="inherit"
+          >
             {props.linkButtonText[1]}
           </Typography>
         </Button>
@@ -60,11 +64,15 @@ const insertButtons = (props: ProjectElementProps) => {
             <Icon
               icon={desktopOutlined}
               style={{ marginRight: "5px" }}
-              color={theme.palette.text.primary}
+              color={"text.primary"}
             />
           }
         >
-          <Typography variant="button" color="inherit">
+          <Typography
+            fontFamily={theme.typography.fontFamily}
+            variant="button"
+            color="inherit"
+          >
             {props.linkButtonText[2]}
           </Typography>
         </Button>
@@ -81,11 +89,15 @@ const insertButtons = (props: ProjectElementProps) => {
             <Icon
               icon={cameraVideo}
               style={{ marginRight: "5px" }}
-              color={theme.palette.text.primary}
+              color={"text.primary"}
             />
           }
         >
-          <Typography variant="button" color="inherit">
+          <Typography
+            fontFamily={theme.typography.fontFamily}
+            variant="button"
+            color="inherit"
+          >
             {props.linkButtonText[3]}
           </Typography>
         </Button>
@@ -100,11 +112,15 @@ const insertButtons = (props: ProjectElementProps) => {
             <Icon
               icon={documentBlank}
               style={{ marginRight: "5px", marginBottom: "1px" }}
-              color={theme.palette.text.primary}
+              color={"text.primary"}
             />
           }
         >
-          <Typography variant="button" color="inherit">
+          <Typography
+            fontFamily={theme.typography.fontFamily}
+            variant="button"
+            color="inherit"
+          >
             {props.linkButtonText[4]}
           </Typography>
         </Button>
@@ -119,11 +135,15 @@ const insertButtons = (props: ProjectElementProps) => {
             <Icon
               icon={documentPdf}
               style={{ marginRight: "5px", marginBottom: "1px" }}
-              color={theme.palette.text.primary}
+              color={"text.primary"}
             />
           }
         >
-          <Typography variant="button" color="inherit">
+          <Typography
+            fontFamily={theme.typography.fontFamily}
+            variant="button"
+            color="inherit"
+          >
             {props.linkButtonText[5]}
           </Typography>
         </Button>

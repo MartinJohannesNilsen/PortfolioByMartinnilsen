@@ -15,6 +15,7 @@ export const showMuiSize = () => {
   return (
     <Box>
       <Typography
+        fontFamily={theme.typography.fontFamily}
         sx={{
           position: "fixed",
           zIndex: 100,

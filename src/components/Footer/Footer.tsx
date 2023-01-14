@@ -7,7 +7,6 @@ import {
   IconButton,
   Link,
   styled,
-  SvgIcon,
   Tooltip,
   tooltipClasses,
   TooltipProps,
@@ -20,10 +19,10 @@ import { FooterProps } from "../../types";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import ContactPageIcon from "@mui/icons-material/ContactPage";
 import { ReactComponent as CVIcon } from "../../assets/svg/cvIconMedium.svg";
+import DOMPurify from "dompurify";
+import colorLuminance from "../../utils/colorLuminance";
 
 const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -52,6 +51,7 @@ const Footer: FC<FooterProps> = (props) => {
   const TypographyBullet: FC = () => {
     return (
       <Typography
+        fontFamily={theme.typography.fontFamily}
         variant="button"
         color="textPrimary"
         sx={{
@@ -72,23 +72,29 @@ const Footer: FC<FooterProps> = (props) => {
         justifyContent="center"
         alignContent="center"
         sx={{
-          backgroundColor: "secondary.main",
+          backgroundColor: "primary.dark",
           position: "relative",
         }}
         id={props.id}
       >
         <Box py={5} px={3} textAlign="center">
-          <Box py={2} px={1} display="flex">
+          <Box py={2} px={1}>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="body1"
+              display="inline-block"
               color="textPrimary"
               sx={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
-            >
-              {props.language === "norwegian"
-                ? "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker å ‎"
-                : "Do not hesitate in reaching out to me if you need any further information, or just want to ‎"}
-            </Typography>
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(
+                  props.language === "norwegian"
+                    ? "Ikke nøl med å ta kontakt dersom du ønsker noe mer informasjon, eller ønsker å&nbsp;"
+                    : "Do not hesitate in reaching out to me if you need any further information, or just want to&nbsp;"
+                ),
+              }}
+            />
             <Link
+              display="inline-block"
               variant="body1"
               color="textPrimary"
               href="https://martinjohannesnilsen.no/links"
@@ -96,9 +102,11 @@ const Footer: FC<FooterProps> = (props) => {
                 fontWeight: 600,
                 fontSize: lgUp ? "1.1rem" : "0.9rem",
                 textDecoration: "none",
-                borderBottom: "2px solid #9ce0e5",
+                borderBottom:
+                  "2px solid " +
+                  colorLuminance(theme.palette.secondary.main, 0.33),
                 "&:hover": {
-                  borderBottom: "2px solid #29939b",
+                  borderBottom: "2px solid " + theme.palette.secondary.main,
                 },
               }}
             >
@@ -107,12 +115,16 @@ const Footer: FC<FooterProps> = (props) => {
                 : "get in touch"}
             </Link>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="body1"
-              color="textPrimary"
+              display="inline-block"
               sx={{ fontWeight: 600, fontSize: lgUp ? "1.1rem" : "0.9rem" }}
-            >
-              {props.language === "norwegian" ? "‎ med meg." : "."}
-            </Typography>
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(
+                  props.language === "norwegian" ? "&nbsp;med meg." : "."
+                ),
+              }}
+            />
           </Box>
           <Box py={3}>
             {props.data.links.map((link, key) => {
@@ -137,7 +149,10 @@ const Footer: FC<FooterProps> = (props) => {
                       // disableHoverListener
                       disableTouchListener
                       title={
-                        <Typography variant="overline" color="inherit">
+                        <Typography
+                          fontFamily={theme.typography.fontFamily}
+                          variant="overline"
+                        >
                           {link.copyText}
                         </Typography>
                       }
@@ -152,25 +167,30 @@ const Footer: FC<FooterProps> = (props) => {
                               },
                             },
                             "&:hover": {
-                              color: "error.main",
+                              color: "secondary.main",
                             },
-                            color: theme.palette.text.primary,
+                            color: "text.primary",
                           }}
                           onClick={() => {
                             handleTooltipState(true, key);
                             navigator.clipboard.writeText(link.value);
                           }}
                         >
-                          <Typography variant="button">{link.text}</Typography>
+                          <Typography
+                            fontFamily={theme.typography.fontFamily}
+                            variant="button"
+                          >
+                            {link.text}
+                          </Typography>
                         </Button>
                       ) : (
                         <IconButton
                           sx={{
                             "&:hover": {
-                              color: "error.main",
+                              color: "secondary.main",
                               backgroundColor: "transparent",
                             },
-                            color: theme.palette.text.primary,
+                            color: "text.primary",
                           }}
                           onClick={() => {
                             handleTooltipState(true, key);
@@ -200,10 +220,10 @@ const Footer: FC<FooterProps> = (props) => {
                         onClick={() => window.open(link.value, "_blank")}
                         sx={{
                           "&:hover": {
-                            color: "error.main",
+                            color: "secondary.main",
                             backgroundColor: "transparent",
                           },
-                          color: theme.palette.text.primary,
+                          color: "text.primary",
                         }}
                       >
                         <GitHubIcon
@@ -222,10 +242,10 @@ const Footer: FC<FooterProps> = (props) => {
                         onClick={() => window.open(link.value, "_blank")}
                         sx={{
                           "&:hover": {
-                            color: "error.main",
+                            color: "secondary.main",
                             backgroundColor: "transparent",
                           },
-                          color: theme.palette.text.primary,
+                          color: "text.primary",
                         }}
                       >
                         <LinkedInIcon sx={{ fontSize: iconButtonSize + 3.5 }} />
@@ -238,10 +258,10 @@ const Footer: FC<FooterProps> = (props) => {
                         sx={{
                           "&:hover": {
                             // filter: "invert(50%) sepia(73%) saturate(393%) hue-rotate(136deg) brightness(85%) contrast(93%)",
-                            color: "error.main",
+                            color: "secondary.main",
                             backgroundColor: "transparent",
                           },
-                          color: theme.palette.text.primary,
+                          color: "text.primary",
                         }}
                       >
                         <Icon
@@ -264,12 +284,17 @@ const Footer: FC<FooterProps> = (props) => {
                             },
                           },
                           "&:hover": {
-                            color: "error.main",
+                            color: "secondary.main",
                           },
-                          color: theme.palette.text.primary,
+                          color: "text.primary",
                         }}
                       >
-                        <Typography variant="button">{link.text}</Typography>
+                        <Typography
+                          fontFamily={theme.typography.fontFamily}
+                          variant="button"
+                        >
+                          {link.text}
+                        </Typography>
                       </Button>
                     );
               }

@@ -1,4 +1,3 @@
-import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 import { ReactNode } from "react";
 
 // Object types
@@ -43,12 +42,24 @@ export type ArticleProps = {
   date: string;
 };
 
+export type themeProps = {
+  fontFamily: string;
+  accentColor: string;
+};
+
 // Component types
 
 export type NavbarProps = {
   data: NavbarDataProps;
   language: string;
   setLanguage: (language: string) => void;
+};
+
+export type FABProps = {
+  data: NavbarDataProps;
+  language: string;
+  setLanguage: (language: string) => void;
+  handleSettingsModalOpen: () => void;
 };
 
 export type FooterProps = {
@@ -107,6 +118,15 @@ export type ScrollTriggerProps = {
   y?: string;
   trigger?: gsap.DOMTarget;
   children?: ReactNode;
+};
+
+export type SettingsModalProps = {
+  language: string;
+  setLanguage: (language: string) => void;
+  open: boolean;
+  handleModalOpen: () => void;
+  handleModalClose: () => void;
+  handleThemeChange: (event: any) => void;
 };
 
 export type RevealProps = {

@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import ProjectList from "../components/ProjectList/ProjectList";
 import useDidUpdate from "../utils/useDidUpdate";
 import { ProjectViewProps } from "../types";
+import { useTheme } from "../ThemeProvider";
 
 const ProjectView: FC<ProjectViewProps> = (props) => {
   const [numShowing, setNumShowing] = useState<number>(
@@ -11,6 +12,7 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
   const [numIncrease] = useState<number>(
     parseInt(process.env.REACT_APP_NUM_PROJECTS_INCREASE!)
   );
+  const { theme } = useTheme();
 
   useDidUpdate(() => {
     if (props.triggerRefreshScrollTriggers) {
@@ -32,14 +34,20 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
       <Box pt={4}>
         {props.language === "norwegian" ? (
           <>
-            <Typography variant="h3" color="textPrimary" display="inline">
+            <Typography
+              fontFamily={theme.typography.fontFamily}
+              variant="h3"
+              color="textPrimary"
+              display="inline"
+            >
               Et utvalg
             </Typography>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="h3"
               display="inline"
               sx={{
-                color: "error.main",
+                color: "secondary.main",
               }}
             >
               &nbsp;prosjekter
@@ -47,14 +55,20 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
           </>
         ) : (
           <>
-            <Typography variant="h3" color="textPrimary" display="inline">
+            <Typography
+              fontFamily={theme.typography.fontFamily}
+              variant="h3"
+              color="textPrimary"
+              display="inline"
+            >
               Some of my
             </Typography>
             <Typography
+              fontFamily={theme.typography.fontFamily}
               variant="h3"
               display="inline"
               sx={{
-                color: "error.main",
+                color: "secondary.main",
               }}
             >
               &nbsp;projects

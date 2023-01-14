@@ -32,11 +32,11 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
           {props.numShowing < props.projects.length ? (
             <Button
               sx={{
-                color: theme.palette.text.primary,
+                color: "text.primary",
                 border: "2px solid " + theme.palette.text.primary,
                 "&:hover": {
-                  border: "2px solid " + theme.palette.error.main,
-                  color: theme.palette.error.main,
+                  border: "2px solid " + theme.palette.secondary.main,
+                  color: theme.palette.secondary.main,
                 },
               }}
               onClick={() =>
@@ -49,7 +49,11 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
                 )
               }
             >
-              <Typography variant="button" color="inherit">
+              <Typography
+                fontFamily={theme.typography.fontFamily}
+                variant="button"
+                color="inherit"
+              >
                 {props.buttonTexts[0]}
               </Typography>
             </Button>

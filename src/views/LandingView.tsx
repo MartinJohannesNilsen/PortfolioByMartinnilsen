@@ -49,7 +49,10 @@ const LandingView: FC<LandingViewProps> = (props) => {
             <>
               <RevealFromDownOnEnter x={cardFadeLength}>
                 <img
-                  style={{ width: "350px" }}
+                  style={{
+                    width: "300px",
+                    backgroundColor: theme.palette.secondary.main,
+                  }}
                   alt={props.data.cards[0].img.alt}
                   src={props.data.cards[0].img.path}
                 />
@@ -60,10 +63,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                     <Box
                       textAlign="left"
                       sx={{
-                        width: smDown ? "360px" : "400px",
+                        width: "340px",
                       }}
                     >
-                      <Typography variant="h5" color="textPrimary">
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h5"
+                        color="textPrimary"
+                      >
                         {props.data.cards[0].title}
                       </Typography>
                     </Box>
@@ -71,10 +78,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                       textAlign="left"
                       mt={2}
                       sx={{
-                        width: smDown ? "360px" : "400px",
+                        width: "340px",
                       }}
                     >
-                      <Typography variant="h6" color="textPrimary">
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h6"
+                        color="textPrimary"
+                      >
                         {props.data.cards[0].text}
                       </Typography>
                     </Box>
@@ -86,7 +97,10 @@ const LandingView: FC<LandingViewProps> = (props) => {
             <>
               <RevealFromRightOnEnter x={cardFadeLength}>
                 <img
-                  style={{ width: "350px" }}
+                  style={{
+                    width: "350px",
+                    backgroundColor: theme.palette.secondary.main,
+                  }}
                   alt={props.data.cards[0].img.alt}
                   src={props.data.cards[0].img.path}
                 />
@@ -97,10 +111,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                     <Box
                       textAlign="left"
                       sx={{
-                        width: smDown ? "360px" : "400px",
+                        width: "400px",
                       }}
                     >
-                      <Typography variant="h5" color="textPrimary">
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h5"
+                        color="textPrimary"
+                      >
                         {props.data.cards[0].title}
                       </Typography>
                     </Box>
@@ -108,10 +126,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                       textAlign="left"
                       mt={2}
                       sx={{
-                        width: smDown ? "360px" : "400px",
+                        width: "400px",
                       }}
                     >
-                      <Typography variant="h6" color="textPrimary">
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h6"
+                        color="textPrimary"
+                      >
                         {props.data.cards[0].text}
                       </Typography>
                     </Box>
@@ -125,7 +147,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
               flexBasis: "100%",
               height: "0",
             }}
-          ></Box>
+          />
           <RevealFromDownOnEnter x={cardFadeLength} start="top 95%">
             <Box
               display="flex"
@@ -135,12 +157,13 @@ const LandingView: FC<LandingViewProps> = (props) => {
               sx={{ display: smDown ? "none" : "block" }}
             >
               <Typography
+                fontFamily={theme.typography.fontFamily}
                 variant="body1"
                 color="textPrimary"
                 fontWeight="600"
                 sx={{
                   opacity: "0.25",
-                  color: theme.palette.text.primary,
+                  color: "text.primary",
                 }}
               >
                 {props.language === "norwegian" ? "Bla ned" : "Scroll"}
@@ -150,7 +173,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
                   fontSize: "24px",
                   opacity: "0.25",
                   marginTop: "6px",
-                  color: theme.palette.text.primary,
+                  color: "text.primary",
                 }}
               />
             </Box>
@@ -182,7 +205,10 @@ const LandingView: FC<LandingViewProps> = (props) => {
           >
             <RevealFromDownOnEnter x={cardFadeLength}>
               <img
-                style={{ width: "350px" }}
+                style={{
+                  width: "300px",
+                  backgroundColor: theme.palette.secondary.main,
+                }}
                 alt={props.data.cards[1].img.alt}
                 src={props.data.cards[1].img.path}
               />
@@ -193,10 +219,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                   <Box
                     textAlign="left"
                     sx={{
-                      width: smDown ? "360px" : "400px",
+                      width: "340px",
                     }}
                   >
-                    <Typography variant="h5" color="textPrimary">
+                    <Typography
+                      fontFamily={theme.typography.fontFamily}
+                      variant="h5"
+                      color="textPrimary"
+                    >
                       {props.data.cards[1].title}
                     </Typography>
                   </Box>
@@ -204,10 +234,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                     textAlign="left"
                     mt={2}
                     sx={{
-                      width: smDown ? "360px" : "400px",
+                      width: "340px",
                     }}
                   >
-                    <Typography variant="h6" color="textPrimary">
+                    <Typography
+                      fontFamily={theme.typography.fontFamily}
+                      variant="h6"
+                      color="textPrimary"
+                    >
                       {props.data.cards[1].text}
                     </Typography>
                   </Box>
@@ -233,10 +267,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                   <Box
                     textAlign="left"
                     sx={{
-                      width: smDown ? "360px" : "400px",
+                      width: "400px",
                     }}
                   >
-                    <Typography variant="h5" color="textPrimary">
+                    <Typography
+                      fontFamily={theme.typography.fontFamily}
+                      variant="h5"
+                      color="textPrimary"
+                    >
                       {props.data.cards[1].title}
                     </Typography>
                   </Box>
@@ -244,10 +282,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                     textAlign="left"
                     mt={2}
                     sx={{
-                      width: smDown ? "360px" : "400px",
+                      width: "400px",
                     }}
                   >
-                    <Typography variant="h6" color="textPrimary">
+                    <Typography
+                      fontFamily={theme.typography.fontFamily}
+                      variant="h6"
+                      color="textPrimary"
+                    >
                       {props.data.cards[1].text}
                     </Typography>
                   </Box>
@@ -290,7 +332,10 @@ const LandingView: FC<LandingViewProps> = (props) => {
             <>
               <RevealFromDownOnEnter x={cardFadeLength}>
                 <img
-                  style={{ width: "350px" }}
+                  style={{
+                    width: "300px",
+                    backgroundColor: theme.palette.secondary.main,
+                  }}
                   alt={props.data.cards[2].img.alt}
                   src={props.data.cards[2].img.path}
                 />
@@ -301,10 +346,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                     <Box
                       textAlign="left"
                       sx={{
-                        width: smDown ? "360px" : "400px",
+                        width: "340px",
                       }}
                     >
-                      <Typography variant="h5" color="textPrimary">
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h5"
+                        color="textPrimary"
+                      >
                         {props.data.cards[2].title}
                       </Typography>
                     </Box>
@@ -312,10 +361,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                       textAlign="left"
                       mt={2}
                       sx={{
-                        width: smDown ? "360px" : "400px",
+                        width: "340px",
                       }}
                     >
-                      <Typography variant="h6" color="textPrimary">
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h6"
+                        color="textPrimary"
+                      >
                         {props.data.cards[2].text}
                       </Typography>
                     </Box>
@@ -338,10 +391,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                     <Box
                       textAlign="left"
                       sx={{
-                        width: smDown ? "360px" : "400px",
+                        width: "400px",
                       }}
                     >
-                      <Typography variant="h5" color="textPrimary">
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h5"
+                        color="textPrimary"
+                      >
                         {props.data.cards[2].title}
                       </Typography>
                     </Box>
@@ -349,10 +406,14 @@ const LandingView: FC<LandingViewProps> = (props) => {
                       textAlign="left"
                       mt={2}
                       sx={{
-                        width: smDown ? "360px" : "400px",
+                        width: "400px",
                       }}
                     >
-                      <Typography variant="h6" color="textPrimary">
+                      <Typography
+                        fontFamily={theme.typography.fontFamily}
+                        variant="h6"
+                        color="textPrimary"
+                      >
                         {props.data.cards[2].text}
                       </Typography>
                     </Box>
