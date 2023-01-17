@@ -10,13 +10,14 @@ import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import { SettingsModalProps } from "../../types";
 import { ThemeEnum, defaultFontFamily } from "../../themes/base";
+import SquareIcon from "@mui/icons-material/Square";
 
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 360,
+  width: 380,
   bgcolor: "background.paper",
   borderRadius: 5,
   outline: 0,
@@ -113,7 +114,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
               </ButtonBase>
             </Box>
           </Box>
-          <Box display="flex" mt={-0.5}>
+          <Box display="flex" mt={-0.4}>
             <Typography
               fontFamily={theme.typography.fontFamily}
               variant="h6"
@@ -126,9 +127,13 @@ export const SettingsModal = (props: SettingsModalProps) => {
               { title: "System font", font: defaultFontFamily },
               { title: "Gotham Pro", font: "Gotham" },
               { title: "Source Sans Pro", font: "Source Sans Pro" },
+              {
+                title: "Consolas",
+                font: "Consolas, monaco, monospace",
+              },
               { title: "Fantasy", font: "Luminari" },
             ].map((element: { title: string; font: string }) => (
-              <Box mt={-0.5}>
+              <Box mt={-0.6}>
                 <Tooltip enterDelay={2000} title={element.title}>
                   <IconButton
                     onClick={() => {
@@ -138,6 +143,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
                           ? ThemeEnum.Dark
                           : ThemeEnum.Light
                       );
+                      props.triggerRefreshScrollTriggers!();
                     }}
                     disabled={fontFamily === element.font}
                     sx={{
@@ -163,7 +169,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
               </Box>
             ))}
           </Box>
-          <Box display="flex" mt={-0}>
+          <Box display="flex" mt={0.3}>
             <Typography
               fontFamily={theme.typography.fontFamily}
               variant="h6"
@@ -177,10 +183,11 @@ export const SettingsModal = (props: SettingsModalProps) => {
             {[
               { title: "Teal", color: "#29939b" },
               { title: "Green", color: "#739574" },
+              { title: "Yellow", color: "#fdd835" },
               { title: "Pink", color: "#df487f" },
               { title: "Red", color: "#ff1744" },
             ].map((element: { title: string; color: string }) => (
-              <Box mt={-0.5}>
+              <Box mt={-0.6}>
                 <Tooltip enterDelay={2000} title={element.title}>
                   <IconButton
                     onClick={() => {
@@ -197,7 +204,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
                       height: "35px",
                     }}
                   >
-                    <Typography
+                    <SquareIcon
                       fontFamily={theme.typography.fontFamily}
                       sx={{
                         color: element.color,
@@ -207,9 +214,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
                             ? "2px solid " + theme.palette.secondary.main
                             : "",
                       }}
-                    >
-                      Aa
-                    </Typography>
+                    />
                   </IconButton>
                 </Tooltip>
               </Box>

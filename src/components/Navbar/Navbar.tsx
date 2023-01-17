@@ -181,6 +181,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
         handleModalOpen={handleSettingsModalOpen}
         handleModalClose={handleSettingsModalClose}
         handleThemeChange={handleThemeChange}
+        triggerRefreshScrollTriggers={props.triggerRefreshScrollTriggers}
       />
     </AppBar>
   );

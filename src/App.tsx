@@ -87,6 +87,7 @@ const App = () => {
               data={data.navbar}
               language={language}
               setLanguage={setLanguage}
+              triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
             />
             <LandingView
               id={data.navbar.sections[0]}
