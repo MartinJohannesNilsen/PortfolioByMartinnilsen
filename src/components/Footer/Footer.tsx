@@ -94,6 +94,7 @@ const Footer: FC<FooterProps> = (props) => {
               }}
             />
             <Link
+              fontFamily={theme.typography.fontFamily}
               display="inline-block"
               variant="body1"
               color="textPrimary"
