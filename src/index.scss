@@ -1,57 +1,66 @@
 @font-face {
   font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-Thin.otf");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-XLight.otf");
+  src: url("./assets/fonts/GothamPro/GothamPro-Light.ttf");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-Light.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-Bold.otf");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-Black.otf");
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-ThinItalic.otf");
-  font-weight: 200;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-XLightItalic.otf");
+  src: url("./assets/fonts/GothamPro/GothamPro-LightItalic.ttf");
   font-weight: 300;
   font-style: italic;
 }
+
 @font-face {
   font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-BookItalic.otf");
+  src: url("./assets/fonts/GothamPro/GothamPro.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/GothamPro/GothamPro-Italic.ttf");
   font-weight: normal;
   font-style: italic;
 }
+
 @font-face {
   font-family: "Gotham";
-  src: url("./assets/fonts/Gotham/Gotham-UltraItalic.otf");
-  font-weight: 800;
+  src: url("./assets/fonts/GothamPro/GothamPro-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/GothamPro/GothamPro-MediumItalic.ttf");
+  font-weight: 500;
   font-style: italic;
 }
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/GothamPro/GothamPro-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/GothamPro/GothamPro-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/GothamPro/GothamPro-Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/GothamPro/GothamPro-BlackItalic.ttf");
+  font-weight: 900;
+  font-style: italic;
+}
+
 
 // Source Sans Pro
 @font-face {
@@ -125,6 +134,14 @@
   src: url("./assets/fonts/SourceSansPro/SourceSansPro-BlackItalic.ttf");
   font-weight: 900;
   font-style: italic;
+}
+
+// Luminari
+@font-face {
+  font-family: "Luminari";
+  src: url("./assets/fonts/Luminari/Luminari-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body,

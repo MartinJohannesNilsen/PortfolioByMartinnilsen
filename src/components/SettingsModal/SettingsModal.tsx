@@ -114,7 +114,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
               </ButtonBase>
             </Box>
           </Box>
-          <Box display="flex" mt={-0.4}>
+          <Box display="flex" mt={-0.4} alignItems="baseline">
             <Typography
               fontFamily={theme.typography.fontFamily}
               variant="h6"
@@ -128,12 +128,12 @@ export const SettingsModal = (props: SettingsModalProps) => {
               { title: "Gotham Pro", font: "Gotham" },
               { title: "Source Sans Pro", font: "Source Sans Pro" },
               {
-                title: "Consolas",
+                title: "Monospace",
                 font: "Consolas, monaco, monospace",
               },
-              { title: "Fantasy", font: "Luminari" },
-            ].map((element: { title: string; font: string }) => (
-              <Box mt={-0.6}>
+              { title: "Fantasy", font: "Luminari, sans-serif" },
+            ].map((element: { title: string; font: string }, index: number) => (
+              <Box mt={-0.6} display="flex" key={index}>
                 <Tooltip enterDelay={2000} title={element.title}>
                   <IconButton
                     onClick={() => {
@@ -152,6 +152,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
                     }}
                   >
                     <Typography
+                      // mt={index === 1 ? "4.2px" : index === 4 ? "2px" : 0}
                       color="textPrimary"
                       sx={{
                         fontFamily: element.font,
