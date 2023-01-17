@@ -1,31 +1,44 @@
-import React from "react";
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Link, Theme, Typography } from "@mui/material";
 import { useTheme } from "../../ThemeProvider";
 import { ProjectElementProps } from "../../types";
+import colorLuminance from "../../utils/colorLuminance";
+import DOMPurify from "dompurify";
 
-const linkElement = (link: string, text: string, color: string) => {
+const linkElement = (link: string, text: string, theme: Theme) => {
   return (
     <Box display="flex" my={0.5}>
       <Link
         variant="body1"
-        color="textPrimary"
+        // color="textPrimary"
         href={link}
         sx={{
-          // color: color,
+          color: "text.primary",
           fontWeight: "600",
           textDecoration: "none",
-          borderBottom: "2px solid #9ce0e5",
+          borderBottom:
+            "2px solid" + colorLuminance(theme.palette.secondary.main, 0.33),
           "&:hover": {
             // borderBottom: "2px solid " + color,
-            borderBottom: "2px solid #29939b",
+            // color: colorLuminance(
+            //   "text.primary",
+            //   theme.palette.mode === "dark" ? -0.4 : 0.4
+            // ),
+            borderBottom: "2px solid " + theme.palette.secondary.main,
           },
         }}
       >
         {text}
       </Link>
-      <Typography variant="body1" color="textPrimary">
-        ‎ →
-      </Typography>
+      <Typography
+        fontFamily={theme.typography.fontFamily}
+        variant="body1"
+        color="inherit"
+        display="inline-block"
+        sx={{ fontWeight: 800 }}
+        dangerouslySetInnerHTML={{
+          __html: DOMPurify.sanitize("&nbsp;→"),
+        }}
+      />
     </Box>
   );
 };
@@ -46,7 +59,7 @@ const insertLinks = (props: ProjectElementProps) => {
           props.language === "norwegian"
             ? "Sjekk ut prosjektets GitHub"
             : "Check out the GitHub page",
-          "#29939b"
+          theme
         )
       ) : (
         <></>
@@ -55,9 +68,9 @@ const insertLinks = (props: ProjectElementProps) => {
         linkElement(
           props.projectData.linkToWebsite!,
           props.language === "norwegian"
-            ? "Utforsk prosjektets nettside"
-            : "Launch the project website",
-          "#29939b"
+            ? "Utforsk nettsiden"
+            : "Launch the website",
+          theme
         )
       ) : (
         <></>
@@ -65,10 +78,8 @@ const insertLinks = (props: ProjectElementProps) => {
       {hasDemoVid ? (
         linkElement(
           props.projectData.linkToDemovideo!,
-          props.language === "norwegian"
-            ? "Spill av demovideo"
-            : "Play the demo video",
-          "#29939b"
+          props.language === "norwegian" ? "Se demovideo" : "Watch demo video",
+          theme
         )
       ) : (
         <></>
@@ -76,10 +87,8 @@ const insertLinks = (props: ProjectElementProps) => {
       {hasReadMe ? (
         linkElement(
           props.projectData.linkToReadMe!,
-          props.language === "norwegian"
-            ? "Les prosjektets readme"
-            : "Read the project readme",
-          "#29939b"
+          props.language === "norwegian" ? "Les readme" : "Read the readme",
+          theme
         )
       ) : (
         <></>
@@ -88,9 +97,9 @@ const insertLinks = (props: ProjectElementProps) => {
         linkElement(
           props.projectData.linkToPaper!,
           props.language === "norwegian"
-            ? "Les den tilhørende prosjektrapporten"
-            : "Read the project report",
-          "#29939b"
+            ? "Les prosjektrapporten"
+            : "Read the report",
+          theme
         )
       ) : (
         <></>

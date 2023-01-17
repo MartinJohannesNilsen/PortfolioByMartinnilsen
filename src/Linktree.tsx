@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
-import CustomThemeProvider, { useTheme } from "./ThemeProvider";
+import { useTheme } from "./ThemeProvider";
 import {
   Box,
   CssBaseline,
-  GlobalStyles,
-  Grid,
   StyledEngineProvider,
-  Typography,
   useMediaQuery,
 } from "@mui/material";
 

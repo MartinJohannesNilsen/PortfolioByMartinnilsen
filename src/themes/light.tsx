@@ -1,31 +1,30 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material";
+import { defaultAccentColor, defaultFontFamily } from "./base";
 
 const defaultTheme = createTheme();
+// https://mui.com/material-ui/customization/default-theme/
 export const light = createTheme({
+  breakpoints: defaultTheme.breakpoints,
   palette: {
     mode: "light",
     text: {
       primary: "#000",
       secondary: "#FFF",
     },
-    background: {
-      default: "#FFF",
-      paper: "#FFF",
-    },
+    // background
     primary: {
       main: "#FFF",
+      dark: "#fcfcfc",
     },
+    // accent color
     secondary: {
-      main: "#fcfcfc",
+      main: JSON.parse(String(localStorage.getItem("accent"))) || "#29939b",
     },
-    success: {
-      //outlineshadow
-      light: "#ccc",
-      main: "#ddd",
-      dark: "#eee",
-    },
-    error: {
-      main: "#29939b",
+    // outline shadow for project images
+    grey: {
+      600: "#ccc",
+      700: "#ddd",
+      800: "#eee",
     },
   },
   components: {
@@ -35,7 +34,7 @@ export const light = createTheme({
         body: {},
       },
     },
-    // For textbuttons in footer
+    // No default width on buttons
     MuiButton: {
       styleOverrides: {
         root: {
@@ -43,11 +42,19 @@ export const light = createTheme({
         },
       },
     },
+    // For tooltips
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: defaultTheme.palette.grey[800],
+        },
+      },
+    },
   },
   typography: {
     fontFamily:
+      JSON.parse(String(localStorage.getItem("font"))) ||
       "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-
     // Headings
     // Usage:
     h1: {},

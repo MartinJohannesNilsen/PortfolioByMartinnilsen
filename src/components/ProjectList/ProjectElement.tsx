@@ -84,9 +84,9 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                             ? "320px"
                             : "250px",
                       },
-                      boxShadow: `-10px -10px 1px 0px ${theme.palette.success.light},
-                            -20px -20px 1px 0px ${theme.palette.success.main},
-                            -30px -30px 1px 0px ${theme.palette.success.dark}`,
+                      boxShadow: `-10px -10px 1px 0px ${theme.palette.grey[600]},
+                            -20px -20px 1px 0px ${theme.palette.grey[700]},
+                            -30px -30px 1px 0px ${theme.palette.grey[800]}`,
                     }}
                     alt={props.projectData.title}
                   />
@@ -95,6 +95,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Grid item xs={12} md={6}>
                 <Box pb={paddingTitleDescription}>
                   <Typography
+                    fontFamily={theme.typography.fontFamily}
                     variant="subtitle1"
                     color="textPrimary"
                     dangerouslySetInnerHTML={{
@@ -104,6 +105,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 </Box>
                 <Box textAlign="justify">
                   <Typography
+                    fontFamily={theme.typography.fontFamily}
                     variant="body1"
                     color="textPrimary"
                     dangerouslySetInnerHTML={{
@@ -166,9 +168,9 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                             ? "320px"
                             : "250px",
                       },
-                      boxShadow: `-10px -10px 1px 0px ${theme.palette.success.light},
-                            -20px -20px 1px 0px ${theme.palette.success.main},
-                            -30px -30px 1px 0px ${theme.palette.success.dark}`,
+                      boxShadow: `-10px -10px 1px 0px ${theme.palette.grey[600]},
+                            -20px -20px 1px 0px ${theme.palette.grey[700]},
+                            -30px -30px 1px 0px ${theme.palette.grey[800]}`,
                     }}
                     alt={props.projectData.title}
                   />
@@ -176,12 +178,12 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <Box pb={paddingTitleDescription}>
-                  <Typography variant="subtitle1" color="textPrimary">
+                  <Typography fontFamily={theme.typography.fontFamily}variant="subtitle1" color="textPrimary">
                     {props.projectData.title}
                   </Typography>
                 </Box>
                 <Box textAlign="justify">
-                  <Typography variant="body1" color="textPrimary">
+                  <Typography fontFamily={theme.typography.fontFamily}variant="body1" color="textPrimary">
                     {props.projectData.description}
                   </Typography>
                 </Box>
@@ -246,9 +248,9 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                             ? "320px"
                             : "250px",
                       },
-                      boxShadow: `10px -10px 1px 0px ${theme.palette.success.light},
-                              20px -20px 1px 0px ${theme.palette.success.main},
-                              30px -30px 1px 0px ${theme.palette.success.dark}`,
+                      boxShadow: `10px -10px 1px 0px ${theme.palette.grey[600]},
+                              20px -20px 1px 0px ${theme.palette.grey[700]},
+                              30px -30px 1px 0px ${theme.palette.grey[800]}`,
                     }}
                     alt={props.projectData.title}
                   />
@@ -257,6 +259,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
                 <Box pb={paddingTitleDescription}>
                   <Typography
+                    fontFamily={theme.typography.fontFamily}
                     variant="subtitle1"
                     color="textPrimary"
                     dangerouslySetInnerHTML={{
@@ -266,6 +269,7 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                 </Box>
                 <Box textAlign="justify">
                   <Typography
+                    fontFamily={theme.typography.fontFamily}
                     variant="body1"
                     color="textPrimary"
                     dangerouslySetInnerHTML={{
@@ -299,9 +303,9 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                           : props.projectData.img.type === "square"
                           ? "200px"
                           : "134px",
-                      boxShadow: `10px -10px 1px 0px ${theme.palette.success.light},
-                              20px -20px 1px 0px ${theme.palette.success.main},
-                              30px -30px 1px 0px ${theme.palette.success.dark}`,
+                      boxShadow: `10px -10px 1px 0px ${theme.palette.grey[600]},
+                              20px -20px 1px 0px ${theme.palette.grey[700]},
+                              30px -30px 1px 0px ${theme.palette.grey[800]}`,
                     }}
                     alt={props.projectData.title}
                   />
@@ -309,12 +313,12 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
               </Grid>
               <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
                 <Box pb={paddingTitleDescription}>
-                  <Typography variant="subtitle1" color="textPrimary">
+                  <Typography fontFamily={theme.typography.fontFamily}variant="subtitle1" color="textPrimary">
                     {props.projectData.title}
                   </Typography>
                 </Box>
                 <Box textAlign="justify">
-                  <Typography variant="body1" color="textPrimary">
+                  <Typography fontFamily={theme.typography.fontFamily}variant="body1" color="textPrimary">
                     {props.projectData.description}
                   </Typography>
                 </Box>
