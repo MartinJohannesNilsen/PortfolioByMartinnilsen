@@ -125,12 +125,9 @@ export const SettingsModal = (props: SettingsModalProps) => {
             <Box flexGrow="1" />
             {[
               { title: "System font", font: defaultFontFamily },
-              { title: "Gotham Pro", font: "Gotham" },
+              { title: "Gotham Pro", font: "Gotham Pro" },
               { title: "Source Sans Pro", font: "Source Sans Pro" },
-              {
-                title: "Monospace",
-                font: "Consolas, monaco, monospace",
-              },
+              { title: "Consolas", font: "Consolas, monospace" },
               { title: "Fantasy", font: "Luminari, sans-serif" },
             ].map((element: { title: string; font: string }, index: number) => (
               <Box mt={-0.6} display="flex" key={index}>

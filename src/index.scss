@@ -1,61 +1,60 @@
+// Gotham Pro
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-Light.ttf");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-LightItalic.ttf");
   font-weight: 300;
   font-style: italic;
 }
-
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-Italic.ttf");
   font-weight: normal;
   font-style: italic;
 }
-
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-MediumItalic.ttf");
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-BoldItalic.ttf");
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-Black.ttf");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   src: url("./assets/fonts/GothamPro/GothamPro-BlackItalic.ttf");
   font-weight: 900;
   font-style: italic;
@@ -136,6 +135,16 @@
   font-style: italic;
 }
 
+
+// Consolas
+@font-face {
+  font-family: "Consolas";
+  src: url("./assets/fonts/Consolas/Consolas.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 // Luminari
 @font-face {
   font-family: "Luminari";
@@ -144,11 +153,12 @@
   font-style: normal;
 }
 
+
 body,
 html {
   height: 100%;
   margin: 0;
-  font-family: "Gotham";
+  font-family: "Gotham Pro";
   // font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
