@@ -27,7 +27,7 @@ const style = {
   rowGap: "10px",
   justifyContent: "flex-start",
   boxShadow: 24,
-  p: 4,
+  padding: "30px 30px 30px 30px",
 };
 
 export const SettingsModal = (props: SettingsModalProps) => {
