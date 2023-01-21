@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import {
   Box,
   Button,
@@ -23,6 +23,7 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { ReactComponent as CVIcon } from "../../assets/svg/cvIconMedium.svg";
 import DOMPurify from "dompurify";
 import colorLuminance from "../../utils/colorLuminance";
+import { useNavigate } from "react-router-dom";
 
 const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -98,7 +99,7 @@ const Footer: FC<FooterProps> = (props) => {
               display="inline-block"
               variant="body1"
               color="textPrimary"
-              href="https://martinjohannesnilsen.no/links"
+              href={"/links"}
               sx={{
                 fontWeight: 600,
                 fontSize: lgUp ? "1.1rem" : "0.9rem",
