@@ -184,39 +184,41 @@ export const SettingsModal = (props: SettingsModalProps) => {
               { title: "Yellow", color: "#fdd835" },
               { title: "Pink", color: "#df487f" },
               { title: "Red", color: "#ff1744" },
-            ].map((element: { title: string; color: string }) => (
-              <Box mt={-0.6}>
-                <Tooltip enterDelay={2000} title={element.title}>
-                  <IconButton
-                    onClick={() => {
-                      setAccentColor(element.color);
-                      setTheme(
-                        theme.palette.mode === "dark"
-                          ? ThemeEnum.Dark
-                          : ThemeEnum.Light
-                      );
-                    }}
-                    disabled={accentColor === element.color}
-                    sx={{
-                      width: "35px",
-                      height: "35px",
-                    }}
-                  >
-                    <SquareIcon
-                      fontFamily={theme.typography.fontFamily}
-                      sx={{
-                        color: element.color,
-                        fontWeight: 600,
-                        borderBottom:
-                          accentColor === element.color
-                            ? "2px solid " + theme.palette.secondary.main
-                            : "",
+            ].map(
+              (element: { title: string; color: string }, index: number) => (
+                <Box mt={-0.6} key={index}>
+                  <Tooltip enterDelay={2000} title={element.title}>
+                    <IconButton
+                      onClick={() => {
+                        setAccentColor(element.color);
+                        setTheme(
+                          theme.palette.mode === "dark"
+                            ? ThemeEnum.Dark
+                            : ThemeEnum.Light
+                        );
                       }}
-                    />
-                  </IconButton>
-                </Tooltip>
-              </Box>
-            ))}
+                      disabled={accentColor === element.color}
+                      sx={{
+                        width: "35px",
+                        height: "35px",
+                      }}
+                    >
+                      <SquareIcon
+                        fontFamily={theme.typography.fontFamily}
+                        sx={{
+                          color: element.color,
+                          fontWeight: 600,
+                          borderBottom:
+                            accentColor === element.color
+                              ? "2px solid " + theme.palette.secondary.main
+                              : "",
+                        }}
+                      />
+                    </IconButton>
+                  </Tooltip>
+                </Box>
+              )
+            )}
           </Box>
         </Box>
       </Modal>
