@@ -281,6 +281,7 @@ const Footer: FC<FooterProps> = (props) => {
                       <IconButton
                         href={link.value}
                         sx={{
+                          marginTop: "-3px",
                           "&:hover": {
                             color: "secondary.main",
                             backgroundColor: "transparent",
