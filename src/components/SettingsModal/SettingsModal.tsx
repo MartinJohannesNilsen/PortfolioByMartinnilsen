@@ -9,7 +9,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import flagUnitedKingdom from "@iconify-icons/openmoji/flag-united-kingdom";
 import flagNorway from "@iconify-icons/openmoji/flag-norway";
 import { SettingsModalProps } from "../../types";
-import { ThemeEnum, defaultFontFamily } from "../../themes/base";
+import { ThemeEnum } from "../../themes/themeMap";
+import { defaultFontFamily } from "../../themes/themeDefaults";
 import SquareIcon from "@mui/icons-material/Square";
 
 const style = {

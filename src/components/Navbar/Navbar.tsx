@@ -12,7 +12,7 @@ import {
   Fade,
   Tooltip,
 } from "@mui/material";
-import { ThemeEnum } from "../../themes/base";
+import { ThemeEnum } from "../../themes/themeMap";
 import { useTheme } from "../../ThemeProvider";
 import { gsap, Power3 } from "gsap";
 import TuneIcon from "@mui/icons-material/Tune";

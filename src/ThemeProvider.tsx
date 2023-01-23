@@ -6,12 +6,8 @@ import {
   useMediaQuery,
   createTheme,
 } from "@mui/material";
-import {
-  defaultAccentColor,
-  defaultFontFamily,
-  themeCreator,
-} from "./themes/base";
-import { ThemeEnum } from "./themes/base";
+import { themeCreator, ThemeEnum } from "./themes/themeMap";
+import { defaultFontFamily, defaultAccentColor } from "./themes/themeDefaults";
 import useDidUpdate from "./utils/useDidUpdate";
 
 // Find the correct scheme based on user preferences.
