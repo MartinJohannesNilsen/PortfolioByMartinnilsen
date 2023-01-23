@@ -242,7 +242,7 @@ const Footer: FC<FooterProps> = (props) => {
                 iconButtons && link.text.toLowerCase() === "github"
                   ? elements.push(
                       <IconButton
-                        onClick={() => window.open(link.value, "_blank")}
+                        href={link.value}
                         sx={{
                           "&:hover": {
                             color: "secondary.main",
@@ -264,7 +264,7 @@ const Footer: FC<FooterProps> = (props) => {
                   : iconButtons && link.text.toLowerCase() === "linkedin"
                   ? elements.push(
                       <IconButton
-                        onClick={() => window.open(link.value, "_blank")}
+                        href={link.value}
                         sx={{
                           "&:hover": {
                             color: "secondary.main",
@@ -279,10 +279,9 @@ const Footer: FC<FooterProps> = (props) => {
                   : iconButtons && link.text.toLowerCase() === "cv"
                   ? elements.push(
                       <IconButton
-                        onClick={() => window.open(link.value, "_blank")}
+                        href={link.value}
                         sx={{
                           "&:hover": {
-                            // filter: "invert(50%) sepia(73%) saturate(393%) hue-rotate(136deg) brightness(85%) contrast(93%)",
                             color: "secondary.main",
                             backgroundColor: "transparent",
                           },
@@ -300,7 +299,7 @@ const Footer: FC<FooterProps> = (props) => {
                     )
                   : elements.push(
                       <Button
-                        onClick={() => window.open(link.value, "_blank")}
+                        href={link.value}
                         sx={{
                           "& MuiButton-text": {
                             textTransform: "none",
