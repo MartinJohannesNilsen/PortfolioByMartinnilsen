@@ -23,7 +23,8 @@ export function getSelectedTheme() {
 
 export type ThemeContextType = {
   theme: Theme;
-  setTheme: (Theme: ThemeEnum) => void;
+  setTheme: (themeName: ThemeEnum, persist?: boolean) => void;
+  setDefaultTheme: () => void;
   accentColor: string;
   setAccentColor: (accent: string) => void;
   fontFamily: string;
@@ -35,7 +36,8 @@ export const ThemeContext = createContext<ThemeContextType>({
     getSelectedTheme() === "dark"
       ? themeCreator(ThemeEnum.Dark)
       : themeCreator(ThemeEnum.Light),
-  setTheme: (theme) => {},
+  setTheme: (theme, persist) => {},
+  setDefaultTheme: () => {},
   accentColor: localStorage.getItem("accent") || defaultAccentColor,
   setAccentColor: (accent) => {},
   fontFamily: localStorage.getItem("font") || defaultFontFamily,
@@ -61,8 +63,26 @@ const CustomThemeProvider: React.FC = (props) => {
     _setTheme(themeCreator(localStorage.getItem("theme") || OS_STANDARD));
   }, [OS_STANDARD]);
 
-  const setTheme = (themeName: ThemeEnum): void => {
-    localStorage.setItem("theme", themeName);
+  const setDefaultTheme = (): void => {
+    localStorage.removeItem("theme");
+    const underlayingTheme = themeCreator(getSelectedTheme());
+    _setTheme(
+      createTheme({
+        ...underlayingTheme,
+        palette: {
+          ...underlayingTheme.palette,
+          secondary: { main: accentColor },
+        },
+        typography: {
+          ...underlayingTheme.typography,
+          fontFamily: fontFamily,
+        },
+      })
+    );
+  };
+
+  const setTheme = (themeName: ThemeEnum, persist?: boolean): void => {
+    if (persist) localStorage.setItem("theme", themeName);
     const underlayingTheme = themeCreator(themeName);
     _setTheme(
       createTheme({
@@ -111,6 +131,7 @@ const CustomThemeProvider: React.FC = (props) => {
       value={{
         theme,
         setTheme,
+        setDefaultTheme,
         accentColor,
         setAccentColor,
         fontFamily,

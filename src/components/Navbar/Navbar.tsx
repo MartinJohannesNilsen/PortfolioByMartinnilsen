@@ -49,9 +49,10 @@ export const Navbar: FC<NavbarProps> = (props) => {
   }, []);
 
   const handleThemeChange = (event: any) => {
-    event.target.checked === true
-      ? setTheme(ThemeEnum.Light)
-      : setTheme(ThemeEnum.Dark);
+    setTheme(
+      event.target.checked === true ? ThemeEnum.Light : ThemeEnum.Dark,
+      true
+    );
   };
 
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
@@ -78,7 +79,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
           container
           alignItems="flex-end"
           justifyContent={lgUp ? "center" : "flex-start"}
-          ref={(el) => (ref = el)}
+          ref={(el: any) => (ref = el)}
         >
           <Grid item md={3}>
             <Typography
@@ -136,24 +137,25 @@ export const Navbar: FC<NavbarProps> = (props) => {
                       ? "Åpne innstillinger"
                       : "Open settings"
                   }
-                >
-                  <ButtonBase
-                    onClick={() => {
-                      handleSettingsModalOpen();
-                    }}
-                  >
-                    <TuneIcon
-                      sx={{
-                        color: theme.palette.text.primary,
-                        height: "30px",
-                        width: "30px",
-                        "&:hover": {
-                          color: theme.palette.secondary.main,
-                        },
+                  children={
+                    <ButtonBase
+                      onClick={() => {
+                        handleSettingsModalOpen();
                       }}
-                    />
-                  </ButtonBase>
-                </Tooltip>
+                    >
+                      <TuneIcon
+                        sx={{
+                          color: theme.palette.text.primary,
+                          height: "30px",
+                          width: "30px",
+                          "&:hover": {
+                            color: theme.palette.secondary.main,
+                          },
+                        }}
+                      />
+                    </ButtonBase>
+                  }
+                />
               </Box>
             </Grid>
           </Hidden>
@@ -161,12 +163,14 @@ export const Navbar: FC<NavbarProps> = (props) => {
       </Toolbar>
       <Hidden mdDown>
         {windowScroll.y > window.innerHeight - 50 ? (
-          <Fade>
-            <FABMenu
-              handleSettingsModalOpen={handleSettingsModalOpen}
-              {...props}
-            />
-          </Fade>
+          <Fade
+            children={
+              <FABMenu
+                handleSettingsModalOpen={handleSettingsModalOpen}
+                {...props}
+              />
+            }
+          />
         ) : (
           <></>
         )}

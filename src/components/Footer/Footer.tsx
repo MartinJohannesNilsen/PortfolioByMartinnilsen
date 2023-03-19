@@ -75,7 +75,8 @@ const Footer: FC<FooterProps> = (props) => {
           left: 0,
           bottom: 0,
           width: "100%",
-          height: "8px",
+          // height: "8px",
+          height: "5px",
           background: "transparent",
           zIndex: 1,
         }}
