@@ -53,12 +53,14 @@ export type NavbarProps = {
   data: NavbarDataProps;
   language: string;
   setLanguage: (language: string) => void;
+  triggerRefreshScrollTriggers?: () => void;
 };
 
 export type FABProps = {
   data: NavbarDataProps;
   language: string;
   setLanguage: (language: string) => void;
+  triggerRefreshScrollTriggers?: () => void;
   handleSettingsModalOpen: () => void;
 };
 
@@ -127,6 +129,7 @@ export type SettingsModalProps = {
   handleModalOpen: () => void;
   handleModalClose: () => void;
   handleThemeChange: (event: any) => void;
+  triggerRefreshScrollTriggers?: () => void;
 };
 
 export type RevealProps = {

@@ -59,7 +59,7 @@ const ReaderView: FC<ReaderViewProps> = (props) => {
       <h2>
         {props.language === "norwegian"
           ? "Portefølje | Martin Johannes Nilsen"
-          : "Portfolio | Martin Johannes Nilsen"}
+          : "Portfolio by Martin Johannes Nilsen"}
       </h2>
 
       {/* About */}

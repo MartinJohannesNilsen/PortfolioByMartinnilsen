@@ -11,7 +11,7 @@ const data = [
   {
     title: "LinkedIn",
     description:
-      "The platform for building a career-related network, or brag about your achievements. Yep.",
+      "The platform for building a career-related network, or showing off your new fresh certification.",
     url: "https://www.linkedin.com/in/MartinJohannesNilsen/",
     icon: "https://cdn-icons-png.flaticon.com/512/3536/3536505.png",
     // icon: https://cdn-icons-png.flaticon.com/512/3536/3536569.png
@@ -44,8 +44,19 @@ const data = [
       "I am an M.Sc. Student in Computer Science and Software Engineer.",
     url: "https://MartinJohannesNilsen.no",
     icon: "https://i.ibb.co/b60yJW4/image.png",
+    // icon: "https://martinjohannesnilsen.no/logo512.png",
     // icon: "https://martinjohannesnilsen.no/favicon.ico",
     backgroundColor: "#ebf3f7",
+  },
+  {
+    title: "Tech blog",
+    description:
+      "A platform for sharing posts about technology, software engineering and everything in between.",
+    url: "https://blog.mjntech.dev",
+    // icon: "https://blog.mjntech.dev/logo512.png",
+    icon: "https://blog.mjntech.dev/favicon.ico",
+    // backgroundColor: "#f7f6eb",
+    backgroundColor: "#f4ebf7",
   },
   {
     title: "GitHub",

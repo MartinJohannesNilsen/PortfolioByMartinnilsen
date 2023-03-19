@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Reveal, ScrollTrigger } from "react-gsap";
-import {} from "react-gsap";
 import {
   FadeInFromLeft,
   FadeInFromRight,

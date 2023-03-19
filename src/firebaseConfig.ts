@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/analytics";
+
 const config = {
   apiKey: process.env.REACT_APP_FIREBASE_apiKey,
   authDomain: process.env.REACT_APP_FIREBASE_authDomain,
@@ -14,5 +15,8 @@ const config = {
 
 const firebaseApp = firebase.initializeApp(config);
 const db = firebase.database();
-const analytics = firebase.analytics();
+let analytics;
+if (process.env.NODE_ENV === "production") {
+  analytics = firebase.analytics();
+}
 export { firebaseApp, db, analytics };

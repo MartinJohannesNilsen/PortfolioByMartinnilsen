@@ -8,6 +8,7 @@ const linkElement = (link: string, text: string, theme: Theme) => {
   return (
     <Box display="flex" my={0.5}>
       <Link
+        fontFamily={theme.typography.fontFamily}
         variant="body1"
         // color="textPrimary"
         href={link}

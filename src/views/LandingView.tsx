@@ -168,14 +168,26 @@ const LandingView: FC<LandingViewProps> = (props) => {
               >
                 {props.language === "norwegian" ? "Bla ned" : "Scroll"}
               </Typography>
-              <SouthIcon
+              {/* <SouthIcon
                 sx={{
                   fontSize: "24px",
                   opacity: "0.25",
                   marginTop: "6px",
                   color: "text.primary",
                 }}
-              />
+              /> */}
+              <Typography
+                fontFamily={theme.typography.fontFamily}
+                variant="body1"
+                color="textPrimary"
+                fontWeight="600"
+                sx={{
+                  opacity: "0.25",
+                  color: "text.primary",
+                }}
+              >
+                ↓
+              </Typography>
             </Box>
           </RevealFromDownOnEnter>
         </Box>

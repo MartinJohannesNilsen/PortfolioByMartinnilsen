@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import {
   Box,
   Button,
@@ -23,6 +23,7 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { ReactComponent as CVIcon } from "../../assets/svg/cvIconMedium.svg";
 import DOMPurify from "dompurify";
 import colorLuminance from "../../utils/colorLuminance";
+import usePercentageScrollPosition from "../../utils/usePercentageScrollPosition";
 
 const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -36,6 +37,7 @@ const Footer: FC<FooterProps> = (props) => {
   const [tooltipStates, setTooltipStates] = React.useState(
     Array(props.data.links.length).fill(false)
   );
+  const scrollPosition = usePercentageScrollPosition();
   const { theme } = useTheme();
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
@@ -68,6 +70,29 @@ const Footer: FC<FooterProps> = (props) => {
   return (
     <>
       <Box
+        sx={{
+          position: "fixed",
+          left: 0,
+          bottom: 0,
+          width: "100%",
+          // height: "8px",
+          height: "5px",
+          background: "transparent",
+          zIndex: 1,
+        }}
+      >
+        <Box
+          sx={{
+            height: "100%",
+            width: scrollPosition + "0%",
+            // background:
+            //   "radial-gradient(circle at 10% 20%, rgb(233, 122, 129) 0%, rgb(181, 64, 149) 100.2%)",
+            background: theme.palette.secondary.main,
+            transition: "background .15s ease",
+          }}
+        />
+      </Box>
+      <Box
         display="flex"
         justifyContent="center"
         alignContent="center"
@@ -94,10 +119,11 @@ const Footer: FC<FooterProps> = (props) => {
               }}
             />
             <Link
+              fontFamily={theme.typography.fontFamily}
               display="inline-block"
               variant="body1"
               color="textPrimary"
-              href="https://martinjohannesnilsen.no/links"
+              href={"/links"}
               sx={{
                 fontWeight: 600,
                 fontSize: lgUp ? "1.1rem" : "0.9rem",
@@ -217,7 +243,7 @@ const Footer: FC<FooterProps> = (props) => {
                 iconButtons && link.text.toLowerCase() === "github"
                   ? elements.push(
                       <IconButton
-                        onClick={() => window.open(link.value, "_blank")}
+                        href={link.value}
                         sx={{
                           "&:hover": {
                             color: "secondary.main",
@@ -239,7 +265,7 @@ const Footer: FC<FooterProps> = (props) => {
                   : iconButtons && link.text.toLowerCase() === "linkedin"
                   ? elements.push(
                       <IconButton
-                        onClick={() => window.open(link.value, "_blank")}
+                        href={link.value}
                         sx={{
                           "&:hover": {
                             color: "secondary.main",
@@ -254,10 +280,10 @@ const Footer: FC<FooterProps> = (props) => {
                   : iconButtons && link.text.toLowerCase() === "cv"
                   ? elements.push(
                       <IconButton
-                        onClick={() => window.open(link.value, "_blank")}
+                        href={link.value}
                         sx={{
+                          marginTop: "-3px",
                           "&:hover": {
-                            // filter: "invert(50%) sepia(73%) saturate(393%) hue-rotate(136deg) brightness(85%) contrast(93%)",
                             color: "secondary.main",
                             backgroundColor: "transparent",
                           },
@@ -275,7 +301,7 @@ const Footer: FC<FooterProps> = (props) => {
                     )
                   : elements.push(
                       <Button
-                        onClick={() => window.open(link.value, "_blank")}
+                        href={link.value}
                         sx={{
                           "& MuiButton-text": {
                             textTransform: "none",

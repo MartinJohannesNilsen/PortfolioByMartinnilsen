@@ -33,11 +33,13 @@ export const FABMenu: FC<FABProps> = (props: FABProps) => {
     color: "black",
   };
 
-  const getItemList: Function = (list: any[]): JSX.Element[] =>
+  const getItemList: Function = (
+    list: any[]
+  ): any[] => //JSX.Element[]
     list.map((item: any, i: number) => {
       return (
         <SpeedDialAction
-          key={i}
+          // key={i}
           icon={
             i === 0 ? (
               <PersonIcon sx={actionIconStyle} />
