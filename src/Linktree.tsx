@@ -11,7 +11,7 @@ const data = [
   {
     title: "LinkedIn",
     description:
-      "The platform for building a career-related network, or brag about your achievements. Yep.",
+      "The platform for building a career-related network, or showing off your new fresh certification.",
     url: "https://www.linkedin.com/in/MartinJohannesNilsen/",
     icon: "https://cdn-icons-png.flaticon.com/512/3536/3536505.png",
     // icon: https://cdn-icons-png.flaticon.com/512/3536/3536569.png
