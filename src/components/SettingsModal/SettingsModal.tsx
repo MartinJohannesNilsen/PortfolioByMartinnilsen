@@ -118,7 +118,8 @@ export const SettingsModal = (props: SettingsModalProps) => {
               <Typography
                 mt={0.1}
                 fontFamily={theme.typography.fontFamily}
-                variant="body2"
+                variant="body1"
+                fontSize={16}
                 fontWeight="800"
                 color={theme.palette.text.primary}
               >
@@ -152,9 +153,9 @@ export const SettingsModal = (props: SettingsModalProps) => {
             </Box>
             <Box display="flex">
               <Typography
-                mt={0.25}
                 fontFamily={theme.typography.fontFamily}
-                variant="body2"
+                variant="body1"
+                fontSize={16}
                 fontWeight="800"
                 color={theme.palette.text.primary}
               >
@@ -186,7 +187,8 @@ export const SettingsModal = (props: SettingsModalProps) => {
             <Box display="flex" mt={-0.4} alignItems="baseline">
               <Typography
                 fontFamily={theme.typography.fontFamily}
-                variant="body2"
+                variant="body1"
+                fontSize={16}
                 fontWeight="800"
                 color={theme.palette.text.primary}
               >
@@ -241,7 +243,8 @@ export const SettingsModal = (props: SettingsModalProps) => {
             <Box display="flex" mt={0.3}>
               <Typography
                 fontFamily={theme.typography.fontFamily}
-                variant="body2"
+                variant="body1"
+                fontSize={16}
                 fontWeight="800"
                 color={theme.palette.text.primary}
               >
