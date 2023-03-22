@@ -52,7 +52,7 @@ export const FABMenu: FC<FABProps> = (props: FABProps) => {
             )
           }
           onClick={() => {
-            handleScroll(item);
+            handleScroll(i === 0 ? "Navbar" : item); // Scroll to item, or top if index 0
             setOpen(false);
           }}
           sx={actionDialStyle}

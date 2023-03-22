@@ -60,6 +60,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
 
   return (
     <AppBar
+      id="Navbar"
       elevation={0}
       position="static"
       sx={{

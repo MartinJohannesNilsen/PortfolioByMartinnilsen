@@ -119,7 +119,7 @@
             "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FYourExtremeBærekraft.jpg?alt=media&token=70bda29b-c1b3-4f3d-9df5-01bf2e96b7b7"
           },
           "text": "A lot of the projects I have worked on have not become more than part of my own learning. However, some of them have both helped me understand and explore different parts of topics within computer science and/or software engineering, but could also be interesting for others to take a look at. Through the rest of this page, some of my projects and articles I have been featured in will be presented.",
-          "title": "Apart from my paid jobs, I've had multiple projects on the side, as well as attended hackathons and case-solving competitions.",
+          "title": "Apart from my paid jobs, I've had multiple side projects, as well as attended hackathons and case-solving competitions.",
           "topic": "Additional"
         }
       ]
@@ -226,10 +226,10 @@
         {
           "description": "A clean and modern dashboard for helping you focus more on your work, and less on finding the right tools. Write notes in Markdown, or utilize the Pomodoro timer for managing your time for the most efficient workflow. When loading the page you have quick and easy access to the Google Search bar, and you can choose from a selection of themes.",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=d9ea28b3-e5cf-4363-9503-32f407767535",
             "type": "landscape"
           },
-          "linkToWebsite": "https://studypal.app",
+          "linkToWebsite": "https://studypal.mjntech.dev",
           "technologies": [
             "TypeScript",
             "React",
@@ -278,6 +278,20 @@
             "Trait theory"
           ],
           "title": "Preliminary Literature Review"
+        },
+        {
+          "description": "A Tech Blog for me to share posts about technology, software engineering, home automation and other topics I find interesting. The website is built using Next.js, hosted with Vercel, and utilizes On-Demand Revalidation to give the user the best experience possible.",
+          "img": {
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlog.png?alt=media&token=7cd5914c-dce4-49ce-8912-104cd4694e24",
+            "type": "landscape"
+          },
+          "linkToWebsite": "https://blog.MJNTech.dev",
+          "technologies": [
+            "Next.js",
+            "Material UI",
+            "Firebase"
+          ],
+          "title": "Tech Blog"
         }
       ]
     }
@@ -512,10 +526,10 @@
         {
           "description": "Et moderne dashboard som samler de verktøyene du trenger for effektiv studering. Skriv notater i Markdown, eller ta i bruk den integrerte Pomodoro timeren for en mer effektiv arbeids&shyflyt. Ved innlasting av siden har du rask tilgang til et Google søkefelt, og du kan velge mellom en samling av ulike bakgrunns&shytemaer.",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=0d555573-69c6-411a-befb-081c71f6b695",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FStudyPal.png?alt=media&token=d9ea28b3-e5cf-4363-9503-32f407767535",
             "type": "landscape"
           },
-          "linkToWebsite": "https://studypal.app",
+          "linkToWebsite": "https://studypal.mjntech.dev",
           "technologies": [
             "TypeScript",
             "React",
@@ -564,6 +578,20 @@
             "Psykologi"
           ],
           "title": "Litteraturstudie for master"
+        },
+        {
+          "description": "En teknologiblogg der jeg kan utfolde meg ved å dele poster om teknologi, utvikling, smarthjem og andre ting jeg finner spennende. Nettsiden er bygget med Next.js, deployet med Vercel og tar i bruk \"On-Demand Revalidation\" for å gi brukeren den beste mulige opplevelsen.",
+          "img": {
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlog.png?alt=media&token=7cd5914c-dce4-49ce-8912-104cd4694e24",
+            "type": "landscape"
+          },
+          "linkToWebsite": "https://blog.MJNTech.dev",
+          "technologies": [
+            "Next.js",
+            "Material UI",
+            "Firebase"
+          ],
+          "title": "Teknologiblogg"
         }
       ]
     }
