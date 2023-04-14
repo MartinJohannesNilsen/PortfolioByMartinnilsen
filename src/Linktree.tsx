@@ -179,10 +179,15 @@ const Linktree = () => {
             "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
           minHeight: "100%",
           minWidth: "100%",
-          padding: smUp ? "10px 0 15px 0" : "15px 15px 150px 15px",
+          padding: smUp ? "10px 5px 25px 5px" : "15px 15px 50px 15px",
         }}
       >
-        <Box sx={{ padding: "10px", margin: smUp ? "0" : "0px 0px 50px 0px" }}>
+        <Box
+          sx={{
+            padding: "10px",
+            margin: smUp ? "0" : "0px 0px 50px 0px",
+          }}
+        >
           <h1 style={{ fontSize: 36, fontWeight: 700, height: 45, margin: 0 }}>
             Follow me
           </h1>
