@@ -123,7 +123,7 @@ const Footer: FC<FooterProps> = (props) => {
               display="inline-block"
               variant="body1"
               color="textPrimary"
-              href={"/links"}
+              href={"https://links.martinjohannesnilsen.no"}
               sx={{
                 fontWeight: 600,
                 fontSize: lgUp ? "1.1rem" : "0.9rem",
@@ -282,7 +282,7 @@ const Footer: FC<FooterProps> = (props) => {
                       <IconButton
                         href={link.value}
                         sx={{
-                          marginTop: "-3px",
+                          marginTop: "-2.5px",
                           "&:hover": {
                             color: "secondary.main",
                             backgroundColor: "transparent",
