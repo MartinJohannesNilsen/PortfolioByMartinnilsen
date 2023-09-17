@@ -11,7 +11,6 @@ const DeskView: FC<DeskViewProps> = (props) => {
   const { theme } = useTheme();
   const xl = useMediaQuery(theme.breakpoints.only("xl"));
   const lg = useMediaQuery(theme.breakpoints.only("lg"));
-  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const elementRef = useRef(null);
   const q = gsap.utils.selector(elementRef);
   const [inView, setInView] = useState(false);
@@ -225,14 +224,16 @@ const DeskView: FC<DeskViewProps> = (props) => {
           </>
         )}
       </Box>
-      <DeskSVGInline
-        className={"desksvginline"}
-        style={{
-          width: xl ? "70%" : lg ? "85%" : "100%",
-          textAlign: "center",
-          marginTop: "40px",
-        }}
-      />
+      <Box style={{ userSelect: "none" }}>
+        <DeskSVGInline
+          className={"desksvginline"}
+          style={{
+            width: xl ? "70%" : lg ? "85%" : "100%",
+            textAlign: "center",
+            marginTop: "40px",
+          }}
+        />
+      </Box>
     </Box>
   );
 };

@@ -98,7 +98,7 @@
         {
           "img": {
             "alt": "Portrait of Martin Johannes Nilsen",
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FPortraitCutout.png?alt=media&token=69663779-e646-4551-92b8-2056166a72b1"
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FPortrait2.png?alt=media&token=b65c76ab-6bdb-404d-9179-aee0934ead31"
           },
           "text": "Of course, there's so much more to me than just a few fancy titles. Scroll down to learn more about me.",
           "title": "Hello, I'm Martin. A Software Engineer with an M.Sc. degree, and a passionate problem solver.",
@@ -280,9 +280,9 @@
           "title": "Preliminary Literature Review"
         },
         {
-          "description": "A Tech Blog for me to share posts about technology, software engineering, home automation and other topics I find interesting. The website is built using Next.js, hosted with Vercel, and utilizes On-Demand Revalidation to give the user the best experience possible.",
+          "description": "A platform for me to share posts about technology, software engineering, home automation and other topics that interests me. The website is built using Next.js, hosted with Vercel, and utilizes On-Demand Revalidation for an optimal user experience.",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlog.png?alt=media&token=2665adac-3c55-4011-a584-82cb6362ffc4",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlogV2.png?alt=media&token=c434d076-5c19-420a-bbc9-fb60e948f912",
             "type": "landscape"
           },
           "linkToWebsite": "https://blog.MJNTech.dev",
@@ -398,7 +398,7 @@
         {
           "img": {
             "alt": "Portrett av Martin Johannes Nilsen",
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FPortraitCutout.png?alt=media&token=69663779-e646-4551-92b8-2056166a72b1"
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Images%2FPortrait2.png?alt=media&token=b65c76ab-6bdb-404d-9179-aee0934ead31"
           },
           "text": "Selvfølgelig er jeg mer enn bare et par kule titler. Fortsett nedover siden for å lære litt mer om meg.",
           "title": "Hei, mitt navn er Martin. Jeg er en programvareutvikler, utdannet sivilingeniør og ivrig problemløser.",
@@ -580,9 +580,9 @@
           "title": "Litteraturstudie for master"
         },
         {
-          "description": "En teknologiblogg der jeg kan utfolde meg ved å dele poster om teknologi, utvikling, smarthjem og andre ting jeg finner spennende. Nettsiden er bygget med Next.js, deployet med Vercel og tar i bruk \"On-Demand Revalidation\" for å gi brukeren den beste mulige opplevelsen.",
+          "description": "En plattform der jeg kan utfolde meg ved å dele poster om teknologi, utvikling, smarthjem og andre spennende emner. Nettsiden er bygget med Next.js, deployet med Vercel og tar i bruk \"On-Demand Revalidation\" for en optimal brukeropplevelse.",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlog.png?alt=media&token=2665adac-3c55-4011-a584-82cb6362ffc4",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlogV2.png?alt=media&token=c434d076-5c19-420a-bbc9-fb60e948f912",
             "type": "landscape"
           },
           "linkToWebsite": "https://blog.MJNTech.dev",

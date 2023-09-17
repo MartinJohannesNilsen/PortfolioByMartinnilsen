@@ -7,6 +7,7 @@ import {
   ClickAwayListener,
   IconButton,
   Tooltip,
+  useMediaQuery,
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -21,24 +22,6 @@ import { ThemeEnum } from "../../themes/themeMap";
 import { SettingsModalProps } from "../../types";
 import Switch from "../Switch/Switch";
 
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 370,
-  bgcolor: "background.paper",
-  borderRadius: 2,
-  outline: 0,
-  display: "flex",
-  textAlign: "left",
-  flexDirection: "column",
-  rowGap: "10px",
-  justifyContent: "flex-start",
-  boxShadow: 24,
-  p: 4,
-};
-
 const defaultFonts = [
   { title: "System font", font: defaultFontFamily },
   { title: "Gotham Pro", font: "Gotham Pro" },
@@ -48,7 +31,8 @@ const defaultFonts = [
 ];
 
 const defaultColors = [
-  { title: "Teal", color: "#29939b" },
+  // { title: "Teal", color: "#29939b" },
+  { title: "Teal", color: "#35A29F" },
   { title: "Yellow", color: "#fdd835" },
   { title: "Pink", color: "#df487f" },
   { title: "Red", color: "#ff1744" },
@@ -71,6 +55,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
     setFontFamily,
   } = useTheme();
   const [colorPickerOpen, setColorPickerOpen] = useState(false);
+  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   const blockPickerColors = [
     "#D9E3F0",
@@ -79,11 +64,30 @@ export const SettingsModal = (props: SettingsModalProps) => {
     "#37D67A",
     "#2CCCE4",
     "#555555",
-    "#f5bd3b",
+    // "#f5bd3b",
+    "#E9B384",
     "#ff8a65",
     "#ba68c8",
     "#7ca18d",
   ];
+
+  const style = {
+    position: "absolute" as "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: lgUp ? 400 : 370,
+    bgcolor: "background.paper",
+    borderRadius: 2,
+    outline: 0,
+    display: "flex",
+    textAlign: "left",
+    flexDirection: "column",
+    rowGap: "10px",
+    justifyContent: "flex-start",
+    boxShadow: 24,
+    p: 4,
+  };
 
   return (
     <Box>

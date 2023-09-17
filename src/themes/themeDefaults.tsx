@@ -2,7 +2,8 @@ import { createTheme } from "@mui/material";
 
 export const defaultFontFamily =
   "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol";
-export const defaultAccentColor = "#29939b";
+// export const defaultAccentColor = "#29939b";
+export const defaultAccentColor = "#E9B384";
 
 // Create base theme
 const defaultTheme = createTheme();
