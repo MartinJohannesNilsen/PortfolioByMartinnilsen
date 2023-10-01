@@ -226,12 +226,16 @@ const Footer: FC<FooterProps> = (props) => {
                           {link.text.toLowerCase().includes("tele") ? (
                             <PhoneIcon
                               sx={{
-                                fontSize: iconButtonSize + 3.5,
+                                height: iconButtonSize,
+                                width: iconButtonSize,
                               }}
                             />
                           ) : (
                             <AlternateEmailIcon
-                              sx={{ fontSize: iconButtonSize }}
+                              sx={{
+                                height: iconButtonSize,
+                                width: iconButtonSize,
+                              }}
                             />
                           )}
                         </IconButton>
@@ -254,10 +258,9 @@ const Footer: FC<FooterProps> = (props) => {
                       >
                         <GitHubIcon
                           sx={{
-                            fontSize: mdUp
-                              ? iconButtonSize - 2
-                              : iconButtonSize - 3,
-                            marginBottom: mdUp ? 0 : 0.2,
+                            height: iconButtonSize - (mdUp ? 2.5 : 3),
+                            width: iconButtonSize - (mdUp ? 2.5 : 3),
+                            // marginBottom: mdUp ? 0 : 0.2,
                           }}
                         />
                       </IconButton>
@@ -274,7 +277,13 @@ const Footer: FC<FooterProps> = (props) => {
                           color: "text.primary",
                         }}
                       >
-                        <LinkedInIcon sx={{ fontSize: iconButtonSize + 3.5 }} />
+                        <LinkedInIcon
+                          sx={{
+                            height: iconButtonSize,
+                            width: iconButtonSize,
+                            // fontSize: iconButtonSize + 3.5,
+                          }}
+                        />
                       </IconButton>
                     )
                   : iconButtons && link.text.toLowerCase() === "cv"
@@ -282,7 +291,8 @@ const Footer: FC<FooterProps> = (props) => {
                       <IconButton
                         href={link.value}
                         sx={{
-                          marginTop: "-2.5px",
+                          // marginTop: "-2.5px",
+                          marginTop: "-10px",
                           "&:hover": {
                             color: "secondary.main",
                             backgroundColor: "transparent",
@@ -292,10 +302,12 @@ const Footer: FC<FooterProps> = (props) => {
                       >
                         <Icon
                           sx={{
-                            fontSize: iconButtonSize,
+                            height: iconButtonSize,
+                            width: iconButtonSize,
+                            marginTop: 1,
                           }}
                         >
-                          <CVIcon />
+                          <CVIcon style={{ height: "100%", width: "100%" }} />
                         </Icon>
                       </IconButton>
                     )

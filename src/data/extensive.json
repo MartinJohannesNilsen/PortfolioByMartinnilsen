@@ -61,6 +61,21 @@
           "readTimeMinutes": 2,
           "title": "Autonomy demonstration",
           "url": "https://www.oslohavn.no/no/aktuelt/unik-drone-skal-undersoke-oslofjorden/"
+        },
+        {
+          "date": "2023-01-28",
+          "description": "The first post on my technology blog, which is intended to be a platform for me to write about the technological stuff that interests me. In this post specifically, I've tried to give you a proper introduction of myself.",
+          "img": {
+            "alt": "OpenGraph image of the first post on my technology blog",
+            "path": "https://firebasestorage.googleapis.com/v0/b/blogbymartinnilsen.appspot.com/o/Images%2F2023-09-02.154956.png?alt=media&token=778d5aa3-fe9d-43b7-a28f-181eb5f4e995&_gl=1*1evfddo*_ga*MTc1NTY4MzAzOS4xNjk2MTczNDE5*_ga_CW55HF8NVT*MTY5NjE3MzQxOC4xLjEuMTY5NjE3MzQ0NS4zMy4wLjA."
+          },
+          "publisher": {
+            "icon": "https://blog.mjntech.dev/favicon.ico",
+            "name": "MJNTech"
+          },
+          "readTimeMinutes": 5,
+          "title": "Hello, I'm Martin",
+          "url": "https://blog.mjntech.dev/posts/yjdttN68e7V3E8SKIupT"
         }
       ],
       "copyButtonText": "Copy link",
@@ -361,6 +376,21 @@
           "readTimeMinutes": 2,
           "title": "Autonom klassifiseringsdemo",
           "url": "https://www.oslohavn.no/no/aktuelt/unik-drone-skal-undersoke-oslofjorden/"
+        },
+        {
+          "date": "2023-01-28",
+          "description": "Den første posten på min blogg, hvor jeg gir leseren en introduksjon til meg selv. Videre er dette tiltenkt som en plattform for å skrive om alt det teknologiske som interesserer meg.",
+          "img": {
+            "alt": "OpenGraph-bilde til den første bloggposten på min teknologiblogg",
+            "path": "https://firebasestorage.googleapis.com/v0/b/blogbymartinnilsen.appspot.com/o/Images%2F2023-09-02.154956.png?alt=media&token=778d5aa3-fe9d-43b7-a28f-181eb5f4e995&_gl=1*1evfddo*_ga*MTc1NTY4MzAzOS4xNjk2MTczNDE5*_ga_CW55HF8NVT*MTY5NjE3MzQxOC4xLjEuMTY5NjE3MzQ0NS4zMy4wLjA."
+          },
+          "publisher": {
+            "icon": "https://blog.mjntech.dev/favicon.ico",
+            "name": "MJNTech"
+          },
+          "readTimeMinutes": 5,
+          "title": "Hei, jeg er Martin",
+          "url": "https://blog.mjntech.dev/posts/yjdttN68e7V3E8SKIupT"
         }
       ],
       "copyButtonText": "Kopier lenke",
