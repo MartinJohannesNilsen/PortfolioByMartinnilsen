@@ -165,26 +165,45 @@ export const SettingsModal = (props: SettingsModalProps) => {
                 {props.language === "norwegian" ? "Språk: " : "Language: "}
               </Typography>
               <Box flexGrow="1" />
-              <Box mt={-1} mb={-0.5} mr={0}>
-                <ButtonBase
-                  onClick={() => {
-                    props.language === "norwegian"
-                      ? props.setLanguage("english")
-                      : props.setLanguage("norwegian");
-                  }}
-                >
-                  <Icon
-                    icon={
-                      props.language === "norwegian"
-                        ? flagNorway
-                        : flagUnitedKingdom
-                    }
-                    style={{
-                      height: "45px",
-                      width: "45px",
+              <Box mt={-1} mb={-0.5} mr={0} display="flex">
+                <Box>
+                  <ButtonBase
+                    onClick={() => {
+                      props.setLanguage("english");
                     }}
-                  />
-                </ButtonBase>
+                  >
+                    <Icon
+                      icon={flagUnitedKingdom}
+                      style={{
+                        height: "45px",
+                        width: "45px",
+                        borderBottom:
+                          props.language == "english"
+                            ? "2px solid " + theme.palette.text.primary
+                            : "none",
+                      }}
+                    />
+                  </ButtonBase>
+                </Box>
+                <Box ml={0.5}>
+                  <ButtonBase
+                    onClick={() => {
+                      props.setLanguage("norwegian");
+                    }}
+                  >
+                    <Icon
+                      icon={flagNorway}
+                      style={{
+                        height: "45px",
+                        width: "45px",
+                        borderBottom:
+                          props.language == "norwegian"
+                            ? "2px solid " + theme.palette.text.primary
+                            : "none",
+                      }}
+                    />
+                  </ButtonBase>
+                </Box>
               </Box>
             </Box>
             <Box display="flex" mt={-0.4} alignItems="baseline">
