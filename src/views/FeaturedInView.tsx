@@ -5,9 +5,6 @@ import {
   useMediaQuery,
   Stack,
   IconButton,
-  Zoom,
-  Tooltip,
-  ClickAwayListener,
   Card,
   CardContent,
 } from "@mui/material";
@@ -18,7 +15,8 @@ import ClearIcon from "@mui/icons-material/Clear";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LaunchIcon from "@mui/icons-material/Launch";
 import ReplayIcon from "@mui/icons-material/Replay";
-import { FeaturedInViewProps, directionType } from "../types";
+import { useSnackbar } from "notistack";
+import { ArticleProps, FeaturedInViewProps, directionType } from "../types";
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const { theme } = useTheme();
@@ -31,7 +29,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const [currentIndex, setCurrentIndex] = useState(
     props.data.articles.length - 1
   );
-  const [lastDirection, setLastDirection] = useState<directionType>();
+  // const [lastDirection, setLastDirection] = useState<directionType>();
   // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex);
   const childRefs: any = useMemo(
@@ -53,7 +51,9 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   // set last direction and decrease current index
   const swiped = (direction: directionType, title: string, index: number) => {
     // console.log(`${title} (${index}) swiped to the ${direction}`, currentIndexRef.current);
-    setLastDirection(direction);
+    // setLastDirection(direction);
+    currentIndexRef.current >= index &&
+      handleAction(direction, props.data.articles[index]);
     updateCurrentIndex(index - 1);
   };
 
@@ -63,35 +63,16 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()!;
   };
 
-  const swipe = async (dir: "left" | "right" | "up" | "down") => {
+  const swipe = async (dir: directionType) => {
     if (canSwipe && currentIndex < props.data.articles.length) {
       await childRefs[currentIndex].current.swipe(dir); // Swipe the card!
     }
   };
 
-  // increase current index and show card
-  const goBack = async () => {
-    if (!canGoBack) return;
-    const newIndex = currentIndex + 1;
-    updateCurrentIndex(newIndex);
-    await childRefs[newIndex].current.restoreCard()!;
-  };
-
-  // Tooltip
-  const [open, setOpen] = React.useState(false);
-  const handleTooltipClose = () => {
-    setOpen(false);
-  };
-  const handleTooltipOpen = () => {
-    setOpen(true);
-  };
+  // Snackbar
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   // Copy to clipboard
-  const deprecated_copyToClipboard = (text: string) => {
-    // Does not work on safari, iPhone
-    navigator.clipboard.writeText(text);
-  };
-
   function copyToClipboard(str: string) {
     var el = document.createElement("textarea");
     el.value = str;
@@ -126,6 +107,27 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     document.execCommand("copy");
     document.body.removeChild(el);
   }
+
+  // Actions
+  // increase current index and show card
+  const goBack = async () => {
+    if (!canGoBack) return;
+    const newIndex = currentIndex + 1;
+    updateCurrentIndex(newIndex);
+    await childRefs[newIndex].current.restoreCard()!;
+  };
+
+  const handleAction = (dir: directionType, article: ArticleProps) => {
+    if (dir === "up") {
+      copyToClipboard(article.url);
+      enqueueSnackbar(props.data.copyText, {
+        variant: "default",
+        preventDuplicate: true,
+      });
+    } else if (dir === "right") {
+      setTimeout(() => window.open(article.url, "_blank"), 250);
+    }
+  };
 
   return (
     <Box
@@ -206,8 +208,12 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
             ref={childRefs[index]}
             className={"featuredInCardCssGrid tinderCards"}
             key={index}
-            onSwipe={(dir: directionType) => swiped(dir, article.title, index)}
-            onCardLeftScreen={() => outOfFrame(article.title, index)}
+            onSwipe={(dir: directionType) => {
+              swiped(dir, article.title, index);
+            }}
+            onCardLeftScreen={(dir: directionType) => {
+              outOfFrame(article.title, index);
+            }}
           >
             <ArticleCard
               index={index}
@@ -314,62 +320,36 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
             >
               <ReplayIcon />
             </IconButton>
-            <ClickAwayListener onClickAway={handleTooltipClose}>
-              <Tooltip
-                arrow
-                placement="top"
-                PopperProps={{
-                  disablePortal: true,
-                }}
-                onClose={handleTooltipClose}
-                open={open}
-                disableFocusListener
-                // disableHoverListener
-                disableTouchListener
-                TransitionComponent={Zoom}
-                title={
-                  <Typography
-                    fontFamily={theme.typography.fontFamily}
-                    variant="overline"
-                    color="inherit"
-                  >
-                    {props.data.copyText}
-                  </Typography>
-                }
-              >
-                <IconButton
-                  aria-label="copy"
-                  disabled={!canSwipe}
-                  sx={{
-                    border: "2px solid",
-                    borderColor: "#2196F3",
-                    color: "#FFF",
-                    backgroundColor: "#2196F3",
-                    boxShadow:
-                      theme.palette.mode === "light"
-                        ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
-                        : "none",
-                    "&:disabled": {
-                      opacity: 0.5,
-                      border: "2px solid",
-                      borderColor: "grey",
-                      backgroundColor: "grey",
-                    },
-                    "&:hover": {
-                      backgroundColor: "#58b0f6",
-                      borderColor: "#58b0f6",
-                    },
-                  }}
-                  onClick={() => {
-                    copyToClipboard(props.data.articles[currentIndex].url);
-                    handleTooltipOpen();
-                    swipe("down");
-                  }}
-                >
-                  <ContentCopyIcon />
-                </IconButton>
-              </Tooltip>
-            </ClickAwayListener>
+            <IconButton
+              aria-label="copy"
+              disabled={!canSwipe}
+              sx={{
+                border: "2px solid",
+                borderColor: "#2196F3",
+                color: "#FFF",
+                backgroundColor: "#2196F3",
+                boxShadow:
+                  theme.palette.mode === "light"
+                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                    : "none",
+                "&:disabled": {
+                  opacity: 0.5,
+                  border: "2px solid",
+                  borderColor: "grey",
+                  backgroundColor: "grey",
+                },
+                "&:hover": {
+                  backgroundColor: "#58b0f6",
+                  borderColor: "#58b0f6",
+                },
+              }}
+              onClick={() => {
+                handleAction("up", props.data.articles[currentIndex]);
+                swipe("up");
+              }}
+            >
+              <ContentCopyIcon />
+            </IconButton>
             <IconButton
               aria-label="launch"
               disabled={!canSwipe}
@@ -396,14 +376,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
               onClick={() => {
                 //Open new page in new tab
                 swipe("right");
-                setTimeout(
-                  () =>
-                    window.open(
-                      props.data.articles[currentIndex].url,
-                      "_blank"
-                    ),
-                  250
-                );
+                handleAction("right", props.data.articles[currentIndex]);
               }}
             >
               <LaunchIcon />
