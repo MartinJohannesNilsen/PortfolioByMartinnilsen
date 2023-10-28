@@ -80,7 +80,7 @@ const App = () => {
               disableRipple
               onClick={() => closeSnackbar(snackbarId)}
             >
-              <Close fontSize="small" />
+              <Close fontSize="small" sx={{ color: "white" }} />
             </IconButton>
           )}
         >
