@@ -12,7 +12,7 @@ import { useTheme } from "../ThemeProvider";
 import { ArticleCard } from "../components/Cards/ArticleCard";
 import TinderCard from "react-tinder-card";
 import ClearIcon from "@mui/icons-material/Clear";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import { BiCopy } from "react-icons/bi";
 import LaunchIcon from "@mui/icons-material/Launch";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { useSnackbar } from "notistack";
@@ -49,11 +49,16 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const canSwipe = currentIndex >= 0;
 
   // set last direction and decrease current index
-  const swiped = (direction: directionType, title: string, index: number) => {
+  const swiped = (
+    direction: directionType,
+    index: number,
+    article: ArticleProps
+  ) => {
     // console.log(`${title} (${index}) swiped to the ${direction}`, currentIndexRef.current);
     // setLastDirection(direction);
-    currentIndexRef.current >= index &&
-      handleAction(direction, props.data.articles[index]);
+    if (currentIndexRef.current >= index) {
+      handleAction(direction, article);
+    }
     updateCurrentIndex(index - 1);
   };
 
@@ -209,7 +214,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
             className={"featuredInCardCssGrid tinderCards"}
             key={index}
             onSwipe={(dir: directionType) => {
-              swiped(dir, article.title, index);
+              swiped(dir, index, article);
             }}
             onCardLeftScreen={(dir: directionType) => {
               outOfFrame(article.title, index);
@@ -348,7 +353,8 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                 swipe("up");
               }}
             >
-              <ContentCopyIcon />
+              {/* <ContentCopyIcon /> */}
+              <BiCopy />
             </IconButton>
             <IconButton
               aria-label="launch"

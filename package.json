@@ -67,6 +67,7 @@
 		"eslint": "^7.29.0",
 		"notistack": "^3.0.1",
 		"react-device-detect": "^2.2.3",
+		"react-icons": "^4.11.0",
 		"sass": "^1.45.0",
 		"style-loader": "^2.0.0",
 		"tinycolor2": "^1.5.2",
