@@ -154,7 +154,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
                 />
               </Box>
             </Box>
-            <Box display="flex">
+            <Box display="flex" mt={0.25} mb={1}>
               <Typography
                 fontFamily={theme.typography.fontFamily}
                 variant="body1"
@@ -175,8 +175,8 @@ export const SettingsModal = (props: SettingsModalProps) => {
                     <Icon
                       icon={flagUnitedKingdom}
                       style={{
-                        height: "45px",
-                        width: "45px",
+                        height: "40px",
+                        width: "40px",
                         borderBottom:
                           props.language == "english"
                             ? "2px solid " + theme.palette.text.primary
@@ -194,8 +194,8 @@ export const SettingsModal = (props: SettingsModalProps) => {
                     <Icon
                       icon={flagNorway}
                       style={{
-                        height: "45px",
-                        width: "45px",
+                        height: "40px",
+                        width: "40px",
                         borderBottom:
                           props.language == "norwegian"
                             ? "2px solid " + theme.palette.text.primary
@@ -206,7 +206,7 @@ export const SettingsModal = (props: SettingsModalProps) => {
                 </Box>
               </Box>
             </Box>
-            <Box display="flex" mt={-0.4} alignItems="baseline">
+            <Box display="flex" mt={-0.4} mb={-0.4} alignItems="baseline">
               <Typography
                 fontFamily={theme.typography.fontFamily}
                 variant="body1"

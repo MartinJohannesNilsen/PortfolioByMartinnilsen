@@ -43,6 +43,7 @@ const App = () => {
   );
   const [data, setData] = useState(getLocalData(language));
   const [info, setInfo] = useState(getLocalInfo());
+  const [hasLoadedImages, setHasLoadedImages] = useState(false);
 
   const [refreshScrollTriggers, _setRefreshScrollTriggers] = useState(0);
   const triggerRefreshScrollTriggers = () => {
@@ -61,8 +62,41 @@ const App = () => {
   }, [language]);
 
   useEffect(() => {
+    // Refresh scrolltriggers
     triggerRefreshScrollTriggers();
+
+    // Preload images
+    const imageSources = [
+      data.landingView.cards[0].img.path,
+      data.landingView.cards[1].img.path,
+      data.landingView.cards[2].img.path,
+    ];
+
+    const images = imageSources.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
+    // Wait for all images to load
+    Promise.all(
+      images.map((img) => {
+        return new Promise((resolve, reject) => {
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      })
+    )
+      .then(() => {
+        // Set loading to false and start the GSAP animation
+        setHasLoadedImages(true);
+      })
+      .catch((error) => {
+        console.error("Error loading images", error);
+      });
   }, [data]);
+
+  useEffect(() => {}, []);
 
   return (
     <StyledEngineProvider injectFirst>
@@ -87,7 +121,8 @@ const App = () => {
           <CssBaseline />
           <ScrollToTop />
           {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
-          {info.fetched || !process.env.REACT_APP_FETCH_FROM_DB ? (
+          {(info.fetched && hasLoadedImages) ||
+          !process.env.REACT_APP_FETCH_FROM_DB ? (
             <>
               <ReaderView
                 ids={[

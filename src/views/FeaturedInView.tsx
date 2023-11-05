@@ -17,6 +17,8 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { useSnackbar } from "notistack";
 import { ArticleProps, FeaturedInViewProps, directionType } from "../types";
+import { isMobile } from "react-device-detect";
+import copy from "copy-to-clipboard";
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const { theme } = useTheme();
@@ -77,42 +79,6 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   // Snackbar
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
-  // Copy to clipboard
-  function copyToClipboard(str: string) {
-    var el = document.createElement("textarea");
-    el.value = str;
-    el.setAttribute("readonly", "");
-    document.body.appendChild(el);
-
-    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
-      // save current contentEditable/readOnly status
-      var editable = el.contentEditable;
-      var readOnly = el.readOnly;
-
-      // convert to editable with readonly to stop iOS keyboard opening
-      // el.contentEditable = true;
-      el.readOnly = true;
-
-      // create a selectable range
-      var range = document.createRange();
-      range.selectNodeContents(el);
-
-      // select the range
-      var selection = window.getSelection();
-      selection!.removeAllRanges();
-      selection!.addRange(range);
-      el.setSelectionRange(0, 999999);
-
-      // restore contentEditable/readOnly to original state
-      el.contentEditable = editable;
-      el.readOnly = readOnly;
-    } else {
-      el.select();
-    }
-    document.execCommand("copy");
-    document.body.removeChild(el);
-  }
-
   // Actions
   // increase current index and show card
   const goBack = async () => {
@@ -122,15 +88,38 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     await childRefs[newIndex].current.restoreCard()!;
   };
 
+  function copyToClipboard(text: string) {
+    if (navigator.clipboard) {
+      return navigator.clipboard.write([
+        new ClipboardItem({
+          "text/plain": Promise.resolve(text),
+        }),
+      ]);
+    } else {
+      // Fallback to popular npm package
+      return copy(text) ? Promise.resolve() : Promise.reject();
+    }
+  }
+
   const handleAction = (dir: directionType, article: ArticleProps) => {
     if (dir === "up") {
-      copyToClipboard(article.url);
-      enqueueSnackbar(props.data.copyText, {
-        variant: "default",
-        preventDuplicate: true,
-      });
+      copyToClipboard(article.url)
+        .then(() => {
+          enqueueSnackbar("Link copied to clipboard!", {
+            variant: "default",
+            preventDuplicate: true,
+          });
+        })
+        .catch((error) => {
+          // enqueueSnackbar("Unable to copy to clipboard!", {
+          //   variant: "error",
+          //   preventDuplicate: true,
+          // });
+        });
     } else if (dir === "right") {
-      setTimeout(() => window.open(article.url, "_blank"), 250);
+      isMobile
+        ? (window.location.href = article.url)
+        : setTimeout(() => window.open(article.url, "_blank"), 250);
     }
   };
 
@@ -210,9 +199,22 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       >
         {props.data.articles.map((article, index) => (
           <TinderCard
+            preventSwipe={["down", "up"]}
+            flickOnSwipe
+            swipeRequirementType="position"
+            swipeThreshold={100}
             ref={childRefs[index]}
             className={"featuredInCardCssGrid tinderCards"}
             key={index}
+            // onSwipe={(dir: directionType) => {
+            //   !isMobile
+            //     ? setTimeout(() => swiped(dir, index, article), 250)
+            //     : null;
+            // }}
+            // onCardLeftScreen={(dir: directionType) => {
+            //   isMobile ? swiped(dir, index, article) : null;
+            //   outOfFrame(article.title, index);
+            // }}
             onSwipe={(dir: directionType) => {
               swiped(dir, index, article);
             }}
