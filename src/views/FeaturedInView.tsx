@@ -88,18 +88,18 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     await childRefs[newIndex].current.restoreCard()!;
   };
 
-  function copyToClipboard(text: string) {
-    if (navigator.clipboard) {
-      return navigator.clipboard.write([
-        new ClipboardItem({
-          "text/plain": Promise.resolve(text),
-        }),
-      ]);
-    } else {
-      // Fallback to popular npm package
-      return copy(text) ? Promise.resolve() : Promise.reject();
+  const copyToClipboard = async (link: string) => {
+    if (!navigator.clipboard) {
+      return Promise.reject("Clipboard not supported!");
     }
-  }
+
+    try {
+      await navigator.clipboard.writeText(link);
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  };
 
   const handleAction = (dir: directionType, article: ArticleProps) => {
     if (dir === "up") {
@@ -111,10 +111,11 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
           });
         })
         .catch((error) => {
-          // enqueueSnackbar("Unable to copy to clipboard!", {
-          //   variant: "error",
-          //   preventDuplicate: true,
-          // });
+          console.error(error);
+          enqueueSnackbar("Unable to copy to clipboard!", {
+            variant: "error",
+            preventDuplicate: true,
+          });
         });
     } else if (dir === "right") {
       isMobile
