@@ -18,7 +18,6 @@ import ReplayIcon from "@mui/icons-material/Replay";
 import { useSnackbar } from "notistack";
 import { ArticleProps, FeaturedInViewProps, directionType } from "../types";
 import { isMobile } from "react-device-detect";
-import copy from "copy-to-clipboard";
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const { theme } = useTheme();
@@ -64,12 +63,6 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     updateCurrentIndex(index - 1);
   };
 
-  const outOfFrame = (name: string, idx: number) => {
-    // console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current);
-    // handle the case in which go back is pressed before card goes outOfFrame
-    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()!;
-  };
-
   const swipe = async (dir: directionType) => {
     if (canSwipe && currentIndex < props.data.articles.length) {
       await childRefs[currentIndex].current.swipe(dir); // Swipe the card!
@@ -77,7 +70,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   };
 
   // Snackbar
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   // Actions
   // increase current index and show card
@@ -111,7 +104,6 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
           });
         })
         .catch((error) => {
-          console.error(error);
           enqueueSnackbar("Unable to copy to clipboard!", {
             variant: "error",
             preventDuplicate: true,
@@ -200,27 +192,15 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       >
         {props.data.articles.map((article, index) => (
           <TinderCard
-            preventSwipe={["down", "up"]}
+            preventSwipe={["down"]}
             flickOnSwipe
             swipeRequirementType="position"
             swipeThreshold={100}
             ref={childRefs[index]}
             className={"featuredInCardCssGrid tinderCards"}
             key={index}
-            // onSwipe={(dir: directionType) => {
-            //   !isMobile
-            //     ? setTimeout(() => swiped(dir, index, article), 250)
-            //     : null;
-            // }}
-            // onCardLeftScreen={(dir: directionType) => {
-            //   isMobile ? swiped(dir, index, article) : null;
-            //   outOfFrame(article.title, index);
-            // }}
             onSwipe={(dir: directionType) => {
               swiped(dir, index, article);
-            }}
-            onCardLeftScreen={(dir: directionType) => {
-              outOfFrame(article.title, index);
             }}
           >
             <ArticleCard

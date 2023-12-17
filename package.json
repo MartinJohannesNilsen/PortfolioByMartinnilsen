@@ -61,7 +61,6 @@
 		"babel-preset-es2015": "^6.24.1",
 		"babel-preset-react": "^6.24.1",
 		"babel-register": "^6.26.0",
-		"copy-to-clipboard": "^3.3.3",
 		"css-loader": "^5.2.6",
 		"dompurify": "^2.4.3",
 		"eslint": "^7.29.0",
