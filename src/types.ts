@@ -227,7 +227,8 @@ export type ProjectViewDataProps = {
 
 export type FeaturedInViewDataProps = {
   title: string;
-  copyText: string;
+  copySuccessText: string;
+  copyFailureText: string;
   articles: ArticleProps[];
 };
 

@@ -6,7 +6,8 @@
     "featuredInView": {
       "articles": [],
       "copyButtonText": "Copy link",
-      "copyText": "Link copied to clipboard!",
+      "copySuccessText": "Link copied to clipboard!",
+      "copyFailureText": "Unable to copy to clipboard!",
       "readButtonText": "Read"
     },
     "footer": {
@@ -36,19 +37,15 @@
       ]
     },
     "landingView": {
-      "cards": [{"img": {"path": ""}},{"img": {"path": ""}},{"img": {"path": ""}}]
+      "cards": [
+        { "img": { "path": "" } },
+        { "img": { "path": "" } },
+        { "img": { "path": "" } }
+      ]
     },
     "navbar": {
-      "languages": [
-        "Norwegian",
-        "English"
-      ],
-      "sections": [
-        "About",
-        "Projects",
-        "Articles",
-        "Contact"
-      ],
+      "languages": ["Norwegian", "English"],
+      "sections": ["About", "Projects", "Articles", "Contact"],
       "title": "Portfolio"
     },
     "projectView": {
@@ -60,7 +57,8 @@
     "featuredInView": {
       "articles": [],
       "copyButtonText": "Kopier lenke",
-      "copyText": "Lenke kopiert til utklippstavlen!",
+      "copySuccessText": "Lenke kopiert til utklippstavlen!",
+      "copyFailureText": "Kunne ikke kopiere til utklippstavlen!",
       "readButtonText": "Les"
     },
     "footer": {
@@ -90,19 +88,15 @@
       ]
     },
     "landingView": {
-      "cards": [{"img": {"path": ""}},{"img": {"path": ""}},{"img": {"path": ""}}]
+      "cards": [
+        { "img": { "path": "" } },
+        { "img": { "path": "" } },
+        { "img": { "path": "" } }
+      ]
     },
     "navbar": {
-      "languages": [
-        "Norsk",
-        "Engelsk"
-      ],
-      "sections": [
-        "Om",
-        "Prosjekter",
-        "Artikler",
-        "Kontakt"
-      ],
+      "languages": ["Norsk", "Engelsk"],
+      "sections": ["Om", "Prosjekter", "Artikler", "Kontakt"],
       "title": "Portefølje"
     },
     "projectView": {

@@ -67,7 +67,7 @@
           "description": "The first post on my technology blog, which is intended to be a platform for me to write about the technological stuff that interests me. In this post specifically, I've tried to give you a proper introduction of myself.",
           "img": {
             "alt": "OpenGraph image of the first post on my technology blog",
-            "path": "https://firebasestorage.googleapis.com/v0/b/blogbymartinnilsen.appspot.com/o/Images%2F2023-09-02.154956.png?alt=media&token=778d5aa3-fe9d-43b7-a28f-181eb5f4e995&_gl=1*1evfddo*_ga*MTc1NTY4MzAzOS4xNjk2MTczNDE5*_ga_CW55HF8NVT*MTY5NjE3MzQxOC4xLjEuMTY5NjE3MzQ0NS4zMy4wLjA."
+            "path": "https://firebasestorage.googleapis.com/v0/b/blogbymartinnilsen.appspot.com/o/images%2FyjdttN68e7V3E8SKIupT%2FogImage.png?alt=media&token=1683da47-8ebe-44d1-8cb6-88f87559f68f"
           },
           "publisher": {
             "icon": "https://blog.mjntech.dev/favicon.ico",
@@ -79,7 +79,8 @@
         }
       ],
       "copyButtonText": "Copy link",
-      "copyText": "Link copied to clipboard!",
+      "copySuccessText": "Link copied to clipboard!",
+      "copyFailureText": "Unable to copy to clipboard!",
       "readButtonText": "Read"
     },
     "footer": {
@@ -140,16 +141,8 @@
       ]
     },
     "navbar": {
-      "languages": [
-        "Norwegian",
-        "English"
-      ],
-      "sections": [
-        "About",
-        "Projects",
-        "Articles",
-        "Contact"
-      ],
+      "languages": ["Norwegian", "English"],
+      "sections": ["About", "Projects", "Articles", "Contact"],
       "title": "Portfolio"
     },
     "projectView": {
@@ -170,12 +163,7 @@
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/Nettside-for-INEntrep-AS",
           "linkToWebsite": "https://ivar-nilsen.no",
-          "technologies": [
-            "React",
-            "NodeJS",
-            "CSS",
-            "GitHub Pages"
-          ],
+          "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"],
           "title": "Website for IN Entreprenør AS"
         },
         {
@@ -186,11 +174,7 @@
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/NTNU-Dataingenior/blob/main/TDAT2004%20-%20Datakommunikasjon%20med%20nettverksprogrammering/twophasecommit",
           "linkToReadMe": "https://github.com/MartinJohannesNilsen/NTNU-Dataingenior/blob/main/TDAT2004%20-%20Datakommunikasjon%20med%20nettverksprogrammering/twophasecommit/README.md",
-          "technologies": [
-            "Java",
-            "TCP",
-            "Tråder"
-          ],
+          "technologies": ["Java", "TCP", "Tråder"],
           "title": "2PCV"
         },
         {
@@ -200,11 +184,7 @@
             "type": "landscape"
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/UniGrade",
-          "technologies": [
-            "Python",
-            "argh",
-            "cli"
-          ],
+          "technologies": ["Python", "argh", "cli"],
           "title": "UniGrade"
         },
         {
@@ -215,12 +195,7 @@
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/Atari_Breakout_openAIGym",
           "linkToPaper": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMaskinlæringsrapport_DQN_AtariBreakout.pdf?alt=media&token=114e9a0e-16bd-4710-b295-1c81b5edd809",
-          "technologies": [
-            "Python",
-            "PyTorch",
-            "OpenAI Gym",
-            "OpenCV"
-          ],
+          "technologies": ["Python", "PyTorch", "OpenAI Gym", "OpenCV"],
           "title": "DQN on Atari Breakout"
         },
         {
@@ -231,11 +206,7 @@
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/Got-Your-Back",
           "linkToPaper": "https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2778065",
-          "technologies": [
-            "Python",
-            "Keras",
-            "React"
-          ],
+          "technologies": ["Python", "Keras", "React"],
           "title": "Got Your Back"
         },
         {
@@ -245,11 +216,7 @@
             "type": "landscape"
           },
           "linkToWebsite": "https://studypal.mjntech.dev",
-          "technologies": [
-            "TypeScript",
-            "React",
-            "Material UI"
-          ],
+          "technologies": ["TypeScript", "React", "Material UI"],
           "title": "StudyPal"
         },
         {
@@ -259,11 +226,7 @@
             "type": "landscape"
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/SetupLaTeX",
-          "technologies": [
-            "LaTeX",
-            "Python",
-            "cli"
-          ],
+          "technologies": ["LaTeX", "Python", "cli"],
           "title": "SetupLaTeX"
         },
         {
@@ -273,11 +236,7 @@
             "type": "square"
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/AI_Hackaton_2022",
-          "technologies": [
-            "Python",
-            "Azure ML",
-            "YOLOv5"
-          ],
+          "technologies": ["Python", "Azure ML", "YOLOv5"],
           "title": "Coral Reef Detection"
         },
         {
@@ -287,11 +246,7 @@
             "type": "portrait"
           },
           "linkToPaper": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FSpecialization_project.pdf?alt=media&token=9f0cfffc-a78b-496b-949d-56af7d356005",
-          "technologies": [
-            "NLP",
-            "Screening",
-            "Trait theory"
-          ],
+          "technologies": ["NLP", "Screening", "Trait theory"],
           "title": "Preliminary Literature Review"
         },
         {
@@ -301,11 +256,7 @@
             "type": "landscape"
           },
           "linkToWebsite": "https://blog.MJNTech.dev",
-          "technologies": [
-            "Next.js",
-            "Material UI",
-            "Firebase"
-          ],
+          "technologies": ["Next.js", "Material UI", "Firebase"],
           "title": "Tech Blog"
         }
       ]
@@ -382,7 +333,7 @@
           "description": "Den første posten på min blogg, hvor jeg gir leseren en introduksjon til meg selv. Videre er dette tiltenkt som en plattform for å skrive om alt det teknologiske som interesserer meg.",
           "img": {
             "alt": "OpenGraph-bilde til den første bloggposten på min teknologiblogg",
-            "path": "https://firebasestorage.googleapis.com/v0/b/blogbymartinnilsen.appspot.com/o/Images%2F2023-09-02.154956.png?alt=media&token=778d5aa3-fe9d-43b7-a28f-181eb5f4e995&_gl=1*1evfddo*_ga*MTc1NTY4MzAzOS4xNjk2MTczNDE5*_ga_CW55HF8NVT*MTY5NjE3MzQxOC4xLjEuMTY5NjE3MzQ0NS4zMy4wLjA."
+            "path": "https://firebasestorage.googleapis.com/v0/b/blogbymartinnilsen.appspot.com/o/images%2FyjdttN68e7V3E8SKIupT%2FogImage.png?alt=media&token=1683da47-8ebe-44d1-8cb6-88f87559f68f"
           },
           "publisher": {
             "icon": "https://blog.mjntech.dev/favicon.ico",
@@ -394,7 +345,8 @@
         }
       ],
       "copyButtonText": "Kopier lenke",
-      "copyText": "Lenke kopiert til utklippstavlen!",
+      "copySuccessText": "Lenke kopiert til utklippstavlen!",
+      "copyFailureText": "Kunne ikke kopiere til utklippstavlen!",
       "readButtonText": "Les"
     },
     "footer": {
@@ -455,16 +407,8 @@
       ]
     },
     "navbar": {
-      "languages": [
-        "Norsk",
-        "Engelsk"
-      ],
-      "sections": [
-        "Om",
-        "Prosjekter",
-        "Artikler",
-        "Kontakt"
-      ],
+      "languages": ["Norsk", "Engelsk"],
+      "sections": ["Om", "Prosjekter", "Artikler", "Kontakt"],
       "title": "Portefølje"
     },
     "projectView": {
@@ -485,12 +429,7 @@
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/Nettside-for-INEntrep-AS",
           "linkToWebsite": "https://ivar-nilsen.no",
-          "technologies": [
-            "React",
-            "NodeJS",
-            "CSS",
-            "GitHub Pages"
-          ],
+          "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"],
           "title": "Nettside for IN Entreprenør AS"
         },
         {
@@ -501,11 +440,7 @@
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/NTNU-Dataingenior/blob/main/TDAT2004%20-%20Datakommunikasjon%20med%20nettverksprogrammering/twophasecommit",
           "linkToReadMe": "https://github.com/MartinJohannesNilsen/NTNU-Dataingenior/blob/main/TDAT2004%20-%20Datakommunikasjon%20med%20nettverksprogrammering/twophasecommit/README.md",
-          "technologies": [
-            "Java",
-            "TCP",
-            "Tråder"
-          ],
+          "technologies": ["Java", "TCP", "Tråder"],
           "title": "2PCV"
         },
         {
@@ -515,11 +450,7 @@
             "type": "landscape"
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/UniGrade",
-          "technologies": [
-            "Python",
-            "argh",
-            "cli"
-          ],
+          "technologies": ["Python", "argh", "cli"],
           "title": "UniGrade"
         },
         {
@@ -530,12 +461,7 @@
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/Atari_Breakout_openAIGym",
           "linkToPaper": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMaskinlæringsrapport_DQN_AtariBreakout.pdf?alt=media&token=114e9a0e-16bd-4710-b295-1c81b5edd809",
-          "technologies": [
-            "Python",
-            "PyTorch",
-            "OpenAI Gym",
-            "OpenCV"
-          ],
+          "technologies": ["Python", "PyTorch", "OpenAI Gym", "OpenCV"],
           "title": "DQN på Atari Breakout"
         },
         {
@@ -546,11 +472,7 @@
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/Got-Your-Back",
           "linkToPaper": "https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2778065",
-          "technologies": [
-            "Python",
-            "Keras",
-            "React.js"
-          ],
+          "technologies": ["Python", "Keras", "React.js"],
           "title": "Got Your Back"
         },
         {
@@ -560,11 +482,7 @@
             "type": "landscape"
           },
           "linkToWebsite": "https://studypal.mjntech.dev",
-          "technologies": [
-            "TypeScript",
-            "React",
-            "Material UI"
-          ],
+          "technologies": ["TypeScript", "React", "Material UI"],
           "title": "StudyPal"
         },
         {
@@ -574,11 +492,7 @@
             "type": "landscape"
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/SetupLaTeX",
-          "technologies": [
-            "LaTeX",
-            "Python",
-            "cli"
-          ],
+          "technologies": ["LaTeX", "Python", "cli"],
           "title": "SetupLaTeX"
         },
         {
@@ -588,11 +502,7 @@
             "type": "square"
           },
           "linkToGitHub": "https://github.com/MartinJohannesNilsen/AI_Hackaton_2022",
-          "technologies": [
-            "Python",
-            "Azure ML",
-            "YOLOv5"
-          ],
+          "technologies": ["Python", "Azure ML", "YOLOv5"],
           "title": "Objektdeteksjon av korallrev"
         },
         {
@@ -602,11 +512,7 @@
             "type": "portrait"
           },
           "linkToPaper": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FSpecialization_project.pdf?alt=media&token=9f0cfffc-a78b-496b-949d-56af7d356005",
-          "technologies": [
-            "NLP",
-            "Profilering",
-            "Psykologi"
-          ],
+          "technologies": ["NLP", "Profilering", "Psykologi"],
           "title": "Litteraturstudie for master"
         },
         {
@@ -616,11 +522,7 @@
             "type": "landscape"
           },
           "linkToWebsite": "https://blog.MJNTech.dev",
-          "technologies": [
-            "Next.js",
-            "Material UI",
-            "Firebase"
-          ],
+          "technologies": ["Next.js", "Material UI", "Firebase"],
           "title": "Teknologiblogg"
         }
       ]

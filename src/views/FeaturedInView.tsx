@@ -98,13 +98,13 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     if (dir === "up") {
       copyToClipboard(article.url)
         .then(() => {
-          enqueueSnackbar("Link copied to clipboard!", {
+          enqueueSnackbar(props.data.copySuccessText, {
             variant: "default",
             preventDuplicate: true,
           });
         })
         .catch((error) => {
-          enqueueSnackbar("Unable to copy to clipboard!", {
+          enqueueSnackbar(props.data.copyFailureText, {
             variant: "error",
             preventDuplicate: true,
           });
