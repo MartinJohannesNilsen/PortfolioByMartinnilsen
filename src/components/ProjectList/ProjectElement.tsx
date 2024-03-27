@@ -32,8 +32,8 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
           >
             <Grid container alignItems="center" justifyContent="space-evenly">
               {/* Image */}
-              <Grid item xs={12} md={5} lg={6}>
-                <Box py={5} pr={5}>
+              <Grid item xs={12} md={5} lg={5}>
+                <Box py={5} px={5}>
                   <Box
                     component="img"
                     src={props.projectData.img.path}
@@ -127,8 +127,8 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
           >
             <Grid container alignItems="center" justifyContent="space-evenly">
               {/* Image */}
-              <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
-                <Box py={5} pl={5}>
+              <Grid item xs={12} md={5} lg={5} order={{ xs: 1, md: 2 }}>
+                <Box py={5} px={5}>
                   <Box
                     component="img"
                     src={props.projectData.img.path}
