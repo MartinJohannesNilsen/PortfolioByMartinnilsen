@@ -31,8 +31,9 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             end={animationEnd}
           >
             <Grid container alignItems="center" justifyContent="space-evenly">
+              {/* Image */}
               <Grid item xs={12} md={5} lg={6}>
-                <Box py={5} px={5}>
+                <Box py={5} pr={5}>
                   <Box
                     component="img"
                     src={props.projectData.img.path}
@@ -78,14 +79,17 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                             ? "320px"
                             : "250px",
                       },
-                      boxShadow: `-10px -10px 1px 0px ${theme.palette.grey[600]},
-                            -20px -20px 1px 0px ${theme.palette.grey[700]},
-                            -30px -30px 1px 0px ${theme.palette.grey[800]}`,
+                      border: `1.5px solid ${theme.palette.grey[600]}`,
+                      borderRadius: "10px",
+                      boxShadow: `
+                            -3px -3px 1px 0px ${theme.palette.grey[700]},
+                            -6px -6px 1px 0px ${theme.palette.grey[800]}`,
                     }}
                     alt={props.projectData.title}
                   />
                 </Box>
               </Grid>
+              {/* Text */}
               <Grid item xs={12} md={6}>
                 <Box pb={paddingTitleDescription}>
                   <Typography
@@ -122,8 +126,9 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
             end={animationEnd}
           >
             <Grid container alignItems="center" justifyContent="space-evenly">
+              {/* Image */}
               <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
-                <Box py={5} px={5}>
+                <Box py={5} pl={5}>
                   <Box
                     component="img"
                     src={props.projectData.img.path}
@@ -169,14 +174,17 @@ const ProjectElement: FC<ProjectElementProps> = (props) => {
                             ? "320px"
                             : "250px",
                       },
-                      boxShadow: `10px -10px 1px 0px ${theme.palette.grey[600]},
-                              20px -20px 1px 0px ${theme.palette.grey[700]},
-                              30px -30px 1px 0px ${theme.palette.grey[800]}`,
+                      border: `1.5px solid ${theme.palette.grey[600]}`,
+                      borderRadius: "10px",
+                      boxShadow: `
+                            3px -3px 1px 0px ${theme.palette.grey[700]},
+                            6px -6px 1px 0px ${theme.palette.grey[800]}`,
                     }}
                     alt={props.projectData.title}
                   />
                 </Box>
               </Grid>
+              {/* Text */}
               <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
                 <Box pb={paddingTitleDescription}>
                   <Typography

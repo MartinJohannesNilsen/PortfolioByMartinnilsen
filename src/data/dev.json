@@ -250,9 +250,9 @@
           "title": "Preliminary Literature Review"
         },
         {
-          "description": "A platform for me to share posts about technology, software engineering, home automation and other topics that interests me. The website is built using Next.js, hosted with Vercel, and utilizes On-Demand Revalidation for an optimal user experience.",
+          "description": "A platform for me to share posts about technology, software engineering, home automation and other topics that interests me. The website is built using Next.js and utilizes On-Demand Revalidation for an optimal user experience.",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlogV2.png?alt=media&token=c434d076-5c19-420a-bbc9-fb60e948f912",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlogV3LandingPageDark.png?alt=media&token=15a257ea-633f-44ff-9b53-fc7e5525d1df",
             "type": "landscape"
           },
           "linkToWebsite": "https://blog.MJNTech.dev",
@@ -516,9 +516,9 @@
           "title": "Litteraturstudie for master"
         },
         {
-          "description": "En plattform der jeg kan utfolde meg ved å dele poster om teknologi, utvikling, smarthjem og andre spennende emner. Nettsiden er bygget med Next.js, deployet med Vercel og tar i bruk \"On-Demand Revalidation\" for en optimal brukeropplevelse.",
+          "description": "En plattform der jeg kan utfolde meg ved å dele poster om teknologi, utvikling, smarthjem og andre spennende emner. Nettsiden er bygget med Next.js og tar i bruk \"On-Demand Revalidation\" for en optimal brukeropplevelse.",
           "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlogV2.png?alt=media&token=c434d076-5c19-420a-bbc9-fb60e948f912",
+            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FTechBlogV3LandingPageDark.png?alt=media&token=15a257ea-633f-44ff-9b53-fc7e5525d1df",
             "type": "landscape"
           },
           "linkToWebsite": "https://blog.MJNTech.dev",
