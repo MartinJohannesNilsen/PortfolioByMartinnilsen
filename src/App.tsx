@@ -1,23 +1,24 @@
 import { CssBaseline, IconButton, StyledEngineProvider } from "@mui/material";
+import { SnackbarProvider, closeSnackbar } from "notistack";
 import { useEffect, useMemo, useState } from "react";
 import CustomThemeProvider from "./ThemeProvider";
-import useStickyState from "./utils/useStickyState";
+import { ProjectProps } from "./types";
 import fetchDataFromDB from "./utils/fetchDataFromDB";
 import preloadImgs from "./utils/preloadImgs";
 import showMuiSize from "./utils/showMuiSize";
-import { SnackbarProvider, closeSnackbar } from "notistack";
-import { ProjectProps } from "./types";
+import useStickyState from "./utils/useStickyState";
 
 //Views
+import Close from "@mui/icons-material/Close";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import ScrollToTop from "./utils/scrollToTop";
+import ReaderView from "./views/_ReaderView";
+import DeskView from "./views/DeskView";
+import FeaturedInView from "./views/FeaturedInView";
 import LandingView from "./views/LandingView";
 import ProjectView from "./views/ProjectView";
-import Footer from "./components/Footer/Footer";
-import ReaderView from "./views/_ReaderView";
-import FeaturedInView from "./views/FeaturedInView";
-import DeskView from "./views/DeskView";
-import ScrollToTop from "./utils/scrollToTop";
-import Navbar from "./components/Navbar/Navbar";
-import Close from "@mui/icons-material/Close";
+import TechStackView from "./views/TechStackView";
 
 //Functions for getting local data from correct json-file
 // based on environment variable and defined language
@@ -164,6 +165,7 @@ const App = () => {
                 triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
                 language={language}
               />
+              <TechStackView id="" language="" />
               <FeaturedInView
                 id={data.navbar.sections[2]}
                 data={data.featuredInView}

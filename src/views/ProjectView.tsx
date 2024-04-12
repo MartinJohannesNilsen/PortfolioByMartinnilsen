@@ -1,9 +1,9 @@
-import { FC, useState } from "react";
 import { Box, Typography } from "@mui/material";
+import { FC, useState } from "react";
 import ProjectList from "../components/ProjectList/ProjectList";
-import useDidUpdate from "../utils/useDidUpdate";
-import { ProjectViewProps } from "../types";
 import { useTheme } from "../ThemeProvider";
+import { ProjectViewProps } from "../types";
+import useDidUpdate from "../utils/useDidUpdate";
 
 const ProjectView: FC<ProjectViewProps> = (props) => {
   const [numShowing, setNumShowing] = useState<number>(
@@ -31,7 +31,7 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
       textAlign="center"
       id={props.id}
     >
-      <Box pt={4}>
+      <Box pt={5}>
         {props.language === "norwegian" ? (
           <>
             <Typography
@@ -50,7 +50,7 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
                 color: "secondary.main",
               }}
             >
-              &nbsp;prosjekter
+              &nbsp;prosjekter.
             </Typography>
           </>
         ) : (
@@ -71,7 +71,7 @@ const ProjectView: FC<ProjectViewProps> = (props) => {
                 color: "secondary.main",
               }}
             >
-              &nbsp;projects
+              &nbsp;projects.
             </Typography>
           </>
         )}

@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
+import { Theme } from "@mui/material";
+import { FC, ReactNode, RefObject } from "react";
 
 // Object types
 
-export type landingViewCardProps = {
+export type LandingViewCardProps = {
   topic: string;
   img: {
     path: string;
@@ -12,7 +13,18 @@ export type landingViewCardProps = {
   text: string;
 };
 
-export type svgProps = {
+export type techStackItemProps = {
+  icon: FC<HoverIconProps>;
+  name: string;
+  description: string;
+  selected: boolean;
+};
+
+export type TechStackCardProps = {
+  techStack: techStackItemProps[];
+};
+
+export type SvgProps = {
   drawers: string;
   countertop: string;
   monitor_arm: string;
@@ -23,8 +35,6 @@ export type svgProps = {
   lamp_light: string;
   desktop_bg: string;
 };
-
-export type directionType = "left" | "right" | "up" | "down";
 
 export type ArticleProps = {
   title: string;
@@ -42,7 +52,7 @@ export type ArticleProps = {
   date: string;
 };
 
-export type themeProps = {
+export type ThemeProps = {
   fontFamily: string;
   accentColor: string;
 };
@@ -159,7 +169,7 @@ export type ArticleCardProps = {
 export type ReaderViewProps = {
   ids: string[];
   landing: {
-    cards: [landingViewCardProps, landingViewCardProps, landingViewCardProps];
+    cards: [LandingViewCardProps, LandingViewCardProps, LandingViewCardProps];
   };
   projects: {
     title: string;
@@ -198,6 +208,20 @@ export type ProjectViewProps = {
   language: string;
 };
 
+export type TechStackViewProps = {
+  id: string;
+  // data: LandingViewDataProps;
+  language: string;
+};
+
+export type HoverIconProps = {
+  theme: Theme;
+  cursor?: { x: number; y: number };
+  cardRef?: RefObject<HTMLElement>;
+  mouseOnCard?: boolean;
+  fill: string;
+};
+
 export type FeaturedInViewProps = {
   id: string;
   data: FeaturedInViewDataProps;
@@ -216,7 +240,7 @@ export type NavbarDataProps = {
 
 export type LandingViewDataProps = {
   navbar: NavbarDataProps;
-  cards: [landingViewCardProps, landingViewCardProps, landingViewCardProps];
+  cards: [LandingViewCardProps, LandingViewCardProps, LandingViewCardProps];
 };
 
 export type ProjectViewDataProps = {
@@ -231,6 +255,9 @@ export type FeaturedInViewDataProps = {
   copyFailureText: string;
   articles: ArticleProps[];
 };
+
+// Types
+export type directionType = "left" | "right" | "up" | "down";
 
 export type language = {
   landingView: LandingViewProps;
