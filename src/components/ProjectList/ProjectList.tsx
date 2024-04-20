@@ -33,6 +33,7 @@ export const ProjectList: FC<ProjectListProps> = (props) => {
             <Button
               sx={{
                 color: "text.primary",
+                // border: "2px solid " + theme.palette.text.primary + "50",
                 border: "2px solid " + theme.palette.text.primary,
                 "&:hover": {
                   border: "2px solid " + theme.palette.secondary.main,
