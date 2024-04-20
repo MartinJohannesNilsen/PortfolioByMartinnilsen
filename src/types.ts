@@ -17,11 +17,13 @@ export type techStackItemProps = {
   icon: FC<HoverIconProps>;
   name: string;
   description: string;
-  selected: boolean;
+  level?: string;
 };
 
 export type TechStackCardProps = {
-  techStack: techStackItemProps[];
+  techStackActive: techStackItemProps[];
+  techStackSelected: number;
+  setTechStackSelected: (num: number) => void;
 };
 
 export type SvgProps = {

@@ -119,7 +119,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                         },
                         color: "text.primary",
                       }}
-                      onClick={() => handleScroll(title)}
+                      onClick={() => handleScroll(title.replace(" ", "_"))}
                     >
                       <Typography
                         fontFamily={theme.typography.fontFamily}

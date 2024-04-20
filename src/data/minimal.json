@@ -45,7 +45,7 @@
     },
     "navbar": {
       "languages": ["Norwegian", "English"],
-      "sections": ["About", "Projects", "Articles", "Contact"],
+      "sections": ["About", "Projects", "Tech Stack", "Articles", "Contact"],
       "title": "Portfolio"
     },
     "projectView": {
@@ -96,7 +96,7 @@
     },
     "navbar": {
       "languages": ["Norsk", "Engelsk"],
-      "sections": ["Om", "Prosjekter", "Artikler", "Kontakt"],
+      "sections": ["Om", "Prosjekter", "Tech Stack", "Artikler", "Kontakt"],
       "title": "Portefølje"
     },
     "projectView": {

@@ -1,27 +1,158 @@
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { FC, useState } from "react";
-import DockerIcon from "../components/AnimatedIcons/TechStack/DockerIcon";
-import KubernetesIcon from "../components/AnimatedIcons/TechStack/KubernetesIcon";
-import TechStackCard from "../components/Cards/TechStackCard";
 import { useTheme } from "../ThemeProvider";
-import { techStackItemProps, TechStackViewProps } from "../types";
 import { RevealFromDownOnEnter } from "../components/Animations/Reveal";
+import TechStackCard from "../components/Cards/TechStackCard";
+import { techStackItemProps, TechStackViewProps } from "../types";
 
-const generalTechStack: techStackItemProps[] = [];
-const mlTechStack: techStackItemProps[] = [];
+// Icons
+import CppIcon from "../components/AnimatedIcons/TechStack/CppIcon";
+import DockerIcon from "../components/AnimatedIcons/TechStack/DockerIcon";
+import GitIcon from "../components/AnimatedIcons/TechStack/GitIcon";
+import GoIcon from "../components/AnimatedIcons/TechStack/GoIcon";
+import HuggingfaceIcon from "../components/AnimatedIcons/TechStack/HuggingfaceIcon";
+import JavaIcon from "../components/AnimatedIcons/TechStack/JavaIcon";
+import JupyterIcon from "../components/AnimatedIcons/TechStack/JupyterIcon";
+import KotlinIcon from "../components/AnimatedIcons/TechStack/KotlinIcon";
+import KubernetesIcon from "../components/AnimatedIcons/TechStack/KubernetesIcon";
+import OnnxIcon from "../components/AnimatedIcons/TechStack/OnnxIcon";
+import PandasIcon from "../components/AnimatedIcons/TechStack/PandasIcon";
+import PythonIcon from "../components/AnimatedIcons/TechStack/PythonIcon";
+import PytorchIcon from "../components/AnimatedIcons/TechStack/PytorchIcon";
+import ReactIcon from "../components/AnimatedIcons/TechStack/ReactIcon";
+import RustIcon from "../components/AnimatedIcons/TechStack/RustIcon";
+import SQLIcon from "../components/AnimatedIcons/TechStack/SQLIcon";
+import ScikitlearnIcon from "../components/AnimatedIcons/TechStack/ScikitlearnIcon";
+import SwaggerIcon from "../components/AnimatedIcons/TechStack/SwaggerIcon";
+import TensorflowIcon from "../components/AnimatedIcons/TechStack/TensorflowIcon";
+import TypescriptIcon from "../components/AnimatedIcons/TechStack/TypescriptIcon";
+
+const generalTechStack: techStackItemProps[] = [
+  {
+    icon: PythonIcon,
+    name: "Python",
+    description: "Scripting elegance.",
+    level: "Advanced",
+  },
+  {
+    icon: JavaIcon,
+    name: "Java",
+    description:
+      "A trusted cornerstone of object oriented programming for years.",
+    level: "Advanced",
+  },
+  {
+    icon: KotlinIcon,
+    name: "Kotlin",
+    description: "Java's seasoned successor, bringing modernity to the table.",
+    level: "Intermediate",
+  },
+  {
+    icon: TypescriptIcon,
+    name: "TypeScript",
+    description: "Undeniably ruling the web.",
+    level: "Advanced",
+  },
+  {
+    icon: SQLIcon,
+    name: "SQL",
+    description: "Taming databases with structured query finesse.",
+    level: "Intermediate",
+  },
+  {
+    icon: RustIcon,
+    name: "Rust",
+    description: "Safe, speedy, and fiercely modern.",
+    level: "Novice",
+  },
+  {
+    icon: GoIcon,
+    name: "Go",
+    description:
+      "Elevating server-side development with its simplicity and concurrency.",
+    level: "Novice",
+  },
+  {
+    icon: CppIcon,
+    name: "C++",
+    description: "Where performance meets fine-grained control.",
+    level: "Novice",
+  },
+];
+const mlTechStack: techStackItemProps[] = [
+  {
+    icon: PytorchIcon,
+    name: "PyTorch",
+    description:
+      "Empowering deep learning research and deployment with its flexibility and ease of use.",
+  },
+  {
+    icon: PandasIcon,
+    name: "Pandas",
+    description: "Python's go-to for data wrangling magic.",
+  },
+  {
+    icon: ScikitlearnIcon,
+    name: "SciKitLearn",
+    description: "ML made easy with Python's friendliest lib.",
+  },
+  {
+    icon: TensorflowIcon,
+    name: "Tensorflow",
+    description:
+      "Combined with Keras for streamlined machine learning workflows.",
+  },
+  {
+    icon: OnnxIcon,
+    name: "ONNX",
+    description:
+      "Enabling high performance and interoperability for efficient inference across platforms.",
+  },
+  {
+    icon: HuggingfaceIcon,
+    name: "Hugging Face",
+    description: "Transforming NLP with AI wizardry.",
+  },
+];
 const deploymentTechStack: techStackItemProps[] = [
+  {
+    icon: GitIcon,
+    name: "Git",
+    description:
+      "The go-to version control system for seamless collaboration and code management.",
+    level: "Intermediate",
+  },
   {
     icon: DockerIcon,
     name: "Docker",
-    description:
-      "Used for containerization of everything and composing services",
-    selected: false,
+    description: "Used for composing services and containerizing everything.",
+    level: "Intermediate",
+  },
+  {
+    icon: ReactIcon,
+    name: "React",
+    description: "Powering web development with dynamic interfaces.",
+    level: "Intermediate",
+  },
+  {
+    icon: JupyterIcon,
+    name: "Jupyter",
+    description: "Facilitating interactive computing and data visualization.",
+    level: "Intermediate",
   },
   {
     icon: KubernetesIcon,
     name: "Kubernetes",
-    description: "Paired with Docker for scaled deployment",
-    selected: true,
+    description:
+      "Orchestrating containerized applications for scalable deployment and management.",
+    level: "Novice",
+  },
+  {
+    icon: SwaggerIcon,
+    name: "Swagger UI",
+    description:
+      "Simplifying API documentation and testing with its intuitive interface.",
+    level: "Intermediate",
   },
 ];
 
@@ -31,7 +162,8 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
   const smDown = useMediaQuery(theme.breakpoints.down("md"));
   const cardFadeLength = "60px";
   const [techStackActive, setTechStackActive] =
-    useState<techStackItemProps[]>(deploymentTechStack);
+    useState<techStackItemProps[]>(generalTechStack);
+  const [techStackSelected, setTechStackSelected] = useState<number>(0);
 
   return (
     <Box
@@ -116,7 +248,10 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
                       : theme.palette.grey[200]),
                   width: "100%",
                 }}
-                onClick={() => setTechStackActive(generalTechStack)}
+                onClick={() => {
+                  setTechStackActive(generalTechStack);
+                  setTechStackSelected(0);
+                }}
               >
                 <Typography
                   sx={{
@@ -144,7 +279,10 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
                       : theme.palette.grey[200]),
                   width: "100%",
                 }}
-                onClick={() => setTechStackActive(mlTechStack)}
+                onClick={() => {
+                  setTechStackActive(mlTechStack);
+                  setTechStackSelected(0);
+                }}
               >
                 <Typography
                   sx={{
@@ -172,7 +310,10 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
                       : theme.palette.grey[200]),
                   width: "100%",
                 }}
-                onClick={() => setTechStackActive(deploymentTechStack)}
+                onClick={() => {
+                  setTechStackActive(deploymentTechStack);
+                  setTechStackSelected(0);
+                }}
               >
                 <Typography
                   sx={{
@@ -189,7 +330,11 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
 
           {/* Main card */}
           <Grid item xs={11} sm={9} md={7} lg={6} xl={5} py={2} mb={22}>
-            <TechStackCard techStack={techStackActive} />
+            <TechStackCard
+              techStackActive={techStackActive}
+              techStackSelected={techStackSelected}
+              setTechStackSelected={setTechStackSelected}
+            />
           </Grid>
         </Grid>
       </RevealFromDownOnEnter>

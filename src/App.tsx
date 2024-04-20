@@ -145,7 +145,7 @@ const App = () => {
                 triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
               />
               <LandingView
-                id={data.navbar.sections[0]}
+                id={data.navbar.sections[0].replace(" ", "_")}
                 data={data.landingView}
                 language={language}
               />
@@ -160,14 +160,17 @@ const App = () => {
                   )
                 : ""}
               <ProjectView
-                id={data.navbar.sections[1]}
+                id={data.navbar.sections[1].replace(" ", "_")}
                 data={data.projectView}
                 triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
                 language={language}
               />
-              <TechStackView id="" language="" />
+              <TechStackView
+                id={data.navbar.sections[2].replace(" ", "_")}
+                language=""
+              />
               <FeaturedInView
-                id={data.navbar.sections[2]}
+                id={data.navbar.sections[3].replace(" ", "_")}
                 data={data.featuredInView}
                 language={language}
               />
@@ -176,7 +179,7 @@ const App = () => {
                 refreshScrollTriggers={refreshScrollTriggers}
               />
               <Footer
-                id={data.navbar.sections[3]}
+                id={data.navbar.sections[4].replace(" ", "_")}
                 data={data.footer}
                 language={language}
               />

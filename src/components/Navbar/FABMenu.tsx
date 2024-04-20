@@ -3,13 +3,16 @@ import { SpeedDial, SpeedDialAction, SxProps } from "@mui/material";
 import { useTheme } from "../../ThemeProvider";
 import { handleScroll } from "./Navbar";
 import { FABProps } from "../../types";
-import CloseIcon from "@mui/icons-material/Close";
-import MenuIcon from "@mui/icons-material/Menu";
-import PersonIcon from "@mui/icons-material/Person";
-import AutoAwesomeMosaicIcon from "@mui/icons-material/AutoAwesomeMosaic";
-import ArticleIcon from "@mui/icons-material/Article";
-import InfoIcon from "@mui/icons-material/Info";
-import TuneIcon from "@mui/icons-material/Tune";
+import {
+  Computer,
+  Tune,
+  Info,
+  Article,
+  AutoAwesomeMosaic,
+  Person,
+  Menu,
+  Close,
+} from "@mui/icons-material";
 
 export const FABMenu: FC<FABProps> = (props: FABProps) => {
   const { theme } = useTheme();
@@ -43,17 +46,19 @@ export const FABMenu: FC<FABProps> = (props: FABProps) => {
           // key={i}
           icon={
             i === 0 ? (
-              <PersonIcon sx={actionIconStyle} />
+              <Person sx={actionIconStyle} />
             ) : i === 1 ? (
-              <AutoAwesomeMosaicIcon sx={actionIconStyle} />
+              <AutoAwesomeMosaic sx={actionIconStyle} />
             ) : i === 2 ? (
-              <ArticleIcon sx={actionIconStyle} />
+              <Computer sx={actionIconStyle} />
+            ) : i === 3 ? (
+              <Article sx={actionIconStyle} />
             ) : (
-              <InfoIcon sx={actionIconStyle} />
+              <Info sx={actionIconStyle} />
             )
           }
           onClick={() => {
-            handleScroll(i === 0 ? "Navbar" : item); // Scroll to item, or top if index 0
+            handleScroll(i === 0 ? "Navbar" : item.replace(" ", "_")); // Scroll to item, or top if index 0
             setOpen(false);
           }}
           sx={actionDialStyle}
@@ -82,20 +87,14 @@ export const FABMenu: FC<FABProps> = (props: FABProps) => {
           },
         },
       }}
-      icon={
-        !open ? (
-          <MenuIcon sx={menuIconStyle} />
-        ) : (
-          <CloseIcon sx={menuIconStyle} />
-        )
-      }
+      icon={!open ? <Menu sx={menuIconStyle} /> : <Close sx={menuIconStyle} />}
       onClick={() => setOpen(!open)}
       open={open}
       direction="down"
     >
       {getItemList(props.data.sections)}
       <SpeedDialAction
-        icon={<TuneIcon sx={actionIconStyle} />}
+        icon={<Tune sx={actionIconStyle} />}
         onClick={() => {
           props.handleSettingsModalOpen();
         }}
