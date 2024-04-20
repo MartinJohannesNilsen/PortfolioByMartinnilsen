@@ -31,6 +31,7 @@ export const FABMenu: FC<FABProps> = (props: FABProps) => {
     height: "45px",
     width: "45px",
     color: "black",
+    boxShadow: "none",
   };
 
   const getItemList: Function = (
@@ -74,7 +75,8 @@ export const FABMenu: FC<FABProps> = (props: FABProps) => {
         top: "8px",
         zIndex: 5,
         "& .MuiSpeedDial-fab": {
-          // backgroundColor: "white",
+          boxShadow: "none",
+          // border: "2px solid" + theme.palette.text.primary + "50",
           "&:hover": {
             // backgroundColor: "white",
           },
