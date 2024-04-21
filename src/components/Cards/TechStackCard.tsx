@@ -189,6 +189,7 @@ export const TechStackCard = ({
                 return (
                   index === techStackSelected && (
                     <Box
+                      key={index}
                       className="techStackSelected"
                       sx={{
                         height: "100%",
@@ -289,6 +290,7 @@ export const TechStackCard = ({
                     // .flatMap((i) => [i, i, i, i, i])
                     .map((tech, index) => (
                       <Box
+                        key={index}
                         sx={{
                           flex:
                             techStackActive.length === 6
@@ -358,6 +360,7 @@ export const TechStackCard = ({
                 return (
                   index === techStackSelected && (
                     <Box
+                      key={index}
                       className="techStackSelected"
                       sx={{
                         height: "100%",
@@ -449,6 +452,7 @@ export const TechStackCard = ({
               >
                 {techStackActive.map((tech, index) => (
                   <Box
+                    key={index}
                     sx={{
                       flex: "0 0 calc(50% - 16px)",
                       maxWidth: "50%",

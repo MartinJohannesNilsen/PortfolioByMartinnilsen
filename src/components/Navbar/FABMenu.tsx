@@ -43,7 +43,7 @@ export const FABMenu: FC<FABProps> = (props: FABProps) => {
     list.map((item: any, i: number) => {
       return (
         <SpeedDialAction
-          // key={i}
+          key={i}
           icon={
             i === 0 ? (
               <Person sx={actionIconStyle} />
