@@ -97,7 +97,24 @@ const App = () => {
       });
   }, [data]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const head = document.querySelector("head");
+    const script = document.createElement("script");
+
+    if (process.env.REACT_APP_LOCALHOST === "false" && head) {
+      script.setAttribute("defer", "true");
+      script.setAttribute("src", "https://analytics.mjntech.dev/script.js");
+      script.setAttribute(
+        "data-website-id",
+        "fe4fb666-dfab-454f-aa25-8dca128448d6"
+      );
+      head.appendChild(script);
+    }
+
+    return () => {
+      head?.removeChild(script);
+    };
+  }, []);
 
   return (
     <StyledEngineProvider injectFirst>
@@ -125,12 +142,14 @@ const App = () => {
           {(info.fetched && hasLoadedImages) ||
           !process.env.REACT_APP_FETCH_FROM_DB ? (
             <>
+              {/* Reader view */}
               <ReaderView
                 ids={[
                   data.navbar.sections[0],
                   data.navbar.sections[1],
-                  data.navbar.sections[2],
+                  // data.navbar.sections[2],
                   data.navbar.sections[3],
+                  data.navbar.sections[4],
                 ]}
                 landing={data.landingView}
                 projects={data.projectView}
@@ -138,46 +157,61 @@ const App = () => {
                 featuredIn={data.featuredInView}
                 language={language}
               />
+
+              {/* Navbar */}
               <Navbar
                 data={data.navbar}
                 language={language}
                 setLanguage={setLanguage}
                 triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
               />
+
+              {/* Landing view */}
               <LandingView
                 id={data.navbar.sections[0].replace(" ", "_")}
                 data={data.landingView}
                 language={language}
               />
-              {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
-                ? preloadImgs(
-                    data.projectView.projects
-                      .slice()
-                      .reverse()
-                      .map((project: ProjectProps) => {
-                        return project.img.path;
-                      })
-                  )
-                : ""}
+
+              {/* Preload project images */}
+              {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true" &&
+                preloadImgs(
+                  data.projectView.projects
+                    .slice()
+                    .reverse()
+                    .map((project: ProjectProps) => {
+                      return project.img.path;
+                    })
+                )}
+
+              {/* Project view */}
               <ProjectView
                 id={data.navbar.sections[1].replace(" ", "_")}
                 data={data.projectView}
                 triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
                 language={language}
               />
+
+              {/* Tech stack view */}
               <TechStackView
                 id={data.navbar.sections[2].replace(" ", "_")}
                 language=""
               />
+
+              {/* Featured in view */}
               <FeaturedInView
                 id={data.navbar.sections[3].replace(" ", "_")}
                 data={data.featuredInView}
                 language={language}
               />
+
+              {/* Desk view */}
               <DeskView
                 language={language}
                 refreshScrollTriggers={refreshScrollTriggers}
               />
+
+              {/* Footer */}
               <Footer
                 id={data.navbar.sections[4].replace(" ", "_")}
                 data={data.footer}
