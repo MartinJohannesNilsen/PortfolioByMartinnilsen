@@ -30,8 +30,8 @@ export const RustIcon = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       style={{
-        width: "60%",
-        height: "60%",
+        width: "80%",
+        height: "80%",
         transitionProperty: "all",
         transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
         transitionDuration: "300ms, 200ms",
@@ -41,7 +41,7 @@ export const RustIcon = ({
         <radialGradient
           id="hoverIconGradient"
           gradientUnits="userSpaceOnUse"
-          r="35%"
+          r="40%"
           cx={gradientCenter.cx}
           cy={gradientCenter.cy}
         >

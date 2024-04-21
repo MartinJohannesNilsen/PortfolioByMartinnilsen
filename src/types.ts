@@ -24,6 +24,8 @@ export type TechStackCardProps = {
   techStackActive: techStackItemProps[];
   techStackSelected: number;
   setTechStackSelected: (num: number) => void;
+  mouseOnCard: boolean;
+  setMouseOnCard: (bool: boolean) => void;
 };
 
 export type SvgProps = {

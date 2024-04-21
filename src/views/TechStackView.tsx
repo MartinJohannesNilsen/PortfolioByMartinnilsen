@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useTheme } from "../ThemeProvider";
 import { RevealFromDownOnEnter } from "../components/Animations/Reveal";
 import TechStackCard from "../components/Cards/TechStackCard";
@@ -26,8 +26,9 @@ import ScikitlearnIcon from "../components/AnimatedIcons/TechStack/ScikitlearnIc
 import SwaggerIcon from "../components/AnimatedIcons/TechStack/SwaggerIcon";
 import TensorflowIcon from "../components/AnimatedIcons/TechStack/TensorflowIcon";
 import TypescriptIcon from "../components/AnimatedIcons/TechStack/TypescriptIcon";
+import { isMobile } from "react-device-detect";
 
-const generalTechStack: techStackItemProps[] = [
+export const generalTechStack: techStackItemProps[] = [
   {
     icon: PythonIcon,
     name: "Python",
@@ -41,12 +42,12 @@ const generalTechStack: techStackItemProps[] = [
       "A trusted cornerstone of object oriented programming for years.",
     level: "Advanced",
   },
-  {
-    icon: KotlinIcon,
-    name: "Kotlin",
-    description: "Java's seasoned successor, bringing modernity to the table.",
-    level: "Intermediate",
-  },
+  // {
+  //   icon: KotlinIcon,
+  //   name: "Kotlin",
+  //   description: "Java's seasoned successor, bringing modernity to the table.",
+  //   level: "Intermediate",
+  // },
   {
     icon: TypescriptIcon,
     name: "TypeScript",
@@ -65,13 +66,13 @@ const generalTechStack: techStackItemProps[] = [
     description: "Safe, speedy, and fiercely modern.",
     level: "Novice",
   },
-  {
-    icon: GoIcon,
-    name: "Go",
-    description:
-      "Elevating server-side development with its simplicity and concurrency.",
-    level: "Novice",
-  },
+  // {
+  //   icon: GoIcon,
+  //   name: "Go",
+  //   description:
+  //     "Elevating server-side development with its simplicity and concurrency.",
+  //   level: "Novice",
+  // },
   {
     icon: CppIcon,
     name: "C++",
@@ -79,7 +80,7 @@ const generalTechStack: techStackItemProps[] = [
     level: "Novice",
   },
 ];
-const mlTechStack: techStackItemProps[] = [
+export const mlTechStack: techStackItemProps[] = [
   {
     icon: PytorchIcon,
     name: "PyTorch",
@@ -114,7 +115,7 @@ const mlTechStack: techStackItemProps[] = [
     description: "Transforming NLP with AI wizardry.",
   },
 ];
-const deploymentTechStack: techStackItemProps[] = [
+export const deploymentTechStack: techStackItemProps[] = [
   {
     icon: GitIcon,
     name: "Git",
@@ -164,6 +165,19 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
   const [techStackActive, setTechStackActive] =
     useState<techStackItemProps[]>(generalTechStack);
   const [techStackSelected, setTechStackSelected] = useState<number>(0);
+  const [mouseOnCard, setMouseOnCard] = useState(isMobile);
+
+  // Fix issue on safari where onHover
+  useEffect(() => {
+    !isMobile && refreshActive();
+  }, []);
+  const refreshActive = (newSelectedIndex?: number) => {
+    const newSelected = (newSelectedIndex || 0) % techStackActive.length;
+    setTechStackSelected((newSelected + 1) % 6);
+    setTimeout(() => {
+      setTechStackSelected(newSelected);
+    }, 30);
+  };
 
   return (
     <Box
@@ -250,7 +264,7 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
                 }}
                 onClick={() => {
                   setTechStackActive(generalTechStack);
-                  setTechStackSelected(0);
+                  isMobile ? setTechStackSelected(0) : refreshActive();
                 }}
               >
                 <Typography
@@ -281,7 +295,7 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
                 }}
                 onClick={() => {
                   setTechStackActive(mlTechStack);
-                  setTechStackSelected(0);
+                  isMobile ? setTechStackSelected(0) : refreshActive();
                 }}
               >
                 <Typography
@@ -312,7 +326,7 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
                 }}
                 onClick={() => {
                   setTechStackActive(deploymentTechStack);
-                  setTechStackSelected(0);
+                  isMobile ? setTechStackSelected(0) : refreshActive();
                 }}
               >
                 <Typography
@@ -329,11 +343,27 @@ const TechStackView: FC<TechStackViewProps> = (props) => {
           </Grid>
 
           {/* Main card */}
-          <Grid item xs={11} sm={9} md={7} lg={6} xl={5} py={2} mb={22}>
+          <Grid
+            item
+            xs={11}
+            sm={9}
+            md={7}
+            lg={6}
+            xl={5}
+            py={2}
+            mb={22}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <TechStackCard
               techStackActive={techStackActive}
               techStackSelected={techStackSelected}
               setTechStackSelected={setTechStackSelected}
+              mouseOnCard={mouseOnCard}
+              setMouseOnCard={setMouseOnCard}
             />
           </Grid>
         </Grid>
