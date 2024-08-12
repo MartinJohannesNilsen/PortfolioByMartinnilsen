@@ -36,7 +36,8 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
         root: "",
       }}
     >
-      <CardContent>
+      {/* Top row */}
+      {/* <CardContent>
         <Stack direction="row" spacing={1.5} my={-0.5} alignItems="center">
           <Avatar
             alt={`Logo of ${props.article.publisher.name}`}
@@ -55,15 +56,46 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
             {props.article.publisher.name}
           </Typography>
         </Stack>
-      </CardContent>
+      </CardContent> */}
       <CardMedia
         sx={{
-          height: "160px",
+          position: "relative",
+          height: "240px",
           width: { xs: "100%", md: "100%" },
         }}
         image={props.article.img.path}
         title={props.article.img.alt}
-      />
+      >
+        {/* Small title in top left corner */}
+        <Box
+          sx={{
+            position: "absolute",
+            left: 12,
+            bottom: 10,
+            background:
+              theme.palette.mode === "dark"
+                ? "rgba(32, 45, 58, 0.8)"
+                : "rgba(255, 255, 255, 0.9)",
+            borderRadius: "5px",
+            p: "4px 6px",
+          }}
+        >
+          <Typography
+            fontFamily={theme.typography.fontFamily}
+            variant="subtitle2"
+            // color="textPrimary"
+            sx={{
+              textAlign: "left",
+              userSelect: "none",
+              cursor: "grab",
+              fontSize: "12px !important",
+              color: theme.palette.text.primary,
+            }}
+          >
+            {props.article.publisher.name}
+          </Typography>
+        </Box>
+      </CardMedia>
       <CardContent>
         <Box mt={-1.5}>
           <Typography

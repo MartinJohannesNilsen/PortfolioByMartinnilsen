@@ -60,6 +60,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
 
   return (
     <AppBar
+      id="Navbar"
       elevation={0}
       position="static"
       sx={{
@@ -118,7 +119,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                         },
                         color: "text.primary",
                       }}
-                      onClick={() => handleScroll(title)}
+                      onClick={() => handleScroll(title.replace(" ", "_"))}
                     >
                       <Typography
                         fontFamily={theme.typography.fontFamily}

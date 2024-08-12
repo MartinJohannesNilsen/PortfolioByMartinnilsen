@@ -5,7 +5,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import App from "./App";
-import Linktree from "./Linktree";
 
 const Layout = () => (
   <>
@@ -21,10 +20,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
-      },
-      {
-        path: "/links",
-        element: <Linktree />,
       },
       {
         path: "*",

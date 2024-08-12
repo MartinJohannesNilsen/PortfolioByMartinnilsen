@@ -1,24 +1,24 @@
-import React, { FC, useState, useMemo, useRef } from "react";
-import {
-  Box,
-  Typography,
-  useMediaQuery,
-  Stack,
-  IconButton,
-  Zoom,
-  Tooltip,
-  ClickAwayListener,
-  Card,
-  CardContent,
-} from "@mui/material";
-import { useTheme } from "../ThemeProvider";
-import { ArticleCard } from "../components/Cards/ArticleCard";
-import TinderCard from "react-tinder-card";
 import ClearIcon from "@mui/icons-material/Clear";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LaunchIcon from "@mui/icons-material/Launch";
 import ReplayIcon from "@mui/icons-material/Replay";
-import { FeaturedInViewProps, directionType } from "../types";
+import {
+  Box,
+  Card,
+  CardContent,
+  IconButton,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import { useSnackbar } from "notistack";
+import React, { FC, useMemo, useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
+import { BiCopy } from "react-icons/bi";
+import TinderCard from "react-tinder-card";
+import { useTheme } from "../ThemeProvider";
+import { ArticleCard } from "../components/Cards/ArticleCard";
+import { ArticleProps, FeaturedInViewProps, directionType } from "../types";
+import { RevealFromDownOnEnter } from "../components/Animations/Reveal";
 
 const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const { theme } = useTheme();
@@ -31,7 +31,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const [currentIndex, setCurrentIndex] = useState(
     props.data.articles.length - 1
   );
-  const [lastDirection, setLastDirection] = useState<directionType>();
+  // const [lastDirection, setLastDirection] = useState<directionType>();
   // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex);
   const childRefs: any = useMemo(
@@ -51,24 +51,29 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
   const canSwipe = currentIndex >= 0;
 
   // set last direction and decrease current index
-  const swiped = (direction: directionType, title: string, index: number) => {
+  const swiped = (
+    direction: directionType,
+    index: number,
+    article: ArticleProps
+  ) => {
     // console.log(`${title} (${index}) swiped to the ${direction}`, currentIndexRef.current);
-    setLastDirection(direction);
+    // setLastDirection(direction);
+    if (currentIndexRef.current >= index) {
+      handleAction(direction, article);
+    }
     updateCurrentIndex(index - 1);
   };
 
-  const outOfFrame = (name: string, idx: number) => {
-    // console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current);
-    // handle the case in which go back is pressed before card goes outOfFrame
-    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()!;
-  };
-
-  const swipe = async (dir: "left" | "right" | "up" | "down") => {
+  const swipe = async (dir: directionType) => {
     if (canSwipe && currentIndex < props.data.articles.length) {
       await childRefs[currentIndex].current.swipe(dir); // Swipe the card!
     }
   };
 
+  // Snackbar
+  const { enqueueSnackbar } = useSnackbar();
+
+  // Actions
   // increase current index and show card
   const goBack = async () => {
     if (!canGoBack) return;
@@ -77,61 +82,46 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
     await childRefs[newIndex].current.restoreCard()!;
   };
 
-  // Tooltip
-  const [open, setOpen] = React.useState(false);
-  const handleTooltipClose = () => {
-    setOpen(false);
-  };
-  const handleTooltipOpen = () => {
-    setOpen(true);
-  };
-
-  // Copy to clipboard
-  const deprecated_copyToClipboard = (text: string) => {
-    // Does not work on safari, iPhone
-    navigator.clipboard.writeText(text);
-  };
-
-  function copyToClipboard(str: string) {
-    var el = document.createElement("textarea");
-    el.value = str;
-    el.setAttribute("readonly", "");
-    document.body.appendChild(el);
-
-    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
-      // save current contentEditable/readOnly status
-      var editable = el.contentEditable;
-      var readOnly = el.readOnly;
-
-      // convert to editable with readonly to stop iOS keyboard opening
-      // el.contentEditable = true;
-      el.readOnly = true;
-
-      // create a selectable range
-      var range = document.createRange();
-      range.selectNodeContents(el);
-
-      // select the range
-      var selection = window.getSelection();
-      selection!.removeAllRanges();
-      selection!.addRange(range);
-      el.setSelectionRange(0, 999999);
-
-      // restore contentEditable/readOnly to original state
-      el.contentEditable = editable;
-      el.readOnly = readOnly;
-    } else {
-      el.select();
+  const copyToClipboard = async (link: string) => {
+    if (!navigator.clipboard) {
+      return Promise.reject("Clipboard not supported!");
     }
-    document.execCommand("copy");
-    document.body.removeChild(el);
-  }
+
+    try {
+      await navigator.clipboard.writeText(link);
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  };
+
+  const handleAction = (dir: directionType, article: ArticleProps) => {
+    if (dir === "up") {
+      copyToClipboard(article.url)
+        .then(() => {
+          enqueueSnackbar(props.data.copySuccessText, {
+            variant: "default",
+            preventDuplicate: true,
+          });
+        })
+        .catch((error) => {
+          enqueueSnackbar(props.data.copyFailureText, {
+            variant: "error",
+            preventDuplicate: true,
+          });
+        });
+    } else if (dir === "right") {
+      isMobile
+        ? (window.location.href = article.url)
+        : setTimeout(() => window.open(article.url, "_blank"), 250);
+    }
+  };
 
   return (
     <Box
       sx={{
-        height: xs || sm ? "700px" : "850px",
-        backgroundColor: "primary.dark",
+        height: xs || sm ? "720px" : "850px",
+        backgroundColor: "primary.main",
         position: "relative",
         maxWidth: "100vw",
         overflow: "hidden",
@@ -141,7 +131,8 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
       px={xs ? 4 : sm ? 4 : md ? 8 : 0}
       pb={8}
     >
-      <Box pt={4} pb={3}>
+      {/* Title */}
+      <Box pt={5} pb={3}>
         {props.language === "norwegian" ? (
           <>
             <Typography
@@ -160,7 +151,7 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                 color: "secondary.main",
               }}
             >
-              &nbsp;artikler
+              &nbsp;artikler.
             </Typography>
           </>
         ) : (
@@ -181,236 +172,220 @@ const FeaturedInView: FC<FeaturedInViewProps> = (props) => {
                 color: "secondary.main",
               }}
             >
-              &nbsp;feature in
+              &nbsp;feature in.
             </Typography>
           </>
         )}
       </Box>
-      <Box
-        justifyContent="center"
-        sx={{
-          height: "calc(100%-93px)",
-          display: "grid",
-          justifyItems: "center",
-          alignItems: "center",
-          gridTemplateColumns: "repeat(1)",
-          gridTemplateRows: lgUp ? "600px 100px" : "520px 0px",
-          gridTemplateAreas: `
+      {/* Content */}
+      <RevealFromDownOnEnter>
+        <Box
+          justifyContent="center"
+          sx={{
+            height: "calc( 100% - 93px )",
+            display: "grid",
+            justifyItems: "center",
+            alignItems: "center",
+            gridTemplateColumns: "repeat(1)",
+            gridTemplateRows: lgUp ? "600px 100px" : "520px 0px",
+            gridTemplateAreas: `
           'card'
           'buttonStack'
           `,
-        }}
-      >
-        {props.data.articles.map((article, index) => (
-          <TinderCard
-            ref={childRefs[index]}
-            className={"featuredInCardCssGrid tinderCards"}
-            key={index}
-            onSwipe={(dir: directionType) => swiped(dir, article.title, index)}
-            onCardLeftScreen={() => outOfFrame(article.title, index)}
+          }}
+        >
+          {props.data.articles.map((article, index) => (
+            <TinderCard
+              preventSwipe={["down"]}
+              flickOnSwipe
+              swipeRequirementType="position"
+              swipeThreshold={100}
+              ref={childRefs[index]}
+              className={"featuredInCardCssGrid tinderCards"}
+              key={index}
+              onSwipe={(dir: directionType) => {
+                swiped(dir, index, article);
+              }}
+            >
+              <ArticleCard
+                index={index}
+                language={props.language}
+                article={article}
+              />
+            </TinderCard>
+          ))}
+          <Card
+            className="featuredInCardCssGrid"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "transparent",
+              boxShadow: "none",
+              zIndex: 0,
+            }}
           >
-            <ArticleCard
-              index={index}
-              language={props.language}
-              article={article}
-            />
-          </TinderCard>
-        ))}
-        <Card
-          className="featuredInCardCssGrid"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "transparent",
-            boxShadow: "none",
-            zIndex: 0,
-          }}
-        >
-          <CardContent>
-            <Typography
-              fontFamily={theme.typography.fontFamily}
-              variant="subtitle2"
-              color="textPrimary"
-              sx={{
-                opacity: "0.4",
-              }}
-            >
-              {props.language === "norwegian"
-                ? "Det var det. Eller kanskje du vil se over en gang til?"
-                : "No more cards, but maybe you want to look through them one more time?"}
-            </Typography>
-            <Typography
-              fontFamily={theme.typography.fontFamily}
-              variant="subtitle2"
-              color="textPrimary"
-              sx={{
-                opacity: "0.4",
-              }}
-            >
-              {props.language === "norwegian"
-                ? "(Trykk på den gule knappen)"
-                : "(Press the yellow button)"}
-            </Typography>
-          </CardContent>
-        </Card>
-        <Box
-          sx={{
-            gridArea: "buttonStack",
-          }}
-        >
-          <Stack direction="row" spacing={1.2} justifyContent="center">
-            <IconButton
-              aria-label="clear"
-              disabled={!canSwipe}
-              sx={{
-                border: "2px solid",
-                borderColor: "#fd5c63",
-                color: "#FFF",
-                backgroundColor: "#fd5c63",
-                boxShadow:
-                  theme.palette.mode === "light"
-                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
-                    : "none",
-                "&:disabled": {
-                  opacity: 0.5,
-                  border: "2px solid",
-                  borderColor: "grey",
-                  backgroundColor: "grey",
-                },
-                "&:hover": {
-                  backgroundColor: "#fd858a",
-                  borderColor: "#fd858a",
-                },
-              }}
-              onClick={() => swipe("left")}
-            >
-              <ClearIcon />
-            </IconButton>
-            <IconButton
-              aria-label="undo"
-              disabled={!canGoBack}
-              sx={{
-                border: "2px solid",
-                borderColor: "#ffdf00",
-                color: "#FFF",
-                backgroundColor: "#ffdf00",
-                boxShadow:
-                  theme.palette.mode === "light"
-                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
-                    : "none",
-                "&:disabled": {
-                  opacity: 0.5,
-                  border: "2px solid",
-                  borderColor: "grey",
-                  backgroundColor: "grey",
-                },
-                "&:hover": {
-                  backgroundColor: "#ffe740",
-                  borderColor: "#ffe740",
-                },
-              }}
-              onClick={() => goBack()}
-            >
-              <ReplayIcon />
-            </IconButton>
-            <ClickAwayListener onClickAway={handleTooltipClose}>
-              <Tooltip
-                arrow
-                placement="top"
-                PopperProps={{
-                  disablePortal: true,
+            <CardContent>
+              <Typography
+                fontFamily={theme.typography.fontFamily}
+                variant="subtitle2"
+                color="textPrimary"
+                sx={{
+                  opacity: "0.4",
                 }}
-                onClose={handleTooltipClose}
-                open={open}
-                disableFocusListener
-                // disableHoverListener
-                disableTouchListener
-                TransitionComponent={Zoom}
-                title={
-                  <Typography
-                    fontFamily={theme.typography.fontFamily}
-                    variant="overline"
-                    color="inherit"
-                  >
-                    {props.data.copyText}
-                  </Typography>
-                }
               >
-                <IconButton
-                  aria-label="copy"
-                  disabled={!canSwipe}
-                  sx={{
-                    border: "2px solid",
-                    borderColor: "#2196F3",
-                    color: "#FFF",
-                    backgroundColor: "#2196F3",
-                    boxShadow:
-                      theme.palette.mode === "light"
-                        ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
-                        : "none",
-                    "&:disabled": {
-                      opacity: 0.5,
-                      border: "2px solid",
-                      borderColor: "grey",
-                      backgroundColor: "grey",
-                    },
-                    "&:hover": {
-                      backgroundColor: "#58b0f6",
-                      borderColor: "#58b0f6",
-                    },
-                  }}
-                  onClick={() => {
-                    copyToClipboard(props.data.articles[currentIndex].url);
-                    handleTooltipOpen();
-                    swipe("down");
-                  }}
-                >
-                  <ContentCopyIcon />
-                </IconButton>
-              </Tooltip>
-            </ClickAwayListener>
-            <IconButton
-              aria-label="launch"
-              disabled={!canSwipe}
-              sx={{
-                border: "2px solid",
-                borderColor: "#00e676",
-                color: "#FFF",
-                backgroundColor: "#00e676",
-                boxShadow:
-                  theme.palette.mode === "light"
-                    ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
-                    : "none",
-                "&:disabled": {
-                  opacity: 0.5,
+                {props.language === "norwegian"
+                  ? "Det var det. Eller kanskje du vil se over en gang til?"
+                  : "No more cards, but maybe you want to look through them one more time?"}
+              </Typography>
+              <Typography
+                fontFamily={theme.typography.fontFamily}
+                variant="subtitle2"
+                color="textPrimary"
+                sx={{
+                  opacity: "0.4",
+                }}
+              >
+                {props.language === "norwegian"
+                  ? "(Trykk på den gule knappen)"
+                  : "(Press the yellow button)"}
+              </Typography>
+            </CardContent>
+          </Card>
+          <Box
+            sx={{
+              gridArea: "buttonStack",
+            }}
+          >
+            <Stack direction="row" spacing={1.2} justifyContent="center">
+              <IconButton
+                aria-label="clear"
+                disabled={!canSwipe}
+                sx={{
+                  width: "45px",
+                  height: "45px",
                   border: "2px solid",
-                  borderColor: "grey",
-                  backgroundColor: "grey",
-                },
-                "&:hover": {
-                  backgroundColor: "#2dff99",
-                  borderColor: "#2dff99",
-                },
-              }}
-              onClick={() => {
-                //Open new page in new tab
-                swipe("right");
-                setTimeout(
-                  () =>
-                    window.open(
-                      props.data.articles[currentIndex].url,
-                      "_blank"
-                    ),
-                  250
-                );
-              }}
-            >
-              <LaunchIcon />
-            </IconButton>
-          </Stack>
+                  borderColor: "#fd5c63",
+                  color: "#FFF",
+                  backgroundColor: "#fd5c63",
+                  boxShadow:
+                    theme.palette.mode === "light"
+                      ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                      : "none",
+                  "&:disabled": {
+                    opacity: 0.5,
+                    border: "2px solid",
+                    borderColor: "grey",
+                    backgroundColor: "grey",
+                  },
+                  "&:hover": {
+                    backgroundColor: "#fd858a",
+                    borderColor: "#fd858a",
+                  },
+                }}
+                onClick={() => swipe("left")}
+              >
+                <ClearIcon style={{ width: "80%", height: "80%" }} />
+              </IconButton>
+              <IconButton
+                aria-label="undo"
+                disabled={!canGoBack}
+                sx={{
+                  width: "45px",
+                  height: "45px",
+                  border: "2px solid",
+                  borderColor: "#ffdf00",
+                  color: "#FFF",
+                  backgroundColor: "#ffdf00",
+                  boxShadow:
+                    theme.palette.mode === "light"
+                      ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                      : "none",
+                  "&:disabled": {
+                    opacity: 0.5,
+                    border: "2px solid",
+                    borderColor: "grey",
+                    backgroundColor: "grey",
+                  },
+                  "&:hover": {
+                    backgroundColor: "#ffe740",
+                    borderColor: "#ffe740",
+                  },
+                }}
+                onClick={() => goBack()}
+              >
+                <ReplayIcon style={{ width: "80%", height: "80%" }} />
+              </IconButton>
+              <IconButton
+                aria-label="copy"
+                disabled={!canSwipe}
+                sx={{
+                  width: "45px",
+                  height: "45px",
+                  border: "2px solid",
+                  borderColor: "#2196F3",
+                  color: "#FFF",
+                  backgroundColor: "#2196F3",
+                  boxShadow:
+                    theme.palette.mode === "light"
+                      ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                      : "none",
+                  "&:disabled": {
+                    opacity: 0.5,
+                    border: "2px solid",
+                    borderColor: "grey",
+                    backgroundColor: "grey",
+                  },
+                  "&:hover": {
+                    backgroundColor: "#58b0f6",
+                    borderColor: "#58b0f6",
+                  },
+                }}
+                onClick={() => {
+                  handleAction("up", props.data.articles[currentIndex]);
+                  swipe("up");
+                }}
+              >
+                {/* <ContentCopyIcon /> */}
+                <BiCopy style={{ width: "80%", height: "80%" }} />
+              </IconButton>
+              <IconButton
+                aria-label="launch"
+                disabled={!canSwipe}
+                sx={{
+                  width: "45px",
+                  height: "45px",
+                  border: "2px solid",
+                  borderColor: "#00e676",
+                  color: "#FFF",
+                  backgroundColor: "#00e676",
+                  boxShadow:
+                    theme.palette.mode === "light"
+                      ? "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                      : "none",
+                  "&:disabled": {
+                    opacity: 0.5,
+                    border: "2px solid",
+                    borderColor: "grey",
+                    backgroundColor: "grey",
+                  },
+                  "&:hover": {
+                    backgroundColor: "#2dff99",
+                    borderColor: "#2dff99",
+                  },
+                }}
+                onClick={() => {
+                  //Open new page in new tab
+                  swipe("right");
+                  handleAction("right", props.data.articles[currentIndex]);
+                }}
+              >
+                <LaunchIcon style={{ width: "80%", height: "80%" }} />
+              </IconButton>
+            </Stack>
+          </Box>
         </Box>
-      </Box>
+      </RevealFromDownOnEnter>
     </Box>
   );
 };

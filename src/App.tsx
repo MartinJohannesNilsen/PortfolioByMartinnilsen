@@ -1,21 +1,24 @@
-import { CssBaseline, StyledEngineProvider } from "@mui/material";
+import { CssBaseline, IconButton, StyledEngineProvider } from "@mui/material";
+import { SnackbarProvider, closeSnackbar } from "notistack";
 import { useEffect, useMemo, useState } from "react";
 import CustomThemeProvider from "./ThemeProvider";
-import useStickyState from "./utils/useStickyState";
+import { ProjectProps } from "./types";
 import fetchDataFromDB from "./utils/fetchDataFromDB";
 import preloadImgs from "./utils/preloadImgs";
 import showMuiSize from "./utils/showMuiSize";
-import { ProjectProps } from "./types";
+import useStickyState from "./utils/useStickyState";
 
 //Views
+import Close from "@mui/icons-material/Close";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import ScrollToTop from "./utils/scrollToTop";
+import ReaderView from "./views/_ReaderView";
+import DeskView from "./views/DeskView";
+import FeaturedInView from "./views/FeaturedInView";
 import LandingView from "./views/LandingView";
 import ProjectView from "./views/ProjectView";
-import Footer from "./components/Footer/Footer";
-import ReaderView from "./views/_ReaderView";
-import FeaturedInView from "./views/FeaturedInView";
-import DeskView from "./views/DeskView";
-import ScrollToTop from "./utils/scrollToTop";
-import Navbar from "./components/Navbar/Navbar";
+import TechStackView from "./views/TechStackView";
 
 //Functions for getting local data from correct json-file
 // based on environment variable and defined language
@@ -41,6 +44,7 @@ const App = () => {
   );
   const [data, setData] = useState(getLocalData(language));
   const [info, setInfo] = useState(getLocalInfo());
+  const [hasLoadedImages, setHasLoadedImages] = useState(false);
 
   const [refreshScrollTriggers, _setRefreshScrollTriggers] = useState(0);
   const triggerRefreshScrollTriggers = () => {
@@ -59,75 +63,165 @@ const App = () => {
   }, [language]);
 
   useEffect(() => {
+    // Refresh scrolltriggers
     triggerRefreshScrollTriggers();
+
+    // Preload images
+    const imageSources = [
+      data.landingView.cards[0].img.path,
+      data.landingView.cards[1].img.path,
+      data.landingView.cards[2].img.path,
+    ];
+
+    const images = imageSources.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
+    // Wait for all images to load
+    Promise.all(
+      images.map((img) => {
+        return new Promise((resolve, reject) => {
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      })
+    )
+      .then(() => {
+        // Set loading to false and start the GSAP animation
+        setHasLoadedImages(true);
+      })
+      .catch((error) => {
+        console.error("Error loading images", error);
+      });
   }, [data]);
+
+  useEffect(() => {
+    const head = document.querySelector("head");
+    const script = document.createElement("script");
+
+    if (process.env.REACT_APP_LOCALHOST === "false" && head) {
+      script.setAttribute("defer", "true");
+      script.setAttribute("src", "https://analytics.mjntech.dev/script.js");
+      script.setAttribute(
+        "data-website-id",
+        "fe4fb666-dfab-454f-aa25-8dca128448d6"
+      );
+      head.appendChild(script);
+    }
+
+    return () => {
+      head?.removeChild(script);
+    };
+  }, []);
 
   return (
     <StyledEngineProvider injectFirst>
       <CustomThemeProvider>
-        <CssBaseline />
-        <ScrollToTop />
-        {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
-        {info.fetched || !process.env.REACT_APP_FETCH_FROM_DB ? (
-          <>
-            <ReaderView
-              ids={[
-                data.navbar.sections[0],
-                data.navbar.sections[1],
-                data.navbar.sections[2],
-                data.navbar.sections[3],
-              ]}
-              landing={data.landingView}
-              projects={data.projectView}
-              footer={data.footer}
-              featuredIn={data.featuredInView}
-              language={language}
-            />
-            <Navbar
-              data={data.navbar}
-              language={language}
-              setLanguage={setLanguage}
-              triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
-            />
-            <LandingView
-              id={data.navbar.sections[0]}
-              data={data.landingView}
-              language={language}
-            />
-            {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true"
-              ? preloadImgs(
+        <SnackbarProvider
+          preventDuplicate
+          maxSnack={1}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+          action={(snackbarId) => (
+            <IconButton
+              size="small"
+              disableRipple
+              onClick={() => closeSnackbar(snackbarId)}
+            >
+              <Close fontSize="small" sx={{ color: "white" }} />
+            </IconButton>
+          )}
+        >
+          <CssBaseline />
+          <ScrollToTop />
+          {process.env.REACT_APP_SHOW_MUI_SIZE === "true" ? showMuiSize() : ""}
+          {(info.fetched && hasLoadedImages) ||
+          !process.env.REACT_APP_FETCH_FROM_DB ? (
+            <>
+              {/* Reader view */}
+              <ReaderView
+                ids={[
+                  data.navbar.sections[0],
+                  data.navbar.sections[1],
+                  // data.navbar.sections[2],
+                  data.navbar.sections[3],
+                  data.navbar.sections[4],
+                ]}
+                landing={data.landingView}
+                projects={data.projectView}
+                footer={data.footer}
+                featuredIn={data.featuredInView}
+                language={language}
+              />
+
+              {/* Navbar */}
+              <Navbar
+                data={data.navbar}
+                language={language}
+                setLanguage={setLanguage}
+                triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
+              />
+
+              {/* Landing view */}
+              <LandingView
+                id={data.navbar.sections[0].replace(" ", "_")}
+                data={data.landingView}
+                language={language}
+              />
+
+              {/* Preload project images */}
+              {process.env.REACT_APP_PRELOAD_PROJECT_IMGS === "true" &&
+                preloadImgs(
                   data.projectView.projects
                     .slice()
                     .reverse()
                     .map((project: ProjectProps) => {
                       return project.img.path;
                     })
-                )
-              : ""}
-            <ProjectView
-              id={data.navbar.sections[1]}
-              data={data.projectView}
-              triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
-              language={language}
-            />
-            <FeaturedInView
-              id={data.navbar.sections[2]}
-              data={data.featuredInView}
-              language={language}
-            />
-            <DeskView
-              language={language}
-              refreshScrollTriggers={refreshScrollTriggers}
-            />
-            <Footer
-              id={data.navbar.sections[3]}
-              data={data.footer}
-              language={language}
-            />
-          </>
-        ) : (
-          <></>
-        )}
+                )}
+
+              {/* Project view */}
+              <ProjectView
+                id={data.navbar.sections[1].replace(" ", "_")}
+                data={data.projectView}
+                triggerRefreshScrollTriggers={triggerRefreshScrollTriggers}
+                language={language}
+              />
+
+              {/* Tech stack view */}
+              <TechStackView
+                id={data.navbar.sections[2].replace(" ", "_")}
+                language=""
+              />
+
+              {/* Featured in view */}
+              <FeaturedInView
+                id={data.navbar.sections[3].replace(" ", "_")}
+                data={data.featuredInView}
+                language={language}
+              />
+
+              {/* Desk view */}
+              <DeskView
+                language={language}
+                refreshScrollTriggers={refreshScrollTriggers}
+              />
+
+              {/* Footer */}
+              <Footer
+                id={data.navbar.sections[4].replace(" ", "_")}
+                data={data.footer}
+                language={language}
+              />
+            </>
+          ) : (
+            <></>
+          )}
+        </SnackbarProvider>
       </CustomThemeProvider>
     </StyledEngineProvider>
   );

@@ -1,17 +1,16 @@
-import { FC, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FC, useEffect, useLayoutEffect, useRef, useState } from "react";
+import DeskSVGInline from "../components/AnimatedIcons/Desk/desk_animated";
 import { useTheme } from "../ThemeProvider";
+import { DeskViewProps, SvgProps } from "../types";
 import useDidUpdate from "../utils/useDidUpdate";
-import DeskSVGInline from "../assets/svg/desk_animated";
-import { DeskViewProps, svgProps } from "../types";
 
 const DeskView: FC<DeskViewProps> = (props) => {
   const { theme } = useTheme();
   const xl = useMediaQuery(theme.breakpoints.only("xl"));
   const lg = useMediaQuery(theme.breakpoints.only("lg"));
-  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const elementRef = useRef(null);
   const q = gsap.utils.selector(elementRef);
   const [inView, setInView] = useState(false);
@@ -21,7 +20,7 @@ const DeskView: FC<DeskViewProps> = (props) => {
     ScrollTrigger.refresh();
   }, [props.refreshScrollTriggers]);
 
-  function animateIn(svgElements: svgProps) {
+  function animateIn(svgElements: SvgProps) {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: q(".desksvginline"),
@@ -175,12 +174,12 @@ const DeskView: FC<DeskViewProps> = (props) => {
     <Box
       ref={elementRef}
       sx={{
-        backgroundColor: "primary.main",
+        backgroundColor: "primary.dark",
         position: "relative",
         textAlign: "center",
       }}
     >
-      <Box pt={4}>
+      <Box pt={5}>
         {props.language === "norwegian" ? (
           <>
             <Typography
@@ -225,14 +224,16 @@ const DeskView: FC<DeskViewProps> = (props) => {
           </>
         )}
       </Box>
-      <DeskSVGInline
-        className={"desksvginline"}
-        style={{
-          width: xl ? "70%" : lg ? "85%" : "100%",
-          textAlign: "center",
-          marginTop: "40px",
-        }}
-      />
+      <Box style={{ userSelect: "none" }}>
+        <DeskSVGInline
+          className={"desksvginline"}
+          style={{
+            width: xl ? "70%" : lg ? "85%" : "100%",
+            textAlign: "center",
+            marginTop: "40px",
+          }}
+        />
+      </Box>
     </Box>
   );
 };

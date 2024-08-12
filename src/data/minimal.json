@@ -6,14 +6,15 @@
     "featuredInView": {
       "articles": [],
       "copyButtonText": "Copy link",
-      "copyText": "Link copied to clipboard!",
+      "copySuccessText": "Link copied to clipboard!",
+      "copyFailureText": "Unable to copy to clipboard!",
       "readButtonText": "Read"
     },
     "footer": {
       "links": [
         {
           "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=7ee1366d-4b57-40d1-a340-4f75d3146c87"
+          "value": "https://resume.martinjohannesnilsen.no"
         },
         {
           "text": "GitHub",
@@ -36,19 +37,15 @@
       ]
     },
     "landingView": {
-      "cards": [{"img": {"path": ""}},{"img": {"path": ""}},{"img": {"path": ""}}]
+      "cards": [
+        { "img": { "path": "" } },
+        { "img": { "path": "" } },
+        { "img": { "path": "" } }
+      ]
     },
     "navbar": {
-      "languages": [
-        "Norwegian",
-        "English"
-      ],
-      "sections": [
-        "About",
-        "Projects",
-        "Articles",
-        "Contact"
-      ],
+      "languages": ["Norwegian", "English"],
+      "sections": ["About", "Projects", "Tech Stack", "Articles", "Contact"],
       "title": "Portfolio"
     },
     "projectView": {
@@ -60,14 +57,15 @@
     "featuredInView": {
       "articles": [],
       "copyButtonText": "Kopier lenke",
-      "copyText": "Lenke kopiert til utklippstavlen!",
+      "copySuccessText": "Lenke kopiert til utklippstavlen!",
+      "copyFailureText": "Kunne ikke kopiere til utklippstavlen!",
       "readButtonText": "Les"
     },
     "footer": {
       "links": [
         {
           "text": "CV",
-          "value": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Files%2FMartin_Johannes_Nilsen.pdf?alt=media&token=7ee1366d-4b57-40d1-a340-4f75d3146c87"
+          "value": "https://resume.martinjohannesnilsen.no"
         },
         {
           "text": "GitHub",
@@ -90,19 +88,15 @@
       ]
     },
     "landingView": {
-      "cards": [{"img": {"path": ""}},{"img": {"path": ""}},{"img": {"path": ""}}]
+      "cards": [
+        { "img": { "path": "" } },
+        { "img": { "path": "" } },
+        { "img": { "path": "" } }
+      ]
     },
     "navbar": {
-      "languages": [
-        "Norsk",
-        "Engelsk"
-      ],
-      "sections": [
-        "Om",
-        "Prosjekter",
-        "Artikler",
-        "Kontakt"
-      ],
+      "languages": ["Norsk", "Engelsk"],
+      "sections": ["Om", "Prosjekter", "Tech Stack", "Artikler", "Kontakt"],
       "title": "Portefølje"
     },
     "projectView": {

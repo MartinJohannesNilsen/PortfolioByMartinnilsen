@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   Box,
   Card,
@@ -7,7 +7,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "../ThemeProvider";
-import SouthIcon from "@mui/icons-material/South";
 import { LandingViewProps } from "../types";
 import {
   RevealFromLeftOnEnter,
@@ -23,6 +22,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
 
   return (
     <Box id={props.id}>
+      {/* First introduction */}
       <Box
         sx={{
           minHeight: "calc(100vh - 80px)",
@@ -192,6 +192,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
           </RevealFromDownOnEnter>
         </Box>
       </Box>
+      {/* Second introduction */}
       <Box
         sx={{
           minHeight: "calc(100vh)",
@@ -318,6 +319,7 @@ const LandingView: FC<LandingViewProps> = (props) => {
           </Box>
         )}
       </Box>
+      {/* Third introduction */}
       <Box
         sx={{
           minHeight: "calc(100vh)",

@@ -5,12 +5,12 @@ export const light = createTheme({
   palette: {
     mode: "light",
     text: {
-      primary: "#000",
-      secondary: "#FFF",
+      primary: "#000000",
+      secondary: "#FFFFFF",
     },
     // background
     primary: {
-      main: "#FFF",
+      main: "#FFFFFF",
       dark: "#fcfcfc",
     },
     // accent color

@@ -31,7 +31,7 @@ export const RevealFromRight: FC<RevealProps> = (props: RevealProps) => {
   );
 };
 
-export const RevealFromUp: FC<RevealProps> = (props: RevealProps) => {
+export const RevealFromDown: FC<RevealProps> = (props: RevealProps) => {
   return (
     <Reveal repeat={props.repeat || false} trigger={<div />}>
       <FadeInFromDown y={props.y || defaultFadeAmount}>

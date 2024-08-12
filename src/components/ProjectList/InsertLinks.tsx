@@ -3,6 +3,7 @@ import { useTheme } from "../../ThemeProvider";
 import { ProjectElementProps } from "../../types";
 import colorLuminance from "../../utils/colorLuminance";
 import DOMPurify from "dompurify";
+import { ArrowOutward } from "@mui/icons-material";
 
 const linkElement = (link: string, text: string, theme: Theme) => {
   return (
@@ -38,8 +39,12 @@ const linkElement = (link: string, text: string, theme: Theme) => {
         sx={{ fontWeight: 800 }}
         dangerouslySetInnerHTML={{
           __html: DOMPurify.sanitize("&nbsp;→"),
+          // __html: DOMPurify.sanitize("&nbsp;"),
         }}
       />
+      {/* <ArrowOutward
+        sx={{ fontSize: theme.typography.body1.fontSize, marginTop: 0.5 }}
+      /> */}
     </Box>
   );
 };
