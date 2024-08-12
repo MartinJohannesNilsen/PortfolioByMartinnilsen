@@ -144,7 +144,7 @@ export const TechStackCard = ({
             (theme.palette.mode == "dark"
               ? theme.palette.grey[900]
               : theme.palette.grey[300]),
-          maxWidth: xs ? "380px" : sm ? "500px" : "100%",
+          maxWidth: xs ? "380px" : sm ? "500px" : xl ? "620px" : "100%",
         }}
       >
         <CardContent

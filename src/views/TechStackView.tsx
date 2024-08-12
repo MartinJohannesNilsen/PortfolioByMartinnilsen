@@ -159,9 +159,6 @@ export const deploymentTechStack: techStackItemProps[] = [
 
 const TechStackView: FC<TechStackViewProps> = (props) => {
   const { theme } = useTheme();
-  const xs = useMediaQuery(theme.breakpoints.only("xs"));
-  const smDown = useMediaQuery(theme.breakpoints.down("md"));
-  const cardFadeLength = "60px";
   const [techStackActive, setTechStackActive] =
     useState<techStackItemProps[]>(generalTechStack);
   const [techStackSelected, setTechStackSelected] = useState<number>(0);
