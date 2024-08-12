@@ -156,18 +156,7 @@
       ],
       "projects": [
         {
-          "description": "The firm wanted me to create a new website for them. They wanted a simple, yet modern website which gave their customers the possibility to read about what the firm has to offer, and take a look at reference photos from previous jobs.",
-          "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FINentrep.png?alt=media&token=6ceefd82-e60f-4af1-92ca-3b9304cb7af6",
-            "type": "landscape"
-          },
-          "linkToGitHub": "https://github.com/MartinJohannesNilsen/Nettside-for-INEntrep-AS",
-          "linkToWebsite": "https://ivar-nilsen.no",
-          "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"],
-          "title": "Website for IN Entreprenør AS"
-        },
-        {
-          "description": "2PCV - or two-phase commit visualisation, is a program made in Java to visualize the flow of the two-phase commit protocol.",
+          "description": "2PCV - or two-phase commit visualisation, is a program made in Java to visualize the flow of the two-phase commit protocol. This was a project in the course TDAT2004 - Data communication and network programming at NTNU, Trondheim.",
           "img": {
             "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2F2PCV.png?alt=media&token=523e6257-b705-4f7d-b72d-fce718b03104",
             "type": "landscape"
@@ -422,18 +411,7 @@
       ],
       "projects": [
         {
-          "description": "Fikk i oppdrag å lage en ny nettside for firmaet. De ønsket en enkel, men moderne side som ga kunder muligheten til å lese om hva firmaet tilbyr. De ønsket i tillegg å ha en oversikt over de ulike typene arbeid de utfører, og referanse&shybilder fra tidligere prosjekter.",
-          "img": {
-            "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2FINentrep.png?alt=media&token=6ceefd82-e60f-4af1-92ca-3b9304cb7af6",
-            "type": "landscape"
-          },
-          "linkToGitHub": "https://github.com/MartinJohannesNilsen/Nettside-for-INEntrep-AS",
-          "linkToWebsite": "https://ivar-nilsen.no",
-          "technologies": ["React", "NodeJS", "CSS", "GitHub Pages"],
-          "title": "Nettside for IN Entreprenør AS"
-        },
-        {
-          "description": "2PCV - eller \"two-phase commit visualisation\", er et program laget i Java for å visualisere to-fase commit protokollen i praksis.",
+          "description": "2PCV - eller \"two-phase commit visualisation\", er et program laget i Java for å visualisere to-fase commit protokollen i praksis. Dette var et prosjekt i faget TDAT2004 - Data&shykommunikasjon med nettverks&shyprogrammering på NTNU i Trondheim.",
           "img": {
             "path": "https://firebasestorage.googleapis.com/v0/b/portfoliobymartinnilsen.appspot.com/o/Projects%2F2PCV.png?alt=media&token=523e6257-b705-4f7d-b72d-fce718b03104",
             "type": "landscape"
